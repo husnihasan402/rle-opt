@@ -58,15 +58,15 @@ image Betsy_Sprite:
         (0,0), ConditionSwitch(
             #arms back
             # Modification mode
-            "BetsyX.ArmPose != 1 and BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back2Cammy.png"),         # right hand up/left down
+            "BetsyX.ArmPose != 1 and BetsyX.Arms == 'cammy gloves'", "images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back2Cammy.png",         # right hand up/left down
             # -----------------
-            "BetsyX.ArmPose != 1 and BetsyX.Arms", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back2G.png"),         # right hand up/left down
-            "BetsyX.ArmPose != 1", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back2.png"),         # right hand up/left down
+            "BetsyX.ArmPose != 1 and BetsyX.Arms", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back2G.png",         # right hand up/left down
+            "BetsyX.ArmPose != 1", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back2.png",         # right hand up/left down
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back1Cammy.png"),         # right hand up/left down
+            "BetsyX.Arms == 'cammy gloves'", "images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back1Cammy.png",         # right hand up/left down
             # -----------------
-            "BetsyX.Arms", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back1G.png"),         # right hand up/left down
-            "True", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back1.png"), #if BetsyX.Arms == 1   # right Hand on hip/left raised
+            "BetsyX.Arms", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back1G.png",         # right hand up/left down
+            "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Back1.png", #if BetsyX.Arms == 1   # right Hand on hip/left raised
             ),
         (0,0), ConditionSwitch(
             #arms shirt back
@@ -77,8 +77,8 @@ image Betsy_Sprite:
             ),
         (0,0), ConditionSwitch(
             #body
-            "BetsyX.Pubes", get_cached_recolor("Betsy", "Pubes", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Body_Pubes.png"),         # right hand up/left down
-            "True", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Body.png"), #if BetsyX.Arms == 1   # right Hand on hip/left raised
+            "BetsyX.Pubes", Recolor("Betsy", "Pubes", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Body_Pubes.png"),         # right hand up/left down
+            "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Body.png", #if BetsyX.Arms == 1   # right Hand on hip/left raised
             ),
         # Modification mode
         (0,0), ConditionSwitch(
@@ -336,15 +336,15 @@ image Betsy_Sprite:
         (0,0), ConditionSwitch(
             #arms top
             # Modification mode
-            "BetsyX.ArmPose != 1 and BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top2Cammy.png"),
+            "BetsyX.ArmPose != 1 and BetsyX.Arms == 'cammy gloves'", "images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top2Cammy.png",
             # -----------------
-            "BetsyX.ArmPose != 1 and BetsyX.Arms", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top2G.png"),         # right hand up/left down
-            "BetsyX.ArmPose != 1", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top2.png"),         # right hand up/left down
+            "BetsyX.ArmPose != 1 and BetsyX.Arms", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top2G.png",         # right hand up/left down
+            "BetsyX.ArmPose != 1", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top2.png",         # right hand up/left down
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top1Cammy.png"),         # right hand up/left down
+            "BetsyX.Arms == 'cammy gloves'", "images/BetsySprite/modification/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top1Cammy.png",         # right hand up/left down
             # -----------------
-            "BetsyX.Arms", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top1G.png"),         # right hand up/left down
-            "True", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top1.png"), #if BetsyX.Arms == 1   # right Hand on hip/left raised
+            "BetsyX.Arms", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top1G.png",         # right hand up/left down
+            "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Arm_Top1.png", #if BetsyX.Arms == 1   # right Hand on hip/left raised
             ),
         (0,0), ConditionSwitch(
             #arms shirt over
@@ -542,9 +542,9 @@ image Betsy_Sprite_Head:
 #                "renpy.showing('Betsy_SexSprite') and BetsyX.Blush >= 2", get_cached_image("images/BetsySprite/Betsy_Sprite_Head_Sex_Blush2.png"),
 #                "renpy.showing('Betsy_SexSprite') and BetsyX.Blush", get_cached_image("images/BetsySprite/Betsy_Sprite_Head_Sex_Blush1.png"),
 #                "renpy.showing('Betsy_SexSprite')", get_cached_image("images/BetsySprite/Betsy_Sprite_Head_Sex.png"),
-                "BetsyX.Blush >= 2", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head_Blush2.png"),
-                "BetsyX.Blush", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head_Blush1.png"),
-                "True", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head.png"),
+                "BetsyX.Blush >= 2", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head_Blush2.png",
+                "BetsyX.Blush", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head_Blush1.png",
+                "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -553,18 +553,18 @@ image Betsy_Sprite_Head:
             ),
         (0,0), ConditionSwitch(
             #Mouths
-            "BetsyX.Mouth == 'lipbite'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Lipbite.png"),
-            "BetsyX.Mouth == 'sucking'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
-            "BetsyX.Mouth == 'kiss'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Kiss.png"),
-            "BetsyX.Mouth == 'sad'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Sad.png"),
-            "BetsyX.Mouth == 'smile'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smile.png"),
-            "BetsyX.Mouth == 'surprised'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
+            "BetsyX.Mouth == 'lipbite'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Lipbite.png"),
+            "BetsyX.Mouth == 'sucking'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
+            "BetsyX.Mouth == 'kiss'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Kiss.png"),
+            "BetsyX.Mouth == 'sad'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Sad.png"),
+            "BetsyX.Mouth == 'smile'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smile.png"),
+            "BetsyX.Mouth == 'surprised'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
 #            "not Player.Male and 'mouth' in BetsyX.Spunk and BetsyX.Mouth == 'tongue'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/Betsy_Sprite_Mouth_Tongue_Wet.png"),
-            "BetsyX.Mouth == 'tongue'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Tongue.png"),
-            "BetsyX.Mouth == 'grimace'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smile.png"),
-            "BetsyX.Mouth == 'smirk'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smirk.png"),
-            "BetsyX.Mouth == 'open'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
-            "True", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Normal.png"),
+            "BetsyX.Mouth == 'tongue'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Tongue.png"),
+            "BetsyX.Mouth == 'grimace'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smile.png"),
+            "BetsyX.Mouth == 'smirk'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smirk.png"),
+            "BetsyX.Mouth == 'open'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
+            "True", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #Mouths spunk
@@ -640,16 +640,16 @@ image Betsy_Sprite_Head:
 image Betsy Blink:
     ConditionSwitch(
     "BetsyX.Eyes == 'closed'", get_cached_image("images/BetsySprite/Betsy_Sprite_Eyes_Closed.png"),
-    "BetsyX.Eyes == 'sexy'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png"),
-    "BetsyX.Eyes == 'side'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Side.png"),
-    "BetsyX.Eyes == 'surprised'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Surprised.png"),
-    "BetsyX.Eyes == 'normal'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Normal.png"),
-    "BetsyX.Eyes == 'stunned'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Stunned.png"),
-    "BetsyX.Eyes == 'down'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Down.png"),
-    "BetsyX.Eyes == 'leftside'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Leftside.png"),
-    "BetsyX.Eyes == 'manic'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png"),#"images/BetsySprite/Betsy_Sprite_Eyes_Squint.png",
-    "BetsyX.Eyes == 'squint'", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png"),#"Betsy_Squint",
-    "True", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Normal.png"),
+    "BetsyX.Eyes == 'sexy'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png",
+    "BetsyX.Eyes == 'side'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Side.png",
+    "BetsyX.Eyes == 'surprised'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Surprised.png",
+    "BetsyX.Eyes == 'normal'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Normal.png",
+    "BetsyX.Eyes == 'stunned'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Stunned.png",
+    "BetsyX.Eyes == 'down'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Down.png",
+    "BetsyX.Eyes == 'leftside'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Leftside.png",
+    "BetsyX.Eyes == 'manic'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png",#"images/BetsySprite/Betsy_Sprite_Eyes_Squint.png",
+    "BetsyX.Eyes == 'squint'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png",#"Betsy_Squint",
+    "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Normal.png",
     ),
     choice:
         3.5
@@ -800,7 +800,7 @@ image Betsy_Doggy_Body:
             ),
         #(0,0), get_cached_image("images/BetsyDoggy/Betsy_Doggy_HeadRef.png"),               #Head
 
-        (0,0), get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Body.png"), #Body base
+        (0,0), "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #Legs Layer
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
@@ -865,7 +865,7 @@ image Betsy_Doggy_Body:
         (0,0), ConditionSwitch(
             #Hair Fore
             "not BetsyX.Facing", Null(),
-            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png"),
+            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png"),
             "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
 #            "(BetsyX.Water and BetsyX.Hair == 'long') or BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
             "BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Wet.png"),
@@ -899,7 +899,7 @@ image Betsy_Doggy_Head:
     LiveComposite(
         #Head
         (420,525),
-        #(0,0), get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head.png"), #Body base
+        #(0,0), "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head.png", #Body base
         #(0,0), get_cached_image("images/BetsyDoggy/Betsy_Doggy_TestArm.png"),#Eyes
         (0,0), ConditionSwitch(
             #Hair back
@@ -911,21 +911,21 @@ image Betsy_Doggy_Head:
         (0,0), ConditionSwitch(
             #Head
             #"BetsyX.Blush > 1", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Head_Blush2.png"),
-            "BetsyX.Blush", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Blush.png"),
-            "True", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head.png"),
+            "BetsyX.Blush", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Blush.png",
+            "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head.png",
             ),
         (0,0), ConditionSwitch(
             #Mouth
-#            "BetsyX.Mouth == 'lipbite'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
-            "BetsyX.Mouth == 'sucking'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Open.png"),
-            "BetsyX.Mouth == 'kiss'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Kiss.png"),
-            "BetsyX.Mouth == 'sad'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Sad.png"),
-#            "BetsyX.Mouth == 'smile'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
-#            "BetsyX.Mouth == 'grimace'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
-            "BetsyX.Mouth == 'surprised'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Open.png"),
-            "BetsyX.Mouth == 'open'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Open.png"),
-            "BetsyX.Mouth == 'tongue'", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
+#            "BetsyX.Mouth == 'lipbite'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
+            "BetsyX.Mouth == 'sucking'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Open.png"),
+            "BetsyX.Mouth == 'kiss'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Kiss.png"),
+            "BetsyX.Mouth == 'sad'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Sad.png"),
+#            "BetsyX.Mouth == 'smile'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
+#            "BetsyX.Mouth == 'grimace'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
+            "BetsyX.Mouth == 'surprised'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Open.png"),
+            "BetsyX.Mouth == 'open'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Open.png"),
+            "BetsyX.Mouth == 'tongue'", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Tongue.png"),
+            "True", Recolor("Betsy", "Lips", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Mouth_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -999,16 +999,16 @@ image Betsy_Doggy_Head:
 image Betsy Doggy Blink:
         #Eyes
         ConditionSwitch(
-        "BetsyX.Eyes == 'sexy'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png"),
-        "BetsyX.Eyes == 'side'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Side.png"),
-#        "BetsyX.Eyes == 'normal'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png"),
-        "BetsyX.Eyes == 'closed'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Closed.png"),
-        "BetsyX.Eyes == 'manic'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Stunned.png"),
-        "BetsyX.Eyes == 'down'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Down.png"),
-        "BetsyX.Eyes == 'stunned'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Stunned.png"),
-        "BetsyX.Eyes == 'surprised'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Surprised.png"),
-        "BetsyX.Eyes == 'squint'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png"),
-        "True", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png"),
+        "BetsyX.Eyes == 'sexy'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png",
+        "BetsyX.Eyes == 'side'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Side.png",
+#        "BetsyX.Eyes == 'normal'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png",
+        "BetsyX.Eyes == 'closed'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Closed.png",
+        "BetsyX.Eyes == 'manic'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Stunned.png",
+        "BetsyX.Eyes == 'down'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Down.png",
+        "BetsyX.Eyes == 'stunned'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Stunned.png",
+        "BetsyX.Eyes == 'surprised'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Surprised.png",
+        "BetsyX.Eyes == 'squint'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png",
+        "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Eyes_Normal.png",
         ),
         choice:
             3.5
@@ -1027,19 +1027,19 @@ image Betsy_Doggy_Head_Fore:
         (420,525),
         (0,0), ConditionSwitch(
             #Hair
-            "BetsyX.Hair == 'blonde'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png"),
-            "BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png"),
-            "BetsyX.Hair == 'long'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Long.png"),
-            "True", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Short.png"),
+            "BetsyX.Hair == 'blonde'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png",
+            "BetsyX.Water or BetsyX.Hair == 'wet'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png",
+            "not Player.Male and 'facial' in BetsyX.Spunk", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png",
+            "BetsyX.Hair == 'long'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Long.png",
+            "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Short.png",
             ),
         (0,0), ConditionSwitch(
             #Hair
-            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png"),
-            "BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png"),
-            "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Long.png"),
-            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Short.png"),
+            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png"),
+            "BetsyX.Water or BetsyX.Hair == 'wet'", Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Wet.png"),
+            "BetsyX.Hair == 'long'", Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Long.png"),
+            "True", Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Fore_Short.png"),
             ),
         )
     #zoom 0.95
@@ -1072,28 +1072,28 @@ image Betsy_Doggy_Ass:
 
         (0,0), ConditionSwitch(
             #Pussy base
-            "BetsyX.Legs and not BetsyX.Upskirt", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Closed.png"),
-            "BetsyX.Panties and not BetsyX.PantiesDown", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Closed.png"),
-            "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png"),
-            "Trigger == 'lick pussy'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Open.png"),
-            "'dildo pussy' in (Trigger,Trigger2,BetsyX.Offhand)", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png"),#Null(),
-            "'fondle pussy' in (Trigger,Trigger2,BetsyX.Offhand)", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png"),#Null(),
-            "Trigger == 'insert pussy'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png"),#Null(),
-            "True", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Closed.png"),
+            "BetsyX.Legs and not BetsyX.Upskirt", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Closed.png",
+            "BetsyX.Panties and not BetsyX.PantiesDown", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Closed.png",
+            "Player.Sprite and Player.Cock == 'in'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png",
+            "Trigger == 'lick pussy'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Open.png",
+            "'dildo pussy' in (Trigger,Trigger2,BetsyX.Offhand)", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png",#Null(),
+            "'fondle pussy' in (Trigger,Trigger2,BetsyX.Offhand)", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png",#Null(),
+            "Trigger == 'insert pussy'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Fucking.png",#Null(),
+            "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Ass_Closed.png",
             ),
         (0,0), ConditionSwitch(
             #ass red
-            "BetsyX.Red", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Red.png"),
+            "BetsyX.Red", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Red.png",
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Anus base
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
-                    "Speed", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png"),      #Speed 1
+                    "Speed", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png",      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
-            "'insert ass' in (Trigger,Trigger2,BetsyX.Offhand)", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png"),
-            "'dildo anal' in (Trigger,Trigger2,BetsyX.Offhand)", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,BetsyX.Offhand)", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png",
+            "'dildo anal' in (Trigger,Trigger2,BetsyX.Offhand)", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png",
             "BetsyX.Loose > 2", "Betsy_Gape_Anal",    #intentional
             "BetsyX.Loose", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Asshole_Loose.png"),
             "True", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Asshole_Tight.png"),
@@ -1145,14 +1145,14 @@ image Betsy_Doggy_Ass:
             "'dildo pussy' in (Trigger,Trigger2,BetsyX.Offhand)", Null(),
             "'fondle pussy' in (Trigger,Trigger2,BetsyX.Offhand)",Null(),
             "Trigger == 'insert pussy'", Null(),
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
-            "BetsyX.PantiesDown and Trigger == 'lick pussy'", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
-            "BetsyX.PantiesDown", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Closed.png"),
-            "BetsyX.Panties", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
-            "BetsyX.Hose and BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
-            "Trigger == 'lick pussy'", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
-            "True", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Closed.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
+            "BetsyX.PantiesDown and Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
+            "BetsyX.PantiesDown", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Closed.png"),
+            "BetsyX.Panties", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
+            "BetsyX.Hose and BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Clothed.png"),
+            "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
+            "True", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Closed.png"),
             ),
         (1,5), ConditionSwitch(
             #Pussy Piercings
@@ -1316,16 +1316,16 @@ image Betsy_Doggy_Shins:             #fix // // // // // // fix // // // // // /
     contains:
             #hose legs
         ConditionSwitch(
-            "True", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png"),
+            "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png",
             )
     contains:
             #hose legs
         ConditionSwitch(
-            "BetsyX.Hose == 'garterbelt'", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png"),
-            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet_Hose_Holed.png"),
+            "BetsyX.Hose == 'garterbelt'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png",
+            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet_Hose_Holed.png"),
             "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Feet_Socks.png"),
             "BetsyX.Hose", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Feet_Hose.png"),
-            "True", get_cached_image("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png"),
+            "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png",
             )
     contains:
         #boots
@@ -1490,7 +1490,7 @@ image Betsy_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "BetsyX.Pubes", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
+            "BetsyX.Pubes", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1539,7 +1539,7 @@ image Betsy_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Betsy_Pussy_Moving"
     contains:
         #Base
-        get_cached_alphamask("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1597,7 +1597,7 @@ image Betsy_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "BetsyX.Pubes", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Fucking.png"),
+            "BetsyX.Pubes", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1666,7 +1666,7 @@ image Betsy_Pussy_Hole_Mask:
     # This is the alpha used for the little flap in the heading animation "Betsy_Pussy_Heading"
     contains:
         #Base
-        get_cached_alphamask("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1710,7 +1710,7 @@ image Betsy_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "BetsyX.Pubes", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
+            "BetsyX.Pubes", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1812,7 +1812,7 @@ image Betsy_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "BetsyX.Pubes", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Fucking.png"),
+            "BetsyX.Pubes", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -1865,7 +1865,7 @@ image Betsy_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "BetsyX.Pubes", get_cached_recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Fucking.png"),
+            "BetsyX.Pubes", Recolor("Betsy", "Pubes", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -2502,11 +2502,11 @@ image Betsy_Sex_Body:
 #            "BetsyX.Over == 'black shirt' and BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_Sex_Over_Black_Back.png"),
 #            "True", Null(),
 #            ),
-        (0,0), get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Neck.png"),
+        (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Neck.png",
 #        (0,0), get_cached_image("images/BetsySex/Betsy_Sex_Headref.png"),
 
         (175,-165), "Betsy_Head_Sex",  #(50,-325)
-        (0,0), get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Body.png"),
+        (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Body.png",
 
         (0,0), ConditionSwitch(
             #rear sleeve
@@ -2614,8 +2614,8 @@ image Betsy_Sex_Hand:
         (1120,840),
         (0,0), ConditionSwitch(
             #base arms
-            "BetsyX.Arms", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand_Glove.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png"),
+            "BetsyX.Arms", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand_Glove.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png",
             ),
         (0,0), ConditionSwitch(
             #Wet look
@@ -2685,12 +2685,12 @@ image Betsy_Sex_Legs:
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png"),
-            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png",
+            "Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Betsy_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
             ),
 
 #        (0,0), ConditionSwitch(
@@ -2795,7 +2795,7 @@ image Betsy_Sex_Legs:
 #        (0,0), ConditionSwitch(
 #            #pussy fondling animation
 ##            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Betsy_Sex_Fondle_Pussy",
-#            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png"),
+#            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png",
 #            ),
 
         (0,0), ConditionSwitch(
@@ -2884,7 +2884,7 @@ image Betsy_Sex_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Betsy_Sex_Legs
         (1120,840),
-        (0,0), get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),                                                         #Legs Base
+        (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",                                                         #Legs Base
 
         (0,0), ConditionSwitch(
             #panties if down
@@ -2897,16 +2897,16 @@ image Betsy_Sex_Feet:
 
         (0,0), ConditionSwitch(
             #hose layer
-            "(BetsyX.Hose == 'pantyhose' or BetsyX.Hose == 'ripped pantyhose') and BetsyX.Panties and BetsyX.PantiesDown", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),
-            "(BetsyX.Hose == 'tights' or BetsyX.Hose == 'ripped tights') and BetsyX.Panties and BetsyX.PantiesDown", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),
+            "(BetsyX.Hose == 'pantyhose' or BetsyX.Hose == 'ripped pantyhose') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
+            "(BetsyX.Hose == 'tights' or BetsyX.Hose == 'ripped tights') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
             "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Socks.png"),
-            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet_Hose_Holed.png"),
+            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet_Hose_Holed.png"),
 #            "BetsyX.Hose == 'ripped tights'", get_cached_image("images/BetsySex/Betsy_Sex_Feet_Tights_Holed.png"),
 #            "BetsyX.Hose == 'tights'", get_cached_image("images/BetsySex/Betsy_Sex_Feet_Tights.png"),
-#            "BetsyX.Hose == 'ripped pantyhose' and BetsyX.Panties and BetsyX.PantiesDown", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),
+#            "BetsyX.Hose == 'ripped pantyhose' and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
             "BetsyX.Hose and BetsyX.Hose != 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
 #            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),   #Null(),
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
@@ -2934,12 +2934,12 @@ image Betsy_Sex_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Fucking.png",
                 "Player.Sprite and Player.Cock == 'in' and Speed", "Betsy_Sex_Heading_Pussy",
-                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "Trigger == 'lick pussy'", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Closed.png"),
+                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "Trigger == 'lick pussy'", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Closed.png",
                 )
 #    contains:
 #            # The background plate of her pussy
@@ -2954,11 +2954,11 @@ image Betsy_Sex_Pussy:
                 "not BetsyX.Pubes", Null(),
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
                 "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "Player.Sprite and Player.Cock == 'out'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "True", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Closed.png"),
+                "Player.Sprite and Player.Cock == 'in'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "Player.Sprite and Player.Cock == 'out'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "True", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Closed.png"),
                 )
     contains:
             #Spunk
@@ -3579,14 +3579,14 @@ image Betsy_Sex_Anus:
             ConditionSwitch(
 #            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png"),
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png"),
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
             "Player.Sprite and Player.Cock == 'anal' and Speed", "Betsy_Sex_Anal_Heading",
             "Player.Sprite and Player.Cock == 'anal'", "Betsy_Sex_Anal_Tip",
             "BetsyX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "BetsyX.Loose > 2", "Betsy_Gape_Anal_Sex",
-            "BetsyX.Loose", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Loose.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Tight.png"),
+            "BetsyX.Loose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Loose.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Tight.png",
             "True", Null(),
             )
     contains:
@@ -4491,7 +4491,7 @@ image Betsy_BJ_Animation:#BJ_NewTest:                                           
 #    LiveComposite(
 #        (800,950),       #550,950
 ##        (-10,-90), "Betsy_BJ_HairBack", #(75,-10)
-#        (0,0), get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Body.png"),
+#        (0,0), "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Body.png",
 ##        (0,0), "Betsy_TJ_Tits_Under",
 ##        (0,0), "Betsy_TJ_Tits_Over",
 
@@ -4513,10 +4513,10 @@ image Betsy_BJ_Backdrop:
         (0,0), ConditionSwitch(
             # Body
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsyBJFace/modification/[BetsyX.skin_image.skin_path]Betsy_BJ_Body_Cammy.png"),
+            "BetsyX.Arms == 'cammy gloves'", "images/BetsyBJFace/modification/[BetsyX.skin_image.skin_path]Betsy_BJ_Body_Cammy.png",
             # -----------------
-            "BetsyX.Arms", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Body_G.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Body.png"),
+            "BetsyX.Arms", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Body_G.png",
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Body.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -4621,30 +4621,30 @@ image Betsy_BJ_Head:                                                            
 
         (0,0), ConditionSwitch(
             # Basic Face layer
-#            "BetsyX.Blush == 2 and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png"),
-#            "BetsyX.Blush and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png"),
-#            "renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png"),
+#            "BetsyX.Blush == 2 and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png",
+#            "BetsyX.Blush and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png",
+#            "renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png",
 ##            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png"),
 
-            "BetsyX.Blush == 2", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png"),
-            "BetsyX.Blush", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png")
+            "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png",
+            "BetsyX.Blush", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png",
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png"
 
-#            "BetsyX.Blush == 2", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png"),
+#            "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png",
 #            "BetsyX.Blush", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Blush.png"),
-#            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png")
+#            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png"
             ),
 
         (0,0), ConditionSwitch(
             #Mouth
             "Speed and renpy.showing('Betsy_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"),  #licking  Betsy_BJ_Mouth_TongueW
+                    "Speed == 1", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"),  #licking  Betsy_BJ_Mouth_TongueW
 #                    "True", Null(),                          #heading
 #                    "(Speed == 2 or Speed == 5)", Null(),                          #heading
-#                    "Speed == 3", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking_Over.png"), #sucking
-#                    "Speed == 4", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking_Over.png"), #deepthroat
-                    "True", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking_Over.png"), #cumming
+#                    "Speed == 3", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking_Over.png"), #sucking
+#                    "Speed == 4", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking_Over.png"), #deepthroat
+                    "True", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking_Over.png"), #cumming
                     ),
             "True", Null(),
             ),
@@ -4733,17 +4733,17 @@ image Betsy_BJ_Head:                                                            
 image Betsy BJ Blink:
         #eyeblinks
         ConditionSwitch(
-            "BetsyX.Eyes == 'normal'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Normal.png"),
-            "BetsyX.Eyes == 'sexy'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Sexy.png"),
-            "BetsyX.Eyes == 'closed'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Closed.png"),
-            "BetsyX.Eyes == 'surprised'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Surprised.png"),
-            "BetsyX.Eyes == 'side'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Side.png"),
-            "BetsyX.Eyes == 'leftside'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Side.png"),
-            "BetsyX.Eyes == 'stunned'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Stunned.png"),
-            "BetsyX.Eyes == 'down'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Down.png"),
-            "BetsyX.Eyes == 'manic'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Surprised.png"),
-            "BetsyX.Eyes == 'squint'", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Sexy.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Normal.png"),
+            "BetsyX.Eyes == 'normal'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Normal.png",
+            "BetsyX.Eyes == 'sexy'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Sexy.png",
+            "BetsyX.Eyes == 'closed'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Closed.png",
+            "BetsyX.Eyes == 'surprised'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Surprised.png",
+            "BetsyX.Eyes == 'side'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Side.png",
+            "BetsyX.Eyes == 'leftside'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Side.png",
+            "BetsyX.Eyes == 'stunned'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Stunned.png",
+            "BetsyX.Eyes == 'down'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Down.png",
+            "BetsyX.Eyes == 'manic'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Surprised.png",
+            "BetsyX.Eyes == 'squint'", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Sexy.png",
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Eyes_Normal.png",
             ),
         choice:
             3.5
@@ -4779,17 +4779,17 @@ image Betsy_BJ_Head_Under:
 #        (0,0), get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Under.png"),
         (0,0), ConditionSwitch(
             # Basic Face layer
-            "BetsyX.Blush == 2", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png"),
-            "BetsyX.Blush", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush1.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png")
+            "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png",
+            "BetsyX.Blush", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush1.png",
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png"
             ),
 #         (0,0), ConditionSwitch(
 #            # Basic Face layer
 #            "Speed and renpy.showing('Betsy_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png"),
 ##            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png"),
-#            "BetsyX.Blush == 2", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png"),
+#            "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png",
 #            "BetsyX.Blush", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Blush.png"),
-#            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png")
+#            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png"
 #            ),
 
          (0,0), ConditionSwitch(
@@ -4802,26 +4802,26 @@ image Betsy_BJ_Head_Under:
 #            "True", Null(), #cumming
             "Speed and renpy.showing('Betsy_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"),  #licking  Betsy_BJ_Mouth_TongueW
+                    "Speed == 1", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"),  #licking  Betsy_BJ_Mouth_TongueW
 #                    "True", Null(),                          #heading
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking.png"), #sucking
-                    "Speed == 4", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking.png"), #deepthroat
-                    "Speed == 6", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking.png"), #cumming
+                    "Speed == 3", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking.png"), #sucking
+                    "Speed == 4", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking.png"), #deepthroat
+                    "Speed == 6", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sucking.png"), #cumming
                     ),
-            "renpy.showing('Betsy_CUN_Animation') and Speed", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"), #Betsy_BJ_Mouth_TongueW
-            "Speed >= 3 and renpy.showing('Betsy_TJ_Animation')", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"), #Betsy_BJ_Mouth_TongueW
-            "BetsyX.Mouth == 'normal'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Normal.png"),
-            "BetsyX.Mouth == 'lipbite'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Normal.png"),
-            "BetsyX.Mouth == 'sucking'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
-            "BetsyX.Mouth == 'kiss'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Kiss.png"),
-            "BetsyX.Mouth == 'sad'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sad.png"),
-            "BetsyX.Mouth == 'smile'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Smile.png"),
-            "BetsyX.Mouth == 'smirk'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Normal.png"),
-            "BetsyX.Mouth == 'grimace'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Smile.png"),
-            "BetsyX.Mouth == 'surprised'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
-            "BetsyX.Mouth == 'tongue'", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Smile.png"),
+            "renpy.showing('Betsy_CUN_Animation') and Speed", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"), #Betsy_BJ_Mouth_TongueW
+            "Speed >= 3 and renpy.showing('Betsy_TJ_Animation')", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"), #Betsy_BJ_Mouth_TongueW
+            "BetsyX.Mouth == 'normal'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Normal.png"),
+            "BetsyX.Mouth == 'lipbite'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Normal.png"),
+            "BetsyX.Mouth == 'sucking'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
+            "BetsyX.Mouth == 'kiss'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Kiss.png"),
+            "BetsyX.Mouth == 'sad'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Sad.png"),
+            "BetsyX.Mouth == 'smile'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Smile.png"),
+            "BetsyX.Mouth == 'smirk'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Normal.png"),
+            "BetsyX.Mouth == 'grimace'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Smile.png"),
+            "BetsyX.Mouth == 'surprised'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
+            "BetsyX.Mouth == 'tongue'", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Tongue.png"),
+            "True", Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Smile.png"),
             ),
         (0,0), ConditionSwitch(
             #Spunk layer
@@ -4858,7 +4858,7 @@ image Betsy_BJ_Head_Under:
 #            "'mouth' not in BetsyX.Spunk or not Player.Male", Null(),
 #            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png"),
 #            ),
-#        (0,0), get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
+#        (0,0), Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
         )
     zoom 1
     anchor (0.5, 0.5)
@@ -4867,7 +4867,7 @@ image Betsy_BJ_Head_Under:
 image Betsy_BJ_Heading_Mouth:
     LiveComposite(
         (695,695),
-        (0,0), get_cached_recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
+        (0,0), Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
         (0,0), ConditionSwitch(
             #cum in mouth
             "'mouth' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),
@@ -5744,10 +5744,10 @@ image Betsy_TJ_Body:
         (0,0), ConditionSwitch(
             #Body
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsyBJFace/modification/[BetsyX.skin_image.skin_path]Betsy_TJ_Body_Cammy.png"),
+            "BetsyX.Arms == 'cammy gloves'", "images/BetsyBJFace/modification/[BetsyX.skin_image.skin_path]Betsy_TJ_Body_Cammy.png",
             # -----------------
-            "BetsyX.Arms", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Body_G.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Body.png"),
+            "BetsyX.Arms", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Body_G.png",
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Body.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -5816,7 +5816,7 @@ image Betsy_TJ_Body:
 #        (0,0), ConditionSwitch(
 #            #hands layer
 #            "BetsyX.Arms and (BetsyX.Over == 'suit' or BetsyX.Over == 'open suit')", get_cached_image("images/BetsyBJFace/Betsy_TJ_Hands_Gloved.png"),
-#            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands.png"),
+#            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands.png",
 #            ),
 
 #        (0,0), ConditionSwitch(
@@ -5851,7 +5851,7 @@ image Betsy_TJ_Tits_Under:
         (0,0), ConditionSwitch(
             # under tit
 #            "BetsyX.Water", get_cached_image("images/BetsySprite/Betsy_Sprite_Water2.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Under.png"),
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Under.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Chest tits layer
@@ -5885,7 +5885,7 @@ image Betsy_TJ_Tits_Over:
 #            ),
 
 #        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Right_Mask.png"),
-        (0,0), get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Over.png"),
+        (0,0), "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Over.png",
         (0,0), ConditionSwitch(
             # spunk under tits
             "'tits' not in BetsyX.Spunk", Null(),
@@ -5988,10 +5988,10 @@ image Betsy_TJ_Hands:
         (0,0), ConditionSwitch(
             #right hand layer
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsyBJFace/modification/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands_Cammy.png"),
+            "BetsyX.Arms == 'cammy gloves'", "images/BetsyBJFace/modification/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands_Cammy.png",
             # -----------------
-            "BetsyX.Arms", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands_G.png"),
-            "True", get_cached_image("images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands.png"),
+            "BetsyX.Arms", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands_G.png",
+            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands.png",
             ),
         (0,0), ConditionSwitch(
             #nips
@@ -7131,8 +7131,8 @@ image Betsy_Hand_Under:
 
 image Betsy_Hand_Over:
     ConditionSwitch(
-        "BetsyX.Arms", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]handbetsy1g.png"),
-        "True", get_cached_image("images/BetsySprite/[BetsyX.skin_image.skin_path]handbetsy1.png"),
+        "BetsyX.Arms", "images/BetsySprite/[BetsyX.skin_image.skin_path]handbetsy1g.png",
+        "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]handbetsy1.png",
         )
     anchor (0.5,0.5)
     pos (70,0)#(-10,0)
@@ -7900,10 +7900,10 @@ image Betsy_69_Body:
         (0,0), ConditionSwitch(
             #rear sleeve
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsySex/modification/[BetsyX.skin_image.skin_path]Betsy_69_BodyCammy.png"),
+            "BetsyX.Arms == 'cammy gloves'", "images/BetsySex/modification/[BetsyX.skin_image.skin_path]Betsy_69_BodyCammy.png",
             # -----------------
-            "BetsyX.Arms", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_BodyG.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Body.png"),
+            "BetsyX.Arms", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_BodyG.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Body.png",
             ),
         (0,0), ConditionSwitch(
             #Wet look
@@ -8012,7 +8012,7 @@ image Betsy_69_Head:
             "Speed == 1", get_cached_image("images/BetsySex/Betsy_69_Tongue.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Head.png"),
+        (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Head.png",
         (0,0),ConditionSwitch(
             #Outside Spunk
             "'mouth' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Mouth.png"),
@@ -8072,7 +8072,7 @@ image Betsy_69_HairBack:
     LiveComposite(
         #the torso/head used in the sex pose, referenced by Betsy_SexSprite
         (1120,840),
-#        (0,0), get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Head.png"),
+#        (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Head.png",
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Betsy_TJ_Animation')", Null(),
@@ -8110,12 +8110,12 @@ image Betsy_69_Legs:
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png"),
-#            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png",
+#            "Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Betsy_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Legs.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Legs.png",
             ),
 
 #        (0,0), ConditionSwitch(
@@ -8210,7 +8210,7 @@ image Betsy_69_Legs:
 #        (0,0), ConditionSwitch(
 #            #pussy fondling animation
 ##            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Betsy_Sex_Fondle_Pussy",
-#            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png"),
+#            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png",
 #            ),
 
         (0,0), ConditionSwitch(
@@ -8294,7 +8294,7 @@ image Betsy_69_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Betsy_Sex_Legs
         (1120,840),
-        (0,0), get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),                                                         #Legs Base
+        (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",                                                         #Legs Base
 
         (0,0), ConditionSwitch(
             #panties if down
@@ -8306,12 +8306,12 @@ image Betsy_69_Feet:
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "(BetsyX.Hose == 'pantyhose' or BetsyX.Hose == 'ripped pantyhose') and BetsyX.Panties and BetsyX.PantiesDown", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),
-            "(BetsyX.Hose == 'tights' or BetsyX.Hose == 'ripped tights') and BetsyX.Panties and BetsyX.PantiesDown", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),
+            "(BetsyX.Hose == 'pantyhose' or BetsyX.Hose == 'ripped pantyhose') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
+            "(BetsyX.Hose == 'tights' or BetsyX.Hose == 'ripped tights') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
             "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Socks.png"),
-            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet_Hose_Holed.png"),
+            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet_Hose_Holed.png"),
             "BetsyX.Hose and BetsyX.Hose != 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png"),   #Null(),
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
@@ -8355,12 +8355,12 @@ image Betsy_69_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Fucking.png",
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Betsy_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "Trigger == 'lick pussy'", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pussy_Open.png"),
-                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pussy_Open.png"),
-                "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pussy_Closed.png"),
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "Trigger == 'lick pussy'", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pussy_Open.png",
+                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pussy_Open.png",
+                "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pussy_Closed.png",
                 )
     contains:
             # The background plate of her pussy
@@ -8375,11 +8375,11 @@ image Betsy_69_Pussy:
                 "not BetsyX.Pubes", Null(),
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-#                "Player.Sprite and Player.Cock == 'out'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Open.png"),
-                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Open.png"),
-                "True", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'out'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Open.png"),
+                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Open.png"),
+                "True", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Closed.png"),
                 )
     contains:
             #Spunk
@@ -8480,14 +8480,14 @@ image Betsy_69_Anus:
             ConditionSwitch(
 #            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png"),
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Betsy_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Betsy_Sex_Anal_Tip",
             "BetsyX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "BetsyX.Loose > 2", "Betsy_Gape_Anal_Sex",
-            "BetsyX.Loose", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Loose.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Tight.png"),
+            "BetsyX.Loose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Loose.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Tight.png",
             "True", Null(),
             )
 #    contains:
@@ -9516,12 +9516,12 @@ image Betsy_SC_Legs:
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png"),
-            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png",
+            "Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Betsy_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
-            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
+            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Ass.png",
             ),
 
 #        (0,0), ConditionSwitch(
@@ -9602,7 +9602,7 @@ image Betsy_SC_Legs:
 #        (0,0), ConditionSwitch(
 #            #pussy fondling animation
 ##            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Betsy_Sex_Fondle_Pussy",
-#            "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png"),
+#            "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Hand.png",
 #            ),
 
         (0,0), ConditionSwitch(
@@ -9670,12 +9670,12 @@ image Betsy_SC_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Fucking.png",
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Betsy_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "Trigger == 'lick pussy'", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png"),
-                "True", get_cached_image("images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Closed.png"),
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "Trigger == 'lick pussy'", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Open.png",
+                "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pussy_Closed.png",
                 )
     contains:
             # pubes
@@ -9683,11 +9683,11 @@ image Betsy_SC_Pussy:
                 "not BetsyX.Pubes", Null(),
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-#                "Player.Sprite and Player.Cock == 'out'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy'", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
-                "True", get_cached_recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'out'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "BetsyX.Offhand == 'fondle pussy' and BetsyX.Lust > 60", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
+                "True", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Closed.png"),
                 )
 
     #End Betsy Pussy composite

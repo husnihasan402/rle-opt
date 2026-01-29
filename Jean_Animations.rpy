@@ -7,8 +7,8 @@ image Jean_Sprite:
         (160,0), "Jean_Sprite_HairBack",
         (0,0), ConditionSwitch(
             #body
-            "JeanX.ArmPose != 1", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Body2.png"),         # right hand up/left down
-            "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Body1.png"), #if JeanX.Arms == 1   # right Hand on hip/left raised
+            "JeanX.ArmPose != 1", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Body2.png",         # right hand up/left down
+            "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Body1.png", #if JeanX.Arms == 1   # right Hand on hip/left raised
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -48,7 +48,7 @@ image Jean_Sprite:
 #            ),
         (0,0), ConditionSwitch(
             #pubes
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Pubes.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Pubes.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -185,8 +185,8 @@ image Jean_Sprite:
 #            ),
         (0,0), ConditionSwitch(
             #left arm
-            "JeanX.ArmPose != 1", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_2LeftArm.png"), # right hand up/left down
-            "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_1LeftArm.png"), # right Hand on hip/left raised
+            "JeanX.ArmPose != 1", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_2LeftArm.png", # right hand up/left down
+            "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_1LeftArm.png", # right Hand on hip/left raised
             "True", Null(),
             ),
 
@@ -283,7 +283,7 @@ image Jean_Sprite:
         (0,0), ConditionSwitch(
             #left arms toplayer
             "renpy.showing('Jean_HJ_Animation')", Null(),
-            "JeanX.ArmPose == 1", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_1LeftHand.png"), # right Hand on hip/left raised
+            "JeanX.ArmPose == 1", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_1LeftHand.png", # right Hand on hip/left raised
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -306,8 +306,8 @@ image Jean_Sprite:
     #End Left hand stuff
         (0,0), ConditionSwitch(
             #right arms toplayer
-            "JeanX.ArmPose != 1", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_2RightHand.png"), # right hand up/left down
-            "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_1RightHand.png"), # right Hand on hip/left raised
+            "JeanX.ArmPose != 1", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_2RightHand.png", # right hand up/left down
+            "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_1RightHand.png", # right Hand on hip/left raised
             #"True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -483,9 +483,9 @@ image Jean_Sprite_Head:
 #                ),
         (0,0), ConditionSwitch(
                 # Face background plate
-                "JeanX.Blush >= 2", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Head_Blush2.png"),
-                "JeanX.Blush", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Head_Blush.png"),
-                "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Head.png"),
+                "JeanX.Blush >= 2", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Head_Blush2.png",
+                "JeanX.Blush", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Head_Blush.png",
+                "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(#chin spunk
             "'chin' not in JeanX.Spunk or not Player.Male", Null(),
@@ -494,44 +494,44 @@ image Jean_Sprite_Head:
             ),
 #        (0,0), ConditionSwitch(#Mouths
 #            "renpy.showing('Jean_BJ_Animation')", get_cached_image("images/JeanSprite/Jean_Sprite_Mouth_SuckingBJ.png"), #and Speed >= 2
-#            "JeanX.Mouth == 'normal'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
-#            "JeanX.Mouth == 'lipbite'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Lipbite.png"),
+#            "JeanX.Mouth == 'normal'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
+#            "JeanX.Mouth == 'lipbite'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Lipbite.png"),
 #            "JeanX.Mouth == 'sucking'", get_cached_image("images/JeanSprite/Jean_Sprite_Mouth_Sucking.png"),
-#            "JeanX.Mouth == 'kiss'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Kiss.png"),
-#            "JeanX.Mouth == 'sad'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Sad.png"),
-#            "JeanX.Mouth == 'smile'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
-#            "JeanX.Mouth == 'surprised'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Surprised.png"),
-#            "JeanX.Mouth == 'tongue'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue.png"),
-#            "JeanX.Mouth == 'grimace'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
-#            "JeanX.Mouth == 'smirk'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smirk.png"),
-#            "True", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
+#            "JeanX.Mouth == 'kiss'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Kiss.png"),
+#            "JeanX.Mouth == 'sad'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Sad.png"),
+#            "JeanX.Mouth == 'smile'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
+#            "JeanX.Mouth == 'surprised'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Surprised.png"),
+#            "JeanX.Mouth == 'tongue'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue.png"),
+#            "JeanX.Mouth == 'grimace'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
+#            "JeanX.Mouth == 'smirk'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smirk.png"),
+#            "True", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
 #            ),
         (0,0), ConditionSwitch(#Mouths
             "'mouth' in JeanX.Spunk and Player.Male", ConditionSwitch(
-                    "JeanX.Mouth == 'normal'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal_Spunk.png"),
-                    "JeanX.Mouth == 'lipbite'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Lipbite_Spunk.png"),
-                    "JeanX.Mouth == 'sucking' or JeanX.Mouth == 'open'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue_Spunk.png"),
-                    "JeanX.Mouth == 'kiss'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Kiss_Spunk.png"),
-                    "JeanX.Mouth == 'sad'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Sad_Spunk.png"),
-                    "JeanX.Mouth == 'smile'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile_Spunk.png"),
-                    "JeanX.Mouth == 'surprised'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Surprised_Spunk.png"),
-                    "JeanX.Mouth == 'tongue'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue_Spunk.png"),
-                    "JeanX.Mouth == 'grimace'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile_Spunk.png"),
-                    "JeanX.Mouth == 'smirk'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smirk_Spunk.png"),
-                    "True", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal_Spunk.png"),
+                    "JeanX.Mouth == 'normal'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal_Spunk.png"),
+                    "JeanX.Mouth == 'lipbite'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Lipbite_Spunk.png"),
+                    "JeanX.Mouth == 'sucking' or JeanX.Mouth == 'open'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue_Spunk.png"),
+                    "JeanX.Mouth == 'kiss'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Kiss_Spunk.png"),
+                    "JeanX.Mouth == 'sad'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Sad_Spunk.png"),
+                    "JeanX.Mouth == 'smile'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile_Spunk.png"),
+                    "JeanX.Mouth == 'surprised'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Surprised_Spunk.png"),
+                    "JeanX.Mouth == 'tongue'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue_Spunk.png"),
+                    "JeanX.Mouth == 'grimace'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile_Spunk.png"),
+                    "JeanX.Mouth == 'smirk'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smirk_Spunk.png"),
+                    "True", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal_Spunk.png"),
                     ),
             "True", ConditionSwitch(
-                    "JeanX.Mouth == 'normal'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
-                    "JeanX.Mouth == 'lipbite'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Lipbite.png"),
-                    "JeanX.Mouth == 'sucking' or JeanX.Mouth == 'open'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue.png"),
-                    "JeanX.Mouth == 'kiss'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Kiss.png"),
-                    "JeanX.Mouth == 'sad'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Sad.png"),
-                    "JeanX.Mouth == 'smile'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
-                    "JeanX.Mouth == 'surprised'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Surprised.png"),
-                    "JeanX.Mouth == 'tongue'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue.png"),
-                    "JeanX.Mouth == 'grimace'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
-                    "JeanX.Mouth == 'smirk'", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smirk.png"),
-                    "True", get_cached_recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
+                    "JeanX.Mouth == 'normal'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
+                    "JeanX.Mouth == 'lipbite'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Lipbite.png"),
+                    "JeanX.Mouth == 'sucking' or JeanX.Mouth == 'open'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue.png"),
+                    "JeanX.Mouth == 'kiss'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Kiss.png"),
+                    "JeanX.Mouth == 'sad'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Sad.png"),
+                    "JeanX.Mouth == 'smile'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
+                    "JeanX.Mouth == 'surprised'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Surprised.png"),
+                    "JeanX.Mouth == 'tongue'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Tongue.png"),
+                    "JeanX.Mouth == 'grimace'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smile.png"),
+                    "JeanX.Mouth == 'smirk'", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Smirk.png"),
+                    "True", Recolor("Jean", "Lips", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Mouth_Normal.png"),
                     ),
             ),
         (0,0), ConditionSwitch(
@@ -546,28 +546,28 @@ image Jean_Sprite_Head:
         (0,0), ConditionSwitch(
             #brows
             "JeanX.Blush >= 2", ConditionSwitch(
-                    "JeanX.Brows == 'normal'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal2.png"),
-                    "JeanX.Brows == 'angry'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Angry2.png"),
-                    "JeanX.Brows == 'sad'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Sad2.png"),
-                    "JeanX.Brows == 'surprised'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Surprised.png"),
-                    "JeanX.Brows == 'confused'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Confused2.png"),
-                    "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal2.png"),
+                    "JeanX.Brows == 'normal'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal2.png",
+                    "JeanX.Brows == 'angry'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Angry2.png",
+                    "JeanX.Brows == 'sad'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Sad2.png",
+                    "JeanX.Brows == 'surprised'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Surprised.png",
+                    "JeanX.Brows == 'confused'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Confused2.png",
+                    "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal2.png",
                     ),
             "JeanX.Blush", ConditionSwitch(
-                    "JeanX.Brows == 'normal'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal1.png"),
-                    "JeanX.Brows == 'angry'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Angry1.png"),
-                    "JeanX.Brows == 'sad'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Sad1.png"),
-                    "JeanX.Brows == 'surprised'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Surprised.png"),
-                    "JeanX.Brows == 'confused'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Confused1.png"),
-                    "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal1.png"),
+                    "JeanX.Brows == 'normal'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal1.png",
+                    "JeanX.Brows == 'angry'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Angry1.png",
+                    "JeanX.Brows == 'sad'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Sad1.png",
+                    "JeanX.Brows == 'surprised'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Surprised.png",
+                    "JeanX.Brows == 'confused'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Confused1.png",
+                    "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal1.png",
                     ),
             "True", ConditionSwitch(
-                    "JeanX.Brows == 'normal'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal.png"),
-                    "JeanX.Brows == 'angry'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Angry.png"),
-                    "JeanX.Brows == 'sad'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Sad.png"),
-                    "JeanX.Brows == 'surprised'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Surprised.png"),
-                    "JeanX.Brows == 'confused'", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Confused.png"),
-                    "True", get_cached_image("images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal.png"),
+                    "JeanX.Brows == 'normal'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal.png",
+                    "JeanX.Brows == 'angry'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Angry.png",
+                    "JeanX.Brows == 'sad'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Sad.png",
+                    "JeanX.Brows == 'surprised'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Surprised.png",
+                    "JeanX.Brows == 'confused'", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Confused.png",
+                    "True", "images/JeanSprite/[JeanX.skin_image.skin_path]Jean_Sprite_Brows_Normal.png",
                     ),
             ),
         (0,0), "Jean Blink",     #Eyes
@@ -735,8 +735,8 @@ image Jean_Doggy_Body:
             "JeanX.Facing", "Jean_Doggy_Head_Fore",
             "True", "Jean_Doggy_Head",
             ),
-        #(0,0), get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Breast.png"), #Body base
-        (0,0), get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Body.png"), #Body base
+        #(0,0), "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Breast.png", #Body base
+        (0,0), "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #tanktop
             "not JeanX.Chest", Null(),
@@ -792,7 +792,7 @@ image Jean_Doggy_Body:
 #        (-157,-70), "Jean_Doggy_Head",               #Head
         (0,0),"Jean_Doggy_Hair_Over", #front of the hair  #(165,0)     (153,0)
 #        (-157,-70), "Jean_Doggy_Hair_Over_Fore",               #Head (-157,-70)
-#        (0,0), get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hand.png"), #hand
+#        (0,0), "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hand.png", #hand
         )
 #    offset (-190,-40)
     transform_anchor True
@@ -812,26 +812,26 @@ image Jean_Doggy_Head:
     LiveComposite(
         #Head
         (420,750),
-        #(0,0), get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head.png"), #Body base
+        #(0,0), "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head.png", #Body base
         #(0,0), get_cached_image("images/JeanDoggy/Jean_Doggy_TestArm.png"),#Eyes
         (0,0), ConditionSwitch(
             #Head
-            "JeanX.Blush > 1", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head_Blush2.png"),
-            "JeanX.Blush", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head_Blush.png"),
-            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head.png"),
+            "JeanX.Blush > 1", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head_Blush2.png",
+            "JeanX.Blush", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head_Blush.png",
+            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Head.png",
             ),
         (0,0), ConditionSwitch(
             #Mouth
-            "JeanX.Mouth == 'normal'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Normal.png"),
-            "JeanX.Mouth == 'lipbite'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
-            "JeanX.Mouth == 'sucking'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Tongue.png"),
-            "JeanX.Mouth == 'kiss'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Normal.png"),
-            "JeanX.Mouth == 'sad'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Sad.png"),
-            "JeanX.Mouth == 'smile'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
-            "JeanX.Mouth == 'grimace'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
-            "JeanX.Mouth == 'surprised'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Open.png"),
-            "JeanX.Mouth == 'tongue'", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
+            "JeanX.Mouth == 'normal'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Normal.png"),
+            "JeanX.Mouth == 'lipbite'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
+            "JeanX.Mouth == 'sucking'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Tongue.png"),
+            "JeanX.Mouth == 'kiss'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Normal.png"),
+            "JeanX.Mouth == 'sad'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Sad.png"),
+            "JeanX.Mouth == 'smile'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
+            "JeanX.Mouth == 'grimace'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
+            "JeanX.Mouth == 'surprised'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Open.png"),
+            "JeanX.Mouth == 'tongue'", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Tongue.png"),
+            "True", Recolor("Jean", "Lips", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Mouth_Smile.png"),
             ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -854,12 +854,12 @@ image Jean_Doggy_Head:
             ),
         (0,0), ConditionSwitch(
             #Brows
-            #"JeanX.Brows == 'normal'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Normal.png"),
-            "JeanX.Brows == 'angry'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Angry.png"),
-            "JeanX.Brows == 'sad'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Sad.png"),
-            "JeanX.Brows == 'surprised'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Surprised.png"),
-            #"JeanX.Brows == 'confused'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Normal.png"),
-            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Normal.png"),
+            #"JeanX.Brows == 'normal'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Normal.png",
+            "JeanX.Brows == 'angry'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Angry.png",
+            "JeanX.Brows == 'sad'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Sad.png",
+            "JeanX.Brows == 'surprised'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Surprised.png",
+            #"JeanX.Brows == 'confused'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Normal.png",
+            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Brows_Normal.png",
             ),
         (0,0), "Jean Doggy Blink",#Eyes
         (0,0), ConditionSwitch(
@@ -915,17 +915,17 @@ image Jean_Doggy_Head_Fore:
         (420,750),
         (0,0), ConditionSwitch(
 
-            "JeanX.Water or JeanX.Hair == 'wet'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png"),
-            "not Player.Male and 'facial' in JeanX.Spunk", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png"),
-            "JeanX.Hair == 'pony'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Pony_Fore.png"),
-            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Short_Fore.png"),
+            "JeanX.Water or JeanX.Hair == 'wet'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png",
+            "not Player.Male and 'facial' in JeanX.Spunk", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png",
+            "JeanX.Hair == 'pony'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Pony_Fore.png",
+            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Short_Fore.png",
             ),
         (0,0), ConditionSwitch(
 
-            "JeanX.Water or JeanX.Hair == 'wet'", get_cached_recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png"),
-            "not Player.Male and 'facial' in JeanX.Spunk",get_cached_recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png"),
-            "JeanX.Hair == 'pony'", get_cached_recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Pony_Fore.png"),
-            "True", get_cached_recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Short_Fore.png"),
+            "JeanX.Water or JeanX.Hair == 'wet'", Recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png"),
+            "not Player.Male and 'facial' in JeanX.Spunk",Recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Wet_Fore.png"),
+            "JeanX.Hair == 'pony'", Recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Pony_Fore.png"),
+            "True", Recolor("Jean", "Hair", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Hair_Short_Fore.png"),
             ),
         )
     zoom .85#0.9 #.83
@@ -1012,23 +1012,23 @@ image Jean_Doggy_Ass:
             "JeanX.Panties", get_cached_recolor("Jean", "Panties", "images/JeanDoggy/Jean_Doggy_Panties_Green_Back.png"),
             "True", Null(),
             ),
-#        (0,0), get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass.png"), #Ass Base
+#        (0,0), "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass.png", #Ass Base
 
         (0,0), ConditionSwitch(
             #Pussy Composite
-            "Trigger == 'lick pussy'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Open.png"),
-            "JeanX.Legs and not JeanX.Upskirt", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Closed.png"),
-            "JeanX.Panties and not JeanX.PantiesDown", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Closed.png"),
+            "Trigger == 'lick pussy'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Open.png",
+            "JeanX.Legs and not JeanX.Upskirt", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Closed.png",
+            "JeanX.Panties and not JeanX.PantiesDown", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Closed.png",
             "Player.Sprite and Player.Cock == 'in'", ConditionSwitch(
-                    "Speed > 2", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),#Speed 3
-                    "Speed > 1", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),#Speed 2
-                    "Speed", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),      #Speed 1
-                    "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),              #Speed 0
+                    "Speed > 2", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",#Speed 3
+                    "Speed > 1", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",#Speed 2
+                    "Speed", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",      #Speed 1
+                    "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",              #Speed 0
                     ),
-            "'dildo pussy' in (Trigger,Trigger2,JeanX.Offhand)", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),
-            "'fondle pussy' in (Trigger,Trigger2,JeanX.Offhand)", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),
-            "Trigger == 'insert pussy'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png"),
-            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Closed.png"),
+            "'dildo pussy' in (Trigger,Trigger2,JeanX.Offhand)", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",
+            "'fondle pussy' in (Trigger,Trigger2,JeanX.Offhand)", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",
+            "Trigger == 'insert pussy'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Fucking.png",
+            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Ass_Closed.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -1036,17 +1036,17 @@ image Jean_Doggy_Ass:
             "JeanX.Legs and not JeanX.Upskirt", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
             "JeanX.Panties and not JeanX.PantiesDown", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
-                    "Speed > 2", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png"), #Speed 3
-                    "Speed > 1", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png"),  #Speed 2
-                    "Speed", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png"),      #Speed 1
+                    "Speed > 2", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png", #Speed 3
+                    "Speed > 1", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png",  #Speed 2
+                    "Speed", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png",      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
 #            "Action == 'plug'", "Jean_Anal_Plug",
 #            "Action == 'plug'", "test_case",
 #            "JeanX.Legs and not JeanX.Upskirt", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
 #            "JeanX.Panties and not JeanX.PantiesDown", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
-            "'insert ass' in (Trigger,Trigger2,JeanX.Offhand)", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png"),
-            "'dildo anal' in (Trigger,Trigger2,JeanX.Offhand)", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,JeanX.Offhand)", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png",
+            "'dildo anal' in (Trigger,Trigger2,JeanX.Offhand)", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Anal_FullBase.png",
             "JeanX.Loose > 2", "Jean_Gape_Anal",
             "JeanX.Loose", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
             "True", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Tight.png"),
@@ -1086,12 +1086,12 @@ image Jean_Doggy_Ass:
 #                    "Speed", "Jean_Pussy_Heading",      #Speed 1
 #                    "True", "Jean_Pussy_Static",              #Speed 0
 #                    ),
-#            "Trigger == 'lick pussy'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Open.png"),
-#            "JeanX.Legs and not JeanX.Upskirt", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Closed.png"),
-#            "JeanX.Panties and not JeanX.PantiesDown", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Closed.png"),
+#            "Trigger == 'lick pussy'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Open.png",
+#            "JeanX.Legs and not JeanX.Upskirt", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Closed.png",
+#            "JeanX.Panties and not JeanX.PantiesDown", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Closed.png",
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Jean_Pussy_Fingering",
 #            "Trigger == 'dildo pussy'", "Jean_Pussy_Fucking2",
-#            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Closed.png"),
+#            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_Closed.png",
 #            ),
 
 
@@ -1106,16 +1106,16 @@ image Jean_Doggy_Ass:
         (0,0), ConditionSwitch(
             #pubes
             "not JeanX.Pubes", Null(),
-#            "Player.Sprite and Player.Cock == 'in'", Null(), # get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
+#            "Player.Sprite and Player.Cock == 'in'", Null(), # Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
             "JeanX.Legs == 'pants' and not JeanX.Upskirt", get_cached_image("images/RogueDoggy/Rogue_Doggy_Pubes_Panties.png"),
-            "JeanX.PantiesDown and Trigger == 'lick pussy'", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Open.png"),
-            "JeanX.PantiesDown", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes.png"),
+            "JeanX.PantiesDown and Trigger == 'lick pussy'", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Open.png"),
+            "JeanX.PantiesDown", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes.png"),
             "JeanX.Panties", get_cached_image("images/RogueDoggy/Rogue_Doggy_Pubes_Panties.png"),
             "JeanX.Hose and JeanX.Hose != 'stockings' and JeanX.Hose != 'ripped pantyhose'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Pubes_Panties.png"),
-            "Trigger == 'lick pussy'", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Open.png"),
-            "True", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes.png"),
+            "Trigger == 'lick pussy'", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Open.png"),
+            "True", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes.png"),
             ),
         (0,0), ConditionSwitch(
             #Pussy Piercings
@@ -1279,7 +1279,7 @@ image Jean_Doggy_Shins:             #fix // // // // // // fix // // // // // //
     contains:
             #hose legs
         ConditionSwitch(
-            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_Legs.png")
+            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_Legs.png"
             )
     contains:
             #hose legs
@@ -1287,8 +1287,8 @@ image Jean_Doggy_Shins:             #fix // // // // // // fix // // // // // //
             "JeanX.Hose == 'stockings'", get_cached_recolor("Jean", "Hose", "images/JeanDoggy/Jean_Doggy_Feet_HoseBack.png"),
             "JeanX.Hose == 'stockings and garterbelt'", get_cached_recolor("Jean", "Hose", "images/JeanDoggy/Jean_Doggy_Feet_HoseBack.png"),
             "JeanX.Hose == 'pantyhose'", get_cached_recolor("Jean", "Hose", "images/JeanDoggy/Jean_Doggy_Feet_HoseBack.png"),
-            "JeanX.Hose == 'ripped pantyhose'", get_cached_recolor("Jean", "Hose", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_HoseBack_Holed.png"),
-            "True", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_Legs.png")
+            "JeanX.Hose == 'ripped pantyhose'", Recolor("Jean", "Hose", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_HoseBack_Holed.png"),
+            "True", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_Legs.png"
             )
 
     contains:
@@ -1313,7 +1313,7 @@ image Jean_Doggy_Shins:             #fix // // // // // // fix // // // // // //
 #            "JeanX.Hose == 'stockings'", get_cached_image("images/JeanDoggy/Jean_Doggy_Feet_HoseFeet.png"),
 #            "JeanX.Hose == 'stockings and garterbelt'", get_cached_image("images/JeanDoggy/Jean_Doggy_Feet_HoseFeet.png"),
 #            "JeanX.Hose == 'pantyhose'", get_cached_image("images/JeanDoggy/Jean_Doggy_Feet_HoseFeet.png"),
-#            "JeanX.Hose == 'ripped pantyhose'", get_cached_image("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_HoseBack_Holed.png"),
+#            "JeanX.Hose == 'ripped pantyhose'", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Feet_HoseBack_Holed.png",
 #            "True", Null(),
 #            )
 #    pos (0,0)
@@ -1500,7 +1500,7 @@ image Jean_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
             "True", Null(),
             )
         subpixel True
@@ -1535,7 +1535,7 @@ image Jean_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Jean_Pussy_Moving"
     contains:
         #Base
-        get_cached_alphamask("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1581,7 +1581,7 @@ image Jean_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
             "True", Null(),
             )
         subpixel True
@@ -1650,7 +1650,7 @@ image Jean_Pussy_Hole_Mask:
     # This is the alpha used for the little flap in the heading animation "Jean_Pussy_Heading"
     contains:
         #Base
-        get_cached_alphamask("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1694,7 +1694,7 @@ image Jean_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
             "True", Null(),
             )
         subpixel True
@@ -1767,7 +1767,7 @@ image Jean_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
             "True", Null(),
             )
     contains:
@@ -1806,7 +1806,7 @@ image Jean_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanDoggy/[JeanX.skin_image.skin_path]Jean_Doggy_Pubes_Fucked.png"),
             "True", Null(),
             )
     contains:
@@ -2592,7 +2592,7 @@ image Jean_Sex_Legs_S:
     contains:
             # pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Sex.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Sex.png"),
             "True", Null(),
             )
     contains:
@@ -2690,8 +2690,8 @@ image Jean_Sex_Legs_A:
     contains:
             # body
         ConditionSwitch(
-            "Trigger == 'lick pussy'", get_cached_image("images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Legs_Lick.png"),
-            "True", get_cached_image("images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Legs_Anal.png"),
+            "Trigger == 'lick pussy'", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Legs_Lick.png",
+            "True", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Legs_Anal.png",
             )
     contains:
             # wetness
@@ -2709,8 +2709,8 @@ image Jean_Sex_Legs_A:
             # pubes
         ConditionSwitch(
             "not JeanX.Pubes", Null(),
-            "Trigger == 'lick pussy'", get_cached_recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Lick.png"),
-            "True", get_cached_recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Anal.png"),
+            "Trigger == 'lick pussy'", Recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Lick.png"),
+            "True", Recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Anal.png"),
             )
     contains:
             # Bra clothing layer
@@ -3708,9 +3708,9 @@ image Jean_BJ_Head:                                                             
 #                    "JeanX.Blush", get_cached_image("images/JeanBJFace/Jean_BJ_FaceClosed_Blush.png"),
 #                    "True", get_cached_image("images/JeanBJFace/Jean_BJ_FaceClosed.png"),
 #                    ),
-            "JeanX.Blush > 1", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Head_Blush2.png"),
-            "JeanX.Blush", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Head_Blush1.png"),
-            "True", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Head_Blush0.png")
+            "JeanX.Blush > 1", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Head_Blush2.png",
+            "JeanX.Blush", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Head_Blush1.png",
+            "True", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Head_Blush0.png"
             ),
         (0,0), ConditionSwitch(
             #Mouth
@@ -3721,25 +3721,25 @@ image Jean_BJ_Head:                                                             
 #                    ),
             "Speed and renpy.showing('Jean_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),  #licking
+                    "Speed == 1", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png"), #sucking
-                    "Speed == 4", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png"), #deepthroat
-                    "Speed == 6", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png"), #cumming
+                    "Speed == 3", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png"), #sucking
+                    "Speed == 4", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png"), #deepthroat
+                    "Speed == 6", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png"), #cumming
                     ),
-            "renpy.showing('Jean_CUN_Animation') and Speed", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
-            "Speed == 3 and renpy.showing('Jean_TJ_Animation')", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
-            "JeanX.Mouth == 'normal'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
-            "JeanX.Mouth == 'lipbite'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Lipbite.png"),
-            "JeanX.Mouth == 'sucking'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
-            "JeanX.Mouth == 'kiss'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Kiss.png"),
-            "JeanX.Mouth == 'sad'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sad.png"),
-            "JeanX.Mouth == 'smile'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
-            "JeanX.Mouth == 'smirk'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smirk.png"),
-            "JeanX.Mouth == 'grimace'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
-            "JeanX.Mouth == 'surprised'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Kiss.png"),
-            "JeanX.Mouth == 'tongue'", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
+            "renpy.showing('Jean_CUN_Animation') and Speed", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
+            "Speed == 3 and renpy.showing('Jean_TJ_Animation')", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
+            "JeanX.Mouth == 'normal'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
+            "JeanX.Mouth == 'lipbite'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Lipbite.png"),
+            "JeanX.Mouth == 'sucking'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
+            "JeanX.Mouth == 'kiss'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Kiss.png"),
+            "JeanX.Mouth == 'sad'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sad.png"),
+            "JeanX.Mouth == 'smile'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
+            "JeanX.Mouth == 'smirk'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smirk.png"),
+            "JeanX.Mouth == 'grimace'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
+            "JeanX.Mouth == 'surprised'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Kiss.png"),
+            "JeanX.Mouth == 'tongue'", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Tongue.png"),
+            "True", Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Smile.png"),
             ),
         (428,605), ConditionSwitch(
             # Heading Mouth
@@ -3786,12 +3786,12 @@ image Jean_BJ_Head:                                                             
 
         (0,0), ConditionSwitch(
             #Brows
-            "JeanX.Brows == 'normal'", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Normal.png"),
-            "JeanX.Brows == 'angry'", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Angry.png"),
-            "JeanX.Brows == 'sad'", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Sad.png"),
-            "JeanX.Brows == 'surprised'", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Surprised.png"),
-            "JeanX.Brows == 'confused'", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Confused.png"),
-            "True", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Normal.png"),
+            "JeanX.Brows == 'normal'", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Normal.png",
+            "JeanX.Brows == 'angry'", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Angry.png",
+            "JeanX.Brows == 'sad'", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Sad.png",
+            "JeanX.Brows == 'surprised'", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Surprised.png",
+            "JeanX.Brows == 'confused'", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Confused.png",
+            "True", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Brows_Normal.png",
             ),
         (0,0), "Jean BJ Blink",
             #Eyes
@@ -3799,7 +3799,7 @@ image Jean_BJ_Head:                                                             
             #Hair overlay
             "JeanX.Water or JeanX.Hair == 'wet'", get_cached_recolor("Jean", "Hair", "images/JeanBJFace/Jean_BJ_Hair_Wet_Over.png"),
             "not Player.Male and 'facial' in JeanX.Spunk",get_cached_recolor("Jean", "Hair", "images/JeanBJFace/Jean_BJ_Hair_Wet_Over.png"),
-            "JeanX.Hair == 'pony'", get_cached_recolor("Jean", "Hair", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Hair_Pony_Over.png"),
+            "JeanX.Hair == 'pony'", Recolor("Jean", "Hair", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Hair_Pony_Over.png"),
             "True", get_cached_recolor("Jean", "Hair", "images/JeanBJFace/Jean_BJ_Hair_Short_Over.png"),
             ),
 #        (0,0), ConditionSwitch(
@@ -3851,7 +3851,7 @@ image Jean BJ Blink:
 image Jean_BJ_MouthHeading:
     #the mouth used for the heading animations
     contains:
-        get_cached_recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png")
+        Recolor("Jean", "Lips", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Mouth_Sucking.png")
         zoom 1.4
         anchor (0.50,0.65)  #(0.50,0.65)
     contains:
@@ -4361,7 +4361,7 @@ image Jean_TJ_HairTop:
             ConditionSwitch(
                     "JeanX.Water or JeanX.Hair == 'wet'", get_cached_recolor("Jean", "Hair", "images/JeanBJFace/Jean_BJ_Hair_Wet_Over.png"),
                     "not Player.Male and 'facial' in JeanX.Spunk",get_cached_recolor("Jean", "Hair", "images/JeanBJFace/Jean_BJ_Hair_Wet_Over.png"),
-                    "JeanX.Hair == 'pony'", get_cached_recolor("Jean", "Hair", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Hair_Pony_Over.png"),
+                    "JeanX.Hair == 'pony'", Recolor("Jean", "Hair", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_BJ_Hair_Pony_Over.png"),
                     "True", get_cached_recolor("Jean", "Hair", "images/JeanBJFace/Jean_BJ_Hair_Short_Over.png"),
                     )
 #            zoom 1.4
@@ -4426,8 +4426,8 @@ image Jean_TJ_TitR:
 
                 ConditionSwitch(
                     # right breast overlay
-                    "not renpy.showing('Jean_TJ_Animation')", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_TJ_TitR.png"),
-                    "True", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_TJ_TitRTJ.png"),
+                    "not renpy.showing('Jean_TJ_Animation')", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_TJ_TitR.png",
+                    "True", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_TJ_TitRTJ.png",
                     )
             contains:
                 ConditionSwitch(
@@ -4488,7 +4488,7 @@ image Jean_TJ_Tits:
             contains:
                 ConditionSwitch(
                     # right breast overlay
-                    "renpy.showing('Jean_TJ_Animation')", get_cached_image("images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_TJ_TitRO.png"),
+                    "renpy.showing('Jean_TJ_Animation')", "images/JeanBJFace/[JeanX.skin_image.skin_path]Jean_TJ_TitRO.png",
                     "True",  Null(),
                     )
             contains:
@@ -6209,7 +6209,7 @@ image Jean_SC_Legs:
     contains:
             # pubes
         ConditionSwitch(
-            "JeanX.Pubes", get_cached_recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Sex.png"),
+            "JeanX.Pubes", Recolor("Jean", "Pubes", "images/JeanSex/[JeanX.skin_image.skin_path]Jean_Sex_Pubes_Sex.png"),
             "True", Null(),
             )
     contains:

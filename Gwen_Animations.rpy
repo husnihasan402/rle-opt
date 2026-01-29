@@ -59,8 +59,8 @@ image Gwen_Sprite:
 
         (0,0), ConditionSwitch(
             #body
-            "GwenX.ArmPose != 1", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Body2.png"),         # right hand up/left down
-            "True", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Body1.png"), #if GwenX.Arms == 1   # right Hand on hip/left raised
+            "GwenX.ArmPose != 1", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Body2.png",         # right hand up/left down
+            "True", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Body1.png", #if GwenX.Arms == 1   # right Hand on hip/left raised
             ),
 
         (0,0), ConditionSwitch(
@@ -300,27 +300,27 @@ image Gwen_Sprite:
 
         (0,0), ConditionSwitch(
             #Arms 1 upper layer
-            "GwenX.ArmPose == 1", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top.png"),        #If she's using arm pose 1, right arm high
-            "True", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top.png"),  #if GwenX.Arms ==2                                        #If she's using arm pose 2, Left arm high
+            "GwenX.ArmPose == 1", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top.png",        #If she's using arm pose 1, right arm high
+            "True", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top.png",  #if GwenX.Arms ==2                                        #If she's using arm pose 2, Left arm high
             ),
         (0,0), ConditionSwitch(
             #Arms 1 upper layer
 
-            "GwenX.Over == 'open suit' and GwenX.ArmPose == 1", get_cached_recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top_Suit_Up.png"),                                  #no gloved 1
-            "GwenX.Over == 'open suit'", get_cached_recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top_Suit_Up.png"),
+            "GwenX.Over == 'open suit' and GwenX.ArmPose == 1", Recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top_Suit_Up.png"),                                  #no gloved 1
+            "GwenX.Over == 'open suit'", Recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top_Suit_Up.png"),
 
             "GwenX.Uptop and GwenX.Over == 'suit' and GwenX.ArmPose == 1 and GwenX.Arms", get_cached_recolor("Gwen", "Over", "images/GwenSprite/Gwen_Sprite_Arms1_Top_SuitG_Up.png"), #gloved 1
-            "GwenX.Uptop and GwenX.Over == 'suit' and GwenX.ArmPose == 1", get_cached_recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top_Suit_Up.png"),                 #no gloved 1
+            "GwenX.Uptop and GwenX.Over == 'suit' and GwenX.ArmPose == 1", Recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top_Suit_Up.png"),                 #no gloved 1
             "GwenX.Uptop and GwenX.Over == 'suit' and GwenX.Arms", get_cached_recolor("Gwen", "Over", "images/GwenSprite/Gwen_Sprite_Arms2_Top_SuitG_Up.png"),                        #gloved 2
-            "GwenX.Uptop and GwenX.Over == 'suit'", get_cached_recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top_Suit_Up.png"),
+            "GwenX.Uptop and GwenX.Over == 'suit'", Recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top_Suit_Up.png"),
 
             "GwenX.Over == 'suit' and GwenX.ArmPose == 1 and GwenX.Arms", get_cached_recolor("Gwen", "Over", "images/GwenSprite/Gwen_Sprite_Arms1_Top_SuitG.png"),                   #gloved 1
-            "GwenX.Over == 'suit' and GwenX.ArmPose == 1", get_cached_recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top_Suit.png"),                                  #no gloved 1
+            "GwenX.Over == 'suit' and GwenX.ArmPose == 1", Recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top_Suit.png"),                                  #no gloved 1
             "GwenX.Over == 'suit' and GwenX.Arms", get_cached_recolor("Gwen", "Over", "images/GwenSprite/Gwen_Sprite_Arms2_Top_SuitG.png"),                                          #gloved 2
-            "GwenX.Over == 'suit'", get_cached_recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top_Suit.png"),                                                         #no gloved 2
+            "GwenX.Over == 'suit'", Recolor("Gwen", "Over", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top_Suit.png"),                                                         #no gloved 2
 
-            "GwenX.ArmPose == 1", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top.png"),        #If she's using arm pose 1, right arm high
-            "True", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top.png"),  #if GwenX.Arms ==2                                        #If she's using arm pose 2, Left arm high
+            "GwenX.ArmPose == 1", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms1_Top.png",        #If she's using arm pose 1, right arm high
+            "True", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Arms2_Top.png",  #if GwenX.Arms ==2                                        #If she's using arm pose 2, Left arm high
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -511,8 +511,8 @@ image Gwen_Sprite_Head:
 #                "renpy.showing('Gwen_SexSprite') and GwenX.Blush >= 2", get_cached_image("images/GwenSprite/Gwen_Sprite_Head_Sex_Blush2.png"),
 #                "renpy.showing('Gwen_SexSprite') and GwenX.Blush", get_cached_image("images/GwenSprite/Gwen_Sprite_Head_Sex_Blush1.png"),
 #                "renpy.showing('Gwen_SexSprite')", get_cached_image("images/GwenSprite/Gwen_Sprite_Head_Sex.png"),
-                "GwenX.Hat == 'mask' and GwenX.Blush", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head_Blush.png"),
-                "GwenX.Hat == 'mask'", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head.png"),
+                "GwenX.Hat == 'mask' and GwenX.Blush", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head_Blush.png",
+                "GwenX.Hat == 'mask'", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head.png",
                 "True", Null(),
                 ),
         (0,0), ConditionSwitch(
@@ -520,11 +520,11 @@ image Gwen_Sprite_Head:
 #                "renpy.showing('Gwen_SexSprite') and GwenX.Blush >= 2", get_cached_image("images/GwenSprite/Gwen_Sprite_Head_Sex_Blush2.png"),
 #                "renpy.showing('Gwen_SexSprite') and GwenX.Blush", get_cached_image("images/GwenSprite/Gwen_Sprite_Head_Sex_Blush1.png"),
 #                "renpy.showing('Gwen_SexSprite')", get_cached_image("images/GwenSprite/Gwen_Sprite_Head_Sex.png"),
-                "GwenX.Hat == 'mask' and GwenX.Blush", get_cached_recolor("Gwen", "Hat", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Mask_Blush.png"),
-                "GwenX.Hat == 'mask'", get_cached_recolor("Gwen", "Hat", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Mask.png"),
-                "GwenX.Blush >= 2", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head_Blush2.png"),
-                "GwenX.Blush", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head_Blush.png"),
-                "True", get_cached_image("images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head.png"),
+                "GwenX.Hat == 'mask' and GwenX.Blush", Recolor("Gwen", "Hat", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Mask_Blush.png"),
+                "GwenX.Hat == 'mask'", Recolor("Gwen", "Hat", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Mask.png"),
+                "GwenX.Blush >= 2", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head_Blush2.png",
+                "GwenX.Blush", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head_Blush.png",
+                "True", "images/GwenSprite/[GwenX.skin_image.skin_path]Gwen_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -755,7 +755,7 @@ image Gwen_Doggy_Body:
             ),
         #(0,0), get_cached_image("images/GwenDoggy/Gwen_Doggy_HeadRef.png"),               #Head
 
-        (0,0), get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Body.png"), #Body base
+        (0,0), "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #tanktop
             "not GwenX.Chest", Null(),
@@ -813,7 +813,7 @@ image Gwen_Doggy_Head:
     LiveComposite(
         #Head
         (420,525),
-        #(0,0), get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png"), #Body base
+        #(0,0), "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png", #Body base
         #(0,0), get_cached_image("images/GwenDoggy/Gwen_Doggy_TestArm.png"),#Eyes
         (0,0), ConditionSwitch(
             #Hair back
@@ -825,21 +825,21 @@ image Gwen_Doggy_Head:
         (0,0), ConditionSwitch(
             #Head
             #"GwenX.Blush > 1", get_cached_image("images/GwenDoggy/Gwen_Doggy_Head_Blush2.png"),
-            "GwenX.Blush", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head_Blush.png"),
-            "True", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png"),
+            "GwenX.Blush", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head_Blush.png",
+            "True", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png",
             ),
         (0,0), ConditionSwitch(
             #Mouth
-            "GwenX.Mouth == 'normal'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
-            "GwenX.Mouth == 'lipbite'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
-            "GwenX.Mouth == 'sucking'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
-            "GwenX.Mouth == 'kiss'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
-            "GwenX.Mouth == 'sad'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
-            "GwenX.Mouth == 'smile'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
-            "GwenX.Mouth == 'grimace'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
-            "GwenX.Mouth == 'surprised'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
-            "GwenX.Mouth == 'tongue'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
+            "GwenX.Mouth == 'normal'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
+            "GwenX.Mouth == 'lipbite'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
+            "GwenX.Mouth == 'sucking'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
+            "GwenX.Mouth == 'kiss'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
+            "GwenX.Mouth == 'sad'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
+            "GwenX.Mouth == 'smile'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
+            "GwenX.Mouth == 'grimace'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
+            "GwenX.Mouth == 'surprised'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
+            "GwenX.Mouth == 'tongue'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Tongue.png"),
+            "True", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
@@ -934,27 +934,27 @@ image Gwen_Doggy_Head_Mask:
     LiveComposite(
         #Head
         (420,525),
-        #(0,0), get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png"), #Body base
+        #(0,0), "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png", #Body base
         #(0,0), get_cached_image("images/GwenDoggy/Gwen_Doggy_TestArm.png"),#Eyes
 
         (0,0), ConditionSwitch(
             #Head
             #"GwenX.Blush > 1", get_cached_image("images/GwenDoggy/Gwen_Doggy_Head_Blush2.png"),
-            "GwenX.Blush", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head_Blush.png"),
-            "True", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png"),
+            "GwenX.Blush", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head_Blush.png",
+            "True", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Head.png",
             ),
         (0,0), ConditionSwitch(
             #Mouth
-            "GwenX.Mouth == 'normal'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
-            "GwenX.Mouth == 'lipbite'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
-            "GwenX.Mouth == 'sucking'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
-            "GwenX.Mouth == 'kiss'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
-            "GwenX.Mouth == 'sad'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
-            "GwenX.Mouth == 'smile'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
-            "GwenX.Mouth == 'grimace'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
-            "GwenX.Mouth == 'surprised'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
-            "GwenX.Mouth == 'tongue'", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
+            "GwenX.Mouth == 'normal'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
+            "GwenX.Mouth == 'lipbite'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
+            "GwenX.Mouth == 'sucking'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
+            "GwenX.Mouth == 'kiss'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
+            "GwenX.Mouth == 'sad'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Sad.png"),
+            "GwenX.Mouth == 'smile'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
+            "GwenX.Mouth == 'grimace'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Smile.png"),
+            "GwenX.Mouth == 'surprised'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Open.png"),
+            "GwenX.Mouth == 'tongue'", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Tongue.png"),
+            "True", Recolor("Gwen", "Lips", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Mouth_Normal.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
@@ -1099,14 +1099,14 @@ image Gwen_Doggy_Ass:
 
         (0,0), ConditionSwitch(
             #Pussy base
-            "GwenX.Legs and not GwenX.Upskirt", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Closed.png"),
-            "GwenX.Panties and not GwenX.PantiesDown", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Closed.png"),
-            "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png"),
-            "Trigger == 'lick pussy'", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Open.png"),
-            "'dildo pussy' in (Trigger,Trigger2,GwenX.Offhand)", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png"),#Null(),
-            "'fondle pussy' in (Trigger,Trigger2,GwenX.Offhand)", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png"),#Null(),
-            "Trigger == 'insert pussy'", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png"),#Null(),
-            "True", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Closed.png"),
+            "GwenX.Legs and not GwenX.Upskirt", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Closed.png",
+            "GwenX.Panties and not GwenX.PantiesDown", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Closed.png",
+            "Player.Sprite and Player.Cock == 'in'", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png",
+            "Trigger == 'lick pussy'", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Open.png",
+            "'dildo pussy' in (Trigger,Trigger2,GwenX.Offhand)", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png",#Null(),
+            "'fondle pussy' in (Trigger,Trigger2,GwenX.Offhand)", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png",#Null(),
+            "Trigger == 'insert pussy'", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Fucking.png",#Null(),
+            "True", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Ass_Closed.png",
             ),
         (0,0), ConditionSwitch(
             #ass red
@@ -1116,11 +1116,11 @@ image Gwen_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Anus base
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
-                    "Speed", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Anal_FullBase.png"),      #Speed 1
+                    "Speed", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Anal_FullBase.png",      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
-            "'insert ass' in (Trigger,Trigger2,GwenX.Offhand)", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Anal_FullBase.png"),
-            "'dildo anal' in (Trigger,Trigger2,GwenX.Offhand)", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,GwenX.Offhand)", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Anal_FullBase.png",
+            "'dildo anal' in (Trigger,Trigger2,GwenX.Offhand)", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Anal_FullBase.png",
             "GwenX.Loose > 2", "Gwen_Gape_Anal",    #intentional
             "GwenX.Loose", get_cached_image("images/GwenDoggy/Gwen_Doggy_Asshole_Loose.png"),
             "True", get_cached_image("images/GwenDoggy/Gwen_Doggy_Asshole_Tight.png"),
@@ -1337,18 +1337,18 @@ image Gwen_Doggy_Shins:             #fix // // // // // // fix // // // // // //
     contains:
             #hose legs
         ConditionSwitch(
-            "True", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet.png"),
+            "True", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet.png",
             )
     contains:
             #hose legs
         ConditionSwitch(
-            "GwenX.Hose == 'garterbelt'", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet.png"),
-            "GwenX.Hose == 'ripped pantyhose'", get_cached_recolor("Gwen", "Hose", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet_Hose_Holed.png"),
-            "GwenX.Hose == 'ripped tights'", get_cached_recolor("Gwen", "Hose", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet_Tights_Holed.png"),
-            "GwenX.Hose == 'tights'", get_cached_recolor("Gwen", "Hose", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet_Tights.png"),
+            "GwenX.Hose == 'garterbelt'", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet.png",
+            "GwenX.Hose == 'ripped pantyhose'", Recolor("Gwen", "Hose", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet_Hose_Holed.png"),
+            "GwenX.Hose == 'ripped tights'", Recolor("Gwen", "Hose", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet_Tights_Holed.png"),
+            "GwenX.Hose == 'tights'", Recolor("Gwen", "Hose", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet_Tights.png"),
             "GwenX.Hose == 'socks'", get_cached_image("images/GwenDoggy/Gwen_Doggy_Feet_Socks.png"),
             "GwenX.Hose", get_cached_recolor("Gwen", "Hose", "images/GwenDoggy/Gwen_Doggy_Feet_Hose.png"),
-            "True", get_cached_image("images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet.png"),
+            "True", "images/GwenDoggy/[GwenX.skin_image.skin_path]Gwen_Doggy_Feet.png",
             )
     contains:
         #boots
@@ -2462,7 +2462,7 @@ image Gwen_Sex_Body:
 #            "GwenX.Over == 'black shirt' and GwenX.Uptop", get_cached_image("images/GwenSex/Gwen_Sex_Over_Black_Back.png"),
 #            "True", Null(),
 #            ),
-        (0,0), get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Body.png"),
+        (0,0), "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Body.png",
 #        (0,0), get_cached_image("images/GwenSex/Gwen_Sex_Headref.png"),
 
         (0,0), ConditionSwitch(
@@ -2609,16 +2609,16 @@ image Gwen_Sex_Legs:
             ),
         (0,0), ConditionSwitch(
             #Legs
-            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png"),
-            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png"),
+            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png",
+            "Player.Sprite and Player.Cock == 'in' and Speed", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Gwen_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png"),
-            "True", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png",
+            "True", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png",
             ),
 
         (0,0), ConditionSwitch(
-            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Anus_Cover.png"),
+            "Player.Sprite and Player.Cock == 'anal'", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Anus_Cover.png",
             "True", Null(),
             ),
 
@@ -2772,7 +2772,7 @@ image Gwen_Sex_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Gwen_Sex_Legs
         (1120,840),
-#        (0,0), get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png"),                                                         #Legs Base
+#        (0,0), "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png",                                                         #Legs Base
 
 
         (0,0), ConditionSwitch(
@@ -2790,21 +2790,21 @@ image Gwen_Sex_Feet:
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "True", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png"),   #Null(),
+            "True", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png",   #Null(),
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "(GwenX.Hose == 'pantyhose' or GwenX.Hose == 'ripped pantyhose') and GwenX.Panties and GwenX.PantiesDown", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png"),
-            "(GwenX.Hose == 'tights' or GwenX.Hose == 'ripped tights') and GwenX.Panties and GwenX.PantiesDown", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png"),
+            "(GwenX.Hose == 'pantyhose' or GwenX.Hose == 'ripped pantyhose') and GwenX.Panties and GwenX.PantiesDown", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png",
+            "(GwenX.Hose == 'tights' or GwenX.Hose == 'ripped tights') and GwenX.Panties and GwenX.PantiesDown", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png",
             "GwenX.Hose == 'socks'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/Gwen_Sex_Feet_Socks.png"),
             "GwenX.Hose == 'ripped pantyhose'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/Gwen_Sex_Feet_Holed.png"),
-            "GwenX.Hose == 'ripped tights'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet_Tights_Holed.png"),
-            "GwenX.Hose == 'tights'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet_Tights.png"),
+            "GwenX.Hose == 'ripped tights'", Recolor("Gwen", "Hose", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet_Tights_Holed.png"),
+            "GwenX.Hose == 'tights'", Recolor("Gwen", "Hose", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet_Tights.png"),
 #            "GwenX.Hose and GwenX.Hose != 'garterbelt' and GwenX.Hose != 'pantyhose'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/Gwen_Sex_Feet_Hose.png"),
-#            "GwenX.Hose == 'ripped pantyhose' and GwenX.Panties and GwenX.PantiesDown", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png"),
+#            "GwenX.Hose == 'ripped pantyhose' and GwenX.Panties and GwenX.PantiesDown", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png",
             "GwenX.Hose and GwenX.Hose != 'garterbelt'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/Gwen_Sex_Feet_Hose.png"),
 #            "GwenX.Hose == 'pantyhose'", get_cached_recolor("Gwen", "Hose", "images/GwenSex/Gwen_Sex_Feet_Hose.png"),
-            "True", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png"),   #Null(),
+            "True", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Feet.png",   #Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
@@ -4154,7 +4154,7 @@ image Gwen_BJ_Backdrop:
     LiveComposite(
         (800,950),       #550,950
 #        (-10,-90), "Gwen_BJ_HairBack", #(75,-10)
-        (0,0), get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Body.png"),
+        (0,0), "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Body.png",
 
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -4250,18 +4250,18 @@ image Gwen_BJ_Head:                                                             
 
         (0,0), ConditionSwitch(
             # Basic Face layer
-            "GwenX.Blush == 2 and renpy.showing('Gwen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush2.png"),
-            "GwenX.Blush and renpy.showing('Gwen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush.png"),
-            "renpy.showing('Gwen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over.png"),
+            "GwenX.Blush == 2 and renpy.showing('Gwen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush2.png",
+            "GwenX.Blush and renpy.showing('Gwen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush.png",
+            "renpy.showing('Gwen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over.png",
 #            "True", get_cached_image("images/GwenBJFace/Gwen_BJ_Head_Sucking_Overlay.png"),
 
-            "GwenX.Blush == 2", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush2.png"),
-            "GwenX.Blush", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush.png"),
-            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over.png")
+            "GwenX.Blush == 2", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush2.png",
+            "GwenX.Blush", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over_Blush.png",
+            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Sucking_Over.png"
 
-#            "GwenX.Blush == 2", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush2.png"),
-#            "GwenX.Blush", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush.png"),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head.png")
+#            "GwenX.Blush == 2", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush2.png",
+#            "GwenX.Blush", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush.png",
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head.png"
             ),
 
         (3,3), ConditionSwitch(
@@ -4436,14 +4436,14 @@ image Gwen_BJ_Head_Under:
     LiveComposite(
         (695,695),
 #        (0,0), get_cached_image("images/GwenBJFace/Gwen_BJ_Head_Sucking_Under.png"),
-        (0,0), get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head.png"),
+        (0,0), "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head.png",
 #         (0,0), ConditionSwitch(
 #            # Basic Face layer
 #            "Speed and renpy.showing('Gwen_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5", get_cached_image("images/GwenBJFace/Gwen_BJ_Head_Sucking_Overlay.png"),
 ##            "True", get_cached_image("images/GwenBJFace/Gwen_BJ_Head_Sucking_Overlay.png"),
-#            "GwenX.Blush == 2", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush2.png"),
-#            "GwenX.Blush", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush.png"),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head.png")
+#            "GwenX.Blush == 2", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush2.png",
+#            "GwenX.Blush", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head_Blush.png",
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Head.png"
 #            ),
 
          (0,0), ConditionSwitch(
@@ -4539,7 +4539,7 @@ image Gwen_BJ_Heading_Mouth:
 #image Gwen_BJ_Heading_Overlay:
 #    LiveComposite(
 #        (695,695),
-#        (0,0), get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Mouth_Open_Overlay.png"),
+#        (0,0), "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_BJ_Mouth_Open_Overlay.png",
 ##        (0,0), ConditionSwitch(
 ##            #Hair overlay
 ##            "True", get_cached_recolor("Gwen", "Hair", "images/GwenBJFace/Gwen_BJ_Hair_Short_Back.png"),
@@ -5675,7 +5675,7 @@ image Gwen_TJ_Body:
         (800,950),       #550,950
 #        (-10,-90), "Gwen_BJ_HairBack", #(75,-10)
 
-        (0,0), get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Body.png"),
+        (0,0), "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Body.png",
 
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -5686,19 +5686,19 @@ image Gwen_TJ_Body:
 #        (0,0), ConditionSwitch(
 #            # under tit
 ##            "GwenX.Water", get_cached_image("images/GwenSprite/Gwen_Sprite_Water2.png"),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under.png"),
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under.png",
 #            ),
 #        (0,0), get_cached_image("images/GwenBJFace/Gwen_TJ_RefCock.png"),
 
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "GwenX.Water", Null(),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under_Smoosh.png"),
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under_Smoosh.png",
 #            ),
 #        (0,0), ConditionSwitch(
 #            # over tit
 ##            "GwenX.Water", get_cached_image("images/GwenSprite/Gwen_Sprite_Water2.png"),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over.png"),
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over.png",
 #            ),
 
         (0,0), ConditionSwitch(
@@ -5734,15 +5734,15 @@ image Gwen_TJ_Body:
         (0,0), ConditionSwitch(
             #Suit body layer
             "GwenX.Arms and GwenX.Over == 'open suit'", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/Gwen_TJ_Over_Suit_Open_Body_Gloved.png"),
-            "GwenX.Over == 'open suit'", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Over_Suit_Open_Body.png"),
+            "GwenX.Over == 'open suit'", Recolor("Gwen", "Over", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Over_Suit_Open_Body.png"),
             "GwenX.Uptop", ConditionSwitch(
                     # if top is up. . .
                     "GwenX.Arms and GwenX.Over == 'suit'", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/Gwen_TJ_Over_Suit_Open_Body_Gloved.png"),
-                    "GwenX.Over == 'suit'", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Over_Suit_Open_Body.png"),
+                    "GwenX.Over == 'suit'", Recolor("Gwen", "Over", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Over_Suit_Open_Body.png"),
                     "True", Null(),
                     ),
             "GwenX.Over == 'suit' and GwenX.Arms", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/Gwen_TJ_Over_Suit_Body_Gloved.png"),
-            "GwenX.Over == 'suit'", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Over_Suit_Body.png"),
+            "GwenX.Over == 'suit'", Recolor("Gwen", "Over", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Over_Suit_Body.png"),
             "True", Null(),
             ),
 
@@ -5779,7 +5779,7 @@ image Gwen_TJ_Body:
         (0,0), ConditionSwitch(
             #hands layer
             "GwenX.Arms and (GwenX.Over == 'suit' or GwenX.Over == 'open suit')", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/Gwen_TJ_Hands_Gloved.png"),
-            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Hands.png"),
+            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Hands.png",
             ),
 #        (0,0), get_cached_image("images/GwenBJFace/Gwen_TJ_RefLine.png"),
 
@@ -5857,7 +5857,7 @@ image Gwen_TJ_Tits_Under:
         (0,0), ConditionSwitch(
             # under tit
 #            "GwenX.Water", get_cached_image("images/GwenSprite/Gwen_Sprite_Water2.png"),
-            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under.png"),
+            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Chest tits layer
@@ -5887,15 +5887,15 @@ image Gwen_TJ_Tits_Over:
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "GwenX.Water", Null(),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under_Smoosh.png"),
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Under_Smoosh.png",
 #            ),
 #        (0,0), ConditionSwitch(
 #            # over tit
-#            "Player.Sprite and renpy.showing('Gwen_TJ_Animation')", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over_Smoosh.png"),
-#            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over.png"),
+#            "Player.Sprite and renpy.showing('Gwen_TJ_Animation')", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over_Smoosh.png",
+#            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over.png",
 #            ),
 
-        (0,0), get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over_Smoosh.png"),
+        (0,0), "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Tit_Over_Smoosh.png",
         (0,0), ConditionSwitch(
             #Chest tits layer
             "GwenX.Over == 'tshirt'", Null(),
@@ -5976,7 +5976,7 @@ image Gwen_TJ_Hands:
         (0,0), ConditionSwitch(
             #hands layer
             "GwenX.Arms and (GwenX.Over == 'suit' or GwenX.Over == 'open suit')", get_cached_recolor("Gwen", "Over", "images/GwenBJFace/Gwen_TJ_Hands_Gloved.png"),
-            "True", get_cached_image("images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Hands.png"),
+            "True", "images/GwenBJFace/[GwenX.skin_image.skin_path]Gwen_TJ_Hands.png",
             ),
         )
     transform_anchor True
@@ -7860,7 +7860,7 @@ image Gwen_SC_Body:
 #            "GwenX.Over == 'black shirt' and GwenX.Uptop", get_cached_image("images/GwenSex/Gwen_Sex_Over_Black_Back.png"),
 #            "True", Null(),
 #            ),
-        (0,0), get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Body.png"),
+        (0,0), "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Body.png",
 #        (0,0), get_cached_image("images/GwenSex/Gwen_Sex_Headref.png"),
 
         (0,0), ConditionSwitch(
@@ -7996,16 +7996,16 @@ image Gwen_SC_Legs:
             ),
         (0,0), ConditionSwitch(
             #Legs
-            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png"),
-            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png"),
+            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png",
+            "Player.Sprite and Player.Cock == 'in' and Speed", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Gwen_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png"),
-            "True", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png",
+            "True", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Ass.png",
             ),
 
         (0,0), ConditionSwitch(
-            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Anus_Cover.png"),
+            "Player.Sprite and Player.Cock == 'anal'", "images/GwenSex/[GwenX.skin_image.skin_path]Gwen_Sex_Anus_Cover.png",
             "True", Null(),
             ),
 

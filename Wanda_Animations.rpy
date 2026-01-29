@@ -24,7 +24,7 @@ image Wanda_Sprite:
 #            "True", get_cached_image("images/WandaSprite/Wanda_Sprite_Panties_Tan_Back.png"),
 #            ),
 
-        (0,0), get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Arm.png"),
+        (0,0), "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Arm.png",
             #back arm
 
         (0,0), ConditionSwitch(
@@ -51,8 +51,8 @@ image Wanda_Sprite:
         (0,0), ConditionSwitch(
             #body
 #            "WandaX.ArmPose != 1", get_cached_image("images/WandaSprite/Wanda_Sprite_Body2.png"),         # right hand up/left down
-            "WandaX.Pubes", get_cached_recolor("Wanda", "Pubes", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Body_Pubes.png"),         # right hand up/left down
-            "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Body.png"), #if WandaX.Arms == 1   # right Hand on hip/left raised
+            "WandaX.Pubes", Recolor("Wanda", "Pubes", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Body_Pubes.png"),         # right hand up/left down
+            "True", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Body.png", #if WandaX.Arms == 1   # right Hand on hip/left raised
             ),
 
 
@@ -566,9 +566,9 @@ image Wanda_Sprite_Head:
 #                "renpy.showing('Wanda_SexSprite') and WandaX.Blush >= 2", get_cached_image("images/WandaSprite/Wanda_Sprite_Head_Sex_Blush2.png"),
 #                "renpy.showing('Wanda_SexSprite') and WandaX.Blush", get_cached_image("images/WandaSprite/Wanda_Sprite_Head_Sex_Blush1.png"),
 #                "renpy.showing('Wanda_SexSprite')", get_cached_image("images/WandaSprite/Wanda_Sprite_Head_Sex.png"),
-                "WandaX.Blush >= 2", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush2.png"),
-                "WandaX.Blush", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush1.png"),
-                "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head.png"),
+                "WandaX.Blush >= 2", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush2.png",
+                "WandaX.Blush", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush1.png",
+                "True", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -614,11 +614,11 @@ image Wanda_Sprite_Head:
 
         (0,0), ConditionSwitch(     #    (0,5)
             #brows
-            "WandaX.Brows == 'angry'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Angry.png"),
-            "WandaX.Brows == 'sad'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Sad.png"),
-            "WandaX.Brows == 'surprised'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Surprised.png"),
-            "WandaX.Brows == 'confused'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Confused.png"),
-            "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Normal.png"),
+            "WandaX.Brows == 'angry'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Angry.png",
+            "WandaX.Brows == 'sad'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Sad.png",
+            "WandaX.Brows == 'surprised'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Surprised.png",
+            "WandaX.Brows == 'confused'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Confused.png",
+            "True", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Normal.png",
             ),
         # (0,0), "Wanda Blink",     #Eyes  (0,5)
         # Modification mode
@@ -807,7 +807,7 @@ image Wanda_Doggy_Body:
             "True", "Wanda_Doggy_Head",
             ),
 
-        (0,0), get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Body.png"), #Body base
+        (0,0), "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #bra
 #            "WandaX.Uptop", ConditionSwitch(
@@ -855,8 +855,8 @@ image Wanda_Doggy_Body:
             #long Hair
             "WandaX.Hair != 'long' and WandaX.Hair != 'wetlong'", Null(),
 #            "WandaX.Facing", ConditionSwitch(
-#                    "WandaX.Water or WandaX.Hair == 'wetlong'", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
-#                    "not Player.Male and 'facial' in WandaX.Spunk",get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
+#                    "WandaX.Water or WandaX.Hair == 'wetlong'", Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
+#                    "not Player.Male and 'facial' in WandaX.Spunk",Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
 #                    "True", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/Wanda_Doggy_Hair_Long_Fore.png"),
 #                    ),
             "WandaX.Water or WandaX.Hair == 'wetlong'", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/Wanda_Doggy_Hair_Long_Wet_Over.png"),
@@ -891,7 +891,7 @@ image Wanda_Doggy_Head:
     LiveComposite(
         #Head
         (420,420),
-        #(0,0), get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Head.png"), #Body base
+        #(0,0), "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Head.png", #Body base
         #(0,0), get_cached_image("images/WandaDoggy/Wanda_Doggy_TestArm.png"),#Eyes
 #        (0,0), ConditionSwitch(
 #            #Hair back
@@ -904,8 +904,8 @@ image Wanda_Doggy_Head:
         (0,0), ConditionSwitch(
             #Head
             #"WandaX.Blush > 1", get_cached_image("images/WandaDoggy/Wanda_Doggy_Head_Blush2.png"),
-            "WandaX.Blush", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Head_Blush.png"),
-            "True", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Head.png"),
+            "WandaX.Blush", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Head_Blush.png",
+            "True", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Head.png",
             ),
         (0,0), ConditionSwitch(
             #Mouth
@@ -1030,20 +1030,20 @@ image Wanda_Doggy_Head_Fore:
         (420,420),
         (0,0), ConditionSwitch(
             #Hair
-            "(WandaX.Water and WandaX.Hair == 'long') or WandaX.Hair == 'wetlong'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
-            "(WandaX.Water and WandaX.Hair == 'long') and not Player.Male and 'facial' in WandaX.Spunk", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
-            "WandaX.Water or WandaX.Hair == 'wet' or WandaX.Hair == 'wetlong'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png"),
-            "not Player.Male and 'facial' in WandaX.Spunk", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png"),
-            "True", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Fore.png"),
+            "(WandaX.Water and WandaX.Hair == 'long') or WandaX.Hair == 'wetlong'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png",
+            "(WandaX.Water and WandaX.Hair == 'long') and not Player.Male and 'facial' in WandaX.Spunk", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png",
+            "WandaX.Water or WandaX.Hair == 'wet' or WandaX.Hair == 'wetlong'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png",
+            "not Player.Male and 'facial' in WandaX.Spunk", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png",
+            "True", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Fore.png",
             ),
         (0,0), ConditionSwitch(
             #Hair
-            "(WandaX.Water and WandaX.Hair == 'long') or WandaX.Hair == 'wetlong'", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
-            "(WandaX.Water and WandaX.Hair == 'long') and not Player.Male and 'facial' in WandaX.Spunk",get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
+            "(WandaX.Water and WandaX.Hair == 'long') or WandaX.Hair == 'wetlong'", Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
+            "(WandaX.Water and WandaX.Hair == 'long') and not Player.Male and 'facial' in WandaX.Spunk",Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Long_Wet_Fore.png"),
             "WandaX.Hair == 'long'", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/Wanda_Doggy_Hair_Long_Fore.png"),
-            "WandaX.Water or WandaX.Hair == 'wet' or WandaX.Hair == 'wetlong'", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png"),
-            "not Player.Male and 'facial' in WandaX.Spunk",get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png"),
-            "True", get_cached_recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Fore.png"),
+            "WandaX.Water or WandaX.Hair == 'wet' or WandaX.Hair == 'wetlong'", Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png"),
+            "not Player.Male and 'facial' in WandaX.Spunk",Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Wet_Fore.png"),
+            "True", Recolor("Wanda", "Hair", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Hair_Short_Fore.png"),
             ),
         (0,0), ConditionSwitch(
                 #hairband
@@ -1082,14 +1082,14 @@ image Wanda_Doggy_Ass:
 
         (0,0), ConditionSwitch(
             #Pussy base
-            "WandaX.Legs and not WandaX.Upskirt", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Closed.png"),
-            "WandaX.Panties and not WandaX.PantiesDown", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Closed.png"),
-            "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png"),
-            "Trigger == 'lick pussy'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Open.png"),
-            "'dildo pussy' in (Trigger,Trigger2,WandaX.Offhand)", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png"),#Null(),
-            "'fondle pussy' in (Trigger,Trigger2,WandaX.Offhand)", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png"),#Null(),
-            "Trigger == 'insert pussy'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png"),#Null(),
-            "True", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Closed.png"),
+            "WandaX.Legs and not WandaX.Upskirt", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Closed.png",
+            "WandaX.Panties and not WandaX.PantiesDown", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Closed.png",
+            "Player.Sprite and Player.Cock == 'in'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png",
+            "Trigger == 'lick pussy'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Open.png",
+            "'dildo pussy' in (Trigger,Trigger2,WandaX.Offhand)", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png",#Null(),
+            "'fondle pussy' in (Trigger,Trigger2,WandaX.Offhand)", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png",#Null(),
+            "Trigger == 'insert pussy'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Base.png",#Null(),
+            "True", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Ass_Closed.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Hotdogging plate
@@ -1104,11 +1104,11 @@ image Wanda_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Anus base
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
-                    "Speed", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png"),      #Speed 1
+                    "Speed", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png",      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
-            "'insert ass' in (Trigger,Trigger2,WandaX.Offhand)", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png"),
-            "'dildo anal' in (Trigger,Trigger2,WandaX.Offhand)", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,WandaX.Offhand)", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png",
+            "'dildo anal' in (Trigger,Trigger2,WandaX.Offhand)", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png",
             "WandaX.Loose > 2", "Wanda_Gape_Anal",    #intentional
             "WandaX.Loose", get_cached_image("images/WandaDoggy/Wanda_Doggy_Asshole_Loose.png"),
             "True", get_cached_image("images/WandaDoggy/Wanda_Doggy_Asshole_Tight.png"),
@@ -1256,11 +1256,11 @@ image Wanda_Doggy_Ass:
 #            #Anus base
 #            "not Player.Sprite or Player.Cock != 'in'", Null(), #only shows when cock is out
 #            "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
-#                    "Speed", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png"),      #Speed 1
+#                    "Speed", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png",      #Speed 1
 #                    "True", Null(),               #Speed 0
 #                    ),
-#            "'insert ass' in (Trigger,Trigger2,WandaX.Offhand)", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png"),
-#            "'dildo anal' in (Trigger,Trigger2,WandaX.Offhand)", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png"),
+#            "'insert ass' in (Trigger,Trigger2,WandaX.Offhand)", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png",
+#            "'dildo anal' in (Trigger,Trigger2,WandaX.Offhand)", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Anal_FullBase.png",
 #            "WandaX.Loose > 2", "Wanda_Gape_Anal",    #intentional
 #            "WandaX.Loose", get_cached_image("images/WandaDoggy/Wanda_Doggy_Asshole_Loose.png"),
 #            "True", get_cached_image("images/WandaDoggy/Wanda_Doggy_Asshole_Tight.png"),
@@ -1336,16 +1336,16 @@ image Wanda_Doggy_Feet_Under:             #fix // // // // // // fix // // // //
     contains:
             #hose legs
         ConditionSwitch(
-            "True", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet.png"),
+            "True", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet.png",
             )
     contains:
             #hose legs
         ConditionSwitch(
-            "WandaX.Hose == 'garterbelt'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet.png"),
+            "WandaX.Hose == 'garterbelt'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet.png",
 #            "WandaX.Hose == 'ripped pantyhose'", get_cached_image("images/WandaDoggy/Wanda_Doggy_Feet_Holed.png"),
             "WandaX.Hose == 'socks'", get_cached_recolor("Wanda", "Hose", "images/WandaDoggy/Wanda_Doggy_Feet_Socks.png"),
-            "WandaX.Hose", get_cached_recolor("Wanda", "Hose", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet_Hose.png"),
-            "True", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet.png"),
+            "WandaX.Hose", Recolor("Wanda", "Hose", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet_Hose.png"),
+            "True", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet.png",
             )
     contains:
         #pants
@@ -1368,11 +1368,11 @@ image Wanda_Doggy_Feet_Over:             #fix // // // // // // fix // // // // 
     contains:
             #hose legs
         ConditionSwitch(
-            "WandaX.Hose == 'garterbelt'", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet_Over.png"),
+            "WandaX.Hose == 'garterbelt'", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet_Over.png",
 #            "WandaX.Hose == 'ripped pantyhose'", get_cached_image("images/WandaDoggy/Wanda_Doggy_Feet_Holed.png"),
             "WandaX.Hose == 'socks'", get_cached_recolor("Wanda", "Hose", "images/WandaDoggy/Wanda_Doggy_Feet_Socks_Over.png"),
             "WandaX.Hose", get_cached_recolor("Wanda", "Hose", "images/WandaDoggy/Wanda_Doggy_Feet_Hose_Over.png"),
-            "True", get_cached_image("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet_Over.png"),
+            "True", "images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Feet_Over.png",
             )
     contains:
         #spunk
@@ -1557,7 +1557,7 @@ image Wanda_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Wanda_Pussy_Moving"
     contains:
         #Base
-        get_cached_alphamask("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1716,7 +1716,7 @@ image Wanda_Pussy_Hole_Mask:
     # This is the alpha used for the little flap in the heading animation "Wanda_Pussy_Heading"
     contains:
         #Base
-        get_cached_alphamask("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/WandaDoggy/[WandaX.skin_image.skin_path]Wanda_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -2518,7 +2518,7 @@ image Wanda_Sex_Body:
         (1120,840),
 #        (0,-100), get_cached_image("images/WandaSex/Wanda_Sex_Headref.png"),
         (460,120), "Wanda_HairBack_Sex",
-        (0,0), get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Body.png"),
+        (0,0), "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Body.png",
 
         (0,0), ConditionSwitch(
             #mesh arm layer
@@ -2673,9 +2673,9 @@ image Wanda_Head_Sex:
         (820,820),
         (0,0), ConditionSwitch(
             # Face background plate
-            "WandaX.Blush >= 2", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush2.png"),
-            "WandaX.Blush", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush1.png"),
-            "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head.png"),
+            "WandaX.Blush >= 2", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush2.png",
+            "WandaX.Blush", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head_Blush1.png",
+            "True", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Head.png",
             ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -2721,11 +2721,11 @@ image Wanda_Head_Sex:
 
         (0,0), ConditionSwitch(     #    (0,5)
             #brows
-            "WandaX.Brows == 'angry'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Angry.png"),
-            "WandaX.Brows == 'sad'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Sad.png"),
-            "WandaX.Brows == 'surprised'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Surprised.png"),
-            "WandaX.Brows == 'confused'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Confused.png"),
-            "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Normal.png"),
+            "WandaX.Brows == 'angry'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Angry.png",
+            "WandaX.Brows == 'sad'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Sad.png",
+            "WandaX.Brows == 'surprised'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Surprised.png",
+            "WandaX.Brows == 'confused'", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Confused.png",
+            "True", "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Brows_Normal.png",
             ),
         (0,0), "Wanda Blink",     #Eyes  (0,5)
         (0,0), ConditionSwitch(
@@ -2829,9 +2829,9 @@ image Wanda_Sex_Legs:
 #            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/WandaSex/Wanda_Sex_FBase.png"),
 #            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/WandaSex/Wanda_Sex_FBase.png"),
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Wanda_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png"),
-            "True", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png",
+            "True", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -2997,16 +2997,16 @@ image Wanda_Sex_Foot:
 #        (0,0), get_cached_image("images/WandaSex/Wanda_Sex_Feet.png"),                                                         #Legs Base
         (0,0), ConditionSwitch(
             #hose layer
-            "True", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot.png"),   #Null(),
+            "True", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "(WandaX.Hose == 'pantyhose' or WandaX.Hose == 'ripped pantyhose') and WandaX.Panties and WandaX.PantiesDown", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot.png"),
+            "(WandaX.Hose == 'pantyhose' or WandaX.Hose == 'ripped pantyhose') and WandaX.Panties and WandaX.PantiesDown", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot.png",
             "WandaX.Hose == 'socks'", get_cached_recolor("Wanda", "Hose", "images/WandaSex/Wanda_Sex_Foot_Socks.png"),
-            "WandaX.Hose == 'pantyhose' or WandaX.Hose == 'ripped pantyhose'", get_cached_recolor("Wanda", "Hose", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot_Pantyhose.png"),
+            "WandaX.Hose == 'pantyhose' or WandaX.Hose == 'ripped pantyhose'", Recolor("Wanda", "Hose", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot_Pantyhose.png"),
             "WandaX.Hose and WandaX.Hose != 'garterbelt'", get_cached_recolor("Wanda", "Hose", "images/WandaSex/Wanda_Sex_Foot_Stockings.png"),
-            "True", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot.png"),   #Null(),
+            "True", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Foot.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
@@ -4436,7 +4436,7 @@ image Wanda_BJ_Backdrop:
             "True", Null(),
             ),
         (130,100), "Wanda_BJ_HairBack2", #(50,25)
-        (0,0), get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Arm.png"),
+        (0,0), "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Arm.png",
             #back arm
 
         (0,0), ConditionSwitch(
@@ -4457,7 +4457,7 @@ image Wanda_BJ_Backdrop:
             "WandaX.Acc == 'jacket'", get_cached_recolor("Wanda", "Acc", "images/WandaSprite/Wanda_Sprite_Jacket_Back.png"),         # right hand up/left down
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Body.png"),
+        (0,0), "images/WandaSprite/[WandaX.skin_image.skin_path]Wanda_Sprite_Body.png",
 
 
         (0,0), ConditionSwitch(
@@ -4678,9 +4678,9 @@ image Wanda_BJ_Head:                                                            
             ),
         (0,0), ConditionSwitch(
             # Basic Face layer
-            "WandaX.Blush > 1", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Head_Blush2.png"),
-            "WandaX.Blush", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Head_Blush1.png"),
-            "True", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Head.png")
+            "WandaX.Blush > 1", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Head_Blush2.png",
+            "WandaX.Blush", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Head_Blush1.png",
+            "True", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Head.png"
             ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -4753,12 +4753,12 @@ image Wanda_BJ_Head:                                                            
             ),
         (0,0), ConditionSwitch(
             #Brows
-            "WandaX.Brows == 'normal'", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Normal.png"),
-            "WandaX.Brows == 'angry'", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Angry.png"),
-            "WandaX.Brows == 'sad'", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Sad.png"),
-            "WandaX.Brows == 'surprised'", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Surprised.png"),
-            "WandaX.Brows == 'confused'", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Confused.png"),
-            "True", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Normal.png"),
+            "WandaX.Brows == 'normal'", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Normal.png",
+            "WandaX.Brows == 'angry'", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Angry.png",
+            "WandaX.Brows == 'sad'", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Sad.png",
+            "WandaX.Brows == 'surprised'", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Surprised.png",
+            "WandaX.Brows == 'confused'", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Confused.png",
+            "True", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_BJ_Brows_Normal.png",
             ),
         (0,0), "Wanda BJ Blink",
             #Eyes
@@ -5495,9 +5495,9 @@ image Wanda_TJ_Body:
         (1000,1000),       #550,950
 #        (-10,-90), "Wanda_BJ_HairBack", #(75,-10)
 
-#        (0,0), get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Body.png"),
+#        (0,0), "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Body.png",
 
-        (0,0), get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Body.png"),
+        (0,0), "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Body.png",
         (0,0), ConditionSwitch(
             # water drops
             "WandaX.Water", get_cached_image("images/WandaBJFace/Wanda_TJ_Wet_Body.png"),
@@ -5508,7 +5508,7 @@ image Wanda_TJ_Body:
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "not Player.Sprite", Null(),
-#            "True", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Under.png"),
+#            "True", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Under.png",
 #            ),
         (0,0), ConditionSwitch(
             #Chest layer under tits
@@ -5580,8 +5580,8 @@ image Wanda_TJ_Tits_Under:
         (1000,1000),       #550,950
         (0,0), ConditionSwitch(
             # under tit
-#            "Player.Sprite and renpy.showing('Wanda_TJ_Animation')", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Under.png"),
-            "True", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Under.png"),
+#            "Player.Sprite and renpy.showing('Wanda_TJ_Animation')", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Under.png",
+            "True", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Under.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Chest tits layer
@@ -5610,7 +5610,7 @@ image Wanda_TJ_Tits_Over:
         (1000,1000),    #800,950
         (0,0), ConditionSwitch(
             # over tit
-            "Player.Sprite and renpy.showing('Wanda_TJ_Animation')", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Over.png"),
+            "Player.Sprite and renpy.showing('Wanda_TJ_Animation')", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Tits_Over.png",
             "True", Null(),
             ),
 
@@ -5699,12 +5699,12 @@ image Wanda_TJ_Hands:
         (1000,1000),       #550,950
         (0,0), ConditionSwitch(
             # hands
-            "True", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Hands.png"),
+            "True", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Hands.png",
             ),
         (0,0), ConditionSwitch(
             # hands
-            "WandaX.Chest == 'mesh top'", get_cached_recolor("Wanda", "Over", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Hands_Mesh.png"),
-            "True", get_cached_image("images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Hands.png"),
+            "WandaX.Chest == 'mesh top'", Recolor("Wanda", "Over", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Hands_Mesh.png"),
+            "True", "images/WandaBJFace/[WandaX.skin_image.skin_path]Wanda_TJ_Hands.png",
             ),
         (0,0), ConditionSwitch(
             # sleeves
@@ -6831,13 +6831,13 @@ transform Wanda_HJ_Body_2():
 image Wanda_Hand_Under:
     contains:
         ConditionSwitch(
-            "WandaX.Chest == 'mesh top'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2.png"),
+            "WandaX.Chest == 'mesh top'", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2.png",
             "True", Null(),
             )
     contains:
         ConditionSwitch(
-            "WandaX.Chest == 'mesh top'", get_cached_recolor("Wanda", "Over", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2_red.png"),
-            "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2.png"),
+            "WandaX.Chest == 'mesh top'", Recolor("Wanda", "Over", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2_red.png"),
+            "True", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2.png",
             )
     #    "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda2.png"
     anchor (0.5,0.5)
@@ -6848,13 +6848,13 @@ image Wanda_Hand_Under:
 image Wanda_Hand_Over:
     contains:
         ConditionSwitch(
-            "WandaX.Chest == 'mesh top'", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]handwanda1.png"),
+            "WandaX.Chest == 'mesh top'", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda1.png",
             "True", Null(),
             )
     contains:
         ConditionSwitch(
-            "WandaX.Chest == 'mesh top'", get_cached_recolor("Wanda", "Over", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda1_red.png"),
-            "True", get_cached_image("images/WandaSprite/[WandaX.skin_image.skin_path]handwanda1.png"),
+            "WandaX.Chest == 'mesh top'", Recolor("Wanda", "Over", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda1_red.png"),
+            "True", "images/WandaSprite/[WandaX.skin_image.skin_path]handwanda1.png",
             )
     contains:
         ConditionSwitch(
@@ -9623,9 +9623,9 @@ image Wanda_SC_Legs:
 #            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/WandaSex/Wanda_Sex_FBase.png"),
 #            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/WandaSex/Wanda_Sex_FBase.png"),
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Wanda_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png"),
-            "True", get_cached_image("images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png",
+            "True", "images/WandaSex/[WandaX.skin_image.skin_path]Wanda_Sex_Ass.png",
             ),
 
         (0,0), ConditionSwitch(

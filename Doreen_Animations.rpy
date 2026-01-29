@@ -64,8 +64,8 @@ image Doreen_Sprite:
 
         (0,0), ConditionSwitch(
             #body
-            "DoreenX.ArmPose != 1", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Body2.png"),         # right hand up/left down
-            "True", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Body1.png"), #if DoreenX.Arms == 1   # right Hand on hip/left raised
+            "DoreenX.ArmPose != 1", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Body2.png",         # right hand up/left down
+            "True", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Body1.png", #if DoreenX.Arms == 1   # right Hand on hip/left raised
             ),
         (0,0), ConditionSwitch(
             #pubes
@@ -301,8 +301,8 @@ image Doreen_Sprite:
         (0,0), ConditionSwitch(
             #arms top
             "renpy.showing('Doreen_HJ_Animation')",Null(),
-            "DoreenX.ArmPose != 1", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Arm2.png"),         # right hand up/left down
-            "True", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Arm1.png"), #if DoreenX.Arms == 1   # right Hand on hip/left raised
+            "DoreenX.ArmPose != 1", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Arm2.png",         # right hand up/left down
+            "True", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Arm1.png", #if DoreenX.Arms == 1   # right Hand on hip/left raised
             ),
 
 #        (0,0), ConditionSwitch(
@@ -469,9 +469,9 @@ image Doreen_Sprite_Head:
 #                "renpy.showing('Doreen_SexSprite') and DoreenX.Blush >= 2", get_cached_image("images/DoreenSprite/Doreen_Sprite_Head_Sex_Blush2.png"),
 #                "renpy.showing('Doreen_SexSprite') and DoreenX.Blush", get_cached_image("images/DoreenSprite/Doreen_Sprite_Head_Sex_Blush1.png"),
 #                "renpy.showing('Doreen_SexSprite')", get_cached_image("images/DoreenSprite/Doreen_Sprite_Head_Sex.png"),
-                "DoreenX.Blush >= 2", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head_Blush2.png"),
-                "DoreenX.Blush", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head_Blush1.png"),
-                "True", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head.png"),
+                "DoreenX.Blush >= 2", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head_Blush2.png",
+                "DoreenX.Blush", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head_Blush1.png",
+                "True", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(
             #chin spunk
@@ -517,11 +517,11 @@ image Doreen_Sprite_Head:
 
         (0,0), ConditionSwitch(     #    (0,5)
             #brows
-            "DoreenX.Brows == 'angry'", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Angry.png"),
-            "DoreenX.Brows == 'sad'", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Sad.png"),
-            "DoreenX.Brows == 'surprised'", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Surprised.png"),
-            "DoreenX.Brows == 'confused'", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Confused.png"),
-            "True", get_cached_image("images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Normal.png"),
+            "DoreenX.Brows == 'angry'", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Angry.png",
+            "DoreenX.Brows == 'sad'", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Sad.png",
+            "DoreenX.Brows == 'surprised'", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Surprised.png",
+            "DoreenX.Brows == 'confused'", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Confused.png",
+            "True", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Brows_Normal.png",
             ),
         (0,0), "Doreen Blink",     #Eyes  (0,5)
         (0,0), ConditionSwitch(
@@ -710,7 +710,7 @@ image Doreen_Doggy_Body:
             "True", "Doreen_Doggy_Head",
             ),
 
-        (0,0), get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Body.png"), #Body base
+        (0,0), "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #bra
             "not DoreenX.Chest", Null(),
@@ -785,7 +785,7 @@ image Doreen_Doggy_Head:
     LiveComposite(
         #Head
         (420,525),
-        #(0,0), get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head.png"), #Body base
+        #(0,0), "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head.png", #Body base
         #(0,0), get_cached_image("images/DoreenDoggy/Doreen_Doggy_TestArm.png"),#Eyes
 #        (0,0), ConditionSwitch(
 #            #Hair back
@@ -797,21 +797,21 @@ image Doreen_Doggy_Head:
         (0,0), ConditionSwitch(
             #Head
             #"DoreenX.Blush > 1", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Head_Blush2.png"),
-            "DoreenX.Blush", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head_Blush.png"),
-            "True", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head.png"),
+            "DoreenX.Blush", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head_Blush.png",
+            "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head.png",
             ),
         (0,0), ConditionSwitch(
             #Mouth
-            "DoreenX.Mouth == 'normal'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Normal.png"),
-            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Normal.png"),
-            "DoreenX.Mouth == 'sucking'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
-            "DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Sad.png"),
-            "DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Sad.png"),
-            "DoreenX.Mouth == 'smile'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
-            "DoreenX.Mouth == 'grimace'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
-            "DoreenX.Mouth == 'surprised'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
-            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Tongue.png"),
-            "True", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Normal.png"),
+            "DoreenX.Mouth == 'normal'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Normal.png",
+            "DoreenX.Mouth == 'lipbite'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Normal.png",
+            "DoreenX.Mouth == 'sucking'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
+            "DoreenX.Mouth == 'kiss'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Sad.png",
+            "DoreenX.Mouth == 'sad'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Sad.png",
+            "DoreenX.Mouth == 'smile'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
+            "DoreenX.Mouth == 'grimace'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
+            "DoreenX.Mouth == 'surprised'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
+            "DoreenX.Mouth == 'tongue'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Tongue.png",
+            "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Normal.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
@@ -824,11 +824,11 @@ image Doreen_Doggy_Head:
 #            #"DoreenX.Mouth == 'normal'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Normal.png"),
 #            #"DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Normal.png"),
 #            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Sad.png"),
-#            "DoreenX.Mouth == 'smile'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
-#            "DoreenX.Mouth == 'grimace'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
-#            "DoreenX.Mouth == 'sucking'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
+#            "DoreenX.Mouth == 'smile'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
+#            "DoreenX.Mouth == 'grimace'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
+#            "DoreenX.Mouth == 'sucking'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
 #            #"DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Open.png"),
-#            "DoreenX.Mouth == 'surprised'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png"),
+#            "DoreenX.Mouth == 'surprised'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
 #            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Smile.png"),
             "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Mouth.png"),
             ),
@@ -917,9 +917,9 @@ image Doreen_Doggy_Head_Fore:
         (420,525),
         (0,0), ConditionSwitch(
             #Hair
-            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png"),
-            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png"),
-            "True", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Short_Fore.png"),
+            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png",
+            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png",
+            "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Short_Fore.png",
             ),
         (0,0), ConditionSwitch(
             #headband
@@ -958,19 +958,19 @@ image Doreen_Doggy_Ass:
 
         (0,0), ConditionSwitch(
             #Pussy base
-            "DoreenX.Legs and not DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Closed.png"),
-            "DoreenX.Panties and not DoreenX.PantiesDown", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Closed.png"),
-            "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png"),
-            "Trigger == 'lick pussy'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Open.png"),
-            "'dildo pussy' in (Trigger,Trigger2,DoreenX.Offhand)", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png"),#Null(),
-            "'fondle pussy' in (Trigger,Trigger2,DoreenX.Offhand)", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png"),#Null(),
-            "Trigger == 'insert pussy'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png"),#Null(),
-            "True", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Closed.png"),
+            "DoreenX.Legs and not DoreenX.Upskirt", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Closed.png",
+            "DoreenX.Panties and not DoreenX.PantiesDown", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Closed.png",
+            "Player.Sprite and Player.Cock == 'in'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png",
+            "Trigger == 'lick pussy'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Open.png",
+            "'dildo pussy' in (Trigger,Trigger2,DoreenX.Offhand)", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png",#Null(),
+            "'fondle pussy' in (Trigger,Trigger2,DoreenX.Offhand)", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png",#Null(),
+            "Trigger == 'insert pussy'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Fucking.png",#Null(),
+            "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Ass_Closed.png",
             ),
         (0,0), ConditionSwitch(
             #Hotdogging plate
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            "True", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hotdog.png"),
+            "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hotdog.png",
             ),
         (0,0), ConditionSwitch(
             #ass red
@@ -980,11 +980,11 @@ image Doreen_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Anus base
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
-                    "Speed", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png"),      #Speed 1
+                    "Speed", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png",      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
-            "'insert ass' in (Trigger,Trigger2,DoreenX.Offhand)", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png"),
-            "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,DoreenX.Offhand)", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png",
+            "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png",
             "DoreenX.Loose > 2", "Doreen_Gape_Anal",    #intentional
             "DoreenX.Loose", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Asshole_Loose.png"),
             "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Asshole_Tight.png"),
@@ -1150,7 +1150,7 @@ image Doreen_Doggy_Ass:
             "'back' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hands.png"), #Ass Base
+        (0,0), "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hands.png", #Ass Base
         (0,0), ConditionSwitch(
             #tail
 #            "DoreenX.Tail > 1", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail2.png"),
@@ -1204,12 +1204,12 @@ image Doreen_Doggy_Shins:             #fix // // // // // // fix // // // // // 
             #hose legs
         ConditionSwitch(
             "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet.png"),
-            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet_Holed.png"),
-            "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet_Tights.png"),
+            "DoreenX.Hose == 'garterbelt'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet.png",
+            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet_Holed.png",
+            "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet_Tights.png",
 #            "DoreenX.Hose == 'socks'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Feet_Socks.png"),
             "DoreenX.Hose", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Feet_Hose.png"),
-            "True", get_cached_image("images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet.png"),
+            "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet.png",
             )
 #    contains:
 #        #boots
@@ -2520,7 +2520,7 @@ image Doreen_Sex_Body:
 #        (0,-100), get_cached_image("images/DoreenSex/Doreen_Sex_Headref.png"),
         (335,60), "Doreen_HairBack_Sex",
         (335,60), "Doreen_Head_Sex",  #(50,-325)(335,-40)
-        (0,0), get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Body.png"),
+        (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Body.png",
         (0,0), ConditionSwitch(
             #bra layer
             "DoreenX.Uptop", Null(),
@@ -2576,7 +2576,7 @@ image Doreen_Sex_Tits:
             "True", Null(),
             ),
 
-        (0,0), get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Tits.png"),
+        (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Tits.png",
 
         (0,0), ConditionSwitch(
             #bra layer
@@ -2725,12 +2725,12 @@ image Doreen_Sex_Legs:
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png"),
-            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png",
+            "Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Doreen_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -2902,13 +2902,13 @@ image Doreen_Sex_Legs:
             ),
 #        (0,0), ConditionSwitch(
 #            #calves
-#            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png"),
-#            "(DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png"),
-#            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Holed.png"),
-#            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights_Holed.png"),
-#            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights.png"),
+#            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",
+#            "(DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",
+#            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Holed.png",
+#            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights_Holed.png",
+#            "DoreenX.Hose == 'tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights.png",
 #            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Calves_Hose.png"),
-#            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png"),   #Null(),
+#            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",   #Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Footjob overlay
@@ -2941,13 +2941,13 @@ image Doreen_Sex_Calves:
         (1120,840),
         (0,0), ConditionSwitch(
             #hose layer
-            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png"),
-            "(DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png"),
-            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Holed.png"),
-            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights_Holed.png"),
-            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights.png"),
+            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",
+            "(DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",
+            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Holed.png",
+            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights_Holed.png",
+            "DoreenX.Hose == 'tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights.png",
             "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Calves_Hose.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png"),   #Null(),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
@@ -2971,11 +2971,11 @@ image Doreen_Sex_Feet_L:
 
         (0,0), ConditionSwitch(
             #hose layer
-            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png"),
-            "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png"),
-            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_Holed_L.png"),
+            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png",
+            "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png",
+            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_Holed_L.png",
             "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Feet_Hose_L.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png"),   #Null(),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
@@ -2991,11 +2991,11 @@ image Doreen_Sex_Feet_R:
         (1120,840),
         (0,0), ConditionSwitch(
             #hose layer
-            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png"),
-            "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png"),
-            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_Holed_R.png"),
+            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png",
+            "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png",
+            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_Holed_R.png",
             "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Feet_Hose_R.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png"),   #Null(),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
@@ -4951,7 +4951,7 @@ image Doreen_BJ_Backdrop:
             "DoreenX.Over == 'tube top' or DoreenX.Over == 'towel' or DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Back.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Body.png"),
+        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Body.png",
 #        (0,0), ConditionSwitch(
 #            #Water effect
 #            "DoreenX.Water and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water1.png"),
@@ -5056,7 +5056,7 @@ image Doreen_BJ_Ass:
             "DoreenX.Tail", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Under.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Ass.png"),
+        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Ass.png",
 
 #        (0,0), ConditionSwitch(
 #            #Water effect
@@ -5225,15 +5225,15 @@ image Doreen_BJ_Head:
 
         (0,0), ConditionSwitch(
             # Basic Face layer
-            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over_Blush.png"),
-            "renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over.png"),
-            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading_Blush.png"),
-            "renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading.png"),
+            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over_Blush.png",
+            "renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over.png",
+            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading_Blush.png",
+            "renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading.png",
 #            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png"),
 
 #            "DoreenX.Blush == 2", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Over_Blush2.png"),
-            "DoreenX.Blush", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Blush.png"),
-            "True", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png")
+            "DoreenX.Blush", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Blush.png",
+            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png"
             ),
 
         (0,0), ConditionSwitch(
@@ -5301,22 +5301,22 @@ image Doreen_BJ_Head:
 
         (0,0), ConditionSwitch(
             #Brows
-            "DoreenX.Brows == 'angry'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Angry.png"),
-            "DoreenX.Brows == 'sad'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Sad.png"),
-            "DoreenX.Brows == 'surprised'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Surprised.png"),
-            "DoreenX.Brows == 'confused'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Confused.png"),
-            "True", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Normal.png"),
+            "DoreenX.Brows == 'angry'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Angry.png",
+            "DoreenX.Brows == 'sad'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Sad.png",
+            "DoreenX.Brows == 'surprised'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Surprised.png",
+            "DoreenX.Brows == 'confused'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Confused.png",
+            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Brows_Normal.png",
             ),
         (0,0),"Doreen BJ Blink",
             #Eyes
         (0,0), ConditionSwitch(
             #Hair overlay
-            "DoreenX.Hat == 'headband' and (DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong')", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png"),
-            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png"),
-            "DoreenX.Hat == 'headband' and (not Player.Male and 'facial' in DoreenX.Spunk)", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png"),
-            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png"),
-            "DoreenX.Hat == 'headband'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Short_H.png"),
-            "True", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Short.png"),
+            "DoreenX.Hat == 'headband' and (DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong')", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png",
+            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
+            "DoreenX.Hat == 'headband' and (not Player.Male and 'facial' in DoreenX.Spunk)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png",
+            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
+            "DoreenX.Hat == 'headband'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Short_H.png",
+            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Short.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -5393,8 +5393,8 @@ image Doreen BJ Blink:
 
 #        (0,0), ConditionSwitch(
 #            #Hair overlay
-##            "DoreenX.Water or DoreenX.Hair == 'wet'", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png"),
-##            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png"),
+##            "DoreenX.Water or DoreenX.Hair == 'wet'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
+##            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
 #            "True", Null(),
 #            ),
 
@@ -5407,14 +5407,14 @@ image Doreen_BJ_Head_Under:
     LiveComposite(
         (695,695),
 #        (0,0), get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Under.png"),
-        (0,0), get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png"),
+        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png",
 #         (0,0), ConditionSwitch(
 #            # Basic Face layer
 #            "Speed and renpy.showing('Doreen_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png"),
 ##            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png"),
 #            "DoreenX.Blush == 2", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Blush2.png"),
-#            "DoreenX.Blush", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Blush.png"),
-#            "True", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png")
+#            "DoreenX.Blush", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Blush.png",
+#            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png"
 #            ),
 
          (0,0), ConditionSwitch(
@@ -6393,10 +6393,10 @@ image Doreen_TJ_Body:
         (800,950),       #550,950
 #        (-10,-90), "Doreen_BJ_HairBack", #(75,-10)
 
-#        (0,0), get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Body.png"),
+#        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Body.png",
 
         (0,0), "Doreen_BJ_Ass",
-        (0,0), get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Body.png"),
+        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Body.png",
 #        (0,0), ConditionSwitch(
 #            #Water effect
 #            "DoreenX.Water and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water1.png"),
@@ -6408,7 +6408,7 @@ image Doreen_TJ_Body:
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "not Player.Sprite", Null(),
-#            "True", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits_Under.png"),
+#            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits_Under.png",
 #            ),
         (0,0), ConditionSwitch(
             #Chest layer under tits
@@ -6476,8 +6476,8 @@ image Doreen_TJ_Tits_Under:
         (800,950),       #550,950
         (0,0), ConditionSwitch(
             # under tit
-            "Player.Sprite and renpy.showing('Doreen_TJ_Animation')", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits_Under.png"),
-            "True", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits.png"),
+            "Player.Sprite and renpy.showing('Doreen_TJ_Animation')", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits_Under.png",
+            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits.png",
             ),
         (0,0), ConditionSwitch(
             #Chest tits layer
@@ -6511,11 +6511,11 @@ image Doreen_TJ_Tits_Over:
 #            ),
         (0,0), ConditionSwitch(
             # over tit
-            "Player.Sprite and renpy.showing('Doreen_TJ_Animation')", get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits_Over.png"),
+            "Player.Sprite and renpy.showing('Doreen_TJ_Animation')", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Tits_Over.png",
             "True", Null(),
             ),
 
-#        (0,0), get_cached_image("images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_TitsRef.png"),
+#        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_TitsRef.png",
         (0,0), ConditionSwitch(
             #Chest tits layer
             "DoreenX.Over == 'tshirt'", Null(),
@@ -8482,7 +8482,7 @@ image Doreen_69_Body:
 
         (0,0), ConditionSwitch(
             #Base belly
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Body.png"),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Body.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
@@ -8544,7 +8544,7 @@ image Doreen_69_Tits:
 
         (0,0), ConditionSwitch(
             # base tits
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Tits.png"),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Tits.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
@@ -8662,7 +8662,7 @@ image Doreen_69_Head:
             "Speed == 1", get_cached_image("images/DoreenSex/Doreen_69_Tongue.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Head.png"),
+        (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Head.png",
         (0,0),ConditionSwitch(
             #Outside Spunk
             "'mouth' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_69_Spunk_Mouth.png"),
@@ -8678,7 +8678,7 @@ image Doreen_69_Head:
         (0,0), ConditionSwitch(
             #Hair over
             "Speed == 1 and Player.Male", Null(),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Hair.png"),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Hair.png",
             ),
         )
     offset (10,0)#(175,175)#(180,100)
@@ -8708,7 +8708,7 @@ image Doreen_69_HairBack:
     LiveComposite(
         #the torso/head used in the sex pose, referenced by Doreen_SexSprite
         (1120,840),
-#        (0,0), get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Head.png"),
+#        (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Head.png",
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Doreen_TJ_Animation')", Null(),
@@ -8745,12 +8745,12 @@ image Doreen_69_Legs:
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png"),
-#            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png",
+#            "Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Doreen_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Ass.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -8952,13 +8952,13 @@ image Doreen_69_Feet:
 
         (0,0), ConditionSwitch(
             #hose layer
-            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png"),
-            "(DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights') and DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png"),
-            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Tights.png"),
-            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Holed.png"),
-            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Tights_Holed.png"),
+            "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png",
+            "(DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png",
+            "DoreenX.Hose == 'tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Tights.png",
+            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Holed.png",
+            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Tights_Holed.png",
             "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_69_Feet_Hose.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png"),   #Null(),
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
@@ -10339,7 +10339,7 @@ image Doreen_SC_Body:
 #        (0,-100), get_cached_image("images/DoreenSex/Doreen_Sex_Headref.png"),
 #        (335,60), "Doreen_HairBack_Sex",
         (560,-30), "Doreen_Head_SC",  #(50,-325)(335,-40)
-        (0,0), get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Body.png"),
+        (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Body.png",
         (0,0), ConditionSwitch(
             #bra layer
             "DoreenX.Uptop", Null(),
@@ -10421,12 +10421,12 @@ image Doreen_SC_Legs:
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png"),
-            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png",
+            "Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_FBase.png",
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Doreen_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
-#            "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
-            "True", get_cached_image("images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png"),
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
+#            "Trigger == 'lick pussy'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
+            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Ass.png",
             ),
 
         (0,0), ConditionSwitch(

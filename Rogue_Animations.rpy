@@ -76,21 +76,21 @@ image Rogue_Sprite:
             ),
         (0,0), ConditionSwitch(
             #body
-#            "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_test.png"),
+#            "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_test.png",
             "RogueX.ArmPose == 1", ConditionSwitch(
-                    "RogueX.Pubes and RogueX.Pierce == 'ring'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_haired_ring.png"),
-                    "RogueX.Pubes and RogueX.Pierce == 'barbell'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_haired_barbell.png"),
-                    "RogueX.Pierce == 'ring'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_ring.png"),
-                    "RogueX.Pierce == 'barbell'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_barbell.png"),
-                    "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_haired.png"),
-                    "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_bare.png"),
+                    "RogueX.Pubes and RogueX.Pierce == 'ring'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_haired_ring.png",
+                    "RogueX.Pubes and RogueX.Pierce == 'barbell'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_haired_barbell.png",
+                    "RogueX.Pierce == 'ring'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_ring.png",
+                    "RogueX.Pierce == 'barbell'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_barbell.png",
+                    "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_haired.png"),
+                    "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_1_bare.png",
                     ),
-            "RogueX.Pubes and RogueX.Pierce == 'ring'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_haired_ring.png"),
-            "RogueX.Pubes and RogueX.Pierce == 'barbell'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_haired_barbell.png"),
-            "RogueX.Pierce == 'ring'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_ring.png"),
-            "RogueX.Pierce == 'barbell'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_barbell.png"),
-            "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_haired.png"),
-            "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_bare.png"),
+            "RogueX.Pubes and RogueX.Pierce == 'ring'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_haired_ring.png",
+            "RogueX.Pubes and RogueX.Pierce == 'barbell'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_haired_barbell.png",
+            "RogueX.Pierce == 'ring'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_ring.png",
+            "RogueX.Pierce == 'barbell'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_barbell.png",
+            "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_haired.png"),
+            "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_body_2_bare.png",
             ),
 
 #        (0,0), ConditionSwitch(
@@ -256,20 +256,20 @@ image Rogue_Sprite:
             ),
         (0,0), ConditionSwitch(
             #Arms and gloves
-            "RogueX.ArmPose == 1 and RogueX.Arms == 'gloves' and RogueX.Neck == 'spiked collar'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1a_gloved.png"),       #Gloves and collar
-            "RogueX.ArmPose == 1 and RogueX.Arms == 'gloves'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1b_gloved.png"),                                     #Gloves, no collar
-            "RogueX.ArmPose == 1 and RogueX.Neck == 'spiked collar'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1a_bare.png"),                                #No Gloves, collar
-            "RogueX.ArmPose == 1", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1b_bare.png"),                                                              #No gloves, no collar
-            "RogueX.Arms == 'gloves' and RogueX.Neck == 'spiked collar'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2_gloved.png"),                           #Gloves and collar
-            "RogueX.Arms == 'gloves'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2b_gloved.png"),                                                         #Gloved, no collar
-            "RogueX.Neck == 'spiked collar'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2_bare.png"),                                                    #No gloves, collar
-            "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2b_bare.png"),
+            "RogueX.ArmPose == 1 and RogueX.Arms == 'gloves' and RogueX.Neck == 'spiked collar'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1a_gloved.png",       #Gloves and collar
+            "RogueX.ArmPose == 1 and RogueX.Arms == 'gloves'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1b_gloved.png",                                     #Gloves, no collar
+            "RogueX.ArmPose == 1 and RogueX.Neck == 'spiked collar'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1a_bare.png",                                #No Gloves, collar
+            "RogueX.ArmPose == 1", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms1b_bare.png",                                                              #No gloves, no collar
+            "RogueX.Arms == 'gloves' and RogueX.Neck == 'spiked collar'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2_gloved.png",                           #Gloves and collar
+            "RogueX.Arms == 'gloves'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2b_gloved.png",                                                         #Gloved, no collar
+            "RogueX.Neck == 'spiked collar'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2_bare.png",                                                    #No gloves, collar
+            "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_arms2b_bare.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #chest layer
-#            "RogueX.Pierce == 'barbell'", get_cached_recolor("Rogue", "Chest", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_chest_barbell.png"),
-#            "RogueX.Pierce == 'ring'", get_cached_recolor("Rogue", "Chest", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_chest_rings.png"),
-#            "True", get_cached_recolor("Rogue", "Chest", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_chest_bare.png"),
+#            "RogueX.Pierce == 'barbell'", Recolor("Rogue", "Chest", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_chest_barbell.png"),
+#            "RogueX.Pierce == 'ring'", Recolor("Rogue", "Chest", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_chest_rings.png"),
+#            "True", Recolor("Rogue", "Chest", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_chest_bare.png"),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #chest clothes layer
@@ -610,13 +610,13 @@ image Rogue_Head:                                                               
             #base face
 #            "not Speed or (not renpy.showing('Rogue_BJ_Animation') and not renpy.showing('Rogue_CUN_Animation'))", ConditionSwitch(
 #                    #not the sucking version
-#                    "RogueX.Blush > 1", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush2.png"),
-#                    "RogueX.Blush", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush.png"),
-#                    "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base.png"),
+#                    "RogueX.Blush > 1", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush2.png",
+#                    "RogueX.Blush", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush.png",
+#                    "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base.png",
 #                    ),
-            "RogueX.Blush > 1", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush2.png"),
-            "RogueX.Blush", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush.png"),
-            "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base.png")
+            "RogueX.Blush > 1", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush2.png",
+            "RogueX.Blush", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base_blush.png",
+            "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_base.png"
             ),
         # Modification mode
         (0,0), ConditionSwitch(
@@ -627,28 +627,28 @@ image Rogue_Head:                                                               
         # ----------------
         (0,0), ConditionSwitch(
             #Mouth for under layer
-#            "renpy.showing('Rogue_CUN_Animation') and Speed", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_licking.png"),
+#            "renpy.showing('Rogue_CUN_Animation') and Speed", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_licking.png"),
 #            "renpy.showing('Rogue_BJ_Animation') and Speed", ConditionSwitch(
 #                    #if the BJface is happening
-##                    "Speed == 1 and 'mouth' in RogueX.Spunk", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_lickingS.png"),
-#                    "Speed == 1", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_licking.png"), #licking
+##                    "Speed == 1 and 'mouth' in RogueX.Spunk", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_lickingS.png"),
+#                    "Speed == 1", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_licking.png"), #licking
 #                    "Speed == 2", Null(),                                               #heading Rogue_BJ_HeadingMouth()
-#                    "Speed == 3", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_sucking.png"), #sucking
-#                    "Speed >= 4", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_sucking.png"), #deepthroat
+#                    "Speed == 3", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_sucking.png"), #sucking
+#                    "Speed >= 4", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_sucking.png"), #deepthroat
 #                    "True", Null(),
 #                    ),
 #            "True", ConditionSwitch(
                     #if no Spunk
-                    "RogueX.Mouth == 'normal'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_normal.png"),
-                    "RogueX.Mouth == 'lipbite'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_lipbite.png"),
-                    "RogueX.Mouth == 'sucking' or RogueX.Mouth == 'open'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_surprised.png"),
-                    "RogueX.Mouth == 'kiss'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_kiss.png"),
-                    "RogueX.Mouth == 'sad'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_sad.png"),
-                    "RogueX.Mouth == 'smile'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_smile.png"),
-                    "RogueX.Mouth == 'grimace'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_smile.png"),
-                    "RogueX.Mouth == 'surprised'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_surprised.png"),
-                    "RogueX.Mouth == 'tongue'", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_licking.png"),
-                    "True", get_cached_recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_normal.png"),
+                    "RogueX.Mouth == 'normal'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_normal.png"),
+                    "RogueX.Mouth == 'lipbite'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_lipbite.png"),
+                    "RogueX.Mouth == 'sucking' or RogueX.Mouth == 'open'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_surprised.png"),
+                    "RogueX.Mouth == 'kiss'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_kiss.png"),
+                    "RogueX.Mouth == 'sad'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_sad.png"),
+                    "RogueX.Mouth == 'smile'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_smile.png"),
+                    "RogueX.Mouth == 'grimace'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_smile.png"),
+                    "RogueX.Mouth == 'surprised'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_surprised.png"),
+                    "RogueX.Mouth == 'tongue'", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_licking.png"),
+                    "True", Recolor("Rogue", "Lips", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_mouth_normal.png"),
 #                    ),
             ),
         (0,0), ConditionSwitch(
@@ -691,17 +691,17 @@ image Rogue_Head:                                                               
         (0,0), ConditionSwitch(                                                                 #Brows
             "RogueX.Blush > 1", ConditionSwitch(
                     #blushing version
-                    "RogueX.Brows == 'angry'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_angry_b.png"),
-                    "RogueX.Brows == 'sad'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_sad_b.png"),
-                    "RogueX.Brows == 'surprised'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_surprised_b.png"),
-                    "RogueX.Brows == 'confused'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_confused_b.png"),
-                    "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_normal_b.png"),
+                    "RogueX.Brows == 'angry'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_angry_b.png",
+                    "RogueX.Brows == 'sad'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_sad_b.png",
+                    "RogueX.Brows == 'surprised'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_surprised_b.png",
+                    "RogueX.Brows == 'confused'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_confused_b.png",
+                    "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_normal_b.png",
                     ),
-            "RogueX.Brows == 'angry'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_angry.png"),
-            "RogueX.Brows == 'sad'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_sad.png"),
-            "RogueX.Brows == 'surprised'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_surprised.png"),
-            "RogueX.Brows == 'confused'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_confused.png"),
-            "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_normal.png"),
+            "RogueX.Brows == 'angry'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_angry.png",
+            "RogueX.Brows == 'sad'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_sad.png",
+            "RogueX.Brows == 'surprised'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_surprised.png",
+            "RogueX.Brows == 'confused'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_confused.png",
+            "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_brows_normal.png",
             ),
         (0,0), "Rogue Blink",                                                                #Eyes
         (0,0), ConditionSwitch(
@@ -754,17 +754,17 @@ image Rogue_HairBack:
 image Rogue Blink:
     #eyeblinks
     ConditionSwitch(
-        "RogueX.Eyes == 'normal'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_normal.png"),
-        "RogueX.Eyes == 'sexy'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_sexy.png"),
-        "RogueX.Eyes == 'closed'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_closed.png"),
-        "RogueX.Eyes == 'surprised'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_surprised.png"),
+        "RogueX.Eyes == 'normal'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_normal.png",
+        "RogueX.Eyes == 'sexy'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_sexy.png",
+        "RogueX.Eyes == 'closed'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_closed.png",
+        "RogueX.Eyes == 'surprised'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_surprised.png",
         "RogueX.Eyes == 'leftside'", get_cached_image("images/RogueSprite/Rogue_Sprite_face_eyes_leftside.png"),
-        "RogueX.Eyes == 'side'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_side.png"),
-        "RogueX.Eyes == 'stunned'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_stunned.png"),
-        "RogueX.Eyes == 'down'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_down.png"),
-        "RogueX.Eyes == 'manic'", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_manic.png"),
+        "RogueX.Eyes == 'side'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_side.png",
+        "RogueX.Eyes == 'stunned'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_stunned.png",
+        "RogueX.Eyes == 'down'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_down.png",
+        "RogueX.Eyes == 'manic'", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_manic.png",
         "RogueX.Eyes == 'squint'", "Rogue_Squint",
-        "True", get_cached_image("images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_normal.png"),
+        "True", "images/RogueSprite/[RogueX.skin_image.skin_path]Rogue_Sprite_face_eyes_normal.png",
         )
     choice:
         3.5
@@ -876,7 +876,7 @@ image Rogue_Doggy_Body:
 #            "RogueX.Hair == 'evo'", get_cached_recolor("Rogue", "Hair", "images/RogueDoggy/Rogue_Doggy_HairB.png"),
 #            "True", Null(),
 #            ),
-        (0,0), get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Body.png"), #Body base
+        (0,0), "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #tanktop
             "not RogueX.Chest", Null(),
@@ -960,7 +960,7 @@ image Rogue_Doggy_Head:
             "RogueX.Hair == 'evo'", get_cached_recolor("Rogue", "Hair", "images/RogueDoggy/Rogue_Doggy_HairB.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Head.png"), #head base
+        (0,0), "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Head.png", #head base
 #        (0,0), ConditionSwitch(
 #            #Collar
 #            "RogueX.Neck == 'spiked collar'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Collar.png"),
@@ -969,38 +969,38 @@ image Rogue_Doggy_Head:
         (0,0), ConditionSwitch(
             #Mouth
             "'mouth' in RogueX.Spunk and Player.Male", ConditionSwitch(
-                    "RogueX.Mouth == 'lipbite'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_LipbiteW.png"),
-                    "RogueX.Mouth == 'surprised' or RogueX.Mouth == 'open'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_SurprisedW.png"),
-                    "RogueX.Mouth == 'sucking'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_BlowW.png"),
-                    "RogueX.Mouth == 'sad'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_SadW.png"),
-                    "RogueX.Mouth == 'smile'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_SmileW.png"),
-                    "RogueX.Mouth == 'tongue'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_TongueW.png"),
-                    "True", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_NormalW.png"),
+                    "RogueX.Mouth == 'lipbite'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_LipbiteW.png"),
+                    "RogueX.Mouth == 'surprised' or RogueX.Mouth == 'open'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_SurprisedW.png"),
+                    "RogueX.Mouth == 'sucking'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_BlowW.png"),
+                    "RogueX.Mouth == 'sad'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_SadW.png"),
+                    "RogueX.Mouth == 'smile'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_SmileW.png"),
+                    "RogueX.Mouth == 'tongue'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_TongueW.png"),
+                    "True", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_NormalW.png"),
                     ),
-            "RogueX.Mouth == 'normal'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Normal.png"),
-            "RogueX.Mouth == 'lipbite'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Lipbite.png"),
-            "RogueX.Mouth == 'sucking' or RogueX.Mouth == 'open'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Blow.png"),
-            "RogueX.Mouth == 'kiss'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Surprised.png"),
-            "RogueX.Mouth == 'sad'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Sad.png"),
-            "RogueX.Mouth == 'smile'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Smile.png"),
-            "RogueX.Mouth == 'grimace'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Smile.png"),
-            "RogueX.Mouth == 'surprised'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Surprised.png"),
-            "RogueX.Mouth == 'tongue'", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Tongue.png"),
-            "True", get_cached_recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Smile.png"),
+            "RogueX.Mouth == 'normal'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Normal.png"),
+            "RogueX.Mouth == 'lipbite'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Lipbite.png"),
+            "RogueX.Mouth == 'sucking' or RogueX.Mouth == 'open'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Blow.png"),
+            "RogueX.Mouth == 'kiss'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Surprised.png"),
+            "RogueX.Mouth == 'sad'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Sad.png"),
+            "RogueX.Mouth == 'smile'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Smile.png"),
+            "RogueX.Mouth == 'grimace'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Smile.png"),
+            "RogueX.Mouth == 'surprised'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Surprised.png"),
+            "RogueX.Mouth == 'tongue'", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Tongue.png"),
+            "True", Recolor("Rogue", "Lips", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Mouth_Smile.png"),
             ),
         (0,0), ConditionSwitch(
             #Blush
-            "RogueX.Blush", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Blush.png"),
+            "RogueX.Blush", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Blush.png",
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            "RogueX.Brows == 'normal'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Normal.png"),
-            "RogueX.Brows == 'angry'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Angry.png"),
-            "RogueX.Brows == 'sad'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Sad.png"),
-            "RogueX.Brows == 'surprised'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Surprised.png"),
-            "RogueX.Brows == 'confused'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Normal.png"),
-            "True", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Normal.png"),
+            "RogueX.Brows == 'normal'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Normal.png",
+            "RogueX.Brows == 'angry'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Angry.png",
+            "RogueX.Brows == 'sad'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Sad.png",
+            "RogueX.Brows == 'surprised'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Surprised.png",
+            "RogueX.Brows == 'confused'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Normal.png",
+            "True", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Brows_Normal.png",
             ),
         (0,0), "Rogue Doggy Blink",#Eyes
         (0,0), ConditionSwitch(
@@ -1082,23 +1082,23 @@ image Rogue_Doggy_Ass:
             "RogueX.Panties", get_cached_recolor("Rogue", "Panties", "images/RogueDoggy/Rogue_Doggy_Panties_Back.png"),
             "True", Null(),
             ),
-#        (0,0), get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass.png"), #Ass Base
+#        (0,0), "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass.png", #Ass Base
 
         (0,0), ConditionSwitch(
             #Ass
-            "Trigger == 'lick pussy'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Open.png"),
-            "RogueX.Legs and not RogueX.Upskirt", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Closed.png"),
-            "RogueX.Panties and not RogueX.PantiesDown", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Closed.png"),
+            "Trigger == 'lick pussy'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Open.png",
+            "RogueX.Legs and not RogueX.Upskirt", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Closed.png",
+            "RogueX.Panties and not RogueX.PantiesDown", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Closed.png",
             "Player.Sprite and Player.Cock == 'in'", ConditionSwitch(
 #                    "Speed > 2", "Rogue_Pussy_Fucking3",#Speed 3
 #                    "Speed > 1", "Rogue_Pussy_Fucking2",#Speed 2
 #                    "Speed", "Rogue_Pussy_Heading",      #Speed 1
-                    "True", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png"),              #Speed 0
+                    "True", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png",              #Speed 0
                     ),
-            "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png"),
-            "'fondle pussy' in (Trigger,Trigger2,RogueX.Offhand) or (Partner and Partner.Offhand == 'girl fondle pussy')", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png"),
-            "Trigger == 'insert pussy'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png"),
-            "True", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Closed.png"),
+            "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png",
+            "'fondle pussy' in (Trigger,Trigger2,RogueX.Offhand) or (Partner and Partner.Offhand == 'girl fondle pussy')", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png",
+            "Trigger == 'insert pussy'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Fucking.png",
+            "True", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Ass_Closed.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -1106,14 +1106,14 @@ image Rogue_Doggy_Ass:
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
 #                    "Speed > 2", "Rogue_Anal_Fucking2", #Speed 3
 #                    "Speed > 1", "Rogue_Anal_Fucking",  #Speed 2
-                    "Speed", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Anal_FullBase.png"),      #Speed 1
+                    "Speed", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Anal_FullBase.png",      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
-            "'insert ass' in (Trigger,Trigger2,RogueX.Offhand) or (Partner and Partner.Offhand == 'girl insert ass')", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Anal_FullBase.png"),
-            "'dildo anal' in (Trigger,Trigger2,RogueX.Offhand)", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,RogueX.Offhand) or (Partner and Partner.Offhand == 'girl insert ass')", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Anal_FullBase.png",
+            "'dildo anal' in (Trigger,Trigger2,RogueX.Offhand)", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Anal_FullBase.png",
             "RogueX.Loose > 2", "Rogue_Gape_Anal",
-            "RogueX.Loose", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Asshole_Loose.png"),
-            "True", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Asshole_Tight.png"),
+            "RogueX.Loose", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Asshole_Loose.png",
+            "True", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Asshole_Tight.png",
             ),
 
         (0,0), ConditionSwitch(
@@ -1162,12 +1162,12 @@ image Rogue_Doggy_Ass:
             "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", Null(),
             "'fondle pussy' in (Trigger,Trigger2,RogueX.Offhand) or (Partner and Partner.Offhand == 'girl fondle pussy')",Null(),
             "Trigger == 'insert pussy'", Null(),
-            "RogueX.Legs == 'pants' and not RogueX.Upskirt", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Panties.png"),
-            "RogueX.PantiesDown", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes.png"),
-            "RogueX.Panties", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Panties.png"),
-            "RogueX.Hose and (RogueX.Hose == 'pantyhose' or RogueX.Hose == 'tights')", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Panties.png"),
-            "Trigger == 'lick pussy'", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Open.png"),
-            "True", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes.png"),
+            "RogueX.Legs == 'pants' and not RogueX.Upskirt", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Panties.png"),
+            "RogueX.PantiesDown", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes.png"),
+            "RogueX.Panties", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Panties.png"),
+            "RogueX.Hose and (RogueX.Hose == 'pantyhose' or RogueX.Hose == 'tights')", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Panties.png"),
+            "Trigger == 'lick pussy'", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Open.png"),
+            "True", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes.png"),
             ),
         (0,0), ConditionSwitch(
             #Pussy Piercings
@@ -1356,16 +1356,16 @@ image Rogue_Doggy_Ass:
 
 image Rogue Doggy Blink:                                                                                        #Eyes
     ConditionSwitch(
-    "RogueX.Eyes == 'sexy'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Sexy.png"),
-    "RogueX.Eyes == 'side'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Side.png"),
-    "RogueX.Eyes == 'normal'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Normal.png"),
-    "RogueX.Eyes == 'closed'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Closed.png"),
-    "RogueX.Eyes == 'manic'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Surprised.png"),
-    "RogueX.Eyes == 'down'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Sexy.png"),
-    "RogueX.Eyes == 'stunned'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Stunned.png"),
-    "RogueX.Eyes == 'surprised'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Surprised.png"),
-    "RogueX.Eyes == 'squint'", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Sexy.png"),
-    "True", get_cached_image("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Normal.png"),
+    "RogueX.Eyes == 'sexy'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Sexy.png",
+    "RogueX.Eyes == 'side'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Side.png",
+    "RogueX.Eyes == 'normal'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Normal.png",
+    "RogueX.Eyes == 'closed'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Closed.png",
+    "RogueX.Eyes == 'manic'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Surprised.png",
+    "RogueX.Eyes == 'down'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Sexy.png",
+    "RogueX.Eyes == 'stunned'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Stunned.png",
+    "RogueX.Eyes == 'surprised'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Surprised.png",
+    "RogueX.Eyes == 'squint'", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Sexy.png",
+    "True", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Eyes_Normal.png",
     ),
 #    choice:
 #        3.5
@@ -1382,7 +1382,7 @@ image Rogue Doggy Blink:                                                        
 
 image Rogue_Doggy_Feet:
     contains:
-            get_cached_alphamask("Rogue_Doggy_Shins", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Toes.png")
+            AlphaMask("Rogue_Doggy_Shins", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Toes.png")
     contains:
         #spunk
         ConditionSwitch(
@@ -1646,7 +1646,7 @@ image Rogue_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
+            "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1694,7 +1694,7 @@ image Rogue_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Rogue_Pussy_Moving"
     contains:
         #Base
-        get_cached_alphamask("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1739,7 +1739,7 @@ image Rogue_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
+            "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1811,7 +1811,7 @@ image Rogue_Pussy_Hole_Mask:
     # This is the alpha used for the little flap in the heading animation "Rogue_Pussy_Heading"
     contains:
         #Base
-        get_cached_alphamask("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        AlphaMask("images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1856,7 +1856,7 @@ image Rogue_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
+            "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1948,7 +1948,7 @@ image Rogue_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
+            "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
     contains:
@@ -1991,7 +1991,7 @@ image Rogue_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "RogueX.Pubes", get_cached_recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
+            "RogueX.Pubes", Recolor("Rogue", "Pubes", "images/RogueDoggy/[RogueX.skin_image.skin_path]Rogue_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
     contains:
@@ -2632,9 +2632,9 @@ image Rogue_Sex_Body:
         (320,-135), "Rogue_HairBack_Sex",                                                                                      #Hair underlayer
         (0,0), ConditionSwitch(
             #Body Base
-            "RogueX.Pierce == 'barbell'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Body_Barbell.png"),
-            "RogueX.Pierce == 'ring'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Body_Ring.png"),
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Body.png"),
+            "RogueX.Pierce == 'barbell'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Body_Barbell.png",
+            "RogueX.Pierce == 'ring'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Body_Ring.png",
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Body.png",
             ),
         #(260,-350), "Rogue_Head_Sex",  #check positioning (400,-300)
         (0,0), ConditionSwitch(
@@ -2785,7 +2785,7 @@ image Rogue_Sex_Legs:
     LiveComposite(
         #the legs used in the sex pose, referenced by Kitty_SexSprite
         (1120,840),
-        (0,0), get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Legs.png"),
+        (0,0), "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Legs.png",
         #Legs Base
         (0,0),ConditionSwitch(
             #wet look
@@ -2911,7 +2911,7 @@ image Rogue_Sex_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Kitty_Sex_Legs
         (1120,840),
-        (0,0), get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png"),                                                         #Legs Base
+        (0,0), "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png",                                                         #Legs Base
         (0,0),ConditionSwitch(
             #Wet look
             "RogueX.Water", get_cached_image("images/RogueSex/Rogue_Sex_Wet_Feet.png"),
@@ -2999,7 +2999,7 @@ image Rogue_Sex_Pussy_Fucking0:
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-                "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+                "True", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
@@ -3014,7 +3014,7 @@ image Rogue_Sex_Pussy_Fucking1:
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-                "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+                "True", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
@@ -3029,7 +3029,7 @@ image Rogue_Sex_Pussy_Fucking2:
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-                "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "True", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
@@ -3044,7 +3044,7 @@ image Rogue_Sex_Pussy_Fucking3:  #rename this to 3
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-                "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "True", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
@@ -3091,14 +3091,14 @@ image Rogue_Sex_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
-                "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png"),
-                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
-#                "Trigger == 'dildo pussy'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
-                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
-                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
-                "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
+                "Player.Sprite and Player.Cock == 'in'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png",
+                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
+#                "Trigger == 'dildo pussy'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
+                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
+                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
+                "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png",
                 )
     contains:
             # growing pussy hole
@@ -3131,14 +3131,14 @@ image Rogue_Sex_Pussy:
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
-                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-#                "Trigger == 'dildo pussy'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-                "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+                "Player.Sprite and Player.Cock == 'in'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
+                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+#                "Trigger == 'dildo pussy'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "True", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
                 )
     contains:
             #Spunk under penis
@@ -3355,8 +3355,8 @@ image Rogue_Sex_Anus:
             "Trigger == 'dildo anal'", get_cached_image("images/KittySex/Kitty_Sex_Hole_Open.png"),
             "RogueX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "RogueX.Loose > 2", "Rogue_Gape_Anal_Sex",
-            "RogueX.Loose", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Loose.png"),
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Tight.png"),
+            "RogueX.Loose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Loose.png",
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Tight.png",
             )
     contains:
             #Spunk under penis
@@ -4031,15 +4031,15 @@ image Rogue_BJ_Head:
 
         (0,0), ConditionSwitch(
             # Basic Face layer
-            "RogueX.Blush and renpy.showing('Rogue_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over_Blush.png"),
-            "renpy.showing('Rogue_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over.png"),
+            "RogueX.Blush and renpy.showing('Rogue_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over_Blush.png",
+            "renpy.showing('Rogue_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over.png",
 #            "RogueX.Blush and renpy.showing('Rogue_BJ_Animation') and (Speed == 2 or Speed == 5)", get_cached_image("images/RogueBJFace/Rogue_BJ_Head_Heading_Blush.png"),
 #            "renpy.showing('Rogue_BJ_Animation') and (Speed == 2 or Speed == 5)", get_cached_image("images/RogueBJFace/Rogue_BJ_Head_Heading.png"),
 #            "True", get_cached_image("images/RogueBJFace/Rogue_BJ_Head_Sucking_Overlay.png"),
 
 #            "RogueX.Blush == 2", get_cached_image("images/RogueBJFace/Rogue_BJ_Head_Sucking_Over_Blush2.png"),
-            "RogueX.Blush", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over_Blush.png"),
-            "True", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over.png")
+            "RogueX.Blush", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over_Blush.png",
+            "True", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head_Over.png"
             ),
 
         (0,0), ConditionSwitch(
@@ -4108,11 +4108,11 @@ image Rogue_BJ_Head:
 
         (0,0), ConditionSwitch(
             #Brows
-            "RogueX.Brows == 'angry'", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Angry.png"),
-            "RogueX.Brows == 'sad'", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Sad.png"),
+            "RogueX.Brows == 'angry'", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Angry.png",
+            "RogueX.Brows == 'sad'", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Sad.png",
             "RogueX.Brows == 'surprised'", get_cached_image("images/RogueBJFace/Rogue_BJ_Brows_Surprised.png"),
-            "RogueX.Brows == 'confused'", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Confused.png"),
-            "True", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Normal.png"),
+            "RogueX.Brows == 'confused'", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Confused.png",
+            "True", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Brows_Normal.png",
             ),
         (0,0),"Rogue BJ Blink",
             #Eyes
@@ -4194,7 +4194,7 @@ image Rogue_BJ_HairBack:
 image Rogue_BJ_Head_Under:
     LiveComposite(
         (695,695),
-        (0,0), get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head.png"),
+        (0,0), "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_BJ_Head.png",
         (0,0), ConditionSwitch(
             #Mouth
 #            "True", Null(), #cumming
@@ -5087,9 +5087,9 @@ image Rogue_TJ_Under:
 image Rogue_TJ_Over:
     contains:
         ConditionSwitch(
-            "RogueX.Pierce == 'barbell'", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_tj_tits_b.png"),
-            "RogueX.Pierce == 'ring'", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_tj_tits_r.png"),
-            "RogueX.Pierce != 'barbell'", get_cached_image("images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_tj_tits.png"),
+            "RogueX.Pierce == 'barbell'", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_tj_tits_b.png",
+            "RogueX.Pierce == 'ring'", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_tj_tits_r.png",
+            "RogueX.Pierce != 'barbell'", "images/RogueBJFace/[RogueX.skin_image.skin_path]Rogue_tj_tits.png",
             ),
     contains:
         ConditionSwitch(
@@ -6080,7 +6080,7 @@ image Rogue_69_Body:
         (0,0), ConditionSwitch(
             #body
 #            "RogueX.Arms", get_cached_image("images/RogueSex/Rogue_69_BodyG.png"),
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Body.png"),
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Body.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
@@ -6187,7 +6187,7 @@ image Rogue_69_Head:
             "Speed == 1", get_cached_image("images/RogueSex/Rogue_69_Tongue.png"),
             "True", Null(),
             ),
-        (0,0), get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Head.png"),
+        (0,0), "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Head.png",
         (0,0),ConditionSwitch(
             #Outside Spunk
             "'mouth' in RogueX.Spunk and Player.Male", get_cached_image("images/RogueSex/Rogue_69_Spunk_Mouth.png"),
@@ -6201,7 +6201,7 @@ image Rogue_69_Head:
             "Speed == 6 and Player.Male", Null(),
 #            "RogueX.Hair == 'blonde'", get_cached_image("images/RogueSex/Rogue_69_Hair_Blonde_Over.png"),
 #            "RogueX.Hair == 'long' or RogueX.Hair == 'wetlong'", get_cached_image("images/RogueSex/Rogue_69_Hair_Long_Over.png"),
-            "True", get_cached_recolor("Rogue", "Hair", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Hair_Over.png"),
+            "True", Recolor("Rogue", "Hair", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Hair_Over.png"),
             ),
         (0,0), ConditionSwitch(
             #collar
@@ -6227,7 +6227,7 @@ image Rogue_69_HairOver:
 #            "renpy.showing('Rogue_TJ_Animation')", Null(),
 #            "RogueX.Hair == 'blonde'", get_cached_image("images/RogueSex/Rogue_69_Hair_Blonde_Lick.png"),
 #            "RogueX.Hair == 'long' or RogueX.Hair == 'wetlong'", get_cached_image("images/RogueSex/Rogue_69_Hair_Long_Lick.png"),
-            "True", get_cached_recolor("Rogue", "Hair", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Hair_Over.png"),
+            "True", Recolor("Rogue", "Hair", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Hair_Over.png"),
             ),
         (0,0), ConditionSwitch(
             #collar
@@ -6246,7 +6246,7 @@ image Rogue_69_HairBack:
     LiveComposite(
         #the torso/head used in the sex pose, referenced by Rogue_SexSprite
         (1120,840),
-#        (0,0), get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Head.png"),
+#        (0,0), "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Head.png",
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Rogue_TJ_Animation')", Null(),
@@ -6295,7 +6295,7 @@ image Rogue_69_Legs:
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Rogue_Sex_Heading_Pussy",
 #            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/RogueSex/Rogue_Sex_Ass.png"),
 #            "Trigger == 'lick pussy'", get_cached_image("images/RogueSex/Rogue_Sex_Ass.png"),
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Legs.png"),
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Legs.png",
             ),
 
 #        (0,0), ConditionSwitch(
@@ -6470,21 +6470,21 @@ image Rogue_69_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Rogue_Sex_Legs
         (1120,840),
-#        (0,0), get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png"),                                                         #Legs Base
+#        (0,0), "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png",                                                         #Legs Base
         (0,0), ConditionSwitch(
             #hose layer
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png"),   #Null(),
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "(RogueX.Hose == 'pantyhose' or RogueX.Hose == 'ripped pantyhose') and RogueX.Panties and RogueX.PantiesDown", get_cached_recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet.png"),
-            "(RogueX.Hose == 'tights' or RogueX.Hose == 'ripped tights') and RogueX.Panties and RogueX.PantiesDown", get_cached_recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet.png"),
-            "RogueX.Hose == 'ripped tights'", get_cached_recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet_Tights_Holed.png"),
+            "(RogueX.Hose == 'pantyhose' or RogueX.Hose == 'ripped pantyhose') and RogueX.Panties and RogueX.PantiesDown", Recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet.png"),
+            "(RogueX.Hose == 'tights' or RogueX.Hose == 'ripped tights') and RogueX.Panties and RogueX.PantiesDown", Recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet.png"),
+            "RogueX.Hose == 'ripped tights'", Recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet_Tights_Holed.png"),
             "RogueX.Hose == 'tights'", get_cached_recolor("Rogue", "Hose", "images/RogueSex/Rogue_69_Feet_Tights.png"),
-            "RogueX.Hose == 'ripped pantyhose'", get_cached_recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet_Hose_Holed.png"),
+            "RogueX.Hose == 'ripped pantyhose'", Recolor("Rogue", "Hose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_69_Feet_Hose_Holed.png"),
             "RogueX.Hose and RogueX.Hose != 'garterbelt'", get_cached_recolor("Rogue", "Hose", "images/RogueSex/Rogue_69_Feet_Hose.png"),
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png"),   #Null(),
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Feet.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
@@ -6523,9 +6523,9 @@ image Rogue_69_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Rogue_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
                 "Trigger == 'lick pussy'", get_cached_image("images/RogueSex/Rogue_69_Pussy_Open.png"),
                 "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", get_cached_image("images/RogueSex/Rogue_69_Pussy_Open.png"),
                 "True", get_cached_image("images/RogueSex/Rogue_69_Pussy_Closed.png"),
@@ -6541,10 +6541,10 @@ image Rogue_69_Pussy:
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-#                "Player.Sprite and Player.Cock == 'out'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'out'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
                 "Trigger == 'lick pussy'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/Rogue_69_Pubes_Open.png"),
                 "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/Rogue_69_Pubes_Open.png"),
                 "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/Rogue_69_Pubes_Closed.png"),
@@ -6679,8 +6679,8 @@ image Rogue_69_Anus:
 #            "Player.Sprite and Player.Cock == 'anal'", "Rogue_Sex_Anal_Tip",
             "RogueX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "RogueX.Loose > 2", "Rogue_Gape_Anal_Sex",
-            "RogueX.Loose", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Loose.png"),
-            "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Tight.png"),
+            "RogueX.Loose", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Loose.png",
+            "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Hole_Tight.png",
             "True", Null(),
             )
 #    contains:
@@ -7909,7 +7909,7 @@ image Rogue_SC_Legs:
     LiveComposite(
         #the legs used in the sex pose, referenced by Kitty_SexSprite
         (1120,840),
-        (0,0), get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Legs.png"),
+        (0,0), "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Legs.png",
         #Legs Base
         (0,0),ConditionSwitch(
             #wet look
@@ -7996,14 +7996,14 @@ image Rogue_SC_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
-#                "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png"),
-                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
-#                "Trigger == 'dildo pussy'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png"),
-                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
-                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png"),
-                "True", get_cached_image("images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
+#                "Player.Sprite and Player.Cock == 'in'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png",
+                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
+#                "Trigger == 'dildo pussy'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Fucking.png",
+                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
+                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Open.png",
+                "True", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pussy_Closed.png",
                 )
 #    contains:
 #            # growing pussy hole
@@ -8036,14 +8036,14 @@ image Rogue_SC_Pussy:
             # pubes
             ConditionSwitch(
                 "not RogueX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-#                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
-                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-#                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
-#                "Trigger == 'dildo pussy'", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
-                "True", get_cached_recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'in'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
+                "Trigger == 'lick pussy' or Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+#                "'dildo pussy' in (Trigger,Trigger2,RogueX.Offhand)", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "RogueX.Offhand == 'fondle pussy' and RogueX.Lust > 60", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Open.png"),
+#                "Trigger == 'dildo pussy'", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Fucking.png"),
+                "True", Recolor("Rogue", "Pubes", "images/RogueSex/[RogueX.skin_image.skin_path]Rogue_Sex_Pubes_Closed.png"),
                 )
 
     #End Rogue Pussy composite
