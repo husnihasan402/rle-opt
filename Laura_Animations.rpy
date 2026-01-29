@@ -850,7 +850,7 @@ image Laura_Doggy_Body:
         (0,0), ConditionSwitch(
             #breast fondling animation
             "Trigger == 'fondle breasts' or Trigger2 == 'fondle breasts'", "Laura_Doggy_GropeBreast",
-            "True", Null()
+            "True", Null(),
             ),
         #(161,-1), "Laura_Doggy_Head",               #Head
         #(165,0),"Laura_Doggy_Hair_Over", #front of the hair
@@ -1233,7 +1233,7 @@ image Laura_Doggy_Ass:
             "Player.Sprite and Player.Cock", Null(),
             "Trigger == 'lick pussy'", "Rogue_Doggy_Lick_Pussy",
             "Trigger == 'lick ass'", "Rogue_Doggy_Lick_Ass",
-            "True", Null()
+            "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hotdogging underlayer
@@ -2588,13 +2588,13 @@ image Laura_Sex_Body:
             ConditionSwitch(
                 #breast licking animation
                 "Trigger == 'suck breasts' or Trigger2 == 'suck breasts'", "Laura_Sex_Lick_Breasts",
-                "True", Null()
+                "True", Null(),
                 )
     contains:
             ConditionSwitch(
                 #breast fondling animation
                 "Trigger == 'fondle breasts' or Trigger2 == 'fondle breasts'", "Laura_Sex_Fondle_Breasts",
-                "True", Null()
+                "True", Null(),
                 )
     contains:
             "Laura_Sex_Head"
@@ -2766,7 +2766,7 @@ image Laura_Sex_Legs:
             "Trigger == 'lick ass'", "Laura_Sex_Lick_Ass",
             "LauraX.Offhand == 'fondle pussy' and LauraX.Lust > 60", At("LauraFingerHand", GirlFingerPussyX()),
             "LauraX.Offhand == 'fondle pussy'", At("LauraMastHand", GirlGropePussyX()),
-            "True", Null()
+            "True", Null(),
             ),
 #    contains:
 #            # Over
@@ -9601,7 +9601,7 @@ image Laura_SC_Legs:
             "Trigger == 'lick ass'", "Laura_Sex_Lick_Ass",
             "LauraX.Offhand == 'fondle pussy' and LauraX.Lust > 60", At("LauraFingerHand", GirlFingerPussyX()),
             "LauraX.Offhand == 'fondle pussy'", At("LauraMastHand", GirlGropePussyX()),
-            "True", Null()
+            "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Shows different lower body motion depending on events
