@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Betsy используйте: preload_character_animations('Betsy')
+# Для очистки кеша: clear_animation_cache('Betsy')
 
 image Betsy_Sprite:
     LiveComposite(

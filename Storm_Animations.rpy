@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Storm используйте: preload_character_animations('Storm')
+# Для очистки кеша: clear_animation_cache('Storm')
 
 image Storm_Sprite:
     LiveComposite(

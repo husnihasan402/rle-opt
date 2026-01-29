@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Laura используйте: preload_character_animations('Laura')
+# Для очистки кеша: clear_animation_cache('Laura')
 
 image Laura_Sprite:
     LiveComposite(

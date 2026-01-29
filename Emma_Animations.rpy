@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Emma используйте: preload_character_animations('Emma')
+# Для очистки кеша: clear_animation_cache('Emma')
 image Emma_Sprite:
     LiveComposite(
         (402,965),
