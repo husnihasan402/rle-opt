@@ -41,20 +41,42 @@
 
 ### Статистика интеграции:
 
-| Файл | Вызовов кэша |
-|------|-------------|
-| Storm_Animations.rpy | 1228 |
-| Doreen_Animations.rpy | 1233 |
-| Jubes_Animations.rpy | 854 |
-| Betsy_Animations.rpy | 1167 |
-| Kitty_Animations.rpy | 1071 |
-| Wanda_Animations.rpy | 1222 |
-| Gwen_Animations.rpy | 1061 |
-| Jean_Animations.rpy | 774 |
-| Emma_Animations.rpy | 1097 |
-| Laura_Animations.rpy | 995 |
-| Rogue_Animations.rpy | 1156 |
-| **ВСЕГО** | **11,858** |
+| Файл | Вызовов кэша | Прямых ссылок (с переменными) |
+|------|-------------|-------------------------------|
+| Storm_Animations.rpy | 1228 | ~598 |
+| Doreen_Animations.rpy | 1103 | ~164 |
+| Jubes_Animations.rpy | 775 | ~495 |
+| Betsy_Animations.rpy | 925 | ~683 |
+| Kitty_Animations.rpy | 861 | ~633 |
+| Wanda_Animations.rpy | 1128 | ~629 |
+| Gwen_Animations.rpy | 947 | ~608 |
+| Jean_Animations.rpy | 607 | ~499 |
+| Emma_Animations.rpy | 799 | ~738 |
+| Laura_Animations.rpy | 776 | ~550 |
+| Rogue_Animations.rpy | 951 | ~639 |
+| **ВСЕГО** | **~10,100** | **~6,236** |
+
+**Примечание**: Пути с динамическими переменными `[CharX.variable]` не могут быть кэшированы через Python функции, так как Ren'Py не выполняет интерполяцию строк внутри Python вызовов. Для таких путей используется нативная загрузка Ren'Py.
+
+## Ограничения
+
+### Переменные в путях изображений
+
+**Важно**: Пути изображений с переменными вида `[variable]` НЕ могут быть кэшированы.
+
+❌ **Не работает**:
+```python
+get_cached_image("images/KittySprite/[KittyX.skin_image.skin_path]Kitty_Sprite_Arms1.png")
+# Ren'Py НЕ интерполирует [KittyX.skin_image.skin_path] внутри Python функции
+```
+
+✅ **Правильно**:
+```python
+"images/KittySprite/[KittyX.skin_image.skin_path]Kitty_Sprite_Arms1.png"
+# Прямая ссылка позволяет Ren'Py выполнить интерполяцию переменных
+```
+
+Это ограничение затрагивает ~6,236 изображений (35% от общего количества), которые используют динамические пути для поддержки различных вариантов скинов персонажей.
 
 ## Преимущества
 
