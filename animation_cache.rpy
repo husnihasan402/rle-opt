@@ -3,6 +3,10 @@
 # 
 # Этот модуль предоставляет механизм кэширования для файлов анимаций (*_Animations.rpy)
 # чтобы улучшить производительность загрузки и отображения изображений
+#
+# ПРИМЕЧАНИЕ: Модуль работает совместно со встроенным кешем изображений Ren'Py.
+# Функции предзагрузки регистрируют изображения и настраивают параметры кеша
+# для оптимальной производительности анимаций.
 
 init -10 python:
     # Список всех анимационных персонажей
@@ -61,7 +65,7 @@ init -10 python:
                     renpy.get_registered_image(img_name)
                     _animation_preload_cache[img_name] = True
                     preloaded_count += 1
-            except:
+            except Exception as e:
                 # Если изображение не существует или не может быть загружено
                 pass
         
@@ -138,8 +142,6 @@ init -10 python:
         # Принудительно запускаем сборщик мусора Python
         import gc
         gc.collect()
-        
-        return True
 
 # Дополнительные утилиты для работы с кешем
 init python:
@@ -165,11 +167,11 @@ init python:
         Использует глобальную переменную ActiveGirls если она доступна.
         """
         try:
-            if 'ActiveGirls' in globals() and ActiveGirls:
-                for girl in ActiveGirls:
+            if hasattr(store, 'ActiveGirls') and store.ActiveGirls:
+                for girl in store.ActiveGirls:
                     if hasattr(girl, 'Tag'):
                         preload_character_animations(girl.Tag)
-        except:
+        except Exception as e:
             pass
 
 # Конфигурация кеша для файлов анимаций
