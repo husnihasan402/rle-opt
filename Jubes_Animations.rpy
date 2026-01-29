@@ -3,28 +3,28 @@
 image Jubes_Sprite:
     LiveComposite(
         (500,950),
-        (0,0), "images/JubesSprite/Jubes_Sprite_Shadow.png",
+        (0,0), get_cached_image("images/JubesSprite/Jubes_Sprite_Shadow.png"),
         (0,0), ConditionSwitch(
             #Jacket back of collar
             # Modification mode
             "JubesX.Acc == 'saiyan tail'", Null(),
             # -----------------
-            "JubesX.Acc", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Collar.png"),
+            "JubesX.Acc", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Collar.png"),
             "True", Null(),
             ),
 
         (147,48), "Jubes_Sprite_HairBack",
 #        (0,0), ConditionSwitch(
 #            #Jacket backplate
-#            "JubesX.Over == 'jacket'", "images/JubesSprite/Jubes_Sprite_Over_Jacket_Under.png",
+#            "JubesX.Over == 'jacket'", get_cached_image("images/JubesSprite/Jubes_Sprite_Over_Jacket_Under.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #pants down back
             "not JubesX.Legs or not JubesX.Upskirt", Null(),
-            "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants_Back.png"),
-            "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_Back.png"),
+            "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants_Back.png"),
+            "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -36,10 +36,10 @@ image Jubes_Sprite:
             # Modification mode
             "JubesX.Panties == 'saiyan leotard'", Null(),
             # -----------------
-            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace_Back.png"),
-            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_Back.png"),
-            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_Back.png"),
-            "True", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_Back.png"),
+            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace_Back.png"),
+            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_Back.png"),
+            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_Back.png"),
+            "True", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_Back.png"),
             ),
 
         (0,0), ConditionSwitch(
@@ -49,8 +49,8 @@ image Jubes_Sprite:
             ),
         (0,0), ConditionSwitch(
             #Water effect
-            "JubesX.Water and JubesX.ArmPose == 1", "images/JubesSprite/Jubes_Sprite_Water1.png",
-            "JubesX.Water", "images/JubesSprite/Jubes_Sprite_Water2.png",
+            "JubesX.Water and JubesX.ArmPose == 1", get_cached_image("images/JubesSprite/Jubes_Sprite_Water1.png"),
+            "JubesX.Water", get_cached_image("images/JubesSprite/Jubes_Sprite_Water2.png"),
             "True", Null(),
             ),
 
@@ -58,19 +58,19 @@ image Jubes_Sprite:
             #Jacket open, behind torso
 #            "JubesX.Uptop", ConditionSwitch(
 #                    # if top is up. . .
-#                    "(JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket') and JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1_Back.png"),
-#                    "JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket'", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2_Back.png"),
+#                    "(JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket') and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1_Back.png"),
+#                    "JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket'", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2_Back.png"),
 #                    "True", Null(),
 #                    ),
             "not JubesX.Acc", Null(),
             # Modification mode
             "JubesX.Acc == 'saiyan tail'", Null(),
             # -----------------
-            "(JubesX.Uptop or JubesX.Acc == 'open jacket') and JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1_Back.png"),
-            "(JubesX.Uptop or JubesX.Acc == 'open jacket')", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2_Back.png"),
+            "(JubesX.Uptop or JubesX.Acc == 'open jacket') and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1_Back.png"),
+            "(JubesX.Uptop or JubesX.Acc == 'open jacket')", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2_Back.png"),
             #If she's using arm pose 1, left arm pointing
             #If she's using arm pose 2, Left arm on hip
-            "True", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Closed_Back.png"),
+            "True", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Closed_Back.png"),
 #            "True", Null(),
             ),
 
@@ -80,14 +80,14 @@ image Jubes_Sprite:
             "JubesX.Wet == 1", ConditionSwitch( #Wet = 1
                     "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts') and not JubesX.Upskirt", Null(),
                     "JubesX.Panties and not JubesX.PantiesDown", Null(),
-                    "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts')", AlphaMask("Wet_Drip","Jubes_Drip_MaskP"),
-                    "JubesX.Panties and JubesX.PantiesDown", AlphaMask("Wet_Drip","Jubes_Drip_MaskP"),
-                    "True", AlphaMask("Wet_Drip","Jubes_Drip_Mask"), #only plays if nothing is in the way
+                    "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts')", get_cached_alphamask("Wet_Drip", "Jubes_Drip_MaskP"),
+                    "JubesX.Panties and JubesX.PantiesDown", get_cached_alphamask("Wet_Drip", "Jubes_Drip_MaskP"),
+                    "True", get_cached_alphamask("Wet_Drip", "Jubes_Drip_Mask"), #only plays if nothing is in the way
                     ),
             "True", ConditionSwitch( #Wet = 2+
-                    "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts') and JubesX.Upskirt", AlphaMask("Wet_Drip2","Jubes_Drip_MaskP"),
-                    "JubesX.Panties and JubesX.PantiesDown", AlphaMask("Wet_Drip2","Jubes_Drip_MaskP"),
-                    "True", AlphaMask("Wet_Drip2","Jubes_Drip_Mask"), #only plays if nothing is in the way
+                    "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts') and JubesX.Upskirt", get_cached_alphamask("Wet_Drip2", "Jubes_Drip_MaskP"),
+                    "JubesX.Panties and JubesX.PantiesDown", get_cached_alphamask("Wet_Drip2", "Jubes_Drip_MaskP"),
+                    "True", get_cached_alphamask("Wet_Drip2", "Jubes_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
 
@@ -95,14 +95,14 @@ image Jubes_Sprite:
             #Spunk
             "('in' not in JubesX.Spunk and 'anal' not in JubesX.Spunk) or not Player.Male", Null(),
             "True", ConditionSwitch( #Wet = 2+
-                    "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts') and JubesX.Upskirt", AlphaMask("Spunk_Drip2","Jubes_Drip_MaskP"),
-                    "JubesX.Panties and JubesX.PantiesDown", AlphaMask("Spunk_Drip2","Jubes_Drip_MaskP"),
-                    "True", AlphaMask("Spunk_Drip2","Jubes_Drip_Mask"), #only plays if nothing is in the way
+                    "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts') and JubesX.Upskirt", get_cached_alphamask("Spunk_Drip2", "Jubes_Drip_MaskP"),
+                    "JubesX.Panties and JubesX.PantiesDown", get_cached_alphamask("Spunk_Drip2", "Jubes_Drip_MaskP"),
+                    "True", get_cached_alphamask("Spunk_Drip2", "Jubes_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
         (0,0), ConditionSwitch(
             #pubes
-            "JubesX.Pubes", Recolor("Jubes", "Pubes", "images/JubesSprite/Jubes_Sprite_Pubes.png"),
+            "JubesX.Pubes", get_cached_recolor("Jubes", "Pubes", "images/JubesSprite/Jubes_Sprite_Pubes.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -110,8 +110,8 @@ image Jubes_Sprite:
             "not JubesX.Pierce", Null(),
 #            "JubesX.Panties and not JubesX.PantiesDown", Null(),
 #            "JubesX.Legs != 'skirt' and JubesX.Legs and not JubesX.Upskirt", Null(), #skirt if wearing a skirt
-            "JubesX.Pierce == 'barbell'", "images/JubesSprite/Jubes_Sprite_Pierce_Barbell_Bot.png",
-            "JubesX.Pierce == 'ring'", "images/JubesSprite/Jubes_Sprite_Pierce_Ring_Bot.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Barbell_Bot.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Ring_Bot.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -122,36 +122,36 @@ image Jubes_Sprite:
             #Only does this if she has piercings, has no tops, or has her top up
             "JubesX.Pierce == 'barbell'", ConditionSwitch(
                     # if top is up. . .
-#                    "JubesX.Chest == 'black bra' or JubesX.Chest == 'lace bra' or JubesX.Chest == 'sports bra'", "images/JubesSprite/Jubes_Sprite_Pierce_Barbell_Top.png",
-                    "True", "images/JubesSprite/Jubes_Sprite_Pierce_Barbell_Top.png",
+#                    "JubesX.Chest == 'black bra' or JubesX.Chest == 'lace bra' or JubesX.Chest == 'sports bra'", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Barbell_Top.png"),
+                    "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Barbell_Top.png"),
                     ),
             # Pierce is "ring"
-#            "JubesX.Chest == 'black bra' or JubesX.Chest == 'lace bra' or JubesX.Chest == 'sports bra'", "images/JubesSprite/Jubes_Sprite_Pierce_Ring_Top.png",
-            "JubesX.Over or JubesX.Chest", "images/JubesSprite/Jubes_Sprite_Pierce_Ring_Top.png",
-            "True", "images/JubesSprite/Jubes_Sprite_Pierce_Ring_Top.png",
+#            "JubesX.Chest == 'black bra' or JubesX.Chest == 'lace bra' or JubesX.Chest == 'sports bra'", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Ring_Top.png"),
+            "JubesX.Over or JubesX.Chest", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Ring_Top.png"),
+            "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Pierce_Ring_Top.png"),
             ),
         (0,0), ConditionSwitch(
             #Necklaces
-            "JubesX.Neck == 'choker'", Recolor("Jubes", "Neck", "images/JubesSprite/Jubes_Sprite_Neck_Choker.png"),
+            "JubesX.Neck == 'choker'", get_cached_recolor("Jubes", "Neck", "images/JubesSprite/Jubes_Sprite_Neck_Choker.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Chest layer
             "JubesX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Lace_Up.png"),
-                    "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Sports_Up.png"),
-                    "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Bikini_Up.png"),
+                    "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Lace_Up.png"),
+                    "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Sports_Up.png"),
+                    "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Bikini_Up.png"),
                     # Modification mode
-                    "JubesX.Chest == 'saiyan leotard'", "images/JubesSprite/modification/Jubes_Sprite_Chest_Saiyan_Leotard_Up.png",
+                    "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Chest_Saiyan_Leotard_Up.png"),
                     # -----------------
                     "True", Null(),
                     ),
-            "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Lace.png"),
-            "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Sports.png"),
-            "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Bikini.png"),
+            "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Lace.png"),
+            "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Sports.png"),
+            "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesSprite/Jubes_Sprite_Chest_Bikini.png"),
             # Modification mode
-            "JubesX.Chest == 'saiyan leotard'", "images/JubesSprite/modification/Jubes_Sprite_Chest_Saiyan_Leotard.png",
+            "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Chest_Saiyan_Leotard.png"),
             # -----------------
             "True", Null(),
             ),
@@ -163,52 +163,52 @@ image Jubes_Sprite:
                     #if the panties are down
                     "not JubesX.Legs or JubesX.Upskirt or JubesX.Legs == 'skirt'", ConditionSwitch(
                             #if she's wearing a skirt or nothing else
-                            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace_Down.png"),
-                            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_DownW.png"),
-                            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_Down.png"),
-                            "JubesX.Panties == 'tiger panties' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_DownW.png"),
-                            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_Down.png"),
+                            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace_Down.png"),
+                            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_DownW.png"),
+                            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_Down.png"),
+                            "JubesX.Panties == 'tiger panties' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_DownW.png"),
+                            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_Down.png"),
                             # Modification mode
-                            "JubesX.Panties == 'saiyan leotard'", "images/JubesSprite/modification/Jubes_Sprite_Panties_Saiyan_Leotard_Down.png",
+                            "JubesX.Panties == 'saiyan leotard'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Panties_Saiyan_Leotard_Down.png"),
                             # -----------------
-                            "JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_DownW.png"),
-                            "True", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_Down.png"),
+                            "JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_DownW.png"),
+                            "True", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_Down.png"),
                             ),
                     "True", Null(),
                     ),
             "JubesX.Wet", ConditionSwitch(
                 #if she's  wet
-                "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace.png"),
-                "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_Wet.png"),
-                "JubesX.Panties == 'tiger panties' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_Wet.png"),
+                "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace.png"),
+                "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini_Wet.png"),
+                "JubesX.Panties == 'tiger panties' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger_Wet.png"),
                 # Modification mode
-                "JubesX.Panties == 'saiyan leotard'", "images/JubesSprite/modification/Jubes_Sprite_Panties_Saiyan_Leotard_Wet.png",
+                "JubesX.Panties == 'saiyan leotard'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Panties_Saiyan_Leotard_Wet.png"),
                 # -----------------
-                "True", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_Wet.png"),
+                "True", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue_Wet.png"),
                 ),
             "True", ConditionSwitch(
                 #if she's not wet
-                "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace.png"),
-                "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini.png"),
-                "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger.png"),
+                "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Lace.png"),
+                "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Bikini.png"),
+                "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Tiger.png"),
                 # Modification mode
-                "JubesX.Panties == 'saiyan leotard'", "images/JubesSprite/modification/Jubes_Sprite_Panties_Saiyan_Leotard.png",
+                "JubesX.Panties == 'saiyan leotard'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Panties_Saiyan_Leotard.png"),
                 # -----------------
-                "True", Recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue.png"),
+                "True", get_cached_recolor("Jubes", "Panties", "images/JubesSprite/Jubes_Sprite_Panties_Blue.png"),
                 ),
             ),
         (0,0), ConditionSwitch(
             #stockings
-            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Socks.png"),
-            "JubesX.Hose == 'stockings'", Recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Stockings.png"),
-            "JubesX.Hose == 'stockings and garterbelt'", Recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_StockingsandGarter.png"),
-            "JubesX.Hose == 'garterbelt'", Recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Garter.png"),
+            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Socks.png"),
+            "JubesX.Hose == 'stockings'", get_cached_recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Stockings.png"),
+            "JubesX.Hose == 'stockings and garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_StockingsandGarter.png"),
+            "JubesX.Hose == 'garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Garter.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose
-            "JubesX.Hose == 'pantyhose' and (not JubesX.PantiesDown or not JubesX.Panties)", Recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Pantyhose.png"),
-            "JubesX.Hose == 'ripped pantyhose' and (not JubesX.PantiesDown or not JubesX.Panties)", Recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Pantyhose_Holed.png"),
+            "JubesX.Hose == 'pantyhose' and (not JubesX.PantiesDown or not JubesX.Panties)", get_cached_recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Pantyhose.png"),
+            "JubesX.Hose == 'ripped pantyhose' and (not JubesX.PantiesDown or not JubesX.Panties)", get_cached_recolor("Jubes", "Hose", "images/JubesSprite/Jubes_Sprite_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -216,57 +216,57 @@ image Jubes_Sprite:
             "not JubesX.Legs", Null(),
             "JubesX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-#                        "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Legs_Dress_Up.png"),
-                        "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt_Up.png"),
-                        "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants_Down.png"),
-                        "JubesX.Legs == 'shorts' and JubesX.Wet > 1", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_DownW.png"),
-                        "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_Down.png"),
+#                        "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Legs_Dress_Up.png"),
+                        "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt_Up.png"),
+                        "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants_Down.png"),
+                        "JubesX.Legs == 'shorts' and JubesX.Wet > 1", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_DownW.png"),
+                        "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_Down.png"),
                         "True", Null(),
                         ),
-#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Legs_Dress.png"),
-            "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt.png"),
+#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Legs_Dress.png"),
+            "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt.png"),
             "JubesX.Wet > 1", ConditionSwitch(
                 #if she's wet
-                "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants.png"),
-                "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_Wet.png"),
-#                        "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt.png"),
+                "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants.png"),
+                "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts_Wet.png"),
+#                        "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt.png"),
                 "True", Null(),
                 ),
             #if she's not wet
-            "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants.png"),
-            "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts.png"),
-#                        "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt.png"),
+            "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Pants.png"),
+            "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Shorts.png"),
+#                        "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSprite/Jubes_Sprite_Legs_Skirt.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #boots
-            "JubesX.Boots == 'sneaks' and JubesX.Legs == 'pants'", "images/JubesSprite/Jubes_Sprite_Boots_SneaksP.png",
-            "JubesX.Boots == 'sneaks'", "images/JubesSprite/Jubes_Sprite_Boots_Sneaks.png",
+            "JubesX.Boots == 'sneaks' and JubesX.Legs == 'pants'", get_cached_image("images/JubesSprite/Jubes_Sprite_Boots_SneaksP.png"),
+            "JubesX.Boots == 'sneaks'", get_cached_image("images/JubesSprite/Jubes_Sprite_Boots_Sneaks.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over
             "JubesX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Tube_Up.png"),
-                    "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Red_Up.png"),
-                    "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Black_Up.png"),
-                    "JubesX.Over == 'dress' and JubesX.Upskirt", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress_Up.png"),
-                    "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress_UpT.png"),
-#                    "JubesX.Over == 'towel'", "images/JubesSprite/Jubes_Sprite_Towel.png",
+                    "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Tube_Up.png"),
+                    "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Red_Up.png"),
+                    "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Black_Up.png"),
+                    "JubesX.Over == 'dress' and JubesX.Upskirt", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress_Up.png"),
+                    "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress_UpT.png"),
+#                    "JubesX.Over == 'towel'", get_cached_image("images/JubesSprite/Jubes_Sprite_Towel.png"),
                     "True", Null(),
                     ),
             #If she's using arm pose 1, left arm pointing
             #If she's using arm pose 2, Left arm on hip
-            "JubesX.Over == 'dress' and JubesX.Upskirt", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress_UpB.png"),
-            "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress.png"),
-            "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Tube.png"),
-            "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Red.png"),
-            "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Black.png"),
-            "JubesX.Over == 'towel' and JubesX.ArmPose == 1", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Towel1.png"),
-            "JubesX.Over == 'towel'", Recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Towel2.png"),
+            "JubesX.Over == 'dress' and JubesX.Upskirt", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress_UpB.png"),
+            "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Dress.png"),
+            "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Tube.png"),
+            "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Red.png"),
+            "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Black.png"),
+            "JubesX.Over == 'towel' and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Towel1.png"),
+            "JubesX.Over == 'towel'", get_cached_recolor("Jubes", "Over", "images/JubesSprite/Jubes_Sprite_Over_Towel2.png"),
             # Modification mode
-            "JubesX.Over == 'saiyan armor'", "images/JubesSprite/modification/Jubes_Sprite_Over_Saiyan_Armor.png",
+            "JubesX.Over == 'saiyan armor'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Over_Saiyan_Armor.png"),
             # -----------------
             "True", Null(),
             ),
@@ -274,35 +274,35 @@ image Jubes_Sprite:
             #Jacket as an accessory
             "not JubesX.Acc", Null(),
             # Modification mode
-            "JubesX.Acc == 'saiyan tail'", "images/JubesSprite/modification/Jubes_Sprite_Saiyan_Tail.png",
+            "JubesX.Acc == 'saiyan tail'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Saiyan_Tail.png"),
             # -----------------
-            "JubesX.Acc == 'open jacket' and JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1.png"),
-            "JubesX.Acc == 'open jacket'", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2.png"),
+            "JubesX.Acc == 'open jacket' and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1.png"),
+            "JubesX.Acc == 'open jacket'", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2.png"),
             "JubesX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "(JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket') and JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1.png"),
-                    "JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket'", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2.png"),
+                    "(JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket') and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open1.png"),
+                    "JubesX.Acc == 'jacket' or JubesX.Acc == 'shut jacket'", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Open2.png"),
                     "True", Null(),
                     ),
             #If she's using arm pose 1, left arm pointing
             #If she's using arm pose 2, Left arm on hip
-            "JubesX.Acc == 'jacket' and JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Closed1.png"),
-            "JubesX.Acc == 'jacket'", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Closed2.png"),
+            "JubesX.Acc == 'jacket' and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Closed1.png"),
+            "JubesX.Acc == 'jacket'", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Closed2.png"),
             #below all assume JubesX.Acc == 'shut jacket'
-            "JubesX.Upskirt and JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut1_Up.png"),
-            "JubesX.Upskirt", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut2_Up.png"),
-            "JubesX.ArmPose == 1", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut1.png"),
-            "True", Recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut2.png"),
+            "JubesX.Upskirt and JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut1_Up.png"),
+            "JubesX.Upskirt", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut2_Up.png"),
+            "JubesX.ArmPose == 1", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut1.png"),
+            "True", get_cached_recolor("Jubes", "Acc", "images/JubesSprite/Jubes_Sprite_Jacket_Shut2.png"),
             ),
 
         (0,0), ConditionSwitch(
             #belly spunk
-            "'belly' in JubesX.Spunk and Player.Male", "images/JubesSprite/Jubes_Sprite_Spunk_Belly.png",
+            "'belly' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #breast spunk
-            "'tits' in JubesX.Spunk and Player.Male", "images/JubesSprite/Jubes_Sprite_Spunk_Tits.png",
+            "'tits' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -312,7 +312,7 @@ image Jubes_Sprite:
             ),
         (0,0), ConditionSwitch(
             #Water effect
-            "JubesX.Water and JubesX.ArmPose == 1", "images/JubesSprite/Jubes_Sprite_Water1_Arm.png",
+            "JubesX.Water and JubesX.ArmPose == 1", get_cached_image("images/JubesSprite/Jubes_Sprite_Water1_Arm.png"),
             "True", Null(),
             ),
 
@@ -320,20 +320,20 @@ image Jubes_Sprite:
         (147,48), "Jubes_Sprite_Head", #(141,45)
 
 
-#        (0,0), "images/JubesSprite/Jubes_Sprite_Headref.png", #53,-45
+#        (0,0), get_cached_image("images/JubesSprite/Jubes_Sprite_Headref.png"), #53,-45
 
 
 #        (0,0), ConditionSwitch(
 #            #hand spunk
 #            "JubesX.ArmPose == 2 or 'hand' not in JubesX.Spunk", Null(),
-#            "True", "images/JubesSprite/Jubes_Sprite_Spunk_Hand.png",
+#            "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Hand.png"),
 #            ),
 #        (0,0), ConditionSwitch(                                                                         #Props
 #            "not JubesX.Held or JubesX.ArmPose != 2", Null(),
-#            "JubesX.ArmPose == 2 and JubesX.Held == 'phone'", "images/JubesSprite/Jubes_held_phone.png",
-#            "JubesX.ArmPose == 2 and JubesX.Held == 'dildo'", "images/JubesSprite/Jubes_held_dildo.png",
-#            "JubesX.ArmPose == 2 and JubesX.Held == 'vibrator'", "images/JubesSprite/Jubes_held_vibrator.png",
-#            "JubesX.ArmPose == 2 and JubesX.Held == 'panties'", "images/JubesSprite/Jubes_held_panties.png",
+#            "JubesX.ArmPose == 2 and JubesX.Held == 'phone'", get_cached_image("images/JubesSprite/Jubes_held_phone.png"),
+#            "JubesX.ArmPose == 2 and JubesX.Held == 'dildo'", get_cached_image("images/JubesSprite/Jubes_held_dildo.png"),
+#            "JubesX.ArmPose == 2 and JubesX.Held == 'vibrator'", get_cached_image("images/JubesSprite/Jubes_held_vibrator.png"),
+#            "JubesX.ArmPose == 2 and JubesX.Held == 'panties'", get_cached_image("images/JubesSprite/Jubes_held_panties.png"),
 #            "True", Null(),
 #            ),
 
@@ -440,12 +440,12 @@ image Jubes_Sprite_HairBack:
         ConditionSwitch(
                 #hair back
     #            "renpy.showing('Jubes_BJ_Animation')", Null(),
-    #            "renpy.showing('Jubes_SexSprite')", Recolor("Jubes", "Hair", "images/JubesSex/Jubes_Sprite_Hair_Long_UnderSex.png"),
-    #            "JubesX.Hair == 'wet' or JubesX.Water", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Under.png"),
-                "JubesX.Hair == 'wet'", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Back.png"),
-                "not Player.Male and 'facial' in JubesX.Spunk",Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Back.png"),
-                "JubesX.Water", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Back.png"),
-                "True", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Short_Back.png"),
+    #            "renpy.showing('Jubes_SexSprite')", get_cached_recolor("Jubes", "Hair", "images/JubesSex/Jubes_Sprite_Hair_Long_UnderSex.png"),
+    #            "JubesX.Hair == 'wet' or JubesX.Water", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Under.png"),
+                "JubesX.Hair == 'wet'", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Back.png"),
+                "not Player.Male and 'facial' in JubesX.Spunk",get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Back.png"),
+                "JubesX.Water", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet_Back.png"),
+                "True", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Short_Back.png"),
                 ),
 #    "images/JubesSprite/Jubes_Sprite_Hair_Long_Under.png"
     anchor (0.5, 0.5)
@@ -457,7 +457,7 @@ image Jubes_Sprite_Head:
         (900,900),
 #        (0,0), ConditionSwitch(
 #                # hair behind face
-#                "renpy.showing('Jubes_SexSprite')", Recolor("Jubes", "Hair", "images/JubesSex/Jubes_Sprite_Hair_Long_UnderSex.png"),
+#                "renpy.showing('Jubes_SexSprite')", get_cached_recolor("Jubes", "Hair", "images/JubesSex/Jubes_Sprite_Hair_Long_UnderSex.png"),
 #                "True", Null(),
 #                ),
         (0,0), ConditionSwitch(
@@ -470,43 +470,43 @@ image Jubes_Sprite_Head:
                 "True", "images/JubesSprite/[JubesX.skin_image.skin_path]Jubes_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(#chin spunk
-            "'chin' in JubesX.Spunk and Player.Male", "images/JubesSprite/Jubes_Sprite_Spunk_Chin.png",
+            "'chin' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(#Mouths
-            "JubesX.Mouth == 'lipbite'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Lipbite.png"),
-            "JubesX.Mouth == 'sucking'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Open.png"),
-            "JubesX.Mouth == 'kiss'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Kiss.png"),
-            "JubesX.Mouth == 'sad'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Sad.png"),
-            "JubesX.Mouth == 'smile'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Smile.png"),
-            "JubesX.Mouth == 'surprised'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Open.png"),
-            "JubesX.Mouth == 'tongue'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Tongue.png"),
-            "JubesX.Mouth == 'grimace'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Smile.png"),
-            "JubesX.Mouth == 'smirk'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Smirk.png"),
-            "JubesX.Mouth == 'open'", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Open.png"),
-            "True", Recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Normal.png"),
+            "JubesX.Mouth == 'lipbite'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Lipbite.png"),
+            "JubesX.Mouth == 'sucking'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Open.png"),
+            "JubesX.Mouth == 'kiss'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Kiss.png"),
+            "JubesX.Mouth == 'sad'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Sad.png"),
+            "JubesX.Mouth == 'smile'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Smile.png"),
+            "JubesX.Mouth == 'surprised'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Open.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Tongue.png"),
+            "JubesX.Mouth == 'grimace'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Smile.png"),
+            "JubesX.Mouth == 'smirk'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Smirk.png"),
+            "JubesX.Mouth == 'open'", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Open.png"),
+            "True", get_cached_recolor("Jubes", "Lips", "images/JubesSprite/Jubes_Sprite_Mouth_Normal.png"),
             ),
 
 
         (0,0), ConditionSwitch(#Mouths spunk
             "'mouth' not in JubesX.Spunk or not Player.Male", Null(),
-            "JubesX.Mouth == 'sucking'", "images/JubesSprite/Jubes_Sprite_Spunk_Open.png",
-            "JubesX.Mouth == 'kiss'", "images/JubesSprite/Jubes_Sprite_Spunk_Kiss.png",
-            "JubesX.Mouth == 'sad'", "images/JubesSprite/Jubes_Sprite_Spunk_Kiss.png",
-            "JubesX.Mouth == 'smile'", "images/JubesSprite/Jubes_Sprite_Spunk_Lipbite.png",
-            "JubesX.Mouth == 'surprised'", "images/JubesSprite/Jubes_Sprite_Spunk_Kiss.png",
-            "JubesX.Mouth == 'tongue'", "images/JubesSprite/Jubes_Sprite_Spunk_Open.png",
-            "JubesX.Mouth == 'grimace'", "images/JubesSprite/Jubes_Sprite_Spunk_Lipbite.png",
-            "True", "images/JubesSprite/Jubes_Sprite_Spunk_Smirk.png",
+            "JubesX.Mouth == 'sucking'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Open.png"),
+            "JubesX.Mouth == 'kiss'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Kiss.png"),
+            "JubesX.Mouth == 'sad'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Kiss.png"),
+            "JubesX.Mouth == 'smile'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Lipbite.png"),
+            "JubesX.Mouth == 'surprised'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Kiss.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Open.png"),
+            "JubesX.Mouth == 'grimace'", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Lipbite.png"),
+            "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Smirk.png"),
             ),
 
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in JubesX.Spunk and 'chin' not in JubesX.Spunk", Null(),
-            "'chin' not in JubesX.Spunk and JubesX.Mouth == 'tongue'", "images/JubesSprite/Jubes_Sprite_Wet_Tongue.png",
-            "JubesX.Mouth == 'tongue'", "images/JubesSprite/Jubes_Sprite_Wet_Tongue2.png",
-            "'chin' in JubesX.Spunk", "images/JubesSprite/Jubes_Sprite_Wet_Mouth.png",
+            "'chin' not in JubesX.Spunk and JubesX.Mouth == 'tongue'", get_cached_image("images/JubesSprite/Jubes_Sprite_Wet_Tongue.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_image("images/JubesSprite/Jubes_Sprite_Wet_Tongue2.png"),
+            "'chin' in JubesX.Spunk", get_cached_image("images/JubesSprite/Jubes_Sprite_Wet_Mouth.png"),
             "True", Null(),
             ),
 
@@ -514,51 +514,51 @@ image Jubes_Sprite_Head:
             #brows
             "JubesX.Brows == 'angry' and JubesX.Blush >= 2", "images/JubesSprite/[JubesX.skin_image.skin_path]Jubes_Sprite_Brows_AngryB.png",
             "JubesX.Brows == 'angry'", "images/JubesSprite/[JubesX.skin_image.skin_path]Jubes_Sprite_Brows_Angry.png",
-            "JubesX.Brows == 'sad' and JubesX.Blush >= 2", "images/JubesSprite/Jubes_Sprite_Brows_SadB.png",
-            "JubesX.Brows == 'sad'", "images/JubesSprite/Jubes_Sprite_Brows_Sad.png",
-            "JubesX.Brows == 'surprised'", "images/JubesSprite/Jubes_Sprite_Brows_Surprised.png",
+            "JubesX.Brows == 'sad' and JubesX.Blush >= 2", get_cached_image("images/JubesSprite/Jubes_Sprite_Brows_SadB.png"),
+            "JubesX.Brows == 'sad'", get_cached_image("images/JubesSprite/Jubes_Sprite_Brows_Sad.png"),
+            "JubesX.Brows == 'surprised'", get_cached_image("images/JubesSprite/Jubes_Sprite_Brows_Surprised.png"),
             "JubesX.Brows == 'sad' and JubesX.Blush >= 2", "images/JubesSprite/[JubesX.skin_image.skin_path]Jubes_Sprite_Brows_ConfusedB.png",
             "JubesX.Brows == 'confused'", "images/JubesSprite/[JubesX.skin_image.skin_path]Jubes_Sprite_Brows_Confused.png",
-            "True", "images/JubesSprite/Jubes_Sprite_Brows_Normal.png",
+            "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Brows_Normal.png"),
             ),
         (0,0), "Jubes Blink",     #Eyes
 #        (0,0), ConditionSwitch(
 #            #Face Water
 #            "not JubesX.Water", Null(),
-#            "True", "images/JubesSprite/Jubes_Sprite_Head_Water.png",
+#            "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Head_Water.png"),
 #            ),
-        (0,0), "images/JubesSprite/Jubes_Sprite_Earrings.png",     #Eyes
+        (0,0), get_cached_image("images/JubesSprite/Jubes_Sprite_Earrings.png"),     #Eyes
         # Modification mode
         (0,0), ConditionSwitch(
             #glasses under
-            "JubesX.Hair == 'shades'", "images/JubesSprite/Jubes_Sprite_Hair_Shades.png",
+            "JubesX.Hair == 'shades'", get_cached_image("images/JubesSprite/Jubes_Sprite_Hair_Shades.png"),
             "True", Null(),
             ),
         # -----------------
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Jubes_TJ_Animation')", Null(),
-            "JubesX.Hair == 'wet' or JubesX.Water", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet.png"),
-            "not Player.Male and 'facial' in JubesX.Spunk",Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet.png"),
-            "JubesX.Hair == 'shades'", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Shades.png"),
-            "True", Recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Short.png"),
+            "JubesX.Hair == 'wet' or JubesX.Water", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet.png"),
+            "not Player.Male and 'facial' in JubesX.Spunk",get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Wet.png"),
+            "JubesX.Hair == 'shades'", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Shades.png"),
+            "True", get_cached_recolor("Jubes", "Hair", "images/JubesSprite/Jubes_Sprite_Hair_Short.png"),
             ),
         (0,0), ConditionSwitch(
             #Hair Water
-            "JubesX.Water", "images/JubesSprite/Jubes_Sprite_Wet_Head.png",
-            "not Player.Male and 'facial' in JubesX.Spunk", "images/JubesSprite/Jubes_Sprite_Wet_Head.png",
+            "JubesX.Water", get_cached_image("images/JubesSprite/Jubes_Sprite_Wet_Head.png"),
+            "not Player.Male and 'facial' in JubesX.Spunk", get_cached_image("images/JubesSprite/Jubes_Sprite_Wet_Head.png"),
             "True",Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "JubesX.Eyewear == 'scouter'", "images/JubesSprite/modification/Jubes_Sprite_Eyewear_Scouter.png",
+            "JubesX.Eyewear == 'scouter'", get_cached_image("images/JubesSprite/modification/Jubes_Sprite_Eyewear_Scouter.png"),
             "True",Null(),
             ),
         # -----------------
         (0,0), ConditionSwitch(
             #facial spunk
-            "'hair' in JubesX.Spunk and Player.Male", "images/JubesSprite/Jubes_Sprite_Spunk_Shades.png",
-            "'facial' in JubesX.Spunk and Player.Male", "images/JubesSprite/Jubes_Sprite_Spunk_Facial.png",
+            "'hair' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Shades.png"),
+            "'facial' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSprite/Jubes_Sprite_Spunk_Facial.png"),
             "True", Null(),
             ),
         )
@@ -568,17 +568,17 @@ image Jubes_Sprite_Head:
 
 image Jubes Blink:
     ConditionSwitch(
-    "JubesX.Eyes == 'sexy'", "images/JubesSprite/Jubes_Sprite_Eyes_Sexy.png",
-    "JubesX.Eyes == 'side'", "images/JubesSprite/Jubes_Sprite_Eyes_Side.png",
-    "JubesX.Eyes == 'surprised'", "images/JubesSprite/Jubes_Sprite_Eyes_Surprised.png",
-    "JubesX.Eyes == 'normal'", "images/JubesSprite/Jubes_Sprite_Eyes_Normal.png",
-    "JubesX.Eyes == 'stunned'", "images/JubesSprite/Jubes_Sprite_Eyes_Stunned.png",
-    "JubesX.Eyes == 'down'", "images/JubesSprite/Jubes_Sprite_Eyes_Down.png",
-    "JubesX.Eyes == 'closed'", "images/JubesSprite/Jubes_Sprite_Eyes_Closed.png",
-    "JubesX.Eyes == 'leftside'", "images/JubesSprite/Jubes_Sprite_Eyes_Leftside.png",
-    "JubesX.Eyes == 'manic'", "images/JubesSprite/Jubes_Sprite_Eyes_Squint.png",
+    "JubesX.Eyes == 'sexy'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Sexy.png"),
+    "JubesX.Eyes == 'side'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Side.png"),
+    "JubesX.Eyes == 'surprised'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Surprised.png"),
+    "JubesX.Eyes == 'normal'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Normal.png"),
+    "JubesX.Eyes == 'stunned'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Stunned.png"),
+    "JubesX.Eyes == 'down'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Down.png"),
+    "JubesX.Eyes == 'closed'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Closed.png"),
+    "JubesX.Eyes == 'leftside'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Leftside.png"),
+    "JubesX.Eyes == 'manic'", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Squint.png"),
     "JubesX.Eyes == 'squint'", "Jubes_Squint",
-    "True", "images/JubesSprite/Jubes_Sprite_Eyes_Normal.png",
+    "True", get_cached_image("images/JubesSprite/Jubes_Sprite_Eyes_Normal.png"),
     ),
     choice:
         3.5
@@ -690,13 +690,13 @@ image Jubes_Doggy_Body:
 #            #hair back
 #            "JubesX.Hair == 'mohawk'", Null(),
 #            "JubesX.Hair == 'short'", Null(),
-#            "(JubesX.Water and JubesX.Hair == 'long') or JubesX.Hair == 'wet'", "images/JubesDoggy/Jubes_Doggy_Hair_Long_Wet_Back.png",
-#            "JubesX.Hair == 'long'", "images/JubesDoggy/Jubes_Doggy_Hair_Long_Back.png",
+#            "(JubesX.Water and JubesX.Hair == 'long') or JubesX.Hair == 'wet'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Hair_Long_Wet_Back.png"),
+#            "JubesX.Hair == 'long'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Hair_Long_Back.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Head
-##            "JubesX.Blush > 1", "images/JubesDoggy/Jubes_Doggy_Head_Blush2.png",
+##            "JubesX.Blush > 1", get_cached_image("images/JubesDoggy/Jubes_Doggy_Head_Blush2.png"),
 #            "JubesX.Blush", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Head_Blush.png",
 #            "True", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Head.png",
 #            ),
@@ -710,48 +710,48 @@ image Jubes_Doggy_Body:
 ##            "JubesX.Mouth == 'smirk'", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Smirk.png"),
 #            "JubesX.Mouth == 'surprised'", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Open.png"),
 #            "JubesX.Mouth == 'sucking'", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Open.png"),
-#            "JubesX.Mouth == 'tongue'", Recolor("Jubes", "Lips", "images/JubesDoggy/Jubes_Doggy_Mouth_Tongue.png"),
+#            "JubesX.Mouth == 'tongue'", get_cached_recolor("Jubes", "Lips", "images/JubesDoggy/Jubes_Doggy_Mouth_Tongue.png"),
 #            "True", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Smirk.png"),
 #            ),
 ##        (-40,5), ConditionSwitch(
 ##            #chin spunk
-##            "'chin' in JubesX.Spunk", "images/JeanDoggy/Jean_Doggy_Spunk_Chin.png",
+##            "'chin' in JubesX.Spunk", get_cached_image("images/JeanDoggy/Jean_Doggy_Spunk_Chin.png"),
 ##            "True", Null(),
 ##            ),
 #        (0,0), ConditionSwitch(
 #            #Mouth spunk
 #            "'mouth' not in JubesX.Spunk or not Player.Male", Null(),
-#            #"JubesX.Mouth == 'normal'", "images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png",
-#            #"JubesX.Mouth == 'sad'", "images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png",
-##            "JubesX.Mouth == 'lipbite'", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
-##            "JubesX.Mouth == 'smile'", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
-##            "JubesX.Mouth == 'grimace'", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
-#            "JubesX.Mouth == 'sucking'", "images/JubesDoggy/Jubes_Doggy_Spunk_Open.png",
-#            "JubesX.Mouth == 'kiss'", "images/JubesDoggy/Jubes_Doggy_Spunk_Kiss.png",
-#            "JubesX.Mouth == 'surprised'", "images/JubesDoggy/Jubes_Doggy_Spunk_Open.png",
-#            "JubesX.Mouth == 'tongue'", "images/JubesDoggy/Jubes_Doggy_Spunk_Open.png",
-#            "True", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
+#            #"JubesX.Mouth == 'normal'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png"),
+#            #"JubesX.Mouth == 'sad'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png"),
+##            "JubesX.Mouth == 'lipbite'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
+##            "JubesX.Mouth == 'smile'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
+##            "JubesX.Mouth == 'grimace'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
+#            "JubesX.Mouth == 'sucking'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Open.png"),
+#            "JubesX.Mouth == 'kiss'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Kiss.png"),
+#            "JubesX.Mouth == 'surprised'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Open.png"),
+#            "JubesX.Mouth == 'tongue'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Open.png"),
+#            "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Brows
-#            "JubesX.Brows == 'angry'", "images/JubesDoggy/Jubes_Doggy_Brows_Angry.png",
-#            "JubesX.Brows == 'sad'", "images/JubesDoggy/Jubes_Doggy_Brows_Sad.png",
-#            "JubesX.Brows == 'surprised'", "images/JubesDoggy/Jubes_Doggy_Brows_Surprised.png",
-#            "True", "images/JubesDoggy/Jubes_Doggy_Brows_Normal.png",
+#            "JubesX.Brows == 'angry'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Angry.png"),
+#            "JubesX.Brows == 'sad'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Sad.png"),
+#            "JubesX.Brows == 'surprised'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Surprised.png"),
+#            "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Normal.png"),
 #            ),
 #        (0,0), "Jubes Doggy Blink",#Eyes
 #        (0,0), ConditionSwitch(
 #            #Hair
-#            "JubesX.Water or JubesX.Hair == 'wet'", Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
-#            "not Player.Male and 'facial' in JubesX.Spunk",Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
-#            "JubesX.Hair == 'shades'", Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Shades.png"),
-#            "True", Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Short.png"),
+#            "JubesX.Water or JubesX.Hair == 'wet'", get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
+#            "not Player.Male and 'facial' in JubesX.Spunk",get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
+#            "JubesX.Hair == 'shades'", get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Shades.png"),
+#            "True", get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Short.png"),
 #            ),
-##        (0,0), "images/JubesDoggy/Jubes_Doggy_Earring.png",#Eyes
+##        (0,0), get_cached_image("images/JubesDoggy/Jubes_Doggy_Earring.png"),#Eyes
 #        (0,0), ConditionSwitch(
 #            #face spunk
-##            "'hair' in JubesX.Spunk", "images/JubesDoggy/Jubes_Doggy_Spunk_Hair.png",
-#            "'facial' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Facial.png",
+##            "'hair' in JubesX.Spunk", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Hair.png"),
+#            "'facial' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Facial.png"),
 #            "True", Null(),
 #            ),
 #        #End head
@@ -766,7 +766,7 @@ image Jubes_Doggy_Body:
 
         (0,0), ConditionSwitch(
             #necklace
-            "JubesX.Neck == 'choker'", Recolor("Jubes", "Neck", "images/JubesDoggy/Jubes_Doggy_Neck_Choker.png"),
+            "JubesX.Neck == 'choker'", get_cached_recolor("Jubes", "Neck", "images/JubesDoggy/Jubes_Doggy_Neck_Choker.png"),
             "True", Null(),
             ),
 
@@ -774,52 +774,52 @@ image Jubes_Doggy_Body:
             #bra
 #            "JubesX.Uptop", ConditionSwitch(
 #                    "JubesX.Over and JubesX.Over != 'towel'", Null(),
-#                    "JubesX.Chest == 'cami'", "images/JubesDoggy/Jubes_Doggy_Bra_Cami_Up.png",
-#                    "JubesX.Chest == 'lace bra'", "images/JubesDoggy/Jubes_Doggy_Bra_Lace.png",
-#                    "JubesX.Chest == 'sports bra'", "images/JubesDoggy/Jubes_Doggy_Bra_Sport_Up.png",
-#                    "JubesX.Chest == 'bikini top'", "images/JubesDoggy/Jubes_Doggy_Bra_Bikini_Up.png",
-#                    "True", "images/JubesDoggy/Jubes_Doggy_Bra.png",
+#                    "JubesX.Chest == 'cami'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Bra_Cami_Up.png"),
+#                    "JubesX.Chest == 'lace bra'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Bra_Lace.png"),
+#                    "JubesX.Chest == 'sports bra'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Bra_Sport_Up.png"),
+#                    "JubesX.Chest == 'bikini top'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Bra_Bikini_Up.png"),
+#                    "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Bra.png"),
 #                    ),
-            "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesDoggy/Jubes_Doggy_Chest_Lace.png"),
-            "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesDoggy/Jubes_Doggy_Chest_Sport.png"),
-            "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesDoggy/Jubes_Doggy_Chest_Bikini.png"),
+            "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesDoggy/Jubes_Doggy_Chest_Lace.png"),
+            "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesDoggy/Jubes_Doggy_Chest_Sport.png"),
+            "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesDoggy/Jubes_Doggy_Chest_Bikini.png"),
             # Modification mode
-            "JubesX.Chest == 'saiyan leotard'", "images/JubesDoggy/modification/Jubes_Doggy_Chest_Saiyan_Leotard.png",
+            "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesDoggy/modification/Jubes_Doggy_Chest_Saiyan_Leotard.png"),
             # -----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "JubesX.Water", "images/JubesDoggy/Jubes_Doggy_Wet_Body.png",
+            "JubesX.Water", get_cached_image("images/JubesDoggy/Jubes_Doggy_Wet_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt
-            "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Red.png"),
-            "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Black.png"),
-            "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Tube.png"),
-            "JubesX.Over == 'towel'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Towel.png"),
-            "JubesX.Uptop and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Dress_Up.png"),
-            "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Dress.png"),
+            "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Red.png"),
+            "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Black.png"),
+            "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Tube.png"),
+            "JubesX.Over == 'towel'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Towel.png"),
+            "JubesX.Uptop and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Dress_Up.png"),
+            "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Over_Dress.png"),
             # Modification mode
-            "JubesX.Over == 'saiyan armor'", "images/JubesDoggy/modification/Jubes_Doggy_Over_Saiyan_Armor.png",
+            "JubesX.Over == 'saiyan armor'", get_cached_image("images/JubesDoggy/modification/Jubes_Doggy_Over_Saiyan_Armor.png"),
             # -----------------
             "True", Null(),
             ),
-#        (0,0), "images/JubesDoggy/Jubes_Doggy_Earring.png",
+#        (0,0), get_cached_image("images/JubesDoggy/Jubes_Doggy_Earring.png"),
         (0,0), ConditionSwitch(
             #Jacket
             # Modification mode
-            "JubesX.Acc == 'saiyan tail'", "images/JubesDoggy/modification/Jubes_Doggy_Saiyan_Tail.png",
+            "JubesX.Acc == 'saiyan tail'", get_cached_image("images/JubesDoggy/modification/Jubes_Doggy_Saiyan_Tail.png"),
             # -----------------
-            "JubesX.Acc", Recolor("Jubes", "Acc", "images/JubesDoggy/Jubes_Doggy_Jacket.png"),
+            "JubesX.Acc", get_cached_recolor("Jubes", "Acc", "images/JubesDoggy/Jubes_Doggy_Jacket.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Back.png",
+            "'back' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -845,13 +845,13 @@ image Jubes_Doggy_Head:
 #            #hair back
 #            "JubesX.Hair == 'mohawk'", Null(),
 #            "JubesX.Hair == 'short'", Null(),
-#            "(JubesX.Water and JubesX.Hair == 'long') or JubesX.Hair == 'wet'", "images/JubesDoggy/Jubes_Doggy_Hair_Long_Wet_Back.png",
-#            "JubesX.Hair == 'long'", "images/JubesDoggy/Jubes_Doggy_Hair_Long_Back.png",
+#            "(JubesX.Water and JubesX.Hair == 'long') or JubesX.Hair == 'wet'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Hair_Long_Wet_Back.png"),
+#            "JubesX.Hair == 'long'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Hair_Long_Back.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Head
-#            "JubesX.Blush > 1", "images/JubesDoggy/Jubes_Doggy_Head_Blush2.png",
+#            "JubesX.Blush > 1", get_cached_image("images/JubesDoggy/Jubes_Doggy_Head_Blush2.png"),
             "JubesX.Blush", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Head_Blush.png",
             "True", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Head.png",
             ),
@@ -865,62 +865,62 @@ image Jubes_Doggy_Head:
 #            "JubesX.Mouth == 'smirk'", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Smirk.png"),
             "JubesX.Mouth == 'surprised'", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Open.png"),
             "JubesX.Mouth == 'sucking'", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Open.png"),
-            "JubesX.Mouth == 'tongue'", Recolor("Jubes", "Lips", "images/JubesDoggy/Jubes_Doggy_Mouth_Tongue.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_recolor("Jubes", "Lips", "images/JubesDoggy/Jubes_Doggy_Mouth_Tongue.png"),
             "True", Recolor("Jubes", "Lips", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Mouth_Smirk.png"),
             ),
 #        (-40,5), ConditionSwitch(
 #            #chin spunk
-#            "'chin' in JubesX.Spunk", "images/JeanDoggy/Jean_Doggy_Spunk_Chin.png",
+#            "'chin' in JubesX.Spunk", get_cached_image("images/JeanDoggy/Jean_Doggy_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Mouth spunk
             "'mouth' not in JubesX.Spunk or not Player.Male", Null(),
-            #"JubesX.Mouth == 'normal'", "images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png",
-            #"JubesX.Mouth == 'sad'", "images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png",
-#            "JubesX.Mouth == 'lipbite'", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
-#            "JubesX.Mouth == 'smile'", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
-#            "JubesX.Mouth == 'grimace'", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
-            "JubesX.Mouth == 'sucking'", "images/JubesDoggy/Jubes_Doggy_Spunk_Open.png",
-            "JubesX.Mouth == 'kiss'", "images/JubesDoggy/Jubes_Doggy_Spunk_Kiss.png",
-            "JubesX.Mouth == 'surprised'", "images/JubesDoggy/Jubes_Doggy_Spunk_Open.png",
-            "JubesX.Mouth == 'tongue'", "images/JubesDoggy/Jubes_Doggy_Spunk_Open.png",
-            "True", "images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png",
+            #"JubesX.Mouth == 'normal'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png"),
+            #"JubesX.Mouth == 'sad'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Normal.png"),
+#            "JubesX.Mouth == 'lipbite'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
+#            "JubesX.Mouth == 'smile'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
+#            "JubesX.Mouth == 'grimace'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
+            "JubesX.Mouth == 'sucking'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Open.png"),
+            "JubesX.Mouth == 'kiss'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Kiss.png"),
+            "JubesX.Mouth == 'surprised'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Open.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Open.png"),
+            "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Smile.png"),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            "JubesX.Brows == 'angry'", "images/JubesDoggy/Jubes_Doggy_Brows_Angry.png",
-            "JubesX.Brows == 'sad'", "images/JubesDoggy/Jubes_Doggy_Brows_Sad.png",
-            "JubesX.Brows == 'surprised'", "images/JubesDoggy/Jubes_Doggy_Brows_Surprised.png",
-            "True", "images/JubesDoggy/Jubes_Doggy_Brows_Normal.png",
+            "JubesX.Brows == 'angry'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Angry.png"),
+            "JubesX.Brows == 'sad'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Sad.png"),
+            "JubesX.Brows == 'surprised'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Surprised.png"),
+            "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Brows_Normal.png"),
             ),
         (0,0), "Jubes Doggy Blink",#Eyes
         # Modification mode
         (0,0), ConditionSwitch(
             #glasses under
-            "JubesX.Hair == 'shades'", "images/JubesDoggy/Jubes_Doggy_Hair_Shades.png",
+            "JubesX.Hair == 'shades'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Hair_Shades.png"),
             "True", Null(),
             ),
         # -----------------
         (0,0), ConditionSwitch(
             #Hair
-            "JubesX.Water or JubesX.Hair == 'wet'", Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
-            "not Player.Male and 'facial' in JubesX.Spunk",Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
-            "JubesX.Hair == 'shades'", Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Shades.png"),
-            "True", Recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Short.png"),
+            "JubesX.Water or JubesX.Hair == 'wet'", get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
+            "not Player.Male and 'facial' in JubesX.Spunk",get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Wet.png"),
+            "JubesX.Hair == 'shades'", get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Shades.png"),
+            "True", get_cached_recolor("Jubes", "Hair", "images/JubesDoggy/Jubes_Doggy_Hair_Short.png"),
             ),
-#        (0,0), "images/JubesDoggy/Jubes_Doggy_Earring.png",#Eyes
+#        (0,0), get_cached_image("images/JubesDoggy/Jubes_Doggy_Earring.png"),#Eyes
         (0,0), ConditionSwitch(
             #face spunk
-#            "'hair' in JubesX.Spunk", "images/JubesDoggy/Jubes_Doggy_Spunk_Hair.png",
-            "'facial' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Facial.png",
+#            "'hair' in JubesX.Spunk", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Hair.png"),
+            "'facial' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Facial.png"),
             "True", Null(),
             ),
         #End head
-        (0,0), "images/JubesDoggy/Jubes_Doggy_Earring.png",
+        (0,0), get_cached_image("images/JubesDoggy/Jubes_Doggy_Earring.png"),
         # Modification mode
         (0,0), ConditionSwitch(
-            "JubesX.Eyewear == 'scouter'", "images/JubesDoggy/modification/Jubes_Doggy_Eyewear_Scouter.png",
+            "JubesX.Eyewear == 'scouter'", get_cached_image("images/JubesDoggy/modification/Jubes_Doggy_Eyewear_Scouter.png"),
             "True",Null(),
             ),
         # ----------------
@@ -952,7 +952,7 @@ image Jubes_Doggy_Head_Fore:
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "JubesX.Eyewear == 'scouter'", "images/JubesDoggy/modification/Jubes_Doggy_Eyewear_Scouter_Fore.png",
+            "JubesX.Eyewear == 'scouter'", get_cached_image("images/JubesDoggy/modification/Jubes_Doggy_Eyewear_Scouter_Fore.png"),
             "True",Null(),
             ),
         # ----------------
@@ -967,16 +967,16 @@ image Jubes_Doggy_Head_Fore:
 image Jubes Doggy Blink:
         #Eyes
         ConditionSwitch(
-        "JubesX.Eyes == 'sexy'", "images/JubesDoggy/Jubes_Doggy_Eyes_Sexy.png",
-        "JubesX.Eyes == 'side'", "images/JubesDoggy/Jubes_Doggy_Eyes_Side.png",
-#        "JubesX.Eyes == 'normal'", "images/JubesDoggy/Jubes_Doggy_Eyes_Normal.png",
-        "JubesX.Eyes == 'closed'", "images/JubesDoggy/Jubes_Doggy_Eyes_Closed.png",
-        "JubesX.Eyes == 'manic'", "images/JubesDoggy/Jubes_Doggy_Eyes_Surprised.png",
-        "JubesX.Eyes == 'down'", "images/JubesDoggy/Jubes_Doggy_Eyes_Down.png",
-        "JubesX.Eyes == 'stunned'", "images/JubesDoggy/Jubes_Doggy_Eyes_Stunned.png",
-        "JubesX.Eyes == 'surprised'", "images/JubesDoggy/Jubes_Doggy_Eyes_Surprised.png",
-        "JubesX.Eyes == 'squint'", "images/JubesDoggy/Jubes_Doggy_Eyes_Sexy.png",
-        "True", "images/JubesDoggy/Jubes_Doggy_Eyes_Normal.png",
+        "JubesX.Eyes == 'sexy'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Sexy.png"),
+        "JubesX.Eyes == 'side'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Side.png"),
+#        "JubesX.Eyes == 'normal'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Normal.png"),
+        "JubesX.Eyes == 'closed'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Closed.png"),
+        "JubesX.Eyes == 'manic'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Surprised.png"),
+        "JubesX.Eyes == 'down'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Down.png"),
+        "JubesX.Eyes == 'stunned'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Stunned.png"),
+        "JubesX.Eyes == 'surprised'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Surprised.png"),
+        "JubesX.Eyes == 'squint'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Sexy.png"),
+        "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Eyes_Normal.png"),
         ),
     #    choice:
     #        3.5
@@ -1031,18 +1031,18 @@ image Jubes_Doggy_Ass:
 
         (0,0), ConditionSwitch(
             #ass red
-            "JubesX.Red", "images/JubesDoggy/Jubes_Doggy_Red.png",
+            "JubesX.Red", get_cached_image("images/JubesDoggy/Jubes_Doggy_Red.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "JubesX.Water", "images/JubesDoggy/Jubes_Doggy_Wet_Ass.png",
+            "JubesX.Water", get_cached_image("images/JubesDoggy/Jubes_Doggy_Wet_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Hose
-            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Socks.png"),
-            "JubesX.Hose == 'stockings'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Stockings.png"),
+            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Socks.png"),
+            "JubesX.Hose == 'stockings'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1053,27 +1053,27 @@ image Jubes_Doggy_Ass:
             # Modification mode
             "JubesX.Panties == 'saiyan leotard'", Null(),
             # -----------------
-            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Lace_Down.png"),
-            "JubesX.Panties == 'tiger panties' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Tiger_DownW.png"),
-            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Tiger_Down.png"),
-            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Bikini_DownW.png"),
-            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Bikini_Down.png"),
-            "JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Blue_DownW.png"),
-            "True", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Blue_Down.png"),
+            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Lace_Down.png"),
+            "JubesX.Panties == 'tiger panties' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Tiger_DownW.png"),
+            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Tiger_Down.png"),
+            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Bikini_DownW.png"),
+            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Bikini_Down.png"),
+            "JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Blue_DownW.png"),
+            "True", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Blue_Down.png"),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Legs Layer if down behind cock
 #            "not JubesX.Upskirt", Null(),
-#            "JubesX.Legs == 'pants'",  Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
-#            "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts_Down.png"),
+#            "JubesX.Legs == 'pants'",  get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
+#            "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts_Down.png"),
 #            "True", Null(),
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #Legs Layer if down
-#            "JubesX.Legs == 'pants' and JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
-##            "JubesX.Legs == 'yoga pants' and JubesX.Upskirt", "images/JubesDoggy/Jubes_Doggy_Legs_Yoga_Down.png",
+#            "JubesX.Legs == 'pants' and JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
+##            "JubesX.Legs == 'yoga pants' and JubesX.Upskirt", get_cached_image("images/JubesDoggy/Jubes_Doggy_Legs_Yoga_Down.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
@@ -1087,7 +1087,7 @@ image Jubes_Doggy_Ass:
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Jubes_Pussy_Fingering",
 #            "Trigger == 'dildo pussy'", "Jubes_Pussy_Fucking2",
 #            "True",Null(),
-##            "True", "images/JubesDoggy/Jubes_Doggy_Pussy_Closed.png",
+##            "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pussy_Closed.png"),
 #            ),
 
         (0,0), ConditionSwitch(
@@ -1098,21 +1098,21 @@ image Jubes_Doggy_Ass:
             "'fondle pussy' in (Trigger,Trigger2,JubesX.Offhand)",Null(),
             "Trigger == 'insert pussy'", Null(),
             "(JubesX.Legs and JubesX.Legs != 'skirt') and not JubesX.Upskirt", Null(),
-            "JubesX.Panties and JubesX.PantiesDown and Trigger == 'lick pussy'", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
-            "JubesX.Panties and JubesX.PantiesDown", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Closed.png"),
-            "JubesX.Panties", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Clothed.png"),
-            "JubesX.Hose == 'pantyhose' and Trigger == 'lick pussy'", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Clothed.png"),
-            "JubesX.Hose == 'pantyhose'", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Clothed.png"),
-            "Trigger == 'lick pussy'", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
-            "True", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Closed.png"),
+            "JubesX.Panties and JubesX.PantiesDown and Trigger == 'lick pussy'", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
+            "JubesX.Panties and JubesX.PantiesDown", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Closed.png"),
+            "JubesX.Panties", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Clothed.png"),
+            "JubesX.Hose == 'pantyhose' and Trigger == 'lick pussy'", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Clothed.png"),
+            "JubesX.Hose == 'pantyhose'", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Clothed.png"),
+            "Trigger == 'lick pussy'", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
+            "True", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Closed.png"),
             ),
 
         (0,0), ConditionSwitch(
             #spunkpussy Layer
 #            "'in' in JubesX.Spunk and Player.Sprite and Player.Cock == 'in'",Null(),# "images/JeanDoggy/Jean_Doggy_SpunkPussyOpen.png",  #fix for JubesX.Spunk is used later
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
-            "JubesX.Wet and Player.Cock == 'in'", "images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png",
-            "JubesX.Wet", "images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
+            "JubesX.Wet and Player.Cock == 'in'", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png"),
+            "JubesX.Wet", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1121,12 +1121,12 @@ image Jubes_Doggy_Ass:
             "'dildo pussy' in (Trigger,Trigger2,JubesX.Offhand)", Null(),
             "'fondle pussy' in (Trigger,Trigger2,JubesX.Offhand)",Null(),
             "Trigger == 'insert pussy'", Null(),
-            "JubesX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
             "JubesX.Panties and not JubesX.PantiesDown", Null(),
             "(JubesX.Legs or JubesX.Hose == 'pantyhose') and not JubesX.Upskirt", Null(),
-#            "JubesX.Pierce == 'ring' and JubesX.Hose == 'pantyhose' and not (JubesX.Panties and JubesX.PantiesDown)", "images/JubesDoggy/Jubes_Doggy_Pierce_RingC2.png",
-#            "JubesX.Pierce == 'ring' and JubesX.Legs and JubesX.Legs != 'skirt' and not JubesX.Upskirt", "images/JubesDoggy/Jubes_Doggy_Pierce_RingC2.png",
-            "JubesX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+#            "JubesX.Pierce == 'ring' and JubesX.Hose == 'pantyhose' and not (JubesX.Panties and JubesX.PantiesDown)", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingC2.png"),
+#            "JubesX.Pierce == 'ring' and JubesX.Legs and JubesX.Legs != 'skirt' and not JubesX.Upskirt", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingC2.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             ),
 
@@ -1136,18 +1136,18 @@ image Jubes_Doggy_Ass:
             "'insert ass' in (Trigger,Trigger2,JubesX.Offhand)", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Anal_FullBase.png",
             "'dildo anal' in (Trigger,Trigger2,JubesX.Offhand)", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Anal_FullBase.png",
             "JubesX.Loose > 2", "Jubes_Gape_Anal",
-#            "JubesX.Legs and not JubesX.Upskirt", "images/JubesDoggy/Jubes_Doggy_Asshole_Loose.png",
-#            "JubesX.Panties and not JubesX.PantiesDown", "images/JubesDoggy/Jubes_Doggy_Asshole_Loose.png",
-            "JubesX.Loose", "images/JeanDoggy/Jean_Doggy_Asshole_Loose.png",
-            "True", "images/JeanDoggy/Jean_Doggy_Asshole_Tight.png",
+#            "JubesX.Legs and not JubesX.Upskirt", get_cached_image("images/JubesDoggy/Jubes_Doggy_Asshole_Loose.png"),
+#            "JubesX.Panties and not JubesX.PantiesDown", get_cached_image("images/JubesDoggy/Jubes_Doggy_Asshole_Loose.png"),
+            "JubesX.Loose", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
+            "True", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Tight.png"),
             ),
 
         (0,4), ConditionSwitch(
             #spunkanal Layer
             "'anal' not in JubesX.Spunk or (Player.Sprite and Player.Cock == 'anal' and Speed >= 1) or not Player.Male", Null(),
-#            "Player.Cock == 'anal'", "images/RogueDoggy/Rogue_Doggy_SpunkAnalOpen.png",
-            "JubesX.Loose", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Loose.png",
-            "True", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Loose.png",
+#            "Player.Cock == 'anal'", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalOpen.png"),
+            "JubesX.Loose", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Loose.png"),
+            "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Loose.png"),
             ),
 
         (0,0), ConditionSwitch(
@@ -1156,47 +1156,47 @@ image Jubes_Doggy_Ass:
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Lace.png"),
-            "JubesX.Panties == 'tiger panties' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_TigerW.png"),
-            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Tiger.png"),
-#            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", "images/JubesDoggy/Jubes_Doggy_Panties_BikiniW.png",
-            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Bikini.png"),
+            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Lace.png"),
+            "JubesX.Panties == 'tiger panties' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_TigerW.png"),
+            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Tiger.png"),
+#            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", get_cached_image("images/JubesDoggy/Jubes_Doggy_Panties_BikiniW.png"),
+            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Bikini.png"),
             # Modification mode
-            "JubesX.Panties == 'saiyan leotard'", "images/JubesDoggy/modification/Jubes_Doggy_Panties_Saiyan_Leotard.png",
+            "JubesX.Panties == 'saiyan leotard'", get_cached_image("images/JubesDoggy/modification/Jubes_Doggy_Panties_Saiyan_Leotard.png"),
             # -----------------
-            "JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_BlueW.png"),
-            "True", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Blue.png"),
+            "JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_BlueW.png"),
+            "True", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Panties_Blue.png"),
             ),
         (0,0), ConditionSwitch(
             #Pussy Piercings over clothes
             "Player.Sprite", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "JubesX.Pierce == 'ring' and (JubesX.Legs == 'skirt' or JubesX.Upskirt) and not JubesX.Panties and JubesX.Hose != 'pantyhose'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png",
-            "JubesX.Pierce == 'barbell' and (JubesX.Legs == 'skirt' or JubesX.Upskirt) and not JubesX.Panties and JubesX.Hose != 'pantyhose'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png",
+            "JubesX.Pierce == 'ring' and (JubesX.Legs == 'skirt' or JubesX.Upskirt) and not JubesX.Panties and JubesX.Hose != 'pantyhose'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png"),
+            "JubesX.Pierce == 'barbell' and (JubesX.Legs == 'skirt' or JubesX.Upskirt) and not JubesX.Panties and JubesX.Hose != 'pantyhose'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png"),
             "not JubesX.Panties and JubesX.Hose != 'pantyhose'", Null(),
             "((JubesX.Panties or JubesX.Hose == 'pantyhose') and JubesX.PantiesDown)", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "JubesX.Pierce == 'barbell' and JubesX.Hose == 'pantyhose' and not JubesX.Panties",  Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Blue.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Hose == 'pantyhose' and not JubesX.Panties",  Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Blue.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'lace panties' and not JubesX.PantiesDown",  Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Lace.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'blue panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Blue.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Tiger.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Bikini.png"),
-            "JubesX.Pierce == 'barbell'", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Blue.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'blue panties' and JubesX.Wet and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_BlueW.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'tiger panties' and JubesX.Wet and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_TigerW.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'bikini bottoms' and JubesX.Wet and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_BikiniW.png"),
-            "JubesX.Pierce == 'barbell' and JubesX.Wet", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_BlueW.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'lace panties' and not JubesX.PantiesDown",  Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Lace.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'blue panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Blue.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Pink.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Tiger.png"),
-            "JubesX.Pierce == 'ring'", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Blue.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'blue panties' and JubesX.Wet and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_BlueW.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'bikini bottoms' and JubesX.Wet and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_PinkW.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Panties == 'tiger panties' and JubesX.Wet and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_TigerW.png"),
-            "JubesX.Pierce == 'ring' and JubesX.Wet", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_BlueW.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Hose == 'pantyhose' and not JubesX.Panties",  get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Blue.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Hose == 'pantyhose' and not JubesX.Panties",  get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Blue.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'lace panties' and not JubesX.PantiesDown",  get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Lace.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'blue panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Blue.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Tiger.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Bikini.png"),
+            "JubesX.Pierce == 'barbell'", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_Blue.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'blue panties' and JubesX.Wet and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_BlueW.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'tiger panties' and JubesX.Wet and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_TigerW.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Panties == 'bikini bottoms' and JubesX.Wet and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_BikiniW.png"),
+            "JubesX.Pierce == 'barbell' and JubesX.Wet", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell_BlueW.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'lace panties' and not JubesX.PantiesDown",  get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Lace.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'blue panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Blue.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Pink.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Tiger.png"),
+            "JubesX.Pierce == 'ring'", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_Blue.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'blue panties' and JubesX.Wet and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_BlueW.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'bikini bottoms' and JubesX.Wet and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_PinkW.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Panties == 'tiger panties' and JubesX.Wet and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_TigerW.png"),
+            "JubesX.Pierce == 'ring' and JubesX.Wet", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring_BlueW.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
@@ -1204,12 +1204,12 @@ image Jubes_Doggy_Ass:
 #            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-#            "JubesX.Panties and JubesX.PantiesDown and JubesX.Hose == 'stockings and garterbelt'", "images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png",
-            "JubesX.Hose == 'garterbelt'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Garter.png"),
-            "JubesX.Hose == 'stockings and garterbelt'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_StockingsGarter.png"),
+#            "JubesX.Panties and JubesX.PantiesDown and JubesX.Hose == 'stockings and garterbelt'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png"),
+            "JubesX.Hose == 'garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Garter.png"),
+            "JubesX.Hose == 'stockings and garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_StockingsGarter.png"),
             "JubesX.Panties and JubesX.PantiesDown", Null(),
-            "JubesX.Hose == 'pantyhose'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Pantyhose.png"),
-            "JubesX.Hose == 'ripped pantyhose'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Pantyhose_Holed.png"),
+            "JubesX.Hose == 'pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Pantyhose.png"),
+            "JubesX.Hose == 'ripped pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
@@ -1217,35 +1217,35 @@ image Jubes_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Legs Layer if down behind cock
             "not JubesX.Upskirt", Null(),
-            "JubesX.Legs == 'pants'",  Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
-            "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts_Down.png"),
+            "JubesX.Legs == 'pants'",  get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
+            "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
-#            "JubesX.Upskirt and JubesX.Legs == 'dress' and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress_Up.png"),
-#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress.png"),
-            "JubesX.Upskirt and JubesX.Legs == 'skirt'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress_Up.png"),
-            "JubesX.Legs == 'skirt'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress.png"),
+#            "JubesX.Upskirt and JubesX.Legs == 'dress' and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress_Up.png"),
+#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress.png"),
+            "JubesX.Upskirt and JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress_Up.png"),
+            "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress.png"),
             "JubesX.Upskirt", Null(),
 
             "JubesX.Legs == 'pants'", ConditionSwitch(
 #                    "JubesX.Upskirt", Null(),
-#                    "JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
-#                    "JubesX.Wet > 1", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_W.png",
-                    "True", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants.png"),
+#                    "JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants_Down.png"),
+#                    "JubesX.Wet > 1", get_cached_image("images/JubesDoggy/Jubes_Doggy_Legs_Pants_W.png"),
+                    "True", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Pants.png"),
                     ),
 #            "JubesX.Legs == 'yoga pants'", ConditionSwitch(
 ##                    "JubesX.Upskirt", Null(),
-#                    "JubesX.Upskirt", "images/JubesDoggy/Jubes_Doggy_Legs_Yoga_Down.png",
-#                    "JubesX.Wet > 1", "images/JubesDoggy/Jubes_Doggy_Legs_Yoga_W.png",
-#                    "True", "images/JubesDoggy/Jubes_Doggy_Legs_Yoga.png",
+#                    "JubesX.Upskirt", get_cached_image("images/JubesDoggy/Jubes_Doggy_Legs_Yoga_Down.png"),
+#                    "JubesX.Wet > 1", get_cached_image("images/JubesDoggy/Jubes_Doggy_Legs_Yoga_W.png"),
+#                    "True", get_cached_image("images/JubesDoggy/Jubes_Doggy_Legs_Yoga.png"),
 #                    ),
             "JubesX.Legs == 'shorts'", ConditionSwitch(
 #                    "JubesX.Upskirt", Null(),
-#                    "JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts_Down.png"),
-                    "JubesX.Wet > 1", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_ShortsW.png"),
-                    "True", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts.png"),
+#                    "JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts_Down.png"),
+                    "JubesX.Wet > 1", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_ShortsW.png"),
+                    "True", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Legs_Shorts.png"),
                     ),
             "True", Null(),
             ),
@@ -1278,14 +1278,14 @@ image Jubes_Doggy_Ass:
                     ),
             "'insert ass' in (Trigger,Trigger2,JubesX.Offhand)", "Jubes_Anal_Fingering",
             "'dildo anal' in (Trigger,Trigger2,JubesX.Offhand)", "Jubes_Anal_Fucking",
-            "JubesX.Plug", "images/PlugIn.png",
+            "JubesX.Plug", get_cached_image("images/PlugIn.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #dress Layer
-            "JubesX.Over == 'dress' and JubesX.Upskirt", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress_Up.png"),
-            "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress.png"),
+            "JubesX.Over == 'dress' and JubesX.Upskirt", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress_Up.png"),
+            "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesDoggy/Jubes_Doggy_Legs_Dress.png"),
             "True", Null(),
             ),
 
@@ -1295,13 +1295,13 @@ image Jubes_Doggy_Ass:
             "JubesX.Acc == 'saiyan tail'", Null(),
             # -----------------
             "(JubesX.Over == 'dress' or JubesX.Legs == 'skirt') and JubesX.Upskirt", Null(),
-            "JubesX.Acc or JubesX.Over == 'towel'", Recolor("Jubes", "Acc", "images/JubesDoggy/Jubes_Doggy_Jacket_Butt.png"),
+            "JubesX.Acc or JubesX.Over == 'towel'", get_cached_recolor("Jubes", "Acc", "images/JubesDoggy/Jubes_Doggy_Jacket_Butt.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Ass.png",
+            "'back' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1314,16 +1314,16 @@ image Jubes_Doggy_Ass:
         (-1,0), ConditionSwitch(
             #Hotdogging underlayer
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", "images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png",
-            "True", "images/KittyDoggy/Kitty_Doggy_HotdogBack.png",
+#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_image("images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png"),
+            "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_HotdogBack.png"),
             ),
         (0,0), ConditionSwitch(
             #Hotdogging Cock w/ alpha
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            "Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
-            "True", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            "Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            "True", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #UI tool layer
@@ -1337,11 +1337,11 @@ image Jubes_Doggy_Ass:
 
 image Jubes_Doggy_Feet:
     contains:
-            AlphaMask("Jubes_Doggy_Shins", "images/JubesDoggy/Jubes_Doggy_Feet_Mask.png")
+            get_cached_alphamask("Jubes_Doggy_Shins", "images/JubesDoggy/Jubes_Doggy_Feet_Mask.png")
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in JubesX.Spunk", "images/JubesDoggy/Jubes_Doggy_Spunk_Feet.png",
+            "'feet' in JubesX.Spunk", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 
@@ -1359,20 +1359,20 @@ image Jubes_Doggy_Shins:
             #hose legs
         ConditionSwitch(
             "JubesX.Hose == 'ripped pantyhose'", Recolor("Jubes", "Hose", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Feet_Hose_Holed.png"),
-            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Feet_Socks.png"),
-            "JubesX.Hose and JubesX.Hose != 'garterbelt'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Feet_Hose.png"),
+            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Feet_Socks.png"),
+            "JubesX.Hose and JubesX.Hose != 'garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Feet_Hose.png"),
             "True", "images/JubesDoggy/[JubesX.skin_image.skin_path]Jubes_Doggy_Feet.png"
             )
     contains:
         #pants
         ConditionSwitch(
-            "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Feet_Pants.png"),
+            "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesDoggy/Jubes_Doggy_Feet_Pants.png"),
             "True", Null(),
             )
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in JubesX.Spunk", "images/JubesDoggy/Jubes_Doggy_Spunk_Feet.png",
+            "'feet' in JubesX.Spunk", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 
@@ -1487,7 +1487,7 @@ image Jubes_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "JubesX.Pubes", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
+            "JubesX.Pubes", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1505,15 +1505,15 @@ image Jubes_Pussy_Static:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "JubesX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
-            "JubesX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1527,7 +1527,7 @@ image Jubes_Pussy_Static:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Jubes_Doggy_Static", "Jubes_Pussy_Mask_Static")
+        get_cached_alphamask("Zero_Jubes_Doggy_Static", "Jubes_Pussy_Mask_Static")
 
 
 image Zero_Jubes_Doggy_Static:
@@ -1588,7 +1588,7 @@ image Jubes_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "JubesX.Pubes", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
+            "JubesX.Pubes", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1604,18 +1604,18 @@ image Jubes_Pussy_Heading:
 #    contains:
 #        ConditionSwitch(
 #            #full hose/tights
-#            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Socks.png"),
-#            "JubesX.Hose == 'garterbelt'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Garter.png"),
-#            "JubesX.Hose == 'stockings and garterbelt'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_StockingsGarter.png"),
+#            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Socks.png"),
+#            "JubesX.Hose == 'garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Garter.png"),
+#            "JubesX.Hose == 'stockings and garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_StockingsGarter.png"),
 #            "JubesX.Panties and JubesX.PantiesDown", Null(),
-#            "JubesX.Hose == 'ripped pantyhose'", Recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Pantyhose_Holed.png"),
+#            "JubesX.Hose == 'ripped pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesDoggy/Jubes_Doggy_Hose_Pantyhose_Holed.png"),
 #            "True", Null(),
 #            )
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "JubesX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png",
-            "JubesX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -1623,7 +1623,7 @@ image Jubes_Pussy_Heading:
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1638,11 +1638,11 @@ image Jubes_Pussy_Heading:
         offset (2,0)
     contains:
         #Cock
-        AlphaMask("Zero_Jubes_Doggy_Heading", "Jubes_Pussy_Mask")
+        get_cached_alphamask("Zero_Jubes_Doggy_Heading", "Jubes_Pussy_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1714,7 +1714,7 @@ image Jubes_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "JubesX.Pubes", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
+            "JubesX.Pubes", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1729,8 +1729,8 @@ image Jubes_Pussy_Fingering:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "JubesX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png",
-            "JubesX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         xoffset 2
@@ -1739,7 +1739,7 @@ image Jubes_Pussy_Fingering:
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1754,13 +1754,13 @@ image Jubes_Pussy_Fingering:
         offset (2,0)
     contains:
         #Cock
-        AlphaMask("Zero_Pussy_Finger", "Jubes_Pussy_Mask_Finger")
+        get_cached_alphamask("Zero_Pussy_Finger", "Jubes_Pussy_Mask_Finger")
         xoffset 3
         alpha .6
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1806,22 +1806,22 @@ image Jubes_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "JubesX.Pubes", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Fucking.png"),
+            "JubesX.Pubes", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "JubesX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png",
-            "JubesX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         offset (0,0)
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -1829,14 +1829,14 @@ image Jubes_Pussy_Fucking2:
         #Cock
         offset (2,0)
         ConditionSwitch(
-            "'dildo pussy' in (Trigger,Trigger2,JubesX.Offhand)", AlphaMask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "'dildo pussy' in (Trigger,Trigger2,JubesX.Offhand)", get_cached_alphamask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
             #this might cause timing issue if multiple things can use it. Watch out.
-            "True",AlphaMask("Zero_Jubes_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "True",get_cached_alphamask("Zero_Jubes_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
             )
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -1862,33 +1862,33 @@ image Jubes_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "JubesX.Pubes", Recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Fucking.png"),
+            "JubesX.Pubes", get_cached_recolor("Jubes", "Pubes", "images/JubesDoggy/Jubes_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "JubesX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png",
-            "JubesX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png",
+            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellF.png"),
+            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         offset (0,0)
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         #Cock
         offset (2,0)
-        AlphaMask("Zero_Jubes_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("Zero_Jubes_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -1932,7 +1932,7 @@ image Jubes_Anal_Fingering:
         #spunk under cock
         subpixel True
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1945,12 +1945,12 @@ image Jubes_Anal_Fingering:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Jubes_Doggy_Anal_Finger", "Jubes_Doggy_Anal_Fingering_Mask")
+        get_cached_alphamask("Zero_Jubes_Doggy_Anal_Finger", "Jubes_Doggy_Anal_Fingering_Mask")
     contains:
         #spunk over cock
         subpixel True
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2004,7 +2004,7 @@ image Jubes_Anal_Heading:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2017,11 +2017,11 @@ image Jubes_Anal_Heading:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Jubes_Doggy_Anal_Heading", "Jubes_Doggy_Anal_Heading_Mask")
+        get_cached_alphamask("Zero_Jubes_Doggy_Anal_Heading", "Jubes_Doggy_Anal_Heading_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2115,20 +2115,20 @@ image Jubes_Anal_Fucking:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
             #full hose/tights
-            "'dildo anal' in (Trigger,Trigger2,JubesX.Offhand)", AlphaMask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
-            "True", AlphaMask("Zero_Jubes_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "'dildo anal' in (Trigger,Trigger2,JubesX.Offhand)", get_cached_alphamask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "True", get_cached_alphamask("Zero_Jubes_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
             ),
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2191,16 +2191,16 @@ image Jubes_Anal_Fucking2:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Jubes_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
+        get_cached_alphamask("Zero_Jubes_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in JubesX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2412,35 +2412,35 @@ image Jubes_Sex_Body:
             # Modification mode
             "JubesX.Acc == 'saiyan tail'", Null(),
             # -----------------
-            "JubesX.Acc", Recolor("Jubes", "Acc", "images/JubesSex/Jubes_Sex_Jacket_Back.png"),
+            "JubesX.Acc", get_cached_recolor("Jubes", "Acc", "images/JubesSex/Jubes_Sex_Jacket_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt under layer
-            "JubesX.Over == 'red shirt' and JubesX.Uptop", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red_Back.png"),
-            "JubesX.Over == 'black shirt' and JubesX.Uptop", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black_Back.png"),
+            "JubesX.Over == 'red shirt' and JubesX.Uptop", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red_Back.png"),
+            "JubesX.Over == 'black shirt' and JubesX.Uptop", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black_Back.png"),
             "True", Null(),
             ),
         (0,0), "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Body_Behind.png",
-#        (0,0), "images/JubesSex/Jubes_Sex_Headref.png",
+#        (0,0), get_cached_image("images/JubesSex/Jubes_Sex_Headref.png"),
         (0,0), ConditionSwitch(
             #Necklaces
-            "JubesX.Neck == 'choker'", Recolor("Jubes", "Neck", "images/JubesSex/Jubes_Sex_Neck_Choker.png"),
+            "JubesX.Neck == 'choker'", get_cached_recolor("Jubes", "Neck", "images/JubesSex/Jubes_Sex_Neck_Choker.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt under layer
             "JubesX.Uptop", Null(),
-            "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red_Neck.png"),
-            "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black_Neck.png"),
+            "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red_Neck.png"),
+            "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black_Neck.png"),
             "True", Null(),
             ),
         (300,-130), "Jubes_Head_Sex",  #(280,-140)
         (0,0), "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Body.png",
         #Eyes
 #        (0,0), ConditionSwitch(                                                                                 #necklace
-#            "JubesX.Neck == 'gold necklace'", "images/JubesSex/Jubes_Sex_Neck_Gold.png",
-#            "JubesX.Neck == 'star necklace'", "images/JubesSex/Jubes_Sex_Neck_Star.png",
+#            "JubesX.Neck == 'gold necklace'", get_cached_image("images/JubesSex/Jubes_Sex_Neck_Gold.png"),
+#            "JubesX.Neck == 'star necklace'", get_cached_image("images/JubesSex/Jubes_Sex_Neck_Star.png"),
 #            "True", Null(),
 #            ),
 
@@ -2449,49 +2449,49 @@ image Jubes_Sex_Body:
             "not JubesX.Chest", Null(),
             "not JubesX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Sports.png"),
-                    "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Bikini.png"),
-                    "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Lace.png"),
+                    "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Sports.png"),
+                    "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Bikini.png"),
+                    "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Lace.png"),
                     # Modification mode
-                    "JubesX.Chest == 'saiyan leotard'", "images/JubesSex/modification/Jubes_Sex_Chest_Saiyan_Leotard.png",
+                    "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesSex/modification/Jubes_Sex_Chest_Saiyan_Leotard.png"),
                     # -----------------
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     #if she's not wearing a shirt
-                    "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Sports_Up.png"),
-                    "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Bikini_Up.png"),
-                    "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Lace_Up.png"),
+                    "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Sports_Up.png"),
+                    "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Bikini_Up.png"),
+                    "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Chest_Lace_Up.png"),
                     # Modification mode
-                    "JubesX.Chest == 'saiyan leotard'", "images/JubesSex/modification/Jubes_Sex_Chest_Saiyan_Leotard_Up.png",
+                    "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesSex/modification/Jubes_Sex_Chest_Saiyan_Leotard_Up.png"),
                     # -----------------
                     "True", Null(),
                     ),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "JubesX.Water", "images/JubesSex/Jubes_Sex_Wet_Body.png",
+            "JubesX.Water", get_cached_image("images/JubesSex/Jubes_Sex_Wet_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
             "not JubesX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Dress.png"),
-                    "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Tube.png"),
-                    "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red.png"),
-                    "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black.png"),
+                    "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Dress.png"),
+                    "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Tube.png"),
+                    "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red.png"),
+                    "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black.png"),
                     # Modification mode
-                    "JubesX.Over == 'saiyan armor'", "images/JubesSex/modification/Jubes_Sex_Over_Saiyan_Armor.png",
+                    "JubesX.Over == 'saiyan armor'", get_cached_image("images/JubesSex/modification/Jubes_Sex_Over_Saiyan_Armor.png"),
                     # -----------------
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
-                    "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Dress_Up.png"),
-                    "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Tube_Up.png"),
-                    "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red_Up.png"),
-                    "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black_Up.png"),
+                    "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Dress_Up.png"),
+                    "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Tube_Up.png"),
+                    "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Red_Up.png"),
+                    "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Over_Black_Up.png"),
                     "True", Null(),
                     ),
             ),
@@ -2499,8 +2499,8 @@ image Jubes_Sex_Body:
             #piercings
             "JubesX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "JubesX.Pierce == 'ring'", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring.png",
-                    "JubesX.Pierce", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell.png",
+                    "JubesX.Pierce == 'ring'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Tits_Ring.png"),
+                    "JubesX.Pierce", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell.png"),
                     "True", Null(),
                     ),
             "JubesX.Pierce == 'ring'", ConditionSwitch(
@@ -2508,34 +2508,34 @@ image Jubes_Sex_Body:
                     # Modification mode
                     "JubesX.Over == 'saiyan armor'", Null(),
                     # -----------------
-                    "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Pink.png"),
-                    "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Red.png"),
-                    "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Red.png"),
-                    "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Black.png"),
+                    "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Pink.png"),
+                    "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Red.png"),
+                    "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Red.png"),
+                    "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Black.png"),
                     # Modification mode
-                    "JubesX.Chest == 'saiyan leotard'", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Blue.png",
+                    "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Blue.png"),
                     # -----------------
-                    "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Blue.png"),
-                    "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Pink.png"),
-                    "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Lace.png"),
-                    "True", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring.png",
+                    "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Blue.png"),
+                    "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Pink.png"),
+                    "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Ring_Lace.png"),
+                    "True", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Tits_Ring.png"),
                     ),
             "JubesX.Pierce", ConditionSwitch(
                     # Barbell over shirts
                     # Modification mode
                     "JubesX.Over == 'saiyan armor'", Null(),
                     # -----------------
-                    "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Pink.png"),
-                    "JubesX.Over == 'red shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Red.png"),
-                    "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Red.png"),
-                    "JubesX.Over == 'black shirt'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Black.png"),
+                    "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Pink.png"),
+                    "JubesX.Over == 'red shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Red.png"),
+                    "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Red.png"),
+                    "JubesX.Over == 'black shirt'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Black.png"),
                     # Modification mode
-                    "JubesX.Chest == 'saiyan leotard'", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Blue.png",
+                    "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Blue.png"),
                     # -----------------
-                    "JubesX.Chest == 'sports bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Blue.png"),
-                    "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Pink.png"),
-                    "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Lace.png"),
-                    "True", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell.png",
+                    "JubesX.Chest == 'sports bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Blue.png"),
+                    "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Pink.png"),
+                    "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell_Lace.png"),
+                    "True", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Tits_Barbell.png"),
                     ),
             "True", Null(),
             ),
@@ -2544,21 +2544,21 @@ image Jubes_Sex_Body:
             # Modification mode
             "JubesX.Acc == 'saiyan tail'", Null(),
             # -----------------
-            "JubesX.Acc", Recolor("Jubes", "Acc", "images/JubesSex/Jubes_Sex_Jacket.png"),
+            "JubesX.Acc", get_cached_recolor("Jubes", "Acc", "images/JubesSex/Jubes_Sex_Jacket.png"),
             "True", Null(),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in JubesX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Belly.png",
+            "'belly' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in JubesX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Tits.png",
+            "'tits' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/JubesSex/Jubes_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/JubesSex/Jubes_Sex_HeadRef.png"),
         )
 #    yoffset -163
 # End Jubes Sex Pose Body / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -2597,7 +2597,7 @@ image Jubes_Sex_Legs:
         (1120,880),
 #        (0,0), ConditionSwitch(
 #Legs Layer
-#            "JubesX.Legs == 'blue skirt'", "images/JubesSex/Jubes_Sex_Skirt_Back.png",
+#            "JubesX.Legs == 'blue skirt'", get_cached_image("images/JubesSex/Jubes_Sex_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Legs.png",
@@ -2605,12 +2605,12 @@ image Jubes_Sex_Legs:
 
 #        (0,0), ConditionSwitch(
 #            #Skirt back
-#            "JubesX.Legs == 'skirt'", "images/JubesSex/Jubes_Sex_Legs_Skirt_Back.png",
+#            "JubesX.Legs == 'skirt'", get_cached_image("images/JubesSex/Jubes_Sex_Legs_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
 #        (0,0),ConditionSwitch(
 #            #Outside Spunk
-#            "'anal' in JubesX.Spunk", "images/JubesSex/Jubes_Sex_Spunk_Anal_Closed.png",
+#            "'anal' in JubesX.Spunk", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Closed.png"),
 #            "True", Null(),
 #            ),
 
@@ -2631,13 +2631,13 @@ image Jubes_Sex_Legs:
             "True", "Spunk_Drip2",
             ),
 
-        (0,0),"images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Legs.png",
+        (0,0), "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Legs.png",
             #Legs
 
         (0,0), ConditionSwitch(
             #Wet look
             "not JubesX.Water", Null(),
-            "True", "images/JubesSex/Jubes_Sex_Wet_Legs.png",
+            "True", get_cached_image("images/JubesSex/Jubes_Sex_Wet_Legs.png"),
             ),
 
         (0,0), "Jubes_Sex_Anus",
@@ -2651,17 +2651,17 @@ image Jubes_Sex_Legs:
         (0,0), ConditionSwitch(
             #Panties if up
             # Modification mode
-            "JubesX.Panties == 'saiyan leotard' and JubesX.PantiesDown", "images/JubesSex/modification/Jubes_Sex_Panties_Saiyan_Leotard_Up.png",
-            "JubesX.Panties == 'saiyan leotard'", "images/JubesSex/modification/Jubes_Sex_Panties_Saiyan_Leotard.png",
+            "JubesX.Panties == 'saiyan leotard' and JubesX.PantiesDown", get_cached_image("images/JubesSex/modification/Jubes_Sex_Panties_Saiyan_Leotard_Up.png"),
+            "JubesX.Panties == 'saiyan leotard'", get_cached_image("images/JubesSex/modification/Jubes_Sex_Panties_Saiyan_Leotard.png"),
             # -----------------
             "JubesX.PantiesDown", Null(),
-            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Lace.png"),
-            "JubesX.Panties == 'tiger panties' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger_Wet.png"),
-            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger.png"),
-            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini_Wet.png"),
-            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini.png"),
-            "JubesX.Panties and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue_Wet.png"),
-            "JubesX.Panties", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue.png"),
+            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Lace.png"),
+            "JubesX.Panties == 'tiger panties' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger_Wet.png"),
+            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger.png"),
+            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini_Wet.png"),
+            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini.png"),
+            "JubesX.Panties and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue_Wet.png"),
+            "JubesX.Panties", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
@@ -2672,8 +2672,8 @@ image Jubes_Sex_Legs:
 #            "not JubesX.Panties and JubesX.Hose != 'pantyhose'", Null(),
 #            "((JubesX.Panties or JubesX.Hose == 'pantyhose') and JubesX.PantiesDown)", Null(),
 #                #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-#            "JubesX.Pierce == 'barbell'", "images/JubesSex/Jubes_Sex_Pierce_Pussy_BarbellC.png",
-#            "JubesX.Pierce == 'ring'", "images/JubesSex/Jubes_Sex_Pierce_Pussy_RingC.png",
+#            "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Pussy_BarbellC.png"),
+#            "JubesX.Pierce == 'ring'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Pussy_RingC.png"),
 #            "True", Null(),
 #            ),
 
@@ -2686,39 +2686,39 @@ image Jubes_Sex_Legs:
 #            "Player.Sprite and Player.Cock == 'in' and Speed == 0", Null(),
             "JubesX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/JubesSex/Jubes_Sex_Pierce_Ring_Fucking.png",
-                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
-                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
-                    "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Lace.png"),
-                    "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Tiger.png"),
-                    "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Bikini.png"),
-                    "JubesX.Panties and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Blue.png"),
-                    "True", "images/JubesSex/Jubes_Sex_Pierce_Ring.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Ring_Fucking.png"),
+                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
+                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
+                    "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Lace.png"),
+                    "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Tiger.png"),
+                    "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Bikini.png"),
+                    "JubesX.Panties and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Blue.png"),
+                    "True", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Ring.png"),
                     ),
             "not JubesX.Pierce", Null(),
             #else, it's barbell
 
-            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
-            "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
-            "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Lace.png"),
-            "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Tiger.png"),
-            "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Bikini.png"),
-            "JubesX.Panties and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Blue.png"),
-            "True", "images/JubesSex/Jubes_Sex_Pierce_Barbell.png",
+            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
+            "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
+            "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Lace.png"),
+            "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Tiger.png"),
+            "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Bikini.png"),
+            "JubesX.Panties and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Blue.png"),
+            "True", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Barbell.png"),
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "JubesX.Hose == 'stockings and garterbelt'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_StockingsGarter.png"),
-            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Socks.png"),
-            "JubesX.Hose == 'garterbelt'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Garter.png"),
-            "JubesX.Hose == 'stockings'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Stockings.png"),
+            "JubesX.Hose == 'stockings and garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_StockingsGarter.png"),
+            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Socks.png"),
+            "JubesX.Hose == 'garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Garter.png"),
+            "JubesX.Hose == 'stockings'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "JubesX.Panties and JubesX.PantiesDown", Null(),
-            "JubesX.Hose == 'pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose.png"),
-            "JubesX.Hose == 'ripped pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
+            "JubesX.Hose == 'pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose.png"),
+            "JubesX.Hose == 'ripped pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
@@ -2726,25 +2726,25 @@ image Jubes_Sex_Legs:
             #Legs Layer
 #            "JubesX.Upskirt",ConditionSwitch(
 #                    #If she has panties down. . .
-##                    "JubesX.Legs == 'skirt'", "images/JubesSex/Jubes_Sex_Legs_Skirt_Up.png",
-#                    "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Up.png"),
-#                    "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Up.png"),
+##                    "JubesX.Legs == 'skirt'", get_cached_image("images/JubesSex/Jubes_Sex_Legs_Skirt_Up.png"),
+#                    "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Up.png"),
+#                    "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Up.png"),
 #                    "True", Null(),
 #                    ),
 
-#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
-            "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
+#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
+            "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
 
             "JubesX.Upskirt", Null(),
-#            "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
-            "JubesX.Legs == 'shorts' and JubesX.Wet > 1", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Wet.png"),
-            "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts.png"),
-            "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants.png"),
+#            "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
+            "JubesX.Legs == 'shorts' and JubesX.Wet > 1", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Wet.png"),
+            "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts.png"),
+            "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants.png"),
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "JubesX.Acc == 'saiyan tail'", "images/JubesSex/modification/Jubes_Sex_Saiyan_Tail.png",
+            "JubesX.Acc == 'saiyan tail'", get_cached_image("images/JubesSex/modification/Jubes_Sex_Saiyan_Tail.png"),
             "True", Null(),
             ),
         # -----------------
@@ -2753,19 +2753,19 @@ image Jubes_Sex_Legs:
             #Piercings
             "JubesX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
-                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
+                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
+                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
                     "True", Null(),
                     ),
             #else, it's barbell
-            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
-            "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
+            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
+            "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #dress Layer
-            "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
+            "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -2798,7 +2798,7 @@ image Jubes_Sex_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Jubes_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
 #            "True", "Jubes_Sex_Feet",
 #            ),
         )
@@ -2816,46 +2816,46 @@ image Jubes_Sex_Feet:
 
         (0,0), ConditionSwitch(
             #hose layer
-            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Socks_Feet.png"),
+            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Socks_Feet.png"),
             "JubesX.Hose == 'ripped pantyhose' and (not JubesX.Panties or not JubesX.PantiesDown)", Recolor("Jubes", "Hose", "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Hose_Feet_Holed.png"),
-            "JubesX.Hose and JubesX.Hose != 'garterbelt' and JubesX.Hose != 'pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Feet.png"),
+            "JubesX.Hose and JubesX.Hose != 'garterbelt' and JubesX.Hose != 'pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Feet.png"),
             "JubesX.Hose == 'ripped pantyhose' and JubesX.Panties and JubesX.PantiesDown", Recolor("Jubes", "Hose", "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Feet.png"),
             "JubesX.Hose == 'pantyhose' and JubesX.Panties and JubesX.PantiesDown", "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Feet.png",
-            "JubesX.Hose == 'pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Feet.png"),
+            "JubesX.Hose == 'pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Feet.png"),
             "True", "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Feet.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not JubesX.Water", Null(),
-            "True", "images/JubesSex/Jubes_Sex_Wet_Feet.png",
+            "True", get_cached_image("images/JubesSex/Jubes_Sex_Wet_Feet.png"),
             ),
         (0,0), ConditionSwitch(
             #panties if down
             "not JubesX.PantiesDown", Null(),
-            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Lace_Up.png"),
-            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger_Up.png"),
-            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini_Up.png"),
+            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Lace_Up.png"),
+            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger_Up.png"),
+            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini_Up.png"),
             # Modification mode
             "JubesX.Panties == 'saiyan leotard'", Null(),
             # -----------------
-            "JubesX.Panties", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue_Up.png"),
+            "JubesX.Panties", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue_Up.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
             "JubesX.Upskirt",ConditionSwitch(
                     #If she has panties down. . .
-                    "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Up.png"),
-                    "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Up.png"),
+                    "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Up.png"),
+                    "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Up.png"),
                     "True", Null(),
                     ),
-            "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Feet.png"),
+            "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Feet.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in JubesX.Spunk", "images/JubesSex/Jubes_Sex_Spunk_Feet.png",
+            "'feet' in JubesX.Spunk", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -2867,31 +2867,31 @@ image Jubes_Sex_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_Pussy_Fucking.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Fucking.png"),
                 "Player.Sprite and Player.Cock == 'in' and Speed", "Jubes_Sex_Heading_Pussy",
-                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/JubesSex/Jubes_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/JubesSex/Jubes_Sex_Pussy_Open.png",
-                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", "images/JubesSex/Jubes_Sex_Pussy_Open.png",
-                "True", "images/JubesSex/Jubes_Sex_Pussy_Closed.png",
+                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Open.png"),
+                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Open.png"),
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Closed.png"),
                 )
 #    contains:
 #            # The background plate of her pussy
 #            ConditionSwitch(
 #                "not JubesX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-#                "True", "images/JubesSex/Jubes_Sex_WetPussy_C.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_C.png"),
 #                )
     contains:
             # pubes
             ConditionSwitch(
                 "not JubesX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in'", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "Player.Sprite and Player.Cock == 'out'", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy'", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "True", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "Player.Sprite and Player.Cock == 'out'", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "True", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Closed.png"),
                 )
     contains:
             #Spunk
@@ -2899,48 +2899,48 @@ image Jubes_Sex_Pussy:
                 "'in' not in JubesX.Spunk or not Player.Male", Null(),
                 "(JubesX.Legs == 'pants' or JubesX.Legs == 'shorts') and not JubesX.Upskirt", Null(),
                 "JubesX.Panties and not JubesX.PantiesDown", Null(),
-                "True", AlphaMask("Spunk_Drip2","Jubes_Sex_Drip_Mask"),
+                "True", get_cached_alphamask("Spunk_Drip2", "Jubes_Sex_Drip_Mask"),
                 )
             offset (545,540)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-                "'in' in JubesX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in JubesX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy.png",
+                "'in' in JubesX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in JubesX.Spunk", "images/JubesSex/Jubes_Sex_Spunk_Puss_Under.png",
+#                "'in' in JubesX.Spunk", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "JubesX.Panties and JubesX.PantiesDown", Null(),
-#                "JubesX.Hose == 'ripped pantyhose' and ShowFeet", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
-#                "JubesX.Hose == 'ripped pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
+#                "JubesX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
+#                "JubesX.Hose == 'ripped pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
             ConditionSwitch(
 #                "not Player.Sprite", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Jubes_Sex_Fucking_Zero_Anim3", "Jubes_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Jubes_Sex_Fucking_Zero_Anim2", "Jubes_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Jubes_Sex_Fucking_Zero_Anim1", "Jubes_Sex_Heading_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Jubes_Sex_Fucking_Zero_Anim3", "Jubes_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Jubes_Sex_Fucking_Zero_Anim2", "Jubes_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Jubes_Sex_Fucking_Zero_Anim1", "Jubes_Sex_Heading_Mask"),
                 "Player.Sprite and Player.Cock == 'in'", "Jubes_Sex_Fucking_Zero_Anim0",
                 "True", Null(),
                 )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "JubesX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/JubesSex/Jubes_Sex_Pierce_Pussy_BarbellF.png",
-#                "JubesX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/JubesSex/Jubes_Sex_Pierce_Pussy_RingF.png",
-#                "JubesX.Pierce == 'barbell'", "images/JubesSex/Jubes_Sex_Pierce_Pussy_Barbell.png",
-#                "JubesX.Pierce == 'ring'", "images/JubesSex/Jubes_Sex_Pierce_Pussy_Ring.png",
+#                "JubesX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Pussy_BarbellF.png"),
+#                "JubesX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Pussy_RingF.png"),
+#                "JubesX.Pierce == 'barbell'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Pussy_Barbell.png"),
+#                "JubesX.Pierce == 'ring'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
     contains:
@@ -2955,7 +2955,7 @@ image Jubes_Sex_Pussy:
                 "Speed == 1", Null(),
                 "'in' not in JubesX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 #                "Speed <= 1", Null(), #"Jubes_Pussy_Spunk_Heading",
-                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 )
 
     #End Jubes Pussy composite
@@ -3065,7 +3065,7 @@ image Jubes_Sex_Static:
             "Jubes_Sex_Feet"
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
+#                "ShowFeet", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
 #                "True", Null(),
 #                )
             pos (0,-180) #X less is left, Y less is up
@@ -3267,7 +3267,7 @@ image Jubes_Pussy_Spunk_Heading:
         #This is the image for Jubes's heading pussy cum
         contains:
             ConditionSwitch(
-                "'in' in JubesX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "'in' in JubesX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0)
@@ -3391,31 +3391,31 @@ image Jubes_Sex_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
             "Player.Sprite and Player.Cock == 'anal' and Speed", "Jubes_Sex_Anal_Heading",
             "Player.Sprite and Player.Cock == 'anal'", "Jubes_Sex_Anal_Tip",
-            "JubesX.Plug", "images/PlugBase_Sex.png",
+            "JubesX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "JubesX.Loose > 2", "Jubes_Gape_Anal_Sex",
-#            "JubesX.Loose", "images/JubesSex/Jubes_Sex_Hole_Loose.png",
+#            "JubesX.Loose", get_cached_image("images/JubesSex/Jubes_Sex_Hole_Loose.png"),
             "True", Null(),
             )
     contains:
             #Spunk under penis
             ConditionSwitch(
                 "'anal' not in JubesX.Spunk or not Player.Male", Null(),
-#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/JubesSex/Jubes_Sex_Spunk_Anal_Under.png",
+#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Under.png"),
                 "Player.Sprite and Player.Cock != 'anal' and Speed == 1", "Jubes_Sex_Anal_Spunk_Heading_Under",
-                "True", "images/JubesSex/Jubes_Sex_Spunk_Anal.png",
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal.png"),
                 )
     contains:
             # The animation of Zero's moving penis, masked by her anus shape
             ConditionSwitch(
                 "not Player.Sprite or Player.Cock != 'anal'", Null(),
-                "Speed >= 3",  AlphaMask("Jubes_Sex_Anal_Zero_Anim3", "Jubes_Sex_Anal_MaskF"),
-                "Speed >= 2", AlphaMask("Jubes_Sex_Anal_Zero_Anim2", "Jubes_Sex_Anal_MaskF"),
-                "Speed", AlphaMask("Jubes_Sex_Anal_Zero_Anim1", "Jubes_Sex_Anal_Mask"),
-                "True", AlphaMask("Jubes_Sex_Anal_Zero_Anim0", "Jubes_Sex_Anal_Mask"),
+                "Speed >= 3",  get_cached_alphamask("Jubes_Sex_Anal_Zero_Anim3", "Jubes_Sex_Anal_MaskF"),
+                "Speed >= 2", get_cached_alphamask("Jubes_Sex_Anal_Zero_Anim2", "Jubes_Sex_Anal_MaskF"),
+                "Speed", get_cached_alphamask("Jubes_Sex_Anal_Zero_Anim1", "Jubes_Sex_Anal_Mask"),
+                "True", get_cached_alphamask("Jubes_Sex_Anal_Zero_Anim0", "Jubes_Sex_Anal_Mask"),
                 )
     contains:
             #Spunk over penis
@@ -3443,7 +3443,7 @@ image Jubes_Gape_Anal_Sex:
 
 image Jubes_Sex_Anal_Spunk:
     ConditionSwitch(
-                "'anal' in JubesX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png",
+                "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png"),
                 "True", Null(),
                 )
     anchor (0.5,0.5)
@@ -3552,7 +3552,7 @@ image Jubes_Sex_Anal_Heading:
 
 image Jubes_Sex_Anal_Spunk_Heading_Over:
     ConditionSwitch(
-                "'anal' in JubesX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png",
+                "'anal' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png"),
                 "True", Null(),
                 )
     anchor (0.5,0.5)
@@ -3662,7 +3662,7 @@ image Jubes_Sex_Anal_Speed2:
                 repeat
 #    contains:
 #            #Zero's cock in the sex pose
-#            AlphaMask("Jubes_Sex_Fucking_Zero_Anim2", "Jubes_Sex_Fucking_Mask")
+#            get_cached_alphamask("Jubes_Sex_Fucking_Zero_Anim2", "Jubes_Sex_Fucking_Mask")
 # End main animation for Sex Pose Fucking Speed 2
 
 
@@ -3788,7 +3788,7 @@ image Jubes_Sex_Hotdog_Speed1:
             "Jubes_Sex_Feet"
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
+#                "ShowFeet", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
 #                "True", Null(),
 #                )
             pos (0,-180) #X less is left, Y less is up
@@ -3854,7 +3854,7 @@ image Jubes_Sex_Hotdog_Speed2:
             "Jubes_Sex_Feet"
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
+#                "ShowFeet", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png"),
 #                "True", Null(),
 #                )
             pos (0,-180) #X less is left, Y less is up
@@ -3909,7 +3909,7 @@ image Jubes_Sex_FJ_Speed0:
     contains:
             #Jubes's Legs
             subpixel True
-            AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png")
+            get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png")
             pos (80,-180) #X less is left, Y less is up (80,0)
             block: #adds to 5
                 pause 0.2
@@ -3964,10 +3964,10 @@ image Jubes_Sex_FJ_Speed1:
     contains:
             #Jubes's Legs
             subpixel True
-            AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png")
+            get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png")
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png"),
+#                "ShowFeet", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png"),
 #                "True", Null(),
 #                )
             pos (80,-200) #X less is left, Y less is up
@@ -4035,10 +4035,10 @@ image Jubes_Sex_FJ_Speed2:
     contains:
             #Jubes's Legs
             subpixel True
-            AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png")
+            get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png")
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png"),
+#                "ShowFeet", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_Toes.png"),
 #                "True", Null(),
 #                )
             pos (80,-230) #X less is left, Y less is up
@@ -4164,7 +4164,7 @@ image Jubes_BJ_Backdrop:
             contains:
                 #blanket
                 ConditionSwitch(
-                    "'blanket' in JubesX.RecentActions", "images/KittyBJFace/Kitty_BJFace_Blanket.png",
+                    "'blanket' in JubesX.RecentActions", get_cached_image("images/KittyBJFace/Kitty_BJFace_Blanket.png"),
                     "True", Null(),
                     )
                 zoom 1.2
@@ -4177,13 +4177,13 @@ image Jubes_BJ_Backdrop:
                         # Modification mode
                         "JubesX.Acc == 'saiyan tail'", Null(),
                         # -----------------
-                        "True", Recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_JacketBack.png"),
+                        "True", get_cached_recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_JacketBack.png"),
                         )
 #            contains:
 #                #bra straps
 #                ConditionSwitch(
-#                        "JubesX.Chest == 'sports bra'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Back.png"),
-#                        "JubesX.Chest == 'bikini top'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Back.png"),
+#                        "JubesX.Chest == 'sports bra'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Back.png"),
+#                        "JubesX.Chest == 'bikini top'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Back.png"),
 #                        "True", Null(),
 #                        )
 
@@ -4196,22 +4196,22 @@ image Jubes_BJ_Backdrop:
                         # Modification mode
                         "JubesX.Acc == 'saiyan tail'", Null(),
                         # -----------------
-                        "True", Recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_Jacket.png"),
+                        "True", get_cached_recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_Jacket.png"),
                         )
             contains:
                 #Chest
                 ConditionSwitch(
-                        "JubesX.Chest == 'lace bra' and JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace_Loose.png"),
-                        "JubesX.Chest == 'sports bra' and not JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Loose_Back.png"),
-                        "JubesX.Chest == 'bikini top' and not JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Loose_Back.png"),
+                        "JubesX.Chest == 'lace bra' and JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace_Loose.png"),
+                        "JubesX.Chest == 'sports bra' and not JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Loose_Back.png"),
+                        "JubesX.Chest == 'bikini top' and not JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Loose_Back.png"),
                         "True", Null(),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "JubesX.Over == 'red shirt'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Red.png"),
-                        "JubesX.Over == 'black shirt'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Black.png"),
-                        "JubesX.Over == 'tube top'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Under.png"),
+                        "JubesX.Over == 'red shirt'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Red.png"),
+                        "JubesX.Over == 'black shirt'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Black.png"),
+                        "JubesX.Over == 'tube top'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Under.png"),
                         "True", Null(),
                         )
             contains:
@@ -4219,24 +4219,24 @@ image Jubes_BJ_Backdrop:
             contains:
                 #Chest
                 ConditionSwitch(
-                        "JubesX.Chest == 'lace bra' and not JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace_Loose.png"),
-                        "JubesX.Chest == 'sports bra' and JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Loose_Up.png"),
-                        "JubesX.Chest == 'sports bra'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Loose.png"),
-                        "JubesX.Chest == 'bikini top' and JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Loose_Up.png"),
-                        "JubesX.Chest == 'bikini top'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Loose.png"),
+                        "JubesX.Chest == 'lace bra' and not JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace_Loose.png"),
+                        "JubesX.Chest == 'sports bra' and JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Loose_Up.png"),
+                        "JubesX.Chest == 'sports bra'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Loose.png"),
+                        "JubesX.Chest == 'bikini top' and JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Loose_Up.png"),
+                        "JubesX.Chest == 'bikini top'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Loose.png"),
                         "True", Null(),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "JubesX.Over == 'dress' and not JubesX.Uptop",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Dress.png"),
-                        "JubesX.Over == 'tube top' and not JubesX.Uptop",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Loose.png"),
+                        "JubesX.Over == 'dress' and not JubesX.Uptop",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Dress.png"),
+                        "JubesX.Over == 'tube top' and not JubesX.Uptop",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Loose.png"),
                         "True", Null(),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "'tits' in JubesX.Spunk and Player.Male","images/JubesBJFace/Jubes_TJ_Spunk_Tits_Loose.png",
+                        "'tits' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_TJ_Spunk_Tits_Loose.png"),
                         "True", Null(),
                         )
 #            contains:
@@ -4245,17 +4245,17 @@ image Jubes_BJ_Backdrop:
 #                        "not JubesX.Pierce", Null(),
 #                        "JubesX.Pierce == 'ring'", ConditionSwitch(
 #                                #if she's got ring piercings
-#                                "JubesX.Uptop", "images/JubesBJFace/Jubes_TJ_Pierce_Ring.png",
-#                                "JubesX.Over == 'tube top'", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png",
-#                                "JubesX.Chest == 'bikini top'", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png",
-#                                "JubesX.Chest == 'lace bra'", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Lace.png",
-#                                "True", "images/JubesBJFace/Jubes_TJ_Pierce_Ring.png",
+#                                "JubesX.Uptop", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring.png"),
+#                                "JubesX.Over == 'tube top'", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png"),
+#                                "JubesX.Chest == 'bikini top'", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png"),
+#                                "JubesX.Chest == 'lace bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring_Lace.png"),
+#                                "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring.png"),
 #                                ),
-#                        "JubesX.Uptop", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png",
-#                        "JubesX.Over == 'tube top'", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png",
-#                        "JubesX.Chest == 'bikini top'", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png",
-#                        "JubesX.Chest == 'lace bra'", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Lace.png",
-#                        "True", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png",
+#                        "JubesX.Uptop", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png"),
+#                        "JubesX.Over == 'tube top'", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png"),
+#                        "JubesX.Chest == 'bikini top'", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png"),
+#                        "JubesX.Chest == 'lace bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Lace.png"),
+#                        "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png"),
 #                        )
             transform_anchor True
             zoom 1.3
@@ -4280,25 +4280,25 @@ image Jubes_BJ_Head:                                                            
             #Mouth
             "Speed and renpy.showing('Jubes_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),  #licking
+                    "Speed == 1", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png"), #sucking
-                    "Speed == 4", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png"), #deepthroat
-                    "Speed == 6", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png"), #cumming
+                    "Speed == 3", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png"), #sucking
+                    "Speed == 4", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png"), #deepthroat
+                    "Speed == 6", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png"), #cumming
                     ),
-            "renpy.showing('Jubes_CUN_Animation') and Speed", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),
-            "Speed >= 3 and renpy.showing('Jubes_TJ_Animation')", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),
-            "JubesX.Mouth == 'normal'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
-            "JubesX.Mouth == 'lipbite'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Lipbite.png"),
-            "JubesX.Mouth == 'sucking'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Open.png"),
-            "JubesX.Mouth == 'kiss'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Kiss.png"),
-            "JubesX.Mouth == 'sad'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sad.png"),
-            "JubesX.Mouth == 'smile'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
-            "JubesX.Mouth == 'smirk'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smirk.png"),
-            "JubesX.Mouth == 'grimace'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
-            "JubesX.Mouth == 'surprised'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Kiss.png"),
-            "JubesX.Mouth == 'tongue'", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),
-            "True", Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
+            "renpy.showing('Jubes_CUN_Animation') and Speed", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),
+            "Speed >= 3 and renpy.showing('Jubes_TJ_Animation')", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),
+            "JubesX.Mouth == 'normal'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
+            "JubesX.Mouth == 'lipbite'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Lipbite.png"),
+            "JubesX.Mouth == 'sucking'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Open.png"),
+            "JubesX.Mouth == 'kiss'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Kiss.png"),
+            "JubesX.Mouth == 'sad'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sad.png"),
+            "JubesX.Mouth == 'smile'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
+            "JubesX.Mouth == 'smirk'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smirk.png"),
+            "JubesX.Mouth == 'grimace'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
+            "JubesX.Mouth == 'surprised'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Kiss.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Tongue.png"),
+            "True", get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Smile.png"),
             ),
         (428,555), ConditionSwitch(   #(428,605)
             # Heading Mouth
@@ -4314,32 +4314,32 @@ image Jubes_BJ_Head:                                                            
             "'mouth' not in JubesX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Jubes_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png",  #licking
+                    "Speed == 1", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png", #sucking
-                    "Speed == 4", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png", #deepthroat
-                    "Speed == 6", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png", #cumming
+                    "Speed == 3", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png"), #sucking
+                    "Speed == 4", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png"), #deepthroat
+                    "Speed == 6", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png"), #cumming
                     ),
-#            "JubesX.Mouth == 'normal'", "images/JubesBJFace/Jubes_BJ_Spunk_Smile.png",
-            "JubesX.Mouth == 'lipbite'", "images/JubesBJFace/Jubes_BJ_Spunk_Smile.png",
-#            "JubesX.Mouth == 'kiss'", "images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png",
-#            "JubesX.Mouth == 'sad'", "images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png",
-            "JubesX.Mouth == 'smile'", "images/JubesBJFace/Jubes_BJ_Spunk_Smile.png",
-#            "JubesX.Mouth == 'smirk'", "images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png",
-#            "JubesX.Mouth == 'surprised'", "images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png",
-            "JubesX.Mouth == 'open'", "images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png",
-            "JubesX.Mouth == 'tongue'", "images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png",
-            "JubesX.Mouth == 'sucking'", "images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png",
-            "True", "images/JubesBJFace/Jubes_BJ_Spunk_Smirk.png",
+#            "JubesX.Mouth == 'normal'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Smile.png"),
+            "JubesX.Mouth == 'lipbite'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Smile.png"),
+#            "JubesX.Mouth == 'kiss'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png"),
+#            "JubesX.Mouth == 'sad'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png"),
+            "JubesX.Mouth == 'smile'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Smile.png"),
+#            "JubesX.Mouth == 'smirk'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png"),
+#            "JubesX.Mouth == 'surprised'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Kiss.png"),
+            "JubesX.Mouth == 'open'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png"),
+            "JubesX.Mouth == 'tongue'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png"),
+            "JubesX.Mouth == 'sucking'", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Tongue.png"),
+            "True", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Smirk.png"),
             ),
 
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in JubesX.Spunk and 'chin' not in JubesX.Spunk", Null(),
-            "'chin' not in JubesX.Spunk and (JubesX.Mouth == 'tongue' or Speed)", "images/JubesBJFace/Jubes_BJ_Wet_Tongue.png",
-            "JubesX.Mouth == 'tongue' or Speed", "images/JubesBJFace/Jubes_BJ_Wet_Tongue2.png",
-            "'mouth' in JubesX.Spunk or 'chin' in JubesX.Spunk", "images/JubesBJFace/Jubes_BJ_Wet_Mouth.png",
+            "'chin' not in JubesX.Spunk and (JubesX.Mouth == 'tongue' or Speed)", get_cached_image("images/JubesBJFace/Jubes_BJ_Wet_Tongue.png"),
+            "JubesX.Mouth == 'tongue' or Speed", get_cached_image("images/JubesBJFace/Jubes_BJ_Wet_Tongue2.png"),
+            "'mouth' in JubesX.Spunk or 'chin' in JubesX.Spunk", get_cached_image("images/JubesBJFace/Jubes_BJ_Wet_Mouth.png"),
             "True", Null(),
             ),
 
@@ -4353,33 +4353,33 @@ image Jubes_BJ_Head:                                                            
             ),
         (0,0), "Jubes BJ Blink",
             #Eyes
-        (0,0), "images/JubesBJFace/Jubes_BJ_Earring.png",
+        (0,0), get_cached_image("images/JubesBJFace/Jubes_BJ_Earring.png"),
         # Modification mode
         (0,0), ConditionSwitch(
             #glasses under
-            "JubesX.Hair == 'shades'", "images/JubesBJFace/Jubes_BJ_Hair_Shades.png",
+            "JubesX.Hair == 'shades'", get_cached_image("images/JubesBJFace/Jubes_BJ_Hair_Shades.png"),
             "True", Null(),
             ),
         # -----------------
         (0,0), ConditionSwitch(
             #Hair overlay
-            "JubesX.Water or JubesX.Hair == 'wet'", Recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Wet.png"),
-            "not Player.Male and 'facial' in JubesX.Spunk",Recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Wet.png"),
-            "JubesX.Hair == 'shades'", Recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Shades.png"),
-            "True", Recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Short.png"),
+            "JubesX.Water or JubesX.Hair == 'wet'", get_cached_recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Wet.png"),
+            "not Player.Male and 'facial' in JubesX.Spunk",get_cached_recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Wet.png"),
+            "JubesX.Hair == 'shades'", get_cached_recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Shades.png"),
+            "True", get_cached_recolor("Jubes", "Hair", "images/JubesBJFace/Jubes_BJ_Hair_Short.png"),
             ),
         (0,0), ConditionSwitch(
             # water overlay
-            "JubesX.Water", "images/JubesBJFace/Jubes_BJ_Wet.png",
-            "not Player.Male and 'facial' in JubesX.Spunk", "images/JubesBJFace/Jubes_BJ_Wet.png",
+            "JubesX.Water", get_cached_image("images/JubesBJFace/Jubes_BJ_Wet.png"),
+            "not Player.Male and 'facial' in JubesX.Spunk", get_cached_image("images/JubesBJFace/Jubes_BJ_Wet.png"),
             "True",Null(),
             ),
 
 #        (0,0), "Jubes_Tester",
         (0,0), ConditionSwitch(
             #cum on the face
-            "'hair' in JubesX.Spunk and Player.Male", "images/JubesBJFace/Jubes_BJ_Spunk_Hair.png",
-            "'facial' in JubesX.Spunk and Player.Male", "images/JubesBJFace/Jubes_BJ_Spunk_Facial.png",
+            "'hair' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Hair.png"),
+            "'facial' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_Facial.png"),
             "True", Null(),
             ),
         )
@@ -4392,17 +4392,17 @@ image Jubes_Tester:
 image Jubes BJ Blink:
         #eyeblinks
         ConditionSwitch(
-            "JubesX.Eyes == 'normal'", "images/JubesBJFace/Jubes_BJ_Eyes_Normal.png",
-            "JubesX.Eyes == 'sexy'", "images/JubesBJFace/Jubes_BJ_Eyes_Sexy.png",
-            "JubesX.Eyes == 'closed'", "images/JubesBJFace/Jubes_BJ_Eyes_Closed.png",
-            "JubesX.Eyes == 'surprised'", "images/JubesBJFace/Jubes_BJ_Eyes_Surprised.png",
-            "JubesX.Eyes == 'side'", "images/JubesBJFace/Jubes_BJ_Eyes_Side.png",
-            "JubesX.Eyes == 'leftside'", "images/JubesBJFace/Jubes_BJ_Eyes_Leftside.png",
-            "JubesX.Eyes == 'stunned'", "images/JubesBJFace/Jubes_BJ_Eyes_Stunned.png",
-            "JubesX.Eyes == 'down'", "images/JubesBJFace/Jubes_BJ_Eyes_Down.png",
-            "JubesX.Eyes == 'manic'", "images/JubesBJFace/Jubes_BJ_Eyes_Surprised.png",
-            "JubesX.Eyes == 'squint'", "images/JubesBJFace/Jubes_BJ_Eyes_Squint.png",
-            "True", "images/JubesBJFace/Jubes_BJ_Eyes_Normal.png",
+            "JubesX.Eyes == 'normal'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Normal.png"),
+            "JubesX.Eyes == 'sexy'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Sexy.png"),
+            "JubesX.Eyes == 'closed'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Closed.png"),
+            "JubesX.Eyes == 'surprised'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Surprised.png"),
+            "JubesX.Eyes == 'side'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Side.png"),
+            "JubesX.Eyes == 'leftside'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Leftside.png"),
+            "JubesX.Eyes == 'stunned'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Stunned.png"),
+            "JubesX.Eyes == 'down'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Down.png"),
+            "JubesX.Eyes == 'manic'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Surprised.png"),
+            "JubesX.Eyes == 'squint'", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Squint.png"),
+            "True", get_cached_image("images/JubesBJFace/Jubes_BJ_Eyes_Normal.png"),
             ),
         choice:
             3.5
@@ -4418,20 +4418,20 @@ image Jubes_BJ_MouthHeading:
     #the mouth used for the heading animations
     transform_anchor True
     contains:
-        Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png")
-#        Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Heading.png")
+        get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png")
+#        get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Heading.png")
         zoom 1.4
         anchor (0.50,0.6)  #(0.50,0.65)
     contains:
         ConditionSwitch(
-            "'mouth' in JubesX.Spunk and Player.Male", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png",#At("Jubes_BJ_MaskHeading", Jubes_BJ_MouthAnim()),
+            "'mouth' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingUnder.png"),#At("Jubes_BJ_MaskHeading", Jubes_BJ_MouthAnim()),
             "True", Null(),
             ),
         zoom 1.4
         anchor (0.50,0.6)  #(0.50,0.65)
     contains:
         ConditionSwitch(
-            "'mouth' in JubesX.Spunk and Player.Male", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingOver.png",#At("Jubes_BJ_MaskHeading", Jubes_BJ_MouthAnim()),
+            "'mouth' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingOver.png"),#At("Jubes_BJ_MaskHeading", Jubes_BJ_MouthAnim()),
             "True", Null(),
             ),
         zoom 1.4
@@ -4456,12 +4456,12 @@ image Jubes_BJ_MouthHeading:
 image Jubes_BJ_MouthCumHigh:
     #the mouth used for the heading animations
     contains:
-        Recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png")
+        get_cached_recolor("Jubes", "Lips", "images/JubesBJFace/Jubes_BJ_Mouth_Sucking.png")
         zoom 1.4
         anchor (0.50,0.6)  #(0.50,0.65)
     contains:
         ConditionSwitch(
-            "'mouth' in JubesX.Spunk and Player.Male", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingOver.png",#At("Jubes_BJ_MaskHeading", Jubes_BJ_MouthAnim()),
+            "'mouth' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingOver.png"),#At("Jubes_BJ_MaskHeading", Jubes_BJ_MouthAnim()),
             "True", Null(),
             ),
         zoom 1.4
@@ -4488,7 +4488,7 @@ image Jubes_BJ_MouthSuckingMask:
         ConditionSwitch(
             "'mouth' not in JubesX.Spunk and Player.Male", Null(),
             "Speed != 2 and Speed != 5", Null(),
-            "True", "images/JubesBJFace/Jubes_BJ_Spunk_SuckingOver.png",
+            "True", get_cached_image("images/JubesBJFace/Jubes_BJ_Spunk_SuckingOver.png"),
             )
         zoom 1.4
 
@@ -4623,7 +4623,7 @@ image Jubes_BJ_Backdrop1:
 #        contains:
 #            #blanket
 #            ConditionSwitch(
-#                "'blanket' in JubesX.RecentActions", "images/KittyBJFace/Kitty_BJFace_Blanket.png",
+#                "'blanket' in JubesX.RecentActions", get_cached_image("images/KittyBJFace/Kitty_BJFace_Blanket.png"),
 #                "True", Null(),
 #                )
 #            zoom 1.2
@@ -4780,7 +4780,7 @@ image Jubes_BJ_Anim2:
                 offset (645,370)  #(650,370)
         contains:
                 # Masked overlay for heading animaton
-                AlphaMask("Jubes_BJ_Head", "Jubes_BJ_MaskHeadingComposite") #"Jubes_BJ_MouthHeadingComposite")
+                get_cached_alphamask("Jubes_BJ_Head", "Jubes_BJ_MaskHeadingComposite") #"Jubes_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-260,-460)  #top (-250,-460), -20 is crown, 0 is mid
@@ -4823,7 +4823,7 @@ image Jubes_BJ_Anim3:
                 offset (645,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Jubes_BJ_Head", "Jubes_BJ_MouthSuckingMask")
+                get_cached_alphamask("Jubes_BJ_Head", "Jubes_BJ_MouthSuckingMask")
                 subpixel True
                 offset (-250,-390)#(-250,-500) #is -600x,-650y from normal
                 block:
@@ -4879,7 +4879,7 @@ image Jubes_BJ_Anim4:
                 offset (645,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Jubes_BJ_Head", "Jubes_BJ_MouthSuckingMask")
+                get_cached_alphamask("Jubes_BJ_Head", "Jubes_BJ_MouthSuckingMask")
                 subpixel True
                 offset (-245,-290)
                 block:
@@ -4937,7 +4937,7 @@ image Jubes_BJ_Anim5:
                 offset (645,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Jubes_BJ_Head", "Jubes_BJ_MaskHeadingComposite")
+                get_cached_alphamask("Jubes_BJ_Head", "Jubes_BJ_MaskHeadingComposite")
                 subpixel True
                 offset (-260,-450)     #top
                 block:
@@ -4998,7 +4998,7 @@ image Jubes_BJ_Anim6:
                 offset (645,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Jubes_BJ_Head", "Jubes_BJ_MouthSuckingMask")
+                get_cached_alphamask("Jubes_BJ_Head", "Jubes_BJ_MouthSuckingMask")
                 subpixel True
                 offset (-245,-210)#230)
                 block:
@@ -5146,7 +5146,7 @@ image Jubes_TJ_Body:
 #            contains:
 #                ConditionSwitch(
 #                        "JubesX.Over or renpy.showing('Jubes_TJ_Animation')", Null(),
-#                        "JubesX.Chest == 'black bra' or JubesX.Chest == 'lace bra'","images/JubesBJFace/Jubes_TJ_Chest_Bra_Back.png",
+#                        "JubesX.Chest == 'black bra' or JubesX.Chest == 'lace bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Bra_Back.png"),
 #                        "True", Null(),
 #                        )
             contains:
@@ -5154,7 +5154,7 @@ image Jubes_TJ_Body:
 #            contains:
 #                ConditionSwitch(
 #                        "not JubesX.Water",Null(),
-#                        "True",       "images/JubesBJFace/Jubes_TJ_Body_Wet.png",
+#                        "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Body_Wet.png"),
 #                        )
             contains:
                 #jacket
@@ -5163,43 +5163,43 @@ image Jubes_TJ_Body:
                         # Modification mode
                         "JubesX.Acc == 'saiyan tail'", Null(),
                         # -----------------
-                        "True", Recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_Jacket.png"),
+                        "True", get_cached_recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_Jacket.png"),
                         )
 #            contains:
 #                #Chest
 #                ConditionSwitch(
-#                        #"JubesX.Chest == 'bra'","images/JubesBJFace/Jubes_TJ_Chest_Bra_Base.png",
-#                        "JubesX.Chest == 'cos bra'","images/JubesBJFace/Jubes_TJ_Chest_Cos_TopD.png",
-#                        "JubesX.Chest == 'sports bra'","images/JubesBJFace/Jubes_TJ_Chest_Sportsbra_Body.png",
-#                        "JubesX.Chest == 'bikini top'","images/JubesBJFace/Jubes_TJ_Chest_Bikini_Body.png",
+#                        #"JubesX.Chest == 'bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Bra_Base.png"),
+#                        "JubesX.Chest == 'cos bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Cos_TopD.png"),
+#                        "JubesX.Chest == 'sports bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Sportsbra_Body.png"),
+#                        "JubesX.Chest == 'bikini top'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Bikini_Body.png"),
 #                        "True", Null(),
 #                        )
             contains:
                 #Over
                 ConditionSwitch(
-                        "JubesX.Over == 'red shirt'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Red.png"),
-                        "JubesX.Over == 'black shirt'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Black.png"),
-                        "JubesX.Over == 'tube top'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Under.png"),
+                        "JubesX.Over == 'red shirt'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Red.png"),
+                        "JubesX.Over == 'black shirt'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Black.png"),
+                        "JubesX.Over == 'tube top'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Under.png"),
                         "True", Null(),
                         )
 #            contains:
 #                #tit spunk on chest
 #                ConditionSwitch(
 #                        "'tits' not in JubesX.Spunk",Null(),
-#                        "True",       "images/JubesBJFace/Jubes_TJ_Spunk_Body.png",
+#                        "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Spunk_Body.png"),
 #                        )
 
 #            contains:
 #                #hair at the midground, behind the face but in front of body
 #                ConditionSwitch(
 #                        "JubesX.Over", Null(),
-#                        "JubesX.Hair == 'long' and not JubesX.Water", "images/JubesBJFace/Jubes_TJ_Hair_Long_Mid.png",
+#                        "JubesX.Hair == 'long' and not JubesX.Water", get_cached_image("images/JubesBJFace/Jubes_TJ_Hair_Long_Mid.png"),
 #                        "True",   Null(),
 #                        )
             contains:
                 #Over
                 ConditionSwitch(
-                        "'tits' in JubesX.Spunk and Player.Male","images/JubesBJFace/Jubes_TJ_Spunk_Tits_Under.png",
+                        "'tits' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_TJ_Spunk_Tits_Under.png"),
                         "True", Null(),
                         )
             transform_anchor True
@@ -5216,13 +5216,13 @@ image Jubes_TJ_Tit_Under:
 #                ConditionSwitch(
 #                    # right breast overlay
 #                    "JubesX.Chest == 'cos bra'",Null(),
-#                    "renpy.showing('Jubes_TJ_Animation')", "images/JubesBJFace/Jubes_TJ_TitsUnder.png",
+#                    "renpy.showing('Jubes_TJ_Animation')", get_cached_image("images/JubesBJFace/Jubes_TJ_TitsUnder.png"),
 #                    "True",  Null(),
 #                    )
 #            contains:
 #                ConditionSwitch(
 #                        "'tits' not in JubesX.Spunk",Null(),
-#                        "True",       "images/JubesBJFace/Jubes_TJ_Spunk_TitsUnder.png",
+#                        "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Spunk_TitsUnder.png"),
 #                        )
             transform_anchor True
             zoom 1
@@ -5238,7 +5238,7 @@ image Jubes_TJ_Jacketback:
                         # Modification mode
                         "JubesX.Acc == 'saiyan tail'", Null(),
                         # -----------------
-                        "True", Recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_JacketBack.png"),
+                        "True", get_cached_recolor("Jubes", "Acc", "images/JubesBJFace/Jubes_TJ_JacketBack.png"),
                         )
             transform_anchor True
             zoom 1
@@ -5250,12 +5250,12 @@ image Jubes_TJ_Braback:
             #back fo the bra straps
             contains:
                 ConditionSwitch(
-                        #"JubesX.Chest == 'corset' and not JubesX.Uptop","images/JubesBJFace/Jubes_TJ_Chest_Corset.png",
+                        #"JubesX.Chest == 'corset' and not JubesX.Uptop", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Corset.png"),
 #                        "JubesX.Over",Null(),
-                        "JubesX.Chest == 'sports bra'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Back.png"),
-#                        "JubesX.Chest == 'lace bra'","images/JubesBJFace/Jubes_TJ_Chest_Lace_Back.png",
-                        "JubesX.Chest == 'bikini top' and JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Up_Back.png"),
-                        "JubesX.Chest == 'bikini top'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Back.png"),
+                        "JubesX.Chest == 'sports bra'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports_Back.png"),
+#                        "JubesX.Chest == 'lace bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Lace_Back.png"),
+                        "JubesX.Chest == 'bikini top' and JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Up_Back.png"),
+                        "JubesX.Chest == 'bikini top'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Back.png"),
                         "True", Null(),
                         )
             transform_anchor True
@@ -5268,9 +5268,9 @@ image Jubes_TJ_Braback:
 #            #bra streching effect
 #            contains:
 #                ConditionSwitch(
-#                        #"JubesX.Chest == 'corset' and not JubesX.Uptop","images/JubesBJFace/Jubes_TJ_Chest_Corset.png",
-#                        "JubesX.Chest == 'bikini top'","images/JubesBJFace/Jubes_TJ_Chest_Bikini_Tent.png",
-#                        "JubesX.Chest == 'sports bra'","images/JubesBJFace/Jubes_TJ_Chest_Sportsbra_Tent.png",
+#                        #"JubesX.Chest == 'corset' and not JubesX.Uptop", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Corset.png"),
+#                        "JubesX.Chest == 'bikini top'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Bikini_Tent.png"),
+#                        "JubesX.Chest == 'sports bra'", get_cached_image("images/JubesBJFace/Jubes_TJ_Chest_Sportsbra_Tent.png"),
 #                        "True", Null(),
 #                        )
 #            transform_anchor True
@@ -5287,26 +5287,26 @@ image Jubes_TJ_Tits:
 #            contains:
 #                ConditionSwitch(
 #                        "not JubesX.Water",Null(),
-#                        "True",       "images/JubesBJFace/Jubes_TJ_Tits_Wet.png",
+#                        "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Tits_Wet.png"),
 #                        )
             contains:
                 #Chest
                 ConditionSwitch(
-                        "JubesX.Chest == 'lace bra' and JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace_Up.png"),  #fix, add "no straps" version here
-                        "JubesX.Chest == 'lace bra'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace.png"),
-                        "JubesX.Chest == 'sports bra'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports.png"),
-                        "JubesX.Chest == 'bikini top' and JubesX.Uptop",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Up.png"),
-                        "JubesX.Chest == 'bikini top'",Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini.png"),
+                        "JubesX.Chest == 'lace bra' and JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace_Up.png"),  #fix, add "no straps" version here
+                        "JubesX.Chest == 'lace bra'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Lace.png"),
+                        "JubesX.Chest == 'sports bra'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Sports.png"),
+                        "JubesX.Chest == 'bikini top' and JubesX.Uptop",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini_Up.png"),
+                        "JubesX.Chest == 'bikini top'",get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Chest_Bikini.png"),
                         # Modification mode
-                        "JubesX.Chest == 'saiyan leotard'","images/JubesBJFace/modification/Jubes_TJ_Chest_Saiyan_Leotard.png",
+                        "JubesX.Chest == 'saiyan leotard'", get_cached_image("images/JubesBJFace/modification/Jubes_TJ_Chest_Saiyan_Leotard.png"),
                         # -----------------
                         "True", Null(),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "JubesX.Over == 'tube top' and JubesX.Uptop",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Up.png"),
-                        "JubesX.Over == 'tube top'",Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube.png"),
+                        "JubesX.Over == 'tube top' and JubesX.Uptop",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube_Up.png"),
+                        "JubesX.Over == 'tube top'",get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Over_Tube.png"),
                         "True", Null(),
                         )
             contains:
@@ -5315,22 +5315,22 @@ image Jubes_TJ_Tits:
                         "not JubesX.Pierce", Null(),
                         "JubesX.Pierce == 'ring'", ConditionSwitch(
                                 #if she's got ring piercings
-                                "JubesX.Uptop", "images/JubesBJFace/Jubes_TJ_Pierce_Ring.png",
-                                "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png"),
-                                "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png"),
-                                "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Lace.png"),
-                                "True", "images/JubesBJFace/Jubes_TJ_Pierce_Ring.png",
+                                "JubesX.Uptop", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring.png"),
+                                "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png"),
+                                "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Pink.png"),
+                                "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Ring_Lace.png"),
+                                "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Ring.png"),
                                 ),
-                        "JubesX.Uptop", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png",
-                        "JubesX.Over == 'tube top'", Recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png"),
-                        "JubesX.Chest == 'bikini top'", Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png"),
-                        "JubesX.Chest == 'lace bra'", Recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Lace.png"),
-                        "True", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png",
+                        "JubesX.Uptop", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png"),
+                        "JubesX.Over == 'tube top'", get_cached_recolor("Jubes", "Over", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png"),
+                        "JubesX.Chest == 'bikini top'", get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Pink.png"),
+                        "JubesX.Chest == 'lace bra'", get_cached_recolor("Jubes", "Chest", "images/JubesBJFace/Jubes_TJ_Pierce_Barbell_Lace.png"),
+                        "True", get_cached_image("images/JubesBJFace/Jubes_TJ_Pierce_Barbell.png"),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "'tits' in JubesX.Spunk and Player.Male","images/JubesBJFace/Jubes_TJ_Spunk_Tits_Over.png",
+                        "'tits' in JubesX.Spunk and Player.Male", get_cached_image("images/JubesBJFace/Jubes_TJ_Spunk_Tits_Over.png"),
                         "True", Null(),
                         )
             transform_anchor True
@@ -6886,13 +6886,13 @@ image Jubes_SC_Legs:
 #            "True", "Spunk_Drip2",
 #            ),
 
-        (0,0),"images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Legs.png",
+        (0,0), "images/JubesSex/[JubesX.skin_image.skin_path]Jubes_Sex_Legs.png",
             #Legs
 
         (0,0), ConditionSwitch(
             #Wet look
             "not JubesX.Water", Null(),
-            "True", "images/JubesSex/Jubes_Sex_Wet_Legs.png",
+            "True", get_cached_image("images/JubesSex/Jubes_Sex_Wet_Legs.png"),
             ),
 
 #        (0,0), "Jubes_Sex_Anus",
@@ -6905,13 +6905,13 @@ image Jubes_SC_Legs:
         (0,0), ConditionSwitch(
             #Panties if up
             "JubesX.PantiesDown", Null(),
-            "JubesX.Panties == 'lace panties'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Lace.png"),
-            "JubesX.Panties == 'tiger panties' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger_Wet.png"),
-            "JubesX.Panties == 'tiger panties'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger.png"),
-            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini_Wet.png"),
-            "JubesX.Panties == 'bikini bottoms'", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini.png"),
-            "JubesX.Panties and JubesX.Wet", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue_Wet.png"),
-            "JubesX.Panties", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue.png"),
+            "JubesX.Panties == 'lace panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Lace.png"),
+            "JubesX.Panties == 'tiger panties' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger_Wet.png"),
+            "JubesX.Panties == 'tiger panties'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Tiger.png"),
+            "JubesX.Panties == 'bikini bottoms' and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini_Wet.png"),
+            "JubesX.Panties == 'bikini bottoms'", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Bikini.png"),
+            "JubesX.Panties and JubesX.Wet", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue_Wet.png"),
+            "JubesX.Panties", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Panties_Blue.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -6923,39 +6923,39 @@ image Jubes_SC_Legs:
 #            "Player.Sprite and Player.Cock == 'in' and Speed == 0", Null(),
             "JubesX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/JubesSex/Jubes_Sex_Pierce_Ring_Fucking.png",
-                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
-                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
-                    "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Lace.png"),
-                    "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Tiger.png"),
-                    "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Bikini.png"),
-                    "JubesX.Panties and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Blue.png"),
-                    "True", "images/JubesSex/Jubes_Sex_Pierce_Ring.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Ring_Fucking.png"),
+                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
+                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
+                    "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Lace.png"),
+                    "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Tiger.png"),
+                    "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Bikini.png"),
+                    "JubesX.Panties and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Ring_Blue.png"),
+                    "True", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Ring.png"),
                     ),
             "not JubesX.Pierce", Null(),
             #else, it's barbell
 
-            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
-            "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
-            "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Lace.png"),
-            "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Tiger.png"),
-            "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Bikini.png"),
-            "JubesX.Panties and not JubesX.PantiesDown", Recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Blue.png"),
-            "True", "images/JubesSex/Jubes_Sex_Pierce_Barbell.png",
+            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
+            "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
+            "JubesX.Panties == 'lace panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Lace.png"),
+            "JubesX.Panties == 'tiger panties' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Tiger.png"),
+            "JubesX.Panties == 'bikini bottoms' and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Bikini.png"),
+            "JubesX.Panties and not JubesX.PantiesDown", get_cached_recolor("Jubes", "Panties", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Blue.png"),
+            "True", get_cached_image("images/JubesSex/Jubes_Sex_Pierce_Barbell.png"),
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "JubesX.Hose == 'stockings and garterbelt'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_StockingsGarter.png"),
-            "JubesX.Hose == 'socks'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Socks.png"),
-            "JubesX.Hose == 'garterbelt'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Garter.png"),
-            "JubesX.Hose == 'stockings'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Stockings.png"),
+            "JubesX.Hose == 'stockings and garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_StockingsGarter.png"),
+            "JubesX.Hose == 'socks'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Socks.png"),
+            "JubesX.Hose == 'garterbelt'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Garter.png"),
+            "JubesX.Hose == 'stockings'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "JubesX.Panties and JubesX.PantiesDown", Null(),
-            "JubesX.Hose == 'pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose.png"),
-            "JubesX.Hose == 'ripped pantyhose'", Recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
+            "JubesX.Hose == 'pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose.png"),
+            "JubesX.Hose == 'ripped pantyhose'", get_cached_recolor("Jubes", "Hose", "images/JubesSex/Jubes_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
@@ -6963,20 +6963,20 @@ image Jubes_SC_Legs:
             #Legs Layer
 #            "JubesX.Upskirt",ConditionSwitch(
 #                    #If she has panties down. . .
-##                    "JubesX.Legs == 'skirt'", "images/JubesSex/Jubes_Sex_Legs_Skirt_Up.png",
-#                    "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Up.png"),
-#                    "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Up.png"),
+##                    "JubesX.Legs == 'skirt'", get_cached_image("images/JubesSex/Jubes_Sex_Legs_Skirt_Up.png"),
+#                    "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Up.png"),
+#                    "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants_Up.png"),
 #                    "True", Null(),
 #                    ),
 
-#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
-            "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
+#            "JubesX.Legs == 'dress' and JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
+            "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
 
             "JubesX.Upskirt", Null(),
-#            "JubesX.Legs == 'skirt'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
-            "JubesX.Legs == 'shorts' and JubesX.Wet > 1", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Wet.png"),
-            "JubesX.Legs == 'shorts'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts.png"),
-            "JubesX.Legs == 'pants'", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants.png"),
+#            "JubesX.Legs == 'skirt'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Skirt.png"),
+            "JubesX.Legs == 'shorts' and JubesX.Wet > 1", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts_Wet.png"),
+            "JubesX.Legs == 'shorts'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Shorts.png"),
+            "JubesX.Legs == 'pants'", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Legs_Pants.png"),
             "True", Null(),
             ),
 
@@ -6985,19 +6985,19 @@ image Jubes_SC_Legs:
             #Piercings
             "JubesX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
-                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
+                    "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Shorts.png"),
+                    "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Ring_Pants.png"),
                     "True", Null(),
                     ),
             #else, it's barbell
-            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
-            "JubesX.Legs == 'pants' and not JubesX.Upskirt", Recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
+            "JubesX.Legs == 'shorts' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Shorts.png"),
+            "JubesX.Legs == 'pants' and not JubesX.Upskirt", get_cached_recolor("Jubes", "Legs", "images/JubesSex/Jubes_Sex_Pierce_Barbell_Pants.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #dress Layer
-            "JubesX.Over == 'dress'", Recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
+            "JubesX.Over == 'dress'", get_cached_recolor("Jubes", "Over", "images/JubesSex/Jubes_Sex_Legs_Dress.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -7024,24 +7024,24 @@ image Jubes_SC_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_Pussy_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Jubes_Sex_Heading_Pussy",
-                "Speed", "images/JubesSex/Jubes_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/JubesSex/Jubes_Sex_Pussy_Open.png",
-                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", "images/JubesSex/Jubes_Sex_Pussy_Open.png",
-                "True", "images/JubesSex/Jubes_Sex_Pussy_Closed.png",
+                "Speed", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Open.png"),
+                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Open.png"),
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Pussy_Closed.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not JubesX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in'", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "Speed", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy'", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
-                "True", Recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "Speed", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "JubesX.Offhand == 'fondle pussy' and JubesX.Lust > 60", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Open.png"),
+                "True", get_cached_recolor("Jubes", "Pubes", "images/JubesSex/Jubes_Sex_Pubes_Closed.png"),
                 )
 
 # End Jubes Scissor Pose Legs / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -7099,7 +7099,7 @@ image Jubes_SC_Anim_0:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Jubes_Sex_Feet",
-#                "True", AlphaMask("Jubes_Sex_Feet","images/JubesSex/Jubes_Sex_FeetMask.png")
+#                "True", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png")
 #                )
             anchor (560,580)#(560,420)
             offset (560,580) #(845,340)    #(840,390)
@@ -7181,7 +7181,7 @@ image Jubes_SC_Anim_1:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Jubes_Sex_Feet",
-#                "True", AlphaMask("Jubes_Sex_Feet","images/JubesSex/Jubes_Sex_FeetMask.png")
+#                "True", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png")
 #                )
             anchor (560,580)#(560,420)
             offset (560,580) #(845,340)    #(840,390)
@@ -7264,7 +7264,7 @@ image Jubes_SC_Anim_2:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Jubes_Sex_Feet",
-#                "True", AlphaMask("Jubes_Sex_Feet","images/JubesSex/Jubes_Sex_FeetMask.png")
+#                "True", get_cached_alphamask("Jubes_Sex_Feet", "images/JubesSex/Jubes_Sex_FeetMask.png")
 #                )
             anchor (560,580)#(560,420)
             offset (560,580) #(845,340)    #(840,390)

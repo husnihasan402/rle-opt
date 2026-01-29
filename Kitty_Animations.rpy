@@ -3,7 +3,7 @@
 image Kitty_Sprite:
     LiveComposite(
         (480,960),
-        (0,0), "images/KittySprite/Kitty_Sprite_Shadow.png",
+        (0,0), get_cached_image("images/KittySprite/Kitty_Sprite_Shadow.png"),
         (124,0), "Kitty_HairBack",
 #        (124,0), ConditionSwitch(
 #            "renpy.showing('Kitty_BJ_Animation')", Null(),
@@ -11,7 +11,7 @@ image Kitty_Sprite:
 #            ),
         (0,0), ConditionSwitch(
             #back of dress
-            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Legs_Dress_Back.png"),
+            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Legs_Dress_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -21,8 +21,8 @@ image Kitty_Sprite:
             ),
         (0,0), ConditionSwitch(
             #back of the shirt
-            "KittyX.Over == 'pink top' and KittyX.ArmPose != 1", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Under_Pink2.png"),       #2
-            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Under_Pink1.png"),                  #1
+            "KittyX.Over == 'pink top' and KittyX.ArmPose != 1", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Under_Pink2.png"),       #2
+            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Under_Pink1.png"),                  #1
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -35,15 +35,15 @@ image Kitty_Sprite:
 
 #        (0,0), ConditionSwitch(
 #            #wet look
-#            "KittyX.Water and KittyX.ArmPose", "images/KittySprite/Kitty_Sprite_Water2.png",
-#            "KittyX.Water", "images/KittySprite/Kitty_Sprite_Water1.png",
+#            "KittyX.Water and KittyX.ArmPose", get_cached_image("images/KittySprite/Kitty_Sprite_Water2.png"),
+#            "KittyX.Water", get_cached_image("images/KittySprite/Kitty_Sprite_Water1.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #piercings bottom
             "not KittyX.Pierce or (KittyX.Panties and not KittyX.PantiesDown)", Null(),
-            "KittyX.Pierce == 'ring'", "images/KittySprite/Kitty_Sprite_Piercing_RingB.png",
-            "True", "images/KittySprite/Kitty_Sprite_Piercing_BallB.png",
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittySprite/Kitty_Sprite_Piercing_RingB.png"),
+            "True", get_cached_image("images/KittySprite/Kitty_Sprite_Piercing_BallB.png"),
             ),
 
 #        (0,0), ConditionSwitch(
@@ -54,24 +54,24 @@ image Kitty_Sprite:
 #            "not KittyX.Panties or not KittyX.PantiesDown", Null(), #If panties are not down or if  pants are on and up, skip this
 #            "KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt", Null(), #If panties are not down or if  pants are on and up, skip this
 
-#            "KittyX.Wet and KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Wet.png"),
-#            "KittyX.Wet and KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Wet.png"),
-#            "KittyX.Wet and KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Wet.png"),
-#            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green.png"),
-#            "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace.png"),
-#            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini.png"),
+#            "KittyX.Wet and KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Wet.png"),
+#            "KittyX.Wet and KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Wet.png"),
+#            "KittyX.Wet and KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Wet.png"),
+#            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green.png"),
+#            "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace.png"),
+#            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #panties down
 #            "not KittyX.Panties or not KittyX.PantiesDown", Null(), #If panties are not down or if  pants are on and up, skip this
 #            "KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt", Null(), #If panties are not down or if  pants are on and up, skip this
-#            "KittyX.Wet and KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down_Wet.png"),
-#            "KittyX.Wet and KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Down_Wet.png"),
-#            "KittyX.Wet and KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_DownW.png"),
-#            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down.png"),
-#            "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Down.png"),
-#            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Down.png"),
+#            "KittyX.Wet and KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down_Wet.png"),
+#            "KittyX.Wet and KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Down_Wet.png"),
+#            "KittyX.Wet and KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_DownW.png"),
+#            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down.png"),
+#            "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Down.png"),
+#            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Down.png"),
 #            "True", Null(),
 #            ),
 
@@ -80,44 +80,44 @@ image Kitty_Sprite:
             "not KittyX.PantiesDown or (KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt)", ConditionSwitch(
                     # if the panties aren't down. . .
                     # and she's not wearing pants that are up
-                    "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace.png"),
+                    "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace.png"),
                     "KittyX.Wet", ConditionSwitch(
                             # if they're up and wet. . .
-                            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Wet.png"),
-                            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Wet.png"),
+                            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Wet.png"),
+                            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Wet.png"),
                             # Modification mode
-                            "KittyX.Panties == 'nighty panties'", "images/KittySprite/modification/Kitty_sprite_panties_nighty_wet.png",
+                            "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittySprite/modification/Kitty_sprite_panties_nighty_wet.png"),
                             # -----------------
                             "True", Null(),
                             ),
                     "True", ConditionSwitch(
                             #if they're just up. . .
-                            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green.png"),
-                            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini.png"),
+                            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green.png"),
+                            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini.png"),
                             # Modification mode
-                            "KittyX.Panties == 'nighty panties'", "images/KittySprite/modification/Kitty_sprite_panties_nighty.png",
+                            "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittySprite/modification/Kitty_sprite_panties_nighty.png"),
                             # -----------------
                             "True", Null(),
                             ),
                     ),
-            "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Down.png"),
+            "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Lace_Down.png"),
             "KittyX.Wet", ConditionSwitch(
                     #if wet and down. . .
 #                    "KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt", Null(), #If nor wearing a skirt, they would be invisible
-                    "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down_Wet.png"),
-                    "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_DownW.png"),
+                    "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down_Wet.png"),
+                    "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_DownW.png"),
                     # Modification mode
-                    "KittyX.Panties == 'nighty panties'", "images/KittySprite/modification/Kitty_sprite_panties_nighty_down_wet.png",
+                    "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittySprite/modification/Kitty_sprite_panties_nighty_down_wet.png"),
                     # -----------------
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     # if not wet, but down
 #                    "KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt", Null(), #If nor wearing a skirt, they would be invisible
-                    "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down.png"),
-                    "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Down.png"),
+                    "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Green_Down.png"),
+                    "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySprite/Kitty_Sprite_Panties_Bikini_Down.png"),
                     # Modification mode
-                    "KittyX.Panties == 'nighty panties'", "images/KittySprite/modification/Kitty_sprite_panties_nighty_down.png",
+                    "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittySprite/modification/Kitty_sprite_panties_nighty_down.png"),
                     # ----------------
                     "True", Null(),
                     ),
@@ -126,17 +126,17 @@ image Kitty_Sprite:
 
         (0,0), ConditionSwitch(
             #under hose layer
-            "KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_StockingGarter.png"),
-            "KittyX.Hose == 'garterbelt'", Recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Garter.png"),
-            "KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Stockings.png"),
-            "KittyX.Hose == 'knee stockings'", Recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Knee.png"),
+            "KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_StockingGarter.png"),
+            "KittyX.Hose == 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Garter.png"),
+            "KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Stockings.png"),
+            "KittyX.Hose == 'knee stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Knee.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #over hose layer
             "KittyX.Panties and KittyX.PantiesDown", Null(),
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Pantyhose.png"),
-            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_RippedPantyhose.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_Pantyhose.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySprite/Kitty_Sprite_Hose_RippedPantyhose.png"),
             "True", Null(),
             ),
         (225,560), ConditionSwitch(
@@ -145,57 +145,57 @@ image Kitty_Sprite:
             "KittyX.Legs and not KittyX.Upskirt", Null(),
             "KittyX.Panties and not KittyX.PantiesDown and KittyX.Wet <= 1", Null(),
             "KittyX.Wet == 1", ConditionSwitch( #Wet = 1
-                    "KittyX.Panties and KittyX.PantiesDown", AlphaMask("Wet_Drip","Kitty_Drip_MaskP"),
-                    "KittyX.Legs", AlphaMask("Wet_Drip","Kitty_Drip_MaskP"),
-                    "True", AlphaMask("Wet_Drip","Kitty_Drip_Mask"), #only plays if nothing is in the way
+                    "KittyX.Panties and KittyX.PantiesDown", get_cached_alphamask("Wet_Drip", "Kitty_Drip_MaskP"),
+                    "KittyX.Legs", get_cached_alphamask("Wet_Drip", "Kitty_Drip_MaskP"),
+                    "True", get_cached_alphamask("Wet_Drip", "Kitty_Drip_Mask"), #only plays if nothing is in the way
                     ),
             "True", ConditionSwitch( #Wet = 2+
-                    "KittyX.Panties and KittyX.PantiesDown", AlphaMask("Wet_Drip2","Kitty_Drip_MaskP"), #"Wet_Drip2",#
-                    "KittyX.Legs", AlphaMask("Wet_Drip2","Kitty_Drip_MaskP"),
-                    "KittyX.Panties", AlphaMask("Wet_Drip","Kitty_Drip_Mask"), #"Wet_Drip2",#
-                    "True", AlphaMask("Wet_Drip2","Kitty_Drip_Mask"), #only plays if nothing is in the way
+                    "KittyX.Panties and KittyX.PantiesDown", get_cached_alphamask("Wet_Drip2", "Kitty_Drip_MaskP"), #"Wet_Drip2",#
+                    "KittyX.Legs", get_cached_alphamask("Wet_Drip2", "Kitty_Drip_MaskP"),
+                    "KittyX.Panties", get_cached_alphamask("Wet_Drip", "Kitty_Drip_Mask"), #"Wet_Drip2",#
+                    "True", get_cached_alphamask("Wet_Drip2", "Kitty_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
         (0,0), ConditionSwitch(
             #wetness
             "KittyX.Legs or not KittyX.Wet", Null(),
             "KittyX.Panties and not KittyX.PantiesDown and KittyX.Wet < 2", Null(),
-            "KittyX.Panties and not KittyX.PantiesDown", "images/KittySprite/Kitty_Sprite_Wet1.png",
-            "KittyX.Wet == 2", "images/KittySprite/Kitty_Sprite_Wet2.png",
-            "True", "images/KittySprite/Kitty_Sprite_Wet1.png",
+            "KittyX.Panties and not KittyX.PantiesDown", get_cached_image("images/KittySprite/Kitty_Sprite_Wet1.png"),
+            "KittyX.Wet == 2", get_cached_image("images/KittySprite/Kitty_Sprite_Wet2.png"),
+            "True", get_cached_image("images/KittySprite/Kitty_Sprite_Wet1.png"),
             ),
         (225,560), ConditionSwitch(
             #Spunk nethers
             "('in' not in KittyX.Spunk and 'anal' not in KittyX.Spunk) or not Player.Male", Null(),
             "KittyX.Legs and not KittyX.Upskirt", Null(),
             "True", ConditionSwitch( #Wet = 2+
-                    "KittyX.Panties and KittyX.PantiesDown", AlphaMask("Spunk_Drip2","Kitty_Drip_MaskP"), #"Wet_Drip2",#
-                    "KittyX.Legs", AlphaMask("Spunk_Drip2","Kitty_Drip_MaskP"),
-                    "True", AlphaMask("Spunk_Drip2","Kitty_Drip_Mask"), #only plays if nothing is in the way
+                    "KittyX.Panties and KittyX.PantiesDown", get_cached_alphamask("Spunk_Drip2", "Kitty_Drip_MaskP"), #"Wet_Drip2",#
+                    "KittyX.Legs", get_cached_alphamask("Spunk_Drip2", "Kitty_Drip_MaskP"),
+                    "True", get_cached_alphamask("Spunk_Drip2", "Kitty_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
         (0,0), ConditionSwitch(
             #pants
-            "KittyX.Legs == 'blue skirt' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Skirt_Up.png"),
-            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Skirt.png"),
-            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Legs_Dress_Up.png"),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Legs_Dress.png"),
+            "KittyX.Legs == 'blue skirt' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Skirt_Up.png"),
+            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Skirt.png"),
+            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Legs_Dress_Up.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Legs_Dress.png"),
             "not KittyX.Legs or KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'capris'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Blue.png"),
-            "KittyX.Legs == 'black jeans'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Black.png"),
-            "KittyX.Wet and KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Yoga_Wet.png"),
-            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Yoga.png"),
-            "KittyX.Wet and KittyX.Legs == 'shorts'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Shorts_Wet.png"),
-            "KittyX.Legs == 'shorts'", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Shorts.png"),
+            "KittyX.Legs == 'capris'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Blue.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Black.png"),
+            "KittyX.Wet and KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Yoga_Wet.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Pants_Yoga.png"),
+            "KittyX.Wet and KittyX.Legs == 'shorts'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Shorts_Wet.png"),
+            "KittyX.Legs == 'shorts'", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Shorts.png"),
             # Modification mode
-            "KittyX.Legs == 'bottom harem' and KittyX.Upskirt", "images/KittySprite/modification/Kitty_sprite_skirt_harem_up.png",
-            "KittyX.Legs == 'bottom harem'", "images/KittySprite/modification/Kitty_sprite_skirt_harem.png",
+            "KittyX.Legs == 'bottom harem' and KittyX.Upskirt", get_cached_image("images/KittySprite/modification/Kitty_sprite_skirt_harem_up.png"),
+            "KittyX.Legs == 'bottom harem'", get_cached_image("images/KittySprite/modification/Kitty_sprite_skirt_harem.png"),
             # ----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #boots layer
-            "KittyX.Boots", "images/KittySprite/Kitty_Sprite_Boots_Sandals.png",
+            "KittyX.Boots", get_cached_image("images/KittySprite/Kitty_Sprite_Boots_Sandals.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -209,30 +209,30 @@ image Kitty_Sprite:
         (0,0), ConditionSwitch(
             #piercings top
             "not KittyX.Pierce", Null(),
-            "KittyX.Pierce == 'ring'", "images/KittySprite/Kitty_Sprite_Piercing_RingT.png",
-            "True", "images/KittySprite/Kitty_Sprite_Piercing_BallT.png",
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittySprite/Kitty_Sprite_Piercing_RingT.png"),
+            "True", get_cached_image("images/KittySprite/Kitty_Sprite_Piercing_BallT.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Bra
 #            "not KittyX.Chest", Null(),
-#            "KittyX.ArmPose and KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami2.png"),
-#            "KittyX.ArmPose and KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini2.png"),
-#            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1.png"),
-#            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace.png"),
-#            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport.png"),
-#            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic.png"),
-#            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1.png"),
+#            "KittyX.ArmPose and KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami2.png"),
+#            "KittyX.ArmPose and KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini2.png"),
+#            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1.png"),
+#            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace.png"),
+#            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport.png"),
+#            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic.png"),
+#            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1.png"),
 #            "KittyX.Chest == 0 and KittyX.Over == 'pink top'", Null(),   #use for when bra and top clash
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #necklace
-            "KittyX.Neck == 'gold necklace'", "images/KittySprite/Kitty_Sprite_Necklace1.png",
-            "KittyX.Neck == 'star necklace'", "images/KittySprite/Kitty_Sprite_Necklace2.png",
-            "KittyX.Neck == 'flower necklace'", "images/KittySprite/Kitty_Sprite_Necklace3.png",
+            "KittyX.Neck == 'gold necklace'", get_cached_image("images/KittySprite/Kitty_Sprite_Necklace1.png"),
+            "KittyX.Neck == 'star necklace'", get_cached_image("images/KittySprite/Kitty_Sprite_Necklace2.png"),
+            "KittyX.Neck == 'flower necklace'", get_cached_image("images/KittySprite/Kitty_Sprite_Necklace3.png"),
             # Modification mode
-            "KittyX.Neck == 'nighty collar'", "images/KittySprite/modification/Kitty_sprite_neck_nighty_collar.png",
+            "KittyX.Neck == 'nighty collar'", get_cached_image("images/KittySprite/modification/Kitty_sprite_neck_nighty_collar.png"),
             # -----------------
             "True", Null(),
             ),
@@ -241,49 +241,49 @@ image Kitty_Sprite:
             "not KittyX.Chest", Null(),
             "not KittyX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "KittyX.ArmPose != 1 and KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami2.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini2.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress2.png"),
-                    "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1.png"),
-                    "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace.png"),
-                    "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport.png"),
-                    "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic.png"),
-                    "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1.png"),
-                    "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress1.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami2.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini2.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress2.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1.png"),
+                    "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace.png"),
+                    "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport.png"),
+                    "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic.png"),
+                    "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1.png"),
+                    "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress1.png"),
                     "True", Null(),
                     ),
             "KittyX.Over and KittyX.Over != 'towel'", ConditionSwitch(
                     # If she's wearing a shirt over the bra
-#                    "KittyX.ArmPose and KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1_UpS.png"),
-#                    "KittyX.ArmPose and KittyX.Chest == 'bikini top'", "images/KittySprite/Kitty_Sprite_Bikini2_UpS.png",
-                    "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1_Up.png"),
-                    "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace1_UpS.png"),
-                    "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport1_UpS.png"),
-                    "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic1_Up.png"),
-                    "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1_UpS.png"),
-                    "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress_UpS.png"),
+#                    "KittyX.ArmPose and KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1_UpS.png"),
+#                    "KittyX.ArmPose and KittyX.Chest == 'bikini top'", get_cached_image("images/KittySprite/Kitty_Sprite_Bikini2_UpS.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1_Up.png"),
+                    "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace1_UpS.png"),
+                    "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport1_UpS.png"),
+                    "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic1_Up.png"),
+                    "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1_UpS.png"),
+                    "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress_UpS.png"),
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
                     "KittyX.ArmPose != 1", ConditionSwitch(
                             # if Arms 2
-                            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini2_Up.png"),
-                            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace2_Up.png"),
-                            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport2_Up.png"),
-                            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic2_Up.png"),
-                            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami2_Up.png"),
-                            "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress_Up.png"),
+                            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini2_Up.png"),
+                            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace2_Up.png"),
+                            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport2_Up.png"),
+                            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic2_Up.png"),
+                            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami2_Up.png"),
+                            "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress_Up.png"),
                             "True", Null(),
                             ),
                     "True", ConditionSwitch(
                             # if Arms 1
-                            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1_Up.png"),
-                            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace1_Up.png"),
-                            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport1_Up.png"),
-                            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic1_Up.png"),
-                            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1_Up.png"),
-                            "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress_Up.png"),
+                            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini1_Up.png"),
+                            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace1_Up.png"),
+                            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport1_Up.png"),
+                            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic1_Up.png"),
+                            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami1_Up.png"),
+                            "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Dress_Up.png"),
                             "True", Null(),
                             ),
                     "True", Null(),
@@ -293,27 +293,27 @@ image Kitty_Sprite:
         (0,0), ConditionSwitch(
             #piercings over clothes
             "not KittyX.Pierce or not KittyX.Chest or KittyX.Uptop", Null(),
-            "KittyX.Pierce == 'ring' and KittyX.Legs", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Piercing_RingOverTop.png"),
-            "KittyX.Pierce == 'ring'", "images/KittySprite/Kitty_Sprite_Piercing_RingOver.png",
-            "KittyX.Legs", Recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Piercing_BallOverTop.png"),
-            "True", "images/KittySprite/Kitty_Sprite_Piercing_BallOver.png",
+            "KittyX.Pierce == 'ring' and KittyX.Legs", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Piercing_RingOverTop.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittySprite/Kitty_Sprite_Piercing_RingOver.png"),
+            "KittyX.Legs", get_cached_recolor("Kitty", "Legs", "images/KittySprite/Kitty_Sprite_Piercing_BallOverTop.png"),
+            "True", get_cached_image("images/KittySprite/Kitty_Sprite_Piercing_BallOver.png"),
             ),
         (0,0), ConditionSwitch(
             #wet look
-            "KittyX.Water and KittyX.ArmPose != 1", "images/KittySprite/Kitty_Sprite_Water2.png",
-            "KittyX.Water", "images/KittySprite/Kitty_Sprite_Water1.png",
+            "KittyX.Water and KittyX.ArmPose != 1", get_cached_image("images/KittySprite/Kitty_Sprite_Water2.png"),
+            "KittyX.Water", get_cached_image("images/KittySprite/Kitty_Sprite_Water1.png"),
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #shirt
 #            "not KittyX.Over", Null(),
-#            "KittyX.ArmPose and KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink2.png"),
-#            "KittyX.ArmPose and KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew2.png"),
-#            "KittyX.ArmPose and KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel2.png"),
-#            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink1.png"),
-#            "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew1.png"),
-#            "KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel1.png"),
+#            "KittyX.ArmPose and KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink2.png"),
+#            "KittyX.ArmPose and KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew2.png"),
+#            "KittyX.ArmPose and KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel2.png"),
+#            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink1.png"),
+#            "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew1.png"),
+#            "KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel1.png"),
 #            "True", Null(),
 #            ),
 
@@ -322,33 +322,33 @@ image Kitty_Sprite:
             "not KittyX.Over", Null(),
             "not KittyX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink2.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew2.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel2.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket2.png"),
-                    "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink1.png"),
-                    "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew1.png"),
-                    "KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel1.png"),
-                    "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket1.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink2.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew2.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel2.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket2.png"),
+                    "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink1.png"),
+                    "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew1.png"),
+                    "KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Towel1.png"),
+                    "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket1.png"),
                     # Modification mode
-                    "KittyX.Over == 'nighty' and KittyX.ArmPose != 1", "images/KittySprite/modification/Kitty_sprite_over_nighty2.png",
-                    "KittyX.Over == 'nighty'", "images/KittySprite/modification/Kitty_sprite_over_nighty1.png",
-                    "KittyX.Over == 'top harem'", "images/KittySprite/modification/Kitty_sprite_over_harem_top.png",
+                    "KittyX.Over == 'nighty' and KittyX.ArmPose != 1", get_cached_image("images/KittySprite/modification/Kitty_sprite_over_nighty2.png"),
+                    "KittyX.Over == 'nighty'", get_cached_image("images/KittySprite/modification/Kitty_sprite_over_nighty1.png"),
+                    "KittyX.Over == 'top harem'", get_cached_image("images/KittySprite/modification/Kitty_sprite_over_harem_top.png"),
                     # -----------------
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink2_Up.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew2_Up.png"),
-                    "KittyX.ArmPose != 1 and KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket2_Up.png"),
-                    "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink1_Up.png"),
-                    "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew1_Up.png"),
-                    "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket1_Up.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink2_Up.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew2_Up.png"),
+                    "KittyX.ArmPose != 1 and KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket2_Up.png"),
+                    "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Pink1_Up.png"),
+                    "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Crew1_Up.png"),
+                    "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittySprite/Kitty_Sprite_Over_Jacket1_Up.png"),
                     # Modification mode
-                    "KittyX.Over == 'nighty' and KittyX.ArmPose != 1", "images/KittySprite/modification/Kitty_sprite_over_nighty2_up.png",
-                    "KittyX.Over == 'nighty'", "images/KittySprite/modification/Kitty_sprite_over_nighty1_up.png",
-                    "KittyX.Over == 'top harem'", "images/KittySprite/modification/Kitty_sprite_over_harem_top_up.png",
+                    "KittyX.Over == 'nighty' and KittyX.ArmPose != 1", get_cached_image("images/KittySprite/modification/Kitty_sprite_over_nighty2_up.png"),
+                    "KittyX.Over == 'nighty'", get_cached_image("images/KittySprite/modification/Kitty_sprite_over_nighty1_up.png"),
+                    "KittyX.Over == 'top harem'", get_cached_image("images/KittySprite/modification/Kitty_sprite_over_harem_top_up.png"),
                     # -----------------
                     "True", Null(),
                     ),
@@ -357,11 +357,11 @@ image Kitty_Sprite:
         (0,0), ConditionSwitch(
             #bra over shirt layer
             "not KittyX.Over or not KittyX.Chest or not KittyX.Uptop", Null(),
-            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami_Over.png"),
-            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace_Over.png"),
-            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport_Over.png"),
-            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic_Over.png"),
-            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini_Over.png"),
+            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Cami_Over.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Lace_Over.png"),
+            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Sport_Over.png"),
+            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bra_Basic_Over.png"),
+            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySprite/Kitty_Sprite_Bikini_Over.png"),
             "True", Null(),
             ),
 
@@ -375,24 +375,24 @@ image Kitty_Sprite:
             #anal spunk
             "KittyX.Legs and not KittyX.Upskirt", Null(),
             "KittyX.Panties and not KittyX.PantiesDown", Null(),
-            "'anal' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Anal.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Anal.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pussy spunk
             "KittyX.Legs and not KittyX.Upskirt", Null(),
             "KittyX.Panties and not KittyX.PantiesDown", Null(),
-            "'in' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Pussy.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Pussy.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #belly spunk
-            "'belly' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Belly.png",
+            "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #tits spunk
-            "'tits' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Tits.png",
+            "'tits' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Tits.png"),
             "True", Null(),
             ),
 
@@ -498,8 +498,8 @@ image Kitty_Head:
     LiveComposite(
         (416,610),
 #        (0,0), ConditionSwitch(
-#            "KittyX.Water", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet_Back.png"),
-#            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Long_Back.png"),
+#            "KittyX.Water", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet_Back.png"),
+#            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Long_Back.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -513,12 +513,12 @@ image Kitty_Head:
             ),
         (0,0), ConditionSwitch(
             #Brows
-            "KittyX.Brows == 'normal'", "images/KittySprite/Kitty_Sprite_Brows_Normal.png",
-            "KittyX.Brows == 'angry'", "images/KittySprite/Kitty_Sprite_Brows_Angry.png",
-            "KittyX.Brows == 'sad'", "images/KittySprite/Kitty_Sprite_Brows_Sad.png",
-            "KittyX.Brows == 'surprised'", "images/KittySprite/Kitty_Sprite_Brows_Surprised.png",
-            "KittyX.Brows == 'confused'", "images/KittySprite/Kitty_Sprite_Brows_Confused.png",
-            "True", "images/KittySprite/Kitty_Sprite_Brows_Normal.png",
+            "KittyX.Brows == 'normal'", get_cached_image("images/KittySprite/Kitty_Sprite_Brows_Normal.png"),
+            "KittyX.Brows == 'angry'", get_cached_image("images/KittySprite/Kitty_Sprite_Brows_Angry.png"),
+            "KittyX.Brows == 'sad'", get_cached_image("images/KittySprite/Kitty_Sprite_Brows_Sad.png"),
+            "KittyX.Brows == 'surprised'", get_cached_image("images/KittySprite/Kitty_Sprite_Brows_Surprised.png"),
+            "KittyX.Brows == 'confused'", get_cached_image("images/KittySprite/Kitty_Sprite_Brows_Confused.png"),
+            "True", get_cached_image("images/KittySprite/Kitty_Sprite_Brows_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #Mouth
@@ -535,59 +535,59 @@ image Kitty_Head:
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
-            "('mouth' in KittyX.Spunk or 'chin' in KittyX.Spunk) and KittyX.Mouth == 'tongue'", "images/KittySprite/Kitty_Sprite_Wet_Tongue2.png",
-            "'mouth' in KittyX.Spunk and KittyX.Mouth == 'tongue'", "images/KittySprite/Kitty_Sprite_Wet_Tongue.png",
-            "'chin' in KittyX.Spunk", "images/KittySprite/Kitty_Sprite_Wet_Mouth.png",
+            "('mouth' in KittyX.Spunk or 'chin' in KittyX.Spunk) and KittyX.Mouth == 'tongue'", get_cached_image("images/KittySprite/Kitty_Sprite_Wet_Tongue2.png"),
+            "'mouth' in KittyX.Spunk and KittyX.Mouth == 'tongue'", get_cached_image("images/KittySprite/Kitty_Sprite_Wet_Tongue.png"),
+            "'chin' in KittyX.Spunk", get_cached_image("images/KittySprite/Kitty_Sprite_Wet_Mouth.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #chin Spunk
             "'chin' not in KittyX.Spunk or not Player.Male", Null(),
-            "True", "images/KittySprite/Kitty_Sprite_Spunk_Chin.png",
+            "True", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Chin.png"),
             ),
         (0,0), ConditionSwitch(
             #Mouth Spunk
             "'mouth' not in KittyX.Spunk or not Player.Male", Null(),
-            "KittyX.Mouth == 'normal'", "images/KittySprite/Kitty_Sprite_Spunk_Normal.png",
-            "KittyX.Mouth == 'lipbite'", "images/KittySprite/Kitty_Sprite_Spunk_Normal.png",
-            "KittyX.Mouth == 'kiss'", "images/KittySprite/Kitty_Sprite_Spunk_Kiss.png",
-            "KittyX.Mouth == 'sad'", "images/KittySprite/Kitty_Sprite_Spunk_Sad.png",
-            "KittyX.Mouth == 'smile'", "images/KittySprite/Kitty_Sprite_Spunk_Smile.png",
-            "KittyX.Mouth == 'surprised' or KittyX.Mouth == 'open'", "images/KittySprite/Kitty_Sprite_Spunk_Surprised.png",
-            "KittyX.Mouth == 'tongue'", "images/KittySprite/Kitty_Sprite_Spunk_Tongue.png",
-            "KittyX.Mouth == 'sucking'", "images/KittySprite/Kitty_Sprite_Spunk_Sucking.png", #fix add
+            "KittyX.Mouth == 'normal'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Normal.png"),
+            "KittyX.Mouth == 'lipbite'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Normal.png"),
+            "KittyX.Mouth == 'kiss'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Kiss.png"),
+            "KittyX.Mouth == 'sad'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Sad.png"),
+            "KittyX.Mouth == 'smile'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Smile.png"),
+            "KittyX.Mouth == 'surprised' or KittyX.Mouth == 'open'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Surprised.png"),
+            "KittyX.Mouth == 'tongue'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Tongue.png"),
+            "KittyX.Mouth == 'sucking'", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Sucking.png"), #fix add
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Facial
-            "'facial' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Facial.png",
+            "'facial' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), "Kitty Blink",
         (0,0), ConditionSwitch(
             #Hair
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet.png"),
-            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)",Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet.png"),
-            "KittyX.Hair == 'evo'", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Evo.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Long.png"),
-            "True", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Evo.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet.png"),
+            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)",get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet.png"),
+            "KittyX.Hair == 'evo'", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Evo.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Long.png"),
+            "True", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Evo.png"),
             ),
         (0,0), ConditionSwitch(
             #hair water
-            "KittyX.Water", "images/KittySprite/Kitty_Sprite_Wet_Head.png",
-            "not Player.Male and 'facial' in KittyX.Spunk","images/KittySprite/Kitty_Sprite_Wet_Head.png",
+            "KittyX.Water", get_cached_image("images/KittySprite/Kitty_Sprite_Wet_Head.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk", get_cached_image("images/KittySprite/Kitty_Sprite_Wet_Head.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair spunk
-            "KittyX.Hair == 'evo' and 'hair' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Evohair.png",
-            "KittyX.Hair == 'long' and 'hair' in KittyX.Spunk and Player.Male", "images/KittySprite/Kitty_Sprite_Spunk_Evohair.png",
-#            "KittyX.Hair == 'evo' and 'hair' in KittyX.Spunk", "images/KittySprite/Kitty_Sprite_Spunk_Evohair.png",
+            "KittyX.Hair == 'evo' and 'hair' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Evohair.png"),
+            "KittyX.Hair == 'long' and 'hair' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Evohair.png"),
+#            "KittyX.Hair == 'evo' and 'hair' in KittyX.Spunk", get_cached_image("images/KittySprite/Kitty_Sprite_Spunk_Evohair.png"),
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "KittyX.Mask == 'mask harem'", "images/KittySprite/modification/Kitty_sprite_mask_harem.png",
+            "KittyX.Mask == 'mask harem'", get_cached_image("images/KittySprite/modification/Kitty_sprite_mask_harem.png"),
             "True", Null(),
         ),
         # -----------------
@@ -599,9 +599,9 @@ image Kitty_HairBack:
     LiveComposite(
         (416,610),
         (0,0), ConditionSwitch(
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet_Back.png"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet_Back.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Long_Back.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet_Back.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Wet_Back.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittySprite/Kitty_Sprite_Hair_Long_Back.png"),
             "True", Null(),
             ),
         )
@@ -729,57 +729,57 @@ image Kitty_Doggy_Body:
             "KittyX.Facing", "Kitty_Doggy_Head_Fore",
             "True", "Kitty_Doggy_Head",
             ),
-        #(0,0), "images/JeanDoggy/Jean_Doggy_Breast.png", #Body base
-#        (0,0), "images/KittyDoggy/Kitty_Doggy_HeadRef.png", # reference head
+        #(0,0), get_cached_image("images/JeanDoggy/Jean_Doggy_Breast.png"), #Body base
+#        (0,0), get_cached_image("images/KittyDoggy/Kitty_Doggy_HeadRef.png"), # reference head
         (0,0), "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #bra
             "not KittyX.Chest", Null(),
             "KittyX.Uptop", ConditionSwitch(
                     "KittyX.Over and KittyX.Over != 'towel' and KittyX.Over != 'jacket'", Null(),
-                    "KittyX.Chest == 'dress' and KittyX.Over and KittyX.Over != 'towel'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Dress_UpC.png"),
-                    "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Dress_Up.png"),
-                    "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Cami_Up.png"),
-                    "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Lace.png"),
-                    "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Sports_Up.png"),
-                    "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Bikini_Up.png"),
-                    "True", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra.png"),
+                    "KittyX.Chest == 'dress' and KittyX.Over and KittyX.Over != 'towel'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Dress_UpC.png"),
+                    "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Dress_Up.png"),
+                    "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Cami_Up.png"),
+                    "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Lace.png"),
+                    "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Sports_Up.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Bikini_Up.png"),
+                    "True", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra.png"),
                     ),
-            "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Dress.png"),
-            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Cami.png"),
-            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Lace.png"),
-            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Sports.png"),
-            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Bikini.png"),
-            "True", Recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra.png"),
+            "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Dress.png"),
+            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Cami.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Lace.png"),
+            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Sports.png"),
+            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra_Bikini.png"),
+            "True", get_cached_recolor("Kitty", "Chest", "images/KittyDoggy/Kitty_Doggy_Bra.png"),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "KittyX.Water", "images/KittyDoggy/Kitty_Doggy_Body_Wet.png",
+            "KittyX.Water", get_cached_image("images/KittyDoggy/Kitty_Doggy_Body_Wet.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt
             "not KittyX.Over", Null(),
-            "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Jacket.png"),
-            "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Red.png"),
-            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Pink.png"),
-            "KittyX.Over == 'towel' and not KittyX.Uptop", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Towel.png"),
+            "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Jacket.png"),
+            "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Red.png"),
+            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Pink.png"),
+            "KittyX.Over == 'towel' and not KittyX.Uptop", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Towel.png"),
             # Modification mode
-            "KittyX.Over == 'nighty'and KittyX.Uptop", "images/KittyDoggy/modification/Kitty_doggy_over_nighty_top_up.png",
-            "KittyX.Over == 'top harem'", "images/KittyDoggy/modification/Kitty_doggy_over_harem_top.png",
+            "KittyX.Over == 'nighty'and KittyX.Uptop", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_over_nighty_top_up.png"),
+            "KittyX.Over == 'top harem'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_over_harem_top.png"),
             # -----------------
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
             #neck
-            "KittyX.Neck == 'nighty collar'", "images/KittyDoggy/modification/Kitty_doggy_neck_nighty_collar.png",
+            "KittyX.Neck == 'nighty collar'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_neck_nighty_collar.png"),
             "True", Null(),
             ),
         # ----------------
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in KittyX.Spunk and Player.Male", "images/KittyDoggy/Kitty_Doggy_Spunk_Back.png",
+            "'back' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -807,11 +807,11 @@ image Kitty_Doggy_Head:
     LiveComposite(
         #Head
         (420,750),
-        #(0,0), "images/JeanDoggy/Jean_Doggy_Head.png", #Body base
-        #(0,0), "images/JeanDoggy/Jean_Doggy_TestArm.png",#Eyes
+        #(0,0), get_cached_image("images/JeanDoggy/Jean_Doggy_Head.png"), #Body base
+        #(0,0), get_cached_image("images/JeanDoggy/Jean_Doggy_TestArm.png"),#Eyes
         (0,0), ConditionSwitch(
             #Head
-#            "KittyX.Blush > 1", "images/KittyDoggy/Kitty_Doggy_Head_Blush2.png",
+#            "KittyX.Blush > 1", get_cached_image("images/KittyDoggy/Kitty_Doggy_Head_Blush2.png"),
             "KittyX.Blush", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Head_Blush.png",
             "True", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Head.png",
             ),
@@ -830,22 +830,22 @@ image Kitty_Doggy_Head:
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
-#            "'chin' in KittyX.Spunk", "images/JeanDoggy/Jean_Doggy_Spunk_Chin.png",
+#            "'chin' in KittyX.Spunk", get_cached_image("images/JeanDoggy/Jean_Doggy_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Mouth spunk
             "'mouth' not in KittyX.Spunk or Player.Male", Null(),
-            #"KittyX.Mouth == 'normal'", "images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png",
-            #"KittyX.Mouth == 'sad'", "images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png",
-            "KittyX.Mouth == 'lipbite'", "images/KittyDoggy/Kitty_Doggy_Spunk_Smile.png",
-            "KittyX.Mouth == 'smile'", "images/KittyDoggy/Kitty_Doggy_Spunk_Smile.png",
-            "KittyX.Mouth == 'grimace'", "images/KittyDoggy/Kitty_Doggy_Spunk_Smile.png",
-            "KittyX.Mouth == 'sucking'", "images/KittyDoggy/Kitty_Doggy_Spunk_Tongue.png",
-            #"KittyX.Mouth == 'kiss'", "images/KittyDoggy/Kitty_Doggy_Spunk_Open.png",
-#            "KittyX.Mouth == 'surprised'", "images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png",
-            "KittyX.Mouth == 'tongue'", "images/KittyDoggy/Kitty_Doggy_Spunk_Tongue.png",
-            "True", "images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png",
+            #"KittyX.Mouth == 'normal'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png"),
+            #"KittyX.Mouth == 'sad'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png"),
+            "KittyX.Mouth == 'lipbite'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Smile.png"),
+            "KittyX.Mouth == 'smile'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Smile.png"),
+            "KittyX.Mouth == 'grimace'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Smile.png"),
+            "KittyX.Mouth == 'sucking'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Tongue.png"),
+            #"KittyX.Mouth == 'kiss'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Open.png"),
+#            "KittyX.Mouth == 'surprised'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png"),
+            "KittyX.Mouth == 'tongue'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Tongue.png"),
+            "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #Brows
@@ -859,35 +859,35 @@ image Kitty_Doggy_Head:
         (0,0), "Kitty Doggy Blink",#Eyes
 #        (0,0), ConditionSwitch(
 #            #wet hair strand
-#            "KittyX.Water or KittyX.Hair == 'wet'", "images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png",
+#            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_image("images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #face spunk
-            "'facial' in KittyX.Spunk and Player.Male", "images/KittyDoggy/Kitty_Doggy_Spunk_Facial.png",
+            "'facial' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet.png"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Long.png"),
-            "True", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Evo.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Long.png"),
+            "True", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Evo.png"),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "KittyX.Water", "images/KittyDoggy/Kitty_Doggy_Head_Wet.png",
-            "not Player.Male and 'facial' in KittyX.Spunk","images/KittyDoggy/Kitty_Doggy_Head_Wet.png",
+            "KittyX.Water", get_cached_image("images/KittyDoggy/Kitty_Doggy_Head_Wet.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk", get_cached_image("images/KittyDoggy/Kitty_Doggy_Head_Wet.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #face spunk
-            "'hair' in KittyX.Spunk and Player.Male", "images/KittyDoggy/Kitty_Doggy_Spunk_Hair.png",
+            "'hair' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Hair.png"),
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "KittyX.Mask == 'mask harem'", "images/KittyDoggy/modification/Kitty_doggy_headband_harem_mask.png",
+            "KittyX.Mask == 'mask harem'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_headband_harem_mask.png"),
             "True", Null(),
         )
         # -----------------
@@ -910,9 +910,9 @@ image Kitty_Doggy_Head_Fore:
             ),
         (0,0), ConditionSwitch(
             #Hair
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Under.png"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Under.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Long_Fore_Under.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Under.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Under.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Long_Fore_Under.png"),
             "True", Recolor("Kitty", "Hair", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Hair_Evo_Fore_Under.png"),
             ),
         )
@@ -927,20 +927,20 @@ image Kitty_Doggy_Hair_Fore:
         (420,750),
         (0,0), ConditionSwitch(
             #Hair
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Over.png"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Over.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Long_Fore_Over.png"),
-            "True", Recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Evo_Fore_Over.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Over.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Wet_Fore_Over.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Long_Fore_Over.png"),
+            "True", get_cached_recolor("Kitty", "Hair", "images/KittyDoggy/Kitty_Doggy_Hair_Evo_Fore_Over.png"),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "KittyX.Water", "images/KittyDoggy/Kitty_Doggy_Head_Wet.png",
-            "not Player.Male and 'facial' in KittyX.Spunk","images/KittyDoggy/Kitty_Doggy_Head_Wet.png",
+            "KittyX.Water", get_cached_image("images/KittyDoggy/Kitty_Doggy_Head_Wet.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk", get_cached_image("images/KittyDoggy/Kitty_Doggy_Head_Wet.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #face spunk
-            "'hair' in KittyX.Spunk and Player.Male", "images/KittyDoggy/Kitty_Doggy_Spunk_Hair.png",
+            "'hair' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Hair.png"),
             "True", Null(),
             ),
         )
@@ -981,23 +981,23 @@ image Kitty_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Legs backside
             "not KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Back.png"),
-            "KittyX.Legs == 'shorts' and KittyX.Wet", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_BackW.png"),
-            "KittyX.Legs == 'shorts'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Back.png"),
-            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Back.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Back.png"),
+            "KittyX.Legs == 'shorts' and KittyX.Wet", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_BackW.png"),
+            "KittyX.Legs == 'shorts'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Back.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Back.png"),
             # Modification mode
-            "KittyX.Legs == 'bottom harem'", "images/KittyDoggy/modification/Kitty_doggy_skirt_harem_back.png",
+            "KittyX.Legs == 'bottom harem'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_skirt_harem_back.png"),
             # -----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Panties back
             "not KittyX.PantiesDown or (KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt)", Null(),
-            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_BackW.png"),
-            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Back.png"),
-            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_BackW.png"),
-            "KittyX.Panties == 'bikini bottoms'",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Back.png"),
-            "KittyX.Panties == 'lace panties'",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Back.png"),
+            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_BackW.png"),
+            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Back.png"),
+            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_BackW.png"),
+            "KittyX.Panties == 'bikini bottoms'",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Back.png"),
+            "KittyX.Panties == 'lace panties'",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Back.png"),
             "True", Null(),
             ),
 #        (0,0), "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Ass.png", #Ass Base
@@ -1021,32 +1021,32 @@ image Kitty_Doggy_Ass:
             "'insert ass' in (Trigger,Trigger2,KittyX.Offhand)", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Anal_FullBase.png",
             "'dildo anal' in (Trigger,Trigger2,KittyX.Offhand)", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Anal_FullBase.png",
             "KittyX.Loose > 2", "Jean_Gape_Anal",
-            "KittyX.Loose", "images/JeanDoggy/Jean_Doggy_Asshole_Loose.png",
-            "True", "images/JeanDoggy/Jean_Doggy_Asshole_Tight.png",
+            "KittyX.Loose", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
+            "True", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Tight.png"),
             ),
 
         (0,0), ConditionSwitch(
             #ass red
-            "KittyX.Red", "images/KittyDoggy/Kitty_Doggy_Red.png",
+            "KittyX.Red", get_cached_image("images/KittyDoggy/Kitty_Doggy_Red.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
-            "KittyX.Water", "images/KittyDoggy/Kitty_Doggy_Ass_Wet.png",
+            "KittyX.Water", get_cached_image("images/KittyDoggy/Kitty_Doggy_Ass_Wet.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Panties if Down
             "not KittyX.PantiesDown or (KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt)", Null(),
-            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_DownW.png"),
-            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Down.png"),
-            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_DownW.png"),
-            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Down.png"),
-            "KittyX.Panties == 'lace panties'",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Down.png"),
+            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_DownW.png"),
+            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Down.png"),
+            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_DownW.png"),
+            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Down.png"),
+            "KittyX.Panties == 'lace panties'",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Down.png"),
             # Modification mode
-            "KittyX.Panties == 'nighty panties'", "images/KittyDoggy/modification/Kitty_doggy_panties_nighty_down.png",
+            "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_panties_nighty_down.png"),
             # -----------------
             "True", Null(),
             ),
@@ -1054,12 +1054,12 @@ image Kitty_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Legs Layer if down
             "KittyX.Hose and KittyX.Hose != 'garterbelt'", Null(),
-            "KittyX.Legs == 'capris' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
-            "KittyX.Legs == 'black jeans' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
-            "KittyX.Legs == 'yoga pants' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
-            "KittyX.Legs == 'shorts' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
+            "KittyX.Legs == 'capris' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
+            "KittyX.Legs == 'black jeans' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
+            "KittyX.Legs == 'yoga pants' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
+            "KittyX.Legs == 'shorts' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
             # Modification mode
-            "KittyX.Legs == 'bottom harem' and KittyX.Upskirt", "images/KittyDoggy/modification/Kitty_doggy_skirt_harem_up.png",
+            "KittyX.Legs == 'bottom harem' and KittyX.Upskirt", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_skirt_harem_up.png"),
             # -----------------
             "True", Null(),
             ),
@@ -1068,9 +1068,9 @@ image Kitty_Doggy_Ass:
         (0,0), ConditionSwitch(
             #spunkpussy Layer
             "'in' in KittyX.Spunk and Player.Cock == 'in' and Player.Male",Null(),# "images/JeanDoggy/Jean_Doggy_SpunkPussyOpen.png",  #fix for KittyX.Spunk is used later
-            "'in' in KittyX.Spunk and Player.Male ", "images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png",
-            "KittyX.Wet and Player.Cock == 'in'", "images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png",
-            "KittyX.Wet", "images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png",
+            "'in' in KittyX.Spunk and Player.Male ", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png"),
+            "KittyX.Wet and Player.Cock == 'in'", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png"),
+            "KittyX.Wet", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1095,20 +1095,20 @@ image Kitty_Doggy_Ass:
             "'dildo pussy' in (Trigger,Trigger2,KittyX.Offhand)", Null(),
             "'fondle pussy' in (Trigger,Trigger2,KittyX.Offhand)",Null(),
             "Trigger == 'insert pussy'", Null(),
-            "KittyX.Pierce == 'barbell'", "images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png",
-            "KittyX.Pierce == 'ring' and KittyX.Panties and not KittyX.PantiesDown", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Pierce_RingC.png"),
-            "KittyX.Pierce == 'ring' and KittyX.Hose == 'pantyhose' and not (KittyX.Panties and KittyX.PantiesDown)", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Pierce_RingC.png"),
-            "KittyX.Pierce == 'ring' and KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Pierce_RingC.png"),
-            "KittyX.Pierce == 'ring'", "images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png",
+            "KittyX.Pierce == 'barbell'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png"),
+            "KittyX.Pierce == 'ring' and KittyX.Panties and not KittyX.PantiesDown", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Pierce_RingC.png"),
+            "KittyX.Pierce == 'ring' and KittyX.Hose == 'pantyhose' and not (KittyX.Panties and KittyX.PantiesDown)", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Pierce_RingC.png"),
+            "KittyX.Pierce == 'ring' and KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Pierce_RingC.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png"),
             "True", Null(),
             ),
 
         (2,-8), ConditionSwitch(
             #spunkanal Layer
             "'anal' not in KittyX.Spunk or Player.Sprite or not Player.Male", Null(),
-            "Player.Cock == 'anal'", "images/RogueDoggy/Rogue_Doggy_SpunkAnalOpen.png",
-            "KittyX.Loose", "images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png",
-            "True", "images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png",
+            "Player.Cock == 'anal'", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalOpen.png"),
+            "KittyX.Loose", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png"),
+            "True", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png"),
             ),
         (0,0), ConditionSwitch(
             #Panties if up
@@ -1116,25 +1116,25 @@ image Kitty_Doggy_Ass:
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_GreenW.png"),
-            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green.png"),
-            "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace.png"),
-            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_BikiniW.png"),
-            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini.png"),
+            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_GreenW.png"),
+            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green.png"),
+            "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace.png"),
+            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_BikiniW.png"),
+            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini.png"),
             # Modification mode
-            "KittyX.Panties == 'nighty panties'", "images/KittyDoggy/modification/Kitty_doggy_panties_nighty.png",
+            "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_panties_nighty.png"),
             # -----------------
-            "True", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green.png"),
+            "True", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green.png"),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Hose
-            "KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Stockings.png"),
-            "KittyX.Hose == 'garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Garter.png"),
-            "KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_StockingGarter.png"),
+            "KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Stockings.png"),
+            "KittyX.Hose == 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Garter.png"),
+            "KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_StockingGarter.png"),
 #            "KittyX.Panties and KittyX.PantiesDown", Null(),
 #            "(KittyX.Legs and KittyX.Legs != 'blue skirt') and not KittyX.Upskirt", Null(),
-#            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
-#            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
+#            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
+#            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
@@ -1142,54 +1142,54 @@ image Kitty_Doggy_Ass:
 #            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-#            "KittyX.Panties and KittyX.PantiesDown and KittyX.Hose == 'stockings and garterbelt'", "images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png",
+#            "KittyX.Panties and KittyX.PantiesDown and KittyX.Hose == 'stockings and garterbelt'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
 #            "(KittyX.Legs or KittyX.Legs == 'blue skirt') or not KittyX.Upskirt", Null(),   #maybe?
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
-            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
             "KittyX.Legs == 'dress'", ConditionSwitch(
-                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
-                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress.png"),
+                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
+                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress.png"),
                     ),
             "KittyX.Legs == 'blue skirt'", ConditionSwitch(
-                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt.png"),
+                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt.png"),
                     ),
 
             "KittyX.Upskirt", Null(),
             "KittyX.Legs == 'capris'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue.png"),
                     ),
             "KittyX.Legs == 'black jeans'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlackW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlackW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black.png"),
                     ),
             "KittyX.Legs == 'yoga pants'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_YogaW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_YogaW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga.png"),
                     ),
             "KittyX.Legs == 'shorts'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_ShortsW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_ShortsW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts.png"),
                     ),
 #            "KittyX.Legs == 'skirt'", ConditionSwitch(
-#                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , "images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png",   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-#                    "KittyX.Upskirt", "images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png",
-#                    "True", "images/KittyDoggy/Kitty_Doggy_Legs_Skirt.png",
+#                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_image("images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+#                    "KittyX.Upskirt", get_cached_image("images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png"),
+#                    "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_Legs_Skirt.png"),
 #                    ),
             # Modification mode
-            "KittyX.Legs == 'bottom harem'", "images/KittyDoggy/modification/Kitty_doggy_skirt_harem.png",
+            "KittyX.Legs == 'bottom harem'", get_cached_image("images/KittyDoggy/modification/Kitty_doggy_skirt_harem.png"),
             # ----------------
             "True", Null(),
             ),
@@ -1197,15 +1197,15 @@ image Kitty_Doggy_Ass:
             #Over Layer
             "KittyX.Legs == 'blue skirt' and KittyX.Upskirt", Null(),
             "KittyX.Legs == 'dress' and KittyX.Upskirt", Null(),
-            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Pink_Tail.png"),
+            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Over_Pink_Tail.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over Layer
             "KittyX.Legs == 'dress' and KittyX.Upskirt", Null(),
             "KittyX.Over == 'towel' and KittyX.Uptop", Null(),
-            "KittyX.Over == 'towel' and KittyX.Upskirt", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Legs_Towel_Up.png"),
-            "KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Legs_Towel.png"),
+            "KittyX.Over == 'towel' and KittyX.Upskirt", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Legs_Towel_Up.png"),
+            "KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittyDoggy/Kitty_Doggy_Legs_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1235,12 +1235,12 @@ image Kitty_Doggy_Ass:
                     ),
             "'insert ass' in (Trigger,Trigger2,KittyX.Offhand)", "Kitty_Anal_Fingering",
             "'dildo anal' in (Trigger,Trigger2,KittyX.Offhand)", "Kitty_Anal_Fucking",
-            "KittyX.Plug", "images/PlugIn.png",
+            "KittyX.Plug", get_cached_image("images/PlugIn.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in KittyX.Spunk and Player.Male", "images/KittyDoggy/Kitty_Doggy_Spunk_Ass.png",
+            "'back' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1253,16 +1253,16 @@ image Kitty_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Hotdogging underlayer
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", "images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png",
-            "True", "images/KittyDoggy/Kitty_Doggy_HotdogBack.png",
+#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_image("images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png"),
+            "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_HotdogBack.png"),
             ),
         (0,0), ConditionSwitch(
             #Hotdogging Cock w/ alpha
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            "Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
-            "True", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            "Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            "True", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #UI tool layer
@@ -1276,7 +1276,7 @@ image Kitty_Doggy_Ass:
 
 image Kitty_Doggy_Feet:         #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
     contains:
-            AlphaMask("Kitty_Doggy_Shins", "images/KittyDoggy/Kitty_Doggy_Feet_Mask.png")
+            get_cached_alphamask("Kitty_Doggy_Shins", "images/KittyDoggy/Kitty_Doggy_Feet_Mask.png")
 
 image Kitty_Doggy_Shins:             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
     #Kitty's footjob shins
@@ -1291,15 +1291,15 @@ image Kitty_Doggy_Shins:             #fix // // // // // // fix // // // // // /
             #hose legs
         ConditionSwitch(
             "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Feet_Legs_Hole.png"),
-            "KittyX.Hose and KittyX.Hose != 'garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Hose.png"),
+            "KittyX.Hose and KittyX.Hose != 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Hose.png"),
             "True", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Feet_Legs.png"
             )
     contains:
         #pants
         ConditionSwitch(
-            "KittyX.Legs == 'capris'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Blue.png"),
-            "KittyX.Legs == 'black jeans'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Black.png"),
-            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Yoga.png"),
+            "KittyX.Legs == 'capris'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Blue.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Black.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Feet_Legs_Yoga.png"),
             "True", Null(),
             )
 #    contains:
@@ -1319,17 +1319,17 @@ image Kitty_Doggy_Shins:             #fix // // // // // // fix // // // // // /
         ConditionSwitch(
             "not Player.Sprite or Player.Cock == 'foot'", ConditionSwitch(
                     "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Feet_Hose_HoleF.png"),
-                    "KittyX.Hose and KittyX.Hose != 'garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Feet_HoseF.png"),
+                    "KittyX.Hose and KittyX.Hose != 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Feet_HoseF.png"),
                     "True", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_FeetF.png"  #If you're doing the footjob
                     ),
             "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Feet_Hose_Hole.png"),
-            "KittyX.Hose and KittyX.Hose != 'garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Feet_Hose.png"),
+            "KittyX.Hose and KittyX.Hose != 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Feet_Hose.png"),
             "True", "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Feet.png"
             )
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in KittyX.Spunk", "images/KittyDoggy/Kitty_Doggy_Spunk_Feet.png",
+            "'feet' in KittyX.Spunk", get_cached_image("images/KittyDoggy/Kitty_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 #    pos (0,0)
@@ -1472,15 +1472,15 @@ image Kitty_Pussy_Static:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "KittyX.Pierce == 'barbell'", "images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png",
-            "KittyX.Pierce == 'ring'", "images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png",
+            "KittyX.Pierce == 'barbell'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-1,6)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1495,10 +1495,10 @@ image Kitty_Pussy_Static:
 
     contains:
         #Cock
-        AlphaMask("Zero_Kitty_Doggy_Static", "Kitty_Pussy_Mask_Static")
+        get_cached_alphamask("Zero_Kitty_Doggy_Static", "Kitty_Pussy_Mask_Static")
     contains:
         # expanding pussy flap
-        AlphaMask("Kitty_PussyHole_Static", "Kitty_Pussy_Hole_Mask_Static")
+        get_cached_alphamask("Kitty_PussyHole_Static", "Kitty_Pussy_Hole_Mask_Static")
 
 
 image Zero_Kitty_Doggy_Static:
@@ -1517,7 +1517,7 @@ image Kitty_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Kitty_Pussy_Moving"
     contains:
         #Base
-        AlphaMask("images/KittyDoggy/Kitty_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("images/KittyDoggy/Kitty_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1579,15 +1579,15 @@ image Kitty_Pussy_Heading:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "KittyX.Pierce == 'barbell'", "images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png",
-            "KittyX.Pierce == 'ring'", "images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png",
+            "KittyX.Pierce == 'barbell'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-1,6)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1601,15 +1601,15 @@ image Kitty_Pussy_Heading:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Kitty_Doggy_Heading", "Kitty_Pussy_Mask")
+        get_cached_alphamask("Zero_Kitty_Doggy_Heading", "Kitty_Pussy_Mask")
 
     contains:
         # expanding pussy flap
-        AlphaMask("Kitty_Pussy_Heading_Flap", "Kitty_Pussy_Hole_Mask")
+        get_cached_alphamask("Kitty_Pussy_Heading_Flap", "Kitty_Pussy_Hole_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1644,7 +1644,7 @@ image Kitty_Pussy_Hole_Mask:
     # This is the alpha used for the little flap in the heading animation "Jean_Pussy_Heading"
     contains:
         #Base
-        AlphaMask("images/JeanDoggy/Jean_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("images/JeanDoggy/Jean_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1704,15 +1704,15 @@ image Kitty_Pussy_Fingering:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "KittyX.Pierce == 'barbell'", "images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png",
-            "KittyX.Pierce == 'ring'", "images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png",
+            "KittyX.Pierce == 'barbell'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-3,8)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1726,14 +1726,14 @@ image Kitty_Pussy_Fingering:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Pussy_Finger", "Rogue_Pussy_Mask")
+        get_cached_alphamask("Zero_Pussy_Finger", "Rogue_Pussy_Mask")
     contains:
         # expanding pussy flap
-        AlphaMask("Kitty_Pussy_Heading_Flap", "Kitty_Pussy_Hole_Mask")
+        get_cached_alphamask("Kitty_Pussy_Heading_Flap", "Kitty_Pussy_Hole_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1770,26 +1770,26 @@ image Kitty_Pussy_Fucking2:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "KittyX.Pierce == 'barbell'", "images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png",
-            "KittyX.Pierce == 'ring'", "images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png",
+            "KittyX.Pierce == 'barbell'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
-            "'dildo pussy' in (Trigger,Trigger2,KittyX.Offhand)", AlphaMask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
-            "True",AlphaMask("Zero_Kitty_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "'dildo pussy' in (Trigger,Trigger2,KittyX.Offhand)", get_cached_alphamask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "True",get_cached_alphamask("Zero_Kitty_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
             )
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
 
@@ -1820,23 +1820,23 @@ image Kitty_Pussy_Fucking3:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "KittyX.Pierce == 'barbell'", "images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png",
-            "KittyX.Pierce == 'ring'", "images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png",
+            "KittyX.Pierce == 'barbell'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Barbell.png"),
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyDoggy/Kitty_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Kitty_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("Zero_Kitty_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
 
@@ -1866,7 +1866,7 @@ image Kitty_Anal:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png"),
             "True", Null(),
             )
         yoffset -15
@@ -1891,7 +1891,7 @@ image Kitty_Anal_Fingering:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1904,11 +1904,11 @@ image Kitty_Anal_Fingering:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Kitty_Doggy_Anal_Finger", "Kitty_Doggy_Anal_Fingering_Mask")
+        get_cached_alphamask("Zero_Kitty_Doggy_Anal_Finger", "Kitty_Doggy_Anal_Fingering_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1962,7 +1962,7 @@ image Kitty_Anal_Heading:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1975,11 +1975,11 @@ image Kitty_Anal_Heading:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Kitty_Doggy_Anal_Heading", "Kitty_Doggy_Anal_Heading_Mask")
+        get_cached_alphamask("Zero_Kitty_Doggy_Anal_Heading", "Kitty_Doggy_Anal_Heading_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2082,20 +2082,20 @@ image Kitty_Anal_Fucking:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
             #full hose/tights
-            "'dildo anal' in (Trigger,Trigger2,KittyX.Offhand)", AlphaMask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
-            "True", AlphaMask("Zero_Kitty_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "'dildo anal' in (Trigger,Trigger2,KittyX.Offhand)", get_cached_alphamask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "True", get_cached_alphamask("Zero_Kitty_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
             ),
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2157,16 +2157,16 @@ image Kitty_Anal_Fucking2:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Kitty_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
+        get_cached_alphamask("Zero_Kitty_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in KittyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in KittyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2406,7 +2406,7 @@ image Kitty_Sex_Body:
         # Modification mode
         (0,0), ConditionSwitch(
             #neck top harem
-            "KittyX.Over == 'top harem'", "images/KittySex/modification/Kitty_sex_over_harem_top_neck.png",
+            "KittyX.Over == 'top harem'", get_cached_image("images/KittySex/modification/Kitty_sex_over_harem_top_neck.png"),
             "True", Null(),
             ),
         # -----------------
@@ -2414,14 +2414,14 @@ image Kitty_Sex_Body:
         #Eyes
         (0,0), ConditionSwitch(
             #necklace
-            "KittyX.Neck == 'gold necklace'", "images/KittySex/Kitty_Sex_Neck_Gold.png",
-            "KittyX.Neck == 'star necklace'", "images/KittySex/Kitty_Sex_Neck_Star.png",
-            "KittyX.Neck == 'flower necklace'", "images/KittySex/Kitty_Sex_Neck_Flower.png",
+            "KittyX.Neck == 'gold necklace'", get_cached_image("images/KittySex/Kitty_Sex_Neck_Gold.png"),
+            "KittyX.Neck == 'star necklace'", get_cached_image("images/KittySex/Kitty_Sex_Neck_Star.png"),
+            "KittyX.Neck == 'flower necklace'", get_cached_image("images/KittySex/Kitty_Sex_Neck_Flower.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #dress base
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Waist.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Waist.png"),
             "True", Null(),
             ),
 
@@ -2430,37 +2430,37 @@ image Kitty_Sex_Body:
             "not KittyX.Chest", Null(),
             "not KittyX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress.png"),
-                    "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Cami.png"),
-                    "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra.png"),
-                    "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bra.png"),
-                    "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bikini.png"),
-                    "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_LaceBra.png"),
+                    "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress.png"),
+                    "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Cami.png"),
+                    "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra.png"),
+                    "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bra.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bikini.png"),
+                    "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_LaceBra.png"),
                     "True", Null(),
                     ),
             "KittyX.Over", ConditionSwitch(
                     # If she's wearing a shirt over the bra
-                    "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress_UpS.png"),
-                    "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Cami_UpS.png"),
-                    "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bikini_Up.png"),
-                    "KittyX.Chest == 'sports bra' and KittyX.Over == 'red shirt'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra_UpS.png"),
-                    "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra_Up.png"),
+                    "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress_UpS.png"),
+                    "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Cami_UpS.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bikini_Up.png"),
+                    "KittyX.Chest == 'sports bra' and KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra_UpS.png"),
+                    "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra_Up.png"),
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
-                    "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress_Up.png"),
-                    "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Cami_Up.png"),
-                    "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra_Up.png"),
-                    "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bra_Up.png"),
-                    "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bikini_Up.png"),
-                    "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_LaceBra_Up.png"),
+                    "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress_Up.png"),
+                    "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Cami_Up.png"),
+                    "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_SportsBra_Up.png"),
+                    "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bra_Up.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bikini_Up.png"),
+                    "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_LaceBra_Up.png"),
                     "True", Null(),
                     ),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "KittyX.Water", "images/KittySex/Kitty_Sex_Water_Body.png",
+            "KittyX.Water", get_cached_image("images/KittySex/Kitty_Sex_Water_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -2468,26 +2468,26 @@ image Kitty_Sex_Body:
             "not KittyX.Over", Null(),
             "not KittyX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Jacket.png"),
-                    "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_PinkShirt.png"),
-                    "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_RedShirt.png"),
-                    "KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Towel.png"),
+                    "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Jacket.png"),
+                    "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_PinkShirt.png"),
+                    "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_RedShirt.png"),
+                    "KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Towel.png"),
                     # Modification mode
-                    "KittyX.Over == 'nighty'", "images/KittySex/modification/Kitty_sex_over_nighty.png",
-                    "KittyX.Over == 'top harem'", "images/KittySex/modification/Kitty_sex_over_harem_top.png",
+                    "KittyX.Over == 'nighty'", get_cached_image("images/KittySex/modification/Kitty_sex_over_nighty.png"),
+                    "KittyX.Over == 'top harem'", get_cached_image("images/KittySex/modification/Kitty_sex_over_harem_top.png"),
                     # -----------------
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
-                    "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Jacket_Up.png"),
-                    "KittyX.Over == 'pink top' and KittyX.Chest == 'sports bra'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_PinkShirt_UpS.png"),
-                    "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_PinkShirt_Up.png"),
-                    "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_RedShirt_Up.png"),
-#                    "KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Towel.png"),
+                    "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Jacket_Up.png"),
+                    "KittyX.Over == 'pink top' and KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_PinkShirt_UpS.png"),
+                    "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_PinkShirt_Up.png"),
+                    "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_RedShirt_Up.png"),
+#                    "KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Over_Towel.png"),
                     # Modification mode
-                    "KittyX.Over == 'nighty'", "images/KittySex/modification/Kitty_sex_over_nighty.png",
-                    "KittyX.Over == 'top harem'", "images/KittySex/modification/Kitty_sex_over_harem_top_up.png",
+                    "KittyX.Over == 'nighty'", get_cached_image("images/KittySex/modification/Kitty_sex_over_nighty.png"),
+                    "KittyX.Over == 'top harem'", get_cached_image("images/KittySex/modification/Kitty_sex_over_harem_top_up.png"),
                     # ----------------
                     "True", Null(),
                     ),
@@ -2496,26 +2496,26 @@ image Kitty_Sex_Body:
             #bra layer over the shirt
             "not KittyX.Chest or not KittyX.Over or not KittyX.Uptop", Null(),
             # if she's not wearing a shirt
-            "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress_Up.png"),
-            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bra_Up.png"),
-            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_LaceBra_UpS.png"),
+            "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Dress_Up.png"),
+            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_Bra_Up.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittySex/Kitty_Sex_Under_LaceBra_UpS.png"),
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
             # neck
-            "KittyX.Neck == 'nighty collar'", "images/KittySex/modification/Kitty_sex_neck_nighty_collar.png",
+            "KittyX.Neck == 'nighty collar'", get_cached_image("images/KittySex/modification/Kitty_sex_neck_nighty_collar.png"),
             "True", Null(),
         ),
         # -----------------
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Body.png",
+            "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Body.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Tits.png",
+            "'tits' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -2560,14 +2560,14 @@ image Kitty_Sex_Legs:
         #the legs used in the sex pose, referenced by Kitty_SexSprite
         (1120,840),
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
-            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back_Up.png"),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back.png"),
-            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt_Back.png"),
+            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back_Up.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back.png"),
+            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt_Back.png"),
             "True", Null(),
             ),
         (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Legs.png",                                                         #Legs Base
         (0,0), ConditionSwitch(                                                                                 #Wet look
-            "KittyX.Water", "images/KittySex/Kitty_Sex_Water_Legs.png",
+            "KittyX.Water", get_cached_image("images/KittySex/Kitty_Sex_Water_Legs.png"),
             "True", Null(),
             ),
 
@@ -2577,55 +2577,55 @@ image Kitty_Sex_Legs:
 
         (0,0), ConditionSwitch(                                                                                 #Panties if up
             "KittyX.PantiesDown", Null(),
-            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green_Wet.png"),
-            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green.png"),
-            "KittyX.Panties == 'lace panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace_Wet.png"),
-            "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace.png"),
-            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini_Wet.png"),
-            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini.png"),
+            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green_Wet.png"),
+            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green.png"),
+            "KittyX.Panties == 'lace panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace_Wet.png"),
+            "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace.png"),
+            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini_Wet.png"),
+            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini.png"),
             # Modification mode
-            "KittyX.Panties == 'nighty panties' and KittyX.Wet", "images/KittySex/modification/Kitty_sex_panties_nighty_wet.png",
-            "KittyX.Panties == 'nighty panties'", "images/KittySex/modification/Kitty_sex_panties_nighty.png",
+            "KittyX.Panties == 'nighty panties' and KittyX.Wet", get_cached_image("images/KittySex/modification/Kitty_sex_panties_nighty_wet.png"),
+            "KittyX.Panties == 'nighty panties'", get_cached_image("images/KittySex/modification/Kitty_sex_panties_nighty.png"),
             # -----------------
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_StockingGarter_Legs.png"),
-            "KittyX.Hose == 'garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Garter_Legs.png"),
-            "KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Legs.png"),
+            "KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_StockingGarter_Legs.png"),
+            "KittyX.Hose == 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Garter_Legs.png"),
+            "KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Legs.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Pantyhose_Legs.png"),
-#            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Pantyhose_Legs.png"),
+#            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
-            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Up.png"),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress.png"),
-            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt.png"),
+            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Up.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress.png"),
+            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt.png"),
             "KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'capris' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue_Wet.png"),
-            "KittyX.Legs == 'capris'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue.png"),
-            "KittyX.Legs == 'black jeans' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black_Wet.png"),
-            "KittyX.Legs == 'black jeans'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black.png"),
-            "KittyX.Legs == 'shorts' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts_Wet.png"),
-            "KittyX.Legs == 'shorts'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts.png"),
-            "KittyX.Legs == 'yoga pants' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga_Wet.png"),
-            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga.png"),
+            "KittyX.Legs == 'capris' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue_Wet.png"),
+            "KittyX.Legs == 'capris'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue.png"),
+            "KittyX.Legs == 'black jeans' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black_Wet.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black.png"),
+            "KittyX.Legs == 'shorts' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts_Wet.png"),
+            "KittyX.Legs == 'shorts'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts.png"),
+            "KittyX.Legs == 'yoga pants' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga_Wet.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga.png"),
             # Modification mode
-            "KittyX.Legs == 'bottom harem' and KittyX.Upskirt", "images/KittySex/modification/Kitty_sex_skirt_harem_up.png",
-            "KittyX.Legs == 'bottom harem'", "images/KittySex/modification/Kitty_sex_skirt_harem.png",
+            "KittyX.Legs == 'bottom harem' and KittyX.Upskirt", get_cached_image("images/KittySex/modification/Kitty_sex_skirt_harem_up.png"),
+            "KittyX.Legs == 'bottom harem'", get_cached_image("images/KittySex/modification/Kitty_sex_skirt_harem.png"),
             # ----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(                                                                                 #Over Layer
-            "KittyX.Over == 'towel' and not KittyX.Uptop", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Towel_Legs.png"),
+            "KittyX.Over == 'towel' and not KittyX.Uptop", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Towel_Legs.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(                                                                                  #Outside Spunk
-            "'belly' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Pelvis.png",
+            "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Pelvis.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -2661,9 +2661,9 @@ image Kitty_Sex_Legs:
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
-            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
+            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
             "not Speed", "Kitty_Sex_Feet",
-            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
+            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
             "True", "Kitty_Sex_Feet",
             ),
         )
@@ -2674,7 +2674,7 @@ image Kitty_Sex_Feet:
         (1120,840),
         (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Feet.png",                                                         #Legs Base
         (0,0), ConditionSwitch(                                                                                 #Wet look
-            "KittyX.Water", "images/KittySex/Kitty_Sex_Water_Feet.png",
+            "KittyX.Water", get_cached_image("images/KittySex/Kitty_Sex_Water_Feet.png"),
             "True", Null(),
             ),
 
@@ -2682,37 +2682,37 @@ image Kitty_Sex_Feet:
             #hose layer
             "KittyX.Legs and not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'shorts'",ConditionSwitch(
                     #If she has pants on, I need alternate kneesocks to not clip through knees
-                    "KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-                    "KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-                    "KittyX.Hose == 'knee stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+                    "KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+                    "KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+                    "KittyX.Hose == 'knee stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
                     "KittyX.Panties and KittyX.PantiesDown", Null(),
-                    "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-                    "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_FeetP.png"),
+                    "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+                    "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_FeetP.png"),
                     "True", Null(),
                     ),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'shorts') and KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'knee stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-            "KittyX.Hose == 'stockings' or KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Feet.png"),
-            "KittyX.Hose == 'knee stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Kneesocks_Feet.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'shorts') and KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'knee stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+            "KittyX.Hose == 'stockings' or KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Feet.png"),
+            "KittyX.Hose == 'knee stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Kneesocks_Feet.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Feet.png"),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_FeetP.png"),
-            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Feet.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Feet.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_FeetP.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Feet.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
             "KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Feet.png"),
-            "KittyX.Legs == 'capris'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Feet_Blue.png"),
-            "KittyX.Legs == 'black jeans'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Feet_Black.png"),
-            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Feet_Yoga.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Feet.png"),
+            "KittyX.Legs == 'capris'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Feet_Blue.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Feet_Black.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Feet_Yoga.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in KittyX.Spunk", "images/KittySex/Kitty_Sex_Spunk_Feet.png",
+            "'feet' in KittyX.Spunk", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -2761,7 +2761,7 @@ image Kitty_Sex_Pussy_Fucking0:
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Sex_Zero_Anim0", "Kitty_Pussy_Open_Mask")
+            get_cached_alphamask("Kitty_Sex_Zero_Anim0", "Kitty_Pussy_Open_Mask")
 
 image Kitty_Sex_Pussy_Fucking1:
     # This is the visual for her pussy during the Speed 1 mode (heading).
@@ -2776,7 +2776,7 @@ image Kitty_Sex_Pussy_Fucking1:
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Sex_Zero_Anim1", "Kitty_Pussy_Open_Mask")
+            get_cached_alphamask("Kitty_Sex_Zero_Anim1", "Kitty_Pussy_Open_Mask")
 
 image Kitty_Sex_Pussy_Fucking2:
     # This is the visual for her pussy during the Speed 2 mode (slow).
@@ -2791,7 +2791,7 @@ image Kitty_Sex_Pussy_Fucking2:
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Sex_Zero_Anim2", "Kitty_Pussy_Fucking_Mask")
+            get_cached_alphamask("Kitty_Sex_Zero_Anim2", "Kitty_Pussy_Fucking_Mask")
 image Kitty_Sex_Pussy_Fucking3:  #rename this to 3
     # This is the visual for her pussy during the Speed 3 mode (fast).
     contains:
@@ -2805,7 +2805,7 @@ image Kitty_Sex_Pussy_Fucking3:  #rename this to 3
                 ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Sex_Zero_Anim3", "Kitty_Pussy_Fucking_Mask")
+            get_cached_alphamask("Kitty_Sex_Zero_Anim3", "Kitty_Pussy_Fucking_Mask")
 
 image Kitty_Pussy_Fucking_Mask:
         #This is the mask image for Kitty's wide open pussy
@@ -2877,22 +2877,22 @@ image Kitty_Sex_Pussy:
             # wet pussy
             ConditionSwitch(
                 "not KittyX.Wet", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/KittySex/Kitty_Sex_WetPussy_F.png",
-                "True", "images/KittySex/Kitty_Sex_WetPussy_C.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/KittySex/Kitty_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/KittySex/Kitty_Sex_WetPussy_C.png"),
                 )
     contains:
             #ring piercing
             ConditionSwitch(
                 "KittyX.Pierce != 'ring'", Null(),
-                "not Player.Sprite or Player.Cock != 'in' or Speed <= 1", "images/KittySex/Kitty_Sex_Pussy_Ring.png",
-                "True", "images/KittySex/Kitty_Sex_Pussy_RingF.png",
+                "not Player.Sprite or Player.Cock != 'in' or Speed <= 1", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Ring.png"),
+                "True", get_cached_image("images/KittySex/Kitty_Sex_Pussy_RingF.png"),
                 )
     contains:
             #barbell piercing
             ConditionSwitch(
                 "KittyX.Pierce != 'barbell'", Null(),
-                "not Player.Sprite or Player.Cock != 'in' or Speed <= 1", "images/KittySex/Kitty_Sex_Pussy_Barbell.png",
-                "True", "images/KittySex/Kitty_Sex_Pussy_BarbellF.png",
+                "not Player.Sprite or Player.Cock != 'in' or Speed <= 1", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Barbell.png"),
+                "True", get_cached_image("images/KittySex/Kitty_Sex_Pussy_BarbellF.png"),
                 )
     contains:
             # pubes
@@ -2908,24 +2908,24 @@ image Kitty_Sex_Pussy:
     contains:
             #Spunk under penis
             ConditionSwitch(
-                "'in' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Puss_Under.png",
+                "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Puss_Under.png"),
                 "True", Null(),
                 )
     contains:
             #hose layer
             ConditionSwitch(
                 "KittyX.Panties and KittyX.PantiesDown", Null(),
-                "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
+                "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
                 "True", Null(),
                 )
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
             ConditionSwitch(
                 "not Player.Sprite", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Kitty_Sex_Zero_Anim3", "Kitty_Pussy_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Kitty_Sex_Zero_Anim2", "Kitty_Pussy_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed", AlphaMask("Kitty_Sex_Zero_Anim1", "Kitty_Pussy_Open_Mask"),
-                "Player.Sprite and Player.Cock == 'in'", AlphaMask("Kitty_Sex_Zero_Anim0", "Kitty_Pussy_Open_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Kitty_Sex_Zero_Anim3", "Kitty_Pussy_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Kitty_Sex_Zero_Anim2", "Kitty_Pussy_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_alphamask("Kitty_Sex_Zero_Anim1", "Kitty_Pussy_Open_Mask"),
+                "Player.Sprite and Player.Cock == 'in'", get_cached_alphamask("Kitty_Sex_Zero_Anim0", "Kitty_Pussy_Open_Mask"),
                 "True", Null(),
                 )
     contains:
@@ -2933,7 +2933,7 @@ image Kitty_Sex_Pussy:
             ConditionSwitch(
                 "'in' not in KittyX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
                 "Speed <= 1", "Kitty_Pussy_Spunk_Heading",
-                "True", "images/KittySex/Kitty_Sex_Spunk_Puss_Over.png",
+                "True", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Puss_Over.png"),
                 )
 
     #End Kitty Pussy composite
@@ -3091,38 +3091,38 @@ image Kitty_Sex_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/KittySex/Kitty_Sex_Hole_Open.png",
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/KittySex/Kitty_Sex_Hole_Open.png",
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/KittySex/Kitty_Sex_Hole_Open.png"),
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/KittySex/Kitty_Sex_Hole_Open.png"),
             "Player.Sprite and Player.Cock == 'anal' and Speed", "Kitty_Sex_Anal_Heading",
             "Player.Sprite and Player.Cock == 'anal'", "Kitty_Sex_Anal_Tip",
-            "KittyX.Plug", "images/PlugBase_Sex.png",
+            "KittyX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "KittyX.Loose > 2", "Kitty_Gape_Anal_Sex",
-            "KittyX.Loose", "images/KittySex/Kitty_Sex_Hole_Loose.png",
-            "True", "images/KittySex/Kitty_Sex_Hole_Tight.png",
+            "KittyX.Loose", get_cached_image("images/KittySex/Kitty_Sex_Hole_Loose.png"),
+            "True", get_cached_image("images/KittySex/Kitty_Sex_Hole_Tight.png"),
             )
     contains:
             #Spunk under penis
             ConditionSwitch(
                 "'anal' not in KittyX.Spunk or Player.Male", Null(),
-                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/KittySex/Kitty_Sex_Spunk_Anal_Under.png",
+                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Anal_Under.png"),
                 "Player.Sprite and Player.Cock != 'anal' and Speed == 1", "Kitty_Sex_Anal_Spunk_Heading_Under",
-                "True", "images/KittySex/Kitty_Sex_Spunk_Anal_Closed.png",
+                "True", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Anal_Closed.png"),
                 )
     contains:
             # The animation of Zero's moving penis, masked by her anus shape
             ConditionSwitch(
             "not Player.Sprite or Player.Cock != 'anal'", Null(),
-            "Speed >= 3",  AlphaMask("Kitty_Anal_Zero_Anim3", "Kitty_Sex_Anal_Fucking_Mask"),
-            "Speed >= 2", AlphaMask("Kitty_Anal_Zero_Anim2", "Kitty_Sex_Anal_Fucking_Mask"),
-            "Speed", AlphaMask("Kitty_Anal_Zero_Anim1", "Kitty_Sex_Anal_Fucking_Mask"),
-            "True", AlphaMask("Kitty_Anal_Zero_Anim0", "Kitty_Sex_Anal_Fucking_Mask"),
+            "Speed >= 3",  get_cached_alphamask("Kitty_Anal_Zero_Anim3", "Kitty_Sex_Anal_Fucking_Mask"),
+            "Speed >= 2", get_cached_alphamask("Kitty_Anal_Zero_Anim2", "Kitty_Sex_Anal_Fucking_Mask"),
+            "Speed", get_cached_alphamask("Kitty_Anal_Zero_Anim1", "Kitty_Sex_Anal_Fucking_Mask"),
+            "True", get_cached_alphamask("Kitty_Anal_Zero_Anim0", "Kitty_Sex_Anal_Fucking_Mask"),
             )
     contains:
             #Spunk over penis
             ConditionSwitch(
                 "'anal' not in KittyX.Spunk or not Player.Sprite or Player.Cock != 'anal' or not Speed or not Player.Male", Null(),
                 "Speed == 1", "Kitty_Sex_Anal_Spunk_Heading_Over",
-                "True", "images/KittySex/Kitty_Sex_Spunk_Anal_Over.png",
+                "True", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Anal_Over.png"),
                 )
 
 image Kitty_Gape_Anal_Sex:
@@ -3147,7 +3147,7 @@ image Kitty_Sex_Anal_Fucking0:
             "Kitty_Sex_Anal_Tip"
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Anal_Zero_Anim0", "Kitty_Sex_Anal_Fucking_Mask")
+            get_cached_alphamask("Kitty_Anal_Zero_Anim0", "Kitty_Sex_Anal_Fucking_Mask")
 
 image Kitty_Sex_Anal_Fucking1:
     # This is the visual for her pussy during the Speed 1 mode (heading).
@@ -3157,7 +3157,7 @@ image Kitty_Sex_Anal_Fucking1:
 #            "images/KittySex/Kitty_Sex_Hole_Open.png"
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Anal_Zero_Anim1", "Kitty_Sex_Anal_Fucking_Mask")
+            get_cached_alphamask("Kitty_Anal_Zero_Anim1", "Kitty_Sex_Anal_Fucking_Mask")
 
 image Kitty_Sex_Anal_Fucking2:
     # This is the visual for her pussy during the Speed 2 mode (slow).
@@ -3166,7 +3166,7 @@ image Kitty_Sex_Anal_Fucking2:
             "images/KittySex/Kitty_Sex_Hole_Open.png"
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Anal_Zero_Anim2", "Kitty_Sex_Anal_Fucking_Mask")
+            get_cached_alphamask("Kitty_Anal_Zero_Anim2", "Kitty_Sex_Anal_Fucking_Mask")
 
 image Kitty_Sex_Anal_Fucking3:
     # This is the visual for her pussy during the Speed 3 mode (fast).
@@ -3175,7 +3175,7 @@ image Kitty_Sex_Anal_Fucking3:
             "images/KittySex/Kitty_Sex_Hole_Open.png"
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
-            AlphaMask("Kitty_Anal_Zero_Anim3", "Kitty_Sex_Anal_Fucking_Mask")
+            get_cached_alphamask("Kitty_Anal_Zero_Anim3", "Kitty_Sex_Anal_Fucking_Mask")
 
 image Kitty_Sex_Anal_Fucking_Mask:
         #This is the mask image for Kitty's wide open pussy
@@ -3723,9 +3723,9 @@ image Kitty_BJ_Animation:#                                                      
 image Kitty_BJ_HairBack:
     #Hair underlay
     ConditionSwitch(
-            "KittyX.Water and KittyX.Hair == 'evo'", Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
+            "KittyX.Water and KittyX.Hair == 'evo'", get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
             "True", Null(),
             ),
     zoom 1.4
@@ -3738,62 +3738,62 @@ image Kitty_BJ_Backdrop:
         (858,928),
         (-375,350), ConditionSwitch(      #(-375,250)
             #blanket
-            "'blanket' in KittyX.RecentActions", "images/KittyBJFace/Kitty_BJFace_Blanket.png",
+            "'blanket' in KittyX.RecentActions", get_cached_image("images/KittyBJFace/Kitty_BJFace_Blanket.png"),
             "True", Null(),
             ),
         (120,-150),"Kitty_BJ_Ass",
         (0,0), ConditionSwitch(
             #red shirt under
-            "KittyX.Over == 'red shirt'", "images/KittyBJFace/Kitty_BJ_Over_RedUnder.png",
-#            "KittyX.Chest == 'dress'", "images/KittyBJFace/Kitty_BJ_Over_RedUnder.png",
+            "KittyX.Over == 'red shirt'", get_cached_image("images/KittyBJFace/Kitty_BJ_Over_RedUnder.png"),
+#            "KittyX.Chest == 'dress'", get_cached_image("images/KittyBJFace/Kitty_BJ_Over_RedUnder.png"),
             "True", Null(),
             ),
-        (0,0),"images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_BJ_Body.png",
+        (0,0), "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_BJ_Body.png",
             #body
         (0,0), ConditionSwitch(
             #necklace
-            "KittyX.Neck == 'gold necklace'", "images/KittyBJFace/Kitty_BJ_Neck_Gold.png",
-            "KittyX.Neck == 'star necklace'", "images/KittyBJFace/Kitty_BJ_Neck_Star.png",
+            "KittyX.Neck == 'gold necklace'", get_cached_image("images/KittyBJFace/Kitty_BJ_Neck_Gold.png"),
+            "KittyX.Neck == 'star necklace'", get_cached_image("images/KittyBJFace/Kitty_BJ_Neck_Star.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # piercings
             "not KittyX.Pierce", Null(),
             "(KittyX.Over or KittyX.Chest) and not KittyX.Uptop", Null(),
-            "KittyX.Pierce == 'ring'", "images/KittyBJFace/Kitty_BJ_PierceRing.png",
-            "True", "images/KittyBJFace/Kitty_BJ_PierceBall.png",
+            "KittyX.Pierce == 'ring'", get_cached_image("images/KittyBJFace/Kitty_BJ_PierceRing.png"),
+            "True", get_cached_image("images/KittyBJFace/Kitty_BJ_PierceBall.png"),
             ),
         (0,0), ConditionSwitch(
             # wet body
             "not KittyX.Water", Null(),
-            "True", "images/KittyBJFace/Kitty_BJ_Wet_Body.png",
+            "True", get_cached_image("images/KittyBJFace/Kitty_BJ_Wet_Body.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Bra
             "KittyX.Uptop", Null(),
-            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Lace.png"),
-            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Sport.png"),
-            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Bikini.png"),
-            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra.png"),
-            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Cami.png"),
-            "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Dress.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Lace.png"),
+            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Sport.png"),
+            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Bikini.png"),
+            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra.png"),
+            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Cami.png"),
+            "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_BJ_Bra_Dress.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Shirt
             "KittyX.Uptop", Null(),
-            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_PinkShirt.png"),
-            "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_RedShirt.png"),
-            "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_Jacket.png"),
-            "KittyX.Over == 'towel'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_Towel.png"),
+            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_PinkShirt.png"),
+            "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_RedShirt.png"),
+            "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_Jacket.png"),
+            "KittyX.Over == 'towel'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_BJ_Over_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Spunk
             "'tits' not in KittyX.Spunk or not Player.Male", Null(),
-            "True", "images/KittyBJFace/Kitty_BJ_Spunk_Body.png",
+            "True", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Body.png"),
             ),
         )
     zoom 1.5
@@ -3807,51 +3807,51 @@ image Kitty_BJ_Ass:
         (0,0), ConditionSwitch(
             #Legs backside
             "not KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Back.png"),
-#            "KittyX.Legs == 'shorts' and KittyX.Wet", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_BackW.png"),
-#            "KittyX.Legs == 'shorts'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Back.png"),
-#            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Back.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Back.png"),
+#            "KittyX.Legs == 'shorts' and KittyX.Wet", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_BackW.png"),
+#            "KittyX.Legs == 'shorts'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Back.png"),
+#            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Back.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Panties back
 #            "not KittyX.PantiesDown or (KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt)", Null(),
-#            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_BackW.png"),
-#            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Back.png"),
-#            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_BackW.png"),
-#            "KittyX.Panties == 'bikini bottoms'",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Back.png"),
-#            "KittyX.Panties == 'lace panties'",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Back.png"),
+#            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_BackW.png"),
+#            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Back.png"),
+#            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_BackW.png"),
+#            "KittyX.Panties == 'bikini bottoms'",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Back.png"),
+#            "KittyX.Panties == 'lace panties'",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Back.png"),
 #            "True", Null(),
 #            ),
-        (0,0),  "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Ass_Closed.png",
+        (0,0), "images/KittyDoggy/[KittyX.skin_image.skin_path]Kitty_Doggy_Ass_Closed.png",
 
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Hose
-            "KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Stockings.png"),
+            "KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Stockings.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
             "(KittyX.Legs and KittyX.Legs != 'blue skirt') and not KittyX.Upskirt", Null(),
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
-            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Panties if Down
 #            "not KittyX.PantiesDown or (KittyX.Legs and KittyX.Legs != 'blue skirt' and not KittyX.Upskirt)", Null(),
-#            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_DownW.png"),
-#            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Down.png"),
-#            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_DownW.png"),
-#            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Down.png"),
-#            "KittyX.Panties == 'lace panties'",Recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Down.png"),
+#            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_DownW.png"),
+#            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Green_Down.png"),
+#            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_DownW.png"),
+#            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Bikini_Down.png"),
+#            "KittyX.Panties == 'lace panties'",get_cached_recolor("Kitty", "Panties", "images/KittyDoggy/Kitty_Doggy_Panties_Lace_Down.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Legs Layer if down
 #            "KittyX.Hose and KittyX.Hose != 'garterbelt'", Null(),
-#            "KittyX.Legs == 'capris' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
-#            "KittyX.Legs == 'black jeans' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
-#            "KittyX.Legs == 'yoga pants' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
-#            "KittyX.Legs == 'shorts' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
+#            "KittyX.Legs == 'capris' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
+#            "KittyX.Legs == 'black jeans' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
+#            "KittyX.Legs == 'yoga pants' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
+#            "KittyX.Legs == 'shorts' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
 #            "True", Null(),
 #            ),
 
@@ -3860,53 +3860,53 @@ image Kitty_BJ_Ass:
 #            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-#            "KittyX.Panties and KittyX.PantiesDown and KittyX.Hose == 'stockings and garterbelt'", "images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png",
-            "KittyX.Hose == 'garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Garter.png"),
-            "KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_StockingGarter.png"),
+#            "KittyX.Panties and KittyX.PantiesDown and KittyX.Hose == 'stockings and garterbelt'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png"),
+            "KittyX.Hose == 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Garter.png"),
+            "KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_StockingGarter.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
             "(KittyX.Legs or KittyX.Legs == 'blue skirt') or not KittyX.Upskirt", Null(),   #maybe?
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
-            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_Pantyhose.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittyDoggy/Kitty_Doggy_Hose_PantyhoseHoled.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
             "KittyX.Legs == 'dress'", ConditionSwitch(
-                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
-                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress.png"),
+                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
+                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress_Up.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Dress.png"),
                     ),
             "KittyX.Legs == 'blue skirt'", ConditionSwitch(
-                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt.png"),
+                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt_Up.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueSkirt.png"),
                     ),
 
             "KittyX.Upskirt", Null(),
             "KittyX.Legs == 'capris'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlueW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Blue.png"),
                     ),
             "KittyX.Legs == 'black jeans'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlackW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_BlackW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Black.png"),
                     ),
             "KittyX.Legs == 'yoga pants'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_YogaW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_YogaW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Yoga.png"),
                     ),
             "KittyX.Legs == 'shorts'", ConditionSwitch(
-#                    "KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
-                    "KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_ShortsW.png"),
-                    "True", Recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts.png"),
+#                    "KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts_Down.png"),
+                    "KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_ShortsW.png"),
+                    "True", get_cached_recolor("Kitty", "Legs", "images/KittyDoggy/Kitty_Doggy_Legs_Shorts.png"),
                     ),
 #            "KittyX.Legs == 'skirt'", ConditionSwitch(
-#                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , "images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png",   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-#                    "KittyX.Upskirt", "images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png",
-#                    "True", "images/KittyDoggy/Kitty_Doggy_Legs_Skirt.png",
+#                    "KittyX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_image("images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+#                    "KittyX.Upskirt", get_cached_image("images/KittyDoggy/Kitty_Doggy_Legs_Skirt_Up.png"),
+#                    "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_Legs_Skirt.png"),
 #                    ),
             "True", Null(),
             ),
@@ -3919,8 +3919,8 @@ image Kitty_BJ_Head:                                                            
         (858,928),
         (0,0), ConditionSwitch(
             #Hair back
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"), #AlphaMask(Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"), "Kitty_BJ_Backdrop"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"), #AlphaMask(get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"), "Kitty_BJ_Backdrop"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_HairBackWet.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3942,11 +3942,11 @@ image Kitty_BJ_Head:                                                            
                     "True", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_BJ_FaceOpen_Wet.png",
                     ),
             "KittyX.Blush", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_BJ_FaceOpen_Blush.png",
-            "True",  "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_BJ_FaceOpen.png"
+            "True", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_BJ_FaceOpen.png"
             ),
         (0,0), ConditionSwitch(
             #chin spunk
-            "Player.Male and 'chin'  in KittyX.Spunk", "images/KittyBJFace/Kitty_BJ_Spunk_Chin.png",
+            "Player.Male and 'chin'  in KittyX.Spunk", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3985,9 +3985,9 @@ image Kitty_BJ_Head:                                                            
             #wet face
             "Player.Male", Null(),
             "'mouth' not in KittyX.Spunk and 'chin' not in KittyX.Spunk", Null(),
-            "'chin' not in KittyX.Spunk and (KittyX.Mouth == 'tongue' or Speed)", "images/KittyBJFace/Kitty_BJ_Wet_Tongue.png",
-            "KittyX.Mouth == 'tongue' or Speed", "images/KittyBJFace/Kitty_BJ_Wet_Tongue2.png",
-            "'mouth' in KittyX.Spunk or 'chin' in KittyX.Spunk", "images/KittyBJFace/Kitty_BJ_Wet_Mouth.png",
+            "'chin' not in KittyX.Spunk and (KittyX.Mouth == 'tongue' or Speed)", get_cached_image("images/KittyBJFace/Kitty_BJ_Wet_Tongue.png"),
+            "KittyX.Mouth == 'tongue' or Speed", get_cached_image("images/KittyBJFace/Kitty_BJ_Wet_Tongue2.png"),
+            "'mouth' in KittyX.Spunk or 'chin' in KittyX.Spunk", get_cached_image("images/KittyBJFace/Kitty_BJ_Wet_Mouth.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3995,21 +3995,21 @@ image Kitty_BJ_Head:                                                            
             "'mouth' not in KittyX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Kitty_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/KittyBJFace/Kitty_BJ_Spunk_Tongue.png",  #licking
+                    "Speed == 1", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png", #sucking
-                    "Speed == 4", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png", #deepthroat
-                    "True", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png", #cumming
+                    "Speed == 3", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png"), #sucking
+                    "Speed == 4", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png"), #deepthroat
+                    "True", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png"), #cumming
                     ),
-            "Speed >= 5 and renpy.showing('Kitty_TJ_Animation')", "images/KittyBJFace/Kitty_BJ_Spunk_Kiss.png",
-            "KittyX.Mouth == 'normal'", "images/KittyBJFace/Kitty_BJ_Spunk_Smile.png",
-            "KittyX.Mouth == 'lipbite'", "images/KittyBJFace/Kitty_BJ_Spunk_Lipbite.png",
-            "KittyX.Mouth == 'kiss'", "images/KittyBJFace/Kitty_BJ_Spunk_Kiss.png",
-            "KittyX.Mouth == 'sad'", "images/KittyBJFace/Kitty_BJ_Spunk_Kiss.png",
-            "KittyX.Mouth == 'smile'", "images/KittyBJFace/Kitty_BJ_Spunk_Smile.png",
-            "KittyX.Mouth == 'surprised'", "images/KittyBJFace/Kitty_BJ_Spunk_Surprised.png",
-            "KittyX.Mouth == 'tongue'", "images/KittyBJFace/Kitty_BJ_Spunk_Tongue.png",
-            "KittyX.Mouth == 'sucking'", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png", #fix add
+            "Speed >= 5 and renpy.showing('Kitty_TJ_Animation')", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Kiss.png"),
+            "KittyX.Mouth == 'normal'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Smile.png"),
+            "KittyX.Mouth == 'lipbite'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Lipbite.png"),
+            "KittyX.Mouth == 'kiss'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Kiss.png"),
+            "KittyX.Mouth == 'sad'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Kiss.png"),
+            "KittyX.Mouth == 'smile'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Smile.png"),
+            "KittyX.Mouth == 'surprised'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Surprised.png"),
+            "KittyX.Mouth == 'tongue'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Tongue.png"),
+            "KittyX.Mouth == 'sucking'", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png"), #fix add
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -4025,26 +4025,26 @@ image Kitty_BJ_Head:                                                            
             #Eyes
         (0,0), ConditionSwitch(
             #cum on the face
-            "'facial' in KittyX.Spunk and Player.Male", "images/KittyBJFace/Kitty_BJ_Spunk_Facial.png",
+            "'facial' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair overlay
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Wet.png"),
-            "not Player.Male and 'facial' in KittyX.Spunk",Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Wet.png"),
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Long.png"),
-            "KittyX.Hair == 'evo'", Recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Evo.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Wet.png"),
+            "not Player.Male and 'facial' in KittyX.Spunk",get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Wet.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Long.png"),
+            "KittyX.Hair == 'evo'", get_cached_recolor("Kitty", "Hair", "images/KittyBJFace/Kitty_BJ_Hair_Evo.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair water overlay
             "not KittyX.Water and not (not Player.Male and 'facial' in KittyX.Spunk)", Null(),
-            "Speed > 2", "images/KittyBJFace/Kitty_BJ_Wet_HeadOpen.png",
-            "True", "images/KittyBJFace/Kitty_BJ_Wet_HeadClosed.png",
+            "Speed > 2", get_cached_image("images/KittyBJFace/Kitty_BJ_Wet_HeadOpen.png"),
+            "True", get_cached_image("images/KittyBJFace/Kitty_BJ_Wet_HeadClosed.png"),
             ),
         (0,0), ConditionSwitch(
             #cum on the hair
-            "'hair' in KittyX.Spunk and Player.Male", "images/KittyBJFace/Kitty_BJ_Spunk_Hair.png",
+            "'hair' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Hair.png"),
             "True", Null(),
             ),
         )
@@ -4113,7 +4113,7 @@ image Kitty_BJ_MouthHigh:
         anchor (0.50,0.6)#(0.50,0.65)  #(0.40,0.65)
     contains:
         ConditionSwitch(
-            "'mouth' in KittyX.Spunk", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png",
+            "'mouth' in KittyX.Spunk", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png"),
             "True", Null(),
             )
         zoom 1.4
@@ -4135,7 +4135,7 @@ image Kitty_BJ_MouthSuckingMask:
         ConditionSwitch(
             "'mouth' not in KittyX.Spunk or not Player.Male", Null(),
             "Speed != 2 and Speed != 5", Null(),
-            "True", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png",
+            "True", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingU.png"),
             )
     zoom 1.4
 
@@ -4143,7 +4143,7 @@ image Kitty_BJ_SpunkSucking:
     #the mouth used for the heading animations
     contains:
         ConditionSwitch(
-            "'mouth' in KittyX.Spunk", "images/KittyBJFace/Kitty_BJ_Spunk_SuckingO.png",
+            "'mouth' in KittyX.Spunk", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_SuckingO.png"),
             "True", Null(),
             )
         zoom 1.4
@@ -4242,7 +4242,7 @@ image Kitty_BJ_Anim2:
     contains:
             # Her face overlay for the heading animation  (Speed 2)
             contains:
-                AlphaMask("Kitty_BJ_HeadingHead", "Kitty_BJ_MaskHeadingMask")
+                get_cached_alphamask("Kitty_BJ_HeadingHead", "Kitty_BJ_MaskHeadingMask")
             subpixel True
             offset (0,-40)     #top
             anchor (0.5, 0.5)
@@ -4291,7 +4291,7 @@ image Kitty_BJ_SpunkHeading:
     contains:
         contains:
             ConditionSwitch(
-                "'mouth' in KittyX.Spunk", "images/KittyBJFace/Kitty_BJ_Spunk_Heading.png",
+                "'mouth' in KittyX.Spunk", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Heading.png"),
                 "True", Null(),
                 )
             zoom 1.4
@@ -4343,7 +4343,7 @@ image Kitty_BJ_Anim3:
             rotate 0
     contains:
             # the masked overlay for when her head overlaps the cock (Speed 3)
-            AlphaMask("Kitty_BJ_Head", "Kitty_BJ_MouthSuckingMask")
+            get_cached_alphamask("Kitty_BJ_Head", "Kitty_BJ_MouthSuckingMask")
             subpixel True
             anchor (0.5, 0.5)
             offset (0,50)
@@ -4394,7 +4394,7 @@ image Kitty_BJ_Anim4:
             rotate 0
     contains:
             # the masked overlay for when her head overlaps the cock (Speed 4)
-            AlphaMask("Kitty_BJ_Head", "Kitty_BJ_MouthSuckingMask")
+            get_cached_alphamask("Kitty_BJ_Head", "Kitty_BJ_MouthSuckingMask")
             anchor (0.5, 0.5)
             offset (0,100)
             block:
@@ -4448,7 +4448,7 @@ image Kitty_BJ_Anim5:
     contains:
             # Her face overlay for the heading animation  (Speed 5)
             contains:
-                AlphaMask("Kitty_BJ_CumHighHead", "Kitty_BJ_MaskCumHighMask")
+                get_cached_alphamask("Kitty_BJ_CumHighHead", "Kitty_BJ_MaskCumHighMask")
             subpixel True
             offset (0,-30)     #top
             anchor (0.5, 0.5)
@@ -4498,7 +4498,7 @@ image Kitty_BJ_SpunkCumHigh:
     contains:
         contains:
             ConditionSwitch(
-                "'mouth' in KittyX.Spunk", "images/KittyBJFace/Kitty_BJ_Spunk_Heading.png",
+                "'mouth' in KittyX.Spunk", get_cached_image("images/KittyBJFace/Kitty_BJ_Spunk_Heading.png"),
                 "True", Null(),
                 )
             zoom 1.4
@@ -4545,7 +4545,7 @@ image Kitty_BJ_Anim6:
             rotate 0
     contains:
             # the masked overlay for when her head overlaps the cock (Speed 6)
-            AlphaMask("Kitty_BJ_Head", "Kitty_BJ_MouthSuckingMask")
+            get_cached_alphamask("Kitty_BJ_Head", "Kitty_BJ_MouthSuckingMask")
             anchor (0.5, 0.5)
             offset (0,230)
             block:
@@ -4683,35 +4683,35 @@ image Kitty_TJ_Torso:
     contains:
             # necklaces
         ConditionSwitch(
-            "KittyX.Neck == 'gold necklace'", "images/KittyBJFace/Kitty_TJ_Neck_Gold.png",   # KittyX.TitsUp = 1
-            "KittyX.Neck == 'star necklace'", "images/KittyBJFace/Kitty_TJ_Neck_Star.png",   # KittyX.TitsUp = 1
-            "KittyX.Neck == 'flower necklace'", "images/KittyBJFace/Kitty_TJ_Neck_Flower.png",   # KittyX.TitsUp = 1
+            "KittyX.Neck == 'gold necklace'", get_cached_image("images/KittyBJFace/Kitty_TJ_Neck_Gold.png"),   # KittyX.TitsUp = 1
+            "KittyX.Neck == 'star necklace'", get_cached_image("images/KittyBJFace/Kitty_TJ_Neck_Star.png"),   # KittyX.TitsUp = 1
+            "KittyX.Neck == 'flower necklace'", get_cached_image("images/KittyBJFace/Kitty_TJ_Neck_Flower.png"),   # KittyX.TitsUp = 1
             "True", Null(),
             )
     contains:
             # Over clothing layer
         ConditionSwitch(
-            "KittyX.Over == 'jacket'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Over_Jacket.png"),   # KittyX.TitsUp = 1
-            "KittyX.Over == 'red shirt'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Over_Red.png"),   # KittyX.TitsUp = 1
-            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Over_Pink.png"),   # KittyX.TitsUp = 1
+            "KittyX.Over == 'jacket'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Over_Jacket.png"),   # KittyX.TitsUp = 1
+            "KittyX.Over == 'red shirt'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Over_Red.png"),   # KittyX.TitsUp = 1
+            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Over_Pink.png"),   # KittyX.TitsUp = 1
             "True", Null(),
             )
     contains:
             # spunk on tits
             ConditionSwitch(
-                "KittyX.Water", "images/KittyBJFace/Kitty_TJ_Wet_Body.png",
+                "KittyX.Water", get_cached_image("images/KittyBJFace/Kitty_TJ_Wet_Body.png"),
                 "True", Null(),
                 )
     contains:
             # spunk on belly
             ConditionSwitch(
-                "'belly' in KittyX.Spunk and Player.Male", "images/KittyBJFace/Kitty_TJ_Spunk_Belly.png",
+                "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyBJFace/Kitty_TJ_Spunk_Belly.png"),
                 "True", Null(),
                 )
     contains:
             # spunk on tits
             ConditionSwitch(
-                "'tits' in KittyX.Spunk and Player.Male", "images/KittyBJFace/Kitty_TJ_Spunk_Tits.png",
+                "'tits' in KittyX.Spunk and Player.Male", get_cached_image("images/KittyBJFace/Kitty_TJ_Spunk_Tits.png"),
                 "True", Null(),
                 )
 
@@ -4729,41 +4729,41 @@ image Kitty_TJ_Tits:
         ConditionSwitch(
 #            "Player.Sprite and Speed", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits_Smooshed.png",
             "KittyX.Pierce == 'barbell'", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits_Barbell.png",
-            "KittyX.Pierce == 'ring'",  "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits_Ring.png",
-            "True",                     "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits.png",
+            "KittyX.Pierce == 'ring'", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits_Ring.png",
+            "True", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits.png",
             )
     contains:
             # spunk on tits
             ConditionSwitch(
-                "KittyX.Water", "images/KittyBJFace/Kitty_TJ_Wet_Tits.png",
+                "KittyX.Water", get_cached_image("images/KittyBJFace/Kitty_TJ_Wet_Tits.png"),
                 "True", Null(),
                 )
     contains:
             #shirt sleaves
         ConditionSwitch(
 #            "Player.Sprite and Speed", "images/KittyBJFace/[KittyX.skin_image.skin_path]Kitty_TJ_Tits_Smooshed.png",
-            "KittyX.Over == 'pink top'", Recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Arms_Pink.png"),
+            "KittyX.Over == 'pink top'", get_cached_recolor("Kitty", "Over", "images/KittyBJFace/Kitty_TJ_Arms_Pink.png"),
             "True",                     Null(),
             )
     contains:
             #chest clothing layer
         ConditionSwitch(
-            "KittyX.Chest == 'bra'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Bra.png"),
-            "KittyX.Chest == 'bikini top'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Bikini.png"),
-            "KittyX.Chest == 'dress'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Dress.png"),
-            "KittyX.Chest == 'cami' and KittyX.Over", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_CamiC.png"),
-            "KittyX.Chest == 'cami'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Cami.png"),
-            "KittyX.Chest == 'sports bra' and KittyX.Over", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_SportsC.png"),
-            "KittyX.Chest == 'sports bra'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Sports.png"),
-            "KittyX.Chest == 'lace bra' and KittyX.Over", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_LaceC.png"),
-            "KittyX.Chest == 'lace bra'", Recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Lace.png"),
+            "KittyX.Chest == 'bra'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Bra.png"),
+            "KittyX.Chest == 'bikini top'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Bikini.png"),
+            "KittyX.Chest == 'dress'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Dress.png"),
+            "KittyX.Chest == 'cami' and KittyX.Over", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_CamiC.png"),
+            "KittyX.Chest == 'cami'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Cami.png"),
+            "KittyX.Chest == 'sports bra' and KittyX.Over", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_SportsC.png"),
+            "KittyX.Chest == 'sports bra'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Sports.png"),
+            "KittyX.Chest == 'lace bra' and KittyX.Over", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_LaceC.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_recolor("Kitty", "Chest", "images/KittyBJFace/Kitty_TJ_Chest_Lace.png"),
             "True", Null(),   # KittyX.TitsUp = 0
             )
 
 #    contains:
 #            # spunk on tits
 #        ConditionSwitch(
-#                "'tits' in KittyX.Spunk", "images/KittySex/Kitty_Spunk_Titjob_Over.png",
+#                "'tits' in KittyX.Spunk", get_cached_image("images/KittySex/Kitty_Spunk_Titjob_Over.png"),
 #                "True", Null(),
 #                )
 
@@ -4858,9 +4858,9 @@ image Kitty_TJ_Mask_1:
         contains:
             #"images/KittyBJFace/Kitty_TJ_Mask.png"
             ConditionSwitch(
-                "KittyX.Chest == 'dress'", "images/KittyBJFace/Kitty_TJ_Mask_Dress.png",
-                "KittyX.Chest", "images/KittyBJFace/Kitty_TJ_Mask_Bra.png",
-                "True", "images/KittyBJFace/Kitty_TJ_Mask.png",
+                "KittyX.Chest == 'dress'", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Dress.png"),
+                "KittyX.Chest", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Bra.png"),
+                "True", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask.png"),
                 )
             pos (100,60) #bottom #pos (545,330)
             anchor (0.5, 0.5)
@@ -4936,7 +4936,7 @@ image Kitty_TJ_Body_1:
         contains:
                 #zero's cock
                 ConditionSwitch(
-                    "Player.Sprite", AlphaMask("Blowcock", "Kitty_TJ_Mask_1"),
+                    "Player.Sprite", get_cached_alphamask("Blowcock", "Kitty_TJ_Mask_1"),
                     "True", Null(),
                     )
                 subpixel True
@@ -4955,9 +4955,9 @@ image Kitty_TJ_Mask_2:
         contains:
             #"images/KittyBJFace/Kitty_TJ_Mask.png"
             ConditionSwitch(
-                "KittyX.Chest == 'dress'", "images/KittyBJFace/Kitty_TJ_Mask_Dress.png",
-                "KittyX.Chest", "images/KittyBJFace/Kitty_TJ_Mask_Bra.png",
-                "True", "images/KittyBJFace/Kitty_TJ_Mask.png",
+                "KittyX.Chest == 'dress'", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Dress.png"),
+                "KittyX.Chest", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Bra.png"),
+                "True", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask.png"),
                 )
             pos (100,60) #bottom #pos (545,330)
             anchor (0.5, 0.5)
@@ -5034,7 +5034,7 @@ image Kitty_TJ_Body_2:
         contains:
                 #zero's cock
                 ConditionSwitch(
-                    "Player.Sprite", AlphaMask("Blowcock", "Kitty_TJ_Mask_2"),
+                    "Player.Sprite", get_cached_alphamask("Blowcock", "Kitty_TJ_Mask_2"),
                     "True", Null(),
                     )
                 subpixel True
@@ -5053,9 +5053,9 @@ image Kitty_TJ_Mask_3:
         contains:
             #"images/KittyBJFace/Kitty_TJ_Mask.png"
             ConditionSwitch(
-                "KittyX.Chest == 'dress'", "images/KittyBJFace/Kitty_TJ_Mask_Dress.png",
-                "KittyX.Chest", "images/KittyBJFace/Kitty_TJ_Mask_Bra.png",
-                "True", "images/KittyBJFace/Kitty_TJ_Mask.png",
+                "KittyX.Chest == 'dress'", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Dress.png"),
+                "KittyX.Chest", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Bra.png"),
+                "True", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask.png"),
                 )
             pos (100,140) #bottom #pos (545,330)
             anchor (0.5, 0.5)
@@ -5138,7 +5138,7 @@ image Kitty_TJ_Body_3:
         contains:
                 #zero's cock
                 ConditionSwitch(
-                    "Player.Sprite", AlphaMask("Blowcock", "Kitty_TJ_Mask_3"),
+                    "Player.Sprite", get_cached_alphamask("Blowcock", "Kitty_TJ_Mask_3"),
                     "True", Null(),
                     )
                 subpixel True
@@ -5152,9 +5152,9 @@ image Kitty_TJ_Mask_5:
         contains:
             #"images/KittyBJFace/Kitty_TJ_Mask.png"
             ConditionSwitch(
-                "KittyX.Chest == 'dress'", "images/KittyBJFace/Kitty_TJ_Mask_Dress.png",
-                "KittyX.Chest", "images/KittyBJFace/Kitty_TJ_Mask_Bra.png",
-                "True", "images/KittyBJFace/Kitty_TJ_Mask.png",
+                "KittyX.Chest == 'dress'", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Dress.png"),
+                "KittyX.Chest", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask_Bra.png"),
+                "True", get_cached_image("images/KittyBJFace/Kitty_TJ_Mask.png"),
                 )
             pos (100,140) #bottom #pos (545,330)
             anchor (0.5, 0.5)
@@ -5247,9 +5247,9 @@ image Kitty_TJ_Body_5:
         contains:
                 #zero's cock
                 ConditionSwitch(
-    #                "Player.Sprite", AlphaMask("Kitty_Mega_Mask", "Kitty_TJ_Mask_5"),
-                    "Player.Sprite", AlphaMask("Blowcock", "Kitty_TJ_Mask_5"),
-    #                "Player.Sprite", AlphaMask("Blowcock", "Kitty_Mega_Mask"),
+    #                "Player.Sprite", get_cached_alphamask("Kitty_Mega_Mask", "Kitty_TJ_Mask_5"),
+                    "Player.Sprite", get_cached_alphamask("Blowcock", "Kitty_TJ_Mask_5"),
+    #                "Player.Sprite", get_cached_alphamask("Blowcock", "Kitty_Mega_Mask"),
                     "True", Null(),
                     )
                 subpixel True
@@ -6155,52 +6155,52 @@ image Kitty_69_Body:
             #bra layer if up
             "not KittyX.Uptop", Null(),
             #if top's up
-            "KittyX.Chest == 'bikini top'", "images/KittySex/Kitty_69_Chest_Bikini_Up.png",
-            "KittyX.Chest == 'sports bra'", "images/KittySex/Kitty_69_Chest_Sports_Up.png",
-            "KittyX.Chest == 'cami'", "images/KittySex/Kitty_69_Chest_Cami_Up.png",
-            "KittyX.Chest == 'lace bra'", "images/KittySex/Kitty_69_Chest_Bra_Up.png",
-            "KittyX.Chest == 'bra'", "images/KittySex/Kitty_69_Chest_Bra_Up.png",
+            "KittyX.Chest == 'bikini top'", get_cached_image("images/KittySex/Kitty_69_Chest_Bikini_Up.png"),
+            "KittyX.Chest == 'sports bra'", get_cached_image("images/KittySex/Kitty_69_Chest_Sports_Up.png"),
+            "KittyX.Chest == 'cami'", get_cached_image("images/KittySex/Kitty_69_Chest_Cami_Up.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_image("images/KittySex/Kitty_69_Chest_Bra_Up.png"),
+            "KittyX.Chest == 'bra'", get_cached_image("images/KittySex/Kitty_69_Chest_Bra_Up.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #body
-#            "KittyX.Arms", "images/KittySex/Kitty_69_BodyG.png",
+#            "KittyX.Arms", get_cached_image("images/KittySex/Kitty_69_BodyG.png"),
             "True", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Body.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "KittyX.Water", "images/KittySex/Kitty_69_Water_Body.png",
+#            "KittyX.Water", get_cached_image("images/KittySex/Kitty_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #bra layer
-            "KittyX.Uptop and KittyX.Chest == 'dress'", "images/KittySex/Kitty_69_Chest_Dress_Up.png",
+            "KittyX.Uptop and KittyX.Chest == 'dress'", get_cached_image("images/KittySex/Kitty_69_Chest_Dress_Up.png"),
             "KittyX.Uptop", Null(),
             #if top's up
-            "KittyX.Chest == 'bikini top'", "images/KittySex/Kitty_69_Chest_Bikini.png",
-            "KittyX.Chest == 'sports bra'", "images/KittySex/Kitty_69_Chest_Sports.png",
-            "KittyX.Chest == 'cami'", "images/KittySex/Kitty_69_Chest_Cami.png",
-            "KittyX.Chest == 'lace bra'", "images/KittySex/Kitty_69_Chest_Lace.png",
-            "KittyX.Chest == 'bra'", "images/KittySex/Kitty_69_Chest_Bra.png",
-            "KittyX.Chest == 'dress'", "images/KittySex/Kitty_69_Chest_Dress.png",
+            "KittyX.Chest == 'bikini top'", get_cached_image("images/KittySex/Kitty_69_Chest_Bikini.png"),
+            "KittyX.Chest == 'sports bra'", get_cached_image("images/KittySex/Kitty_69_Chest_Sports.png"),
+            "KittyX.Chest == 'cami'", get_cached_image("images/KittySex/Kitty_69_Chest_Cami.png"),
+            "KittyX.Chest == 'lace bra'", get_cached_image("images/KittySex/Kitty_69_Chest_Lace.png"),
+            "KittyX.Chest == 'bra'", get_cached_image("images/KittySex/Kitty_69_Chest_Bra.png"),
+            "KittyX.Chest == 'dress'", get_cached_image("images/KittySex/Kitty_69_Chest_Dress.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #shirt layer
-#            "KittyX.Over == 'pink top' and KittyX.Uptop", "images/KittySex/Kitty_69_Over_Pink_Up.png",
-            "KittyX.Over == 'jacket'", "images/KittySex/Kitty_69_Over_Jacket.png",
+#            "KittyX.Over == 'pink top' and KittyX.Uptop", get_cached_image("images/KittySex/Kitty_69_Over_Pink_Up.png"),
+            "KittyX.Over == 'jacket'", get_cached_image("images/KittySex/Kitty_69_Over_Jacket.png"),
             "KittyX.Uptop", ConditionSwitch(
                     # ring pierce
                     "KittyX.Over == 'towel'", Null(),
-                    "KittyX.Over == 'red shirt'", "images/KittySex/Kitty_69_Over_Red_Up.png",
-                    "KittyX.Over == 'pink top'", "images/KittySex/Kitty_69_Over_Pink_Up.png",
+                    "KittyX.Over == 'red shirt'", get_cached_image("images/KittySex/Kitty_69_Over_Red_Up.png"),
+                    "KittyX.Over == 'pink top'", get_cached_image("images/KittySex/Kitty_69_Over_Pink_Up.png"),
                     "True", Null(),
                     ),
-            "KittyX.Over == 'towel'", "images/KittySex/Kitty_69_Over_Towel.png",
-            "KittyX.Over == 'red shirt'", "images/KittySex/Kitty_69_Over_Red.png",
-            "KittyX.Over == 'pink top'", "images/KittySex/Kitty_69_Over_Pink.png",
+            "KittyX.Over == 'towel'", get_cached_image("images/KittySex/Kitty_69_Over_Towel.png"),
+            "KittyX.Over == 'red shirt'", get_cached_image("images/KittySex/Kitty_69_Over_Red.png"),
+            "KittyX.Over == 'pink top'", get_cached_image("images/KittySex/Kitty_69_Over_Pink.png"),
             "True", Null(),
             ),
 
@@ -6209,35 +6209,35 @@ image Kitty_69_Body:
             "not KittyX.Pierce", Null(),
             "KittyX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "KittyX.Uptop", "images/KittySex/Kitty_69_Pierce_Tits_R.png",
+                    "KittyX.Uptop", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R.png"),
 
-                    "KittyX.Over == 'pink top'", "images/KittySex/Kitty_69_Pierce_Tits_R_Pink.png",
-                    "KittyX.Over == 'red shirt'", "images/KittySex/Kitty_69_Pierce_Tits_R_Red.png",
-                    "KittyX.Over == 'towel'", "images/KittySex/Kitty_69_Pierce_Tits_R_Towel.png",
+                    "KittyX.Over == 'pink top'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Pink.png"),
+                    "KittyX.Over == 'red shirt'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Red.png"),
+                    "KittyX.Over == 'towel'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Towel.png"),
 
-                    "KittyX.Chest == 'sports bra'", "images/KittySex/Kitty_69_Pierce_Tits_R_Sports.png",
-                    "KittyX.Chest == 'bikini top'", "images/KittySex/Kitty_69_Pierce_Tits_R_Bikini.png",
-                    "KittyX.Chest == 'cami'", "images/KittySex/Kitty_69_Pierce_Tits_R_Cami.png",
-                    "KittyX.Chest == 'dress'", "images/KittySex/Kitty_69_Pierce_Tits_R_Pink.png",
-                    "KittyX.Chest == 'lace bra'", "images/KittySex/Kitty_69_Pierce_Tits_R_Lace.png",
-                    "KittyX.Chest", "images/KittySex/Kitty_69_Pierce_Tits_R_Bra.png",
+                    "KittyX.Chest == 'sports bra'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Sports.png"),
+                    "KittyX.Chest == 'bikini top'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Bikini.png"),
+                    "KittyX.Chest == 'cami'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Cami.png"),
+                    "KittyX.Chest == 'dress'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Pink.png"),
+                    "KittyX.Chest == 'lace bra'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Lace.png"),
+                    "KittyX.Chest", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Bra.png"),
 
-                    "True", "images/KittySex/Kitty_69_Pierce_Tits_R.png",
+                    "True", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R.png"),
                     ),
-            "KittyX.Uptop", "images/KittySex/Kitty_69_Pierce_Tits_B.png",
+            "KittyX.Uptop", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B.png"),
 
-            "KittyX.Over == 'pink top'", "images/KittySex/Kitty_69_Pierce_Tits_B_Pink.png",
-            "KittyX.Over == 'red shirt'", "images/KittySex/Kitty_69_Pierce_Tits_B_Red.png",
-            "KittyX.Over == 'towel'", "images/KittySex/Kitty_69_Pierce_Tits_B_Towel.png",
+            "KittyX.Over == 'pink top'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Pink.png"),
+            "KittyX.Over == 'red shirt'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Red.png"),
+            "KittyX.Over == 'towel'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Towel.png"),
 
-            "KittyX.Chest == 'sports bra'", "images/KittySex/Kitty_69_Pierce_Tits_B_Sports.png",
-            "KittyX.Chest == 'bikini top'", "images/KittySex/Kitty_69_Pierce_Tits_B_Bikini.png",
-            "KittyX.Chest == 'cami'", "images/KittySex/Kitty_69_Pierce_Tits_B_Cami.png",
-            "KittyX.Chest == 'dress'", "images/KittySex/Kitty_69_Pierce_Tits_B_Pink.png",
-#            "KittyX.Chest == 'lace bra'", "images/KittySex/Kitty_69_Pierce_Tits_B_Bra.png",
-            "KittyX.Chest", "images/KittySex/Kitty_69_Pierce_Tits_B_Bra.png",
+            "KittyX.Chest == 'sports bra'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Sports.png"),
+            "KittyX.Chest == 'bikini top'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Bikini.png"),
+            "KittyX.Chest == 'cami'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Cami.png"),
+            "KittyX.Chest == 'dress'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Pink.png"),
+#            "KittyX.Chest == 'lace bra'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Bra.png"),
+            "KittyX.Chest", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Bra.png"),
 
-            "True", "images/KittySex/Kitty_69_Pierce_Tits_B.png",
+            "True", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #piercings
@@ -6245,26 +6245,26 @@ image Kitty_69_Body:
 #            "KittyX.Uptop", Null(),
 #            "KittyX.Pierce == 'ring'", ConditionSwitch(
 #                    # ring pierce
-#                    "KittyX.Over == 'mesh top'", "images/KittySex/Kitty_69_Pierce_Tits_R_Mesh.png",
-#                    "KittyX.Over == 'nighty'", "images/KittySex/Kitty_69_Pierce_Tits_R_Nighty.png",
+#                    "KittyX.Over == 'mesh top'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Mesh.png"),
+#                    "KittyX.Over == 'nighty'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_R_Nighty.png"),
 #                    "True", Null(),
 #                    ),
-#            "KittyX.Over == 'mesh top'", "images/KittySex/Kitty_69_Pierce_Tits_B_Mesh.png",
-#            "KittyX.Over == 'nighty'", "images/KittySex/Kitty_69_Pierce_Tits_B_Nighty.png",
+#            "KittyX.Over == 'mesh top'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Mesh.png"),
+#            "KittyX.Over == 'nighty'", get_cached_image("images/KittySex/Kitty_69_Pierce_Tits_B_Nighty.png"),
 #            "True", Null(),
 #            ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_69_Spunk_Tits.png",
+            "'tits' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_69_Spunk_Tits.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_69_Spunk_Belly.png",
+            "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_69_Spunk_Belly.png"),
             "True", Null(),
             ),
-#        (0,0), "images/KittySex/Kitty_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/KittySex/Kitty_Sex_HeadRef.png"),
         )
     zoom .9#.8
     offset (70,80)#(145,150)#(250,210)#(175,175)
@@ -6279,21 +6279,21 @@ image Kitty_69_Head:
         (1120,840),
         (0,0), ConditionSwitch(
             #tongue
-            "renpy.showing('Kitty_69_CUN') and Speed != 3", "images/KittySex/Kitty_69_Tongue.png",
-            "Speed == 1", "images/KittySex/Kitty_69_Tongue.png",
+            "renpy.showing('Kitty_69_CUN') and Speed != 3", get_cached_image("images/KittySex/Kitty_69_Tongue.png"),
+            "Speed == 1", get_cached_image("images/KittySex/Kitty_69_Tongue.png"),
             "True", Null(),
             ),
         (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Head.png",
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'mouth' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_69_Spunk_Mouth.png",
-            "('mouth' in KittyX.Spunk or 'chin' in KittyX.Spunk) and not Player.Male", "images/KittySex/Kitty_69_WetFace.png",
+            "'mouth' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_69_Spunk_Mouth.png"),
+            "('mouth' in KittyX.Spunk or 'chin' in KittyX.Spunk) and not Player.Male", get_cached_image("images/KittySex/Kitty_69_WetFace.png"),
             "True", Null(),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'chin' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_69_Spunk_Chin.png",
+            "'chin' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_69_Spunk_Chin.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
@@ -6302,20 +6302,20 @@ image Kitty_69_Head:
 #            "Speed == 4 and Player.Male", Null(),
 #            "Speed == 6 and Player.Male", Null(),
 #            "KittyX.Water or KittyX.Hair == 'wet'", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
-#            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)",Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony.png"),
+#            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)",get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony.png"),
 
-##            "KittyX.Hair == 'long'", "images/KittySex/Kitty_69_Hair_Long_Over.png",
+##            "KittyX.Hair == 'long'", get_cached_image("images/KittySex/Kitty_69_Hair_Long_Over.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Hair over
-            "KittyX.Hair == 'evo' and not KittyX.Water",Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony.png"),
+            "KittyX.Hair == 'evo' and not KittyX.Water",get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony.png"),
             "Speed == 1 and Player.Male", Null(),
             "Speed == 4 and Player.Male", Null(),
             "Speed == 6 and Player.Male", Null(),
             "KittyX.Water or KittyX.Hair == 'wet'", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
-            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)","images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
+            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
 
             "KittyX.Hair == 'long'", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Long.png",
             "True", Null(),
@@ -6323,7 +6323,7 @@ image Kitty_69_Head:
         (0,0), ConditionSwitch(
             #Pontytail
             "Speed == 1 and Player.Male", Null(),
-            "KittyX.Hair == 'evo' and not KittyX.Water",Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony_Tail.png"),
+            "KittyX.Hair == 'evo' and not KittyX.Water",get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony_Tail.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -6334,7 +6334,7 @@ image Kitty_69_Head:
             ),
 #        (0,0), ConditionSwitch(
 #            #collar
-#            "KittyX.Neck", "images/KittySex/Kitty_69_Collar.png",
+#            "KittyX.Neck", get_cached_image("images/KittySex/Kitty_69_Collar.png"),
 #            "True", Null(),
 #            ),
         )
@@ -6354,7 +6354,7 @@ image Kitty_69_HairOver:
         (0,0), ConditionSwitch(
             #Hair over
             "KittyX.Water or KittyX.Hair == 'wet'", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
-            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)","images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
+            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Wet.png",
 
             "KittyX.Hair == 'long'", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Long.png",
             "True", Null(),
@@ -6363,13 +6363,13 @@ image Kitty_69_HairOver:
 #        (0,0), ConditionSwitch(
 #            #Hair over
 ##            "renpy.showing('Kitty_TJ_Animation')", Null(),
-##            "KittyX.Hair == 'blonde'", "images/KittySex/Kitty_69_Hair_Blonde_Lick.png",
-##            "KittyX.Hair == 'long' or KittyX.Hair == 'wetlong'", "images/KittySex/Kitty_69_Hair_Long_Lick.png",
-#            "True", "images/KittySex/Kitty_69_Hair_Over.png",
+##            "KittyX.Hair == 'blonde'", get_cached_image("images/KittySex/Kitty_69_Hair_Blonde_Lick.png"),
+##            "KittyX.Hair == 'long' or KittyX.Hair == 'wetlong'", get_cached_image("images/KittySex/Kitty_69_Hair_Long_Lick.png"),
+#            "True", get_cached_image("images/KittySex/Kitty_69_Hair_Over.png"),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #collar
-#            "KittyX.Neck", "images/KittySex/Kitty_69_Collar.png",     # == 'spiked collar'
+#            "KittyX.Neck", get_cached_image("images/KittySex/Kitty_69_Collar.png"),     # == 'spiked collar'
 #            "True", Null(),
 #            ),
         )
@@ -6387,23 +6387,23 @@ image Kitty_69_HairBack:
 #        (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Head.png",
         (0,0), ConditionSwitch(
             #Hair over
-            "KittyX.Hair == 'evo' and not KittyX.Water",Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony_Under.png"),
+            "KittyX.Hair == 'evo' and not KittyX.Water",get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony_Under.png"),
 #            "Speed == 1 and Player.Male", Null(),
 #            "Speed == 4 and Player.Male", Null(),
 #            "Speed == 6 and Player.Male", Null(),
-            "KittyX.Water or KittyX.Hair == 'wet'", Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Wet_Under.png"),
-            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)",Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Wet_Under.png"),
+            "KittyX.Water or KittyX.Hair == 'wet'", get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Wet_Under.png"),
+            "not Player.Male and ('hair' in KittyX.Spunk or 'facial' in KittyX.Spunk)",get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Wet_Under.png"),
 
-            "KittyX.Hair == 'long'", Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Long_Under.png"),
+            "KittyX.Hair == 'long'", get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Long_Under.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Kitty_TJ_Animation')", Null(),
-#            "KittyX.Hair == 'blonde'", "images/KittySex/Kitty_69_Hair_Blonde_Under.png",
-#            "KittyX.Hair == 'long' or KittyX.Hair == 'wetlong'", Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Long_Under.png"),
+#            "KittyX.Hair == 'blonde'", get_cached_image("images/KittySex/Kitty_69_Hair_Blonde_Under.png"),
+#            "KittyX.Hair == 'long' or KittyX.Hair == 'wetlong'", get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Long_Under.png"),
 #            "KittyX.Hair == 'wet' or KittyX.Hair == 'wetlong' or KittyX.Water", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hair_Long.png",
-#            "not Player.Male and 'facial' in KittyX.Spunk","images/KittySex/Kitty_Sprite_Hair_Wet.png",
+#            "not Player.Male and 'facial' in KittyX.Spunk", get_cached_image("images/KittySex/Kitty_Sprite_Hair_Wet.png"),
             "True", Null(),#"images/KittySex/Kitty_69_Hair_Under.png",
             ),
         )
@@ -6421,14 +6421,14 @@ image Kitty_69_Legs:
         (1120,840),
 #        (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Hips.png",
 #        (0,0), ConditionSwitch(                                                                                 #Legs Layer
-#            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back_Up.png"),
-#            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back.png"),
-#            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt_Back.png"),
+#            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back_Up.png"),
+#            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back.png"),
+#            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
         (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Legs.png",                                                         #Legs Base
 #        (0,0), ConditionSwitch(                                                                                 #Wet look
-#            "KittyX.Water", "images/KittySex/Kitty_Sex_Water_Legs.png",
+#            "KittyX.Water", get_cached_image("images/KittySex/Kitty_Sex_Water_Legs.png"),
 #            "True", Null(),
 #            ),
 
@@ -6438,43 +6438,43 @@ image Kitty_69_Legs:
 
         (0,0), ConditionSwitch(                                                                                 #Panties if up
             "KittyX.PantiesDown", Null(),
-            "KittyX.Panties == 'green panties' and KittyX.Wet", "images/KittySex/Kitty_69_Panties_Green_Wet.png",
-            "KittyX.Panties == 'green panties'", "images/KittySex/Kitty_69_Panties_Green.png",
-#            "KittyX.Panties == 'lace panties' and KittyX.Wet", "images/KittySex/Kitty_69_Panties_Lace_Wet.png",
-            "KittyX.Panties == 'lace panties'", "images/KittySex/Kitty_69_Panties_Lace.png",
-#            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", "images/KittySex/Kitty_69_Panties_Bikini_Wet.png",
-            "KittyX.Panties == 'bikini bottoms'", "images/KittySex/Kitty_69_Panties_Bikini.png",
+            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_image("images/KittySex/Kitty_69_Panties_Green_Wet.png"),
+            "KittyX.Panties == 'green panties'", get_cached_image("images/KittySex/Kitty_69_Panties_Green.png"),
+#            "KittyX.Panties == 'lace panties' and KittyX.Wet", get_cached_image("images/KittySex/Kitty_69_Panties_Lace_Wet.png"),
+            "KittyX.Panties == 'lace panties'", get_cached_image("images/KittySex/Kitty_69_Panties_Lace.png"),
+#            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", get_cached_image("images/KittySex/Kitty_69_Panties_Bikini_Wet.png"),
+            "KittyX.Panties == 'bikini bottoms'", get_cached_image("images/KittySex/Kitty_69_Panties_Bikini.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "KittyX.Hose == 'stockings and garterbelt'", "images/KittySex/Kitty_69_Hose_StockingsGarter.png",
-            "KittyX.Hose == 'garterbelt'", "images/KittySex/Kitty_69_Hose_Garter.png",
-            "KittyX.Hose == 'stockings'", "images/KittySex/Kitty_69_Hose_Stockings.png",
+            "KittyX.Hose == 'stockings and garterbelt'", get_cached_image("images/KittySex/Kitty_69_Hose_StockingsGarter.png"),
+            "KittyX.Hose == 'garterbelt'", get_cached_image("images/KittySex/Kitty_69_Hose_Garter.png"),
+            "KittyX.Hose == 'stockings'", get_cached_image("images/KittySex/Kitty_69_Hose_Stockings.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
-            "KittyX.Hose == 'pantyhose'", "images/KittySex/Kitty_69_Hose_Pantyhose.png",
-            "KittyX.Hose == 'ripped pantyhose'", "images/KittySex/Kitty_69_Hose_Pantyhose_Holed.png",
+            "KittyX.Hose == 'pantyhose'", get_cached_image("images/KittySex/Kitty_69_Hose_Pantyhose.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_image("images/KittySex/Kitty_69_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(                                                                                 #Over Layer
-            "KittyX.Over == 'towel' and not KittyX.Uptop", "images/KittySex/Kitty_69_Legs_Towel.png",
+            "KittyX.Over == 'towel' and not KittyX.Uptop", get_cached_image("images/KittySex/Kitty_69_Legs_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
-#            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Up.png"),
-            "KittyX.Legs == 'dress'", "images/KittySex/Kitty_69_Legs_Dress.png",
-#            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt.png"),
+#            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Up.png"),
+            "KittyX.Legs == 'dress'", get_cached_image("images/KittySex/Kitty_69_Legs_Dress.png"),
+#            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt.png"),
             "KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'capris' and KittyX.Wet > 1", "images/KittySex/Kitty_69_Legs_Blue_Wet.png",
-            "KittyX.Legs == 'capris'", "images/KittySex/Kitty_69_Legs_Blue.png",
-            "KittyX.Legs == 'black jeans' and KittyX.Wet > 1", "images/KittySex/Kitty_69_Legs_Black_Wet.png",
-            "KittyX.Legs == 'black jeans'", "images/KittySex/Kitty_69_Legs_Black.png",
-            "KittyX.Legs == 'shorts' and KittyX.Wet > 1", "images/KittySex/Kitty_69_Legs_Shorts_Wet.png",
-            "KittyX.Legs == 'shorts'", "images/KittySex/Kitty_69_Legs_Shorts.png",
-            "KittyX.Legs == 'yoga pants' and KittyX.Wet > 1", "images/KittySex/Kitty_69_Legs_Yoga_Wet.png",
-            "KittyX.Legs == 'yoga pants'", "images/KittySex/Kitty_69_Legs_Yoga.png",
+            "KittyX.Legs == 'capris' and KittyX.Wet > 1", get_cached_image("images/KittySex/Kitty_69_Legs_Blue_Wet.png"),
+            "KittyX.Legs == 'capris'", get_cached_image("images/KittySex/Kitty_69_Legs_Blue.png"),
+            "KittyX.Legs == 'black jeans' and KittyX.Wet > 1", get_cached_image("images/KittySex/Kitty_69_Legs_Black_Wet.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_image("images/KittySex/Kitty_69_Legs_Black.png"),
+            "KittyX.Legs == 'shorts' and KittyX.Wet > 1", get_cached_image("images/KittySex/Kitty_69_Legs_Shorts_Wet.png"),
+            "KittyX.Legs == 'shorts'", get_cached_image("images/KittySex/Kitty_69_Legs_Shorts.png"),
+            "KittyX.Legs == 'yoga pants' and KittyX.Wet > 1", get_cached_image("images/KittySex/Kitty_69_Legs_Yoga_Wet.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_image("images/KittySex/Kitty_69_Legs_Yoga.png"),
             "True", Null(),
             ),
 
@@ -6483,34 +6483,34 @@ image Kitty_69_Legs:
             "not KittyX.Pierce", Null(),
             "KittyX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-#                    "Player.Sprite and Player.Cock == 'in'", "images/KittySex/Kitty_Sex_Pussy_RingF.png",
+#                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/KittySex/Kitty_Sex_Pussy_RingF.png"),
 
-                    "KittyX.Legs and KittyX.Legs != 'dress' and not KittyX.Upskirt", "images/KittySex/Kitty_69_Pierce_Pussy_R_Clothed.png",
+                    "KittyX.Legs and KittyX.Legs != 'dress' and not KittyX.Upskirt", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_R_Clothed.png"),
 
-                    "KittyX.PantiesDown", "images/KittySex/Kitty_Sex_Pussy_Ring.png",
-                    "KittyX.Panties == 'lace panties'", "images/KittySex/Kitty_69_Pierce_Pussy_R_Lace.png",
-                    "KittyX.Panties", "images/KittySex/Kitty_69_Pierce_Pussy_R_Clothed.png",
+                    "KittyX.PantiesDown", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Ring.png"),
+                    "KittyX.Panties == 'lace panties'", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_R_Lace.png"),
+                    "KittyX.Panties", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_R_Clothed.png"),
 
-                    "KittyX.Hose == 'pantyhose' and not (KittyX.Panties and KittyX.PantiesDown)", "images/KittySex/Kitty_69_Pierce_Pussy_R_Lace.png",
+                    "KittyX.Hose == 'pantyhose' and not (KittyX.Panties and KittyX.PantiesDown)", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_R_Lace.png"),
 
-                    "True", "images/KittySex/Kitty_Sex_Pussy_Ring.png",
+                    "True", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Ring.png"),
                     ),
             #else, it's barbell
-#            "Player.Sprite and Player.Cock == 'in'", "images/KittySex/Kitty_Sex_Pussy_BarbellF.png",
+#            "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/KittySex/Kitty_Sex_Pussy_BarbellF.png"),
 
-            "KittyX.Legs and KittyX.Legs != 'dress' and not KittyX.Upskirt", "images/KittySex/Kitty_69_Pierce_Pussy_B_Clothed.png",
+            "KittyX.Legs and KittyX.Legs != 'dress' and not KittyX.Upskirt", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_B_Clothed.png"),
 
-            "KittyX.PantiesDown", "images/KittySex/Kitty_Sex_Pussy_Barbell.png",
-            "KittyX.Panties == 'lace panties'", "images/KittySex/Kitty_69_Pierce_Pussy_B_Lace.png",
-            "KittyX.Panties", "images/KittySex/Kitty_69_Pierce_Pussy_B_Clothed.png",
+            "KittyX.PantiesDown", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Barbell.png"),
+            "KittyX.Panties == 'lace panties'", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_B_Lace.png"),
+            "KittyX.Panties", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_B_Clothed.png"),
 
-            "KittyX.Hose == 'pantyhose' and not (KittyX.Panties and KittyX.PantiesDown)", "images/KittySex/Kitty_69_Pierce_Pussy_B_Lace.png",
+            "KittyX.Hose == 'pantyhose' and not (KittyX.Panties and KittyX.PantiesDown)", get_cached_image("images/KittySex/Kitty_69_Pierce_Pussy_B_Lace.png"),
 
-            "True", "images/KittySex/Kitty_Sex_Pussy_Barbell.png",
+            "True", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Barbell.png"),
             ),
 
 #        (0,0),ConditionSwitch(                                                                                  #Outside Spunk
-#            "'belly' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Pelvis.png",
+#            "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Pelvis.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -6563,14 +6563,14 @@ image Kitty_69_Legs:
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
-            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')", AlphaMask("Kitty_69_Feet", "images/KittySex/Kitty_69_FeetMask.png"),
+            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')", get_cached_alphamask("Kitty_69_Feet", "images/KittySex/Kitty_69_FeetMask.png"),
             "not Speed", "Kitty_69_Feet",
-            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Kitty_69_Feet", "images/KittySex/Kitty_69_FeetMask.png"),
+            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Kitty_69_Feet", "images/KittySex/Kitty_69_FeetMask.png"),
             "True", "Kitty_69_Feet",
             ),
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
             "KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'dress'", "images/KittySex/Kitty_69_Feet_Dress.png",
+            "KittyX.Legs == 'dress'", get_cached_image("images/KittySex/Kitty_69_Feet_Dress.png"),
             "True", Null(),
             ),
         )
@@ -6580,7 +6580,7 @@ image Kitty_69_Feet = LiveComposite(
         (1120,840),
 #        (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Feet.png",                                                         #Legs Base
 #        (0,0), ConditionSwitch(                                                                                 #Wet look
-#            "KittyX.Water", "images/KittySex/Kitty_Sex_Water_Feet.png",
+#            "KittyX.Water", get_cached_image("images/KittySex/Kitty_Sex_Water_Feet.png"),
 #            "True", Null(),
 #            ),
 
@@ -6593,37 +6593,37 @@ image Kitty_69_Feet = LiveComposite(
             #hose layer
             "KittyX.Legs and not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'shorts'",ConditionSwitch(
                     #If she has pants on, I need alternate kneesocks to not clip through knees
-                    "KittyX.Hose == 'stockings and garterbelt'", "images/KittySex/Kitty_69_Feet_Stockings.png",
-                    "KittyX.Hose == 'stockings'", "images/KittySex/Kitty_69_Feet_Stockings.png",
-                    "KittyX.Hose == 'knee stockings'", "images/KittySex/Kitty_69_Feet_Kneesocks.png",
+                    "KittyX.Hose == 'stockings and garterbelt'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings.png"),
+                    "KittyX.Hose == 'stockings'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings.png"),
+                    "KittyX.Hose == 'knee stockings'", get_cached_image("images/KittySex/Kitty_69_Feet_Kneesocks.png"),
                     "KittyX.Panties and KittyX.PantiesDown", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Feet.png",
-                    "KittyX.Hose == 'pantyhose'", "images/KittySex/Kitty_69_Feet_Stockings.png",
-                    "KittyX.Hose == 'ripped pantyhose'", "images/KittySex/Kitty_69_Feet_Stockings_Holed.png",
+                    "KittyX.Hose == 'pantyhose'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings.png"),
+                    "KittyX.Hose == 'ripped pantyhose'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings_Holed.png"),
                     "True", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Feet.png",
                     ),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'shorts') and KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'knee stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
-            "KittyX.Hose == 'stockings' or KittyX.Hose == 'stockings and garterbelt'", "images/KittySex/Kitty_69_Feet_Stockings.png",
-            "KittyX.Hose == 'knee stockings'", "images/KittySex/Kitty_69_Feet_Kneesocks.png",
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'shorts') and KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'knee stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_FeetP.png"),
+            "KittyX.Hose == 'stockings' or KittyX.Hose == 'stockings and garterbelt'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings.png"),
+            "KittyX.Hose == 'knee stockings'", get_cached_image("images/KittySex/Kitty_69_Feet_Kneesocks.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
-            "KittyX.Hose == 'pantyhose'", "images/KittySex/Kitty_69_Feet_Stockings.png",
-#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_FeetP.png"),
-            "KittyX.Hose == 'ripped pantyhose'", "images/KittySex/Kitty_69_Feet_Stockings_Holed.png",
+            "KittyX.Hose == 'pantyhose'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings.png"),
+#            "KittyX.Legs and (not KittyX.Upskirt and KittyX.Legs != 'blue skirt' and KittyX.Legs != 'blue skirt') and KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_FeetP.png"),
+            "KittyX.Hose == 'ripped pantyhose'", get_cached_image("images/KittySex/Kitty_69_Feet_Stockings_Holed.png"),
             "True", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_69_Feet.png",
             ),
 
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
             "KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'dress'", "images/KittySex/Kitty_69_Feet_Dress.png",
-            "KittyX.Legs == 'capris'", "images/KittySex/Kitty_69_Feet_Blue.png",
-            "KittyX.Legs == 'black jeans'", "images/KittySex/Kitty_69_Feet_Black.png",
-            "KittyX.Legs == 'yoga pants'", "images/KittySex/Kitty_69_Feet_Yoga.png",
+            "KittyX.Legs == 'dress'", get_cached_image("images/KittySex/Kitty_69_Feet_Dress.png"),
+            "KittyX.Legs == 'capris'", get_cached_image("images/KittySex/Kitty_69_Feet_Blue.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_image("images/KittySex/Kitty_69_Feet_Black.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_image("images/KittySex/Kitty_69_Feet_Yoga.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in KittyX.Spunk", "images/KittySex/Kitty_Sex_Spunk_Feet.png",
+            "'feet' in KittyX.Spunk", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -6639,16 +6639,16 @@ image Kitty_69_Pussy:
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Pussy_Fucking.png",
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Kitty_Sex_Heading_Pussy",
 #                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/KittySex/Kitty_69_Pussy_Open.png",
-                "KittyX.Offhand == 'fondle pussy' and KittyX.Lust > 60", "images/KittySex/Kitty_69_Pussy_Open.png",
-                "True", "images/KittySex/Kitty_69_Pussy.png",
+                "Trigger == 'lick pussy'", get_cached_image("images/KittySex/Kitty_69_Pussy_Open.png"),
+                "KittyX.Offhand == 'fondle pussy' and KittyX.Lust > 60", get_cached_image("images/KittySex/Kitty_69_Pussy_Open.png"),
+                "True", get_cached_image("images/KittySex/Kitty_69_Pussy.png"),
                 )
     contains:
             # The background plate of her pussy
             ConditionSwitch(
                 "not KittyX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-                "True", "images/BetsySex/Betsy_69_Water_Pussy.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/BetsySex/Betsy_69_Water_Pussy.png"),
                 )
     contains:
             # pubes
@@ -6658,9 +6658,9 @@ image Kitty_69_Pussy:
 #                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", Recolor("Kitty", "Pubes", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Pubes_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in'", Recolor("Kitty", "Pubes", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Pubes_Open.png"),
 #                "Player.Sprite and Player.Cock == 'out'", Recolor("Kitty", "Pubes", "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy'", Recolor("Kitty", "Pubes", "images/KittySex/Kitty_69_Pubes_Open.png"),
-                "KittyX.Offhand == 'fondle pussy' and KittyX.Lust > 60", Recolor("Kitty", "Pubes", "images/KittySex/Kitty_69_Pubes_Open.png"),
-                "True", Recolor("Kitty", "Pubes", "images/KittySex/Kitty_69_Pubes.png"),
+                "Trigger == 'lick pussy'", get_cached_recolor("Kitty", "Pubes", "images/KittySex/Kitty_69_Pubes_Open.png"),
+                "KittyX.Offhand == 'fondle pussy' and KittyX.Lust > 60", get_cached_recolor("Kitty", "Pubes", "images/KittySex/Kitty_69_Pubes_Open.png"),
+                "True", get_cached_recolor("Kitty", "Pubes", "images/KittySex/Kitty_69_Pubes.png"),
                 )
     contains:
             #Wet
@@ -6669,7 +6669,7 @@ image Kitty_69_Pussy:
                 "(KittyX.Legs == 'yoga pants' or KittyX.Legs == 'shorts') and not KittyX.Upskirt", Null(),
                 "KittyX.Panties and not KittyX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Wet_Drip_69","images/KittySex/Kitty_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Wet_Drip_69", "images/KittySex/Kitty_69_Mask_Pussy.png"),
                 )
             offset (10,0)
     contains:
@@ -6679,49 +6679,49 @@ image Kitty_69_Pussy:
                 "(KittyX.Legs == 'yoga pants' or KittyX.Legs == 'shorts') and not KittyX.Upskirt", Null(),
                 "KittyX.Panties and not KittyX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Spunk_Drip_69","images/KittySex/Kitty_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Spunk_Drip_69", "images/KittySex/Kitty_69_Mask_Pussy.png"),
                 )
             offset (10,0)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-#                "'in' in KittyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in KittyX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Pussy.png",
+#                "'in' in KittyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in KittyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #            offset (0,-15)
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in KittyX.Spunk", "images/KittySex/Kitty_Sex_Spunk_Puss_Under.png",
+#                "'in' in KittyX.Spunk", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "KittyX.Panties and KittyX.PantiesDown", Null(),
-#                "KittyX.Hose == 'ripped pantyhose' and ShowFeet", "images/KittySex/Kitty_Sex_Hose_Pantyhose_Holed.png",
-#                "KittyX.Hose == 'ripped pantyhose'", "images/KittySex/Kitty_Sex_Hose_Pantyhose_Holed.png",
+#                "KittyX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_image("images/KittySex/Kitty_Sex_Hose_Pantyhose_Holed.png"),
+#                "KittyX.Hose == 'ripped pantyhose'", get_cached_image("images/KittySex/Kitty_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
 #    contains:
 #            # The animation of Zero's moving penis, masked by her pussy shape
 #            ConditionSwitch(
 ##                "not Player.Sprite", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Kitty_Sex_Fucking_Zero_Anim3", "Kitty_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Kitty_Sex_Fucking_Zero_Anim2", "Kitty_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Kitty_Sex_Fucking_Zero_Anim1", "Kitty_Sex_Heading_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Kitty_Sex_Fucking_Zero_Anim3", "Kitty_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Kitty_Sex_Fucking_Zero_Anim2", "Kitty_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Kitty_Sex_Fucking_Zero_Anim1", "Kitty_Sex_Heading_Mask"),
 #                "Player.Sprite and Player.Cock == 'in'", "Kitty_Sex_Fucking_Zero_Anim0",
 #                "True", Null(),
 #                )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "KittyX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/KittySex/Kitty_Sex_Pierce_Pussy_BarbellF.png",
-#                "KittyX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/KittySex/Kitty_Sex_Pierce_Pussy_RingF.png",
-#                "KittyX.Pierce == 'barbell'", "images/KittySex/Kitty_Sex_Pierce_Pussy_Barbell.png",
-#                "KittyX.Pierce == 'ring'", "images/KittySex/Kitty_Sex_Pierce_Pussy_Ring.png",
+#                "KittyX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/KittySex/Kitty_Sex_Pierce_Pussy_BarbellF.png"),
+#                "KittyX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/KittySex/Kitty_Sex_Pierce_Pussy_RingF.png"),
+#                "KittyX.Pierce == 'barbell'", get_cached_image("images/KittySex/Kitty_Sex_Pierce_Pussy_Barbell.png"),
+#                "KittyX.Pierce == 'ring'", get_cached_image("images/KittySex/Kitty_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
 #    contains:
@@ -6736,7 +6736,7 @@ image Kitty_69_Pussy:
 #                "Speed == 1", Null(),
 #                "'in' not in KittyX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 ##                "Speed <= 1", Null(), #"Kitty_Pussy_Spunk_Heading",
-#                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
 #                )
 
     #End Kitty Pussy composite
@@ -6782,35 +6782,35 @@ image Kitty_69_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/KittySex/Kitty_Sex_Anus.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/KittySex/Kitty_Sex_Anus.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/KittySex/Kitty_Sex_Anus.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/KittySex/Kitty_Sex_Anus.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Kitty_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Kitty_Sex_Anal_Tip",
-            "KittyX.Plug", "images/PlugBase_Sex.png",
+            "KittyX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "KittyX.Loose > 2", "Kitty_Gape_Anal_Sex",
-#            "KittyX.Loose", "images/KittySex/Kitty_Sex_Hole_Loose.png",
-#            "True", "images/KittySex/Kitty_Sex_Hole_Tight.png",
+#            "KittyX.Loose", get_cached_image("images/KittySex/Kitty_Sex_Hole_Loose.png"),
+#            "True", get_cached_image("images/KittySex/Kitty_Sex_Hole_Tight.png"),
             "True", Null(),
             )
     contains:
             #Spunk under penis
             ConditionSwitch(
                 "'anal' not in KittyX.Spunk or not Player.Male", Null(),
-#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/KittySex/Kitty_Sex_Spunk_Anal_Under.png",
+#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Anal_Under.png"),
 #                "Player.Sprite and Player.Cock == 'anal' and Speed == 1", "Kitty_Sex_Anal_Spunk_Heading_Under",
-                "True", "images/BetsySex/Betsy_69_Spunk_Ass.png",
+                "True", get_cached_image("images/BetsySex/Betsy_69_Spunk_Ass.png"),
                 )
             offset (-8,-5)
 #    contains:
 #            # The animation of Zero's moving penis, masked by her anus shape
 #            ConditionSwitch(
 #                "not Player.Sprite or Player.Cock != 'anal'", Null(),
-#                "Speed >= 3",  AlphaMask("Kitty_Sex_Anal_Zero_Anim3", "Kitty_Sex_Anal_MaskF"),
-#                "Speed >= 2", AlphaMask("Kitty_Sex_Anal_Zero_Anim2", "Kitty_Sex_Anal_MaskF"),
-#                "Speed", AlphaMask("Kitty_Sex_Anal_Zero_Anim1", "Kitty_Sex_Anal_Mask"),
-#                "True", AlphaMask("Kitty_Sex_Anal_Zero_Anim0", "Kitty_Sex_Anal_Mask"),
+#                "Speed >= 3",  get_cached_alphamask("Kitty_Sex_Anal_Zero_Anim3", "Kitty_Sex_Anal_MaskF"),
+#                "Speed >= 2", get_cached_alphamask("Kitty_Sex_Anal_Zero_Anim2", "Kitty_Sex_Anal_MaskF"),
+#                "Speed", get_cached_alphamask("Kitty_Sex_Anal_Zero_Anim1", "Kitty_Sex_Anal_Mask"),
+#                "True", get_cached_alphamask("Kitty_Sex_Anal_Zero_Anim0", "Kitty_Sex_Anal_Mask"),
 #                )
 #    contains:
 #            #Spunk over penis
@@ -7010,7 +7010,7 @@ image Kitty_69_Anim1:
             #ponytail
             subpixel True
             ConditionSwitch(
-                "KittyX.Hair == 'evo' and not KittyX.Water",Recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony_Tail.png"),
+                "KittyX.Hair == 'evo' and not KittyX.Water",get_cached_recolor("Kitty", "Hair", "images/KittySex/Kitty_69_Hair_Pony_Tail.png"),
                 "True", Null(),
                 )
             rotate 180
@@ -8106,14 +8106,14 @@ image Kitty_SC_Legs:
         #the legs used in the sex pose, referenced by Kitty_SexSprite
         (1120,840),
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
-            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back_Up.png"),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back.png"),
-            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt_Back.png"),
+            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back_Up.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Back.png"),
+            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt_Back.png"),
             "True", Null(),
             ),
         (0,0), "images/KittySex/[KittyX.skin_image.skin_path]Kitty_Sex_Legs.png",                                                         #Legs Base
         (0,0), ConditionSwitch(                                                                                 #Wet look
-            "KittyX.Water", "images/KittySex/Kitty_Sex_Water_Legs.png",
+            "KittyX.Water", get_cached_image("images/KittySex/Kitty_Sex_Water_Legs.png"),
             "True", Null(),
             ),
 
@@ -8123,47 +8123,47 @@ image Kitty_SC_Legs:
 
         (0,0), ConditionSwitch(                                                                                 #Panties if up
             "KittyX.PantiesDown", Null(),
-            "KittyX.Panties == 'green panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green_Wet.png"),
-            "KittyX.Panties == 'green panties'", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green.png"),
-            "KittyX.Panties == 'lace panties' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace_Wet.png"),
-            "KittyX.Panties == 'lace panties'", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace.png"),
-            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini_Wet.png"),
-            "KittyX.Panties == 'bikini bottoms'", Recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini.png"),
+            "KittyX.Panties == 'green panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green_Wet.png"),
+            "KittyX.Panties == 'green panties'", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Green.png"),
+            "KittyX.Panties == 'lace panties' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace_Wet.png"),
+            "KittyX.Panties == 'lace panties'", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Lace.png"),
+            "KittyX.Panties == 'bikini bottoms' and KittyX.Wet", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini_Wet.png"),
+            "KittyX.Panties == 'bikini bottoms'", get_cached_recolor("Kitty", "Panties", "images/KittySex/Kitty_Sex_Panties_Bikini.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "KittyX.Hose == 'stockings and garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_StockingGarter_Legs.png"),
-            "KittyX.Hose == 'garterbelt'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Garter_Legs.png"),
-            "KittyX.Hose == 'stockings'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Legs.png"),
+            "KittyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_StockingGarter_Legs.png"),
+            "KittyX.Hose == 'garterbelt'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Garter_Legs.png"),
+            "KittyX.Hose == 'stockings'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Stockings_Legs.png"),
             "KittyX.Panties and KittyX.PantiesDown", Null(),
-            "KittyX.Hose == 'pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Pantyhose_Legs.png"),
-#            "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
+            "KittyX.Hose == 'pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_Pantyhose_Legs.png"),
+#            "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(                                                                                 #Legs Layer
-            "KittyX.Legs == 'dress' and KittyX.Upskirt", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Up.png"),
-            "KittyX.Legs == 'dress'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress.png"),
-            "KittyX.Legs == 'blue skirt'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt.png"),
+            "KittyX.Legs == 'dress' and KittyX.Upskirt", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress_Up.png"),
+            "KittyX.Legs == 'dress'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Legs_Dress.png"),
+            "KittyX.Legs == 'blue skirt'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Skirt.png"),
             "KittyX.Upskirt", Null(),
-            "KittyX.Legs == 'capris' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue_Wet.png"),
-            "KittyX.Legs == 'capris'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue.png"),
-            "KittyX.Legs == 'black jeans' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black_Wet.png"),
-            "KittyX.Legs == 'black jeans'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black.png"),
-            "KittyX.Legs == 'shorts' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts_Wet.png"),
-            "KittyX.Legs == 'shorts'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts.png"),
-            "KittyX.Legs == 'yoga pants' and KittyX.Wet > 1", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga_Wet.png"),
-            "KittyX.Legs == 'yoga pants'", Recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga.png"),
+            "KittyX.Legs == 'capris' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue_Wet.png"),
+            "KittyX.Legs == 'capris'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Blue.png"),
+            "KittyX.Legs == 'black jeans' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black_Wet.png"),
+            "KittyX.Legs == 'black jeans'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Black.png"),
+            "KittyX.Legs == 'shorts' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts_Wet.png"),
+            "KittyX.Legs == 'shorts'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Shorts.png"),
+            "KittyX.Legs == 'yoga pants' and KittyX.Wet > 1", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga_Wet.png"),
+            "KittyX.Legs == 'yoga pants'", get_cached_recolor("Kitty", "Legs", "images/KittySex/Kitty_Sex_Pants_Yoga.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(                                                                                 #Over Layer
-            "KittyX.Over == 'towel' and not KittyX.Uptop", Recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Towel_Legs.png"),
+            "KittyX.Over == 'towel' and not KittyX.Uptop", get_cached_recolor("Kitty", "Over", "images/KittySex/Kitty_Sex_Towel_Legs.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(                                                                                  #Outside Spunk
-            "'belly' in KittyX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Pelvis.png",
+            "'belly' in KittyX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Pelvis.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -8188,9 +8188,9 @@ image Kitty_SC_Legs:
 #            ),
         (0,0),  "Kitty_Sex_Feet",
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
-#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
+#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
 #            "not Speed", "Kitty_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
 #            "True", "Kitty_Sex_Feet",
 #            ),
         )
@@ -8212,14 +8212,14 @@ image Kitty_SC_Pussy:
             # wet pussy
             ConditionSwitch(
                 "not KittyX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/KittySex/Kitty_Sex_WetPussy_F.png",
-                "True", "images/KittySex/Kitty_Sex_WetPussy_C.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/KittySex/Kitty_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/KittySex/Kitty_Sex_WetPussy_C.png"),
                 )
     contains:
             #ring piercing
             ConditionSwitch(
-                "KittyX.Pierce == 'ring'", "images/KittySex/Kitty_Sex_Pussy_Ring.png",
-                "KittyX.Pierce == 'barbell'", "images/KittySex/Kitty_Sex_Pussy_Barbell.png",
+                "KittyX.Pierce == 'ring'", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Ring.png"),
+                "KittyX.Pierce == 'barbell'", get_cached_image("images/KittySex/Kitty_Sex_Pussy_Barbell.png"),
                 "True", Null(),
                 )
     contains:
@@ -8237,7 +8237,7 @@ image Kitty_SC_Pussy:
             #hose layer
             ConditionSwitch(
                 "KittyX.Panties and KittyX.PantiesDown", Null(),
-                "KittyX.Hose == 'ripped pantyhose'", Recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
+                "KittyX.Hose == 'ripped pantyhose'", get_cached_recolor("Kitty", "Hose", "images/KittySex/Kitty_Sex_Hose_RippedPantyhose_Legs.png"),
                 "True", Null(),
                 )
 
@@ -8296,7 +8296,7 @@ image Kitty_SC_Anim_0:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Kitty_Sex_Feet",
-#                "True", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png")
+#                "True", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -8379,7 +8379,7 @@ image Kitty_SC_Anim_1:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Kitty_Sex_Feet",
-#                "True", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png")
+#                "True", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -8462,7 +8462,7 @@ image Kitty_SC_Anim_2:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Kitty_Sex_Feet",
-#                "True", AlphaMask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png")
+#                "True", get_cached_alphamask("Kitty_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)

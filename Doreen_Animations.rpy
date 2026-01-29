@@ -3,18 +3,18 @@
 image Doreen_Sprite:
     LiveComposite(
         (600,1300),       #550,950
-        (0,0), "images/DoreenSprite/Doreen_Sprite_Shadow.png",
+        (0,0), get_cached_image("images/DoreenSprite/Doreen_Sprite_Shadow.png"),
         (0,0), ConditionSwitch(
             #Tail
-            "DoreenX.Tail","images/DoreenSprite/Doreen_Sprite_Tail.png",
+            "DoreenX.Tail", get_cached_image("images/DoreenSprite/Doreen_Sprite_Tail.png"),
             "True", Null(),
             ),
         (95,20), "Doreen_Sprite_HairBack", #(15,-80)
 #        (0,0), ConditionSwitch(
 #            #skirt back
 #            "DoreenX.Upskirt", Null(),
-##            "DoreenX.Legs == 'pants'", "images/DoreenSprite/Doreen_Sprite_Legs_Pants_Back.png",
-#            "DoreenX.Legs == 'skirt'", "images/DoreenSprite/Doreen_Sprite_Legs_Skirt_Back.png",
+##            "DoreenX.Legs == 'pants'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Pants_Back.png"),
+#            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -23,10 +23,10 @@ image Doreen_Sprite:
             #if the panties are down
             "DoreenX.Legs and not DoreenX.Upskirt and DoreenX.Legs != 'skirt'", Null(),
             #if she's wearing a skirt or nothing else
-            "DoreenX.Panties == 'lace panties' and DoreenX.Legs == 'shorts'", "images/DoreenSprite/Doreen_Sprite_Panties_Lace_BackS.png",
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSprite/Doreen_Sprite_Panties_Lace_Back.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSprite/Doreen_Sprite_Panties_Bikini_Back.png",
-            "True", "images/DoreenSprite/Doreen_Sprite_Panties_Tan_Back.png",
+            "DoreenX.Panties == 'lace panties' and DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Lace_BackS.png"),
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Lace_Back.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Bikini_Back.png"),
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Tan_Back.png"),
             ),
 
         (275,560), ConditionSwitch(    #165,560
@@ -35,14 +35,14 @@ image Doreen_Sprite:
             "DoreenX.Wet == 1 or (DoreenX.Legs and DoreenX.Legs != 'skirt' and not DoreenX.Upskirt)", "Wet_Drip", #ConditionSwitch( #Wet = 1
 #                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and not DoreenX.Upskirt", Null(),
 #                    "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
-#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts')", AlphaMask("Wet_Drip","Doreen_Drip_MaskP"),
-#                    "DoreenX.Panties and DoreenX.PantiesDown", AlphaMask("Wet_Drip","Doreen_Drip_MaskP"),
-#                    "True", AlphaMask("Wet_Drip","Doreen_Drip_Mask"), #only plays if nothing is in the way
+#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts')", get_cached_alphamask("Wet_Drip", "Doreen_Drip_MaskP"),
+#                    "DoreenX.Panties and DoreenX.PantiesDown", get_cached_alphamask("Wet_Drip", "Doreen_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Wet_Drip", "Doreen_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             "True", "Wet_Drip2", #ConditionSwitch( #Wet = 2+
-#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and DoreenX.Upskirt", AlphaMask("Wet_Drip2","Doreen_Drip_MaskP"),
-#                    "DoreenX.Panties and DoreenX.PantiesDown", AlphaMask("Wet_Drip2","Doreen_Drip_MaskP"),
-#                    "True", AlphaMask("Wet_Drip2","Doreen_Drip_Mask"), #only plays if nothing is in the way
+#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and DoreenX.Upskirt", get_cached_alphamask("Wet_Drip2", "Doreen_Drip_MaskP"),
+#                    "DoreenX.Panties and DoreenX.PantiesDown", get_cached_alphamask("Wet_Drip2", "Doreen_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Wet_Drip2", "Doreen_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             ),
 
@@ -51,14 +51,14 @@ image Doreen_Sprite:
             "('in' not in DoreenX.Spunk and 'anal' not in DoreenX.Spunk) or not Player.Male", Null(),
             "DoreenX.Panties and not DoreenX.PantiesDown", "Spunk_Drip", #ConditionSwitch( #Wet = 1
             "DoreenX.Legs and DoreenX.Legs != 'skirt' and not DoreenX.Upskirt", "Spunk_Drip", #ConditionSwitch( #Wet = 1
-#                    "DoreenX.Panties and DoreenX.PantiesDown", AlphaMask("Spunk_Drip","Doreen_Drip_MaskP"),
-#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and DoreenX.Upskirt", AlphaMask("Spunk_Drip","Doreen_Drip_MaskP"),
-#                    "True", AlphaMask("Spunk_Drip","Doreen_Drip_Mask"), #only plays if nothing is in the way
+#                    "DoreenX.Panties and DoreenX.PantiesDown", get_cached_alphamask("Spunk_Drip", "Doreen_Drip_MaskP"),
+#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and DoreenX.Upskirt", get_cached_alphamask("Spunk_Drip", "Doreen_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Spunk_Drip", "Doreen_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             "True", "Spunk_Drip2", #ConditionSwitch( #Wet = 2+
-#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and DoreenX.Upskirt", AlphaMask("Spunk_Drip2","Doreen_Drip_MaskP"),
-#                    "DoreenX.Panties and DoreenX.PantiesDown", AlphaMask("Spunk_Drip2","Doreen_Drip_MaskP"),
-#                    "True", AlphaMask("Spunk_Drip2","Doreen_Drip_Mask"), #only plays if nothing is in the way
+#                    "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and DoreenX.Upskirt", get_cached_alphamask("Spunk_Drip2", "Doreen_Drip_MaskP"),
+#                    "DoreenX.Panties and DoreenX.PantiesDown", get_cached_alphamask("Spunk_Drip2", "Doreen_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Spunk_Drip2", "Doreen_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             ),
 
@@ -69,20 +69,20 @@ image Doreen_Sprite:
             ),
         (0,0), ConditionSwitch(
             #pubes
-            "DoreenX.Pubes", "images/DoreenSprite/Doreen_Sprite_Pubes.png",         # right hand up/left down
+            "DoreenX.Pubes", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pubes.png"),         # right hand up/left down
             "True", Null(), #if DoreenX.Arms == 1   # right Hand on hip/left raised
             ),
         (0,0), ConditionSwitch(
             #Jacket back
-            "DoreenX.Acc == 'vest'", "images/DoreenSprite/Doreen_Sprite_Vest_Base.png",         # right hand up/left down
-            "DoreenX.ArmPose != 1 and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Jacket2_Base.png",         # right hand up/left down
-            "DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Jacket1_Base.png",         # right hand up/left down
+            "DoreenX.Acc == 'vest'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Vest_Base.png"),         # right hand up/left down
+            "DoreenX.ArmPose != 1 and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Jacket2_Base.png"),         # right hand up/left down
+            "DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Jacket1_Base.png"),         # right hand up/left down
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Water effect
-#            "DoreenX.Water and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Water1.png",
-            "DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Water.png",
+#            "DoreenX.Water and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water1.png"),
+            "DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water.png"),
             "True", Null(),
             ),
 
@@ -92,19 +92,19 @@ image Doreen_Sprite:
             "not DoreenX.Wet", Null(),
             "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
             "DoreenX.Legs and DoreenX.Legs != 'skirt' and not DoreenX.Upskirt", Null(),
-            "True", "images/DoreenSprite/Doreen_Sprite_Wet.png", #ConditionSwitch( #Wet = 2+
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Wet.png"), #ConditionSwitch( #Wet = 2+
             ),
         (0,0), ConditionSwitch(
             #Spunk over
             "('in' not in DoreenX.Spunk and 'anal' not in DoreenX.Spunk) or not Player.Male", Null(),
             "DoreenX.Legs and DoreenX.Legs != 'skirt' and not DoreenX.Upskirt", Null(),
             "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
-            "True", "images/DoreenSprite/Doreen_Sprite_Spunk_Pussy.png",
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Pussy.png"),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Necklaces
-#            "DoreenX.Neck == 'choker'", "images/DoreenSprite/Doreen_Sprite_Neck_Choker.png",
+#            "DoreenX.Neck == 'choker'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Neck_Choker.png"),
 #            "True", Null(),
 #            ),
 
@@ -115,37 +115,37 @@ image Doreen_Sprite:
                     #if the panties are down
                     "not DoreenX.Legs or DoreenX.Upskirt or DoreenX.Legs == 'skirt'", ConditionSwitch(
                             #if she's wearing a skirt or nothing else
-                            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSprite/Doreen_Sprite_Panties_Bikini_Down.png",
-                            "DoreenX.Panties == 'lace panties'", "images/DoreenSprite/Doreen_Sprite_Panties_Lace_Down.png",
-                            "DoreenX.Panties", "images/DoreenSprite/Doreen_Sprite_Panties_Tan_Down.png",
+                            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Bikini_Down.png"),
+                            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Lace_Down.png"),
+                            "DoreenX.Panties", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Tan_Down.png"),
                             "True", Null(),
                             ),
                     "True", Null(),
                     ),
             "True", ConditionSwitch(
                 #if she's not wet
-                "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSprite/Doreen_Sprite_Panties_Bikini.png",
-                "DoreenX.Panties == 'lace panties'", "images/DoreenSprite/Doreen_Sprite_Panties_Lace.png",
-                "DoreenX.Panties and DoreenX.Wet", "images/DoreenSprite/Doreen_Sprite_Panties_Tan_Wet.png",
-                "DoreenX.Panties", "images/DoreenSprite/Doreen_Sprite_Panties_Tan.png",
+                "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Bikini.png"),
+                "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Lace.png"),
+                "DoreenX.Panties and DoreenX.Wet", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Tan_Wet.png"),
+                "DoreenX.Panties", get_cached_image("images/DoreenSprite/Doreen_Sprite_Panties_Tan.png"),
                 "True", Null(),
                 ),
             ),
 
         (0,0), ConditionSwitch(
             #stockings
-            "DoreenX.Hose == 'stockings'", "images/DoreenSprite/Doreen_Sprite_Hose_Stockings.png",
-            "DoreenX.Hose == 'stockings and garterbelt'", "images/DoreenSprite/Doreen_Sprite_Hose_StockingsGarter.png",
-            "DoreenX.Hose == 'garterbelt'", "images/DoreenSprite/Doreen_Sprite_Hose_Garter.png",
+            "DoreenX.Hose == 'stockings'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Stockings.png"),
+            "DoreenX.Hose == 'stockings and garterbelt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_StockingsGarter.png"),
+            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Garter.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose
-            "DoreenX.Hose == 'pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenSprite/Doreen_Sprite_Hose_Pantyhose.png",
-            "DoreenX.Hose == 'tights' and DoreenX.Wet and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenSprite/Doreen_Sprite_Hose_Tights_Wet.png",
-            "DoreenX.Hose == 'tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenSprite/Doreen_Sprite_Hose_Tights.png",
-            "DoreenX.Hose == 'ripped pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenSprite/Doreen_Sprite_Hose_Pantyhose_Holed.png",
-            "DoreenX.Hose == 'ripped tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenSprite/Doreen_Sprite_Hose_Tights_Holed.png",
+            "DoreenX.Hose == 'pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Pantyhose.png"),
+            "DoreenX.Hose == 'tights' and DoreenX.Wet and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Tights_Wet.png"),
+            "DoreenX.Hose == 'tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Tights.png"),
+            "DoreenX.Hose == 'ripped pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Pantyhose_Holed.png"),
+            "DoreenX.Hose == 'ripped tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hose_Tights_Holed.png"),
             "True", Null(),
             ),
 
@@ -154,20 +154,20 @@ image Doreen_Sprite:
             "not DoreenX.Legs", Null(),
             "DoreenX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "DoreenX.Legs == 'skirt'", "images/DoreenSprite/Doreen_Sprite_Legs_Skirt_Up.png",
-                        "DoreenX.Legs == 'red skirt'", "images/DoreenSprite/Doreen_Sprite_Legs_RedSkirt_Up.png",
-                        "DoreenX.Legs == 'shorts'", "images/DoreenSprite/Doreen_Sprite_Legs_Shorts_Down.png",
+                        "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Skirt_Up.png"),
+                        "DoreenX.Legs == 'red skirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_RedSkirt_Up.png"),
+                        "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Shorts_Down.png"),
                         "True", Null(),
                         ),
-            "DoreenX.Legs == 'skirt' and DoreenX.Over != 'towel'", "images/DoreenSprite/Doreen_Sprite_Legs_Skirt.png",
-            "DoreenX.Legs == 'red skirt' and DoreenX.Over != 'towel'", "images/DoreenSprite/Doreen_Sprite_Legs_RedSkirt.png",
+            "DoreenX.Legs == 'skirt' and DoreenX.Over != 'towel'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Skirt.png"),
+            "DoreenX.Legs == 'red skirt' and DoreenX.Over != 'towel'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_RedSkirt.png"),
             "DoreenX.Wet > 1", ConditionSwitch(
                 #if she's wet
-                "DoreenX.Legs == 'shorts'", "images/DoreenSprite/Doreen_Sprite_Legs_Shorts_Wet.png",
+                "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Shorts_Wet.png"),
                 "True", Null(),
                 ),
             #if she's not wet
-            "DoreenX.Legs == 'shorts'", "images/DoreenSprite/Doreen_Sprite_Legs_Shorts.png",
+            "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Legs_Shorts.png"),
             "True", Null(),
             ),
 
@@ -177,73 +177,73 @@ image Doreen_Sprite:
             "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'red skirt') and not DoreenX.Upskirt", Null(),
             "DoreenX.Pierce == 'ring'", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Brown.png",
+                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Brown.png"),
 
-                    "DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R.png",
-                    "DoreenX.Hose == 'tights'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Gray.png",
-                    "DoreenX.Hose == 'pantyhose'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Hose.png",
+                    "DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R.png"),
+                    "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Gray.png"),
+                    "DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Hose.png"),
 
-                    "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Green.png",
+                    "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Green.png"),
 
-                    "DoreenX.Panties == 'lace panties'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Lace.png",
-                    "DoreenX.Panties", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Tan.png",
+                    "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Lace.png"),
+                    "DoreenX.Panties", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R_Tan.png"),
 
-                    "True", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R.png",
+                    "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_R.png"),
                     ),
 
-            "DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B.png",
-            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Brown.png",
+            "DoreenX.Panties and DoreenX.PantiesDown", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B.png"),
+            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Brown.png"),
 
-            "DoreenX.Hose == 'tights'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Gray.png",
-            "DoreenX.Hose == 'pantyhose'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Hose.png",
+            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Gray.png"),
+            "DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Hose.png"),
 
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Green.png",
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Green.png"),
 
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Lace.png",
-            "DoreenX.Panties", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Tan.png",
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Lace.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B_Tan.png"),
 
-            "True", "images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B.png",
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Pussy_B.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Chest layer
             "DoreenX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Chest == 'bikini top'", "images/DoreenSprite/Doreen_Sprite_Chest_Bikini_Up.png",
-                    "DoreenX.Chest == 'sports bra'", "images/DoreenSprite/Doreen_Sprite_Chest_Sports_Up.png",
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenSprite/Doreen_Sprite_Chest_Lace_Up.png",
-                    "DoreenX.Chest", "images/DoreenSprite/Doreen_Sprite_Chest_Bra_Up.png",
+                    "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Bikini_Up.png"),
+                    "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Sports_Up.png"),
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Lace_Up.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Bra_Up.png"),
                     "True", Null(),
                     ),
-            "DoreenX.Chest == 'bikini top'", "images/DoreenSprite/Doreen_Sprite_Chest_Bikini.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSprite/Doreen_Sprite_Chest_Sports.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSprite/Doreen_Sprite_Chest_Lace.png",
-            "DoreenX.Chest", "images/DoreenSprite/Doreen_Sprite_Chest_Bra.png",
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Bikini.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Sports.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Lace.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenSprite/Doreen_Sprite_Chest_Bra.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over
             "DoreenX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Over == 'tube top'", "images/DoreenSprite/Doreen_Sprite_Over_Tube_Up.png",
-                    "DoreenX.Over == 'tshirt' and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Over_Tshirt_JUp.png",
-                    "DoreenX.Over == 'tshirt' and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Over_Tshirt1_Up.png",
-                    "DoreenX.Over == 'tshirt'", "images/DoreenSprite/Doreen_Sprite_Over_Tshirt2_Up.png",
-                    "DoreenX.Over == 'sweater' and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Over_Sweater_Under_Up.png",
-                    "DoreenX.Over == 'sweater' and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Over_Sweater1_Up.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenSprite/Doreen_Sprite_Over_Sweater2_Up.png",
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tube_Up.png"),
+                    "DoreenX.Over == 'tshirt' and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tshirt_JUp.png"),
+                    "DoreenX.Over == 'tshirt' and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tshirt1_Up.png"),
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tshirt2_Up.png"),
+                    "DoreenX.Over == 'sweater' and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Sweater_Under_Up.png"),
+                    "DoreenX.Over == 'sweater' and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Sweater1_Up.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Sweater2_Up.png"),
                     "True", Null(),
                     ),
             #If she's using arm pose 1, left arm pointing
             #If she's using arm pose 2, Left arm on hip
-            "DoreenX.Over == 'tube top'", "images/DoreenSprite/Doreen_Sprite_Over_Tube.png",
-            "DoreenX.Over == 'tshirt' and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Over_Tshirt_J.png",
-            "DoreenX.Over == 'tshirt' and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Over_Tshirt1.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSprite/Doreen_Sprite_Over_Tshirt2.png",
-            "DoreenX.Over == 'sweater' and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Over_Sweater_Under.png",
-            "DoreenX.Over == 'sweater' and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Over_Sweater1.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSprite/Doreen_Sprite_Over_Sweater2.png",
-            "DoreenX.Over == 'towel'", "images/DoreenSprite/Doreen_Sprite_Over_Towel.png",
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tube.png"),
+            "DoreenX.Over == 'tshirt' and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tshirt_J.png"),
+            "DoreenX.Over == 'tshirt' and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tshirt1.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Tshirt2.png"),
+            "DoreenX.Over == 'sweater' and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Sweater_Under.png"),
+            "DoreenX.Over == 'sweater' and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Sweater1.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Sweater2.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Over_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -254,48 +254,48 @@ image Doreen_Sprite:
             #Only does this if she has piercings, has no tops, or has her top up
             "DoreenX.Pierce == 'ring'", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Uptop", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R.png",
+                    "DoreenX.Uptop", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R.png"),
 
-                    "DoreenX.Over == 'tube top'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Brown.png",
-                    "DoreenX.Over == 'tshirt'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Gray.png", #change if new tops added in other colors
-                    "DoreenX.Over == 'towel'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Green.png", #change if new tops added in other colors
-                    "DoreenX.Over == 'sweater'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Sweater.png", #change if new tops added in other colors
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Brown.png"),
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Gray.png"), #change if new tops added in other colors
+                    "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Green.png"), #change if new tops added in other colors
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Sweater.png"), #change if new tops added in other colors
 
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Lace.png",
-                    "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Green.png",
-                    "DoreenX.Chest", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Tan.png",
-                    "True", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R.png",
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Lace.png"),
+                    "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Green.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R_Tan.png"),
+                    "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_R.png"),
                     ),
             # Pierce is "barbell"
-            "DoreenX.Uptop", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B.png",
+            "DoreenX.Uptop", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B.png"),
 
-            "DoreenX.Over == 'tube top'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Brown.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Gray.png", #change if new tops added in other colors
-            "DoreenX.Over == 'towel'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Green.png", #change if new tops added in other colors
-            "DoreenX.Over == 'sweater'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Sweater.png", #change if new tops added in other colors
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Brown.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Gray.png"), #change if new tops added in other colors
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Green.png"), #change if new tops added in other colors
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Sweater.png"), #change if new tops added in other colors
 
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Lace.png",
-            "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Green.png",
-            "DoreenX.Chest", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Tan.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Lace.png"),
+            "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Green.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B_Tan.png"),
 
-            "True", "images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B.png",
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Pierce_Tits_B.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Boots/Shoes
-            "DoreenX.Boots == 'boots'", "images/DoreenSprite/Doreen_Sprite_Boots.png",
-            "DoreenX.Boots == 'sneaks'", "images/DoreenSprite/Doreen_Sprite_Boots_Sneaks.png",
+            "DoreenX.Boots == 'boots'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Boots.png"),
+            "DoreenX.Boots == 'sneaks'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Boots_Sneaks.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #jacket over
-            "DoreenX.Uptop and DoreenX.Acc == 'vest'", "images/DoreenSprite/Doreen_Sprite_Vest_Over_Up.png",         # right hand up/left down
-            "DoreenX.Acc == 'vest'", "images/DoreenSprite/Doreen_Sprite_Vest_Over.png",         # right hand up/left down
-            "DoreenX.Uptop and DoreenX.ArmPose != 1 and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Jacket_Over2_Up.png",         # right hand up/left down
-            "DoreenX.Uptop and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Jacket_Over1_Up.png",         # right hand up/left down
-            "DoreenX.ArmPose != 1 and DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Jacket_Over2.png",         # right hand up/left down
-            "DoreenX.Acc == 'jacket'", "images/DoreenSprite/Doreen_Sprite_Jacket_Over1.png",         # right hand up/left down
+            "DoreenX.Uptop and DoreenX.Acc == 'vest'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Vest_Over_Up.png"),         # right hand up/left down
+            "DoreenX.Acc == 'vest'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Vest_Over.png"),         # right hand up/left down
+            "DoreenX.Uptop and DoreenX.ArmPose != 1 and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Jacket_Over2_Up.png"),         # right hand up/left down
+            "DoreenX.Uptop and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Jacket_Over1_Up.png"),         # right hand up/left down
+            "DoreenX.ArmPose != 1 and DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Jacket_Over2.png"),         # right hand up/left down
+            "DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Jacket_Over1.png"),         # right hand up/left down
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -307,38 +307,38 @@ image Doreen_Sprite:
 
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Water2.png",
+#            "DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #belly spunk
-            "'belly' in DoreenX.Spunk and Player.Male", "images/DoreenSprite/Doreen_Sprite_Spunk_Belly.png",
+            "'belly' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #breast spunk
-            "'tits' in DoreenX.Spunk and Player.Male", "images/DoreenSprite/Doreen_Sprite_Spunk_Tits.png",
+            "'tits' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Tits.png"),
             "True", Null(),
             ),
 
         (95,20), "Doreen_Sprite_Head", #(-10,-90)
 
 
-#        (0,0), "images/DoreenSprite/Doreen_Sprite_Headref.png", #53,-45
+#        (0,0), get_cached_image("images/DoreenSprite/Doreen_Sprite_Headref.png"), #53,-45
 
 
 #        (0,0), ConditionSwitch(
 #            #hand spunk
 #            "DoreenX.ArmPose == 2 or 'hand' not in DoreenX.Spunk", Null(),
-#            "True", "images/DoreenSprite/Doreen_Sprite_Spunk_Hand.png",
+#            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Hand.png"),
 #            ),
 #        (0,0), ConditionSwitch(                                                                         #Props
 #            "not DoreenX.Held or DoreenX.ArmPose != 2", Null(),
-#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'phone'", "images/DoreenSprite/Doreen_held_phone.png",
-#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'dildo'", "images/DoreenSprite/Doreen_held_dildo.png",
-#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'vibrator'", "images/DoreenSprite/Doreen_held_vibrator.png",
-#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'panties'", "images/DoreenSprite/Doreen_held_panties.png",
+#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'phone'", get_cached_image("images/DoreenSprite/Doreen_held_phone.png"),
+#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'dildo'", get_cached_image("images/DoreenSprite/Doreen_held_dildo.png"),
+#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'vibrator'", get_cached_image("images/DoreenSprite/Doreen_held_vibrator.png"),
+#            "DoreenX.ArmPose == 2 and DoreenX.Held == 'panties'", get_cached_image("images/DoreenSprite/Doreen_held_panties.png"),
 #            "True", Null(),
 #            ),
 
@@ -446,13 +446,13 @@ image Doreen_Sprite_HairBack:
         (0,0), ConditionSwitch(
                 #hair back
     #            "renpy.showing('Doreen_BJ_Animation')", Null(),
-    #            "renpy.showing('Doreen_SexSprite')", "images/DoreenSex/Doreen_Sprite_Hair_Long_UnderSex.png",
-                "DoreenX.Hair == 'wetlong' or (DoreenX.Hair == 'long' and DoreenX.Water)", "images/DoreenSprite/Doreen_Sprite_Hair_Long_Wet_Back.png",
-                "DoreenX.Hair == 'long' and (not Player.Male and 'facial' in DoreenX.Spunk)","images/DoreenSprite/Doreen_Sprite_Hair_Long_Wet_Back.png",
-                "DoreenX.Hair == 'wet' or DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet_Back.png",
-                "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet_Back.png",
-                "DoreenX.Hair == 'long'", "images/DoreenSprite/Doreen_Sprite_Hair_Long_Back.png",
-                "True", "images/DoreenSprite/Doreen_Sprite_Hair_Short_Back.png",
+    #            "renpy.showing('Doreen_SexSprite')", get_cached_image("images/DoreenSex/Doreen_Sprite_Hair_Long_UnderSex.png"),
+                "DoreenX.Hair == 'wetlong' or (DoreenX.Hair == 'long' and DoreenX.Water)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Long_Wet_Back.png"),
+                "DoreenX.Hair == 'long' and (not Player.Male and 'facial' in DoreenX.Spunk)", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Long_Wet_Back.png"),
+                "DoreenX.Hair == 'wet' or DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet_Back.png"),
+                "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet_Back.png"),
+                "DoreenX.Hair == 'long'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Long_Back.png"),
+                "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Short_Back.png"),
                 ),
         )
     anchor (0.5, 0.5)
@@ -466,52 +466,52 @@ image Doreen_Sprite_Head:
         (820,820),
         (0,0), ConditionSwitch(
                 # Face background plate
-#                "renpy.showing('Doreen_SexSprite') and DoreenX.Blush >= 2", "images/DoreenSprite/Doreen_Sprite_Head_Sex_Blush2.png",
-#                "renpy.showing('Doreen_SexSprite') and DoreenX.Blush", "images/DoreenSprite/Doreen_Sprite_Head_Sex_Blush1.png",
-#                "renpy.showing('Doreen_SexSprite')", "images/DoreenSprite/Doreen_Sprite_Head_Sex.png",
+#                "renpy.showing('Doreen_SexSprite') and DoreenX.Blush >= 2", get_cached_image("images/DoreenSprite/Doreen_Sprite_Head_Sex_Blush2.png"),
+#                "renpy.showing('Doreen_SexSprite') and DoreenX.Blush", get_cached_image("images/DoreenSprite/Doreen_Sprite_Head_Sex_Blush1.png"),
+#                "renpy.showing('Doreen_SexSprite')", get_cached_image("images/DoreenSprite/Doreen_Sprite_Head_Sex.png"),
                 "DoreenX.Blush >= 2", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head_Blush2.png",
                 "DoreenX.Blush", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head_Blush1.png",
                 "True", "images/DoreenSprite/[DoreenX.skin_image.skin_path]Doreen_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(
             #chin spunk
-            "'chin' in DoreenX.Spunk and Player.Male", "images/DoreenSprite/Doreen_Sprite_Spunk_Chin.png",
+            "'chin' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Mouths
-            "DoreenX.Mouth == 'lipbite'", "images/DoreenSprite/Doreen_Sprite_Mouth_Lipbite.png",
-            "DoreenX.Mouth == 'sucking'", "images/DoreenSprite/Doreen_Sprite_Mouth_Shocked.png",
-            "DoreenX.Mouth == 'kiss'", "images/DoreenSprite/Doreen_Sprite_Mouth_Kiss.png",
-            "DoreenX.Mouth == 'sad'", "images/DoreenSprite/Doreen_Sprite_Mouth_Sad.png",
-            "DoreenX.Mouth == 'smile'", "images/DoreenSprite/Doreen_Sprite_Mouth_Smile.png",
-            "DoreenX.Mouth == 'surprised'", "images/DoreenSprite/Doreen_Sprite_Mouth_Open.png",
-#            "not Player.Male and 'mouth' in DoreenX.Spunk and DoreenX.Mouth == 'tongue'", "images/DoreenSprite/Doreen_Sprite_Mouth_Tongue_Wet.png",
-            "DoreenX.Mouth == 'tongue'", "images/DoreenSprite/Doreen_Sprite_Mouth_Tongue.png",
-            "DoreenX.Mouth == 'grimace'", "images/DoreenSprite/Doreen_Sprite_Mouth_Smile.png",
-            "DoreenX.Mouth == 'smirk'", "images/DoreenSprite/Doreen_Sprite_Mouth_Smirk.png",
-            "DoreenX.Mouth == 'open'", "images/DoreenSprite/Doreen_Sprite_Mouth_Open.png",
-            "True", "images/DoreenSprite/Doreen_Sprite_Mouth_Smirk.png",
+            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Lipbite.png"),
+            "DoreenX.Mouth == 'sucking'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Shocked.png"),
+            "DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Kiss.png"),
+            "DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Sad.png"),
+            "DoreenX.Mouth == 'smile'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Smile.png"),
+            "DoreenX.Mouth == 'surprised'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Open.png"),
+#            "not Player.Male and 'mouth' in DoreenX.Spunk and DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Tongue_Wet.png"),
+            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Tongue.png"),
+            "DoreenX.Mouth == 'grimace'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Smile.png"),
+            "DoreenX.Mouth == 'smirk'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Smirk.png"),
+            "DoreenX.Mouth == 'open'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Open.png"),
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Mouth_Smirk.png"),
             ),
         (0,0), ConditionSwitch(
             #Mouths spunk
             "'mouth' not in DoreenX.Spunk or not Player.Male", Null(),
-            "DoreenX.Mouth == 'sucking'", "images/DoreenSprite/Doreen_Sprite_Spunk_Open.png",
-            "DoreenX.Mouth == 'kiss'", "images/DoreenSprite/Doreen_Sprite_Spunk_Kiss.png",
-            "DoreenX.Mouth == 'sad'", "images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png",
-            "DoreenX.Mouth == 'smirk'", "images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png",
-            "DoreenX.Mouth == 'lipbite'", "images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png",
-            "DoreenX.Mouth == 'surprised'", "images/DoreenSprite/Doreen_Sprite_Spunk_Open.png",
-            "DoreenX.Mouth == 'open'", "images/DoreenSprite/Doreen_Sprite_Spunk_Open.png",
-            "DoreenX.Mouth == 'tongue'", "images/DoreenSprite/Doreen_Sprite_Spunk_Tongue.png",
-            "True", "images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png",
+            "DoreenX.Mouth == 'sucking'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Open.png"),
+            "DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Kiss.png"),
+            "DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png"),
+            "DoreenX.Mouth == 'smirk'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png"),
+            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png"),
+            "DoreenX.Mouth == 'surprised'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Open.png"),
+            "DoreenX.Mouth == 'open'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Open.png"),
+            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Tongue.png"),
+            "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Sad.png"),
             ),
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in DoreenX.Spunk and 'chin' not in DoreenX.Spunk", Null(),
-            "DoreenX.Mouth == 'tongue'", "images/DoreenSprite/Doreen_Sprite_Wet_Tongue.png",
-            "'chin' in DoreenX.Spunk", "images/DoreenSprite/Doreen_Sprite_Wet_Mouth.png",
+            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Wet_Tongue.png"),
+            "'chin' in DoreenX.Spunk", get_cached_image("images/DoreenSprite/Doreen_Sprite_Wet_Mouth.png"),
             "True", Null(),
             ),
 
@@ -527,39 +527,39 @@ image Doreen_Sprite_Head:
         (0,0), ConditionSwitch(
                 #hair over
     #            "renpy.showing('Doreen_BJ_Animation')", Null(),
-    #            "renpy.showing('Doreen_SexSprite')", "images/DoreenSex/Doreen_Sprite_Hair_Long_UnderSex.png",
-                "DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong' or DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet.png",
-                "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet.png",
-                "True", "images/DoreenSprite/Doreen_Sprite_Hair_Short.png",
+    #            "renpy.showing('Doreen_SexSprite')", get_cached_image("images/DoreenSex/Doreen_Sprite_Hair_Long_UnderSex.png"),
+                "DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong' or DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet.png"),
+                "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Short_Wet.png"),
+                "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Hair_Short.png"),
                 ),
         (0,0), ConditionSwitch(
                 #hairband
     #            "renpy.showing('Doreen_BJ_Animation')", Null(),
-    #            "renpy.showing('Doreen_SexSprite')", "images/DoreenSex/Doreen_Sprite_Hair_Long_UnderSex.png",
+    #            "renpy.showing('Doreen_SexSprite')", get_cached_image("images/DoreenSex/Doreen_Sprite_Hair_Long_UnderSex.png"),
                 "not DoreenX.Hat",Null(),
-                "DoreenX.Hat == 'glasses'","images/DoreenSprite/Doreen_Sprite_Glasses.png",
-                "DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong' or DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Headband_Wet.png",
-                "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenSprite/Doreen_Sprite_Headband_Wet.png",
-                "True", "images/DoreenSprite/Doreen_Sprite_Headband.png",
+                "DoreenX.Hat == 'glasses'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Glasses.png"),
+                "DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong' or DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Headband_Wet.png"),
+                "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenSprite/Doreen_Sprite_Headband_Wet.png"),
+                "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Headband.png"),
                 ),
 
-        (0,0), "images/DoreenSprite/Doreen_Sprite_Earring.png",     #Eyes  (0,5)
+        (0,0), get_cached_image("images/DoreenSprite/Doreen_Sprite_Earring.png"),     #Eyes  (0,5)
         (0,0), ConditionSwitch(
             #Hair Water
-            "DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Wet_Face.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenSprite/Doreen_Sprite_Wet_Face.png",
+            "DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Wet_Face.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenSprite/Doreen_Sprite_Wet_Face.png"),
             "True",Null(),
             ),
         (0,0), ConditionSwitch(
             #facial spunk
-            "'hair' in DoreenX.Spunk and Player.Male", "images/DoreenSprite/Doreen_Sprite_Spunk_Hair.png",
-            "'facial' in DoreenX.Spunk and Player.Male", "images/DoreenSprite/Doreen_Sprite_Spunk_Facial.png",
+            "'hair' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Hair.png"),
+            "'facial' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSprite/Doreen_Sprite_Spunk_Facial.png"),
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
             #facial fix
-            "DoreenX.Fix", "images/DoreenSprite/modification/Doreen_Sprite_Head_Fix.png",
+            "DoreenX.Fix", get_cached_image("images/DoreenSprite/modification/Doreen_Sprite_Head_Fix.png"),
             "True", Null(),
             ),
         # -----------------
@@ -572,17 +572,17 @@ image Doreen_Sprite_Head:
 
 image Doreen Blink:
     ConditionSwitch(
-    "DoreenX.Eyes == 'closed'", "images/DoreenSprite/Doreen_Sprite_Eyes_Closed.png",
-    "DoreenX.Eyes == 'sexy'", "images/DoreenSprite/Doreen_Sprite_Eyes_Sexy.png",
-    "DoreenX.Eyes == 'side'", "images/DoreenSprite/Doreen_Sprite_Eyes_Side.png",
-    "DoreenX.Eyes == 'surprised'", "images/DoreenSprite/Doreen_Sprite_Eyes_Surprised.png",
-    "DoreenX.Eyes == 'normal'", "images/DoreenSprite/Doreen_Sprite_Eyes_Normal.png",
-    "DoreenX.Eyes == 'stunned'", "images/DoreenSprite/Doreen_Sprite_Eyes_Stunned.png",
-    "DoreenX.Eyes == 'down'", "images/DoreenSprite/Doreen_Sprite_Eyes_Down.png",
-    "DoreenX.Eyes == 'leftside'", "images/DoreenSprite/Doreen_Sprite_Eyes_Leftside.png",
-    "DoreenX.Eyes == 'manic'", "images/DoreenSprite/Doreen_Sprite_Eyes_Sexy.png",#"images/DoreenSprite/Doreen_Sprite_Eyes_Squint.png",
-    "DoreenX.Eyes == 'squint'", "images/DoreenSprite/Doreen_Sprite_Eyes_Sexy.png",#"Doreen_Squint",
-    "True", "images/DoreenSprite/Doreen_Sprite_Eyes_Normal.png",
+    "DoreenX.Eyes == 'closed'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Closed.png"),
+    "DoreenX.Eyes == 'sexy'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Sexy.png"),
+    "DoreenX.Eyes == 'side'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Side.png"),
+    "DoreenX.Eyes == 'surprised'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Surprised.png"),
+    "DoreenX.Eyes == 'normal'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Normal.png"),
+    "DoreenX.Eyes == 'stunned'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Stunned.png"),
+    "DoreenX.Eyes == 'down'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Down.png"),
+    "DoreenX.Eyes == 'leftside'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Leftside.png"),
+    "DoreenX.Eyes == 'manic'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Sexy.png"),#"images/DoreenSprite/Doreen_Sprite_Eyes_Squint.png",
+    "DoreenX.Eyes == 'squint'", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Sexy.png"),#"Doreen_Squint",
+    "True", get_cached_image("images/DoreenSprite/Doreen_Sprite_Eyes_Normal.png"),
     ),
     choice:
         3.5
@@ -703,7 +703,7 @@ image Doreen_Doggy_Body:
         #(165,0),"Doreen_Doggy_Hair_Under", #back of the hair
 #        (0,60), "Doreen_Doggy_Head",               #Head
 
-#        (0,0), "images/DoreenDoggy/Doreen_Doggy_HeadRef.png",               #Head
+#        (0,0), get_cached_image("images/DoreenDoggy/Doreen_Doggy_HeadRef.png"),               #Head
         (0,127), ConditionSwitch(
             #head
             "DoreenX.Facing", "Doreen_Doggy_Head_Fore",
@@ -715,51 +715,51 @@ image Doreen_Doggy_Body:
             #bra
             "not DoreenX.Chest", Null(),
 #            "DoreenX.Uptop", ConditionSwitch(
-#                    "DoreenX.Chest == 'lace bra'", "images/DoreenDoggy/Doreen_Doggy_Chest_Lace_Up.png",
-#                    "DoreenX.Chest == 'sports bra'", "images/DoreenDoggy/Doreen_Doggy_Chest_Sport_Up.png",
-#                    "DoreenX.Chest == 'bikini top'", "images/DoreenDoggy/Doreen_Doggy_Chest_Bikini_Up.png",
-#                    "True", "images/DoreenDoggy/Doreen_Doggy_Chest_Bra_Up.png",
+#                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Lace_Up.png"),
+#                    "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Sport_Up.png"),
+#                    "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Bikini_Up.png"),
+#                    "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Bra_Up.png"),
 #                    ),
-            "DoreenX.Chest == 'lace bra'", "images/DoreenDoggy/Doreen_Doggy_Chest_Lace.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenDoggy/Doreen_Doggy_Chest_Sports.png",
-            "DoreenX.Chest == 'bikini top'", "images/DoreenDoggy/Doreen_Doggy_Chest_Bikini.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Chest_Bra.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Lace.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Sports.png"),
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Bikini.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Chest_Bra.png"),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "DoreenX.Water", "images/DoreenDoggy/Doreen_Doggy_Water_Body.png",
+            "DoreenX.Water", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Water_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt
             "not DoreenX.Over", Null(),
-            "DoreenX.Over == 'tshirt'", "images/DoreenDoggy/Doreen_Doggy_Over_TShirt.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenDoggy/Doreen_Doggy_Over_Sweater.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenDoggy/Doreen_Doggy_Over_Tube.png",
-            "DoreenX.Over == 'towel'", "images/DoreenDoggy/Doreen_Doggy_Over_Towel.png",
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Over_TShirt.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Over_Sweater.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Over_Tube.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Over_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #jacket
-            "DoreenX.Acc == 'jacket'", "images/DoreenDoggy/Doreen_Doggy_Jacket.png",
-            "DoreenX.Acc == 'vest'", "images/DoreenDoggy/Doreen_Doggy_Vest.png",
+            "DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Jacket.png"),
+            "DoreenX.Acc == 'vest'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Vest.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #long Hair
             "DoreenX.Hair != 'long' and DoreenX.Hair != 'wetlong'", Null(),
             "DoreenX.Facing", ConditionSwitch(
-                    "DoreenX.Water or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet_Fore.png",
-                    "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet_Fore.png",
-                    "True", "images/DoreenDoggy/Doreen_Doggy_Hair_Long_Fore.png",
+                    "DoreenX.Water or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet_Fore.png"),
+                    "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet_Fore.png"),
+                    "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Long_Fore.png"),
                     ),
-            "DoreenX.Water or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Hair_Long.png",
+            "DoreenX.Water or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Long_Wet.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Long.png"),
             ),
         (0,0), ConditionSwitch(             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #spunk back Layer
-            "'back' in DoreenX.Spunk and Player.Male", "images/DoreenDoggy/Doreen_Doggy_Spunk_Back.png",
+            "'back' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -786,17 +786,17 @@ image Doreen_Doggy_Head:
         #Head
         (420,525),
         #(0,0), "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head.png", #Body base
-        #(0,0), "images/DoreenDoggy/Doreen_Doggy_TestArm.png",#Eyes
+        #(0,0), get_cached_image("images/DoreenDoggy/Doreen_Doggy_TestArm.png"),#Eyes
 #        (0,0), ConditionSwitch(
 #            #Hair back
-#            "DoreenX.Water or DoreenX.Hair == 'wet'", "images/DoreenDoggy/Doreen_Doggy_Hair_Wet_Back.png",
-#            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Hair_Wet_Back.png",
+#            "DoreenX.Water or DoreenX.Hair == 'wet'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Wet_Back.png"),
+#            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Wet_Back.png"),
 #            "DoreenX.Hair == 'pony'", Null(),
-#            "True", "images/DoreenDoggy/Doreen_Doggy_Hair_Short_Back.png",
+#            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Short_Back.png"),
 #            ),
         (0,0), ConditionSwitch(
             #Head
-            #"DoreenX.Blush > 1", "images/DoreenDoggy/Doreen_Doggy_Head_Blush2.png",
+            #"DoreenX.Blush > 1", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Head_Blush2.png"),
             "DoreenX.Blush", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head_Blush.png",
             "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Head.png",
             ),
@@ -815,67 +815,67 @@ image Doreen_Doggy_Head:
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
-#            "'chin' in DoreenX.Spunk", "images/DoreenDoggy/Doreen_Doggy_Spunk_Chin.png",
+#            "'chin' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Mouth spunk
             "'mouth' not in DoreenX.Spunk", Null(),
-#            #"DoreenX.Mouth == 'normal'", "images/DoreenDoggy/Doreen_Doggy_Spunk_Normal.png",
-#            #"DoreenX.Mouth == 'sad'", "images/DoreenDoggy/Doreen_Doggy_Spunk_Normal.png",
-#            "DoreenX.Mouth == 'lipbite'", "images/DoreenDoggy/Doreen_Doggy_Spunk_Sad.png",
+#            #"DoreenX.Mouth == 'normal'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Normal.png"),
+#            #"DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Normal.png"),
+#            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Sad.png"),
 #            "DoreenX.Mouth == 'smile'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
 #            "DoreenX.Mouth == 'grimace'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
 #            "DoreenX.Mouth == 'sucking'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
-#            #"DoreenX.Mouth == 'kiss'", "images/DoreenDoggy/Doreen_Doggy_Spunk_Open.png",
+#            #"DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Open.png"),
 #            "DoreenX.Mouth == 'surprised'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Mouth_Open.png",
-#            "DoreenX.Mouth == 'tongue'", "images/DoreenDoggy/Doreen_Doggy_Spunk_Smile.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Spunk_Mouth.png",
+#            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Smile.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Mouth.png"),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            #"DoreenX.Brows == 'normal'", "images/DoreenDoggy/Doreen_Doggy_Brows_Normal.png",
-            "DoreenX.Brows == 'angry'", "images/DoreenDoggy/Doreen_Doggy_Brows_Angry.png",
-            "DoreenX.Brows == 'sad'", "images/DoreenDoggy/Doreen_Doggy_Brows_Sad.png",
-            "DoreenX.Brows == 'surprised'", "images/DoreenDoggy/Doreen_Doggy_Brows_Surprised.png",
-            #"DoreenX.Brows == 'confused'", "images/DoreenDoggy/Doreen_Doggy_Brows_Normal.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Brows_Normal.png",
+            #"DoreenX.Brows == 'normal'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Brows_Normal.png"),
+            "DoreenX.Brows == 'angry'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Brows_Angry.png"),
+            "DoreenX.Brows == 'sad'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Brows_Sad.png"),
+            "DoreenX.Brows == 'surprised'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Brows_Surprised.png"),
+            #"DoreenX.Brows == 'confused'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Brows_Normal.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Brows_Normal.png"),
             ),
         (0,0), "Doreen Doggy Blink",#Eyes
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "DoreenX.Water", "images/RogueDoggy/Rogue_Doggy_WetTop.png",
+#            "DoreenX.Water", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetTop.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #suit collar
-            "DoreenX.Chest == 'sports bra'", "images/DoreenDoggy/Doreen_Doggy_Head_Sport.png",
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Head_Sport.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #face spunk
-            "'facial' in DoreenX.Spunk and Player.Male", "images/DoreenDoggy/Doreen_Doggy_Spunk_Facial.png",
+            "'facial' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair
-            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/Doreen_Doggy_Hair_Wet.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Hair_Wet.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Hair_Short.png",
+            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Wet.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Wet.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hair_Short.png"),
             ),
         (0,0), ConditionSwitch(
             #headband
             "not DoreenX.Hat", Null(),
-            "DoreenX.Hat == 'glasses'","images/DoreenDoggy/Doreen_Doggy_Glasses.png",
-            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/Doreen_Doggy_Headband_Wet.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Headband_Wet.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Headband_Short.png",
+            "DoreenX.Hat == 'glasses'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Glasses.png"),
+            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Headband_Wet.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Headband_Wet.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Headband_Short.png"),
             ),
         (0,0), ConditionSwitch(
             #face spunk
-            "'hair' in DoreenX.Spunk and Player.Male", "images/DoreenDoggy/Doreen_Doggy_Spunk_Hair.png",
-#            "DoreenX.Water or DoreenX.Hair == 'wet'", "images/DoreenDoggy/Doreen_Doggy_Head_Wet.png",
-#            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Head_Wet.png",
+            "'hair' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Hair.png"),
+#            "DoreenX.Water or DoreenX.Hair == 'wet'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Head_Wet.png"),
+#            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Head_Wet.png"),
             "True", Null(),
             ),
         )
@@ -886,16 +886,16 @@ image Doreen_Doggy_Head:
 image Doreen Doggy Blink:
         #Eyes
         ConditionSwitch(
-        "DoreenX.Eyes == 'sexy'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Sexy.png",
-        "DoreenX.Eyes == 'side'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Side.png",
-#        "DoreenX.Eyes == 'normal'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Normal.png",
-        "DoreenX.Eyes == 'closed'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Closed.png",
-        "DoreenX.Eyes == 'manic'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Stunned.png",
-        "DoreenX.Eyes == 'down'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Down.png",
-        "DoreenX.Eyes == 'stunned'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Stunned.png",
-        "DoreenX.Eyes == 'surprised'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Surprised.png",
-        "DoreenX.Eyes == 'squint'", "images/DoreenDoggy/Doreen_Doggy_Eyes_Sexy.png",
-        "True", "images/DoreenDoggy/Doreen_Doggy_Eyes_Normal.png",
+        "DoreenX.Eyes == 'sexy'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Sexy.png"),
+        "DoreenX.Eyes == 'side'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Side.png"),
+#        "DoreenX.Eyes == 'normal'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Normal.png"),
+        "DoreenX.Eyes == 'closed'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Closed.png"),
+        "DoreenX.Eyes == 'manic'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Stunned.png"),
+        "DoreenX.Eyes == 'down'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Down.png"),
+        "DoreenX.Eyes == 'stunned'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Stunned.png"),
+        "DoreenX.Eyes == 'surprised'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Surprised.png"),
+        "DoreenX.Eyes == 'squint'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Sexy.png"),
+        "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Eyes_Normal.png"),
         ),
     #    choice:
     #        3.5
@@ -918,15 +918,15 @@ image Doreen_Doggy_Head_Fore:
         (0,0), ConditionSwitch(
             #Hair
             "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png",
+            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Wet_Fore.png",
             "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hair_Short_Fore.png",
             ),
         (0,0), ConditionSwitch(
             #headband
             "not DoreenX.Hat or DoreenX.Hat == 'glasses'", Null(),
-            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenDoggy/Doreen_Doggy_Headband_Wet_Fore.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenDoggy/Doreen_Doggy_Headband_Wet_Fore.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Headband_Short_Fore.png",
+            "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Headband_Wet_Fore.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Headband_Wet_Fore.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Headband_Short_Fore.png"),
             ),
         )
     #zoom 0.95
@@ -939,21 +939,21 @@ image Doreen_Doggy_Ass:
         (420,750),
 #        (0,0), ConditionSwitch(
 #            #Legs backside
-#            "DoreenX.Legs == 'skirt'","images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Back.png",
+#            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Back.png"),
 #            "not DoreenX.Upskirt", Null(),
-#            "DoreenX.Legs == 'pants'", "images/DoreenDoggy/Doreen_Doggy_Legs_Pants_Back.png",
-#            "DoreenX.Legs == 'yoga pants'", "images/DoreenDoggy/Doreen_Doggy_Legs_Yoga_Back.png",
+#            "DoreenX.Legs == 'pants'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Pants_Back.png"),
+#            "DoreenX.Legs == 'yoga pants'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Yoga_Back.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Panties back
 #            "not DoreenX.PantiesDown or (DoreenX.Legs == 'pants' and not DoreenX.Upskirt)", Null(),
-#            "DoreenX.Panties == 'wolvie panties'", "images/DoreenDoggy/Doreen_Doggy_Panties_Wolvie_Back.png",
-#            "DoreenX.Panties == 'lace panties'", "images/DoreenDoggy/Doreen_Doggy_Panties_Lace_Back.png",
-#            "DoreenX.Panties", "images/DoreenDoggy/Doreen_Doggy_Panties_Back.png",
+#            "DoreenX.Panties == 'wolvie panties'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Wolvie_Back.png"),
+#            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Lace_Back.png"),
+#            "DoreenX.Panties", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Back.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/DoreenDoggy/Doreen_Doggy_Ass.png", #Ass Base
+#        (0,0), get_cached_image("images/DoreenDoggy/Doreen_Doggy_Ass.png"), #Ass Base
 
 
         (0,0), ConditionSwitch(
@@ -974,7 +974,7 @@ image Doreen_Doggy_Ass:
             ),
         (0,0), ConditionSwitch(
             #ass red
-            "DoreenX.Red", "images/DoreenDoggy/Doreen_Doggy_Red.png",
+            "DoreenX.Red", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Red.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -986,21 +986,21 @@ image Doreen_Doggy_Ass:
             "'insert ass' in (Trigger,Trigger2,DoreenX.Offhand)", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png",
             "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Anal_FullBase.png",
             "DoreenX.Loose > 2", "Doreen_Gape_Anal",    #intentional
-            "DoreenX.Loose", "images/DoreenDoggy/Doreen_Doggy_Asshole_Loose.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Asshole_Tight.png",
+            "DoreenX.Loose", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Asshole_Loose.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Asshole_Tight.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
-            "DoreenX.Water", "images/DoreenDoggy/Doreen_Doggy_Water_Ass.png",
+            "DoreenX.Water", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Water_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Panties if Down
             "not DoreenX.PantiesDown or (DoreenX.Legs == 'pants' and not DoreenX.Upskirt)", Null(),
-            "DoreenX.Panties == 'lace panties'", "images/DoreenDoggy/Doreen_Doggy_Panties_Lace_Down.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenDoggy/Doreen_Doggy_Panties_Bikini_Down.png",
-            "DoreenX.Panties", "images/DoreenDoggy/Doreen_Doggy_Panties_Tan_Down.png",
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Lace_Down.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Bikini_Down.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Tan_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1009,27 +1009,27 @@ image Doreen_Doggy_Ass:
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "DoreenX.Panties == 'lace panties'", "images/DoreenDoggy/Doreen_Doggy_Panties_Lace.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenDoggy/Doreen_Doggy_Panties_Bikini.png",
-            "DoreenX.Wet", "images/DoreenDoggy/Doreen_Doggy_Panties_Tan_Wet.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Panties_Tan.png",
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Lace.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Bikini.png"),
+            "DoreenX.Wet", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Tan_Wet.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Panties_Tan.png"),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Hose
-            "DoreenX.Hose == 'stockings'", "images/DoreenDoggy/Doreen_Doggy_Hose_Stockings.png",
-#            "DoreenX.Hose == 'socks'", "images/DoreenDoggy/Doreen_Doggy_Hose_Socks.png",
+            "DoreenX.Hose == 'stockings'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Stockings.png"),
+#            "DoreenX.Hose == 'socks'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Socks.png"),
 #            "Player.Sprite and Player.Cock == 'in'", Null(),
 #            "Player.Sprite and Player.Cock == 'anal'", Null(),
-            "DoreenX.Hose == 'stockings and garterbelt'", "images/DoreenDoggy/Doreen_Doggy_Hose_StockingsGarter.png",
-            "DoreenX.Hose == 'garterbelt'", "images/DoreenDoggy/Doreen_Doggy_Hose_Garter.png",
+            "DoreenX.Hose == 'stockings and garterbelt'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_StockingsGarter.png"),
+            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Garter.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunkpussy Layer
             "'in' in DoreenX.Spunk and Player.Cock == 'in' and Player.Male",Null(),# "images/DoreenDoggy/Doreen_Doggy_SpunkPussyOpen.png",  #fix for DoreenX.Spunk is used later
-            "'in' in DoreenX.Spunk and Player.Male", "images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png",
-            "DoreenX.Wet and Player.Cock == 'in'", "images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png",
-            "DoreenX.Wet", "images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png"),
+            "DoreenX.Wet and Player.Cock == 'in'", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png"),
+            "DoreenX.Wet", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1039,20 +1039,20 @@ image Doreen_Doggy_Ass:
             "'dildo pussy' in (Trigger,Trigger2,DoreenX.Offhand)", Null(),
             "'fondle pussy' in (Trigger,Trigger2,DoreenX.Offhand)",Null(),
             "Trigger == 'insert pussy'", Null(),
-            "DoreenX.Legs == 'pants' and not DoreenX.Upskirt", "images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png",
-            "DoreenX.Legs == 'mesh pants' and not DoreenX.Upskirt", "images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png",
-            "DoreenX.PantiesDown and Trigger == 'lick pussy'", "images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png",
-            "DoreenX.PantiesDown", "images/DoreenDoggy/Doreen_Doggy_Pubes_Closed.png",
-            "DoreenX.Panties", "images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png",
-            "DoreenX.Hose and DoreenX.Hose == 'pantyhose'", "images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png",
-            "Trigger == 'lick pussy'", "images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png",
-            "True", "images/DoreenDoggy/Doreen_Doggy_Pubes_Closed.png",
+            "DoreenX.Legs == 'pants' and not DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png"),
+            "DoreenX.Legs == 'mesh pants' and not DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png"),
+            "DoreenX.PantiesDown and Trigger == 'lick pussy'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png"),
+            "DoreenX.PantiesDown", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Closed.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png"),
+            "DoreenX.Hose and DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Clothed.png"),
+            "Trigger == 'lick pussy'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png"),
+            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Closed.png"),
             ),
         (0,0), ConditionSwitch(
             #Pussy Piercings
             "Player.Sprite", Null(),
-            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
-            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
+            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
+            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             ),
 
@@ -1060,59 +1060,59 @@ image Doreen_Doggy_Ass:
         (2,-8), ConditionSwitch(
             #spunkanal Layer
             "'anal' not in DoreenX.Spunk or (Player.Sprite and Player.Cock == 'anal' and Speed >= 1) or not Player.Male", Null(),
-#            "Player.Cock == 'anal'", "images/DoreenDoggy/Doreen_Doggy_SpunkAnalOpen.png",
-            "DoreenX.Loose", "images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png",
-            "True", "images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png",
+#            "Player.Cock == 'anal'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_SpunkAnalOpen.png"),
+            "DoreenX.Loose", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png"),
+            "True", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png"),
             ),
 
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #full hose/tights
             "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenDoggy/Doreen_Doggy_Hose_Pantyhose_Holed.png",
-            "DoreenX.Hose == 'ripped tights'", "images/DoreenDoggy/Doreen_Doggy_Hose_Tights_Holed.png",
+            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Pantyhose_Holed.png"),
+            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Tights_Holed.png"),
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
-            "DoreenX.Hose == 'pantyhose'", "images/DoreenDoggy/Doreen_Doggy_Hose_Pantyhose.png",
-            "DoreenX.Hose == 'tights' and DoreenX.Wet", "images/DoreenDoggy/Doreen_Doggy_Hose_Tights_Wet.png",
-            "DoreenX.Hose == 'tights'", "images/DoreenDoggy/Doreen_Doggy_Hose_Tights.png",
+            "DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Pantyhose.png"),
+            "DoreenX.Hose == 'tights' and DoreenX.Wet", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Tights_Wet.png"),
+            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hose_Tights.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
             "DoreenX.Legs == 'skirt'", ConditionSwitch(
-                    "Player.Sprite and Player.Cock == 'anal' and Speed" , "images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Up.png",   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-                    "DoreenX.Upskirt", "images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Up.png",
-                    "True", "images/DoreenDoggy/Doreen_Doggy_Legs_Skirt.png",
+                    "Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+                    "DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Up.png"),
+                    "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Skirt.png"),
                     ),
             "DoreenX.Legs == 'red skirt'", ConditionSwitch(
-                    "Player.Sprite and Player.Cock == 'anal' and Speed" , "images/DoreenDoggy/Doreen_Doggy_Legs_RedSkirt_Up.png",   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-                    "DoreenX.Upskirt", "images/DoreenDoggy/Doreen_Doggy_Legs_RedSkirt_Up.png",
-                    "True", "images/DoreenDoggy/Doreen_Doggy_Legs_RedSkirt.png",
+                    "Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_RedSkirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+                    "DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_RedSkirt_Up.png"),
+                    "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_RedSkirt.png"),
                     ),
             "DoreenX.Legs == 'shorts'", ConditionSwitch(
-                    "DoreenX.Upskirt or DoreenX.PantiesDown", "images/DoreenDoggy/Doreen_Doggy_Legs_Shorts_Down.png",
-                    "DoreenX.Wet > 1", "images/DoreenDoggy/Doreen_Doggy_Legs_Shorts_Wet.png",
-                    "True", "images/DoreenDoggy/Doreen_Doggy_Legs_Shorts.png",
+                    "DoreenX.Upskirt or DoreenX.PantiesDown", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Shorts_Down.png"),
+                    "DoreenX.Wet > 1", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Shorts_Wet.png"),
+                    "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Shorts.png"),
                     ),
 #            "DoreenX.Legs == 'yoga pants'", ConditionSwitch(
-#                    "DoreenX.Upskirt", "images/DoreenDoggy/Doreen_Doggy_Legs_Yoga_Down.png",
-#                    "DoreenX.Wet > 1", "images/DoreenDoggy/Doreen_Doggy_Legs_Yoga_Wet.png",
-#                    "True", "images/DoreenDoggy/Doreen_Doggy_Legs_Yoga.png",
+#                    "DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Yoga_Down.png"),
+#                    "DoreenX.Wet > 1", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Yoga_Wet.png"),
+#                    "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Yoga.png"),
 #                    ),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Over Layer
             "DoreenX.Over == 'towel' and DoreenX.Legs == 'skirt' and DoreenX.Upskirt", Null(),
-            "DoreenX.Over == 'towel' and (DoreenX.Upskirt or DoreenX.Legs == 'skirt')", "images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Up.png",
-            "DoreenX.Over == 'towel'", "images/DoreenDoggy/Doreen_Doggy_Legs_Towel.png",
+            "DoreenX.Over == 'towel' and (DoreenX.Upskirt or DoreenX.Legs == 'skirt')", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Skirt_Up.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Legs_Towel.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Pussy Piercings clothed
 #            "Player.Sprite", Null(),
 #            "DoreenX.PantiesDown or (not DoreenX.Panties and DoreenX.Legs != 'leather pants')", Null(), #if not panties or legs, skip this
-#            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingC.png",
-#            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellC.png",
+#            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingC.png"),
+#            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellC.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -1142,23 +1142,23 @@ image Doreen_Doggy_Ass:
             "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
             "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", "Doreen_Anal_Fucking",
             "'insert ass' in (Trigger,Trigger2,DoreenX.Offhand)", "Doreen_Anal_Fingering",
-            "DoreenX.Plug", "images/PlugIn.png",
+            "DoreenX.Plug", get_cached_image("images/PlugIn.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in DoreenX.Spunk and Player.Male", "images/DoreenDoggy/Doreen_Doggy_Spunk_Ass.png",
+            "'back' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
         (0,0), "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Hands.png", #Ass Base
         (0,0), ConditionSwitch(
             #tail
-#            "DoreenX.Tail > 1", "images/DoreenDoggy/Doreen_Doggy_Tail2.png",
+#            "DoreenX.Tail > 1", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail2.png"),
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),    #or Player.Cock == 'feet'?
             "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", Null(),
             "'dildo pussy' in (Trigger,Trigger2,DoreenX.Offhand)", Null(),
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1172,16 +1172,16 @@ image Doreen_Doggy_Ass:
 #            #Hotdogging underlayer
 #            "not Player.Sprite or Player.Cock != 'out'", Null(),
 #            "DoreenX.Over == 'towel'", Null(),
-#            "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'other skirt') and DoreenX.Upskirt", "images/DoreenDoggy/Doreen_Doggy_Hotdog_Upskirt.png",
-#            "True", "images/DoreenDoggy/Doreen_Doggy_HotdogBack.png",
+#            "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'other skirt') and DoreenX.Upskirt", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Hotdog_Upskirt.png"),
+#            "True", get_cached_image("images/DoreenDoggy/Doreen_Doggy_HotdogBack.png"),
 #            ),
         (0,0), ConditionSwitch(
             #Hotdogging Cock w/ alpha
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'other skirt') and DoreenX.Upskirt and Speed", AlphaMask("Zero_Hotdog_Moving", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
-            "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'other skirt') and DoreenX.Upskirt", AlphaMask("Zero_Hotdog_Static", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
-            "Speed", AlphaMask("Zero_Hotdog_Moving", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
-            "True", AlphaMask("Zero_Hotdog_Static", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
+            "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'other skirt') and DoreenX.Upskirt and Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
+            "(DoreenX.Legs == 'skirt' or DoreenX.Legs == 'other skirt') and DoreenX.Upskirt", get_cached_alphamask("Zero_Hotdog_Static", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
+            "Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
+            "True", get_cached_alphamask("Zero_Hotdog_Static", "images/DoreenDoggy/Doreen_Doggy_HotdogMask.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #UI tool layer
@@ -1194,7 +1194,7 @@ image Doreen_Doggy_Ass:
 
 image Doreen_Doggy_Feet:         #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
     contains:
-            AlphaMask("Doreen_Doggy_Shins", "images/DoreenDoggy/Doreen_Doggy_Feet_Mask.png")
+            get_cached_alphamask("Doreen_Doggy_Shins", "images/DoreenDoggy/Doreen_Doggy_Feet_Mask.png")
 
 image Doreen_Doggy_Shins:             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
     #Doreen's footjob shins
@@ -1207,20 +1207,20 @@ image Doreen_Doggy_Shins:             #fix // // // // // // fix // // // // // 
             "DoreenX.Hose == 'garterbelt'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet.png",
             "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet_Holed.png",
             "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet_Tights.png",
-#            "DoreenX.Hose == 'socks'", "images/DoreenDoggy/Doreen_Doggy_Feet_Socks.png",
-            "DoreenX.Hose", "images/DoreenDoggy/Doreen_Doggy_Feet_Hose.png",
+#            "DoreenX.Hose == 'socks'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Feet_Socks.png"),
+            "DoreenX.Hose", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Feet_Hose.png"),
             "True", "images/DoreenDoggy/[DoreenX.skin_image.skin_path]Doreen_Doggy_Feet.png",
             )
 #    contains:
 #        #boots
 #        ConditionSwitch(
-#            "DoreenX.Boots == 'boots'", "images/DoreenDoggy/Doreen_Doggy_Feet_Boots.png",
+#            "DoreenX.Boots == 'boots'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Feet_Boots.png"),
 #            "True", Null(),
 #            )
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in DoreenX.Spunk and Player.Male", "images/DoreenDoggy/Doreen_Doggy_Spunk_Feet.png",
+            "'feet' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 #    pos (0,0)
@@ -1344,7 +1344,7 @@ image Doreen_Pussy_Static:
 #    contains:
 #        #pubes
 #        ConditionSwitch(
-#            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png",
+#            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png"),
 #            "True", Null(),
 #            )
 #        subpixel True
@@ -1355,7 +1355,7 @@ image Doreen_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png",
+            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1371,15 +1371,15 @@ image Doreen_Pussy_Static:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
-            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
+            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-3,8)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1393,12 +1393,12 @@ image Doreen_Pussy_Static:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Doreen_Doggy_Static", "Doreen_Pussy_Mask_Static")
+        get_cached_alphamask("Zero_Doreen_Doggy_Static", "Doreen_Pussy_Mask_Static")
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -1416,7 +1416,7 @@ image Doreen_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Doreen_Pussy_Moving"
     contains:
         #Base
-        AlphaMask("images/DoreenDoggy/Doreen_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("images/DoreenDoggy/Doreen_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1474,7 +1474,7 @@ image Doreen_Pussy_Heading:
 #    contains:
 #        #pubes
 #        ConditionSwitch(
-#            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png",
+#            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png"),
 #            "True", Null(),
 #            )
 #        subpixel True
@@ -1489,7 +1489,7 @@ image Doreen_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png",
+            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1504,7 +1504,7 @@ image Doreen_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png",
+            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1519,15 +1519,15 @@ image Doreen_Pussy_Heading:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
-            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
+            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-3,8)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1541,16 +1541,16 @@ image Doreen_Pussy_Heading:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Doreen_Doggy_Heading", "Doreen_Pussy_Mask")
+        get_cached_alphamask("Zero_Doreen_Doggy_Heading", "Doreen_Pussy_Mask")
 
 
 #    contains:
 #        # expanding pussy flap
-#        AlphaMask("Doreen_Pussy_Heading_Flap", "Doreen_Pussy_Hole_Mask")
+#        get_cached_alphamask("Doreen_Pussy_Heading_Flap", "Doreen_Pussy_Hole_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1571,8 +1571,8 @@ image Doreen_Pussy_Heading:
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -1595,7 +1595,7 @@ image Doreen_Pussy_Hole_Mask:
     # This is the alpha used for the little flap in the heading animation "Doreen_Pussy_Heading"
     contains:
         #Base
-        AlphaMask("images/DoreenDoggy/Doreen_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("images/DoreenDoggy/Doreen_Doggy_Pussy_FHole.png", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
         subpixel True
         anchor (0.52,0.69)
         pos (217,518)
@@ -1639,7 +1639,7 @@ image Doreen_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png",
+            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1654,8 +1654,8 @@ image Doreen_Pussy_Fingering:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
-            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
+            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-3,8)
@@ -1663,7 +1663,7 @@ image Doreen_Pussy_Fingering:
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1677,15 +1677,15 @@ image Doreen_Pussy_Fingering:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Pussy_Finger", "Rogue_Pussy_Mask")
+        get_cached_alphamask("Zero_Pussy_Finger", "Rogue_Pussy_Mask")
 #    contains:
 #        # expanding pussy flap
-#        AlphaMask("Doreen_Pussy_Heading_Flap", "Doreen_Pussy_Hole_Mask")
+#        get_cached_alphamask("Doreen_Pussy_Heading_Flap", "Doreen_Pussy_Hole_Mask")
 
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1728,40 +1728,40 @@ image Doreen_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png",
+            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
-            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
+            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-3,8)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
-            "'dildo pussy' in (Trigger,Trigger2,DoreenX.Offhand)", AlphaMask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
-            "True",AlphaMask("Zero_Doreen_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "'dildo pussy' in (Trigger,Trigger2,DoreenX.Offhand)", get_cached_alphamask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "True",get_cached_alphamask("Zero_Doreen_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
             ),
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -1797,37 +1797,37 @@ image Doreen_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "DoreenX.Pubes", "images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png",
+            "DoreenX.Pubes", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "DoreenX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png",
-            "DoreenX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png",
+            "DoreenX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Barbell.png"),
+            "DoreenX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_Ring.png"),
             "True", Null(),
             )
         offset (-3,8)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Doreen_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("Zero_Doreen_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -1871,8 +1871,8 @@ image Doreen_Anal:
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -1904,7 +1904,7 @@ image Doreen_Anal_Fingering:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1917,11 +1917,11 @@ image Doreen_Anal_Fingering:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Doreen_Doggy_Anal_Finger", "Doreen_Doggy_Anal_Fingering_Mask")
+        get_cached_alphamask("Zero_Doreen_Doggy_Anal_Finger", "Doreen_Doggy_Anal_Fingering_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1935,8 +1935,8 @@ image Doreen_Anal_Fingering:
 #    contains:
 #        #tail
 #        ConditionSwitch(
-#            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-#            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+#            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+#            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
 #            "True", Null(),
 #            )
 #        subpixel True
@@ -1993,7 +1993,7 @@ image Doreen_Anal_Heading:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2006,11 +2006,11 @@ image Doreen_Anal_Heading:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Doreen_Doggy_Anal_Heading", "Doreen_Doggy_Anal_Heading_Mask")
+        get_cached_alphamask("Zero_Doreen_Doggy_Anal_Heading", "Doreen_Doggy_Anal_Heading_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2024,8 +2024,8 @@ image Doreen_Anal_Heading:
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -2121,27 +2121,27 @@ image Doreen_Anal_Fucking:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
             #full hose/tights
-            "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", AlphaMask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
-            "True", AlphaMask("Zero_Doreen_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "'dildo anal' in (Trigger,Trigger2,DoreenX.Offhand)", get_cached_alphamask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "True", get_cached_alphamask("Zero_Doreen_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
             )
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -2204,23 +2204,23 @@ image Doreen_Anal_Fucking2:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Doreen_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
+        get_cached_alphamask("Zero_Doreen_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in DoreenX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
     contains:
         #tail
         ConditionSwitch(
-            "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-            "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+            "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+            "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
             "True", Null(),
             )
         subpixel True
@@ -2517,7 +2517,7 @@ image Doreen_Sex_Body:
     LiveComposite(
         #the torso/head used in the sex pose, referenced by Doreen_SexSprite
         (1120,840),
-#        (0,-100), "images/DoreenSex/Doreen_Sex_Headref.png",
+#        (0,-100), get_cached_image("images/DoreenSex/Doreen_Sex_Headref.png"),
         (335,60), "Doreen_HairBack_Sex",
         (335,60), "Doreen_Head_Sex",  #(50,-325)(335,-40)
         (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Body.png",
@@ -2525,33 +2525,33 @@ image Doreen_Sex_Body:
             #bra layer
             "DoreenX.Uptop", Null(),
             #if the top's down. . .
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_Sex_Chest_Sports_Under.png",
-#            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_Sex_Chest_Sports.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Chest_Lace_Under.png",
-#            "DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Chest_Bra.png",
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Sports_Under.png"),
+#            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Sports.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Lace_Under.png"),
+#            "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Bra.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "DoreenX.Water", "images/DoreenSex/Doreen_Sex_Water_Belly.png",
+            "DoreenX.Water", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
             "DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Over_Towel_Under.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_Sex_Over_Tshirt_Under.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_Sex_Over_Sweater_Under.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_Sex_Over_Tube_Under.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Towel_Under.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tshirt_Under.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Sweater_Under.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tube_Under.png"),
             "True", Null(),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in DoreenX.Spunk and Player.Male", "images/DoreenSex/Doreen_Sex_Spunk_Belly.png",
+            "'belly' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Belly.png"),
             "True", Null(),
             ),
-#        (0,0), "images/DoreenSex/Doreen_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_HeadRef.png"),
         )
 #    yoffset -163
 # End Doreen Sex Pose Body / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -2564,15 +2564,15 @@ image Doreen_Sex_Tits:
         (0,0), ConditionSwitch(
             #if uptop
             "not DoreenX.Uptop", Null(),
-#            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Over_Green_Up.png",  #change to lower thing
-#            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_Sex_Over_Tshirt_Up.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_Sex_Over_Sweater_Up.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_Sex_Over_Brown_Up.png",
+#            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Green_Up.png"),  #change to lower thing
+#            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tshirt_Up.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Sweater_Up.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Brown_Up.png"),
 
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_Sex_Over_Green_Up.png",
-            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_Sex_Over_Green_Up.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Over_Lace_Up.png",
-#            "DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Chest_Bra.png",
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Green_Up.png"),
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Green_Up.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Lace_Up.png"),
+#            "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Bra.png"),
             "True", Null(),
             ),
 
@@ -2582,24 +2582,24 @@ image Doreen_Sex_Tits:
             #bra layer
             "DoreenX.Uptop", Null(),
             #if the top's down. . .
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_Sex_Chest_Sports.png",
-            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_Sex_Chest_Sports.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Chest_Lace.png",
-            "DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Chest_Bra.png",
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Sports.png"),
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Sports.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Lace.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Bra.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "DoreenX.Water", "images/DoreenSex/Doreen_Sex_Water_Tits.png",
+            "DoreenX.Water", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
             "DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Over_Towel.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_Sex_Over_Tshirt.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_Sex_Over_Sweater.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_Sex_Over_Tube.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Towel.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tshirt.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Sweater.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tube.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
@@ -2607,30 +2607,30 @@ image Doreen_Sex_Tits:
 #            "not DoreenX.Pierce", Null(),
 #            "DoreenX.Uptop", ConditionSwitch(
 #                    #if the top's down. . .
-#                    "DoreenX.Pierce == 'ring'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png",
-#                    "DoreenX.Pierce", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png",
+#                    "DoreenX.Pierce == 'ring'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png"),
+#                    "DoreenX.Pierce", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png"),
 #                    "True", Null(),
 #                    ),
 #            "DoreenX.Pierce == 'ring'", ConditionSwitch(
 #                    # ring pierce
-#                    "DoreenX.Over == 'suit'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Pink.png",
-#                    "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_White.png",
-#                    "DoreenX.Over == 'cheer top'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Cheer.png",
+#                    "DoreenX.Over == 'suit'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Pink.png"),
+#                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_White.png"),
+#                    "DoreenX.Over == 'cheer top'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Cheer.png"),
 
-#                    "DoreenX.Chest == 'swimsuit'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Pink.png",
-#                    "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Lace.png",
-#                    "DoreenX.Chest == 'tank' or DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_White.png",
+#                    "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Pink.png"),
+#                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Lace.png"),
+#                    "DoreenX.Chest == 'tank' or DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_White.png"),
 
-#                    "True", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png",
+#                    "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png"),
 #                    ),
-#            "DoreenX.Over == 'suit'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Pink.png",
-#            "DoreenX.Over == 'tshirt' or DoreenX.Over == 'cheer top'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_White.png",
+#            "DoreenX.Over == 'suit'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Pink.png"),
+#            "DoreenX.Over == 'tshirt' or DoreenX.Over == 'cheer top'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_White.png"),
 
-#            "DoreenX.Chest == 'swimsuit'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Pink.png",
-#            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Lace.png",
-#            "DoreenX.Chest == 'tank' or DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_White.png",
+#            "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Pink.png"),
+#            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Lace.png"),
+#            "DoreenX.Chest == 'tank' or DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_White.png"),
 
-#            "True", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png",
+#            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png"),
 #            ),
 
         (0,0), ConditionSwitch(
@@ -2638,39 +2638,39 @@ image Doreen_Sex_Tits:
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "DoreenX.Uptop", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png",
+                    "DoreenX.Uptop", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png"),
 
-                    "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Brown.png",
-                    "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Green.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Sweater.png",
-                    "DoreenX.Over", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Tshirt.png",                  #tshirt
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Brown.png"),
+                    "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Green.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Sweater.png"),
+                    "DoreenX.Over", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Tshirt.png"),                  #tshirt
 
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Lace.png",
-                    "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Tan.png",
-                    "DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Green.png",
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Lace.png"),
+                    "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Tan.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R_Green.png"),
 
-                    "True", "images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png",
+                    "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_R.png"),
                     ),
-            "DoreenX.Uptop", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png",
+            "DoreenX.Uptop", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png"),
 
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Brown.png",
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Green.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Sweater.png",
-            "DoreenX.Over", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Tshirt.png",                  #tshirt
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Brown.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Green.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Sweater.png"),
+            "DoreenX.Over", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Tshirt.png"),                  #tshirt
 
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Lace.png",
-            "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Tan.png",
-            "DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Green.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Lace.png"),
+            "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Tan.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B_Green.png"),
 
-            "True", "images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png",
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Tits_B.png"),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in DoreenX.Spunk and Player.Male", "images/DoreenSex/Doreen_Sex_Spunk_Tits.png",
+            "'tits' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/DoreenSex/Doreen_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_HeadRef.png"),
         )
 #    yoffset -163
 # End Doreen Sex Pose Tits / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -2735,18 +2735,18 @@ image Doreen_Sex_Legs:
 
         (0,0), ConditionSwitch(
             #ass red
-            "DoreenX.Red", "images/DoreenSex/Doreen_Sex_Red.png",
+            "DoreenX.Red", get_cached_image("images/DoreenSex/Doreen_Sex_Red.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/DoreenSex/Doreen_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/DoreenSex/Doreen_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not DoreenX.Water", Null(),
-            "True", "images/DoreenSex/Doreen_Sex_Water_Legs.png",
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Legs.png"),
             ),
 
         (0,0), "Doreen_Sex_Anus",
@@ -2759,17 +2759,17 @@ image Doreen_Sex_Legs:
         (0,0), ConditionSwitch(
             #Panties if up
             "DoreenX.PantiesDown", Null(),
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_Sex_Panties_Lace.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_Sex_Panties_Bikini.png",
-            "DoreenX.Panties and DoreenX.Wet", "images/DoreenSex/Doreen_Sex_Panties_Tan_Wet.png",
-            "DoreenX.Panties", "images/DoreenSex/Doreen_Sex_Panties_Tan.png",
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Lace.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Bikini.png"),
+            "DoreenX.Panties and DoreenX.Wet", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Tan_Wet.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Tan.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "DoreenX.Hose == 'stockings and garterbelt'", "images/DoreenSex/Doreen_Sex_Hose_StockingsGarter.png",
-            "DoreenX.Hose == 'garterbelt'", "images/DoreenSex/Doreen_Sex_Hose_Garter.png",
-            "DoreenX.Hose == 'stockings'", "images/DoreenSex/Doreen_Sex_Hose_Stockings.png",
+            "DoreenX.Hose == 'stockings and garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_StockingsGarter.png"),
+            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Garter.png"),
+            "DoreenX.Hose == 'stockings'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
 
@@ -2779,66 +2779,66 @@ image Doreen_Sex_Legs:
 #            "not DoreenX.Pierce", Null(),
 #            "DoreenX.Pierce == 'ring'",ConditionSwitch(
 #                    #If she has panties down. . .
-#                    "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Fucking.png",
-#                    "not DoreenX.Panties or DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png",
-#                    "DoreenX.Panties == 'lace panties' and not DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Lace.png",
-##                    "DoreenX.Panties == 'swimsuit' and not DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_White.png",
-#                    "True", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_White.png",
+#                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Fucking.png"),
+#                    "not DoreenX.Panties or DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png"),
+#                    "DoreenX.Panties == 'lace panties' and not DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Lace.png"),
+##                    "DoreenX.Panties == 'swimsuit' and not DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_White.png"),
+#                    "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_White.png"),
 #                    ),
 #            #else, it's barbell
-#            "not DoreenX.Panties or DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png",
-#            "DoreenX.Panties == 'lace panties' and not DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Lace.png",
-##            "DoreenX.Panties == 'swimsuit' and not DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_White.png",
-#            "True", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_White.png",
+#            "not DoreenX.Panties or DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png"),
+#            "DoreenX.Panties == 'lace panties' and not DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Lace.png"),
+##            "DoreenX.Panties == 'swimsuit' and not DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_White.png"),
+#            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_White.png"),
 #            ),
         (0,0), ConditionSwitch(
             #Piercings under pants and pantyhose
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png"),
 
-                    "DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png",
-                    "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Lace.png",
-                    "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Green.png",
-                    "DoreenX.Panties", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tan.png",
-                    "True", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png",
+                    "DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png"),
+                    "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Lace.png"),
+                    "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Green.png"),
+                    "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tan.png"),
+                    "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png",
+            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png"),
 
-            "DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png",
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Lace.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Green.png",
-            "DoreenX.Panties", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tan.png",
-            "True", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png",
+            "DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png"),
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Lace.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Green.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tan.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png"),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-            "DoreenX.Hose == 'tights'", "images/DoreenSex/Doreen_Sex_Hose_Tights.png",
-            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/Doreen_Sex_Hose_Tights_Holed.png",
-            "DoreenX.Hose == 'pantyhose'", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose.png",
-            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png",
+            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Tights.png"),
+            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Tights_Holed.png"),
+            "DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose.png"),
+            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Legs Layer
-            "DoreenX.Legs == 'skirt'", "images/DoreenSex/Doreen_Sex_Legs_Skirt.png",
-            "DoreenX.Legs == 'red skirt'", "images/DoreenSex/Doreen_Sex_Legs_RedSkirt.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt and DoreenX.Wet > 1", "images/DoreenSex/Doreen_Sex_Legs_Shorts_Down_Wet.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Legs_Shorts_Down.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Wet > 1", "images/DoreenSex/Doreen_Sex_Legs_Shorts_Wet.png",
-            "DoreenX.Legs == 'shorts'", "images/DoreenSex/Doreen_Sex_Legs_Shorts.png",
+            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Skirt.png"),
+            "DoreenX.Legs == 'red skirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_RedSkirt.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt and DoreenX.Wet > 1", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts_Down_Wet.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts_Down.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Wet > 1", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts_Wet.png"),
+            "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #towel Layer
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Legs_Towel.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Towel.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
@@ -2846,17 +2846,17 @@ image Doreen_Sex_Legs:
 #            "not DoreenX.Pierce", Null(),
 #            "DoreenX.Pierce == 'ring'",ConditionSwitch(
 #                    #If she has panties down. . .
-#                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Pink.png",
-#                    "DoreenX.Legs == 'suit' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_White.png",
+#                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Pink.png"),
+#                    "DoreenX.Legs == 'suit' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_White.png"),
 #                    "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-#                    "DoreenX.Hose == 'tights'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png",
+#                    "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png"),
 #                    "True", Null(),
 #                    ),
 #            #else, it's barbell
-#            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Pink.png",
-#            "DoreenX.Legs == 'pants' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_White.png",
+#            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Pink.png"),
+#            "DoreenX.Legs == 'pants' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_White.png"),
 #            "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-#            "DoreenX.Hose == 'tights'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png",
+#            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -2865,13 +2865,13 @@ image Doreen_Sex_Legs:
             "DoreenX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
                     "Player.Sprite and Player.Cock == 'in'", Null(),
-                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Brown.png",
-                    "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png",
+                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Brown.png"),
+                    "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png"),
                     "True", Null(),
                     ),
             #else, it's barbell
-            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Brown.png",
-            "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png",
+            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Brown.png"),
+            "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -2907,19 +2907,19 @@ image Doreen_Sex_Legs:
 #            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Holed.png",
 #            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights_Holed.png",
 #            "DoreenX.Hose == 'tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights.png",
-#            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", "images/DoreenSex/Doreen_Sex_Calves_Hose.png",
+#            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Calves_Hose.png"),
 #            "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",   #Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Footjob overlay
 #            "Player.Cock == 'foot'", Null(),
-##            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
 ##            "ShowFeet", "Doreen_Sex_Feet",
-##            "Player.Sprite", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick pussy'", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick ass'", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "Player.Sprite", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick pussy'", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick ass'", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
 #            "True", "Doreen_Sex_Feet",
-##            "True", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "True", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
 #            ),
 
 #        (0,0), ConditionSwitch(                                                                                 #UI tool layer
@@ -2929,7 +2929,7 @@ image Doreen_Sex_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Doreen_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
 #            "True", "Doreen_Sex_Feet",
 #            ),
         )
@@ -2946,14 +2946,14 @@ image Doreen_Sex_Calves:
             "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Holed.png",
             "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights_Holed.png",
             "DoreenX.Hose == 'tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves_Tights.png",
-            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", "images/DoreenSex/Doreen_Sex_Calves_Hose.png",
+            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Calves_Hose.png"),
             "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Calves.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not DoreenX.Water", Null(),
-            "True", "images/DoreenSex/Doreen_Sex_Water_Calves.png",
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Calves.png"),
             ),
         (0,0), "Doreen_Sex_Feet_L", #left foot, stable
         (0,0), ConditionSwitch(
@@ -2967,21 +2967,21 @@ image Doreen_Sex_Feet_L:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Doreen_Sex_Legs
         (1120,840),
-#        (0,0), "images/DoreenSex/Doreen_Sex_Feet.png",                                                         #Legs Base
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_Feet.png"),                                                         #Legs Base
 
         (0,0), ConditionSwitch(
             #hose layer
             "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png",
             "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png",
             "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_Holed_L.png",
-            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", "images/DoreenSex/Doreen_Sex_Feet_Hose_L.png",
+            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Feet_Hose_L.png"),
             "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_L.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not DoreenX.Water", Null(),
-#            "True", "images/DoreenSex/Doreen_Sex_Water_Feet_L.png",
+#            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Feet_L.png"),
 #            ),
         )
 
@@ -2994,18 +2994,18 @@ image Doreen_Sex_Feet_R:
             "(DoreenX.Hose == 'pantyhose' or DoreenX.Hose == 'ripped pantyhose') and DoreenX.Panties and DoreenX.PantiesDown", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png",
             "DoreenX.Hose == 'tights' or DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png",
             "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_Holed_R.png",
-            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", "images/DoreenSex/Doreen_Sex_Feet_Hose_R.png",
+            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Feet_Hose_R.png"),
             "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Feet_R.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not DoreenX.Water", Null(),
-#            "True", "images/DoreenSex/Doreen_Sex_Water_Feet_R.png",
+#            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Feet_R.png"),
 #            ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in DoreenX.Spunk", "images/DoreenSex/Doreen_Sex_Spunk_Feet.png",
+            "'feet' in DoreenX.Spunk", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -3016,31 +3016,31 @@ image Doreen_Sex_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Pussy_Fucking.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Fucking.png"),
                 "Player.Sprite and Player.Cock == 'in' and Speed", "Doreen_Sex_Heading_Pussy",
-                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "True", "images/DoreenSex/Doreen_Sex_Pussy_Closed.png",
+                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Closed.png"),
                 )
     contains:
             # The background plate of her pussy
             ConditionSwitch(
                 "not DoreenX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/KittySex/Kitty_Sex_WetPussy_F.png",
-                "True", "images/DoreenSex/Doreen_Sex_Wet.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/KittySex/Kitty_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_Sex_Wet.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not DoreenX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Pubes_Fucking.png",
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/DoreenSex/Doreen_Sex_Pubes_Fucking.png",
-                "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "Player.Sprite and Player.Cock == 'out'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "Trigger == 'lick pussy'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "True", "images/DoreenSex/Doreen_Sex_Pubes_Closed.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "Player.Sprite and Player.Cock == 'out'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Closed.png"),
                 )
     contains:
             #Spunk
@@ -3048,48 +3048,48 @@ image Doreen_Sex_Pussy:
                 "'in' not in DoreenX.Spunk or not Player.Male", Null(),
                 "(DoreenX.Legs == 'pants' or DoreenX.Legs == 'shorts') and not DoreenX.Upskirt", Null(),
                 "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
-                "True", AlphaMask("Spunk_Drip2","Doreen_Sex_Drip_Mask"),
+                "True", get_cached_alphamask("Spunk_Drip2", "Doreen_Sex_Drip_Mask"),
                 )
             offset (545,540)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-                "'in' in DoreenX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in DoreenX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy.png",
+                "'in' in DoreenX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in DoreenX.Spunk", "images/DoreenSex/Doreen_Sex_Spunk_Puss_Under.png",
+#                "'in' in DoreenX.Spunk", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-#                "DoreenX.Hose == 'ripped pantyhose' and ShowFeet", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png",
-#                "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png",
+#                "DoreenX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png"),
+#                "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
             ConditionSwitch(
 #                "not Player.Sprite", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Doreen_Sex_Fucking_Zero_Anim3", "Doreen_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Doreen_Sex_Fucking_Zero_Anim2", "Doreen_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Doreen_Sex_Fucking_Zero_Anim1", "Doreen_Sex_Heading_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim3", "Doreen_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim2", "Doreen_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim1", "Doreen_Sex_Heading_Mask"),
                 "Player.Sprite and Player.Cock == 'in'", "Doreen_Sex_Fucking_Zero_Anim0",
                 "True", Null(),
                 )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "DoreenX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_BarbellF.png",
-#                "DoreenX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_RingF.png",
-#                "DoreenX.Pierce == 'barbell'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_Barbell.png",
-#                "DoreenX.Pierce == 'ring'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_Ring.png",
+#                "DoreenX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_BarbellF.png"),
+#                "DoreenX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_RingF.png"),
+#                "DoreenX.Pierce == 'barbell'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_Barbell.png"),
+#                "DoreenX.Pierce == 'ring'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
     contains:
@@ -3104,7 +3104,7 @@ image Doreen_Sex_Pussy:
                 "Speed == 1", Null(),
                 "'in' not in DoreenX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 #                "Speed <= 1", Null(), #"Doreen_Pussy_Spunk_Heading",
-                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 )
 
     #End Doreen Pussy composite
@@ -3248,7 +3248,7 @@ image Doreen_Sex_Static:
 #            "Doreen_Sex_Feet"
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+#                "ShowFeet", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
 #                "True", Null(),
 #                )
 #            pos (0,-180) #X less is left, Y less is up
@@ -3516,7 +3516,7 @@ image Doreen_Pussy_Spunk_Heading:
         #This is the image for Doreen's heading pussy cum
         contains:
             ConditionSwitch(
-                "'in' in DoreenX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "'in' in DoreenX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0)
@@ -3719,32 +3719,32 @@ image Doreen_Sex_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/BetsySex/Betsy_Sex_Anus.png",
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/BetsySex/Betsy_Sex_Anus.png",
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/BetsySex/Betsy_Sex_Anus.png"),
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Anus.png"),
             "Player.Sprite and Player.Cock == 'anal' and Speed", "Doreen_Sex_Anal_Heading",
             "Player.Sprite and Player.Cock == 'anal'", "Doreen_Sex_Anal_Tip",
-            "DoreenX.Plug", "images/PlugBase_Sex.png",
+            "DoreenX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "DoreenX.Loose > 2", "Doreen_Gape_Anal_Sex",
-            "DoreenX.Loose", "images/DoreenSex/Doreen_Sex_Anus_Loose.png",
-            "True", "images/DoreenSex/Doreen_Sex_Anus_Loose.png",
+            "DoreenX.Loose", get_cached_image("images/DoreenSex/Doreen_Sex_Anus_Loose.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Anus_Loose.png"),
             )
     contains:
             #Spunk under penis
             ConditionSwitch(
                 "'anal' not in DoreenX.Spunk or not Player.Male", Null(),
-#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/DoreenSex/Doreen_Sex_Spunk_Anal_Under.png",
+#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Anal_Under.png"),
                 "Player.Sprite and Player.Cock != 'anal' and Speed == 1", "Doreen_Sex_Anal_Spunk_Heading_Under",
-                "True", "images/JubesSex/Jubes_Sex_Spunk_Anal.png",
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal.png"),
                 )
             yoffset 5
     contains:
             # The animation of Zero's moving penis, masked by her anus shape
             ConditionSwitch(
                 "not Player.Sprite or Player.Cock != 'anal'", Null(),
-                "Speed >= 3",  AlphaMask("Doreen_Sex_Anal_Zero_Anim3", "Doreen_Sex_Anal_MaskF"),
-                "Speed >= 2", AlphaMask("Doreen_Sex_Anal_Zero_Anim2", "Doreen_Sex_Anal_MaskF"),
-                "Speed", AlphaMask("Doreen_Sex_Anal_Zero_Anim1", "Doreen_Sex_Anal_Mask"),
-                "True", AlphaMask("Doreen_Sex_Anal_Zero_Anim0", "Doreen_Sex_Anal_Mask"),
+                "Speed >= 3",  get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim3", "Doreen_Sex_Anal_MaskF"),
+                "Speed >= 2", get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim2", "Doreen_Sex_Anal_MaskF"),
+                "Speed", get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim1", "Doreen_Sex_Anal_Mask"),
+                "True", get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim0", "Doreen_Sex_Anal_Mask"),
                 )
     contains:
             #Spunk over penis
@@ -3758,8 +3758,8 @@ image Doreen_Sex_Tail_P0:
         #Tail when in Sex Pussy speed 0, attached to Sex Anus
         contains:
             ConditionSwitch(
-#                "DoreenX.Tail and renpy.showing('Betsy_69_Animation'", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-                "DoreenX.Tail", "images/DoreenSex/Doreen_Sex_Tail.png",
+#                "DoreenX.Tail and renpy.showing('Betsy_69_Animation'", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+                "DoreenX.Tail", get_cached_image("images/DoreenSex/Doreen_Sex_Tail.png"),
                 "True", Null(),
                 )
             transform_anchor True
@@ -3777,8 +3777,8 @@ image Doreen_Sex_Tail_P2:
         #Tail when in Sex Pussy speed 0, attached to Sex Anus
         contains:
             ConditionSwitch(
-#                "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-                "DoreenX.Tail", "images/DoreenSex/Doreen_Sex_Tail.png",
+#                "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+                "DoreenX.Tail", get_cached_image("images/DoreenSex/Doreen_Sex_Tail.png"),
                 "True", Null(),
                 )
             transform_anchor True
@@ -3799,8 +3799,8 @@ image Doreen_Sex_Tail_P3:
         #Tail when in Sex Pussy speed 0, attached to Sex Anus
         contains:
             ConditionSwitch(
-#                "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-                "DoreenX.Tail", "images/DoreenSex/Doreen_Sex_Tail.png",
+#                "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+                "DoreenX.Tail", get_cached_image("images/DoreenSex/Doreen_Sex_Tail.png"),
                 "True", Null(),
                 )
             transform_anchor True
@@ -3821,8 +3821,8 @@ image Doreen_Sex_Tail_A2:
         #Tail when in Sex Pussy speed 0, attached to Sex Anus
         contains:
             ConditionSwitch(
-#                "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-                "DoreenX.Tail", "images/DoreenSex/Doreen_Sex_Tail.png",
+#                "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+                "DoreenX.Tail", get_cached_image("images/DoreenSex/Doreen_Sex_Tail.png"),
                 "True", Null(),
                 )
             transform_anchor True
@@ -3843,8 +3843,8 @@ image Doreen_Sex_Tail_A3:
         #Tail when in Sex Pussy speed 0, attached to Sex Anus
         contains:
             ConditionSwitch(
-#                "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-                "DoreenX.Tail", "images/DoreenSex/Doreen_Sex_Tail.png",
+#                "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+                "DoreenX.Tail", get_cached_image("images/DoreenSex/Doreen_Sex_Tail.png"),
                 "True", Null(),
                 )
             transform_anchor True
@@ -3877,7 +3877,7 @@ image Doreen_Gape_Anal_Sex:
 
 image Doreen_Sex_Anal_Spunk:
     ConditionSwitch(
-                "'anal' in DoreenX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png",
+                "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png"),
                 "True", Null(),
                 )
     anchor (0.5,0.5)
@@ -4018,7 +4018,7 @@ image Doreen_Sex_Anal_Heading:
 
 image Doreen_Sex_Anal_Spunk_Heading_Over:
     ConditionSwitch(
-                "'anal' in DoreenX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png",
+                "'anal' in DoreenX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png"),
                 "True", Null(),
                 )
     anchor (0.5,0.5)
@@ -4195,7 +4195,7 @@ image Doreen_Sex_Anal_Speed2:
                 repeat
 #    contains:
 #            #Zero's cock in the sex pose
-#            AlphaMask("Doreen_Sex_Fucking_Zero_Anim2", "Doreen_Sex_Fucking_Mask")
+#            get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim2", "Doreen_Sex_Fucking_Mask")
 # End main animation for Sex Pose Fucking Speed 2
 
 
@@ -4392,7 +4392,7 @@ image Doreen_Sex_Hotdog_Speed1:
 #            "Doreen_Sex_Feet"
 ##            ConditionSwitch(
 ##                #Footjob overlay
-##                "ShowFeet", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
+##                "ShowFeet", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
 ##                "True", Null(),
 ##                )
 #            pos (0,-180) #X less is left, Y less is up
@@ -4492,7 +4492,7 @@ image Doreen_Sex_Hotdog_Speed2:
 #            "Doreen_Sex_Feet"
 ##            ConditionSwitch(
 ##                #Footjob overlay
-##                "ShowFeet", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
+##                "ShowFeet", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
 ##                "True", Null(),
 ##                )
 #            pos (0,-180) #X less is left, Y less is up
@@ -4603,7 +4603,7 @@ image Doreen_Sex_FJ_Speed0:
 #            subpixel True
 #            "Doreen_Sex_Feet"
 ##            alpha 0.5
-##            AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png")
+##            get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png")
 #            pos (50,-270) #X less is left, Y less is up (80,0)
 #            block: #adds to 5
 ##                pause 0.2
@@ -4948,14 +4948,14 @@ image Doreen_BJ_Backdrop:
             #bra back
 #            "DoreenX.Over == 'tshirt'", Null(),
             "DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'tube top' or DoreenX.Over == 'towel' or DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Back.png",
+            "DoreenX.Over == 'tube top' or DoreenX.Over == 'towel' or DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Back.png"),
             "True", Null(),
             ),
         (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Body.png",
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "DoreenX.Water and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Water1.png",
-#            "DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Water2.png",
+#            "DoreenX.Water and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water1.png"),
+#            "DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -4963,38 +4963,38 @@ image Doreen_BJ_Backdrop:
 #            "DoreenX.Over == 'tshirt'", Null(),
             "DoreenX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Lace_Up.png",
-                    "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Sports_Up.png",
-                    "DoreenX.Chest == 'bikini top'", "images/DoreenBJFace/Doreen_BJ_Chest_Bikini_Up.png",
-                    "DoreenX.Chest", "images/DoreenBJFace/Doreen_BJ_Chest_Bra_Up.png",
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Lace_Up.png"),
+                    "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Sports_Up.png"),
+                    "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bikini_Up.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bra_Up.png"),
                     "True", Null(),
                     ),
-            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Lace.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Sports.png",
-            "DoreenX.Chest == 'bikini top'", "images/DoreenBJFace/Doreen_BJ_Chest_Bikini.png",
-            "DoreenX.Chest", "images/DoreenBJFace/Doreen_BJ_Chest_Bra.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Lace.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Sports.png"),
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bikini.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bra.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over body layer
             "DoreenX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_BJ_Over_Tshirt_Up.png",
-                    "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_BJ_Over_Tube_Up.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_BJ_Over_Sweater_Up.png",
-                    "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_TJ_Over_Towel_Body.png",
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Tshirt_Up.png"),
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Tube_Up.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Sweater_Up.png"),
+                    "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Towel_Body.png"),
                     "True", Null(),
                     ),
-            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_BJ_Over_Tshirt.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_BJ_Over_Tube.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_BJ_Over_Sweater.png",
-            "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_BJ_Over_Towel.png",
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Tshirt.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Tube.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Sweater.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Jacket layer
-            "DoreenX.Acc == 'jacket'", "images/DoreenBJFace/Doreen_BJ_Jacket.png",
-            "DoreenX.Acc == 'vest'", "images/DoreenBJFace/Doreen_BJ_Vest.png",
+            "DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Jacket.png"),
+            "DoreenX.Acc == 'vest'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Vest.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -5002,41 +5002,41 @@ image Doreen_BJ_Backdrop:
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "DoreenX.Uptop", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring.png",
-                    "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Green.png",
-                    "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Brown.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Sweater.png",
-                    "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Gray.png",
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Lace.png",
-                    "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Green.png",
-                    "DoreenX.Chest", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Tan.png",
-                    "True", "images/DoreenBJFace/Doreen_BJ_Pierce_Ring.png",
+                    "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring.png"),
+                    "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Green.png"),
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Brown.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Sweater.png"),
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Gray.png"),
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Lace.png"),
+                    "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Green.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring_Tan.png"),
+                    "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Ring.png"),
                     ),
-            "DoreenX.Uptop", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell.png",
-            "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Green.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Brown.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Sweater.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Gray.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Lace.png",
-            "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Green.png",
-            "DoreenX.Chest", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Tan.png",
-            "True", "images/DoreenBJFace/Doreen_BJ_Pierce_Barbell.png",
+            "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Green.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Brown.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Sweater.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Gray.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Lace.png"),
+            "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Green.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell_Tan.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Pierce_Barbell.png"),
             ),
         (0,0), ConditionSwitch(
             # spunk over tits
             "'tits' not in DoreenX.Spunk", Null(),
-#            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png",
-#            "not DoreenX.Uptop and DoreenX.Over", "images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png",
-            "True", "images/DoreenBJFace/Doreen_BJ_Spunk_Tits.png",
+#            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png"),
+#            "not DoreenX.Uptop and DoreenX.Over", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Tits.png"),
             ),
         (0,0), ConditionSwitch(
             #Hair overlay
             "DoreenX.Hair != 'long' and DoreenX.Hair != 'wetlong'", Null(),
-            "DoreenX.Water or DoreenX.Hair == 'wetlong'", "images/DoreenBJFace/Doreen_TJ_Hair_Wet.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenBJFace/Doreen_TJ_Hair_Wet.png",
-            "True", "images/DoreenBJFace/Doreen_TJ_Hair_Long.png",
+            "DoreenX.Water or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hair_Wet.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hair_Wet.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hair_Long.png"),
             ),
-#        (0,0), "images/DoreenBJFace/Doreen_TJ_RefLine.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_TJ_RefLine.png"),
 #        (-10,-90), "Doreen_Sprite_Head", #(75,-10)
         )
     transform_anchor True
@@ -5053,15 +5053,15 @@ image Doreen_BJ_Ass:
 #        (-10,-90), "Doreen_BJ_HairBack", #(75,-10)
         (0,0), ConditionSwitch(
             #Tail
-            "DoreenX.Tail","images/DoreenBJFace/Doreen_TJ_Tail_Under.png",
+            "DoreenX.Tail", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Under.png"),
             "True", Null(),
             ),
         (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Ass.png",
 
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "DoreenX.Water and DoreenX.ArmPose == 1", "images/DoreenBJFace/Doreen_Sprite_Water1.png",
-#            "DoreenX.Water", "images/DoreenBJFace/Doreen_Sprite_Water2.png",
+#            "DoreenX.Water and DoreenX.ArmPose == 1", get_cached_image("images/DoreenBJFace/Doreen_Sprite_Water1.png"),
+#            "DoreenX.Water", get_cached_image("images/DoreenBJFace/Doreen_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
 
@@ -5072,33 +5072,33 @@ image Doreen_BJ_Ass:
 #                    #if the panties are down
 #                    "not DoreenX.Legs or DoreenX.Upskirt or DoreenX.Legs == 'skirt'", ConditionSwitch(
 #                            #if she's wearing a skirt or nothing else
-#                            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenBJFace/Doreen_Sprite_Panties_Bikini_Down.png",
-#                            "DoreenX.Panties == 'lace panties'", "images/DoreenBJFace/Doreen_Sprite_Panties_Lace_Down.png",
-#                            "DoreenX.Panties", "images/DoreenBJFace/Doreen_Sprite_Panties_Tan_Down.png",
+#                            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenBJFace/Doreen_Sprite_Panties_Bikini_Down.png"),
+#                            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenBJFace/Doreen_Sprite_Panties_Lace_Down.png"),
+#                            "DoreenX.Panties", get_cached_image("images/DoreenBJFace/Doreen_Sprite_Panties_Tan_Down.png"),
 #                            "True", Null(),
 #                            ),
 #                    "True", Null(),
 #                    ),
            "DoreenX.PantiesDown", Null(),
-           "DoreenX.Panties == 'bikini bottoms'", "images/DoreenBJFace/Doreen_TJ_Panties_Bikini.png",
-           "DoreenX.Panties == 'lace panties'", "images/DoreenBJFace/Doreen_TJ_Panties_Lace.png",
-           "DoreenX.Panties", "images/DoreenBJFace/Doreen_TJ_Panties_Tan.png",
+           "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Panties_Bikini.png"),
+           "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Panties_Lace.png"),
+           "DoreenX.Panties", get_cached_image("images/DoreenBJFace/Doreen_TJ_Panties_Tan.png"),
            "True", Null(),
            ),
         (0,0), ConditionSwitch(
             #stockings
-            "DoreenX.Hose == 'stockings'", "images/DoreenBJFace/Doreen_TJ_Hose_Stockings.png",
-            "DoreenX.Hose == 'stockings and garterbelt'", "images/DoreenBJFace/Doreen_TJ_Hose_StockingsGarter.png",
-            "DoreenX.Hose == 'garterbelt'", "images/DoreenBJFace/Doreen_TJ_Hose_Garter.png",
+            "DoreenX.Hose == 'stockings'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_Stockings.png"),
+            "DoreenX.Hose == 'stockings and garterbelt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_StockingsGarter.png"),
+            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_Garter.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #pantyhose
-            "DoreenX.Hose == 'pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenBJFace/Doreen_TJ_Hose_Pantyhose.png",
-            "DoreenX.Hose == 'tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenBJFace/Doreen_TJ_Hose_Tights.png",
-            "DoreenX.Hose == 'ripped pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenBJFace/Doreen_TJ_Hose_Pantyhose_Holed.png",
-            "DoreenX.Hose == 'ripped tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenBJFace/Doreen_TJ_Hose_Tights_Holed.png",
+            "DoreenX.Hose == 'pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_Pantyhose.png"),
+            "DoreenX.Hose == 'tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_Tights.png"),
+            "DoreenX.Hose == 'ripped pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_Pantyhose_Holed.png"),
+            "DoreenX.Hose == 'ripped tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hose_Tights_Holed.png"),
             "True", Null(),
             ),
 
@@ -5107,65 +5107,65 @@ image Doreen_BJ_Ass:
             "not DoreenX.Legs", Null(),
             "DoreenX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "DoreenX.Legs == 'skirt'", "images/DoreenBJFace/Doreen_TJ_Legs_Skirt_Up.png",
-#                        "DoreenX.Legs == 'shorts'", "images/DoreenBJFace/Doreen_TJ_Legs_Shorts.png",
+                        "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Legs_Skirt_Up.png"),
+#                        "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Legs_Shorts.png"),
                         "True", Null(),
                         ),
-#            "DoreenX.Legs == 'skirt' and DoreenX.Over != 'towel'", "images/DoreenBJFace/Doreen_TJ_Legs_Skirt.png",
-            "DoreenX.Legs == 'skirt'", "images/DoreenBJFace/Doreen_TJ_Legs_Skirt.png",
-            "DoreenX.Legs == 'shorts'", "images/DoreenBJFace/Doreen_TJ_Legs_Shorts.png",
+#            "DoreenX.Legs == 'skirt' and DoreenX.Over != 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Legs_Skirt.png"),
+            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Legs_Skirt.png"),
+            "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Legs_Shorts.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Over body layer
-            "DoreenX.Over == 'towel' and DoreenX.Upskirt", "images/DoreenBJFace/Doreen_TJ_Over_Towel_Up.png",
-            "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_TJ_Over_Towel.png",
+            "DoreenX.Over == 'towel' and DoreenX.Upskirt", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Towel_Up.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Towel.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Tail
             "not DoreenX.Tail",Null(),
-            "DoreenX.Legs == 'skirt'","images/DoreenBJFace/Doreen_TJ_Tail_Cover.png",
-            "DoreenX.Over == 'towel'","images/DoreenBJFace/Doreen_TJ_Tail_Cover.png",
-            "DoreenX.Legs and not DoreenX.Upskirt","images/DoreenBJFace/Doreen_TJ_Tail_Cover.png",
-            "DoreenX.Hose == 'pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenBJFace/Doreen_TJ_Tail_Cover.png",
-            "DoreenX.Hose == 'tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", "images/DoreenBJFace/Doreen_TJ_Tail_Cover.png",
-            "DoreenX.Panties == 'lace panties'","images/DoreenBJFace/Doreen_TJ_Tail_Over.png",
-            "DoreenX.Panties and not DoreenX.PantiesDown","images/DoreenBJFace/Doreen_TJ_Tail_Cover.png",
-            "True","images/DoreenBJFace/Doreen_TJ_Tail_Over.png",
+            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Cover.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Cover.png"),
+            "DoreenX.Legs and not DoreenX.Upskirt", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Cover.png"),
+            "DoreenX.Hose == 'pantyhose' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Cover.png"),
+            "DoreenX.Hose == 'tights' and (not DoreenX.PantiesDown or not DoreenX.Panties)", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Cover.png"),
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Over.png"),
+            "DoreenX.Panties and not DoreenX.PantiesDown", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Cover.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tail_Over.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Chest layer under tits
 #            "DoreenX.Over == 'tshirt'", Null(),
 #            "DoreenX.Uptop", ConditionSwitch(
 #                    # if top is up. . .
-#                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Lace_Up.png",
-#                    "DoreenX.Chest == 'bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Bra_Up.png",
-#                    "DoreenX.Chest == 'tank'", "images/DoreenBJFace/Doreen_BJ_Chest_Tank_Up.png",
-#                    "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_BJ_Chest_Bikini_Up.png",
+#                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Lace_Up.png"),
+#                    "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bra_Up.png"),
+#                    "DoreenX.Chest == 'tank'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Tank_Up.png"),
+#                    "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bikini_Up.png"),
 #                    "True", Null(),
 #                    ),
-#            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Lace.png",
-#            "DoreenX.Chest == 'bra'", "images/DoreenBJFace/Doreen_BJ_Chest_Bra.png",
-#            "DoreenX.Chest == 'tank'", "images/DoreenBJFace/Doreen_BJ_Chest_Tank.png",
-#            "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_BJ_Chest_Bikini.png",
+#            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Lace.png"),
+#            "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bra.png"),
+#            "DoreenX.Chest == 'tank'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Tank.png"),
+#            "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Chest_Bikini.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Over body layer
-#            "DoreenX.Over == 'open suit'", "images/DoreenBJFace/Doreen_BJ_Over_Suit_Open.png",
+#            "DoreenX.Over == 'open suit'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Suit_Open.png"),
 #            "DoreenX.Uptop", ConditionSwitch(
 #                    # if top is up. . .
-#                    "DoreenX.Over == 'suit'", "images/DoreenBJFace/Doreen_BJ_Over_Suit_Open.png",
-#                    "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_BJ_Over_Tshirt_Up.png",
-#                    "DoreenX.Over == 'cheer top'", "images/DoreenBJFace/Doreen_BJ_Over_Cheer_Up.png",
+#                    "DoreenX.Over == 'suit'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Suit_Open.png"),
+#                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Tshirt_Up.png"),
+#                    "DoreenX.Over == 'cheer top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Cheer_Up.png"),
 #                    "True", Null(),
 #                    ),
-#            "DoreenX.Over == 'suit'", "images/DoreenBJFace/Doreen_BJ_Over_Suit.png",
-#            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_BJ_Over_Tshirt.png",
-#            "DoreenX.Over == 'cheer top'", "images/DoreenBJFace/Doreen_BJ_Over_Cheer.png",
+#            "DoreenX.Over == 'suit'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Suit.png"),
+#            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Tshirt.png"),
+#            "DoreenX.Over == 'cheer top'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Over_Cheer.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
@@ -5173,32 +5173,32 @@ image Doreen_BJ_Ass:
 #            "not DoreenX.Pierce", Null(),
 #            "DoreenX.Pierce == 'ring'", ConditionSwitch(
 #                    #if it's the ring pericings
-#                    "DoreenX.Uptop", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png",
-#                    "DoreenX.Over == 'suit'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png",
-#                    "DoreenX.Over == 'tshirt' or DoreenX.Over == 'cheer top'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_White.png",
-#                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Lace.png",
-#                    "DoreenX.Chest == 'bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_White.png",
-#                    "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png",
-#                    "DoreenX.Chest == 'tank'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_White.png",
-#                    "True", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png",
+#                    "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png"),
+#                    "DoreenX.Over == 'suit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png"),
+#                    "DoreenX.Over == 'tshirt' or DoreenX.Over == 'cheer top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_White.png"),
+#                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Lace.png"),
+#                    "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_White.png"),
+#                    "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png"),
+#                    "DoreenX.Chest == 'tank'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_White.png"),
+#                    "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png"),
 #                    ),
-#            "DoreenX.Uptop", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png",
-#            "DoreenX.Over == 'suit'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png",
-#            "DoreenX.Over == 'tshirt' or DoreenX.Over == 'cheer top'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_White.png",
-#            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Lace.png",
-#            "DoreenX.Chest == 'bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_White.png",
-#            "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png",
-#            "DoreenX.Chest == 'tank'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_White.png",
-#            "True", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png",
+#            "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png"),
+#            "DoreenX.Over == 'suit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png"),
+#            "DoreenX.Over == 'tshirt' or DoreenX.Over == 'cheer top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_White.png"),
+#            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Lace.png"),
+#            "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_White.png"),
+#            "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png"),
+#            "DoreenX.Chest == 'tank'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_White.png"),
+#            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png"),
 #            ),
         (0,0), ConditionSwitch(
             # spunk over tits
             "'back' not in DoreenX.Spunk", Null(),
-#            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png",
-#            "not DoreenX.Uptop and DoreenX.Over", "images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png",
-            "True", "images/DoreenBJFace/Doreen_TJ_Spunk_Back.png",
+#            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png"),
+#            "not DoreenX.Uptop and DoreenX.Over", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Back.png"),
             ),
-#        (0,0), "images/DoreenBJFace/Doreen_TJ_RefLine.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_TJ_RefLine.png"),
 #        (-10,-90), "Doreen_Sprite_Head", #(75,-10)
         )
     transform_anchor True
@@ -5225,13 +5225,13 @@ image Doreen_BJ_Head:
 
         (0,0), ConditionSwitch(
             # Basic Face layer
-            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over_Blush.png",
-            "renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over.png",
-            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading_Blush.png",
-            "renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading.png",
-#            "True","images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png",
+            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over_Blush.png",
+            "renpy.showing('Doreen_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Over.png",
+            "DoreenX.Blush and renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading_Blush.png",
+            "renpy.showing('Doreen_BJ_Animation') and (Speed == 2 or Speed == 5)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Heading.png",
+#            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png"),
 
-#            "DoreenX.Blush == 2", "images/DoreenBJFace/Doreen_BJ_Head_Sucking_Over_Blush2.png",
+#            "DoreenX.Blush == 2", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Over_Blush2.png"),
             "DoreenX.Blush", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Blush.png",
             "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png"
             ),
@@ -5241,61 +5241,61 @@ image Doreen_BJ_Head:
 #            "True", Null(), #cumming
             "Speed and renpy.showing('Doreen_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-#                    "Speed == 1", "images/DoreenBJFace/Doreen_BJ_Mouth_TongueW.png",  #licking
-                    "Speed == 1", "images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png",  #licking
-                    "Speed == 2 or Speed == 5", "images/DoreenBJFace/Doreen_BJ_Mouth_Over.png",  #licking
+#                    "Speed == 1", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_TongueW.png"),  #licking
+                    "Speed == 1", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png"),  #licking
+                    "Speed == 2 or Speed == 5", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Over.png"),  #licking
                     "True", Null(),                          #heading
 #                    "(Speed == 2 or Speed == 5)", Null(),                          #heading
-#                    "Speed == 3", "images/DoreenBJFace/Doreen_BJ_Mouth_Sucking.png", #sucking
-#                    "Speed == 4", "images/DoreenBJFace/Doreen_BJ_Mouth_Sucking.png", #deepthroat
-#                    "Speed == 6", "images/DoreenBJFace/Doreen_BJ_Mouth_Sucking.png", #cumming
+#                    "Speed == 3", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Sucking.png"), #sucking
+#                    "Speed == 4", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Sucking.png"), #deepthroat
+#                    "Speed == 6", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Sucking.png"), #cumming
                     ),
-            "renpy.showing('Doreen_CUN_Animation') and Speed", "images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png",
-            "Speed >= 3 and renpy.showing('Doreen_TJ_Animation')", "images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png",
-#            "DoreenX.Mouth == 'normal'", "images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png",
-            "DoreenX.Mouth == 'lipbite'", "images/DoreenBJFace/Doreen_BJ_Mouth_Smirk.png",
-            "DoreenX.Mouth == 'sucking'", "images/DoreenBJFace/Doreen_BJ_Mouth_Open.png",
-            "DoreenX.Mouth == 'kiss'", "images/DoreenBJFace/Doreen_BJ_Mouth_Kiss.png",
-            "DoreenX.Mouth == 'sad'", "images/DoreenBJFace/Doreen_BJ_Mouth_Sad.png",
-#            "DoreenX.Mouth == 'smile'", "images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png",
-            "DoreenX.Mouth == 'smirk'", "images/DoreenBJFace/Doreen_BJ_Mouth_Smirk.png",
-#            "DoreenX.Mouth == 'grimace'", "images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png",
-            "DoreenX.Mouth == 'surprised'", "images/DoreenBJFace/Doreen_BJ_Mouth_Open.png",
-            "DoreenX.Mouth == 'tongue'", "images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png",
-            "True", "images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png",
+            "renpy.showing('Doreen_CUN_Animation') and Speed", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png"),
+            "Speed >= 3 and renpy.showing('Doreen_TJ_Animation')", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png"),
+#            "DoreenX.Mouth == 'normal'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png"),
+            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Smirk.png"),
+            "DoreenX.Mouth == 'sucking'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Open.png"),
+            "DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Kiss.png"),
+            "DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Sad.png"),
+#            "DoreenX.Mouth == 'smile'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png"),
+            "DoreenX.Mouth == 'smirk'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Smirk.png"),
+#            "DoreenX.Mouth == 'grimace'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png"),
+            "DoreenX.Mouth == 'surprised'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Open.png"),
+            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Tongue.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Smile.png"),
             ),
         (0,0), ConditionSwitch(
             #Spunk layer
             "'mouth' not in DoreenX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Doreen_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/DoreenBJFace/Doreen_BJ_Spunk_Tongue.png",  #licking
+                    "Speed == 1", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Tongue.png"),  #licking
 #                    "True", Null(),                          #heading
                     "(Speed == 2 or Speed == 5)", "Doreen_BJ_Heading_Spunk",                          #heading
 #                    "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/DoreenBJFace/Doreen_BJ_Spunk_Sucking.png", #sucking
-                    "Speed == 4", "images/DoreenBJFace/Doreen_BJ_Spunk_Sucking.png", #deepthroat
-                    "Speed == 6", "images/DoreenBJFace/Doreen_BJ_Spunk_Sucking.png", #cumming
+                    "Speed == 3", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Sucking.png"), #sucking
+                    "Speed == 4", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Sucking.png"), #deepthroat
+                    "Speed == 6", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Sucking.png"), #cumming
                     ),
-#            "DoreenX.Mouth == 'normal'", "images/DoreenBJFace/Doreen_BJ_Spunk_Smile.png",
-#            "DoreenX.Mouth == 'lipbite'", "images/DoreenBJFace/Doreen_BJ_Spunk_Smile.png",
-            "DoreenX.Mouth == 'kiss'", "images/DoreenBJFace/Doreen_BJ_Spunk_Kiss.png",
-            "DoreenX.Mouth == 'sad'", "images/DoreenBJFace/Doreen_BJ_Spunk_Kiss.png",
-#            "DoreenX.Mouth == 'smile'", "images/DoreenBJFace/Doreen_BJ_Spunk_Smile.png",
-#            "DoreenX.Mouth == 'smirk'", "images/DoreenBJFace/Doreen_BJ_Spunk_Kiss.png",
-            "DoreenX.Mouth == 'surprised'", "images/DoreenBJFace/Doreen_BJ_Spunk_Open.png",
-            "DoreenX.Mouth == 'open'", "images/DoreenBJFace/Doreen_BJ_Spunk_Open.png",
-            "DoreenX.Mouth == 'tongue'", "images/DoreenBJFace/Doreen_BJ_Spunk_Tongue.png",
-            "DoreenX.Mouth == 'sucking'", "images/DoreenBJFace/Doreen_BJ_Spunk_Tongue.png",
-            "True", "images/DoreenBJFace/Doreen_BJ_Spunk_Smirk.png",
+#            "DoreenX.Mouth == 'normal'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Smile.png"),
+#            "DoreenX.Mouth == 'lipbite'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Smile.png"),
+            "DoreenX.Mouth == 'kiss'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Kiss.png"),
+            "DoreenX.Mouth == 'sad'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Kiss.png"),
+#            "DoreenX.Mouth == 'smile'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Smile.png"),
+#            "DoreenX.Mouth == 'smirk'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Kiss.png"),
+            "DoreenX.Mouth == 'surprised'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Open.png"),
+            "DoreenX.Mouth == 'open'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Open.png"),
+            "DoreenX.Mouth == 'tongue'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Tongue.png"),
+            "DoreenX.Mouth == 'sucking'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Tongue.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Smirk.png"),
             ),
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in DoreenX.Spunk and 'chin' not in DoreenX.Spunk", Null(),
-#            "'chin' not in DoreenX.Spunk and (DoreenX.Mouth == 'tongue' or Speed)", "images/DoreenBJFace/Doreen_BJ_Wet_Tongue.png",
-#            "DoreenX.Mouth == 'tongue' or Speed", "images/DoreenBJFace/Doreen_BJ_Wet_Tongue2.png",
-            "'mouth' in DoreenX.Spunk or 'chin' in DoreenX.Spunk", "images/DoreenBJFace/Doreen_BJ_Wet_Mouth.png",
+#            "'chin' not in DoreenX.Spunk and (DoreenX.Mouth == 'tongue' or Speed)", get_cached_image("images/DoreenBJFace/Doreen_BJ_Wet_Tongue.png"),
+#            "DoreenX.Mouth == 'tongue' or Speed", get_cached_image("images/DoreenBJFace/Doreen_BJ_Wet_Tongue2.png"),
+            "'mouth' in DoreenX.Spunk or 'chin' in DoreenX.Spunk", get_cached_image("images/DoreenBJFace/Doreen_BJ_Wet_Mouth.png"),
             "True", Null(),
             ),
 
@@ -5313,36 +5313,36 @@ image Doreen_BJ_Head:
             #Hair overlay
             "DoreenX.Hat == 'headband' and (DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong')", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png",
             "DoreenX.Water or DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
-            "DoreenX.Hat == 'headband' and (not Player.Male and 'facial' in DoreenX.Spunk)","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
+            "DoreenX.Hat == 'headband' and (not Player.Male and 'facial' in DoreenX.Spunk)", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet_H.png",
+            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
             "DoreenX.Hat == 'headband'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Short_H.png",
             "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Short.png",
             ),
 
         (0,0), ConditionSwitch(
             #glasses
-            "DoreenX.Hat == 'glasses'","images/DoreenBJFace/Doreen_BJ_Glasses.png",
+            "DoreenX.Hat == 'glasses'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Glasses.png"),
             "True", Null(),
             ),
-        (0,0),"images/DoreenBJFace/Doreen_BJ_Earring.png",
+        (0,0), get_cached_image("images/DoreenBJFace/Doreen_BJ_Earring.png"),
         (0,0), ConditionSwitch(
             # water overlay
-            "DoreenX.Water", "images/DoreenBJFace/Doreen_BJ_Wet.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenBJFace/Doreen_BJ_Wet.png",
+            "DoreenX.Water", get_cached_image("images/DoreenBJFace/Doreen_BJ_Wet.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenBJFace/Doreen_BJ_Wet.png"),
             "True",Null(),
             ),
 
 #        (0,0), "Doreen_Tester",
         (0,0), ConditionSwitch(
             #cum on the face
-            "'hair' in DoreenX.Spunk and Player.Male", "images/DoreenBJFace/Doreen_BJ_Spunk_Hair.png",
-            "'facial' in DoreenX.Spunk and Player.Male", "images/DoreenBJFace/Doreen_BJ_Spunk_Facial.png",
+            "'hair' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Hair.png"),
+            "'facial' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Facial.png"),
             "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
             #facial fix
-            "DoreenX.Fix", "images/DoreenBJFace/modification/Doreen_BJ_Head_Head_Fix.png",
+            "DoreenX.Fix", get_cached_image("images/DoreenBJFace/modification/Doreen_BJ_Head_Head_Fix.png"),
             "True", Null(),
             ),
         # -----------------
@@ -5365,17 +5365,17 @@ image Doreen_BJ_Head:
 image Doreen BJ Blink:
         #eyeblinks
         ConditionSwitch(
-            "DoreenX.Eyes == 'normal'", "images/DoreenBJFace/Doreen_BJ_Eyes_Normal.png",
-            "DoreenX.Eyes == 'sexy'", "images/DoreenBJFace/Doreen_BJ_Eyes_Sexy.png",
-            "DoreenX.Eyes == 'closed'", "images/DoreenBJFace/Doreen_BJ_Eyes_Closed.png",
-            "DoreenX.Eyes == 'surprised'", "images/DoreenBJFace/Doreen_BJ_Eyes_Surprised.png",
-            "DoreenX.Eyes == 'side'", "images/DoreenBJFace/Doreen_BJ_Eyes_Side.png",
-            "DoreenX.Eyes == 'leftside'", "images/DoreenBJFace/Doreen_BJ_Eyes_Side.png",
-            "DoreenX.Eyes == 'stunned'", "images/DoreenBJFace/Doreen_BJ_Eyes_Stunned.png",
-            "DoreenX.Eyes == 'down'", "images/DoreenBJFace/Doreen_BJ_Eyes_Down.png",
-            "DoreenX.Eyes == 'manic'", "images/DoreenBJFace/Doreen_BJ_Eyes_Surprised.png",
-            "DoreenX.Eyes == 'squint'", "images/DoreenBJFace/Doreen_BJ_Eyes_Sexy.png",
-            "True", "images/DoreenBJFace/Doreen_BJ_Eyes_Normal.png",
+            "DoreenX.Eyes == 'normal'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Normal.png"),
+            "DoreenX.Eyes == 'sexy'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Sexy.png"),
+            "DoreenX.Eyes == 'closed'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Closed.png"),
+            "DoreenX.Eyes == 'surprised'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Surprised.png"),
+            "DoreenX.Eyes == 'side'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Side.png"),
+            "DoreenX.Eyes == 'leftside'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Side.png"),
+            "DoreenX.Eyes == 'stunned'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Stunned.png"),
+            "DoreenX.Eyes == 'down'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Down.png"),
+            "DoreenX.Eyes == 'manic'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Surprised.png"),
+            "DoreenX.Eyes == 'squint'", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Sexy.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Eyes_Normal.png"),
             ),
         choice:
             3.5
@@ -5394,7 +5394,7 @@ image Doreen BJ Blink:
 #        (0,0), ConditionSwitch(
 #            #Hair overlay
 ##            "DoreenX.Water or DoreenX.Hair == 'wet'", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
-##            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
+##            "not Player.Male and 'facial' in DoreenX.Spunk", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Hair_Wet.png",
 #            "True", Null(),
 #            ),
 
@@ -5406,34 +5406,34 @@ image Doreen BJ Blink:
 image Doreen_BJ_Head_Under:
     LiveComposite(
         (695,695),
-#        (0,0), "images/DoreenBJFace/Doreen_BJ_Head_Sucking_Under.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Under.png"),
         (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png",
 #         (0,0), ConditionSwitch(
 #            # Basic Face layer
-#            "Speed and renpy.showing('Doreen_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5","images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png",
-##            "True","images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png",
-#            "DoreenX.Blush == 2", "images/DoreenBJFace/Doreen_BJ_Head_Blush2.png",
+#            "Speed and renpy.showing('Doreen_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png"),
+##            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Sucking_Overlay.png"),
+#            "DoreenX.Blush == 2", get_cached_image("images/DoreenBJFace/Doreen_BJ_Head_Blush2.png"),
 #            "DoreenX.Blush", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head_Blush.png",
 #            "True", "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_BJ_Head.png"
 #            ),
 
          (0,0), ConditionSwitch(
             #cum on the chin
-            "'chin' in DoreenX.Spunk and Player.Male", "images/DoreenBJFace/Doreen_BJ_Spunk_Chin.png",
+            "'chin' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Chin.png"),
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #cum on the chin
-#            "'chin' in DoreenX.Spunk and Player.Male", "images/DoreenBJFace/Doreen_BJ_Spunk_Chin.png",
+#            "'chin' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Spunk layer
 #            "'mouth' not in DoreenX.Spunk or not Player.Male", Null(),
-#            "True", "images/DoreenBJFace/Doreen_BJ_Spunk_SuckingUnder.png",
+#            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_SuckingUnder.png"),
 #            ),
-#        (0,0), "images/DoreenBJFace/Doreen_BJ_Mouth_Open.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Open.png"),
         )
     zoom 1
     anchor (0.5, 0.5)
@@ -5442,15 +5442,15 @@ image Doreen_BJ_Head_Under:
 image Doreen_BJ_Heading_Mouth:
     LiveComposite(
         (695,695),
-        (0,0), "images/DoreenBJFace/Doreen_BJ_Mouth_Heading.png",
+        (0,0), get_cached_image("images/DoreenBJFace/Doreen_BJ_Mouth_Heading.png"),
         (0,0), ConditionSwitch(
             #cum in mouth
-            "'mouth' in DoreenX.Spunk and Player.Male", "images/DoreenBJFace/Doreen_BJ_Spunk_Open.png",
+            "'mouth' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenBJFace/Doreen_BJ_Spunk_Open.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Hair overlay
-#            "True", "images/DoreenBJFace/Doreen_BJ_Hair_Short_Back.png",
+#            "True", get_cached_image("images/DoreenBJFace/Doreen_BJ_Hair_Short_Back.png"),
 #            ),
         )
     zoom 1
@@ -5503,7 +5503,7 @@ image Doreen_BJ_Anim0:
         contains:
                 # head overlay
                 "Doreen_BJ_Head"
-#                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-90,-105)     #top (350,190), - is up
@@ -5598,7 +5598,7 @@ image Doreen_BJ_Anim1:
         contains:
                 # head overlay
                 "Doreen_BJ_Head"
-#                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (15,-105)     #top (350,190), - is up
@@ -5752,7 +5752,7 @@ image Doreen_BJ_Anim2:
 #        contains:
 #                # mouth area overlay
 #                "Doreen_BJ_Heading_Overlay"
-##                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+##                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
 #                subpixel True
 #                transform_anchor True
 #                anchor (295,363)
@@ -5779,7 +5779,7 @@ image Doreen_BJ_Anim2:
 #        contains:
 #                # head overlay
 #                "Doreen_BJ_Head"
-##                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+##                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
 #                subpixel True
 #                alpha 1
 #                offset (-20,130)     #top (350,190), - is up
@@ -5889,7 +5889,7 @@ image Doreen_BJ_Anim3:
         contains:
                 # head overlay
                 "Doreen_BJ_Head"
-#                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-90,-75)     #top (-20,130), - is up
@@ -5977,7 +5977,7 @@ image Doreen_BJ_Anim4:
         contains:
                 # head overlay
                 "Doreen_BJ_Head"
-#                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-90,80)     #top (-20,130), - is up
@@ -6124,7 +6124,7 @@ image Doreen_BJ_Anim5:
 #        contains:
 #                # mouth area overlay
 #                "Doreen_BJ_Heading_Overlay"
-##                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+##                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
 #                subpixel True
 #                transform_anchor True
 #                anchor (295,363)
@@ -6151,7 +6151,7 @@ image Doreen_BJ_Anim5:
 #        contains:
 #                # head overlay
 #                "Doreen_BJ_Head"
-##                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+##                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
 #                subpixel True
 #                alpha 1
 #                offset (-20,130)     #top (350,190), - is up
@@ -6235,7 +6235,7 @@ image Doreen_BJ_Anim6:
         contains:
                 # head overlay
                 "Doreen_BJ_Head"
-#                AlphaMask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Doreen_BJ_Head", "Doreen_BJ_MaskHeadingComposite") #"Doreen_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-90,200)     #top (-20,130), - is up
@@ -6399,11 +6399,11 @@ image Doreen_TJ_Body:
         (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_Body.png",
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "DoreenX.Water and DoreenX.ArmPose == 1", "images/DoreenSprite/Doreen_Sprite_Water1.png",
-#            "DoreenX.Water", "images/DoreenSprite/Doreen_Sprite_Water2.png",
+#            "DoreenX.Water and DoreenX.ArmPose == 1", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water1.png"),
+#            "DoreenX.Water", get_cached_image("images/DoreenSprite/Doreen_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/DoreenBJFace/Doreen_TJ_RefCock.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_TJ_RefCock.png"),
 
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
@@ -6415,45 +6415,45 @@ image Doreen_TJ_Body:
 #            "DoreenX.Over == 'tshirt'", Null(),
 #            "DoreenX.Uptop", ConditionSwitch(
 #                    # if top is up. . .
-#                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Lace_Body_Up.png",
-#                    "DoreenX.Chest == 'bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Lace_Body_Up.png",
-#                    "DoreenX.Chest == 'tank'", "images/DoreenBJFace/Doreen_TJ_Chest_Tank_Body_Up.png",
-#                    "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Body_Up.png",
+#                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace_Body_Up.png"),
+#                    "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace_Body_Up.png"),
+#                    "DoreenX.Chest == 'tank'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Tank_Body_Up.png"),
+#                    "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Body_Up.png"),
 #                    "True", Null(),
 #                    ),
-            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Lace_Body.png",
-#            "Player.Sprite and renpy.showing('Doreen_TJ_Animation') and DoreenX.Chest == 'tank'", "images/DoreenBJFace/Doreen_TJ_Chest_Tank_Body_Fucking.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Sports_Body.png",
-            "DoreenX.Chest == 'bikini top'", "images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Body.png",
-            "DoreenX.Chest", "images/DoreenBJFace/Doreen_TJ_Chest_Bra_Body.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace_Body.png"),
+#            "Player.Sprite and renpy.showing('Doreen_TJ_Animation') and DoreenX.Chest == 'tank'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Tank_Body_Fucking.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Sports_Body.png"),
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Body.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bra_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over body layer
-            "DoreenX.Over == 'suit' and DoreenX.Arms", "images/DoreenBJFace/Doreen_TJ_Over_Suit_Body_Gloved.png",
-            "DoreenX.Over == 'suit'", "images/DoreenBJFace/Doreen_TJ_Over_Suit_Body.png",
+            "DoreenX.Over == 'suit' and DoreenX.Arms", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Suit_Body_Gloved.png"),
+            "DoreenX.Over == 'suit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Suit_Body.png"),
 
-            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Body.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_TJ_Over_Sweater_Body.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Over_Tube_Body.png",
-#            "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_TJ_Over_Towel_Body.png",
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Body.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Sweater_Body.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tube_Body.png"),
+#            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Towel_Body.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #jacket body layer
-            "DoreenX.Acc == 'jacket'", "images/DoreenBJFace/Doreen_TJ_Jacket.png",
-            "DoreenX.Acc == 'vest'", "images/DoreenBJFace/Doreen_TJ_Vest.png",
+            "DoreenX.Acc == 'jacket'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Jacket.png"),
+            "DoreenX.Acc == 'vest'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Vest.png"),
             "True", Null(),
             ),
-#        (0,0), "images/DoreenBJFace/Doreen_TJ_RefLine.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_TJ_RefLine.png"),
 
         (0,0), ConditionSwitch(
             #Hair overlay
             "DoreenX.Hair != 'long' and DoreenX.Hair != 'wetlong'", Null(),
-            "DoreenX.Water or DoreenX.Hair == 'wetlong'", "images/DoreenBJFace/Doreen_TJ_Hair_Wet.png",
-            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenBJFace/Doreen_TJ_Hair_Wet.png",
-            "True", "images/DoreenBJFace/Doreen_TJ_Hair_Long.png",
+            "DoreenX.Water or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hair_Wet.png"),
+            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hair_Wet.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Hair_Long.png"),
             ),
 #        (-10,-90), "Doreen_Sprite_Head", #(75,-10)
         )
@@ -6482,15 +6482,15 @@ image Doreen_TJ_Tits_Under:
         (0,0), ConditionSwitch(
             #Chest tits layer
             "not DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Mask.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Sports_Mask.png",
-#            "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Tits.png",
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Mask.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Sports_Mask.png"),
+#            "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # spunk under tits
             "'tits' not in DoreenX.Spunk", Null(),
-            "True", "images/DoreenBJFace/Doreen_TJ_Spunk_Tits.png",
+            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Tits.png"),
             ),
         )
     transform_anchor True
@@ -6507,7 +6507,7 @@ image Doreen_TJ_Tits_Over:
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "DoreenX.Water", Null(),
-#            "True", "images/DoreenBJFace/Doreen_TJ_Tit_Under_Smoosh.png",
+#            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tit_Under_Smoosh.png"),
 #            ),
         (0,0), ConditionSwitch(
             # over tit
@@ -6515,22 +6515,22 @@ image Doreen_TJ_Tits_Over:
             "True", Null(),
             ),
 
-#        (0,0),  "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_TitsRef.png",
+#        (0,0), "images/DoreenBJFace/[DoreenX.skin_image.skin_path]Doreen_TJ_TitsRef.png",
         (0,0), ConditionSwitch(
             #Chest tits layer
             "DoreenX.Over == 'tshirt'", Null(),
             "DoreenX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Lace_Up.png",
-                    "DoreenX.Chest == 'bikini top'", "images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Up.png",
-                    "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Up.png",
-                    "DoreenX.Chest", "images/DoreenBJFace/Doreen_TJ_Chest_Bra_Up.png",
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace_Up.png"),
+                    "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Up.png"),
+                    "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Up.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bra_Up.png"),
                     "True", Null(),
                     ),
-            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Lace_Tits.png",
-            "DoreenX.Chest == 'bikini top'", "images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Tits.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Chest_Sports_Tits.png",
-            "DoreenX.Chest", "images/DoreenBJFace/Doreen_TJ_Chest_Bra_Tits.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace_Tits.png"),
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Tits.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Sports_Tits.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bra_Tits.png"),
             "True", Null(),
             ),
 
@@ -6538,15 +6538,15 @@ image Doreen_TJ_Tits_Over:
             #Over tits layer
             "DoreenX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Up.png",
-                    "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Over_Tube_Up.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_TJ_Over_Sweater_Up.png",
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Up.png"),
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tube_Up.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Sweater_Up.png"),
                     "True", Null(),
                     ),
-            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Tits.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Over_Tube_Tits.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_TJ_Over_Sweater_Tits.png",
-            "DoreenX.Over == 'towel' and not Player.Sprite", "images/DoreenBJFace/Doreen_TJ_Over_Towel_Tits.png",
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tshirt_Tits.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tube_Tits.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Sweater_Tits.png"),
+            "DoreenX.Over == 'towel' and not Player.Sprite", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Towel_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -6554,35 +6554,35 @@ image Doreen_TJ_Tits_Over:
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "DoreenX.Uptop", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png",
-                    "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Green.png",
-                    "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Brown.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Sweater.png",
-                    "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Gray.png",
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Lace.png",
-                    "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Green.png",
-                    "DoreenX.Chest", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Tan.png",
-                    "True", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png",
+                    "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png"),
+                    "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Green.png"),
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Brown.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Sweater.png"),
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Gray.png"),
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Lace.png"),
+                    "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Green.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Tan.png"),
+                    "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png"),
                     ),
-            "DoreenX.Uptop", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png",
-            "DoreenX.Over == 'towel'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Green.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Brown.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Sweater.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Gray.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Lace.png",
-            "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Green.png",
-            "DoreenX.Chest", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Tan.png",
-            "True", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png",
+            "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Green.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Brown.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Sweater.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Gray.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Lace.png"),
+            "DoreenX.Chest == 'bikini top' or DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Green.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Tan.png"),
+            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            # spunk over tits
 #            "'tits' not in DoreenX.Spunk", Null(),
-##            "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png",
-#            "not DoreenX.Uptop and DoreenX.Over", "images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png",
-#            "True", "images/DoreenBJFace/Doreen_TJ_Spunk_Over.png",
+##            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png"),
+#            "not DoreenX.Uptop and DoreenX.Over", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Clothed.png"),
+#            "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Over.png"),
 #            ),
-#        (0,0), "images/DoreenBJFace/Doreen_TJ_RefLine.png",
-#        (0,0), "images/DoreenBJFace/Doreen_TJ_RefLine2.png",
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_TJ_RefLine.png"),
+#        (0,0), get_cached_image("images/DoreenBJFace/Doreen_TJ_RefLine2.png"),
         )
     transform_anchor True
 #    anchor (0.6, 1.0)#(0.6, 562)
@@ -6598,9 +6598,9 @@ image Doreen_TJ_BraStretch:
             contains:
                 ConditionSwitch(
                     #Over tits layer
-                    "DoreenX.Over == 'tshirt'", "images/DoreenBJFace/Doreen_TJ_Stretch_Tshirt.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenBJFace/Doreen_TJ_Stretch_Sweater.png",
-                    "DoreenX.Chest == 'sports bra'", "images/DoreenBJFace/Doreen_TJ_Stretch_Green.png",
+                    "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Stretch_Tshirt.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Stretch_Sweater.png"),
+                    "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Stretch_Green.png"),
                     "True", Null(),
                     )
 #            contains:
@@ -6618,23 +6618,23 @@ image Doreen_TJ_BraStretch:
 ##            contains:
 ##                ConditionSwitch(
 ##                        "not DoreenX.Water",Null(),
-##                        "True",       "images/DoreenBJFace/Doreen_TJ_Tits_Wet.png",
+##                        "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Tits_Wet.png"),
 ##                        )
 #            contains:
 #                #Chest
 #                ConditionSwitch(
-#                        "DoreenX.Chest == 'lace bra' and DoreenX.Uptop","images/DoreenBJFace/Doreen_TJ_Chest_Lace_Up.png",  #fix, add "no straps" version here
-#                        "DoreenX.Chest == 'lace bra'","images/DoreenBJFace/Doreen_TJ_Chest_Lace.png",
-#                        "DoreenX.Chest == 'sports bra'","images/DoreenBJFace/Doreen_TJ_Chest_Sports.png",
-#                        "DoreenX.Chest == 'swimsuit' and DoreenX.Uptop","images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Up.png",
-#                        "DoreenX.Chest == 'swimsuit'","images/DoreenBJFace/Doreen_TJ_Chest_Bikini.png",
+#                        "DoreenX.Chest == 'lace bra' and DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace_Up.png"),  #fix, add "no straps" version here
+#                        "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Lace.png"),
+#                        "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Sports.png"),
+#                        "DoreenX.Chest == 'swimsuit' and DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini_Up.png"),
+#                        "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Chest_Bikini.png"),
 #                        "True", Null(),
 #                        )
 #            contains:
 #                #Over
 #                ConditionSwitch(
-#                        "DoreenX.Over == 'tube top' and DoreenX.Uptop","images/DoreenBJFace/Doreen_TJ_Over_Tube_Up.png",
-#                        "DoreenX.Over == 'tube top'","images/DoreenBJFace/Doreen_TJ_Over_Tube.png",
+#                        "DoreenX.Over == 'tube top' and DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tube_Up.png"),
+#                        "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Over_Tube.png"),
 #                        "True", Null(),
 #                        )
 #            contains:
@@ -6643,22 +6643,22 @@ image Doreen_TJ_BraStretch:
 #                        "not DoreenX.Pierce", Null(),
 #                        "DoreenX.Pierce == 'ring'", ConditionSwitch(
 #                                #if she's got ring piercings
-#                                "DoreenX.Uptop", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png",
-#                                "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png",
-#                                "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png",
-#                                "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Lace.png",
-#                                "True", "images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png",
+#                                "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png"),
+#                                "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png"),
+#                                "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Pink.png"),
+#                                "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring_Lace.png"),
+#                                "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Ring.png"),
 #                                ),
-#                        "DoreenX.Uptop", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png",
-#                        "DoreenX.Over == 'tube top'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png",
-#                        "DoreenX.Chest == 'swimsuit'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png",
-#                        "DoreenX.Chest == 'lace bra'", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Lace.png",
-#                        "True", "images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png",
+#                        "DoreenX.Uptop", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png"),
+#                        "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png"),
+#                        "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Pink.png"),
+#                        "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell_Lace.png"),
+#                        "True", get_cached_image("images/DoreenBJFace/Doreen_TJ_Pierce_Barbell.png"),
 #                        )
 #            contains:
 #                #Over
 #                ConditionSwitch(
-#                        "'tits' in DoreenX.Spunk and Player.Male","images/DoreenBJFace/Doreen_TJ_Spunk_Tits_Over.png",
+#                        "'tits' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenBJFace/Doreen_TJ_Spunk_Tits_Over.png"),
 #                        "True", Null(),
 #                        )
 #            transform_anchor True
@@ -8486,35 +8486,35 @@ image Doreen_69_Body:
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "DoreenX.Water", "images/DoreenSex/Doreen_69_Water_Body.png",
+#            "DoreenX.Water", get_cached_image("images/DoreenSex/Doreen_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #bra layer
             "DoreenX.Uptop", Null(),
             #if the top's down. . .
-#            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_69_Over_Green.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_69_Over_Green.png",
-#            "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_69_Over_Bra.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Over_Lace.png",
+#            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_69_Over_Green.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_69_Over_Green.png"),
+#            "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_69_Over_Bra.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Over_Lace.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #shirt layer
             "DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_69_Over_Towel.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_69_Over_Sweater.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_69_Over_Tshirt.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_69_Over_Tube.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_69_Over_Towel.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_69_Over_Sweater.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_69_Over_Tshirt.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_69_Over_Tube.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in DoreenX.Spunk and Player.Male", "images/DoreenSex/Doreen_69_Spunk_Belly.png",
+            "'belly' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_69_Spunk_Belly.png"),
             "True", Null(),
             ),
-#        (0,0), "images/DoreenSex/Doreen_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_HeadRef.png"),
         )
     offset (10,0)#(50,0)#(250,250)#(175,175)
 #    yoffset -163
@@ -8531,14 +8531,14 @@ image Doreen_69_Tits:
             #tops under
             "not DoreenX.Uptop", Null(),
             #if the top's down. . .
-            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_69_Under_Green.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_69_Under_Green.png",
-            "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_69_Under_Bra.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Under_Lace.png",
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_69_Under_Green.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_69_Under_Green.png"),
+            "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_69_Under_Bra.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Under_Lace.png"),
             #shirt layer
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_69_Under_Sweater.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_69_Under_Lace.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_69_Under_Tube.png",
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_69_Under_Sweater.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_69_Under_Lace.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_69_Under_Tube.png"),
             "True", Null(),
             ),
 
@@ -8548,41 +8548,41 @@ image Doreen_69_Tits:
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "DoreenX.Water", "images/DoreenSex/Doreen_69_Water_Body.png",
+#            "DoreenX.Water", get_cached_image("images/DoreenSex/Doreen_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #bra layer
-#            "(DoreenX.Chest == 'swimsuit' and DoreenX.Uptop) or DoreenX.Panties == 'swimsuit'", "images/DoreenSex/Doreen_69_Chest_Bikini_Up.png",
+#            "(DoreenX.Chest == 'swimsuit' and DoreenX.Uptop) or DoreenX.Panties == 'swimsuit'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Bikini_Up.png"),
 #            "DoreenX.Uptop", ConditionSwitch(
 #                    #if top's up
-#                    "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_69_Chest_Sports_Up.png",
-#                    "DoreenX.Chest == 'bra'", "images/DoreenSex/Doreen_69_Chest_Bra_Up.png",
-#                    "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Chest_Lace_Up.png",
+#                    "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Sports_Up.png"),
+#                    "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Bra_Up.png"),
+#                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Lace_Up.png"),
 #                    "True", Null(),
 #                    ),
 #            #if the top's down. . .
-#            "DoreenX.Chest == 'swimsuit' or DoreenX.Panties == 'swimsuit'", "images/DoreenSex/Doreen_69_Chest_Bikini.png",
-#            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_69_Chest_Sports.png",
-#            "DoreenX.Chest == 'bra'", "images/DoreenSex/Doreen_69_Chest_Bra.png",
-#            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Chest_Lace.png",
+#            "DoreenX.Chest == 'swimsuit' or DoreenX.Panties == 'swimsuit'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Bikini.png"),
+#            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Sports.png"),
+#            "DoreenX.Chest == 'bra'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Bra.png"),
+#            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Chest_Lace.png"),
 #            "True", Null(),
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #shorts X layer
-#            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Over_Shorts.png",
+#            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Shorts.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #shirt layer
-#            "DoreenX.Over == 'pink top' and DoreenX.Uptop", "images/DoreenSex/Doreen_69_Over_Pink_Up.png",
-#            "DoreenX.Over == 'tank' and DoreenX.Uptop", "images/DoreenSex/Doreen_69_Over_Tank_Up.png",
+#            "DoreenX.Over == 'pink top' and DoreenX.Uptop", get_cached_image("images/DoreenSex/Doreen_69_Over_Pink_Up.png"),
+#            "DoreenX.Over == 'tank' and DoreenX.Uptop", get_cached_image("images/DoreenSex/Doreen_69_Over_Tank_Up.png"),
 #            "DoreenX.Uptop", Null(),
-#            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_69_Over_Towel.png",
-#            "DoreenX.Over == 'jacket'", "images/DoreenSex/Doreen_69_Over_Jacket.png",
-#            "DoreenX.Over == 'pink top'", "images/DoreenSex/Doreen_69_Over_Pink.png",
-#            "DoreenX.Over == 'tank'", "images/DoreenSex/Doreen_69_Over_Tank.png",
+#            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_69_Over_Towel.png"),
+#            "DoreenX.Over == 'jacket'", get_cached_image("images/DoreenSex/Doreen_69_Over_Jacket.png"),
+#            "DoreenX.Over == 'pink top'", get_cached_image("images/DoreenSex/Doreen_69_Over_Pink.png"),
+#            "DoreenX.Over == 'tank'", get_cached_image("images/DoreenSex/Doreen_69_Over_Tank.png"),
 #            "True", Null(),
 #            ),
 
@@ -8591,20 +8591,20 @@ image Doreen_69_Tits:
             #bra layer
             "DoreenX.Uptop", Null(),
             #if the top's down. . .
-            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_69_Tits_Green.png",
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_69_Tits_Green.png",
-            "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_69_Tits_Bra.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Tits_Lace.png",
+            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Green.png"),
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Green.png"),
+            "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Bra.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Lace.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #shirt layer
             "DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_69_Tits_Towel.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_69_Tits_Sweater.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_69_Tits_Tshirt.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_69_Tits_Tube.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Towel.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Sweater.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Tshirt.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_69_Tits_Tube.png"),
             "True", Null(),
             ),
 
@@ -8613,38 +8613,38 @@ image Doreen_69_Tits:
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "DoreenX.Uptop", "images/DoreenSex/Doreen_69_Pierce_Tits_R.png",
+                    "DoreenX.Uptop", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R.png"),
 
-                    "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Brown.png",
-                    "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Green.png",
-                    "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Sweater.png",
-                    "DoreenX.Over", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Tshirt.png",                  #tshirt
+                    "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Brown.png"),
+                    "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Green.png"),
+                    "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Sweater.png"),
+                    "DoreenX.Over", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Tshirt.png"),                  #tshirt
 
-                    "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Lace.png",
-                    "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Tan.png",
-                    "DoreenX.Chest", "images/DoreenSex/Doreen_69_Pierce_Tits_R_Green.png",
+                    "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Lace.png"),
+                    "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Tan.png"),
+                    "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R_Green.png"),
 
-                    "True", "images/DoreenSex/Doreen_69_Pierce_Tits_R.png",
+                    "True", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_R.png"),
                     ),
-            "DoreenX.Uptop", "images/DoreenSex/Doreen_69_Pierce_Tits_B.png",
+            "DoreenX.Uptop", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B.png"),
 
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Brown.png",
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Green.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Sweater.png",
-            "DoreenX.Over", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Tshirt.png",                  #tshirt
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Brown.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Green.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Sweater.png"),
+            "DoreenX.Over", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Tshirt.png"),                  #tshirt
 
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Lace.png",
-            "DoreenX.Chest == 'tan bra'", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Tan.png",
-            "DoreenX.Chest", "images/DoreenSex/Doreen_69_Pierce_Tits_B_Green.png",
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Lace.png"),
+            "DoreenX.Chest == 'tan bra'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Tan.png"),
+            "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B_Green.png"),
 
-            "True", "images/DoreenSex/Doreen_69_Pierce_Tits_B.png",
+            "True", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Tits_B.png"),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in DoreenX.Spunk and Player.Male", "images/DoreenSex/Doreen_69_Spunk_Tits.png",
+            "'tits' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_69_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/DoreenSex/Doreen_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_HeadRef.png"),
         )
     offset (10,0)#(250,250)#(175,175)
 #    yoffset -163
@@ -8658,20 +8658,20 @@ image Doreen_69_Head:
         (1120,840),
         (0,0), ConditionSwitch(
             #tongue
-            "renpy.showing('Doreen_69_CUN') and Speed != 3", "images/DoreenSex/Doreen_69_Tongue.png",
-            "Speed == 1", "images/DoreenSex/Doreen_69_Tongue.png",
+            "renpy.showing('Doreen_69_CUN') and Speed != 3", get_cached_image("images/DoreenSex/Doreen_69_Tongue.png"),
+            "Speed == 1", get_cached_image("images/DoreenSex/Doreen_69_Tongue.png"),
             "True", Null(),
             ),
         (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Head.png",
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'mouth' in DoreenX.Spunk and Player.Male", "images/DoreenSex/Doreen_69_Spunk_Mouth.png",
+            "'mouth' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_69_Spunk_Mouth.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #collar
 #            "Speed == 1 and Player.Male", Null(),
-#            "DoreenX.Chest == 'swimsuit' or DoreenX.Panties == 'swimsuit'", "images/DoreenSex/Doreen_69_Collar.png",
+#            "DoreenX.Chest == 'swimsuit' or DoreenX.Panties == 'swimsuit'", get_cached_image("images/DoreenSex/Doreen_69_Collar.png"),
 #            "True", Null(),
 #            ),
 
@@ -8694,9 +8694,9 @@ image Doreen_69_HairOver:
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Doreen_TJ_Animation')", Null(),
-            "DoreenX.Hair == 'blonde'", "images/DoreenSex/Doreen_69_Hair_Blonde_Lick.png",
-            "DoreenX.Hair == 'long' or DoreenX.Hair == 'wetlong'", "images/DoreenSex/Doreen_69_Hair_Long_Lick.png",
-            "True", "images/DoreenSex/Doreen_69_Hair_Short_Lick.png",
+            "DoreenX.Hair == 'blonde'", get_cached_image("images/DoreenSex/Doreen_69_Hair_Blonde_Lick.png"),
+            "DoreenX.Hair == 'long' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenSex/Doreen_69_Hair_Long_Lick.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_69_Hair_Short_Lick.png"),
             ),
         )
     offset (175,175)#(180,100)
@@ -8712,11 +8712,11 @@ image Doreen_69_HairBack:
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Doreen_TJ_Animation')", Null(),
-            "DoreenX.Hair == 'blonde'", "images/DoreenSex/Doreen_69_Hair_Blonde_Under.png",
-            "DoreenX.Hair == 'long' or DoreenX.Hair == 'wetlong'", "images/DoreenSex/Doreen_69_Hair_Long_Under.png",
-#            "DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong' or DoreenX.Water", "images/DoreenSex/Doreen_69_Hair_Long.png",
-#            "not Player.Male and 'facial' in DoreenX.Spunk","images/DoreenSex/Doreen_Sprite_Hair_Wet.png",
-            "True", "images/DoreenSex/Doreen_69_Hair_Short_Under.png",
+            "DoreenX.Hair == 'blonde'", get_cached_image("images/DoreenSex/Doreen_69_Hair_Blonde_Under.png"),
+            "DoreenX.Hair == 'long' or DoreenX.Hair == 'wetlong'", get_cached_image("images/DoreenSex/Doreen_69_Hair_Long_Under.png"),
+#            "DoreenX.Hair == 'wet' or DoreenX.Hair == 'wetlong' or DoreenX.Water", get_cached_image("images/DoreenSex/Doreen_69_Hair_Long.png"),
+#            "not Player.Male and 'facial' in DoreenX.Spunk", get_cached_image("images/DoreenSex/Doreen_Sprite_Hair_Wet.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_69_Hair_Short_Under.png"),
             ),
         )
     offset (175,175)#(175,175)
@@ -8732,14 +8732,14 @@ image Doreen_69_Legs:
         (1120,880),
 #        (0,0), ConditionSwitch(
 #            #scarf
-#            "DoreenX.Acc", "images/DoreenSex/Doreen_69_Scarf.png",
+#            "DoreenX.Acc", get_cached_image("images/DoreenSex/Doreen_69_Scarf.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #back of skirt Layer
-            "DoreenX.Legs == 'skirt'", "images/DoreenSex/Doreen_69_Legs_Skirt.png",
-            "DoreenX.Legs == 'red skirt'", "images/DoreenSex/Doreen_69_Legs_RedSkirt.png",
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_69_Legs_Towel.png",
+            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSex/Doreen_69_Legs_Skirt.png"),
+            "DoreenX.Legs == 'red skirt'", get_cached_image("images/DoreenSex/Doreen_69_Legs_RedSkirt.png"),
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_69_Legs_Towel.png"),
             "True", Null(),
             ),
 
@@ -8755,18 +8755,18 @@ image Doreen_69_Legs:
 
         (0,0), ConditionSwitch(
             #ass red
-            "DoreenX.Red", "images/DoreenSex/Doreen_Sex_Red.png",
+            "DoreenX.Red", get_cached_image("images/DoreenSex/Doreen_Sex_Red.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/DoreenSex/Doreen_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/DoreenSex/Doreen_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not DoreenX.Water", Null(),
-#            "True", "images/DoreenSex/Doreen_69_Water_Legs.png",
+#            "True", get_cached_image("images/DoreenSex/Doreen_69_Water_Legs.png"),
 #            ),
 
         (0,0), "Doreen_69_Anus",
@@ -8781,8 +8781,8 @@ image Doreen_69_Legs:
             "not DoreenX.Wet", Null(),
             "(DoreenX.Legs == 'yoga pants' or DoreenX.Legs == 'shorts') and not DoreenX.Upskirt", Null(),
             "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
-            "DoreenX.Wet == 1", AlphaMask("Wet_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
-            "True", AlphaMask("Wet_Drip2_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
+            "DoreenX.Wet == 1", get_cached_alphamask("Wet_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
+            "True", get_cached_alphamask("Wet_Drip2_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
             ),
 
         (-6,12), ConditionSwitch(    #-695,-480
@@ -8790,11 +8790,11 @@ image Doreen_69_Legs:
             "'anal' not in DoreenX.Spunk or not Player.Male", Null(),
             "(DoreenX.Legs == 'yoga pants' or DoreenX.Legs == 'shorts') and not DoreenX.Upskirt", Null(),
 #            "True", "Spunk_Drip2_69", #"Spunk_Drip_69",
-            "True", AlphaMask("Spunk_Drip_69_Anal","images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
+            "True", get_cached_alphamask("Spunk_Drip_69_Anal", "images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
             ),
         (-6,12), ConditionSwitch(
             #anal Spunk
-            "'anal' in DoreenX.Spunk", "images/BetsySex/Betsy_69_Spunk_Ass.png",
+            "'anal' in DoreenX.Spunk", get_cached_image("images/BetsySex/Betsy_69_Spunk_Ass.png"),
             "True", Null(),
             ),
 
@@ -8802,25 +8802,25 @@ image Doreen_69_Legs:
             #Panties if up
             "DoreenX.PantiesDown", ConditionSwitch(
                     #If she has panties down. . .
-                    "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_69_Panties_Lace_Down.png",
-                    "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_69_Panties_Bikini_Down.png",
-                    "DoreenX.Panties and DoreenX.Wet", "images/DoreenSex/Doreen_69_Panties_Tan_Down_Wet.png",
-                    "DoreenX.Panties", "images/DoreenSex/Doreen_69_Panties_Tan_Down.png",
+                    "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_69_Panties_Lace_Down.png"),
+                    "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_69_Panties_Bikini_Down.png"),
+                    "DoreenX.Panties and DoreenX.Wet", get_cached_image("images/DoreenSex/Doreen_69_Panties_Tan_Down_Wet.png"),
+                    "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_69_Panties_Tan_Down.png"),
                     "True", Null(),
                     ),
 
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_69_Panties_Lace.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_69_Panties_Bikini.png",
-            "DoreenX.Panties and DoreenX.Wet", "images/DoreenSex/Doreen_69_Panties_Tan_Wet.png",
-            "DoreenX.Panties", "images/DoreenSex/Doreen_69_Panties_Tan.png",
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_69_Panties_Lace.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_69_Panties_Bikini.png"),
+            "DoreenX.Panties and DoreenX.Wet", get_cached_image("images/DoreenSex/Doreen_69_Panties_Tan_Wet.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_69_Panties_Tan.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "DoreenX.Hose == 'stockings and garterbelt'", "images/DoreenSex/Doreen_69_Hose_StockingsGarter.png",
-            "DoreenX.Hose == 'garterbelt'", "images/DoreenSex/Doreen_69_Hose_Garter.png",
-            "DoreenX.Hose == 'stockings'", "images/DoreenSex/Doreen_69_Hose_Stockings.png",
+            "DoreenX.Hose == 'stockings and garterbelt'", get_cached_image("images/DoreenSex/Doreen_69_Hose_StockingsGarter.png"),
+            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_69_Hose_Garter.png"),
+            "DoreenX.Hose == 'stockings'", get_cached_image("images/DoreenSex/Doreen_69_Hose_Stockings.png"),
             "True", Null(),
             ),
 
@@ -8830,51 +8830,51 @@ image Doreen_69_Legs:
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png"),
 
-#                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Brown.png",
-                    "DoreenX.Hose == 'pantyhose' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_69_Pierce_Pussy_R.png",
+#                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Brown.png"),
+                    "DoreenX.Hose == 'pantyhose' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R.png"),
 
-                    "DoreenX.PantiesDown", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png",
-                    "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Lace.png",
-                    "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Green.png",
-                    "DoreenX.Panties", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Tan.png",
-                    "True", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png",
+                    "DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png"),
+                    "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Lace.png"),
+                    "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Green.png"),
+                    "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Tan.png"),
+                    "True", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-#            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png",
-#            "DoreenX.Hose == 'pantyhose' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_69_Pierce_Pussy_Lace_B.png",
+#            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png"),
+#            "DoreenX.Hose == 'pantyhose' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_Lace_B.png"),
 
-            "DoreenX.PantiesDown", "images/DoreenSex/Doreen_69_Pierce_Pussy_B.png",
-#            "DoreenX.Chest == 'swimsuit'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Blue.png",
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_69_Pierce_Pussy_B_Lace.png",
-            "DoreenX.Panties", "images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png",
-            "True", "images/DoreenSex/Doreen_69_Pierce_Pussy_B.png",
+            "DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B.png"),
+#            "DoreenX.Chest == 'swimsuit'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Blue.png"),
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B_Lace.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B.png"),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-            "DoreenX.Hose == 'pantyhose'", "images/DoreenSex/Doreen_69_Hose_Pantyhose.png",
-            "DoreenX.Hose == 'tights'", "images/DoreenSex/Doreen_69_Hose_Tights.png",
-            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/Doreen_69_Hose_Pantyhose_Holed.png",
-            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/Doreen_69_Hose_Tights_Holed.png",
+            "DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenSex/Doreen_69_Hose_Pantyhose.png"),
+            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/Doreen_69_Hose_Tights.png"),
+            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/Doreen_69_Hose_Pantyhose_Holed.png"),
+            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/Doreen_69_Hose_Tights_Holed.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #Legs Layer
-#            "DoreenX.Legs == 'skirt' and DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Legs_Skirt_Up.png",
-#            "DoreenX.Legs == 'skirt'", "images/DoreenSex/Doreen_Sex_Legs_Skirt.png",
+#            "DoreenX.Legs == 'skirt' and DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Skirt_Up.png"),
+#            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Skirt.png"),
 #            "DoreenX.Upskirt", Null(),
-#            "DoreenX.Legs == 'skirt'", "images/DoreenSex/Doreen_Sex_Legs_Skirt.png",
+#            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Skirt.png"),
 
-            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt and DoreenX.Wet > 1", "images/DoreenSex/Doreen_69_Legs_Shorts_Down_Wet.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Legs_Shorts_Down.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Wet > 1", "images/DoreenSex/Doreen_69_Legs_Shorts_Wet.png",
-            "DoreenX.Legs == 'shorts'", "images/DoreenSex/Doreen_69_Legs_Shorts.png",
+            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt and DoreenX.Wet > 1", get_cached_image("images/DoreenSex/Doreen_69_Legs_Shorts_Down_Wet.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Legs_Shorts_Down.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Wet > 1", get_cached_image("images/DoreenSex/Doreen_69_Legs_Shorts_Wet.png"),
+            "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSex/Doreen_69_Legs_Shorts.png"),
             "True", Null(),
             ),
 
@@ -8884,13 +8884,13 @@ image Doreen_69_Legs:
             "DoreenX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
                     "Player.Sprite and Player.Cock == 'in'", Null(),
-                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Brown.png",
-                    "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png",
+                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Brown.png"),
+                    "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png"),
                     "True", Null(),
                     ),
             #else, it's barbell
-            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png",
-            "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png",
+            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png"),
+            "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png"),
             "True", Null(),
             ),
 
@@ -8918,13 +8918,13 @@ image Doreen_69_Legs:
 #        (0,0), ConditionSwitch(
 #            #Footjob overlay
 #            "Player.Cock == 'foot'", Null(),
-#            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Doreen_69_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
-#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Doreen_69_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+#            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Doreen_69_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Doreen_69_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
 #            "ShowFeet", "Doreen_69_Feet",
-##            "Player.Sprite", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick pussy'", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick ass'", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
-#            "True", AlphaMask("Doreen_69_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "Player.Sprite", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick pussy'", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick ass'", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
+#            "True", get_cached_alphamask("Doreen_69_Feet", "images/DoreenSex/Doreen_Sex_Feet_Mask.png"),
 #            ),
 
         (0,0), "Doreen_69_Feet",
@@ -8937,7 +8937,7 @@ image Doreen_69_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Doreen_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Doreen_Sex_Feet", "images/DoreenSex/Doreen_Sex_FeetMask.png"),
 #            "True", "Doreen_Sex_Feet",
 #            ),
         )
@@ -8948,7 +8948,7 @@ image Doreen_69_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Doreen_Sex_Legs
         (1120,840),
-#        (0,0), "images/DoreenSex/Doreen_Sex_Feet.png",                                                         #Legs Base
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_Feet.png"),                                                         #Legs Base
 
         (0,0), ConditionSwitch(
             #hose layer
@@ -8957,18 +8957,18 @@ image Doreen_69_Feet:
             "DoreenX.Hose == 'tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Tights.png",
             "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Holed.png",
             "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet_Tights_Holed.png",
-            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", "images/DoreenSex/Doreen_69_Feet_Hose.png",
+            "DoreenX.Hose and DoreenX.Hose != 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_69_Feet_Hose.png"),
             "True", "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_69_Feet.png",   #Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not DoreenX.Water", Null(),
-#            "True", "images/DoreenSex/Doreen_69_Water_Feet.png",
+#            "True", get_cached_image("images/DoreenSex/Doreen_69_Water_Feet.png"),
 #            ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in DoreenX.Spunk", "images/DoreenSex/Doreen_Sex_Spunk_Feet.png",
+            "'feet' in DoreenX.Spunk", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -8978,8 +8978,8 @@ image Doreen_69_Tail:
         #Tail when in Sex Pussy speed 0, attached to Sex Anus
         contains:
             ConditionSwitch(
-#                "DoreenX.Tail and GhostTail", "images/DoreenDoggy/Doreen_Doggy_Tail3.png",
-                "DoreenX.Tail", "images/DoreenDoggy/Doreen_Doggy_Tail.png",
+#                "DoreenX.Tail and GhostTail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail3.png"),
+                "DoreenX.Tail", get_cached_image("images/DoreenDoggy/Doreen_Doggy_Tail.png"),
                 "True", Null(),
                 )
             transform_anchor True
@@ -9003,31 +9003,31 @@ image Doreen_69_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Pussy_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Doreen_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/DoreenSex/Doreen_69_Pussy_Open.png",
-                "DoreenX.Offhand == 'fondle pussy' and DoreenX.Lust > 60", "images/DoreenSex/Doreen_69_Pussy_Open.png",
-                "True", "images/DoreenSex/Doreen_69_Pussy_Closed.png",
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/Doreen_69_Pussy_Open.png"),
+                "DoreenX.Offhand == 'fondle pussy' and DoreenX.Lust > 60", get_cached_image("images/DoreenSex/Doreen_69_Pussy_Open.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_69_Pussy_Closed.png"),
                 )
     contains:
             # The background plate of her pussy
             ConditionSwitch(
                 "not DoreenX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-                "True", "images/BetsySex/Betsy_69_Water_Pussy.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/BetsySex/Betsy_69_Water_Pussy.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not DoreenX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/DoreenSex/Doreen_Sex_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-#                "Player.Sprite and Player.Cock == 'out'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "Trigger == 'lick pussy'", "images/DoreenSex/Doreen_69_Pubes_Open.png",
-                "DoreenX.Offhand == 'fondle pussy' and DoreenX.Lust > 60", "images/DoreenSex/Doreen_69_Pubes_Open.png",
-                "True", "images/DoreenSex/Doreen_69_Pubes_Closed.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'out'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/Doreen_69_Pubes_Open.png"),
+                "DoreenX.Offhand == 'fondle pussy' and DoreenX.Lust > 60", get_cached_image("images/DoreenSex/Doreen_69_Pubes_Open.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_69_Pubes_Closed.png"),
                 )
     contains:
             #Spunk
@@ -9036,49 +9036,49 @@ image Doreen_69_Pussy:
                 "(DoreenX.Legs == 'yoga pants' or DoreenX.Legs == 'shorts') and not DoreenX.Upskirt", Null(),
                 "DoreenX.Panties and not DoreenX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Spunk_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Spunk_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"),
                 )
 #            offset (-700,-570)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-#                "'in' in DoreenX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in DoreenX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Pussy.png",
+#                "'in' in DoreenX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in DoreenX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Pussy.png"),
                 "True", Null(),
                 )
             offset (0,10)
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in DoreenX.Spunk", "images/DoreenSex/Doreen_Sex_Spunk_Puss_Under.png",
+#                "'in' in DoreenX.Spunk", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-#                "DoreenX.Hose == 'ripped pantyhose' and ShowFeet", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png",
-#                "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png",
+#                "DoreenX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png"),
+#                "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
 #    contains:
 #            # The animation of Zero's moving penis, masked by her pussy shape
 #            ConditionSwitch(
 ##                "not Player.Sprite", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Doreen_Sex_Fucking_Zero_Anim3", "Doreen_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Doreen_Sex_Fucking_Zero_Anim2", "Doreen_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Doreen_Sex_Fucking_Zero_Anim1", "Doreen_Sex_Heading_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim3", "Doreen_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim2", "Doreen_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Doreen_Sex_Fucking_Zero_Anim1", "Doreen_Sex_Heading_Mask"),
 #                "Player.Sprite and Player.Cock == 'in'", "Doreen_Sex_Fucking_Zero_Anim0",
 #                "True", Null(),
 #                )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "DoreenX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_BarbellF.png",
-#                "DoreenX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_RingF.png",
-#                "DoreenX.Pierce == 'barbell'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_Barbell.png",
-#                "DoreenX.Pierce == 'ring'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_Ring.png",
+#                "DoreenX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_BarbellF.png"),
+#                "DoreenX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_RingF.png"),
+#                "DoreenX.Pierce == 'barbell'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_Barbell.png"),
+#                "DoreenX.Pierce == 'ring'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
 #    contains:
@@ -9093,7 +9093,7 @@ image Doreen_69_Pussy:
 #                "Speed == 1", Null(),
 #                "'in' not in DoreenX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 ##                "Speed <= 1", Null(), #"Doreen_Pussy_Spunk_Heading",
-#                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
 #                )
 
     #End Doreen Pussy composite
@@ -9126,35 +9126,35 @@ image Doreen_69_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/DoreenSex/Doreen_Sex_Anus.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Anus.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/DoreenSex/Doreen_Sex_Anus.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Anus.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Doreen_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Doreen_Sex_Anal_Tip",
-            "DoreenX.Plug", "images/PlugBase_Sex.png",
+            "DoreenX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "DoreenX.Loose > 2", "Doreen_Gape_Anal_Sex",
-#            "DoreenX.Loose", "images/DoreenSex/Doreen_Sex_Anus_Loose.png",
-            "True", "images/DoreenSex/Doreen_Sex_Anus_Loose.png",
+#            "DoreenX.Loose", get_cached_image("images/DoreenSex/Doreen_Sex_Anus_Loose.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Anus_Loose.png"),
             "True", Null(),
             )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
 #                "'anal' not in DoreenX.Spunk or not Player.Male", Null(),
-##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/DoreenSex/Doreen_Sex_Spunk_Anal_Under.png",
+##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Anal_Under.png"),
 ##                "Player.Sprite and Player.Cock == 'anal' and Speed == 1", "Doreen_Sex_Anal_Spunk_Heading_Under",
-#                "True", "images/DoreenSex/Doreen_69_Spunk_Ass.png",
+#                "True", get_cached_image("images/DoreenSex/Doreen_69_Spunk_Ass.png"),
 #                )
 #            offset (5,0)
 #    contains:
 #            # The animation of Zero's moving penis, masked by her anus shape
 #            ConditionSwitch(
 #                "not Player.Sprite or Player.Cock != 'anal'", Null(),
-#                "Speed >= 3",  AlphaMask("Doreen_Sex_Anal_Zero_Anim3", "Doreen_Sex_Anal_MaskF"),
-#                "Speed >= 2", AlphaMask("Doreen_Sex_Anal_Zero_Anim2", "Doreen_Sex_Anal_MaskF"),
-#                "Speed", AlphaMask("Doreen_Sex_Anal_Zero_Anim1", "Doreen_Sex_Anal_Mask"),
-#                "True", AlphaMask("Doreen_Sex_Anal_Zero_Anim0", "Doreen_Sex_Anal_Mask"),
+#                "Speed >= 3",  get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim3", "Doreen_Sex_Anal_MaskF"),
+#                "Speed >= 2", get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim2", "Doreen_Sex_Anal_MaskF"),
+#                "Speed", get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim1", "Doreen_Sex_Anal_Mask"),
+#                "True", get_cached_alphamask("Doreen_Sex_Anal_Zero_Anim0", "Doreen_Sex_Anal_Mask"),
 #                )
 #    contains:
 #            #Spunk over penis
@@ -10336,7 +10336,7 @@ image Doreen_SC_Body:
     LiveComposite(
         #the torso/head used in the sex pose, referenced by Doreen_SexSprite
         (1120,840),
-#        (0,-100), "images/DoreenSex/Doreen_Sex_Headref.png",
+#        (0,-100), get_cached_image("images/DoreenSex/Doreen_Sex_Headref.png"),
 #        (335,60), "Doreen_HairBack_Sex",
         (560,-30), "Doreen_Head_SC",  #(50,-325)(335,-40)
         (0,0), "images/DoreenSex/[DoreenX.skin_image.skin_path]Doreen_Sex_Body.png",
@@ -10344,33 +10344,33 @@ image Doreen_SC_Body:
             #bra layer
             "DoreenX.Uptop", Null(),
             #if the top's down. . .
-            "DoreenX.Chest == 'sports bra'", "images/DoreenSex/Doreen_Sex_Chest_Sports_Under.png",
-#            "DoreenX.Chest == 'bikini top'", "images/DoreenSex/Doreen_Sex_Chest_Sports.png",
-            "DoreenX.Chest == 'lace bra'", "images/DoreenSex/Doreen_Sex_Chest_Lace_Under.png",
-#            "DoreenX.Chest", "images/DoreenSex/Doreen_Sex_Chest_Bra.png",
+            "DoreenX.Chest == 'sports bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Sports_Under.png"),
+#            "DoreenX.Chest == 'bikini top'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Sports.png"),
+            "DoreenX.Chest == 'lace bra'", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Lace_Under.png"),
+#            "DoreenX.Chest", get_cached_image("images/DoreenSex/Doreen_Sex_Chest_Bra.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "DoreenX.Water", "images/DoreenSex/Doreen_Sex_Water_Belly.png",
+            "DoreenX.Water", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
             "DoreenX.Uptop", Null(),
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Over_Towel_Under.png",
-            "DoreenX.Over == 'tshirt'", "images/DoreenSex/Doreen_Sex_Over_Tshirt_Under.png",
-            "DoreenX.Over == 'sweater'", "images/DoreenSex/Doreen_Sex_Over_Sweater_Under.png",
-            "DoreenX.Over == 'tube top'", "images/DoreenSex/Doreen_Sex_Over_Tube_Under.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Towel_Under.png"),
+            "DoreenX.Over == 'tshirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tshirt_Under.png"),
+            "DoreenX.Over == 'sweater'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Sweater_Under.png"),
+            "DoreenX.Over == 'tube top'", get_cached_image("images/DoreenSex/Doreen_Sex_Over_Tube_Under.png"),
             "True", Null(),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in DoreenX.Spunk and Player.Male", "images/DoreenSex/Doreen_Sex_Spunk_Belly.png",
+            "'belly' in DoreenX.Spunk and Player.Male", get_cached_image("images/DoreenSex/Doreen_Sex_Spunk_Belly.png"),
             "True", Null(),
             ),
-#        (0,0), "images/DoreenSex/Doreen_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/DoreenSex/Doreen_Sex_HeadRef.png"),
         )
 #    yoffset -163
 # End Doreen Sex Pose Body / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -10431,14 +10431,14 @@ image Doreen_SC_Legs:
 
         (0,0), ConditionSwitch(
             #ass red
-            "DoreenX.Red", "images/DoreenSex/Doreen_Sex_Red.png",
+            "DoreenX.Red", get_cached_image("images/DoreenSex/Doreen_Sex_Red.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not DoreenX.Water", Null(),
-            "True", "images/DoreenSex/Doreen_Sex_Water_Legs.png",
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Water_Legs.png"),
             ),
 
 #        (0,0), "Doreen_Sex_Anus",
@@ -10450,18 +10450,18 @@ image Doreen_SC_Legs:
         (0,0), ConditionSwitch(
             #Panties if up
             "DoreenX.PantiesDown", Null(),
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_Sex_Panties_Lace.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_Sex_Panties_Bikini.png",
-            "DoreenX.Panties and DoreenX.Wet", "images/DoreenSex/Doreen_Sex_Panties_Tan_Wet.png",
-            "DoreenX.Panties", "images/DoreenSex/Doreen_Sex_Panties_Tan.png",
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Lace.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Bikini.png"),
+            "DoreenX.Panties and DoreenX.Wet", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Tan_Wet.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_Sex_Panties_Tan.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "DoreenX.Hose == 'stockings and garterbelt'", "images/DoreenSex/Doreen_Sex_Hose_StockingsGarter.png",
-            "DoreenX.Hose == 'garterbelt'", "images/DoreenSex/Doreen_Sex_Hose_Garter.png",
-            "DoreenX.Hose == 'stockings'", "images/DoreenSex/Doreen_Sex_Hose_Stockings.png",
+            "DoreenX.Hose == 'stockings and garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_StockingsGarter.png"),
+            "DoreenX.Hose == 'garterbelt'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Garter.png"),
+            "DoreenX.Hose == 'stockings'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
 
@@ -10470,49 +10470,49 @@ image Doreen_SC_Legs:
             "not DoreenX.Pierce", Null(),
             "DoreenX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_R_Fucking.png"),
 
-                    "DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png",
-                    "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Lace.png",
-                    "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Green.png",
-                    "DoreenX.Panties", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tan.png",
-                    "True", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png",
+                    "DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png"),
+                    "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Lace.png"),
+                    "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Green.png"),
+                    "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tan.png"),
+                    "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png",
+            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_69_Pierce_Pussy_B_Clothed.png"),
 
-            "DoreenX.PantiesDown", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png",
-            "DoreenX.Panties == 'lace panties'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Lace.png",
-            "DoreenX.Panties == 'bikini bottoms'", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Green.png",
-            "DoreenX.Panties", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tan.png",
-            "True", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png",
+            "DoreenX.PantiesDown", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png"),
+            "DoreenX.Panties == 'lace panties'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Lace.png"),
+            "DoreenX.Panties == 'bikini bottoms'", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Green.png"),
+            "DoreenX.Panties", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tan.png"),
+            "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B.png"),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "DoreenX.Panties and DoreenX.PantiesDown", Null(),
-            "DoreenX.Hose == 'tights'", "images/DoreenSex/Doreen_Sex_Hose_Tights.png",
-            "DoreenX.Hose == 'ripped tights'", "images/DoreenSex/Doreen_Sex_Hose_Tights_Holed.png",
-            "DoreenX.Hose == 'pantyhose'", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose.png",
-            "DoreenX.Hose == 'ripped pantyhose'", "images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png",
+            "DoreenX.Hose == 'tights'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Tights.png"),
+            "DoreenX.Hose == 'ripped tights'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Tights_Holed.png"),
+            "DoreenX.Hose == 'pantyhose'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose.png"),
+            "DoreenX.Hose == 'ripped pantyhose'", get_cached_image("images/DoreenSex/Doreen_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Legs Layer
-            "DoreenX.Legs == 'skirt'", "images/DoreenSex/Doreen_Sex_Legs_Skirt.png",
-            "DoreenX.Legs == 'red skirt'", "images/DoreenSex/Doreen_Sex_Legs_RedSkirt.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt and DoreenX.Wet > 1", "images/DoreenSex/Doreen_Sex_Legs_Shorts_Down_Wet.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Legs_Shorts_Down.png",
-            "DoreenX.Legs == 'shorts' and DoreenX.Wet > 1", "images/DoreenSex/Doreen_Sex_Legs_Shorts_Wet.png",
-            "DoreenX.Legs == 'shorts'", "images/DoreenSex/Doreen_Sex_Legs_Shorts.png",
+            "DoreenX.Legs == 'skirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Skirt.png"),
+            "DoreenX.Legs == 'red skirt'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_RedSkirt.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt and DoreenX.Wet > 1", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts_Down_Wet.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts_Down.png"),
+            "DoreenX.Legs == 'shorts' and DoreenX.Wet > 1", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts_Wet.png"),
+            "DoreenX.Legs == 'shorts'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Shorts.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #towel Layer
-            "DoreenX.Over == 'towel'", "images/DoreenSex/Doreen_Sex_Legs_Towel.png",
+            "DoreenX.Over == 'towel'", get_cached_image("images/DoreenSex/Doreen_Sex_Legs_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -10521,13 +10521,13 @@ image Doreen_SC_Legs:
             "DoreenX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
                     "Player.Sprite and Player.Cock == 'in'", Null(),
-                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Brown.png",
-                    "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png",
+                    "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Brown.png"),
+                    "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_R_Tights.png"),
                     "True", Null(),
                     ),
             #else, it's barbell
-            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Brown.png",
-            "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", "images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png",
+            "DoreenX.Legs == 'shorts' and not DoreenX.Upskirt", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Brown.png"),
+            "DoreenX.Hose == 'tights' and not (DoreenX.Panties and DoreenX.PantiesDown)", get_cached_image("images/DoreenSex/Doreen_Sex_Pierce_Pussy_B_Tights.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -10560,31 +10560,31 @@ image Doreen_SC_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Pussy_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Doreen_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", "images/DoreenSex/Doreen_Sex_Pussy_Open.png",
-                "True", "images/DoreenSex/Doreen_Sex_Pussy_Closed.png",
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Open.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pussy_Closed.png"),
                 )
     contains:
             # The background plate of her pussy
             ConditionSwitch(
                 "not DoreenX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/KittySex/Kitty_Sex_WetPussy_F.png",
-                "True", "images/DoreenSex/Doreen_Sex_Wet.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/KittySex/Kitty_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_Sex_Wet.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not DoreenX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/DoreenSex/Doreen_Sex_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/DoreenSex/Doreen_Sex_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'in'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-#                "Player.Sprite and Player.Cock == 'out'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "Trigger == 'lick pussy'", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", "images/DoreenSex/Doreen_Sex_Pubes_Open.png",
-                "True", "images/DoreenSex/Doreen_Sex_Pubes_Closed.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'out'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "Trigger3 == 'fondle pussy' and DoreenX.Lust > 60", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Open.png"),
+                "True", get_cached_image("images/DoreenSex/Doreen_Sex_Pubes_Closed.png"),
                 )
 
     #End Doreen Pussy composite

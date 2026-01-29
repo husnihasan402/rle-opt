@@ -3,13 +3,13 @@
 image Betsy_Sprite:
     LiveComposite(
         (600,1250),       #550,950
-        (0,0), "images/BetsySprite/Betsy_Sprite_Shadow.png",
+        (0,0), get_cached_image("images/BetsySprite/Betsy_Sprite_Shadow.png"),
         (15,-80), "Betsy_Sprite_HairBack", #(75,-10)
         (0,0), ConditionSwitch(
             #skirt back
 #            "BetsyX.Upskirt", Null(),
-#            "BetsyX.Legs == 'pants'", "images/BetsySprite/Betsy_Sprite_Legs_Pants_Back.png",
-            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Skirt_Back.png"),
+#            "BetsyX.Legs == 'pants'", get_cached_image("images/BetsySprite/Betsy_Sprite_Legs_Pants_Back.png"),
+            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Skirt_Back.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
@@ -18,9 +18,9 @@ image Betsy_Sprite:
 #            #if the panties are down
 #            "BetsyX.Legs and not BetsyX.Upskirt and BetsyX.Legs != 'skirt'", Null(),
 #            #if she's wearing a skirt or nothing else
-#            "BetsyX.Panties == 'lace panties'", "images/BetsySprite/Betsy_Sprite_Panties_Lace_Back.png",
-#            "BetsyX.Panties == 'swimsuit'", "images/BetsySprite/Betsy_Sprite_Panties_Lace_Back.png",
-#            "True", "images/BetsySprite/Betsy_Sprite_Panties_White_Back.png",
+#            "BetsyX.Panties == 'lace panties'", get_cached_image("images/BetsySprite/Betsy_Sprite_Panties_Lace_Back.png"),
+#            "BetsyX.Panties == 'swimsuit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Panties_Lace_Back.png"),
+#            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Panties_White_Back.png"),
 #            ),
 
         (225,505), ConditionSwitch(    #165,560
@@ -29,14 +29,14 @@ image Betsy_Sprite:
             "BetsyX.Wet == 1 or (BetsyX.Legs and BetsyX.Legs != 'skirt' and not BetsyX.Upskirt)", "Wet_Drip", #ConditionSwitch( #Wet = 1
 #                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and not BetsyX.Upskirt", Null(),
 #                    "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
-#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts')", AlphaMask("Wet_Drip","Betsy_Drip_MaskP"),
-#                    "BetsyX.Panties and BetsyX.PantiesDown", AlphaMask("Wet_Drip","Betsy_Drip_MaskP"),
-#                    "True", AlphaMask("Wet_Drip","Betsy_Drip_Mask"), #only plays if nothing is in the way
+#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts')", get_cached_alphamask("Wet_Drip", "Betsy_Drip_MaskP"),
+#                    "BetsyX.Panties and BetsyX.PantiesDown", get_cached_alphamask("Wet_Drip", "Betsy_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Wet_Drip", "Betsy_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             "True", "Wet_Drip2", #ConditionSwitch( #Wet = 2+
-#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and BetsyX.Upskirt", AlphaMask("Wet_Drip2","Betsy_Drip_MaskP"),
-#                    "BetsyX.Panties and BetsyX.PantiesDown", AlphaMask("Wet_Drip2","Betsy_Drip_MaskP"),
-#                    "True", AlphaMask("Wet_Drip2","Betsy_Drip_Mask"), #only plays if nothing is in the way
+#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and BetsyX.Upskirt", get_cached_alphamask("Wet_Drip2", "Betsy_Drip_MaskP"),
+#                    "BetsyX.Panties and BetsyX.PantiesDown", get_cached_alphamask("Wet_Drip2", "Betsy_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Wet_Drip2", "Betsy_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             ),
         (225,505), ConditionSwitch(    #165,560
@@ -44,14 +44,14 @@ image Betsy_Sprite:
             "('in' not in BetsyX.Spunk and 'anal' not in BetsyX.Spunk) or not Player.Male", Null(),
             "BetsyX.Panties and not BetsyX.PantiesDown", "Spunk_Drip", #ConditionSwitch( #Wet = 1
             "BetsyX.Legs and BetsyX.Legs != 'skirt' and not BetsyX.Upskirt", "Spunk_Drip", #ConditionSwitch( #Wet = 1
-#                    "BetsyX.Panties and BetsyX.PantiesDown", AlphaMask("Spunk_Drip","Betsy_Drip_MaskP"),
-#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and BetsyX.Upskirt", AlphaMask("Spunk_Drip","Betsy_Drip_MaskP"),
-#                    "True", AlphaMask("Spunk_Drip","Betsy_Drip_Mask"), #only plays if nothing is in the way
+#                    "BetsyX.Panties and BetsyX.PantiesDown", get_cached_alphamask("Spunk_Drip", "Betsy_Drip_MaskP"),
+#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and BetsyX.Upskirt", get_cached_alphamask("Spunk_Drip", "Betsy_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Spunk_Drip", "Betsy_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             "True", "Spunk_Drip2", #ConditionSwitch( #Wet = 2+
-#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and BetsyX.Upskirt", AlphaMask("Spunk_Drip2","Betsy_Drip_MaskP"),
-#                    "BetsyX.Panties and BetsyX.PantiesDown", AlphaMask("Spunk_Drip2","Betsy_Drip_MaskP"),
-#                    "True", AlphaMask("Spunk_Drip2","Betsy_Drip_Mask"), #only plays if nothing is in the way
+#                    "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and BetsyX.Upskirt", get_cached_alphamask("Spunk_Drip2", "Betsy_Drip_MaskP"),
+#                    "BetsyX.Panties and BetsyX.PantiesDown", get_cached_alphamask("Spunk_Drip2", "Betsy_Drip_MaskP"),
+#                    "True", get_cached_alphamask("Spunk_Drip2", "Betsy_Drip_Mask"), #only plays if nothing is in the way
 #                    ),
             ),
 
@@ -70,9 +70,9 @@ image Betsy_Sprite:
             ),
         (0,0), ConditionSwitch(
             #arms shirt back
-            "BetsyX.ArmPose != 1 and BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2_Back.png"),         # right hand up/left down
-            "BetsyX.Over == 'jacket' and BetsyX.ArmPose == 1", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket1_Back.png"),
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket2_Back.png"),
+            "BetsyX.ArmPose != 1 and BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2_Back.png"),         # right hand up/left down
+            "BetsyX.Over == 'jacket' and BetsyX.ArmPose == 1", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket1_Back.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket2_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -82,22 +82,22 @@ image Betsy_Sprite:
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "BetsyX.Acc and 'cammy print' in BetsyX.Acc", "images/BetsySprite/modification/Betsy_Sprite_Legs_Cammy_Print.png",         # right hand up/left down
+            "BetsyX.Acc and 'cammy print' in BetsyX.Acc", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Legs_Cammy_Print.png"),         # right hand up/left down
             "True", Null(),
             ),
         # -----------------
 
         (0,0), ConditionSwitch(
             #Water effect
-            "BetsyX.Water and BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Water1.png",
-            "BetsyX.Water", "images/BetsySprite/Betsy_Sprite_Water2.png",
+            "BetsyX.Water and BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Water1.png"),
+            "BetsyX.Water", get_cached_image("images/BetsySprite/Betsy_Sprite_Water2.png"),
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Arms2 behind the body
-#            "BetsyX.ArmPose != 1 and BetsyX.Over == 'suit' and BetsyX.Arms", "images/BetsySprite/Betsy_Sprite_Over_Suit_2G_Back.png",                #gloved 2
-#            "BetsyX.ArmPose != 1 and (BetsyX.Over == 'suit' or BetsyX.Over == 'open suit')", "images/BetsySprite/Betsy_Sprite_Over_Suit_2_Back.png", #no gloved 2
+#            "BetsyX.ArmPose != 1 and BetsyX.Over == 'suit' and BetsyX.Arms", get_cached_image("images/BetsySprite/Betsy_Sprite_Over_Suit_2G_Back.png"),                #gloved 2
+#            "BetsyX.ArmPose != 1 and (BetsyX.Over == 'suit' or BetsyX.Over == 'open suit')", get_cached_image("images/BetsySprite/Betsy_Sprite_Over_Suit_2_Back.png"), #no gloved 2
 #            "True", Null(),  #if BetsyX.Arms ==2
 #            ),
 
@@ -106,24 +106,24 @@ image Betsy_Sprite:
             "not BetsyX.Wet", Null(),
             "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
             "BetsyX.Legs and BetsyX.Legs != 'skirt' and not BetsyX.Upskirt", Null(),
-            "True", "images/BetsySprite/Betsy_Sprite_Wet_Pussy.png", #ConditionSwitch( #Wet = 2+
+            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Wet_Pussy.png"), #ConditionSwitch( #Wet = 2+
             ),
         (0,0), ConditionSwitch(
             #Spunk over
             "('in' not in BetsyX.Spunk and 'anal' not in BetsyX.Spunk) or not Player.Male", Null(),
             "BetsyX.Legs and BetsyX.Legs != 'skirt' and not BetsyX.Upskirt", Null(),
             "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
-            "True", "images/BetsySprite/Betsy_Sprite_Spunk_Pussy.png",
+            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Pussy.png"),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #pubes
-#            "BetsyX.Pubes", "images/BetsySprite/Betsy_Sprite_Pubes.png",
+#            "BetsyX.Pubes", get_cached_image("images/BetsySprite/Betsy_Sprite_Pubes.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Necklaces
-#            "BetsyX.Neck == 'choker'", "images/BetsySprite/Betsy_Sprite_Neck_Choker.png",
+#            "BetsyX.Neck == 'choker'", get_cached_image("images/BetsySprite/Betsy_Sprite_Neck_Choker.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -133,44 +133,44 @@ image Betsy_Sprite:
                     #if the panties are down
                     "not BetsyX.Legs or BetsyX.Upskirt or BetsyX.Legs == 'skirt'", ConditionSwitch(
                             #if she's wearing a skirt or nothing else
-                            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Bikini_Down.png"),
-                            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Lace_Down.png"),
-#                            "BetsyX.Panties == 'swimsuit' and BetsyX.Wet", "images/BetsySprite/Betsy_Sprite_Panties_Bikini_Down_Wet.png",
+                            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Bikini_Down.png"),
+                            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Lace_Down.png"),
+#                            "BetsyX.Panties == 'swimsuit' and BetsyX.Wet", get_cached_image("images/BetsySprite/Betsy_Sprite_Panties_Bikini_Down_Wet.png"),
                             # Modification mode
-                            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", "images/BetsySprite/modification/Betsy_Sprite_Panties_Cammy_Down.png",
+                            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Panties_Cammy_Down.png"),
                             # -----------------
-                            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Blue_Down.png"),
+                            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Blue_Down.png"),
                             "True", Null(),
                             ),
                     "True", Null(),
                     ),
             #if she's not wet
             # Modification mode
-            "BetsyX.Panties == 'cammy leotard'", "images/BetsySprite/modification/Betsy_Sprite_Panties_Cammy.png",
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsySprite/modification/Betsy_Sprite_Panties_Cammy_Down.png", #shows swimsuit as down if bottoms off but top on
+            "BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Panties_Cammy.png"),
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Panties_Cammy_Down.png"), #shows swimsuit as down if bottoms off but top on
             # -----------------
-            "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Bikini.png"),
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Bikini_Down.png"), #shows swimsuit as down if bottoms off but top on
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Lace.png"),
-            "BetsyX.Panties and BetsyX.Wet", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Blue_Wet.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Blue.png"),
+            "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Bikini.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Bikini_Down.png"), #shows swimsuit as down if bottoms off but top on
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Lace.png"),
+            "BetsyX.Panties and BetsyX.Wet", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Blue_Wet.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Panties_Blue.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #stockings
-            "BetsyX.Hose == 'stockings'", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Stockings.png"),
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Socks.png"),
-            "BetsyX.Hose == 'stockings and garterbelt'", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_StockingsGarter.png"),
-            "BetsyX.Hose == 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Garter.png"),
+            "BetsyX.Hose == 'stockings'", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Stockings.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Socks.png"),
+            "BetsyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_StockingsGarter.png"),
+            "BetsyX.Hose == 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Garter.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose
-            "BetsyX.Hose == 'pantyhose' and (not BetsyX.PantiesDown or not BetsyX.Panties)", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Pantyhose.png"),
-#            "BetsyX.Hose == 'tights' and BetsyX.Wet and (not BetsyX.PantiesDown or not BetsyX.Panties)", "images/BetsySprite/Betsy_Sprite_Hose_Tights.png",
-#            "BetsyX.Hose == 'tights' and (not BetsyX.PantiesDown or not BetsyX.Panties)", "images/BetsySprite/Betsy_Sprite_Hose_Tights.png",
-            "BetsyX.Hose == 'ripped pantyhose' and (not BetsyX.PantiesDown or not BetsyX.Panties)", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Pantyhose_Holed.png"),
-#            "BetsyX.Hose == 'ripped tights' and (not BetsyX.PantiesDown or not BetsyX.Panties)", "images/BetsySprite/Betsy_Sprite_Hose_Tights_Holed.png",
+            "BetsyX.Hose == 'pantyhose' and (not BetsyX.PantiesDown or not BetsyX.Panties)", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Pantyhose.png"),
+#            "BetsyX.Hose == 'tights' and BetsyX.Wet and (not BetsyX.PantiesDown or not BetsyX.Panties)", get_cached_image("images/BetsySprite/Betsy_Sprite_Hose_Tights.png"),
+#            "BetsyX.Hose == 'tights' and (not BetsyX.PantiesDown or not BetsyX.Panties)", get_cached_image("images/BetsySprite/Betsy_Sprite_Hose_Tights.png"),
+            "BetsyX.Hose == 'ripped pantyhose' and (not BetsyX.PantiesDown or not BetsyX.Panties)", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Hose_Pantyhose_Holed.png"),
+#            "BetsyX.Hose == 'ripped tights' and (not BetsyX.PantiesDown or not BetsyX.Panties)", get_cached_image("images/BetsySprite/Betsy_Sprite_Hose_Tights_Holed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -178,21 +178,21 @@ image Betsy_Sprite:
             "not BetsyX.Legs", Null(),
             "BetsyX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Skirt_Up.png"),
-                        "BetsyX.Legs == 'shorts'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Shorts_Down.png"),
-                        "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Yoga_Down.png"),
+                        "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Skirt_Up.png"),
+                        "BetsyX.Legs == 'shorts'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Shorts_Down.png"),
+                        "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Yoga_Down.png"),
                         "True", Null(),
                         ),
-            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Skirt.png"),
+            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Skirt.png"),
             "BetsyX.Wet > 1", ConditionSwitch(
                 #if she's wet
-                "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Yoga_Wet.png"),
-                "BetsyX.Legs == 'shorts'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Shorts_Wet.png"),
+                "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Yoga_Wet.png"),
+                "BetsyX.Legs == 'shorts'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Shorts_Wet.png"),
                 "True", Null(),
                 ),
             #if she's not wet
-            "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Yoga.png"),
-            "BetsyX.Legs == 'shorts'", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Shorts.png"),
+            "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Yoga.png"),
+            "BetsyX.Legs == 'shorts'", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Legs_Shorts.png"),
             "True", Null(),
             ),
 
@@ -202,36 +202,36 @@ image Betsy_Sprite:
             "BetsyX.Legs == 'skirt' and not BetsyX.Upskirt", Null(),
             "BetsyX.Pierce == 'ring'", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_BlueL.png"),
-                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Black.png"),
+                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_BlueL.png"),
+                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Black.png"),
 
-                    "BetsyX.Hose == 'pantyhose' and not BetsyX.PantiesDown", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Lace.png"),
+                    "BetsyX.Hose == 'pantyhose' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Lace.png"),
 
-                    "BetsyX.Panties != 'swimsuit' and BetsyX.Chest == 'swimsuit'", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring.png",
-                    "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Lace.png"),
+                    "BetsyX.Panties != 'swimsuit' and BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring.png"),
+                    "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Lace.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard' and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Pussy_Ring_Cammy.png"),
+                    "BetsyX.Chest == 'cammy leotard' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Pussy_Ring_Cammy.png"),
                     # ----------------
-                    "BetsyX.Panties and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Blue.png"),
-                    "BetsyX.Chest == 'swimsuit' and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Blue.png"),
+                    "BetsyX.Panties and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Blue.png"),
+                    "BetsyX.Chest == 'swimsuit' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring_Blue.png"),
 
-                    "True", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring.png",
+                    "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Ring.png"),
                     ),
 
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_BlueL.png"),
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Black.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_BlueL.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Black.png"),
 
-            "BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Lace.png"),
+            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Lace.png"),
 
-            "BetsyX.Panties != 'swimsuit' and BetsyX.Chest == 'swimsuit'", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell.png",
-            "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Lace.png"),
+            "BetsyX.Panties != 'swimsuit' and BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell.png"),
+            "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Lace.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Pussy_Barbell_Cammy.png"),
+            "BetsyX.Chest == 'cammy leotard' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Pussy_Barbell_Cammy.png"),
             # -----------------
-            "BetsyX.Panties and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Blue.png"),
-            "BetsyX.Chest == 'swimsuit' and not BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Blue.png"),
+            "BetsyX.Panties and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Blue.png"),
+            "BetsyX.Chest == 'swimsuit' and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell_Blue.png"),
 
-            "BetsyX.Pierce == 'barbell'", "images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell.png",
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Pussy_Barbell.png"),
             "True", Null(),
             ),
 
@@ -239,43 +239,43 @@ image Betsy_Sprite:
             #Chest layer
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Bikini_Up.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Lace_Up.png"),
-                    "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Sports_Up.png"),
-                    "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Blue_Up.png"),
+                    "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Bikini_Up.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Lace_Up.png"),
+                    "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Sports_Up.png"),
+                    "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Blue_Up.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsySprite/modification/Betsy_Sprite_Chest_Cammy_Up.png",
+                    "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Chest_Cammy_Up.png"),
                     # -----------------
                     "True", Null(),
                     ),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsySprite/modification/Betsy_Sprite_Chest_Cammy.png",
-            "BetsyX.Panties == 'cammy leotard'", "images/BetsySprite/modification/Betsy_Sprite_Chest_Cammy_Up.png", #shows swimsuit as down if top off but bottoms on
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Chest_Cammy.png"),
+            "BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Chest_Cammy_Up.png"), #shows swimsuit as down if top off but bottoms on
             # ----------------
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Bikini.png"),
-            "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Bikini_Up.png"), #shows swimsuit as down if top off but bottoms on
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Lace.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Sports.png"),
-            "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Blue.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Bikini.png"),
+            "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Bikini_Up.png"), #shows swimsuit as down if top off but bottoms on
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Lace.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Sports.png"),
+            "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Chest_Blue.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over
-            "BetsyX.Over == 'jacket' and BetsyX.ArmPose == 1", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket1.png"),
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket2.png"),
+            "BetsyX.Over == 'jacket' and BetsyX.ArmPose == 1", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket1.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket2.png"),
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Tank_Up.png"),
-                    "BetsyX.Over == 'pink top' and BetsyX.ArmPose == 1", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt1_Up.png"),
-                    "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2_Up.png"),
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Tank_Up.png"),
+                    "BetsyX.Over == 'pink top' and BetsyX.ArmPose == 1", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt1_Up.png"),
+                    "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2_Up.png"),
                     "True", Null(),
                     ),
             #If she's using arm pose 1, left arm pointing
             #If she's using arm pose 2, Left arm on hip
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Towel.png"),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Tank.png"),
-            "BetsyX.Over == 'pink top' and BetsyX.ArmPose == 1", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt1.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Towel.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Tank.png"),
+            "BetsyX.Over == 'pink top' and BetsyX.ArmPose == 1", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt1.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -286,49 +286,49 @@ image Betsy_Sprite:
             #Only does this if she has piercings, has no tops, or has her top up
             "BetsyX.Pierce == 'ring'", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Uptop", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring.png",
+                    "BetsyX.Uptop", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring.png"),
 
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Blue.png"),
-                    "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Pink.png"), #change if new tops added in other colors
-                    "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Pink.png"), #change if new tops added in other colors
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Blue.png"),
+                    "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Pink.png"), #change if new tops added in other colors
+                    "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Pink.png"), #change if new tops added in other colors
 
-                    "BetsyX.Panties == 'swimsuit' and BetsyX.Chest != 'swimsuit'", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring.png",
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Lace.png"),
-#                    "BetsyX.Chest == 'swimsuit' or BetsyX.Chest == 'bra'", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Blue.png",
+                    "BetsyX.Panties == 'swimsuit' and BetsyX.Chest != 'swimsuit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Lace.png"),
+#                    "BetsyX.Chest == 'swimsuit' or BetsyX.Chest == 'bra'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Blue.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard'", Recolor("Betsy", "Chest", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Tits_Ring_Cammy.png"),
+                    "BetsyX.Chest == 'cammy leotard'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Tits_Ring_Cammy.png"),
                     # -----------------
-                    "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Blue.png"),
-                    "True", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring.png",
+                    "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring_Blue.png"),
+                    "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Ring.png"),
                     ),
             # Pierce is "barbell"
-            "BetsyX.Uptop", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell.png",
+            "BetsyX.Uptop", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell.png"),
 
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Blue.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Pink.png"), #change if new tops added in other colors
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Pink.png"), #change if new tops added in other colors
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Blue.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Pink.png"), #change if new tops added in other colors
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Pink.png"), #change if new tops added in other colors
 
-            "BetsyX.Panties == 'swimsuit' and BetsyX.Chest != 'swimsuit'", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell.png",
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Lace.png"),
-#            "BetsyX.Chest == 'swimsuit' or BetsyX.Chest == 'bra'", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Blue.png",
+            "BetsyX.Panties == 'swimsuit' and BetsyX.Chest != 'swimsuit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Lace.png"),
+#            "BetsyX.Chest == 'swimsuit' or BetsyX.Chest == 'bra'", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Blue.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", Recolor("Betsy", "Chest", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Tits_Barbell_Cammy.png"),
+            "BetsyX.Chest == 'cammy leotard'", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/modification/Betsy_Sprite_Pierce_Tits_Barbell_Cammy.png"),
             # ----------------
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Blue.png"),
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell_Blue.png"),
 
-            "True", "images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell.png",
+            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Pierce_Tits_Barbell.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Boots/Shoes
-            "BetsyX.Boots == 'sneaks'", "images/BetsySprite/Betsy_Sprite_Sneaks.png",
-            "BetsyX.Boots == 'shoes'", "images/BetsySprite/Betsy_Sprite_Shoes.png",
+            "BetsyX.Boots == 'sneaks'", get_cached_image("images/BetsySprite/Betsy_Sprite_Sneaks.png"),
+            "BetsyX.Boots == 'shoes'", get_cached_image("images/BetsySprite/Betsy_Sprite_Shoes.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Scarf
             # Modification mode
-            "BetsyX.Acc and 'scarf' in BetsyX.Acc", Recolor("Betsy", "Acc", "images/BetsySprite/Betsy_Sprite_Scarf.png"),
+            "BetsyX.Acc and 'scarf' in BetsyX.Acc", get_cached_recolor("Betsy", "Acc", "images/BetsySprite/Betsy_Sprite_Scarf.png"),
             # -----------------
             "True", Null(),
             ),
@@ -348,64 +348,64 @@ image Betsy_Sprite:
             ),
         (0,0), ConditionSwitch(
             #arms shirt over
-            "BetsyX.ArmPose != 1 and BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2_Arm.png"),         # right hand up/left down
-            "BetsyX.ArmPose != 1 and BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket2_Arm.png"),         # right hand up/left down
+            "BetsyX.ArmPose != 1 and BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Shirt2_Arm.png"),         # right hand up/left down
+            "BetsyX.ArmPose != 1 and BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySprite/Betsy_Sprite_Over_Jacket2_Arm.png"),         # right hand up/left down
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Arms 1 upper layer
 
-#            "BetsyX.Over == 'open suit' and BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Arm1_Top_Suit_Up.png",                                  #no gloved 1
-#            "BetsyX.Over == 'open suit'", "images/BetsySprite/Betsy_Sprite_Arm2_Top_Suit_Up.png",
+#            "BetsyX.Over == 'open suit' and BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Arm1_Top_Suit_Up.png"),                                  #no gloved 1
+#            "BetsyX.Over == 'open suit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Arm2_Top_Suit_Up.png"),
 
-#            "BetsyX.Uptop and BetsyX.Over == 'suit' and BetsyX.ArmPose == 1 and BetsyX.Arms", "images/BetsySprite/Betsy_Sprite_Arm1_Top_SuitG_Up.png", #gloved 1
-#            "BetsyX.Uptop and BetsyX.Over == 'suit' and BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Arm1_Top_Suit_Up.png",                 #no gloved 1
-#            "BetsyX.Uptop and BetsyX.Over == 'suit' and BetsyX.Arms", "images/BetsySprite/Betsy_Sprite_Arms2_Top_SuitG_Up.png",                        #gloved 2
-#            "BetsyX.Uptop and BetsyX.Over == 'suit'", "images/BetsySprite/Betsy_Sprite_Arms2_Top_Suit_Up.png",
+#            "BetsyX.Uptop and BetsyX.Over == 'suit' and BetsyX.ArmPose == 1 and BetsyX.Arms", get_cached_image("images/BetsySprite/Betsy_Sprite_Arm1_Top_SuitG_Up.png"), #gloved 1
+#            "BetsyX.Uptop and BetsyX.Over == 'suit' and BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Arm1_Top_Suit_Up.png"),                 #no gloved 1
+#            "BetsyX.Uptop and BetsyX.Over == 'suit' and BetsyX.Arms", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms2_Top_SuitG_Up.png"),                        #gloved 2
+#            "BetsyX.Uptop and BetsyX.Over == 'suit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms2_Top_Suit_Up.png"),
 
-#            "BetsyX.Over == 'suit' and BetsyX.ArmPose == 1 and BetsyX.Arms", "images/BetsySprite/Betsy_Sprite_Arms1_Top_SuitG.png",                   #gloved 1
-#            "BetsyX.Over == 'suit' and BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Arms1_Top_Suit.png",                                  #no gloved 1
-#            "BetsyX.Over == 'suit' and BetsyX.Arms", "images/BetsySprite/Betsy_Sprite_Arms2_Top_SuitG.png",                                          #gloved 2
-#            "BetsyX.Over == 'suit'", "images/BetsySprite/Betsy_Sprite_Arms2_Top_Suit.png",                                                         #no gloved 2
+#            "BetsyX.Over == 'suit' and BetsyX.ArmPose == 1 and BetsyX.Arms", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms1_Top_SuitG.png"),                   #gloved 1
+#            "BetsyX.Over == 'suit' and BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms1_Top_Suit.png"),                                  #no gloved 1
+#            "BetsyX.Over == 'suit' and BetsyX.Arms", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms2_Top_SuitG.png"),                                          #gloved 2
+#            "BetsyX.Over == 'suit'", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms2_Top_Suit.png"),                                                         #no gloved 2
 
-#            "BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Arms1_Top.png",        #If she's using arm pose 1, right arm high
-#            "True", "images/BetsySprite/Betsy_Sprite_Arms2_Top.png",  #if BetsyX.Arms ==2                                        #If she's using arm pose 2, Left arm high
+#            "BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms1_Top.png"),        #If she's using arm pose 1, right arm high
+#            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Arms2_Top.png"),  #if BetsyX.Arms ==2                                        #If she's using arm pose 2, Left arm high
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "BetsyX.Water and BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Water1_Arm.png",
+#            "BetsyX.Water and BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Water1_Arm.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #belly spunk
-            "'belly' in BetsyX.Spunk and Player.Male", "images/BetsySprite/Betsy_Sprite_Spunk_Belly.png",
+            "'belly' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #breast spunk
-            "'tits' in BetsyX.Spunk and Player.Male", "images/BetsySprite/Betsy_Sprite_Spunk_Tits.png",
+            "'tits' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Tits.png"),
             "True", Null(),
             ),
 
         (15,-80), "Betsy_Sprite_Head", #(-10,-90)
 
 
-#        (0,0), "images/BetsySprite/Betsy_Sprite_Headref.png", #53,-45
+#        (0,0), get_cached_image("images/BetsySprite/Betsy_Sprite_Headref.png"), #53,-45
 
 
 #        (0,0), ConditionSwitch(
 #            #hand spunk
 #            "BetsyX.ArmPose == 2 or 'hand' not in BetsyX.Spunk", Null(),
-#            "True", "images/BetsySprite/Betsy_Sprite_Spunk_Hand.png",
+#            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Hand.png"),
 #            ),
 #        (0,0), ConditionSwitch(                                                                         #Props
 #            "not BetsyX.Held or BetsyX.ArmPose != 2", Null(),
-#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'phone'", "images/BetsySprite/Betsy_held_phone.png",
-#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'dildo'", "images/BetsySprite/Betsy_held_dildo.png",
-#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'vibrator'", "images/BetsySprite/Betsy_held_vibrator.png",
-#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'panties'", "images/BetsySprite/Betsy_held_panties.png",
+#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'phone'", get_cached_image("images/BetsySprite/Betsy_held_phone.png"),
+#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'dildo'", get_cached_image("images/BetsySprite/Betsy_held_dildo.png"),
+#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'vibrator'", get_cached_image("images/BetsySprite/Betsy_held_vibrator.png"),
+#            "BetsyX.ArmPose == 2 and BetsyX.Held == 'panties'", get_cached_image("images/BetsySprite/Betsy_held_panties.png"),
 #            "True", Null(),
 #            ),
 
@@ -519,13 +519,13 @@ image Betsy_Sprite_HairBack:
         (0,0), ConditionSwitch(
                 #hair back
     #            "renpy.showing('Betsy_BJ_Animation')", Null(),
-    #            "renpy.showing('Betsy_SexSprite')", "images/BetsySex/Betsy_Sprite_Hair_Long_UnderSex.png",
-                "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Blonde_Back.png"),
-                "BetsyX.Hair == 'wetlong'", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Long_Back.png"),
-                "BetsyX.Hair == 'long'", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Long_Back.png"),
-                "BetsyX.Hair == 'wet' or BetsyX.Water", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet_Back.png"),
-                "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet_Back.png"),
-                "True", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Short_Back.png"),
+    #            "renpy.showing('Betsy_SexSprite')", get_cached_image("images/BetsySex/Betsy_Sprite_Hair_Long_UnderSex.png"),
+                "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Blonde_Back.png"),
+                "BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Long_Back.png"),
+                "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Long_Back.png"),
+                "BetsyX.Hair == 'wet' or BetsyX.Water", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet_Back.png"),
+                "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet_Back.png"),
+                "True", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Short_Back.png"),
                 ),
         )
     anchor (0.5, 0.5)
@@ -539,16 +539,16 @@ image Betsy_Sprite_Head:
         (900,900),
         (0,0), ConditionSwitch(
                 # Face background plate
-#                "renpy.showing('Betsy_SexSprite') and BetsyX.Blush >= 2", "images/BetsySprite/Betsy_Sprite_Head_Sex_Blush2.png",
-#                "renpy.showing('Betsy_SexSprite') and BetsyX.Blush", "images/BetsySprite/Betsy_Sprite_Head_Sex_Blush1.png",
-#                "renpy.showing('Betsy_SexSprite')", "images/BetsySprite/Betsy_Sprite_Head_Sex.png",
+#                "renpy.showing('Betsy_SexSprite') and BetsyX.Blush >= 2", get_cached_image("images/BetsySprite/Betsy_Sprite_Head_Sex_Blush2.png"),
+#                "renpy.showing('Betsy_SexSprite') and BetsyX.Blush", get_cached_image("images/BetsySprite/Betsy_Sprite_Head_Sex_Blush1.png"),
+#                "renpy.showing('Betsy_SexSprite')", get_cached_image("images/BetsySprite/Betsy_Sprite_Head_Sex.png"),
                 "BetsyX.Blush >= 2", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head_Blush2.png",
                 "BetsyX.Blush", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head_Blush1.png",
                 "True", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Head.png",
                 ),
         (0,0), ConditionSwitch(
             #chin spunk
-            "'chin' in BetsyX.Spunk and Player.Male", "images/BetsySprite/Betsy_Sprite_Spunk_Chin.png",
+            "'chin' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -559,7 +559,7 @@ image Betsy_Sprite_Head:
             "BetsyX.Mouth == 'sad'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Sad.png"),
             "BetsyX.Mouth == 'smile'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smile.png"),
             "BetsyX.Mouth == 'surprised'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Open.png"),
-#            "not Player.Male and 'mouth' in BetsyX.Spunk and BetsyX.Mouth == 'tongue'", Recolor("Betsy", "Lips", "images/BetsySprite/Betsy_Sprite_Mouth_Tongue_Wet.png"),
+#            "not Player.Male and 'mouth' in BetsyX.Spunk and BetsyX.Mouth == 'tongue'", get_cached_recolor("Betsy", "Lips", "images/BetsySprite/Betsy_Sprite_Mouth_Tongue_Wet.png"),
             "BetsyX.Mouth == 'tongue'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Tongue.png"),
             "BetsyX.Mouth == 'grimace'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smile.png"),
             "BetsyX.Mouth == 'smirk'", Recolor("Betsy", "Lips", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Mouth_Smirk.png"),
@@ -569,60 +569,60 @@ image Betsy_Sprite_Head:
         (0,0), ConditionSwitch(
             #Mouths spunk
             "'mouth' not in BetsyX.Spunk or not Player.Male", Null(),
-            "BetsyX.Mouth == 'sucking'", "images/BetsySprite/Betsy_Sprite_Spunk_Tongue.png",
-            "BetsyX.Mouth == 'kiss'", "images/BetsySprite/Betsy_Sprite_Spunk_Sad.png",
-            "BetsyX.Mouth == 'sad'", "images/BetsySprite/Betsy_Sprite_Spunk_Sad.png",
-            "BetsyX.Mouth == 'smile'", "images/BetsySprite/Betsy_Sprite_Spunk_Smile.png",
-            "BetsyX.Mouth == 'surprised'", "images/BetsySprite/Betsy_Sprite_Spunk_Open.png",
-            "BetsyX.Mouth == 'tongue'", "images/BetsySprite/Betsy_Sprite_Spunk_Tongue.png",
-            "BetsyX.Mouth == 'grimace'", "images/BetsySprite/Betsy_Sprite_Spunk_Smile.png",
-            "True", "images/BetsySprite/Betsy_Sprite_Spunk_Normal.png",
+            "BetsyX.Mouth == 'sucking'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Tongue.png"),
+            "BetsyX.Mouth == 'kiss'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Sad.png"),
+            "BetsyX.Mouth == 'sad'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Sad.png"),
+            "BetsyX.Mouth == 'smile'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Smile.png"),
+            "BetsyX.Mouth == 'surprised'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Open.png"),
+            "BetsyX.Mouth == 'tongue'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Tongue.png"),
+            "BetsyX.Mouth == 'grimace'", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Smile.png"),
+            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in BetsyX.Spunk and 'chin' not in BetsyX.Spunk", Null(),
-#            "'chin' not in BetsyX.Spunk and BetsyX.Mouth == 'tongue'", "images/BetsySprite/Betsy_Sprite_Wet_Tongue.png",
-#            "BetsyX.Mouth == 'tongue'", "images/BetsySprite/Betsy_Sprite_Wet_Tongue2.png",
-            "'chin' in BetsyX.Spunk", "images/BetsySprite/Betsy_Sprite_Wet_Mouth.png",
+#            "'chin' not in BetsyX.Spunk and BetsyX.Mouth == 'tongue'", get_cached_image("images/BetsySprite/Betsy_Sprite_Wet_Tongue.png"),
+#            "BetsyX.Mouth == 'tongue'", get_cached_image("images/BetsySprite/Betsy_Sprite_Wet_Tongue2.png"),
+            "'chin' in BetsyX.Spunk", get_cached_image("images/BetsySprite/Betsy_Sprite_Wet_Mouth.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(     #    (0,5)
             #brows
-            "BetsyX.Brows == 'angry'", "images/BetsySprite/Betsy_Sprite_Brows_Angry.png",
-            "BetsyX.Brows == 'sad'", "images/BetsySprite/Betsy_Sprite_Brows_Sad.png",
-            "BetsyX.Brows == 'surprised'", "images/BetsySprite/Betsy_Sprite_Brows_Surprised.png",
-            "BetsyX.Brows == 'confused'", "images/BetsySprite/Betsy_Sprite_Brows_Confused.png",
-            "True", "images/BetsySprite/Betsy_Sprite_Brows_Normal.png",
+            "BetsyX.Brows == 'angry'", get_cached_image("images/BetsySprite/Betsy_Sprite_Brows_Angry.png"),
+            "BetsyX.Brows == 'sad'", get_cached_image("images/BetsySprite/Betsy_Sprite_Brows_Sad.png"),
+            "BetsyX.Brows == 'surprised'", get_cached_image("images/BetsySprite/Betsy_Sprite_Brows_Surprised.png"),
+            "BetsyX.Brows == 'confused'", get_cached_image("images/BetsySprite/Betsy_Sprite_Brows_Confused.png"),
+            "True", get_cached_image("images/BetsySprite/Betsy_Sprite_Brows_Normal.png"),
             ),
         (0,0), "Betsy Blink",     #Eyes  (0,5)
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Betsy_TJ_Animation')", Null(),
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Blonde.png"),
-            "BetsyX.Hair == 'wet' or BetsyX.Hair == 'wetlong' or BetsyX.Water", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet.png"),
-#                "BetsyX.Hair == 'pony'", "images/BetsySprite/Betsy_Sprite_Hair_Pony.png",
-            "True", Recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Short.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Blonde.png"),
+            "BetsyX.Hair == 'wet' or BetsyX.Hair == 'wetlong' or BetsyX.Water", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Wet.png"),
+#                "BetsyX.Hair == 'pony'", get_cached_image("images/BetsySprite/Betsy_Sprite_Hair_Pony.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsySprite/Betsy_Sprite_Hair_Short.png"),
             ),
-        (0,0), "images/BetsySprite/Betsy_Sprite_Earring.png",     #Eyes  (0,5)
+        (0,0), get_cached_image("images/BetsySprite/Betsy_Sprite_Earring.png"),     #Eyes  (0,5)
         # Modification mode
         (0,0), ConditionSwitch(
-            "BetsyX.Hat == 'red beret'", "images/BetsySprite/modification/Betsy_Sprite_Hat_Beret.png",
+            "BetsyX.Hat == 'red beret'", get_cached_image("images/BetsySprite/modification/Betsy_Sprite_Hat_Beret.png"),
             "True",Null(),
             ),
         # -----------------
         (0,0), ConditionSwitch(
             #Hair Water
-            "BetsyX.Water", "images/BetsySprite/Betsy_Sprite_Water_Head.png",
-            "not Player.Male and 'facial' in BetsyX.Spunk", "images/BetsySprite/Betsy_Sprite_Water_Head.png",
+            "BetsyX.Water", get_cached_image("images/BetsySprite/Betsy_Sprite_Water_Head.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk", get_cached_image("images/BetsySprite/Betsy_Sprite_Water_Head.png"),
             "True",Null(),
             ),
         (0,0), ConditionSwitch(
             #facial spunk
-            "'hair' in BetsyX.Spunk and Player.Male", "images/BetsySprite/Betsy_Sprite_Spunk_Facial2.png",
-            "'facial' in BetsyX.Spunk and Player.Male", "images/BetsySprite/Betsy_Sprite_Spunk_Facial1.png",
+            "'hair' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Facial2.png"),
+            "'facial' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Facial1.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(     #    (0,5)
@@ -639,7 +639,7 @@ image Betsy_Sprite_Head:
 
 image Betsy Blink:
     ConditionSwitch(
-    "BetsyX.Eyes == 'closed'", "images/BetsySprite/Betsy_Sprite_Eyes_Closed.png",
+    "BetsyX.Eyes == 'closed'", get_cached_image("images/BetsySprite/Betsy_Sprite_Eyes_Closed.png"),
     "BetsyX.Eyes == 'sexy'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Sexy.png",
     "BetsyX.Eyes == 'side'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Side.png",
     "BetsyX.Eyes == 'surprised'", "images/BetsySprite/[BetsyX.skin_image.skin_path]Betsy_Sprite_Eyes_Surprised.png",
@@ -798,63 +798,63 @@ image Betsy_Doggy_Body:
             "BetsyX.Facing", "Betsy_Doggy_Head_Fore",
             "True", "Betsy_Doggy_Head",
             ),
-        #(0,0), "images/BetsyDoggy/Betsy_Doggy_HeadRef.png",               #Head
+        #(0,0), get_cached_image("images/BetsyDoggy/Betsy_Doggy_HeadRef.png"),               #Head
 
         (0,0), "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Body.png", #Body base
         (0,0), ConditionSwitch(
             #Legs Layer
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt and not BetsyX.PantiesDown", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts_Body.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt and not BetsyX.PantiesDown", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #gloves
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", "images/BetsyDoggy/modification/Betsy_Doggy_Gloves_Cammy.png",
+            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Gloves_Cammy.png"),
             # -----------------
-            "BetsyX.Arms", "images/BetsyDoggy/Betsy_Doggy_Gloves.png",
+            "BetsyX.Arms", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Gloves.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #chest layer
             "not BetsyX.Chest and BetsyX.Panties != 'swimsuit'", Null(),
             "BetsyX.Uptop", ConditionSwitch(
-                    "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bikini_Up.png"),
-                    "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Sports_Up.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Lace_Up.png"),
+                    "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bikini_Up.png"),
+                    "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Sports_Up.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Lace_Up.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsyDoggy/modification/Betsy_Doggy_Chest_Cammy_Up.png",
+                    "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Chest_Cammy_Up.png"),
                     # ----------------
-                    "True", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bra_Up.png"),
+                    "True", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bra_Up.png"),
                     ),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsyDoggy/modification/Betsy_Doggy_Chest_Cammy.png",
+            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Chest_Cammy.png"),
             # -----------------
-            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bikini.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Sports.png"),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Lace.png"),
-            "True", Recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bra.png"),
+            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bikini.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Sports.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Lace.png"),
+            "True", get_cached_recolor("Betsy", "Chest", "images/BetsyDoggy/Betsy_Doggy_Chest_Bra.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "BetsyX.Water", "images/RogueDoggy/Rogue_Doggy_WetTop.png",
+#            "BetsyX.Water", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetTop.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Overshirt
             "not BetsyX.Over", Null(),
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Jacket.png"),
-            "BetsyX.Over == 'pink top' and BetsyX.Uptop", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Pink_Up.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Pink.png"),
-            "BetsyX.Over == 'tank' and BetsyX.Uptop", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Tank_Up.png"),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Tank.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Jacket.png"),
+            "BetsyX.Over == 'pink top' and BetsyX.Uptop", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Pink_Up.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Pink.png"),
+            "BetsyX.Over == 'tank' and BetsyX.Uptop", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Tank_Up.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Tank.png"),
             "BetsyX.Over == 'towel' and BetsyX.Uptop", Null(), #"images/BetsyDoggy/Betsy_Doggy_Over_Towel_Up.png",
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Towel.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Over_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #spunk back Layer
-            "'back' in BetsyX.Spunk and Player.Male", "images/BetsyDoggy/Betsy_Doggy_Spunk_Back.png",
+            "'back' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -866,17 +866,17 @@ image Betsy_Doggy_Body:
             #Hair Fore
             "not BetsyX.Facing", Null(),
             "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Hair_Fore_Blonde.png"),
-            "BetsyX.Hair == 'long'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
-#            "(BetsyX.Water and BetsyX.Hair == 'long') or BetsyX.Hair == 'wetlong'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
-            "BetsyX.Water or BetsyX.Hair == 'wet'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Wet.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Wet.png"),
-#            "BetsyX.Hair == 'long'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Short.png"),
+            "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
+#            "(BetsyX.Water and BetsyX.Hair == 'long') or BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
+            "BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Wet.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Wet.png"),
+#            "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Long.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Fore_Short.png"),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
             "not BetsyX.Facing", Null(),
-            "BetsyX.Hat == 'red beret'", "images/BetsyDoggy/modification/Betsy_Doggy_Hat_Cammy_Fore.png",
+            "BetsyX.Hat == 'red beret'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Hat_Cammy_Fore.png"),
             "True", Null()
             ),
         # -----------------
@@ -900,17 +900,17 @@ image Betsy_Doggy_Head:
         #Head
         (420,525),
         #(0,0), "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head.png", #Body base
-        #(0,0), "images/BetsyDoggy/Betsy_Doggy_TestArm.png",#Eyes
+        #(0,0), get_cached_image("images/BetsyDoggy/Betsy_Doggy_TestArm.png"),#Eyes
         (0,0), ConditionSwitch(
             #Hair back
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Blonde_Under.png"),
-            "BetsyX.Water or BetsyX.Hair == 'wet' or BetsyX.Hair == 'wetlong'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Under.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Under.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Short_Under.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Blonde_Under.png"),
+            "BetsyX.Water or BetsyX.Hair == 'wet' or BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Under.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Under.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Short_Under.png"),
             ),
         (0,0), ConditionSwitch(
             #Head
-            #"BetsyX.Blush > 1", "images/BetsyDoggy/Betsy_Doggy_Head_Blush2.png",
+            #"BetsyX.Blush > 1", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Head_Blush2.png"),
             "BetsyX.Blush", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head_Blush.png",
             "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Head.png",
             ),
@@ -929,68 +929,68 @@ image Betsy_Doggy_Head:
             ),
         (0,0), ConditionSwitch(
             #chin spunk
-            "'chin' in BetsyX.Spunk", "images/BetsyDoggy/Betsy_Doggy_Spunk_Chin.png",
+            "'chin' in BetsyX.Spunk", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Mouth spunk
             "'mouth' not in BetsyX.Spunk", Null(),
-            #"BetsyX.Mouth == 'normal'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Normal.png",
-            #"BetsyX.Mouth == 'sad'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Normal.png",
-            "BetsyX.Mouth == 'lipbite'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Kiss.png",
-#            "BetsyX.Mouth == 'smile'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Smile.png",
-#            "BetsyX.Mouth == 'grimace'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Smile.png",
-            "BetsyX.Mouth == 'sucking'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Open.png",
-            #"BetsyX.Mouth == 'kiss'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Open.png",
-            "BetsyX.Mouth == 'surprised'", "images/BetsyDoggy/Betsy_Doggy_Spunk_Open.png",
-            "BetsyX.Mouth == 'tongue'", "images/BetsyDoggy/Betsy_Doggy_Spunk_tongue.png",
-            "True", "images/BetsyDoggy/Betsy_Doggy_Spunk_Kiss.png",
+            #"BetsyX.Mouth == 'normal'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Normal.png"),
+            #"BetsyX.Mouth == 'sad'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Normal.png"),
+            "BetsyX.Mouth == 'lipbite'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Kiss.png"),
+#            "BetsyX.Mouth == 'smile'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Smile.png"),
+#            "BetsyX.Mouth == 'grimace'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Smile.png"),
+            "BetsyX.Mouth == 'sucking'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Open.png"),
+            #"BetsyX.Mouth == 'kiss'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Open.png"),
+            "BetsyX.Mouth == 'surprised'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Open.png"),
+            "BetsyX.Mouth == 'tongue'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_tongue.png"),
+            "True", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Kiss.png"),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            #"BetsyX.Brows == 'normal'", "images/BetsyDoggy/Betsy_Doggy_Brows_Normal.png",
-            "BetsyX.Brows == 'angry'", "images/BetsyDoggy/Betsy_Doggy_Brows_Angry.png",
-            "BetsyX.Brows == 'sad'", "images/BetsyDoggy/Betsy_Doggy_Brows_Sad.png",
-#            "BetsyX.Brows == 'surprised'", "images/BetsyDoggy/Betsy_Doggy_Brows_Surprised.png",
-            "BetsyX.Brows == 'confused'", "images/BetsyDoggy/Betsy_Doggy_Brows_Confused.png",
-            "True", "images/BetsyDoggy/Betsy_Doggy_Brows_Normal.png",
+            #"BetsyX.Brows == 'normal'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Brows_Normal.png"),
+            "BetsyX.Brows == 'angry'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Brows_Angry.png"),
+            "BetsyX.Brows == 'sad'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Brows_Sad.png"),
+#            "BetsyX.Brows == 'surprised'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Brows_Surprised.png"),
+            "BetsyX.Brows == 'confused'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Brows_Confused.png"),
+            "True", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Brows_Normal.png"),
             ),
         (0,0), "Betsy Doggy Blink",#Eyes
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "BetsyX.Water", "images/RogueDoggy/Rogue_Doggy_WetTop.png",
+#            "BetsyX.Water", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetTop.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Hair
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Blonde_Over.png"),
-            "BetsyX.Hair == 'long' and BetsyX.Water or BetsyX.Hair == 'wet'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Long_Over.png"),
-            "BetsyX.Hair == 'long' and not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Long_Over.png"),
-            "BetsyX.Water or BetsyX.Hair == 'wet'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Short_Over.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Short_Over.png"),
-            "BetsyX.Hair == 'long'", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Long_Over.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Short_Over.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Blonde_Over.png"),
+            "BetsyX.Hair == 'long' and BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Long_Over.png"),
+            "BetsyX.Hair == 'long' and not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Long_Over.png"),
+            "BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Short_Over.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Wet_Short_Over.png"),
+            "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Long_Over.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyDoggy/Betsy_Doggy_Hair_Short_Over.png"),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
             "BetsyX.Facing", Null(),
-            "BetsyX.Hat == 'red beret'", "images/BetsyDoggy/modification/Betsy_Doggy_Hat_Cammy_Side.png",
+            "BetsyX.Hat == 'red beret'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Hat_Cammy_Side.png"),
             "True", Null(),
             ),
         # -----------------
         (0,0), ConditionSwitch(
             #face spunk
-            "'hair' in BetsyX.Spunk and Player.Male", "images/BetsyDoggy/Betsy_Doggy_Spunk_Hair.png",
-            "'facial' in BetsyX.Spunk and Player.Male", "images/BetsyDoggy/Betsy_Doggy_Spunk_Facial.png",
+            "'hair' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Hair.png"),
+            "'facial' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #face spunk
-            "BetsyX.Water or BetsyX.Hair == 'wet'", "images/BetsyDoggy/Betsy_Doggy_Head_Wet.png",
-            "not Player.Male and 'facial' in BetsyX.Spunk","images/BetsyDoggy/Betsy_Doggy_Head_Wet.png",
+            "BetsyX.Water or BetsyX.Hair == 'wet'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Head_Wet.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Head_Wet.png"),
             "True", Null(),
             ),
-        (0,0), "images/BetsyDoggy/Betsy_Doggy_Earring.png",
+        (0,0), get_cached_image("images/BetsyDoggy/Betsy_Doggy_Earring.png"),
         )
     #zoom 0.95
     #alpha 0.5
@@ -1053,21 +1053,21 @@ image Betsy_Doggy_Ass:
         (420,750),
 #        (0,0), ConditionSwitch(
 #            #Legs backside
-#            "BetsyX.Legs == 'skirt'","images/BetsyDoggy/Betsy_Doggy_Legs_Skirt_Back.png",
+#            "BetsyX.Legs == 'skirt'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Legs_Skirt_Back.png"),
 #            "not BetsyX.Upskirt", Null(),
-#            "BetsyX.Legs == 'pants'", "images/BetsyDoggy/Betsy_Doggy_Legs_Pants_Back.png",
-#            "BetsyX.Legs == 'yoga pants'", "images/BetsyDoggy/Betsy_Doggy_Legs_Yoga_Back.png",
+#            "BetsyX.Legs == 'pants'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Legs_Pants_Back.png"),
+#            "BetsyX.Legs == 'yoga pants'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Legs_Yoga_Back.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Panties back
 #            "not BetsyX.PantiesDown or (BetsyX.Legs == 'pants' and not BetsyX.Upskirt)", Null(),
-#            "BetsyX.Panties == 'wolvie panties'", "images/BetsyDoggy/Betsy_Doggy_Panties_Wolvie_Back.png",
-#            "BetsyX.Panties == 'lace panties'", "images/BetsyDoggy/Betsy_Doggy_Panties_Lace_Back.png",
-#            "BetsyX.Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Back.png",
+#            "BetsyX.Panties == 'wolvie panties'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Panties_Wolvie_Back.png"),
+#            "BetsyX.Panties == 'lace panties'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Panties_Lace_Back.png"),
+#            "BetsyX.Panties", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Panties_Back.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/BetsyDoggy/Betsy_Doggy_Ass.png", #Ass Base
+#        (0,0), get_cached_image("images/BetsyDoggy/Betsy_Doggy_Ass.png"), #Ass Base
 
 
         (0,0), ConditionSwitch(
@@ -1095,47 +1095,47 @@ image Betsy_Doggy_Ass:
             "'insert ass' in (Trigger,Trigger2,BetsyX.Offhand)", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png",
             "'dildo anal' in (Trigger,Trigger2,BetsyX.Offhand)", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Anal_FullBase.png",
             "BetsyX.Loose > 2", "Betsy_Gape_Anal",    #intentional
-            "BetsyX.Loose", "images/BetsyDoggy/Betsy_Doggy_Asshole_Loose.png",
-            "True", "images/BetsyDoggy/Betsy_Doggy_Asshole_Tight.png",
+            "BetsyX.Loose", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Asshole_Loose.png"),
+            "True", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Asshole_Tight.png"),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "BetsyX.Water", "images/RogueDoggy/Rogue_Doggy_WetAss.png",
+#            "BetsyX.Water", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetAss.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Panties if Down
             "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Null(),
             "not BetsyX.PantiesDown or (BetsyX.Legs == 'pants' and not BetsyX.Upskirt)", Null(),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Lace_Down.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue_Down.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Lace_Down.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #swimsuit bottoms
             "BetsyX.Panties != 'swimsuit' and BetsyX.Chest != 'swimsuit'", Null(),
-            "BetsyX.PantiesDown or (not BetsyX.Panties and BetsyX.Chest == 'swimsuit')", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Bikini_Fucking.png"),
-            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Bikini_Fucking.png"),
+            "BetsyX.PantiesDown or (not BetsyX.Panties and BetsyX.Chest == 'swimsuit')", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Bikini_Fucking.png"),
+            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Bikini_Fucking.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Hose
-            "BetsyX.Hose == 'stockings'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Stockings.png"),
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Socks.png"),
+            "BetsyX.Hose == 'stockings'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Stockings.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Socks.png"),
 #            "Player.Sprite and Player.Cock == 'in'", Null(),
 #            "Player.Sprite and Player.Cock == 'anal'", Null(),
-            "BetsyX.Hose == 'stockings and garterbelt'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_StockingsGarter.png"),
-            "BetsyX.Hose == 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Garter.png"),
+            "BetsyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_StockingsGarter.png"),
+            "BetsyX.Hose == 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Garter.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #spunkpussy Layer
             "'in' in BetsyX.Spunk and Player.Cock == 'in' and Player.Male",Null(),# "images/BetsyDoggy/Betsy_Doggy_SpunkPussyOpen.png",  #fix for BetsyX.Spunk is used later
-            "'in' in BetsyX.Spunk and Player.Male", "images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png",
-            "BetsyX.Wet and Player.Cock == 'in'", "images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png",
-            "BetsyX.Wet", "images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png"),
+            "BetsyX.Wet and Player.Cock == 'in'", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png"),
+            "BetsyX.Wet", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1159,8 +1159,8 @@ image Betsy_Doggy_Ass:
             "Player.Sprite and Player.Cock == 'in'", Null(),
             "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
             "BetsyX.Legs and not BetsyX.Upskirt", Null(),
-            "BetsyX.Pierce == 'ring'", "images/LauraDoggy/Laura_Doggy_Pierce_Ring.png",
-            "BetsyX.Pierce == 'barbell'", "images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png",
+            "BetsyX.Pierce == 'ring'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Ring.png"),
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             ),
 
@@ -1168,9 +1168,9 @@ image Betsy_Doggy_Ass:
         (2,-8), ConditionSwitch(
             #spunkanal Layer
             "'anal' not in BetsyX.Spunk or (Player.Sprite and Player.Cock == 'anal' and Speed >= 1) or not Player.Male", Null(),
-#            "Player.Cock == 'anal'", "images/BetsyDoggy/Betsy_Doggy_SpunkAnalOpen.png",
-            "BetsyX.Loose", "images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png",
-            "True", "images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png",
+#            "Player.Cock == 'anal'", get_cached_image("images/BetsyDoggy/Betsy_Doggy_SpunkAnalOpen.png"),
+            "BetsyX.Loose", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png"),
+            "True", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkAnalLoose.png"),
             ),
         (0,0), ConditionSwitch(
             #Panties if up
@@ -1178,40 +1178,40 @@ image Betsy_Doggy_Ass:
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue.png"),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Lace.png"),
-            "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue.png"),
+            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Lace.png"),
+            "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue.png"),
             # Modification mode
-            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", "images/BetsyDoggy/modification/Betsy_Doggy_Panties_Cammy.png",
-            "BetsyX.Panties == 'cammy leotard'", "images/BetsyDoggy/modification/Betsy_Doggy_Panties_Cammy.png",
+            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Panties_Cammy.png"),
+            "BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsyDoggy/modification/Betsy_Doggy_Panties_Cammy.png"),
             # ----------------
-            "BetsyX.Wet", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue_Wet.png"),
-            "True", Recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue.png"),
+            "BetsyX.Wet", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue_Wet.png"),
+            "True", get_cached_recolor("Betsy", "Panties", "images/BetsyDoggy/Betsy_Doggy_Panties_Blue.png"),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #full hose/tights
             "BetsyX.Panties and BetsyX.Panties != 'swimsuit' and BetsyX.PantiesDown", Null(),
-            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Pantyhose_Holed.png"),
+            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Pantyhose_Holed.png"),
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
-            "BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Pantyhose.png"),
+            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Hose_Pantyhose.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
-            "BetsyX.Legs == 'skirt' and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Skirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
-            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Skirt_Up.png"),
-            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Skirt.png"),
+            "BetsyX.Legs == 'skirt' and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Skirt_Up.png"),   #Rogue_Doggy_Legs_Skirt_UpAnal.png",
+            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Skirt_Up.png"),
+            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Skirt.png"),
             "BetsyX.Legs == 'shorts'", ConditionSwitch(
-                    "BetsyX.Upskirt or BetsyX.PantiesDown", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts_Down.png"),
-                    "BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts_Wet.png"),
+                    "BetsyX.Upskirt or BetsyX.PantiesDown", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts_Down.png"),
+                    "BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts_Wet.png"),
                     "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
-                    "True", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts.png"),
+                    "True", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Shorts.png"),
                     ),
             "BetsyX.Legs == 'yoga pants'", ConditionSwitch(
                     "BetsyX.Upskirt", Null(), #"images/BetsyDoggy/Betsy_Doggy_Legs_Yoga_Down.png",
                     "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
-                    "BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Yoga_Wet.png"),
-                    "True", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Yoga.png"),
+                    "BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Yoga_Wet.png"),
+                    "True", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Legs_Yoga.png"),
                     ),
             "True", Null(),
             ),
@@ -1219,14 +1219,14 @@ image Betsy_Doggy_Ass:
             #Over Layer
             "BetsyX.Over == 'towel' and BetsyX.Legs == 'skirt'", Null(),
             "BetsyX.Over == 'towel' and BetsyX.Upskirt", Null(), #"images/BetsyDoggy/Betsy_Doggy_Legs_Towel_Up.png",
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Legs_Towel.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsyDoggy/Betsy_Doggy_Legs_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Over Layer
             "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", Null(),
             # Modification mode
-            "BetsyX.Acc and 'scarf' in BetsyX.Acc", Recolor("Betsy", "Acc", "images/BetsyDoggy/Betsy_Doggy_Scarf.png"),
+            "BetsyX.Acc and 'scarf' in BetsyX.Acc", get_cached_recolor("Betsy", "Acc", "images/BetsyDoggy/Betsy_Doggy_Scarf.png"),
             # -----------------
             "True", Null(),
             ),
@@ -1234,8 +1234,8 @@ image Betsy_Doggy_Ass:
 #            #Pussy Piercings clothed
 #            "Player.Sprite", Null(),
 #            "BetsyX.PantiesDown or (not BetsyX.Panties and BetsyX.Legs != 'leather pants')", Null(), #if not panties or legs, skip this
-#            "BetsyX.Pierce == 'ring'", "images/JubesDoggy/Jubes_Doggy_Pierce_RingC.png",
-#            "BetsyX.Pierce == 'barbell'", "images/JubesDoggy/Jubes_Doggy_Pierce_BarbellC.png",
+#            "BetsyX.Pierce == 'ring'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_RingC.png"),
+#            "BetsyX.Pierce == 'barbell'", get_cached_image("images/JubesDoggy/Jubes_Doggy_Pierce_BarbellC.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -1265,12 +1265,12 @@ image Betsy_Doggy_Ass:
             "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
             "'insert ass' in (Trigger,Trigger2,BetsyX.Offhand)", "Betsy_Anal_Fingering",
             "'dildo anal' in (Trigger,Trigger2,BetsyX.Offhand)", "Betsy_Anal_Fucking",
-            "BetsyX.Plug", "images/PlugIn.png",
+            "BetsyX.Plug", get_cached_image("images/PlugIn.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in BetsyX.Spunk and Player.Male", "images/BetsyDoggy/Betsy_Doggy_Spunk_Ass.png",
+            "'back' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1284,16 +1284,16 @@ image Betsy_Doggy_Ass:
 #            #Hotdogging underlayer
 #            "not Player.Sprite or Player.Cock != 'out'", Null(),
 #            "BetsyX.Over == 'towel'", Null(),
-#            "(BetsyX.Legs == 'skirt' or BetsyX.Legs == 'other skirt') and BetsyX.Upskirt", "images/BetsyDoggy/Betsy_Doggy_Hotdog_Upskirt.png",
-#            "True", "images/BetsyDoggy/Betsy_Doggy_HotdogBack.png",
+#            "(BetsyX.Legs == 'skirt' or BetsyX.Legs == 'other skirt') and BetsyX.Upskirt", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Hotdog_Upskirt.png"),
+#            "True", get_cached_image("images/BetsyDoggy/Betsy_Doggy_HotdogBack.png"),
 #            ),
         (0,0), ConditionSwitch(
             #Hotdogging Cock w/ alpha
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            "(BetsyX.Legs == 'skirt' or BetsyX.Legs == 'other skirt') and BetsyX.Upskirt and Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            "(BetsyX.Legs == 'skirt' or BetsyX.Legs == 'other skirt') and BetsyX.Upskirt", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            "Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
-            "True", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            "(BetsyX.Legs == 'skirt' or BetsyX.Legs == 'other skirt') and BetsyX.Upskirt and Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            "(BetsyX.Legs == 'skirt' or BetsyX.Legs == 'other skirt') and BetsyX.Upskirt", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            "Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            "True", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #UI tool layer
@@ -1307,7 +1307,7 @@ image Betsy_Doggy_Ass:
 
 image Betsy_Doggy_Feet:         #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
     contains:
-            AlphaMask("Betsy_Doggy_Shins", "images/BetsyDoggy/Betsy_Doggy_Feet_Mask2.png")
+            get_cached_alphamask("Betsy_Doggy_Shins", "images/BetsyDoggy/Betsy_Doggy_Feet_Mask2.png")
 
 image Betsy_Doggy_Shins:             #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
     #Betsy's footjob shins
@@ -1323,20 +1323,20 @@ image Betsy_Doggy_Shins:             #fix // // // // // // fix // // // // // /
         ConditionSwitch(
             "BetsyX.Hose == 'garterbelt'", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png",
             "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet_Hose_Holed.png"),
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Feet_Socks.png"),
-            "BetsyX.Hose", Recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Feet_Hose.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Feet_Socks.png"),
+            "BetsyX.Hose", get_cached_recolor("Betsy", "Hose", "images/BetsyDoggy/Betsy_Doggy_Feet_Hose.png"),
             "True", "images/BetsyDoggy/[BetsyX.skin_image.skin_path]Betsy_Doggy_Feet.png",
             )
     contains:
         #boots
         ConditionSwitch(
-            "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Feet_Yoga.png"),
+            "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsyDoggy/Betsy_Doggy_Feet_Yoga.png"),
             "True", Null(),
             )
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in BetsyX.Spunk and Player.Male", "images/BetsyDoggy/Betsy_Doggy_Spunk_Feet.png",
+            "'feet' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyDoggy/Betsy_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 #    pos (0,0)
@@ -1506,15 +1506,15 @@ image Betsy_Pussy_Static:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "BetsyX.Pierce == 'ring'", "images/LauraDoggy/Laura_Doggy_Pierce_Ring.png",
-            "BetsyX.Pierce == 'barbell'", "images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png",
+            "BetsyX.Pierce == 'ring'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Ring.png"),
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             )
         offset (1,5)#(-3,8)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1529,11 +1529,11 @@ image Betsy_Pussy_Static:
 
     contains:
         #Cock
-        AlphaMask("Zero_Betsy_Doggy_Static", "Betsy_Pussy_Mask_Static")
+        get_cached_alphamask("Zero_Betsy_Doggy_Static", "Betsy_Pussy_Mask_Static")
 
 #    contains:
 #        # expanding pussy flap
-#        AlphaMask("Betsy_PussyHole_Static", "Betsy_Pussy_Hole_Mask_Static")
+#        get_cached_alphamask("Betsy_PussyHole_Static", "Betsy_Pussy_Hole_Mask_Static")
 
 image Betsy_Pussy_Hole_Mask_Static:
     # This is the alpha used for the little flap in the heading animation "Betsy_Pussy_Moving"
@@ -1612,15 +1612,15 @@ image Betsy_Pussy_Heading:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "BetsyX.Pierce == 'ring'", "images/LauraDoggy/Laura_Doggy_Pierce_Ring.png",
-            "BetsyX.Pierce == 'barbell'", "images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png",
+            "BetsyX.Pierce == 'ring'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Ring.png"),
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             )
         offset (1,5)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1634,15 +1634,15 @@ image Betsy_Pussy_Heading:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Betsy_Doggy_Heading", "Betsy_Pussy_Mask")
+        get_cached_alphamask("Zero_Betsy_Doggy_Heading", "Betsy_Pussy_Mask")
 
 #    contains:
 #        # expanding pussy flap
-#        AlphaMask("Betsy_Pussy_Heading_Flap", "Betsy_Pussy_Hole_Mask")
+#        get_cached_alphamask("Betsy_Pussy_Heading_Flap", "Betsy_Pussy_Hole_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1725,8 +1725,8 @@ image Betsy_Pussy_Fingering:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "BetsyX.Pierce == 'ring'", "images/LauraDoggy/Laura_Doggy_Pierce_Ring.png",
-            "BetsyX.Pierce == 'barbell'", "images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png",
+            "BetsyX.Pierce == 'ring'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Ring.png"),
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             )
         offset (1,5)
@@ -1734,7 +1734,7 @@ image Betsy_Pussy_Fingering:
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1748,15 +1748,15 @@ image Betsy_Pussy_Fingering:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Betsy_Pussy_Finger", "Betsy_Pussy_Mask_Finger")
+        get_cached_alphamask("Zero_Betsy_Pussy_Finger", "Betsy_Pussy_Mask_Finger")
 #    contains:
 #        # expanding pussy flap
-#        AlphaMask("Betsy_Pussy_Heading_Flap", "Betsy_Pussy_Hole_Mask")
+#        get_cached_alphamask("Betsy_Pussy_Heading_Flap", "Betsy_Pussy_Hole_Mask")
 
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1819,27 +1819,27 @@ image Betsy_Pussy_Fucking2:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "BetsyX.Pierce == 'ring'", "images/LauraDoggy/Laura_Doggy_Pierce_Ring.png",
-            "BetsyX.Pierce == 'barbell'", "images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png",
+            "BetsyX.Pierce == 'ring'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Ring.png"),
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             )
         offset (1,5)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
-            "'dildo pussy' in (Trigger,Trigger2,BetsyX.Offhand)", AlphaMask("Doggy_Fucking_Dildo", "Betsy_Pussy_Mask_Fucking"),
-            "True",AlphaMask("Zero_Betsy_Doggy_Fucking2", "Betsy_Pussy_Mask_Fucking"),
+            "'dildo pussy' in (Trigger,Trigger2,BetsyX.Offhand)", get_cached_alphamask("Doggy_Fucking_Dildo", "Betsy_Pussy_Mask_Fucking"),
+            "True",get_cached_alphamask("Zero_Betsy_Doggy_Fucking2", "Betsy_Pussy_Mask_Fucking"),
             ),
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
 
@@ -1872,24 +1872,24 @@ image Betsy_Pussy_Fucking3:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "BetsyX.Pierce == 'ring'", "images/LauraDoggy/Laura_Doggy_Pierce_Ring.png",
-            "BetsyX.Pierce == 'barbell'", "images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png",
+            "BetsyX.Pierce == 'ring'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Ring.png"),
+            "BetsyX.Pierce == 'barbell'", get_cached_image("images/LauraDoggy/Laura_Doggy_Pierce_Barbell.png"),
             "True", Null(),
             )
         offset (1,5)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Betsy_Doggy_Fucking3", "Betsy_Pussy_Mask_Fucking")
+        get_cached_alphamask("Zero_Betsy_Doggy_Fucking3", "Betsy_Pussy_Mask_Fucking")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
 
@@ -1939,7 +1939,7 @@ image Betsy_Anal_Fingering:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -1952,11 +1952,11 @@ image Betsy_Anal_Fingering:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Betsy_Doggy_Anal_Finger", "Betsy_Doggy_Anal_Fingering_Mask")
+        get_cached_alphamask("Zero_Betsy_Doggy_Anal_Finger", "Betsy_Doggy_Anal_Fingering_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2010,7 +2010,7 @@ image Betsy_Anal_Heading:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2023,11 +2023,11 @@ image Betsy_Anal_Heading:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Betsy_Doggy_Anal_Heading", "Betsy_Doggy_Anal_Heading_Mask")
+        get_cached_alphamask("Zero_Betsy_Doggy_Anal_Heading", "Betsy_Doggy_Anal_Heading_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2120,20 +2120,20 @@ image Betsy_Anal_Fucking:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
             #full hose/tights
-            "'dildo anal' in (Trigger,Trigger2,BetsyX.Offhand)", AlphaMask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
-            "True", AlphaMask("Zero_Betsy_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "'dildo anal' in (Trigger,Trigger2,BetsyX.Offhand)", get_cached_alphamask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "True", get_cached_alphamask("Zero_Betsy_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
             )
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2186,16 +2186,16 @@ image Betsy_Anal_Fucking2:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Betsy_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
+        get_cached_alphamask("Zero_Betsy_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in BetsyX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2498,24 +2498,24 @@ image Betsy_Sex_Body:
         (217,-165), "Betsy_HairBack_Sex", #(175,-165)
 #        (0,0), ConditionSwitch(
 #            #shirt under layer
-#            "BetsyX.Over == 'red shirt' and BetsyX.Uptop", "images/BetsySex/Betsy_Sex_Over_Red_Back.png",
-#            "BetsyX.Over == 'black shirt' and BetsyX.Uptop", "images/BetsySex/Betsy_Sex_Over_Black_Back.png",
+#            "BetsyX.Over == 'red shirt' and BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_Sex_Over_Red_Back.png"),
+#            "BetsyX.Over == 'black shirt' and BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_Sex_Over_Black_Back.png"),
 #            "True", Null(),
 #            ),
         (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Neck.png",
-#        (0,0), "images/BetsySex/Betsy_Sex_Headref.png",
+#        (0,0), get_cached_image("images/BetsySex/Betsy_Sex_Headref.png"),
 
         (175,-165), "Betsy_Head_Sex",  #(50,-325)
         (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Body.png",
 
         (0,0), ConditionSwitch(
             #rear sleeve
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink_Back.png"),
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Jacket_Back.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink_Back.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Jacket_Back.png"),
             # Modification mode
-            "BetsyX.Arms == 'cammy gloves'", "images/BetsySex/modification/Betsy_Sex_Glove_Cammy_Back.png",
+            "BetsyX.Arms == 'cammy gloves'", get_cached_image("images/BetsySex/modification/Betsy_Sex_Glove_Cammy_Back.png"),
             # ----------------
-            "BetsyX.Arms", "images/BetsySex/Betsy_Sex_Glove_Back.png",
+            "BetsyX.Arms", get_cached_image("images/BetsySex/Betsy_Sex_Glove_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -2523,45 +2523,45 @@ image Betsy_Sex_Body:
             "not BetsyX.Chest", Null(),
             "BetsyX.Uptop", ConditionSwitch(
                     #if top's up
-                    "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bikini_Up.png"),
-                    "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Sports_Up.png"),
-                    "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bra_Up.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Lace_Up.png"),
+                    "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bikini_Up.png"),
+                    "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Sports_Up.png"),
+                    "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bra_Up.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Lace_Up.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsySex/modification/Betsy_Sex_Chest_Cammy_Up.png",
+                    "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_Sex_Chest_Cammy_Up.png"),
                     # ----------------
                     "True", Null(),
                     ),
             #if the top's down. . .
-            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bikini.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Sports.png"),
-            "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bra.png"),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Lace.png"),
+            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bikini.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Sports.png"),
+            "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Bra.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Chest_Lace.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsySex/modification/Betsy_Sex_Chest_Cammy.png",
+            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_Sex_Chest_Cammy.png"),
             # -----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "BetsyX.Water", "images/BetsySex/Betsy_Sex_Water_Body.png",
+            "BetsyX.Water", get_cached_image("images/BetsySex/Betsy_Sex_Water_Body.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #shorts X layer
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Over_Shorts.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Over_Shorts.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Jacket.png"),
-            "BetsyX.Over == 'pink top' and BetsyX.Uptop", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink_Up.png"),
-            "BetsyX.Over == 'tank' and BetsyX.Uptop", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Tank_Up.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Jacket.png"),
+            "BetsyX.Over == 'pink top' and BetsyX.Uptop", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink_Up.png"),
+            "BetsyX.Over == 'tank' and BetsyX.Uptop", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Tank_Up.png"),
             "BetsyX.Uptop", Null(),
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Towel.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink.png"),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Tank.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Towel.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Tank.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -2569,40 +2569,40 @@ image Betsy_Sex_Body:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "BetsyX.Uptop", "images/BetsySex/Betsy_Sex_Pierce_Tits_R.png",
+                    "BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Tits_R.png"),
 
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Blue.png"),
-                    "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Pink.png"),                  #pink top or towel
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Blue.png"),
+                    "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Pink.png"),                  #pink top or towel
 
-                    "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Blue.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Lace.png"),
-                    "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Blue.png"),
+                    "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Blue.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Lace.png"),
+                    "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_R_Blue.png"),
 
-                    "True", "images/BetsySex/Betsy_Sex_Pierce_Tits_R.png",
+                    "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Tits_R.png"),
                     ),
-            "BetsyX.Uptop", "images/BetsySex/Betsy_Sex_Pierce_Tits_B.png",
+            "BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Tits_B.png"),
 
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Blue.png"),
-            "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Pink.png"),                  #pink top or towel
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Blue.png"),
+            "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Pink.png"),                  #pink top or towel
 
-            "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Blue.png"),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Lace.png"),
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Blue.png"),
+            "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Blue.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Lace.png"),
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_Sex_Pierce_Tits_B_Blue.png"),
 
-            "True", "images/BetsySex/Betsy_Sex_Pierce_Tits_B.png",
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Tits_B.png"),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in BetsyX.Spunk and Player.Male", "images/BetsySex/Betsy_Sex_Spunk_Belly.png",
+            "'belly' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in BetsyX.Spunk and Player.Male", "images/BetsySex/Betsy_Sex_Spunk_Tits.png",
+            "'tits' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/BetsySex/Betsy_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/BetsySex/Betsy_Sex_HeadRef.png"),
         )
 #    yoffset -163
 # End Betsy Sex Pose Body / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -2619,13 +2619,13 @@ image Betsy_Sex_Hand:
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "BetsyX.Water", "images/BetsySex/Betsy_Sex_Water_Hand.png",
+            "BetsyX.Water", get_cached_image("images/BetsySex/Betsy_Sex_Water_Hand.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Jacket_Up.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink_Arm.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Jacket_Up.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Over_Pink_Arm.png"),
             "True", Null(),
             ),
         )
@@ -2663,7 +2663,7 @@ image Betsy_Sex_Legs:
         (1120,880),
         (0,0), ConditionSwitch(
             #back of skirt Layer
-            "BetsyX.Legs == 'skirt'", "images/BetsySex/Betsy_Sex_Legs_Skirt_Back.png",
+            "BetsyX.Legs == 'skirt'", get_cached_image("images/BetsySex/Betsy_Sex_Legs_Skirt_Back.png"),
             "True", Null(),
             ),
         (545,540), ConditionSwitch(    #165,560
@@ -2694,14 +2694,14 @@ image Betsy_Sex_Legs:
             ),
 
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/BetsySex/Betsy_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/BetsySex/Betsy_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not BetsyX.Water", Null(),
-            "True", "images/BetsySex/Betsy_Sex_Water_Legs.png",
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Water_Legs.png"),
             ),
 
         (0,0), "Betsy_Sex_Anus",
@@ -2713,26 +2713,26 @@ image Betsy_Sex_Legs:
 
         (0,0), ConditionSwitch(
             #Panties if up
-            "(BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit') and BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini_Down.png"),
+            "(BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit') and BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini_Down.png"),
             # Modification mode
-            "(BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard') and BetsyX.PantiesDown", "images/BetsySex/modification/Betsy_Sex_Panties_Cammy_Down.png",
+            "(BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard') and BetsyX.PantiesDown", get_cached_image("images/BetsySex/modification/Betsy_Sex_Panties_Cammy_Down.png"),
             # -----------------
             "BetsyX.PantiesDown", Null(),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Lace.png"),
-            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Lace.png"),
+            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini.png"),
             # Modification mode
-            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", "images/BetsySex/modification/Betsy_Sex_Panties_Cammy.png",
+            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_Sex_Panties_Cammy.png"),
             # ----------------
-            "BetsyX.Panties and BetsyX.Wet", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue_Wet.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue.png"),
+            "BetsyX.Panties and BetsyX.Wet", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue_Wet.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Socks.png"),
-            "BetsyX.Hose == 'stockings and garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_StockingsGarter.png"),
-            "BetsyX.Hose == 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Garter.png"),
-            "BetsyX.Hose == 'stockings'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Stockings.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Socks.png"),
+            "BetsyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_StockingsGarter.png"),
+            "BetsyX.Hose == 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Garter.png"),
+            "BetsyX.Hose == 'stockings'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
 
@@ -2742,53 +2742,53 @@ image Betsy_Sex_Legs:
 #            "not BetsyX.Pierce", Null(),
 #            "BetsyX.Pierce == 'ring'",ConditionSwitch(
 #                    #If she has panties down. . .
-#                    "Player.Sprite and Player.Cock == 'in'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png",
-#                    "not BetsyX.Panties or BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
-#                    "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png",
-##                    "BetsyX.Panties == 'swimsuit' and not BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_White.png",
-#                    "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_White.png",
+#                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png"),
+#                    "not BetsyX.Panties or BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
+#                    "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
+##                    "BetsyX.Panties == 'swimsuit' and not BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_White.png"),
+#                    "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_White.png"),
 #                    ),
 #            #else, it's barbell
-#            "not BetsyX.Panties or BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
-#            "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png",
-##            "BetsyX.Panties == 'swimsuit' and not BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_White.png",
-#            "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_White.png",
+#            "not BetsyX.Panties or BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
+#            "BetsyX.Panties == 'lace panties' and not BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
+##            "BetsyX.Panties == 'swimsuit' and not BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B_White.png"),
+#            "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B_White.png"),
 #            ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "BetsyX.Panties and BetsyX.PantiesDown", Null(),
-#            "BetsyX.Hose == 'tights'", "images/BetsySex/Betsy_Sex_Hose_Tights.png",
-#            "BetsyX.Hose == 'ripped tights'", "images/BetsySex/Betsy_Sex_Hose_Tights_Holed.png",
-            "BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose.png"),
-            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
+#            "BetsyX.Hose == 'tights'", get_cached_image("images/BetsySex/Betsy_Sex_Hose_Tights.png"),
+#            "BetsyX.Hose == 'ripped tights'", get_cached_image("images/BetsySex/Betsy_Sex_Hose_Tights_Holed.png"),
+            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose.png"),
+            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #Legs Layer
-#            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", "images/BetsySex/Betsy_Sex_Legs_Skirt_Up.png",
-            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
+#            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", get_cached_image("images/BetsySex/Betsy_Sex_Legs_Skirt_Up.png"),
+            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
             "BetsyX.Upskirt", Null(),
-#            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
-            "BetsyX.Legs == 'shorts' and BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts_Wet.png"),
-            "BetsyX.Legs == 'shorts'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts.png"),
-            "BetsyX.Legs == 'yoga pants' and BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga_Wet.png"),
-            "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga.png"),
+#            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
+            "BetsyX.Legs == 'shorts' and BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts_Wet.png"),
+            "BetsyX.Legs == 'shorts'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts.png"),
+            "BetsyX.Legs == 'yoga pants' and BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga_Wet.png"),
+            "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #scarf
             # Modification mode
-            "BetsyX.Acc and 'scarf' in BetsyX.Acc", Recolor("Betsy", "Acc", "images/BetsySex/Betsy_Sex_Scarf.png"),
+            "BetsyX.Acc and 'scarf' in BetsyX.Acc", get_cached_recolor("Betsy", "Acc", "images/BetsySex/Betsy_Sex_Scarf.png"),
             # -----------------
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #towel
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Legs_Towel.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Legs_Towel.png"),
             "True", Null(),
             ),
 
@@ -2803,36 +2803,36 @@ image Betsy_Sex_Legs:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png"),
 
-                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
-                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Black.png"),
-                    "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
+                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Black.png"),
+                    "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
 
-                    "BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
-                    "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
-                    "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
+                    "BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
+                    "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard'", Recolor("Betsy", "Panties", "images/BetsySex/modification/Betsy_Sex_Pierce_Pussy_R_Cammy.png"),
+                    "BetsyX.Chest == 'cammy leotard'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/modification/Betsy_Sex_Pierce_Pussy_R_Cammy.png"),
                     # -----------------
-                    "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
-                    "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
+                    "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Black.png"),
-            "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Black.png"),
+            "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
 
-            "BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
+            "BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
             # Modification moed
-            "BetsyX.Chest == 'cammy leotard'", Recolor("Betsy", "Panties", "images/BetsySex/modification/Betsy_Sex_Pierce_Pussy_B_Cammy.png"),
+            "BetsyX.Chest == 'cammy leotard'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/modification/Betsy_Sex_Pierce_Pussy_B_Cammy.png"),
             # ----------------
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
-            "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
             ),
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
 #            "not Player.Sprite or Player.Cock != 'out'", Null(),
@@ -2858,13 +2858,13 @@ image Betsy_Sex_Legs:
         (0,0), ConditionSwitch(
             #Footjob overlay
             "Player.Cock == 'foot'", Null(),
-            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
             "ShowFeet", "Betsy_Sex_Feet",
-#            "Player.Sprite", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-#            "Trigger == 'lick pussy'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-#            "Trigger == 'lick ass'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-            "True", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Player.Sprite", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Trigger == 'lick pussy'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Trigger == 'lick ass'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "True", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
             ),
 
 #        (0,0), ConditionSwitch(                                                                                 #UI tool layer
@@ -2874,7 +2874,7 @@ image Betsy_Sex_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Betsy_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
 #            "True", "Betsy_Sex_Feet",
 #            ),
         )
@@ -2889,9 +2889,9 @@ image Betsy_Sex_Feet:
         (0,0), ConditionSwitch(
             #panties if down
             "not BetsyX.PantiesDown", Null(),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Lace_Down.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Lace_Down.png"),
             "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Null(),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue_Down.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue_Down.png"),
             "True", Null(),
             ),
 
@@ -2899,30 +2899,30 @@ image Betsy_Sex_Feet:
             #hose layer
             "(BetsyX.Hose == 'pantyhose' or BetsyX.Hose == 'ripped pantyhose') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
             "(BetsyX.Hose == 'tights' or BetsyX.Hose == 'ripped tights') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Socks.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Socks.png"),
             "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet_Hose_Holed.png"),
-#            "BetsyX.Hose == 'ripped tights'", "images/BetsySex/Betsy_Sex_Feet_Tights_Holed.png",
-#            "BetsyX.Hose == 'tights'", "images/BetsySex/Betsy_Sex_Feet_Tights.png",
+#            "BetsyX.Hose == 'ripped tights'", get_cached_image("images/BetsySex/Betsy_Sex_Feet_Tights_Holed.png"),
+#            "BetsyX.Hose == 'tights'", get_cached_image("images/BetsySex/Betsy_Sex_Feet_Tights.png"),
 #            "BetsyX.Hose == 'ripped pantyhose' and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
-            "BetsyX.Hose and BetsyX.Hose != 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
-#            "BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
+            "BetsyX.Hose and BetsyX.Hose != 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
+#            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
             "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not BetsyX.Water", Null(),
-            "True", "images/BetsySex/Betsy_Sex_Water_Feet.png",
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Water_Feet.png"),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Feet_Yoga.png"),
-            "BetsyX.Legs == 'shorts' and BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts_Down.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Feet_Yoga.png"),
+            "BetsyX.Legs == 'shorts' and BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in BetsyX.Spunk", "images/BetsySex/Betsy_Sex_Spunk_Feet.png",
+            "'feet' in BetsyX.Spunk", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -2945,15 +2945,15 @@ image Betsy_Sex_Pussy:
 #            # The background plate of her pussy
 #            ConditionSwitch(
 #                "not BetsyX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-#                "True", "images/JubesSex/Jubes_Sex_WetPussy_C.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_C.png"),
 #                )
     contains:
             # pubes
             ConditionSwitch(
                 "not BetsyX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/Betsy_Sex_Pubes_Fucking.png",
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/BetsySex/Betsy_Sex_Pubes_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
                 "Player.Sprite and Player.Cock == 'in'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
                 "Player.Sprite and Player.Cock == 'out'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
                 "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
@@ -2966,49 +2966,49 @@ image Betsy_Sex_Pussy:
                 "'in' not in BetsyX.Spunk or not Player.Male", Null(),
                 "(BetsyX.Legs == 'pants' or BetsyX.Legs == 'shorts') and not BetsyX.Upskirt", Null(),
                 "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
-                "True", AlphaMask("Spunk_Drip2","Betsy_Sex_Drip_Mask"),
+                "True", get_cached_alphamask("Spunk_Drip2", "Betsy_Sex_Drip_Mask"),
                 )
             offset (545,540)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-                "'in' in BetsyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in BetsyX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy.png",
+                "'in' in BetsyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #            offset (0,-15)
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in BetsyX.Spunk", "images/BetsySex/Betsy_Sex_Spunk_Puss_Under.png",
+#                "'in' in BetsyX.Spunk", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "BetsyX.Panties and BetsyX.PantiesDown", Null(),
-#                "BetsyX.Hose == 'ripped pantyhose' and ShowFeet", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
-#                "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
+#                "BetsyX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
+#                "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
             ConditionSwitch(
 #                "not Player.Sprite", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Betsy_Sex_Fucking_Zero_Anim3", "Betsy_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Betsy_Sex_Fucking_Zero_Anim2", "Betsy_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Betsy_Sex_Fucking_Zero_Anim1", "Betsy_Sex_Heading_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim3", "Betsy_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim2", "Betsy_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim1", "Betsy_Sex_Heading_Mask"),
                 "Player.Sprite and Player.Cock == 'in'", "Betsy_Sex_Fucking_Zero_Anim0",
                 "True", Null(),
                 )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "BetsyX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/Betsy_Sex_Pierce_Pussy_BarbellF.png",
-#                "BetsyX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/Betsy_Sex_Pierce_Pussy_RingF.png",
-#                "BetsyX.Pierce == 'barbell'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_Barbell.png",
-#                "BetsyX.Pierce == 'ring'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_Ring.png",
+#                "BetsyX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_BarbellF.png"),
+#                "BetsyX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_RingF.png"),
+#                "BetsyX.Pierce == 'barbell'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_Barbell.png"),
+#                "BetsyX.Pierce == 'ring'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
 #    contains:
@@ -3023,7 +3023,7 @@ image Betsy_Sex_Pussy:
 #                "Speed == 1", Null(),
 #                "'in' not in BetsyX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 ##                "Speed <= 1", Null(), #"Betsy_Pussy_Spunk_Heading",
-#                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
 #                )
 
     #End Betsy Pussy composite
@@ -3144,7 +3144,7 @@ image Betsy_Sex_Static:
 #            "Betsy_Sex_Feet"
             ConditionSwitch(
                 #Footjob overlay
-                "ShowFeet", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+                "ShowFeet", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
                 "True", Null(),
                 )
             pos (0,-180) #X less is left, Y less is up
@@ -3263,7 +3263,7 @@ image Betsy_Sex_Fucking_Speed1:
     contains:
             #cum over cock
             ConditionSwitch(
-                "'in' in BetsyX.Spunk and Player.Sprite and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "'in' in BetsyX.Spunk and Player.Sprite and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0.5)
@@ -3377,7 +3377,7 @@ image Betsy_Pussy_Spunk_Heading:
         #This is the image for Betsy's heading pussy cum
         contains:
             ConditionSwitch(
-                "'in' in BetsyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "'in' in BetsyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0)
@@ -3427,7 +3427,7 @@ image Betsy_Sex_Fucking_Speed2:
     contains:
             #cum over cock
             ConditionSwitch(
-                "'in' in BetsyX.Spunk and Player.Sprite and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "'in' in BetsyX.Spunk and Player.Sprite and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0.5)
@@ -3512,7 +3512,7 @@ image Betsy_Sex_Fucking_Speed3:
     contains:
             #cum over cock
             ConditionSwitch(
-                "'in' in BetsyX.Spunk and Player.Sprite and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+                "'in' in BetsyX.Spunk and Player.Sprite and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0.5)
@@ -3577,13 +3577,13 @@ image Betsy_Sex_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
             "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
             "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
             "Player.Sprite and Player.Cock == 'anal' and Speed", "Betsy_Sex_Anal_Heading",
             "Player.Sprite and Player.Cock == 'anal'", "Betsy_Sex_Anal_Tip",
-            "BetsyX.Plug", "images/PlugBase_Sex.png",
+            "BetsyX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "BetsyX.Loose > 2", "Betsy_Gape_Anal_Sex",
             "BetsyX.Loose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Loose.png",
             "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Tight.png",
@@ -3593,19 +3593,19 @@ image Betsy_Sex_Anus:
             #Spunk under penis
             ConditionSwitch(
                 "'anal' not in BetsyX.Spunk or not Player.Male", Null(),
-#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/BetsySex/Betsy_Sex_Spunk_Anal_Under.png",
+#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Anal_Under.png"),
                 "Player.Sprite and Player.Cock == 'anal' and Speed == 1", "Betsy_Sex_Anal_Spunk_Heading_Under",
-                "True", "images/JubesSex/Jubes_Sex_Spunk_Anal.png",
+                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal.png"),
                 )
             offset (5,0)
     contains:
             # The animation of Zero's moving penis, masked by her anus shape
             ConditionSwitch(
                 "not Player.Sprite or Player.Cock != 'anal'", Null(),
-                "Speed >= 3",  AlphaMask("Betsy_Sex_Anal_Zero_Anim3", "Betsy_Sex_Anal_MaskF"),
-                "Speed >= 2", AlphaMask("Betsy_Sex_Anal_Zero_Anim2", "Betsy_Sex_Anal_MaskF"),
-                "Speed", AlphaMask("Betsy_Sex_Anal_Zero_Anim1", "Betsy_Sex_Anal_Mask"),
-                "True", AlphaMask("Betsy_Sex_Anal_Zero_Anim0", "Betsy_Sex_Anal_Mask"),
+                "Speed >= 3",  get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim3", "Betsy_Sex_Anal_MaskF"),
+                "Speed >= 2", get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim2", "Betsy_Sex_Anal_MaskF"),
+                "Speed", get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim1", "Betsy_Sex_Anal_Mask"),
+                "True", get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim0", "Betsy_Sex_Anal_Mask"),
                 )
     contains:
             #Spunk over penis
@@ -3633,7 +3633,7 @@ image Betsy_Gape_Anal_Sex:
 
 image Betsy_Sex_Anal_Spunk:
     ConditionSwitch(
-                "'anal' in BetsyX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png",
+                "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png"),
                 "True", Null(),
                 )
     anchor (0.5,0.5)
@@ -3757,7 +3757,7 @@ image Betsy_Sex_Anal_Heading:
 
 image Betsy_Sex_Anal_Spunk_Heading_Over:
     ConditionSwitch(
-                "'anal' in BetsyX.Spunk and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png",
+                "'anal' in BetsyX.Spunk and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Anal_Over.png"),
                 "True", Null(),
                 )
     anchor (0.5,0.5)
@@ -3889,7 +3889,7 @@ image Betsy_Sex_Anal_Speed2:
                 repeat
 #    contains:
 #            #Zero's cock in the sex pose
-#            AlphaMask("Betsy_Sex_Fucking_Zero_Anim2", "Betsy_Sex_Fucking_Mask")
+#            get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim2", "Betsy_Sex_Fucking_Mask")
 # End main animation for Sex Pose Fucking Speed 2
 
 
@@ -4048,7 +4048,7 @@ image Betsy_Sex_Hotdog_Speed1:
 #            "Betsy_Sex_Feet"
 ##            ConditionSwitch(
 ##                #Footjob overlay
-##                "ShowFeet", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
+##                "ShowFeet", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
 ##                "True", Null(),
 ##                )
 #            pos (0,-180) #X less is left, Y less is up
@@ -4128,7 +4128,7 @@ image Betsy_Sex_Hotdog_Speed2:
 #            "Betsy_Sex_Feet"
 ##            ConditionSwitch(
 ##                #Footjob overlay
-##                "ShowFeet", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
+##                "ShowFeet", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
 ##                "True", Null(),
 ##                )
 #            pos (0,-180) #X less is left, Y less is up
@@ -4201,7 +4201,7 @@ image Betsy_Sex_FJ_Speed0:
             subpixel True
             "Betsy_Sex_Feet"
 #            alpha 0.5
-#            AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png")
+#            get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png")
             pos (50,-270) #X less is left, Y less is up (80,0)
             block: #adds to 5
 #                pause 0.2
@@ -4274,10 +4274,10 @@ image Betsy_Sex_FJ_Speed1:
             subpixel True
             "Betsy_Sex_Feet"
 #            alpha 0.5
-#            AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png")
+#            get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png")
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png"),
+#                "ShowFeet", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png"),
 #                "True", Null(),
 #                )
             pos (50,-320) #X less is left, Y less is up
@@ -4347,10 +4347,10 @@ image Betsy_Sex_FJ_Speed2:
             #Betsy's Legs
             subpixel True
             "Betsy_Sex_Feet"
-#            AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png")
+#            get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png")
 #            ConditionSwitch(
 #                #Footjob overlay
-#                "ShowFeet", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png"),
+#                "ShowFeet", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Toes.png"),
 #                "True", Null(),
 #                )
             pos (50,-260) #X less is left, Y less is up
@@ -4495,7 +4495,7 @@ image Betsy_BJ_Animation:#BJ_NewTest:                                           
 ##        (0,0), "Betsy_TJ_Tits_Under",
 ##        (0,0), "Betsy_TJ_Tits_Over",
 
-##        (0,0), "images/BetsyBJFace/Betsy_TJ_RefLine.png",
+##        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_RefLine.png"),
 ##        (-10,-90), "Betsy_Sprite_Head", #(75,-10)
 #        )
 #    transform_anchor True
@@ -4520,8 +4520,8 @@ image Betsy_BJ_Backdrop:
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "BetsyX.Water and BetsyX.ArmPose == 1", "images/BetsySprite/Betsy_Sprite_Water1.png",
-#            "BetsyX.Water", "images/BetsySprite/Betsy_Sprite_Water2.png",
+#            "BetsyX.Water and BetsyX.ArmPose == 1", get_cached_image("images/BetsySprite/Betsy_Sprite_Water1.png"),
+#            "BetsyX.Water", get_cached_image("images/BetsySprite/Betsy_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -4529,36 +4529,36 @@ image Betsy_BJ_Backdrop:
             "BetsyX.Over == 'tshirt'", Null(),
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Lace_Up.png"),
-                    "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bra_Up.png"),
-                    "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Sports_Up.png"),
-                    "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bikini_Up.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Lace_Up.png"),
+                    "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bra_Up.png"),
+                    "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Sports_Up.png"),
+                    "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bikini_Up.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_BJ_Chest_Cammy_Up.png",
+                    "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_BJ_Chest_Cammy_Up.png"),
                     # ----------------
                     "True", Null(),
                     ),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Lace.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Sports.png"),
-            "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bra.png"),
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bikini.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Lace.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Sports.png"),
+            "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bra.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Chest_Bikini.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_BJ_Chest_Cammy.png",
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_BJ_Chest_Cammy.png"),
             # ----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over body layer
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Jacket.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Jacket.png"),
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Tank_Up.png"),
-                    "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Pink_Up.png"),
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Tank_Up.png"),
+                    "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Pink_Up.png"),
                     "True", Null(),
                     ),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Tank.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Pink.png"),
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Towel.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Tank.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Pink.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Over_Towel.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -4566,36 +4566,36 @@ image Betsy_BJ_Backdrop:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "BetsyX.Uptop", "images/BetsyBJFace/Betsy_BJ_Pierce_R.png",
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Blue.png"),
-                    "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Pink.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Lace.png"),
+                    "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_BJ_Pierce_R.png"),
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Blue.png"),
+                    "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Pink.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Lace.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard'", Recolor("Betsy", "Chest", "images/BetsyBJFace/modification/Betsy_BJ_Pierce_R_Cammy.png"),
+                    "BetsyX.Chest == 'cammy leotard'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/modification/Betsy_BJ_Pierce_R_Cammy.png"),
                     # -----------------
-                    "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Blue.png"),
-#                    "BetsyX.Chest == 'swimsuit'/'bra'/'sportsbra'", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Blue.png",
-                    "True", "images/BetsyBJFace/Betsy_BJ_Pierce_R.png",
+                    "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_R_Blue.png"),
+#                    "BetsyX.Chest == 'swimsuit'/'bra'/'sportsbra'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Pierce_R_Blue.png"),
+                    "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Pierce_R.png"),
                     ),
-            "BetsyX.Uptop", "images/BetsyBJFace/Betsy_BJ_Pierce_B.png",
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Blue.png"),
-            "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Pink.png"),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Lace.png"),
+            "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_BJ_Pierce_B.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Blue.png"),
+            "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Pink.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Lace.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", Recolor("Betsy", "Chest", "images/BetsyBJFace/modification/Betsy_BJ_Pierce_B_Cammy.png"),
+            "BetsyX.Chest == 'cammy leotard'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/modification/Betsy_BJ_Pierce_B_Cammy.png"),
             # ----------------
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Blue.png"),
-#            "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Blue.png",
-            "True", "images/BetsyBJFace/Betsy_BJ_Pierce_B.png",
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_BJ_Pierce_B_Blue.png"),
+#            "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Pierce_B_Blue.png"),
+            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Pierce_B.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            # spunk over tits
 #            "'tits' not in BetsyX.Spunk", Null(),
-#            "BetsyX.Over == 'tshirt'", "images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png",
-#            "not BetsyX.Uptop and BetsyX.Over", "images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png",
-#            "True", "images/BetsyBJFace/Betsy_TJ_Spunk_Over.png",
+#            "BetsyX.Over == 'tshirt'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png"),
+#            "not BetsyX.Uptop and BetsyX.Over", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png"),
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Over.png"),
 #            ),
-#        (0,0), "images/BetsyBJFace/Betsy_TJ_RefLine.png",
+#        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_RefLine.png"),
 #        (-10,-90), "Betsy_Sprite_Head", #(75,-10)
         )
     transform_anchor True
@@ -4621,17 +4621,17 @@ image Betsy_BJ_Head:                                                            
 
         (0,0), ConditionSwitch(
             # Basic Face layer
-#            "BetsyX.Blush == 2 and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)","images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png",
-#            "BetsyX.Blush and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)","images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png",
-#            "renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)","images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png",
-##            "True","images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png",
+#            "BetsyX.Blush == 2 and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png",
+#            "BetsyX.Blush and renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png",
+#            "renpy.showing('Betsy_BJ_Animation') and (Speed == 3 or Speed == 4 or Speed == 6)", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png",
+##            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png"),
 
             "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush2.png",
             "BetsyX.Blush", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over_Blush1.png",
             "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Over.png"
 
 #            "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png",
-#            "BetsyX.Blush", "images/BetsyBJFace/Betsy_BJ_Head_Blush.png",
+#            "BetsyX.Blush", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Blush.png"),
 #            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png"
             ),
 
@@ -4652,9 +4652,9 @@ image Betsy_BJ_Head:                                                            
             #wet face
             "Player.Male", Null(),
             "'mouth' not in BetsyX.Spunk and 'chin' not in BetsyX.Spunk", Null(),
-#            "'chin' not in BetsyX.Spunk and (BetsyX.Mouth == 'tongue' or Speed)", "images/BetsyBJFace/Betsy_BJ_Wet_Tongue.png",
-#            "BetsyX.Mouth == 'tongue' or Speed", "images/BetsyBJFace/Betsy_BJ_Wet_Tongue2.png",
-            "'mouth' in BetsyX.Spunk or 'chin' in BetsyX.Spunk", "images/BetsyBJFace/Betsy_BJ_Wet_Mouth.png",
+#            "'chin' not in BetsyX.Spunk and (BetsyX.Mouth == 'tongue' or Speed)", get_cached_image("images/BetsyBJFace/Betsy_BJ_Wet_Tongue.png"),
+#            "BetsyX.Mouth == 'tongue' or Speed", get_cached_image("images/BetsyBJFace/Betsy_BJ_Wet_Tongue2.png"),
+            "'mouth' in BetsyX.Spunk or 'chin' in BetsyX.Spunk", get_cached_image("images/BetsyBJFace/Betsy_BJ_Wet_Mouth.png"),
             "True", Null(),
             ),
 
@@ -4663,55 +4663,55 @@ image Betsy_BJ_Head:                                                            
             "'mouth' not in BetsyX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Betsy_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",  #licking
+                    "Speed == 1", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),  #licking
 #                    "True", Null(),                          #heading
-                    "(Speed == 2 or Speed == 5)", "images/BetsyBJFace/Betsy_BJ_Spunk_Heading.png",                          #heading
+                    "(Speed == 2 or Speed == 5)", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Heading.png"),                          #heading
 #                    "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingOver.png", #sucking
-                    "Speed == 4", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingOver.png", #deepthroat
-                    "Speed == 6", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingOver.png", #cumming
+                    "Speed == 3", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingOver.png"), #sucking
+                    "Speed == 4", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingOver.png"), #deepthroat
+                    "Speed == 6", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingOver.png"), #cumming
                     ),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            "BetsyX.Brows == 'angry'", "images/BetsyBJFace/Betsy_BJ_Brows_Angry.png",
-            "BetsyX.Brows == 'sad'", "images/BetsyBJFace/Betsy_BJ_Brows_Sad.png",
-            "BetsyX.Brows == 'surprised'", "images/BetsyBJFace/Betsy_BJ_Brows_Surprised.png",
-            "BetsyX.Brows == 'confused'", "images/BetsyBJFace/Betsy_BJ_Brows_Surprised.png",
-            "True", "images/BetsyBJFace/Betsy_BJ_Brows_Normal.png",
+            "BetsyX.Brows == 'angry'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Brows_Angry.png"),
+            "BetsyX.Brows == 'sad'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Brows_Sad.png"),
+            "BetsyX.Brows == 'surprised'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Brows_Surprised.png"),
+            "BetsyX.Brows == 'confused'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Brows_Surprised.png"),
+            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Brows_Normal.png"),
             ),
         (0,0),  "Betsy BJ Blink",
             #Eyes
         (0,0), ConditionSwitch(
             #Hair overlay
-#            "BetsyX.Hair == 'wetlong' or (BetsyX.Hair == 'long' and BetsyX.Water)", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet.png",
-#            "BetsyX.Hair == 'long' and not Player.Male and 'facial' in BetsyX.Spunk","images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet.png",
-#            "BetsyX.Hair == 'long'", "images/BetsyBJFace/Betsy_BJ_Hair_Long.png",
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Blonde.png"),
-            "BetsyX.Hair == 'wet' or BetsyX.Water", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short.png"),
+#            "BetsyX.Hair == 'wetlong' or (BetsyX.Hair == 'long' and BetsyX.Water)", get_cached_image("images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet.png"),
+#            "BetsyX.Hair == 'long' and not Player.Male and 'facial' in BetsyX.Spunk", get_cached_image("images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet.png"),
+#            "BetsyX.Hair == 'long'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Hair_Long.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Blonde.png"),
+            "BetsyX.Hair == 'wet' or BetsyX.Water", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short.png"),
             ),
-        (0,0),  "images/BetsyBJFace/Betsy_BJ_Earring.png",
+        (0,0), get_cached_image("images/BetsyBJFace/Betsy_BJ_Earring.png"),
         # Modification mode
         (0,0), ConditionSwitch(
-            "BetsyX.Hat == 'red beret'", "images/BetsyBJFace/modification/Betsy_BJ_Hat_Beret.png",
+            "BetsyX.Hat == 'red beret'", get_cached_image("images/BetsyBJFace/modification/Betsy_BJ_Hat_Beret.png"),
             "True",Null(),
             ),
         # ----------------
         (0,0), ConditionSwitch(
             # water overlay
-            "BetsyX.Water", "images/BetsyBJFace/Betsy_BJ_Wet_Face.png",
-            "not Player.Male and 'facial' in BetsyX.Spunk", "images/BetsyBJFace/Betsy_BJ_Wet_Face.png",
+            "BetsyX.Water", get_cached_image("images/BetsyBJFace/Betsy_BJ_Wet_Face.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk", get_cached_image("images/BetsyBJFace/Betsy_BJ_Wet_Face.png"),
             "True",Null(),
             ),
 
 #        (0,0), "Betsy_Tester",
         (0,0), ConditionSwitch(
             #cum on the face
-            "'hair' in BetsyX.Spunk and Player.Male", "images/BetsyBJFace/Betsy_BJ_Spunk_Hair.png",
-            "'facial' in BetsyX.Spunk and Player.Male", "images/BetsyBJFace/Betsy_BJ_Spunk_Facial.png",
+            "'hair' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Hair.png"),
+            "'facial' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Facial.png"),
             "True", Null(),
             ),
         (250,400), ConditionSwitch( #(250,400)(-500,-400)
@@ -4760,13 +4760,13 @@ image Betsy_BJ_HairBack:
         (695,695),
         (0,0), ConditionSwitch(
             #Hair backside
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Blonde_Back.png"),
-            "BetsyX.Hair == 'wetlong' or (BetsyX.Hair == 'long' and BetsyX.Water)", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet_Back.png"),
-            "BetsyX.Hair == 'long' and not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet_Back.png"),
-            "BetsyX.Hair == 'long'", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Back.png"),
-            "BetsyX.Hair == 'wet' or BetsyX.Water", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet_Back.png"),
-            "not Player.Male and 'facial' in BetsyX.Spunk",Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet_Back.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Back.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Blonde_Back.png"),
+            "BetsyX.Hair == 'wetlong' or (BetsyX.Hair == 'long' and BetsyX.Water)", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet_Back.png"),
+            "BetsyX.Hair == 'long' and not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Wet_Back.png"),
+            "BetsyX.Hair == 'long'", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Long_Back.png"),
+            "BetsyX.Hair == 'wet' or BetsyX.Water", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet_Back.png"),
+            "not Player.Male and 'facial' in BetsyX.Spunk",get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Wet_Back.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Back.png"),
             ),
         )
     zoom 1
@@ -4776,7 +4776,7 @@ image Betsy_BJ_HairBack:
 image Betsy_BJ_Head_Under:
     LiveComposite(
         (695,695),
-#        (0,0), "images/BetsyBJFace/Betsy_BJ_Head_Sucking_Under.png",
+#        (0,0), get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Under.png"),
         (0,0), ConditionSwitch(
             # Basic Face layer
             "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png",
@@ -4785,16 +4785,16 @@ image Betsy_BJ_Head_Under:
             ),
 #         (0,0), ConditionSwitch(
 #            # Basic Face layer
-#            "Speed and renpy.showing('Betsy_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5","images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png",
-##            "True","images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png",
+#            "Speed and renpy.showing('Betsy_BJ_Animation') and Speed != 1 and Speed != 2 and Speed != 5", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png"),
+##            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Sucking_Overlay.png"),
 #            "BetsyX.Blush == 2", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head_Blush2.png",
-#            "BetsyX.Blush", "images/BetsyBJFace/Betsy_BJ_Head_Blush.png",
+#            "BetsyX.Blush", get_cached_image("images/BetsyBJFace/Betsy_BJ_Head_Blush.png"),
 #            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Head.png"
 #            ),
 
          (0,0), ConditionSwitch(
             #cum on the chin
-            "'chin' in BetsyX.Spunk and Player.Male", "images/BetsyBJFace/Betsy_BJ_Spunk_Chin.png",
+            "'chin' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -4828,35 +4828,35 @@ image Betsy_BJ_Head_Under:
             "'mouth' not in BetsyX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Betsy_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",  #licking
+                    "Speed == 1", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),  #licking
 #                    "True", Null(),                          #heading
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png", #sucking
-                    "Speed == 4", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png", #deepthroat
-                    "Speed == 6", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png", #cumming
+                    "Speed == 3", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png"), #sucking
+                    "Speed == 4", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png"), #deepthroat
+                    "Speed == 6", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png"), #cumming
                     ),
-#            "BetsyX.Mouth == 'normal'", "images/BetsyBJFace/Betsy_BJ_Spunk_Smile.png",
-#            "BetsyX.Mouth == 'lipbite'", "images/BetsyBJFace/Betsy_BJ_Spunk_Smile.png",
-            "BetsyX.Mouth == 'kiss'", "images/BetsyBJFace/Betsy_BJ_Spunk_Sad.png",
-            "BetsyX.Mouth == 'sad'", "images/BetsyBJFace/Betsy_BJ_Spunk_Sad.png",
-#            "BetsyX.Mouth == 'smile'", "images/BetsyBJFace/Betsy_BJ_Spunk_Smile.png",
-#            "BetsyX.Mouth == 'smirk'", "images/BetsyBJFace/Betsy_BJ_Spunk_Kiss.png",
-            "BetsyX.Mouth == 'surprised'", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",
-            "BetsyX.Mouth == 'open'", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",
-            "BetsyX.Mouth == 'tongue'", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",
-            "BetsyX.Mouth == 'sucking'", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",
-            "True", "images/BetsyBJFace/Betsy_BJ_Spunk_Smirk.png",
+#            "BetsyX.Mouth == 'normal'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Smile.png"),
+#            "BetsyX.Mouth == 'lipbite'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Smile.png"),
+            "BetsyX.Mouth == 'kiss'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Sad.png"),
+            "BetsyX.Mouth == 'sad'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Sad.png"),
+#            "BetsyX.Mouth == 'smile'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Smile.png"),
+#            "BetsyX.Mouth == 'smirk'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Kiss.png"),
+            "BetsyX.Mouth == 'surprised'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),
+            "BetsyX.Mouth == 'open'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),
+            "BetsyX.Mouth == 'tongue'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),
+            "BetsyX.Mouth == 'sucking'", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),
+            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Smirk.png"),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #cum on the chin
-#            "'chin' in BetsyX.Spunk and Player.Male", "images/BetsyBJFace/Betsy_BJ_Spunk_Chin.png",
+#            "'chin' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Spunk layer
 #            "'mouth' not in BetsyX.Spunk or not Player.Male", Null(),
-#            "True", "images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png",
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_SuckingUnder.png"),
 #            ),
 #        (0,0), Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
         )
@@ -4870,12 +4870,12 @@ image Betsy_BJ_Heading_Mouth:
         (0,0), Recolor("Betsy", "Lips", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_BJ_Mouth_Open.png"),
         (0,0), ConditionSwitch(
             #cum in mouth
-            "'mouth' in BetsyX.Spunk and Player.Male", "images/BetsyBJFace/Betsy_BJ_Spunk_Open.png",
+            "'mouth' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_BJ_Spunk_Open.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Hair overlay
-#            "True", Recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Back.png"),
+#            "True", get_cached_recolor("Betsy", "Hair", "images/BetsyBJFace/Betsy_BJ_Hair_Short_Back.png"),
 #            ),
         )
     zoom 1
@@ -4923,7 +4923,7 @@ image Betsy_BJ_Anim0:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (10,90)     #top (350,190), - is up
@@ -5020,7 +5020,7 @@ image Betsy_BJ_Anim1:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-25,65)     #top (350,190), - is up
@@ -5167,7 +5167,7 @@ image Betsy_BJ_Anim2:
 #        contains:
 #                # mouth area overlay
 #                "Betsy_BJ_Heading_Overlay"
-##                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+##                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
 #                subpixel True
 #                transform_anchor True
 #                anchor (295,363)
@@ -5194,7 +5194,7 @@ image Betsy_BJ_Anim2:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
                 alpha 1
                 offset (-20,130)     #top (350,190), - is up
@@ -5288,7 +5288,7 @@ image Betsy_BJ_Anim3:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-20,180)     #top (350,190), - is up
@@ -5375,7 +5375,7 @@ image Betsy_BJ_Anim4:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-20,180)     #top (350,190), - is up
@@ -5495,7 +5495,7 @@ image Betsy_BJ_Anim5:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
                 offset (10,140)     #top (350,190), - is up
                 rotate 30
@@ -5581,7 +5581,7 @@ image Betsy_BJ_Anim6:
         contains:
                 # head overlay
                 "Betsy_BJ_Head"
-#                AlphaMask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
+#                get_cached_alphamask("Betsy_BJ_Head", "Betsy_BJ_MaskHeadingComposite") #"Betsy_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (15,430)     #top (350,190), - is up
@@ -5751,77 +5751,77 @@ image Betsy_TJ_Body:
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "BetsyX.Water and BetsyX.ArmPose == 1", "images/BetsyBJFace/Betsy_Sprite_Water1.png",
-#            "BetsyX.Water", "images/BetsyBJFace/Betsy_Sprite_Water2.png",
+#            "BetsyX.Water and BetsyX.ArmPose == 1", get_cached_image("images/BetsyBJFace/Betsy_Sprite_Water1.png"),
+#            "BetsyX.Water", get_cached_image("images/BetsyBJFace/Betsy_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            # under tit
-##            "BetsyX.Water", "images/BetsyBJFace/Betsy_Sprite_Water2.png",
-#            "True", "images/BetsyBJFace/Betsy_TJ_Tit_Under.png",
+##            "BetsyX.Water", get_cached_image("images/BetsyBJFace/Betsy_Sprite_Water2.png"),
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Under.png"),
 #            ),
-#        (0,0), "images/BetsyBJFace/Betsy_TJ_RefCock.png",
+#        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_RefCock.png"),
 
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "BetsyX.Water", Null(),
-#            "True", "images/BetsyBJFace/Betsy_TJ_Tit_Under_Smoosh.png",
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Under_Smoosh.png"),
 #            ),
 #        (0,0), ConditionSwitch(
 #            # over tit
-##            "BetsyX.Water", "images/BetsySprite/Betsy_Sprite_Water2.png",
-#            "True", "images/BetsyBJFace/Betsy_TJ_Tit_Over.png",
+##            "BetsyX.Water", get_cached_image("images/BetsySprite/Betsy_Sprite_Water2.png"),
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Over.png"),
 #            ),
 
         (0,0), ConditionSwitch(
             #Chest layer under tits
 #            "BetsyX.Over == 'tshirt'", Null(),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Lace_Under.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Sports_Under.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Lace_Under.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Sports_Under.png"),
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up_Under.png"),
+                    "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up_Under.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Up_Under.png",
+                    "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Up_Under.png"),
                     # -----------------
                     "True", Null(),
                     ),
-            "BetsyX.Chest == 'swimsuit' and Player.Sprite", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up_Under.png"),
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Under.png"),
+            "BetsyX.Chest == 'swimsuit' and Player.Sprite", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up_Under.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Under.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' and Player.Sprite", "images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Up_Under.png",
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Under.png",
+            "BetsyX.Chest == 'cammy leotard' and Player.Sprite", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Up_Under.png"),
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Under.png"),
             # ----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over body layer
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Jacket_Under.png"),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Tank_Under.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Jacket_Under.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Tank_Under.png"),
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Up_Under.png"),
+                    "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Up_Under.png"),
                     "True", Null(),
                     ),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Under.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Under.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # spunk under tits
             "'tits' not in BetsyX.Spunk", Null(),
-            "True", "images/BetsyBJFace/Betsy_TJ_Spunk_Under.png",
+            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Under.png"),
             ),
 
 
 #        (0,0), ConditionSwitch(
 #            #hands layer
-#            "BetsyX.Arms and (BetsyX.Over == 'suit' or BetsyX.Over == 'open suit')", "images/BetsyBJFace/Betsy_TJ_Hands_Gloved.png",
+#            "BetsyX.Arms and (BetsyX.Over == 'suit' or BetsyX.Over == 'open suit')", get_cached_image("images/BetsyBJFace/Betsy_TJ_Hands_Gloved.png"),
 #            "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Hands.png",
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #breast spunk
-#            "'tits' in BetsyX.Spunk and Player.Male", "images/BetsySprite/Betsy_Sprite_Spunk_Tits.png",
+#            "'tits' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySprite/Betsy_Sprite_Spunk_Tits.png"),
 #            "True", Null(),
 #            ),
 
@@ -5850,15 +5850,15 @@ image Betsy_TJ_Tits_Under:
         (800,950),       #550,950
         (0,0), ConditionSwitch(
             # under tit
-#            "BetsyX.Water", "images/BetsySprite/Betsy_Sprite_Water2.png",
+#            "BetsyX.Water", get_cached_image("images/BetsySprite/Betsy_Sprite_Water2.png"),
             "True", "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Under.png",
             ),
 #        (0,0), ConditionSwitch(
 #            #Chest tits layer
 #            "BetsyX.Uptop", Null(),
 #            "BetsyX.Over == 'tshirt'", Null(),
-#            "BetsyX.Chest == 'tank'", "images/BetsyBJFace/Betsy_TJ_Chest_Tank_Body_Fucking.png",
-##            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Tits.png"),
+#            "BetsyX.Chest == 'tank'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Tank_Body_Fucking.png"),
+##            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Tits.png"),
 #            "True", Null(),
 #            ),
         )
@@ -5876,37 +5876,37 @@ image Betsy_TJ_Tits_Over:
 #        (0,0), ConditionSwitch(
 #            # under tit smoosh
 #            "BetsyX.Water", Null(),
-#            "True", "images/BetsyBJFace/Betsy_TJ_Tit_Under_Smoosh.png",
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Under_Smoosh.png"),
 #            ),
 #        (0,0), ConditionSwitch(
 #            # over tit
-#            "Player.Sprite and renpy.showing('Betsy_TJ_Animation')", "images/BetsyBJFace/Betsy_TJ_Tit_Over_Smoosh.png",
-#            "True", "images/BetsyBJFace/Betsy_TJ_Tit_Over.png",
+#            "Player.Sprite and renpy.showing('Betsy_TJ_Animation')", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Over_Smoosh.png"),
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Over.png"),
 #            ),
 
-#        (0,0),  "images/BetsyBJFace/Betsy_TJ_Tit_Right_Mask.png",
-        (0,0),  "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Over.png",
+#        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_Tit_Right_Mask.png"),
+        (0,0), "images/BetsyBJFace/[BetsyX.skin_image.skin_path]Betsy_TJ_Tits_Over.png",
         (0,0), ConditionSwitch(
             # spunk under tits
             "'tits' not in BetsyX.Spunk", Null(),
-            "True", "images/BetsyBJFace/Betsy_TJ_Spunk_Over_Nude.png",
+            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Over_Nude.png"),
             ),
         (0,0), ConditionSwitch(
             #Chest tits layer
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Lace_Up_Tits.png"),
-                    "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Blue_Up_Tits.png"),
-                    "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Sports_Up_Tits.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Lace_Up_Tits.png"),
+                    "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Blue_Up_Tits.png"),
+                    "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Sports_Up_Tits.png"),
                     "True", Null(),
                     ),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Lace_Tits.png"),
-            "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Blue_Tits.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Sports_Tits.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Lace_Tits.png"),
+            "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Blue_Tits.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Sports_Tits.png"),
             "BetsyX.Chest == 'swimsuit' and Player.Sprite and renpy.showing('Betsy_TJ_Animation')", Null(),
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Tits.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Tits.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Tits.png",
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Chest_Cammy_Tits.png"),
             # ----------------
             "True", Null(),
             ),
@@ -5915,12 +5915,12 @@ image Betsy_TJ_Tits_Over:
             #Over tits layer
             "BetsyX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Tank_Up_Tits.png"),
-                    "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Up_Tits.png"),
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Tank_Up_Tits.png"),
+                    "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Up_Tits.png"),
                     "True", Null(),
                     ),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Tank_Tits.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Tits.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Tank_Tits.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Over_Pink_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -5928,51 +5928,51 @@ image Betsy_TJ_Tits_Over:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "BetsyX.Uptop", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left.png",
+                    "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_R_Left.png"),
 
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Blue.png"),
-                    "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Pink.png"),
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Blue.png"),
+                    "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Pink.png"),
 
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Lace.png"),
-                    "BetsyX.Chest == 'swimsuit' and Player.Sprite", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left.png",
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Lace.png"),
+                    "BetsyX.Chest == 'swimsuit' and Player.Sprite", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_R_Left.png"),
                     # Modification mode
-                    "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_TJ_Pierce_R_Left_Cammy.png",
+                    "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Pierce_R_Left_Cammy.png"),
                     # ----------------
-                    "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Blue.png"),
-#                    "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Blue.png",
+                    "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Blue.png"),
+#                    "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_R_Left_Blue.png"),
 
-                    "True", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Left.png",
+                    "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_R_Left.png"),
                     ),
-            "BetsyX.Uptop", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left.png",
+            "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Left.png"),
 
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Blue.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Pink.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Blue.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Pink.png"),
 
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Lace.png"),
-            "BetsyX.Chest == 'swimsuit' and Player.Sprite", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left.png",
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Lace.png"),
+            "BetsyX.Chest == 'swimsuit' and Player.Sprite", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Left.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_TJ_Pierce_B_Left_Cammy.png",
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Pierce_B_Left_Cammy.png"),
             # ----------------
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Blue.png"),
-#            "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Blue.png",
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Blue.png"),
+#            "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Left_Blue.png"),
 
-            "True", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Left.png",
+            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Left.png"),
             ),
         (0,0), ConditionSwitch(
             # spunk under tits
             "'tits' not in BetsyX.Spunk", Null(),
-            "BetsyX.Over in ('tank','pink top')", "images/BetsyBJFace/Betsy_TJ_Spunk_Over_Clothed.png",
+            "BetsyX.Over in ('tank','pink top')", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Over_Clothed.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            # spunk over tits
 #            "'tits' not in BetsyX.Spunk", Null(),
-##            "BetsyX.Over == 'tshirt'", "images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png",
-#            "not BetsyX.Uptop and BetsyX.Over", "images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png",
-#            "True", "images/BetsyBJFace/Betsy_TJ_Spunk_Over.png",
+##            "BetsyX.Over == 'tshirt'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png"),
+#            "not BetsyX.Uptop and BetsyX.Over", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Clothed.png"),
+#            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Over.png"),
 #            ),
-#        (0,0), "images/BetsyBJFace/Betsy_TJ_RefLine.png",
-#        (0,0), "images/BetsyBJFace/Betsy_TJ_RefLine2.png",
+#        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_RefLine.png"),
+#        (0,0), get_cached_image("images/BetsyBJFace/Betsy_TJ_RefLine2.png"),
         )
     transform_anchor True
 #    anchor (0.6, 1.0)#(0.6, 562)
@@ -5995,42 +5995,42 @@ image Betsy_TJ_Hands:
             ),
         (0,0), ConditionSwitch(
             #nips
-            "BetsyX.Uptop", "images/BetsyBJFace/Betsy_TJ_Nip.png",
+            "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Nip.png"),
 
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Nip_Blue.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Nip_Pink.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Nip_Blue.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Nip_Pink.png"),
 
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Nip_Lace.png"),
-            "BetsyX.Chest == 'swimsuit' and Player.Sprite", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Nip.png"),
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Nip_Blue.png"),
-#            "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_TJ_Nip_Blue.png",
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Nip_Lace.png"),
+            "BetsyX.Chest == 'swimsuit' and Player.Sprite", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Nip.png"),
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Nip_Blue.png"),
+#            "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Nip_Blue.png"),
 
-            "True", "images/BetsyBJFace/Betsy_TJ_Nip.png",
+            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Nip.png"),
             ),
         (0,0), ConditionSwitch(
             #Piercings layer
             "not BetsyX.Pierce", Null(),
-            "BetsyX.Pierce == 'ring' and (BetsyX.Uptop or (not BetsyX.Over and not BetsyX.Chest))", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Right.png",
-            "BetsyX.Pierce == 'ring' and BetsyX.Chest == 'swimsuit' and Player.Sprite", "images/BetsyBJFace/Betsy_TJ_Pierce_R_Right.png",
+            "BetsyX.Pierce == 'ring' and (BetsyX.Uptop or (not BetsyX.Over and not BetsyX.Chest))", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_R_Right.png"),
+            "BetsyX.Pierce == 'ring' and BetsyX.Chest == 'swimsuit' and Player.Sprite", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_R_Right.png"),
 
-            "BetsyX.Uptop", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right.png",
+            "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Right.png"),
 
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Blue.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Pink.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Blue.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Pink.png"),
 
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Lace.png"),
-            "BetsyX.Chest == 'swimsuit' and Player.Sprite", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right.png",
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Lace.png"),
+            "BetsyX.Chest == 'swimsuit' and Player.Sprite", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Right.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard'", "images/BetsyBJFace/modification/Betsy_TJ_Pierce_B_Right_Cammy.png",
+            "BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsyBJFace/modification/Betsy_TJ_Pierce_B_Right_Cammy.png"),
             # ----------------
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Blue.png"),
-#            "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Blue.png",
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Blue.png"),
+#            "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Right_Blue.png"),
 
-            "True", "images/BetsyBJFace/Betsy_TJ_Pierce_B_Right.png",
+            "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_B_Right.png"),
             ),
         (0,0), ConditionSwitch(
             #right hand layer
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Arms_Pink.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Arms_Pink.png"),
             "True", Null(),
             ),
         )
@@ -6045,12 +6045,12 @@ image Betsy_TJ_Hands:
 #            #back fo the bra straps
 #            contains:
 #                ConditionSwitch(
-#                        #"BetsyX.Chest == 'corset' and not BetsyX.Uptop","images/BetsyBJFace/Betsy_TJ_Chest_Corset.png",
+#                        #"BetsyX.Chest == 'corset' and not BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Corset.png"),
 ##                        "BetsyX.Over",Null(),
-#                        "BetsyX.Chest == 'sports bra'","images/BetsyBJFace/Betsy_TJ_Chest_Sports_Back.png",
-##                        "BetsyX.Chest == 'lace bra'","images/BetsyBJFace/Betsy_TJ_Chest_Lace_Back.png",
-#                        "BetsyX.Chest == 'swimsuit' and BetsyX.Uptop","images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up_Back.png",
-#                        "BetsyX.Chest == 'swimsuit'","images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Back.png",
+#                        "BetsyX.Chest == 'sports bra'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Sports_Back.png"),
+##                        "BetsyX.Chest == 'lace bra'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Lace_Back.png"),
+#                        "BetsyX.Chest == 'swimsuit' and BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up_Back.png"),
+#                        "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Back.png"),
 #                        "True", Null(),
 #                        )
 #            transform_anchor True
@@ -6064,7 +6064,7 @@ image Betsy_TJ_BraStretch:
             contains:
                 ConditionSwitch(
                     #Over tits layer
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Tent_Blue.png"),
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsyBJFace/Betsy_TJ_Tent_Blue.png"),
                     "True", Null(),
                     )
 #            contains:
@@ -6083,23 +6083,23 @@ image Betsy_TJ_BraStretch:
 ##            contains:
 ##                ConditionSwitch(
 ##                        "not BetsyX.Water",Null(),
-##                        "True",       "images/BetsyBJFace/Betsy_TJ_Tits_Wet.png",
+##                        "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Tits_Wet.png"),
 ##                        )
 #            contains:
 #                #Chest
 #                ConditionSwitch(
-#                        "BetsyX.Chest == 'lace bra' and BetsyX.Uptop","images/BetsyBJFace/Betsy_TJ_Chest_Lace_Up.png",  #fix, add "no straps" version here
-#                        "BetsyX.Chest == 'lace bra'","images/BetsyBJFace/Betsy_TJ_Chest_Lace.png",
-#                        "BetsyX.Chest == 'sports bra'","images/BetsyBJFace/Betsy_TJ_Chest_Sports.png",
-#                        "BetsyX.Chest == 'swimsuit' and BetsyX.Uptop","images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up.png",
-#                        "BetsyX.Chest == 'swimsuit'","images/BetsyBJFace/Betsy_TJ_Chest_Bikini.png",
+#                        "BetsyX.Chest == 'lace bra' and BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Lace_Up.png"),  #fix, add "no straps" version here
+#                        "BetsyX.Chest == 'lace bra'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Lace.png"),
+#                        "BetsyX.Chest == 'sports bra'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Sports.png"),
+#                        "BetsyX.Chest == 'swimsuit' and BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Bikini_Up.png"),
+#                        "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Chest_Bikini.png"),
 #                        "True", Null(),
 #                        )
 #            contains:
 #                #Over
 #                ConditionSwitch(
-#                        "BetsyX.Over == 'tube top' and BetsyX.Uptop","images/BetsyBJFace/Betsy_TJ_Over_Tube_Up.png",
-#                        "BetsyX.Over == 'tube top'","images/BetsyBJFace/Betsy_TJ_Over_Tube.png",
+#                        "BetsyX.Over == 'tube top' and BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Over_Tube_Up.png"),
+#                        "BetsyX.Over == 'tube top'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Over_Tube.png"),
 #                        "True", Null(),
 #                        )
 #            contains:
@@ -6108,22 +6108,22 @@ image Betsy_TJ_BraStretch:
 #                        "not BetsyX.Pierce", Null(),
 #                        "BetsyX.Pierce == 'ring'", ConditionSwitch(
 #                                #if she's got ring piercings
-#                                "BetsyX.Uptop", "images/BetsyBJFace/Betsy_TJ_Pierce_Ring.png",
-#                                "BetsyX.Over == 'tube top'", "images/BetsyBJFace/Betsy_TJ_Pierce_Ring_Pink.png",
-#                                "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_TJ_Pierce_Ring_Pink.png",
-#                                "BetsyX.Chest == 'lace bra'", "images/BetsyBJFace/Betsy_TJ_Pierce_Ring_Lace.png",
-#                                "True", "images/BetsyBJFace/Betsy_TJ_Pierce_Ring.png",
+#                                "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Ring.png"),
+#                                "BetsyX.Over == 'tube top'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Ring_Pink.png"),
+#                                "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Ring_Pink.png"),
+#                                "BetsyX.Chest == 'lace bra'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Ring_Lace.png"),
+#                                "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Ring.png"),
 #                                ),
-#                        "BetsyX.Uptop", "images/BetsyBJFace/Betsy_TJ_Pierce_Barbell.png",
-#                        "BetsyX.Over == 'tube top'", "images/BetsyBJFace/Betsy_TJ_Pierce_Barbell_Pink.png",
-#                        "BetsyX.Chest == 'swimsuit'", "images/BetsyBJFace/Betsy_TJ_Pierce_Barbell_Pink.png",
-#                        "BetsyX.Chest == 'lace bra'", "images/BetsyBJFace/Betsy_TJ_Pierce_Barbell_Lace.png",
-#                        "True", "images/BetsyBJFace/Betsy_TJ_Pierce_Barbell.png",
+#                        "BetsyX.Uptop", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Barbell.png"),
+#                        "BetsyX.Over == 'tube top'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Barbell_Pink.png"),
+#                        "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Barbell_Pink.png"),
+#                        "BetsyX.Chest == 'lace bra'", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Barbell_Lace.png"),
+#                        "True", get_cached_image("images/BetsyBJFace/Betsy_TJ_Pierce_Barbell.png"),
 #                        )
 #            contains:
 #                #Over
 #                ConditionSwitch(
-#                        "'tits' in BetsyX.Spunk and Player.Male","images/BetsyBJFace/Betsy_TJ_Spunk_Tits_Over.png",
+#                        "'tits' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsyBJFace/Betsy_TJ_Spunk_Tits_Over.png"),
 #                        "True", Null(),
 #                        )
 #            transform_anchor True
@@ -7907,47 +7907,47 @@ image Betsy_69_Body:
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "BetsyX.Water", "images/BetsySex/Betsy_69_Water_Body.png",
+            "BetsyX.Water", get_cached_image("images/BetsySex/Betsy_69_Water_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #bra layer
-            "(BetsyX.Chest == 'swimsuit' and BetsyX.Uptop) or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bikini_Up.png"),
+            "(BetsyX.Chest == 'swimsuit' and BetsyX.Uptop) or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bikini_Up.png"),
             # Modification mode
-            "(BetsyX.Chest == 'cammy leotard' and BetsyX.Uptop) or BetsyX.Panties == 'cammy leotard'", "images/BetsySex/modification/Betsy_69_Chest_Cammy_Up.png",
+            "(BetsyX.Chest == 'cammy leotard' and BetsyX.Uptop) or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_69_Chest_Cammy_Up.png"),
             # -----------------
             "BetsyX.Uptop", ConditionSwitch(
                     #if top's up
-                    "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Sports_Up.png"),
-                    "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bra_Up.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Lace_Up.png"),
+                    "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Sports_Up.png"),
+                    "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bra_Up.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Lace_Up.png"),
                     "True", Null(),
                     ),
             #if the top's down. . .
-            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bikini.png"),
-            "BetsyX.Chest == 'sports bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Sports.png"),
-            "BetsyX.Chest == 'bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bra.png"),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Lace.png"),
+            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bikini.png"),
+            "BetsyX.Chest == 'sports bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Sports.png"),
+            "BetsyX.Chest == 'bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Bra.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Chest_Lace.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsySex/modification/Betsy_69_Chest_Cammy.png",
+            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_69_Chest_Cammy.png"),
             # ----------------
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #shorts X layer
-#            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Over_Shorts.png"),
+#            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Over_Shorts.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #shirt layer
-            "BetsyX.Over == 'pink top' and BetsyX.Uptop", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Pink_Up.png"),
-            "BetsyX.Over == 'tank' and BetsyX.Uptop", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Tank_Up.png"),
+            "BetsyX.Over == 'pink top' and BetsyX.Uptop", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Pink_Up.png"),
+            "BetsyX.Over == 'tank' and BetsyX.Uptop", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Tank_Up.png"),
             "BetsyX.Uptop", Null(),
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Towel.png"),
-            "BetsyX.Over == 'jacket'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Jacket.png"),
-            "BetsyX.Over == 'pink top'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Pink.png"),
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Tank.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Towel.png"),
+            "BetsyX.Over == 'jacket'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Jacket.png"),
+            "BetsyX.Over == 'pink top'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Pink.png"),
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Over_Tank.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -7955,46 +7955,46 @@ image Betsy_69_Body:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "BetsyX.Uptop", "images/BetsySex/Betsy_69_Pierce_Ring.png",
+                    "BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_69_Pierce_Ring.png"),
 
-                    "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Ring_Blue.png"),
-                    "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Ring_Pink.png"),                  #pink top or towel
+                    "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Ring_Blue.png"),
+                    "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Ring_Pink.png"),                  #pink top or towel
 
-                    "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Ring_Blue.png"),
-                    "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Ring_Lace.png"),
+                    "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Ring_Blue.png"),
+                    "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Ring_Lace.png"),
                     # Modification mode
-                    "BetsyX.Panties == 'cammy leotard'", Recolor("Betsy", "Chest", "images/BetsySex/modification/Betsy_69_Pierce_Ring_Cammy.png"),
+                    "BetsyX.Panties == 'cammy leotard'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/modification/Betsy_69_Pierce_Ring_Cammy.png"),
                     # ----------------
-                    "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Ring_Blue.png"),
+                    "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Ring_Blue.png"),
 
-                    "True", "images/BetsySex/Betsy_69_Pierce_Ring.png",
+                    "True", get_cached_image("images/BetsySex/Betsy_69_Pierce_Ring.png"),
                     ),
-            "BetsyX.Uptop", "images/BetsySex/Betsy_69_Pierce_Barbell.png",
+            "BetsyX.Uptop", get_cached_image("images/BetsySex/Betsy_69_Pierce_Barbell.png"),
 
-            "BetsyX.Over == 'tank'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Barbell_Blue.png"),
-            "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Barbell_Pink.png"),                  #pink top or towel
+            "BetsyX.Over == 'tank'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Barbell_Blue.png"),
+            "BetsyX.Over == 'pink top' or BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Pierce_Barbell_Pink.png"),                  #pink top or towel
 
-            "BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Barbell_Blue.png"),
-            "BetsyX.Chest == 'lace bra'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Barbell_Lace.png"),
+            "BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Barbell_Blue.png"),
+            "BetsyX.Chest == 'lace bra'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Barbell_Lace.png"),
             # Modification mode
-            "BetsyX.Panties == 'cammy leotard'", Recolor("Betsy", "Chest", "images/BetsySex/modification/Betsy_69_Pierce_Barbell_Cammy.png"),
+            "BetsyX.Panties == 'cammy leotard'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/modification/Betsy_69_Pierce_Barbell_Cammy.png"),
             # ----------------
-            "BetsyX.Chest", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Barbell_Blue.png"),
+            "BetsyX.Chest", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Pierce_Barbell_Blue.png"),
 
-            "True", "images/BetsySex/Betsy_69_Pierce_Barbell.png",
+            "True", get_cached_image("images/BetsySex/Betsy_69_Pierce_Barbell.png"),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in BetsyX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Belly.png",
+            "'belly' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in BetsyX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Tits.png",
+            "'tits' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/BetsySex/Betsy_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/BetsySex/Betsy_Sex_HeadRef.png"),
         )
     offset (250,250)#(175,175)
 #    yoffset -163
@@ -8008,22 +8008,22 @@ image Betsy_69_Head:
         (1120,840),
         (0,0), ConditionSwitch(
             #tongue
-            "renpy.showing('Betsy_69_CUN') and Speed != 3", "images/BetsySex/Betsy_69_Tongue.png",
-            "Speed == 1", "images/BetsySex/Betsy_69_Tongue.png",
+            "renpy.showing('Betsy_69_CUN') and Speed != 3", get_cached_image("images/BetsySex/Betsy_69_Tongue.png"),
+            "Speed == 1", get_cached_image("images/BetsySex/Betsy_69_Tongue.png"),
             "True", Null(),
             ),
         (0,0), "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Head.png",
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'mouth' in BetsyX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Mouth.png",
+            "'mouth' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Mouth.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #collar
             "Speed == 1 and Player.Male", Null(),
-            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Collar.png"),
+            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Collar.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsySex/modification/Betsy_69_Cammy_Collar.png",
+            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_69_Cammy_Collar.png"),
             # ----------------
             "True", Null(),
             ),
@@ -8031,9 +8031,9 @@ image Betsy_69_Head:
         (0,0), ConditionSwitch(
             #Hair over
             "Speed == 1 and Player.Male", Null(),
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Blonde_Over.png"),
-            "BetsyX.Hair == 'long' or BetsyX.Hair == 'wetlong'", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Long_Over.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Short_Over.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Blonde_Over.png"),
+            "BetsyX.Hair == 'long' or BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Long_Over.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Short_Over.png"),
             ),
         )
     offset (175,175)#(180,100)
@@ -8048,9 +8048,9 @@ image Betsy_69_HairOver:
         (1120,840),
         (0,0), ConditionSwitch(
             #collar
-            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", Recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Collar.png"),
+            "BetsyX.Chest == 'swimsuit' or BetsyX.Panties == 'swimsuit'", get_cached_recolor("Betsy", "Chest", "images/BetsySex/Betsy_69_Collar.png"),
             # Modification mode
-            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", "images/BetsySex/modification/Betsy_69_Cammy_Collar.png",
+            "BetsyX.Chest == 'cammy leotard' or BetsyX.Panties == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_69_Cammy_Collar.png"),
             # ----------------
             "True", Null(),
             ),
@@ -8058,9 +8058,9 @@ image Betsy_69_HairOver:
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Betsy_TJ_Animation')", Null(),
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Blonde_Lick.png"),
-            "BetsyX.Hair == 'long' or BetsyX.Hair == 'wetlong'", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Long_Lick.png"),
-            "True", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Short_Lick.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Blonde_Lick.png"),
+            "BetsyX.Hair == 'long' or BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Long_Lick.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Short_Lick.png"),
             ),
         )
     offset (175,175)#(180,100)
@@ -8076,11 +8076,11 @@ image Betsy_69_HairBack:
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Betsy_TJ_Animation')", Null(),
-            "BetsyX.Hair == 'blonde'", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Blonde_Under.png"),
-            "BetsyX.Hair == 'long' or BetsyX.Hair == 'wetlong'", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Long_Under.png"),
-#            "BetsyX.Hair == 'wet' or BetsyX.Hair == 'wetlong' or BetsyX.Water", "images/BetsySex/Betsy_69_Hair_Long.png",
-#            "not Player.Male and 'facial' in BetsyX.Spunk","images/BetsySex/Betsy_Sprite_Hair_Wet.png",
-            "True", Recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Short_Under.png"),
+            "BetsyX.Hair == 'blonde'", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Blonde_Under.png"),
+            "BetsyX.Hair == 'long' or BetsyX.Hair == 'wetlong'", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Long_Under.png"),
+#            "BetsyX.Hair == 'wet' or BetsyX.Hair == 'wetlong' or BetsyX.Water", get_cached_image("images/BetsySex/Betsy_69_Hair_Long.png"),
+#            "not Player.Male and 'facial' in BetsyX.Spunk", get_cached_image("images/BetsySex/Betsy_Sprite_Hair_Wet.png"),
+            "True", get_cached_recolor("Betsy", "Hair", "images/BetsySex/Betsy_69_Hair_Short_Under.png"),
             ),
         )
     offset (175,175)#(175,175)
@@ -8097,14 +8097,14 @@ image Betsy_69_Legs:
         (0,0), ConditionSwitch(
             #scarf
             # Modification mode
-            "BetsyX.Acc and 'scarf' in BetsyX.Acc", Recolor("Betsy", "Acc", "images/BetsySex/Betsy_69_Scarf.png"),
+            "BetsyX.Acc and 'scarf' in BetsyX.Acc", get_cached_recolor("Betsy", "Acc", "images/BetsySex/Betsy_69_Scarf.png"),
             # -----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #back of skirt Layer
-            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Skirt.png"),
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Legs_Towel.png"),
+            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Skirt.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_69_Legs_Towel.png"),
             "True", Null(),
             ),
 
@@ -8119,14 +8119,14 @@ image Betsy_69_Legs:
             ),
 
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/BetsySex/Betsy_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/BetsySex/Betsy_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not BetsyX.Water", Null(),
-            "True", "images/BetsySex/Betsy_69_Water_Legs.png",
+            "True", get_cached_image("images/BetsySex/Betsy_69_Water_Legs.png"),
             ),
 
         (0,0), "Betsy_69_Anus",
@@ -8141,8 +8141,8 @@ image Betsy_69_Legs:
             "not BetsyX.Wet", Null(),
             "(BetsyX.Legs == 'yoga pants' or BetsyX.Legs == 'shorts') and not BetsyX.Upskirt", Null(),
             "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
-            "BetsyX.Wet == 1", AlphaMask("Wet_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
-            "True", AlphaMask("Wet_Drip2_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
+            "BetsyX.Wet == 1", get_cached_alphamask("Wet_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
+            "True", get_cached_alphamask("Wet_Drip2_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
             ),
 
         (0,0), ConditionSwitch(    #-695,-480
@@ -8150,37 +8150,37 @@ image Betsy_69_Legs:
             "'anal' not in BetsyX.Spunk or not Player.Male", Null(),
             "(BetsyX.Legs == 'yoga pants' or BetsyX.Legs == 'shorts') and not BetsyX.Upskirt", Null(),
 #            "True", "Spunk_Drip2_69", #"Spunk_Drip_69",
-            "True", AlphaMask("Spunk_Drip_69_Anal","images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
+            "True", get_cached_alphamask("Spunk_Drip_69_Anal", "images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
             ),
         (0,0), ConditionSwitch(
             #anal Spunk
-            "'anal' in BetsyX.Spunk", "images/BetsySex/Betsy_69_Spunk_Ass.png",
+            "'anal' in BetsyX.Spunk", get_cached_image("images/BetsySex/Betsy_69_Spunk_Ass.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Panties if up
-            "(BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit') and BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Bikini_Down.png"),
+            "(BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit') and BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Bikini_Down.png"),
             # Modification mode
-            "(BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard') and BetsyX.PantiesDown", "images/BetsySex/modification/Betsy_69_Panties_Cammy_Down.png",
+            "(BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard') and BetsyX.PantiesDown", get_cached_image("images/BetsySex/modification/Betsy_69_Panties_Cammy_Down.png"),
             # -----------------
             "BetsyX.PantiesDown", Null(),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Lace.png"),
-            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Bikini.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Lace.png"),
+            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Bikini.png"),
             # Modification mode
-            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", "images/BetsySex/modification/Betsy_69_Panties_Cammy.png",
+            "BetsyX.Panties == 'cammy leotard' or BetsyX.Chest == 'cammy leotard'", get_cached_image("images/BetsySex/modification/Betsy_69_Panties_Cammy.png"),
             # -----------------
-            "BetsyX.Panties and BetsyX.Wet", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Blue_Wet.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Blue.png"),
+            "BetsyX.Panties and BetsyX.Wet", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Blue_Wet.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Blue.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Socks.png"),
-            "BetsyX.Hose == 'stockings and garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_StockingsGarter.png"),
-            "BetsyX.Hose == 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Garter.png"),
-            "BetsyX.Hose == 'stockings'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Stockings.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Socks.png"),
+            "BetsyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_StockingsGarter.png"),
+            "BetsyX.Hose == 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Garter.png"),
+            "BetsyX.Hose == 'stockings'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Stockings.png"),
             "True", Null(),
             ),
 
@@ -8188,22 +8188,22 @@ image Betsy_69_Legs:
         (0,0), ConditionSwitch(
             #pantyhose layer
             "BetsyX.Panties and BetsyX.PantiesDown", Null(),
-            "BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Pantyhose.png"),
-            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Pantyhose_Holed.png"),
+            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Pantyhose.png"),
+            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #Legs Layer
-#            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", "images/BetsySex/Betsy_Sex_Legs_Skirt_Up.png",
-#            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
+#            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", get_cached_image("images/BetsySex/Betsy_Sex_Legs_Skirt_Up.png"),
+#            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
             "BetsyX.Upskirt", Null(),
-#            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
-            "BetsyX.Legs == 'shorts' and BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Shorts_Wet.png"),
-            "BetsyX.Legs == 'shorts'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Shorts.png"),
-            "BetsyX.Legs == 'yoga pants' and BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Yoga_Wet.png"),
-            "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Yoga.png"),
+#            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
+            "BetsyX.Legs == 'shorts' and BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Shorts_Wet.png"),
+            "BetsyX.Legs == 'shorts'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Shorts.png"),
+            "BetsyX.Legs == 'yoga pants' and BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Yoga_Wet.png"),
+            "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Yoga.png"),
             "True", Null(),
             ),
 
@@ -8218,30 +8218,30 @@ image Betsy_69_Legs:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png"),
 
-                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_R.png"),
-                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Black_R.png"),
-                    "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_R.png"),
+                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_R.png"),
+                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Black_R.png"),
+                    "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_R.png"),
 
-                    "BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
-#                    "BetsyX.Chest == 'swimsuit'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png",
-                    "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_R.png"),
-                    "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_R.png"),
-                    "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
+                    "BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
+#                    "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_R.png"),
+                    "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_R.png"),
+                    "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_B.png"),
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Black_B.png"),
-            "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_B.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_B.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Pierce_Pussy_Black_B.png"),
+            "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_B.png"),
 
-            "BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
-#            "BetsyX.Chest == 'swimsuit'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png",
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_B.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_B.png"),
-            "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
+            "BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
+#            "BetsyX.Chest == 'swimsuit'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Lace_B.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Pierce_Pussy_Blue_B.png"),
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
             ),
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
 #            "not Player.Sprite or Player.Cock != 'out'", Null(),
@@ -8267,13 +8267,13 @@ image Betsy_69_Legs:
         (0,0), ConditionSwitch(
             #Footjob overlay
             "Player.Cock == 'foot'", Null(),
-            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Betsy_69_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Betsy_69_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Betsy_69_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Betsy_69_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
             "ShowFeet", "Betsy_69_Feet",
-#            "Player.Sprite", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-#            "Trigger == 'lick pussy'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-#            "Trigger == 'lick ass'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-            "True", AlphaMask("Betsy_69_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Player.Sprite", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Trigger == 'lick pussy'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Trigger == 'lick ass'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "True", get_cached_alphamask("Betsy_69_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
             ),
 
 #        (0,0), ConditionSwitch(                                                                                 #UI tool layer
@@ -8283,7 +8283,7 @@ image Betsy_69_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Betsy_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask.png"),
 #            "True", "Betsy_Sex_Feet",
 #            ),
         )
@@ -8299,35 +8299,35 @@ image Betsy_69_Feet:
         (0,0), ConditionSwitch(
             #panties if down
             "not BetsyX.PantiesDown", Null(),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Lace_Down.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Lace_Down.png"),
             "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Null(),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Blue_Down.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_69_Panties_Blue_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #hose layer
             "(BetsyX.Hose == 'pantyhose' or BetsyX.Hose == 'ripped pantyhose') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
             "(BetsyX.Hose == 'tights' or BetsyX.Hose == 'ripped tights') and BetsyX.Panties and BetsyX.PantiesDown", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Socks.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Socks.png"),
             "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet_Hose_Holed.png"),
-            "BetsyX.Hose and BetsyX.Hose != 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
+            "BetsyX.Hose and BetsyX.Hose != 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Feet_Hose.png"),
             "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Feet.png",   #Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not BetsyX.Water", Null(),
-            "True", "images/BetsySex/Betsy_69_Water_Feet.png",
+            "True", get_cached_image("images/BetsySex/Betsy_69_Water_Feet.png"),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Feet_Yoga.png"),
-            "BetsyX.Legs == 'shorts' and BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Shorts_Down.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Feet_Yoga.png"),
+            "BetsyX.Legs == 'shorts' and BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_69_Legs_Shorts_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in BetsyX.Spunk", "images/BetsySex/Betsy_Sex_Spunk_Feet.png",
+            "'feet' in BetsyX.Spunk", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -8366,15 +8366,15 @@ image Betsy_69_Pussy:
             # The background plate of her pussy
             ConditionSwitch(
                 "not BetsyX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-                "True", "images/BetsySex/Betsy_69_Water_Pussy.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/BetsySex/Betsy_69_Water_Pussy.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not BetsyX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/Betsy_Sex_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/BetsySex/Betsy_Sex_Pubes_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
 #                "Player.Sprite and Player.Cock == 'out'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
                 "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_69_Pubes_Open.png"),
@@ -8388,49 +8388,49 @@ image Betsy_69_Pussy:
                 "(BetsyX.Legs == 'yoga pants' or BetsyX.Legs == 'shorts') and not BetsyX.Upskirt", Null(),
                 "BetsyX.Panties and not BetsyX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Spunk_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Spunk_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"),
                 )
 #            offset (-700,-570)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-#                "'in' in BetsyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in BetsyX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Pussy.png",
+#                "'in' in BetsyX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in BetsyX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #            offset (0,-15)
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in BetsyX.Spunk", "images/BetsySex/Betsy_Sex_Spunk_Puss_Under.png",
+#                "'in' in BetsyX.Spunk", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "BetsyX.Panties and BetsyX.PantiesDown", Null(),
-#                "BetsyX.Hose == 'ripped pantyhose' and ShowFeet", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
-#                "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
+#                "BetsyX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
+#                "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
 #    contains:
 #            # The animation of Zero's moving penis, masked by her pussy shape
 #            ConditionSwitch(
 ##                "not Player.Sprite", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Betsy_Sex_Fucking_Zero_Anim3", "Betsy_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Betsy_Sex_Fucking_Zero_Anim2", "Betsy_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Betsy_Sex_Fucking_Zero_Anim1", "Betsy_Sex_Heading_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim3", "Betsy_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim2", "Betsy_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Betsy_Sex_Fucking_Zero_Anim1", "Betsy_Sex_Heading_Mask"),
 #                "Player.Sprite and Player.Cock == 'in'", "Betsy_Sex_Fucking_Zero_Anim0",
 #                "True", Null(),
 #                )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "BetsyX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/Betsy_Sex_Pierce_Pussy_BarbellF.png",
-#                "BetsyX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/BetsySex/Betsy_Sex_Pierce_Pussy_RingF.png",
-#                "BetsyX.Pierce == 'barbell'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_Barbell.png",
-#                "BetsyX.Pierce == 'ring'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_Ring.png",
+#                "BetsyX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_BarbellF.png"),
+#                "BetsyX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_RingF.png"),
+#                "BetsyX.Pierce == 'barbell'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_Barbell.png"),
+#                "BetsyX.Pierce == 'ring'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
 #    contains:
@@ -8445,7 +8445,7 @@ image Betsy_69_Pussy:
 #                "Speed == 1", Null(),
 #                "'in' not in BetsyX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 ##                "Speed <= 1", Null(), #"Betsy_Pussy_Spunk_Heading",
-#                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
 #                )
 
     #End Betsy Pussy composite
@@ -8478,13 +8478,13 @@ image Betsy_69_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
 #            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus.png",
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Betsy_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Betsy_Sex_Anal_Tip",
-            "BetsyX.Plug", "images/PlugBase_Sex.png",
+            "BetsyX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "BetsyX.Loose > 2", "Betsy_Gape_Anal_Sex",
             "BetsyX.Loose", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Loose.png",
             "True", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Anus_Tight.png",
@@ -8494,19 +8494,19 @@ image Betsy_69_Anus:
 #            #Spunk under penis
 #            ConditionSwitch(
 #                "'anal' not in BetsyX.Spunk or not Player.Male", Null(),
-##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/BetsySex/Betsy_Sex_Spunk_Anal_Under.png",
+##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Spunk_Anal_Under.png"),
 ##                "Player.Sprite and Player.Cock == 'anal' and Speed == 1", "Betsy_Sex_Anal_Spunk_Heading_Under",
-#                "True", "images/BetsySex/Betsy_69_Spunk_Ass.png",
+#                "True", get_cached_image("images/BetsySex/Betsy_69_Spunk_Ass.png"),
 #                )
 #            offset (5,0)
 #    contains:
 #            # The animation of Zero's moving penis, masked by her anus shape
 #            ConditionSwitch(
 #                "not Player.Sprite or Player.Cock != 'anal'", Null(),
-#                "Speed >= 3",  AlphaMask("Betsy_Sex_Anal_Zero_Anim3", "Betsy_Sex_Anal_MaskF"),
-#                "Speed >= 2", AlphaMask("Betsy_Sex_Anal_Zero_Anim2", "Betsy_Sex_Anal_MaskF"),
-#                "Speed", AlphaMask("Betsy_Sex_Anal_Zero_Anim1", "Betsy_Sex_Anal_Mask"),
-#                "True", AlphaMask("Betsy_Sex_Anal_Zero_Anim0", "Betsy_Sex_Anal_Mask"),
+#                "Speed >= 3",  get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim3", "Betsy_Sex_Anal_MaskF"),
+#                "Speed >= 2", get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim2", "Betsy_Sex_Anal_MaskF"),
+#                "Speed", get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim1", "Betsy_Sex_Anal_Mask"),
+#                "True", get_cached_alphamask("Betsy_Sex_Anal_Zero_Anim0", "Betsy_Sex_Anal_Mask"),
 #                )
 #    contains:
 #            #Spunk over penis
@@ -9494,7 +9494,7 @@ image Betsy_SC_Legs:
         (1120,880),
         (0,0), ConditionSwitch(
             #back of skirt Layer
-            "BetsyX.Legs == 'skirt'", "images/BetsySex/Betsy_Sex_Legs_Skirt_Back.png",
+            "BetsyX.Legs == 'skirt'", get_cached_image("images/BetsySex/Betsy_Sex_Legs_Skirt_Back.png"),
             "True", Null(),
             ),
         (545,540), ConditionSwitch(    #165,560
@@ -9525,14 +9525,14 @@ image Betsy_SC_Legs:
             ),
 
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/BetsySex/Betsy_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/BetsySex/Betsy_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not BetsyX.Water", Null(),
-            "True", "images/BetsySex/Betsy_Sex_Water_Legs.png",
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Water_Legs.png"),
             ),
 
 #        (0,0), "Betsy_Sex_Anus",
@@ -9544,21 +9544,21 @@ image Betsy_SC_Legs:
 
         (0,0), ConditionSwitch(
             #Panties if up
-            "(BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit') and BetsyX.PantiesDown", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini_Down.png"),
+            "(BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit') and BetsyX.PantiesDown", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini_Down.png"),
             "BetsyX.PantiesDown", Null(),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Lace.png"),
-            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini.png"),
-            "BetsyX.Panties and BetsyX.Wet", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue_Wet.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Lace.png"),
+            "BetsyX.Panties == 'swimsuit' or BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Bikini.png"),
+            "BetsyX.Panties and BetsyX.Wet", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue_Wet.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Panties_Blue.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "BetsyX.Hose == 'socks'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Socks.png"),
-            "BetsyX.Hose == 'stockings and garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_StockingsGarter.png"),
-            "BetsyX.Hose == 'garterbelt'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Garter.png"),
-            "BetsyX.Hose == 'stockings'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Stockings.png"),
+            "BetsyX.Hose == 'socks'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Socks.png"),
+            "BetsyX.Hose == 'stockings and garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_StockingsGarter.png"),
+            "BetsyX.Hose == 'garterbelt'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Garter.png"),
+            "BetsyX.Hose == 'stockings'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
 
@@ -9566,36 +9566,36 @@ image Betsy_SC_Legs:
         (0,0), ConditionSwitch(
             #pantyhose layer
             "BetsyX.Panties and BetsyX.PantiesDown", Null(),
-#            "BetsyX.Hose == 'tights'", "images/BetsySex/Betsy_Sex_Hose_Tights.png",
-#            "BetsyX.Hose == 'ripped tights'", "images/BetsySex/Betsy_Sex_Hose_Tights_Holed.png",
-            "BetsyX.Hose == 'pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose.png"),
-            "BetsyX.Hose == 'ripped pantyhose'", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
+#            "BetsyX.Hose == 'tights'", get_cached_image("images/BetsySex/Betsy_Sex_Hose_Tights.png"),
+#            "BetsyX.Hose == 'ripped tights'", get_cached_image("images/BetsySex/Betsy_Sex_Hose_Tights_Holed.png"),
+            "BetsyX.Hose == 'pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose.png"),
+            "BetsyX.Hose == 'ripped pantyhose'", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #Legs Layer
-#            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", "images/BetsySex/Betsy_Sex_Legs_Skirt_Up.png",
-            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
+#            "BetsyX.Legs == 'skirt' and BetsyX.Upskirt", get_cached_image("images/BetsySex/Betsy_Sex_Legs_Skirt_Up.png"),
+            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
             "BetsyX.Upskirt", Null(),
-#            "BetsyX.Legs == 'skirt'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
-            "BetsyX.Legs == 'shorts' and BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts_Wet.png"),
-            "BetsyX.Legs == 'shorts'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts.png"),
-            "BetsyX.Legs == 'yoga pants' and BetsyX.Wet > 1", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga_Wet.png"),
-            "BetsyX.Legs == 'yoga pants'", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga.png"),
+#            "BetsyX.Legs == 'skirt'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Skirt.png"),
+            "BetsyX.Legs == 'shorts' and BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts_Wet.png"),
+            "BetsyX.Legs == 'shorts'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Shorts.png"),
+            "BetsyX.Legs == 'yoga pants' and BetsyX.Wet > 1", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga_Wet.png"),
+            "BetsyX.Legs == 'yoga pants'", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Legs_Yoga.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #scarf
-            "BetsyX.Acc", Recolor("Betsy", "Acc", "images/BetsySex/Betsy_Sex_Scarf.png"),
+            "BetsyX.Acc", get_cached_recolor("Betsy", "Acc", "images/BetsySex/Betsy_Sex_Scarf.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #towel
-            "BetsyX.Over == 'towel'", Recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Legs_Towel.png"),
+            "BetsyX.Over == 'towel'", get_cached_recolor("Betsy", "Over", "images/BetsySex/Betsy_Sex_Legs_Towel.png"),
             "True", Null(),
             ),
 
@@ -9610,30 +9610,30 @@ image Betsy_SC_Legs:
             "not BetsyX.Pierce", Null(),
             "BetsyX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "Player.Sprite and Player.Cock == 'in'", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png",
+                    "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Fucking.png"),
 
-                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
-                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Black.png"),
-                    "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
+                    "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Black.png"),
+                    "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
 
-                    "BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
-                    "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
-                    "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
-                    "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
-                    "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png",
+                    "BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
+                    "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Lace.png"),
+                    "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_R_Blue.png"),
+                    "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_R.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
-            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", Recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Black.png"),
-            "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", Recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
+            "BetsyX.Legs == 'shorts' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "BetsyX.Legs == 'yoga pants' and not BetsyX.Upskirt", get_cached_recolor("Betsy", "Legs", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Black.png"),
+            "BetsyX.Hose == 'pantyhose' and not (BetsyX.Panties and BetsyX.PantiesDown)", get_cached_recolor("Betsy", "Hose", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
 
-            "BetsyX.PantiesDown", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
-            "BetsyX.Chest == 'swimsuit'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
-            "BetsyX.Panties == 'lace panties'", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
-            "BetsyX.Panties", Recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
-            "True", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png",
+            "BetsyX.PantiesDown", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
+            "BetsyX.Chest == 'swimsuit'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "BetsyX.Panties == 'lace panties'", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Lace.png"),
+            "BetsyX.Panties", get_cached_recolor("Betsy", "Panties", "images/BetsySex/Betsy_Sex_Pierce_Pussy_B_Blue.png"),
+            "True", get_cached_image("images/BetsySex/Betsy_Sex_Pierce_Pussy_B.png"),
             ),
         (0,0), ConditionSwitch(
             #pussy licking animation
@@ -9653,13 +9653,13 @@ image Betsy_SC_Legs:
         (0,0), ConditionSwitch(
             #Footjob overlay
             "Player.Cock == 'foot'", Null(),
-            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
             "ShowFeet", "Betsy_Sex_Feet",
-#            "Player.Sprite", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-#            "Trigger == 'lick pussy'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-#            "Trigger == 'lick ass'", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
-            "True", AlphaMask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Player.Sprite", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Trigger == 'lick pussy'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+#            "Trigger == 'lick ass'", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
+            "True", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_Feet_Mask.png"),
             ),
         )
 # End Betsy Sex Pose Legs / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -9681,8 +9681,8 @@ image Betsy_SC_Pussy:
             # pubes
             ConditionSwitch(
                 "not BetsyX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/BetsySex/Betsy_Sex_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/BetsySex/Betsy_Sex_Pubes_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/BetsySex/Betsy_Sex_Pubes_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
 #                "Player.Sprite and Player.Cock == 'out'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
                 "Trigger == 'lick pussy'", Recolor("Betsy", "Pubes", "images/BetsySex/[BetsyX.skin_image.skin_path]Betsy_Sex_Pubes_Open.png"),
@@ -9746,7 +9746,7 @@ image Betsy_SC_Anim_0:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Betsy_Sex_Feet",
-#                "True", AlphaMask("Betsy_Sex_Feet","images/BetsySex/Betsy_Sex_FeetMask2.png")
+#                "True", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -9871,7 +9871,7 @@ image Betsy_SC_Anim_1:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Betsy_Sex_Feet",
-#                "True", AlphaMask("Betsy_Sex_Feet","images/BetsySex/Betsy_Sex_FeetMask2.png")
+#                "True", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -9974,7 +9974,7 @@ image Betsy_SC_Anim_2:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Betsy_Sex_Feet",
-#                "True", AlphaMask("Betsy_Sex_Feet","images/BetsySex/Betsy_Sex_FeetMask2.png")
+#                "True", get_cached_alphamask("Betsy_Sex_Feet", "images/BetsySex/Betsy_Sex_FeetMask2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
