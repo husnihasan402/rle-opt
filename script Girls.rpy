@@ -204,6 +204,28 @@ init python:
                 # Modification mod
                 self.Mask = 0
                 self.Inventory = []
+                # Инициализация словаря модификаций для кэширования
+                # Initialize modification dictionary for caching
+                self.modItem = {
+                    'Arms': {},
+                    'Legs': {},
+                    'Over': {},
+                    'Chest': {},
+                    'Panties': {},
+                    'Pubes': {},
+                    'Neck': {},
+                    'Acc': {},
+                    'Hose': {},
+                    'Boots': {},
+                    'Hat': {}
+                }
+                # Инициализация skin_image для путей к текстурам кожи
+                # Initialize skin_image for skin texture paths
+                class SkinImage:
+                    def __init__(self):
+                        self.skin_path = ""  # Путь к варианту кожи, например "" или "dark/"
+                
+                self.skin_image = SkinImage()
                 # Clothing sets
                 # toggle(0),arms/gloves(1),pants(2),shirt(3),necklace(4),bra(5),panties(6),accessory(7),hair(8),hose(9),shame level(10),boots(11),hats(12)
                 self.Casual1 = [0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -2501,6 +2523,13 @@ init python:
             return
         def mark_display_dirty(self):
             self._cache_dirty = True
+            # Инвалидируем кеш анимаций при изменении одежды
+            # Invalidate animation cache when clothing changes
+            try:
+                if hasattr(self, 'Tag'):
+                    invalidate_animation_cache(self.Tag)
+            except:
+                pass
 
         def _update_display_cache(self):
             if self._cache_dirty:
