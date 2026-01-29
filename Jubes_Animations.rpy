@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Jubes используйте: preload_character_animations('Jubes')
+# Для очистки кеша: clear_animation_cache('Jubes')
 
 image Jubes_Sprite:
     LiveComposite(

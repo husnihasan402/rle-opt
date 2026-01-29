@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Wanda используйте: preload_character_animations('Wanda')
+# Для очистки кеша: clear_animation_cache('Wanda')
 
 image Wanda_Sprite:
     LiveComposite(

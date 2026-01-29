@@ -1,4 +1,8 @@
 ﻿# Basic Kitty Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Kitty используйте: preload_character_animations('Kitty')
+# Для очистки кеша: clear_animation_cache('Kitty')
 
 image Kitty_Sprite:
     LiveComposite(

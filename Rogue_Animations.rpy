@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Rogue используйте: preload_character_animations('Rogue')
+# Для очистки кеша: clear_animation_cache('Rogue')
 image Rogue_Sprite:
     LiveComposite(
         (480,960),

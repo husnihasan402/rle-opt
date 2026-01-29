@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Gwen используйте: preload_character_animations('Gwen')
+# Для очистки кеша: clear_animation_cache('Gwen')
 
 image Gwen_Sprite:
     LiveComposite(

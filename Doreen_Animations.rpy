@@ -1,4 +1,8 @@
 ﻿# Basic character Sprites
+# 
+# Этот файл использует систему кэширования анимаций из animation_cache.rpy
+# Для предзагрузки анимаций Doreen используйте: preload_character_animations('Doreen')
+# Для очистки кеша: clear_animation_cache('Doreen')
 
 image Doreen_Sprite:
     LiveComposite(
