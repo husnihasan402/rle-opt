@@ -157,7 +157,7 @@ init python:
         "armlet": ["браслет", "браслета", "браслету", "браслет", "браслетом", "браслете"]
     }
 
-    def get_clothing_name(clothing_key, case=ime):
+    def get_clothing_name(clothing_key, case=0):
         if clothing_key and clothing_key in clothing_dict:
             return clothing_dict[clothing_key][case]
         else:
