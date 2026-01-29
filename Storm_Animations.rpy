@@ -3,25 +3,25 @@
 image Storm_Sprite:
     LiveComposite(
         (450,950),
-        (0,0), "images/StormSprite/Storm_Sprite_Shadow.png",
+        (0,0), get_cached_image("images/StormSprite/Storm_Sprite_Shadow.png"),
         (53,-45), "Storm_Sprite_HairBack",
         (0,0), ConditionSwitch(
             #back of the skirt/pants
-            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_SkirtB.png"),
+            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_SkirtB.png"),
             "StormX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Pants_UpB.png"),
-                        "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPants_UpB.png"),
+                        "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Pants_UpB.png"),
+                        "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPants_UpB.png"),
                         "True", Null(),
                         ),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Jacket backplate
-            "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket_Under.png"),
+            "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket_Under.png"),
             "True", Null(),
             ),
-#        (0,0), "images/StormSprite/Storm_Sprite_Body.png",
+#        (0,0), get_cached_image("images/StormSprite/Storm_Sprite_Body.png"),
 
         (0,0), ConditionSwitch(
             #panties down back
@@ -30,11 +30,11 @@ image Storm_Sprite:
                     #if the panties are down
                     "not StormX.Legs or StormX.Upskirt or StormX.Legs == 'skirt'", ConditionSwitch(
                             #if she's wearing a skirt or nothing else
-                            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos_DB.png"),
-                            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_White_DB.png"),
-                            #"StormX.Panties == 'lace panties'", "images/StormSprite/Storm_Sprite_Panties_Lace_DB.png",
-                            #"StormX.Panties == 'bikini bottoms'", "images/StormSprite/Storm_Sprite_Panties_Bikini_DB.png",
-                            "True", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Black_DB.png"),
+                            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos_DB.png"),
+                            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_White_DB.png"),
+                            #"StormX.Panties == 'lace panties'", get_cached_image("images/StormSprite/Storm_Sprite_Panties_Lace_DB.png"),
+                            #"StormX.Panties == 'bikini bottoms'", get_cached_image("images/StormSprite/Storm_Sprite_Panties_Bikini_DB.png"),
+                            "True", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Black_DB.png"),
                             ),
                     "True", Null(),
                     ),
@@ -47,15 +47,15 @@ image Storm_Sprite:
             "StormX.Legs and StormX.Legs != 'skirt' and not StormX.Upskirt", Null(),
             "StormX.Panties and not StormX.PantiesDown and StormX.Wet <= 1", Null(),
             "StormX.Wet == 1", ConditionSwitch( #Wet = 1
-                    "StormX.Panties and StormX.PantiesDown", AlphaMask("Wet_Drip","Storm_Drip_MaskP"),
-                    "StormX.Legs and StormX.Legs != 'skirt'", AlphaMask("Wet_Drip","Storm_Drip_MaskP"),
-                    "True", AlphaMask("Wet_Drip","Storm_Drip_Mask"), #only plays if nothing is in the way
+                    "StormX.Panties and StormX.PantiesDown", get_cached_alphamask("Wet_Drip", "Storm_Drip_MaskP"),
+                    "StormX.Legs and StormX.Legs != 'skirt'", get_cached_alphamask("Wet_Drip", "Storm_Drip_MaskP"),
+                    "True", get_cached_alphamask("Wet_Drip", "Storm_Drip_Mask"), #only plays if nothing is in the way
                     ),
             "True", ConditionSwitch( #Wet = 2+
-                    "StormX.Panties and StormX.PantiesDown", AlphaMask("Wet_Drip2","Storm_Drip_MaskP"),
-                    "StormX.Legs and StormX.Legs != 'skirt'", AlphaMask("Wet_Drip2","Storm_Drip_MaskP"),
-                    "StormX.Panties", AlphaMask("Wet_Drip","Storm_Drip_Mask"), #"Wet_Drip2",#
-                    "True", AlphaMask("Wet_Drip2","Storm_Drip_Mask"), #only plays if nothing is in the way
+                    "StormX.Panties and StormX.PantiesDown", get_cached_alphamask("Wet_Drip2", "Storm_Drip_MaskP"),
+                    "StormX.Legs and StormX.Legs != 'skirt'", get_cached_alphamask("Wet_Drip2", "Storm_Drip_MaskP"),
+                    "StormX.Panties", get_cached_alphamask("Wet_Drip", "Storm_Drip_Mask"), #"Wet_Drip2",#
+                    "True", get_cached_alphamask("Wet_Drip2", "Storm_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
         (165,560), ConditionSwitch(    #145,560
@@ -64,28 +64,28 @@ image Storm_Sprite:
             "StormX.Legs and StormX.Legs != 'skirt' and not StormX.Upskirt", Null(),
             "StormX.Panties and not StormX.PantiesDown and StormX.Wet <= 1", Null(),
             "True", ConditionSwitch( #Wet = 2+
-                    "StormX.Panties and StormX.PantiesDown", AlphaMask("Spunk_Drip2","Storm_Drip_MaskP"),
-#                    "StormX.Legs and StormX.Legs != 'skirt'", AlphaMask("Spunk_Drip2","Storm_Drip_MaskP"), #add if pantes have down art
-                    "StormX.Panties", AlphaMask("Spunk_Drip","Storm_Drip_Mask"), #"Wet_Drip2",#
-                    "True", AlphaMask("Spunk_Drip2","Storm_Drip_Mask"), #only plays if nothing is in the way
+                    "StormX.Panties and StormX.PantiesDown", get_cached_alphamask("Spunk_Drip2", "Storm_Drip_MaskP"),
+#                    "StormX.Legs and StormX.Legs != 'skirt'", get_cached_alphamask("Spunk_Drip2", "Storm_Drip_MaskP"), #add if pantes have down art
+                    "StormX.Panties", get_cached_alphamask("Spunk_Drip", "Storm_Drip_Mask"), #"Wet_Drip2",#
+                    "True", get_cached_alphamask("Spunk_Drip2", "Storm_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
 
         (0,0), ConditionSwitch(
             #body
-            "StormX.ArmPose != 1", "images/StormSprite/Storm_Sprite_Body2.png",         # right hand up/left down
-            "True", "images/StormSprite/Storm_Sprite_Body1.png", #if StormX.Arms == 1   # right Hand on hip/left raised
+            "StormX.ArmPose != 1", get_cached_image("images/StormSprite/Storm_Sprite_Body2.png"),         # right hand up/left down
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Body1.png"), #if StormX.Arms == 1   # right Hand on hip/left raised
             ),
 #        (0,0), ConditionSwitch(
 #            #Water effect
-#            "StormX.Water and StormX.ArmPose == 1", "images/StormSprite/Storm_Sprite_Water1.png",
-#            "StormX.Water", "images/StormSprite/Storm_Sprite_Water2.png",
+#            "StormX.Water and StormX.ArmPose == 1", get_cached_image("images/StormSprite/Storm_Sprite_Water1.png"),
+#            "StormX.Water", get_cached_image("images/StormSprite/Storm_Sprite_Water2.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #pubes
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormSprite/Storm_Sprite_Pubes.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormSprite/Storm_Sprite_Pubes.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -93,21 +93,21 @@ image Storm_Sprite:
             "not StormX.Pierce", Null(),
             "StormX.Panties and not StormX.PantiesDown", Null(),
             "StormX.Legs != 'skirt' and StormX.Legs and not StormX.Upskirt", Null(), #skirt if wearing a skirt
-            "StormX.Pierce == 'barbell'", "images/StormSprite/Storm_Sprite_Barbell_Pussy.png",
-            "StormX.Pierce == 'ring'", "images/StormSprite/Storm_Sprite_Ring_Pussy.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_Pussy.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSprite/Storm_Sprite_Ring_Pussy.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #arm rings base
             "not StormX.Acc == 'rings' or StormX.Over == 'jacket'", Null(),
-            "StormX.ArmPose == 1", "images/StormSprite/Storm_Sprite_ArmRings1.png",
-            "True", "images/StormSprite/Storm_Sprite_ArmRings2.png", #StormX.ArmPose == 2
+            "StormX.ArmPose == 1", get_cached_image("images/StormSprite/Storm_Sprite_ArmRings1.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_ArmRings2.png"), #StormX.ArmPose == 2
             ),
         (0,0), ConditionSwitch(
             #Tits
-            "StormX.Uptop", "images/StormSprite/Storm_Sprite_Tits.png",
-            "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", "images/StormSprite/Storm_Sprite_Tits_Up.png",
-            "True", "images/StormSprite/Storm_Sprite_Tits.png",
+            "StormX.Uptop", get_cached_image("images/StormSprite/Storm_Sprite_Tits.png"),
+            "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", get_cached_image("images/StormSprite/Storm_Sprite_Tits_Up.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Tits.png"),
             ),
         (0,0), ConditionSwitch(
             #naked tit piercings
@@ -117,40 +117,40 @@ image Storm_Sprite:
             #Only does this if she has piercings, has no tops, or has her top up
             "StormX.Pierce == 'barbell'", ConditionSwitch(
                     # if top is up. . .
-                    "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", "images/StormSprite/Storm_Sprite_Barbell_TitsU.png",
-                    "True", "images/StormSprite/Storm_Sprite_Barbell_TitsL.png",
+                    "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsU.png"),
+                    "True", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsL.png"),
                     ),
             # Pierce is "ring"
-            "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", "images/StormSprite/Storm_Sprite_Ring_TitsUCU.png",
-            "StormX.Over or StormX.Chest", "images/StormSprite/Storm_Sprite_Ring_TitsLCU.png",
-            "True", "images/StormSprite/Storm_Sprite_Ring_TitsL.png",
+            "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsUCU.png"),
+            "StormX.Over or StormX.Chest", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsLCU.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsL.png"),
             ),
 
 
         (0,0), ConditionSwitch(
             #Necklaces
-#            "StormX.Neck == 'silver'", "images/StormSprite/Storm_Sprite_Necklace2.png",
-            "StormX.Neck == 'gold necklace'", "images/StormSprite/Storm_Sprite_Necklace1.png",
+#            "StormX.Neck == 'silver'", get_cached_image("images/StormSprite/Storm_Sprite_Necklace2.png"),
+            "StormX.Neck == 'gold necklace'", get_cached_image("images/StormSprite/Storm_Sprite_Necklace1.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Chest layer
             "StormX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Cos_Up.png"),
-                    "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_Up.png"),
-                    "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_Up.png"),
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Sportsbra_Up.png"),
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bikini_Up.png"),
-                    "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Tube_Up.png"),
+                    "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Cos_Up.png"),
+                    "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_Up.png"),
+                    "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_Up.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Sportsbra_Up.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bikini_Up.png"),
+                    "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Tube_Up.png"),
                     "True", Null(),
                     ),
-            "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Cos.png"),
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_LaceBra.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Sportsbra.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bikini.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Tube.png"),
+            "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Cos.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_LaceBra.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Sportsbra.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bikini.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Tube.png"),
             "True", Null(),
             ),
 
@@ -160,11 +160,11 @@ image Storm_Sprite:
             "StormX.Uptop", Null(),
             "StormX.Pierce == 'barbell'", ConditionSwitch(
                     # if top is up. . .
-                    "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", "images/StormSprite/Storm_Sprite_Barbell_TitsUC.png",
-                    "True", "images/StormSprite/Storm_Sprite_Barbell_TitsLC.png",
+                    "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsUC.png"),
+                    "True", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsLC.png"),
                     ),
-            "StormX.Pierce == 'ring' and (StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra')", "images/StormSprite/Storm_Sprite_Ring_TitsUC.png",
-            "StormX.Pierce == 'ring'", "images/StormSprite/Storm_Sprite_Ring_TitsLC.png",
+            "StormX.Pierce == 'ring' and (StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra')", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsUC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsLC.png"),
             "True", Null(),
             ),
 
@@ -175,11 +175,11 @@ image Storm_Sprite:
                     #if the panties are down
                     "not StormX.Legs or StormX.Upskirt or StormX.Legs == 'skirt'", ConditionSwitch(
                             #if she's wearing a skirt or nothing else
-                            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos_D.png"),
-                            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_White_D.png"),
-                            "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Lace_D.png"),
-                            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Bikini_D.png"),
-                            "True", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Black_D.png"),
+                            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos_D.png"),
+                            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_White_D.png"),
+                            "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Lace_D.png"),
+                            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Bikini_D.png"),
+                            "True", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Black_D.png"),
                             ),
                     "True", Null(),
                     ),
@@ -187,76 +187,76 @@ image Storm_Sprite:
                     #if she's got panties and they are not down
                     "StormX.Wet", ConditionSwitch(
                         #if she's  wet
-                        "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos.png"),
-                        "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_WhiteW.png"),
-                        "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Lace.png"),
-                        "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_BikiniL.png"),
-                        "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Bikini.png"),
-                        "True", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_BlackW.png"),
+                        "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos.png"),
+                        "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_WhiteW.png"),
+                        "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Lace.png"),
+                        "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_BikiniL.png"),
+                        "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Bikini.png"),
+                        "True", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_BlackW.png"),
                         ),
                     "True", ConditionSwitch(
                         #if she's not wet
-                        "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos.png"),
-                        "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_White.png"),
-                        "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Lace.png"),
-                        "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_BikiniL.png"),
-                        "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Bikini.png"),
-                        "True", Recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Black.png"),
+                        "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Cos.png"),
+                        "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_White.png"),
+                        "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Lace.png"),
+                        "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_BikiniL.png"),
+                        "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Bikini.png"),
+                        "True", get_cached_recolor("Storm", "Panties", "images/StormSprite/Storm_Sprite_Panties_Black.png"),
                         ),
                     ),
             ),
         (0,0), ConditionSwitch(
             #stockings
-            "StormX.Hose == 'stockings'", Recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Stockings.png"),
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_StockingsandGarter.png"),
-            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Garter.png"),
+            "StormX.Hose == 'stockings'", get_cached_recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Stockings.png"),
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_StockingsandGarter.png"),
+            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Garter.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose
-            "StormX.Hose == 'pantyhose' and (not StormX.PantiesDown or not StormX.Panties)", Recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Pantyhose.png"),
-            "StormX.Hose == 'ripped pantyhose' and (not StormX.PantiesDown or not StormX.Panties)", Recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Pantyhose_Holed.png"),
+            "StormX.Hose == 'pantyhose' and (not StormX.PantiesDown or not StormX.Panties)", get_cached_recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Pantyhose.png"),
+            "StormX.Hose == 'ripped pantyhose' and (not StormX.PantiesDown or not StormX.Panties)", get_cached_recolor("Storm", "Hose", "images/StormSprite/Storm_Sprite_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Leg rings
             "not StormX.Acc == 'rings' or StormX.Legs == 'pants' or StormX.Legs == 'yoga pants'", Null(),
-            "True", "images/StormSprite/Storm_Sprite_LegRings.png",
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_LegRings.png"),
             ),
         (0,0), ConditionSwitch(
             #pants
             "not StormX.Legs", Null(),
             "StormX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Pants_Up.png"),
-                        "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPants_Up.png"),
-                        "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Skirt_Up.png"),
+                        "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Pants_Up.png"),
+                        "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPants_Up.png"),
+                        "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Skirt_Up.png"),
                         "True", Null(),
                         ),
             "True", ConditionSwitch(
                     #if it's the ring pericings
                     "StormX.Wet", ConditionSwitch(
                         #if she's not wet
-                        "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_PantsW.png"),
-                        "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPantsW.png"),
-                        "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Skirt.png"),
+                        "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_PantsW.png"),
+                        "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPantsW.png"),
+                        "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Skirt.png"),
                         "True", Null(),
                         ),
                     "True", ConditionSwitch(
                         #if she's wet
-                        "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Pants.png"),
-                        "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPants.png"),
-                        "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Skirt.png"),
+                        "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Pants.png"),
+                        "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_YogaPants.png"),
+                        "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSprite/Storm_Sprite_Legs_Skirt.png"),
                         "True", Null(),
                         ),
                     ),
             ),
         (0,0), ConditionSwitch(
             #shoes
-            "StormX.Boots == 'sandals'", "images/StormSprite/Storm_Sprite_Boots_Sandals.png",
-            "StormX.Boots == 'rings'", "images/StormSprite/Storm_Sprite_Boots_Rings.png",
-            "StormX.Boots and StormX.Legs == 'pants'", "images/StormSprite/Storm_Sprite_Boots_Pants.png",
-            "StormX.Boots", "images/StormSprite/Storm_Sprite_Boots.png",
+            "StormX.Boots == 'sandals'", get_cached_image("images/StormSprite/Storm_Sprite_Boots_Sandals.png"),
+            "StormX.Boots == 'rings'", get_cached_image("images/StormSprite/Storm_Sprite_Boots_Rings.png"),
+            "StormX.Boots and StormX.Legs == 'pants'", get_cached_image("images/StormSprite/Storm_Sprite_Boots_Pants.png"),
+            "StormX.Boots", get_cached_image("images/StormSprite/Storm_Sprite_Boots.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -264,14 +264,14 @@ image Storm_Sprite:
             "StormX.Legs == 'skirt' or StormX.Legs == 'pants'", Null(),
             "StormX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the barbell pericings
-                    "StormX.Legs and not StormX.Upskirt", "images/StormSprite/Storm_Sprite_Barbell_PussyC.png",
-                    "StormX.Panties and not StormX.PantiesDown", "images/StormSprite/Storm_Sprite_Barbell_PussyC.png",
+                    "StormX.Legs and not StormX.Upskirt", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_PussyC.png"),
+                    "StormX.Panties and not StormX.PantiesDown", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_PussyC.png"),
                     "True", Null(),
                     ),
             "StormX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "StormX.Legs and not StormX.Upskirt", "images/StormSprite/Storm_Sprite_Ring_PussyC.png",
-                    "StormX.Panties and not StormX.PantiesDown", "images/StormSprite/Storm_Sprite_Ring_PussyC.png",
+                    "StormX.Legs and not StormX.Upskirt", get_cached_image("images/StormSprite/Storm_Sprite_Ring_PussyC.png"),
+                    "StormX.Panties and not StormX.PantiesDown", get_cached_image("images/StormSprite/Storm_Sprite_Ring_PussyC.png"),
                     "True", Null(),
                     ),
             "True", Null(),
@@ -279,57 +279,57 @@ image Storm_Sprite:
         (0,0), ConditionSwitch(
             #pussy spunk
             "StormX.Legs and not StormX.Upskirt", Null(),
-            "('in' in StormX.Spunk or 'anal' in StormX.Spunk) and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Pussy.png",
+            "('in' in StormX.Spunk or 'anal' in StormX.Spunk) and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Pussy.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Water effect
             "not StormX.Water", Null(),
-            "(StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra') and StormX.ArmPose == 1", "images/StormSprite/Storm_Sprite_Water_Tight1.png",
-            "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", "images/StormSprite/Storm_Sprite_Water_Tight2.png",
-            "StormX.ArmPose == 1", "images/StormSprite/Storm_Sprite_Water_Loose1.png",
-            "True", "images/StormSprite/Storm_Sprite_Water_Loose2.png",
+            "(StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra') and StormX.ArmPose == 1", get_cached_image("images/StormSprite/Storm_Sprite_Water_Tight1.png"),
+            "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", get_cached_image("images/StormSprite/Storm_Sprite_Water_Tight2.png"),
+            "StormX.ArmPose == 1", get_cached_image("images/StormSprite/Storm_Sprite_Water_Loose1.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Water_Loose2.png"),
             ),
 
 
         (0,0), ConditionSwitch(
             #neck
-            "StormX.Neck == 'rings'", "images/StormSprite/Storm_Sprite_Necklace3.png",
+            "StormX.Neck == 'rings'", get_cached_image("images/StormSprite/Storm_Sprite_Necklace3.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over
             "StormX.Uptop", ConditionSwitch(
                     # if top is up. . .
-                    "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_WhiteShirt_Up.png"),
-                    "StormX.Over == 'jacket' and StormX.ArmPose != 1", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2_Up.png"),
-                    "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket1_Up.png"),
-#                    "StormX.Over == 'towel'", "images/StormSprite/Storm_Sprite_Towel.png",
+                    "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_WhiteShirt_Up.png"),
+                    "StormX.Over == 'jacket' and StormX.ArmPose != 1", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2_Up.png"),
+                    "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket1_Up.png"),
+#                    "StormX.Over == 'towel'", get_cached_image("images/StormSprite/Storm_Sprite_Towel.png"),
                     "True", Null(),
                     ),
             #If she's using arm pose 1, right arm high
             #If she's using arm pose 2, Left arm high
             "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", ConditionSwitch(
                     # if she's using a breast-raising bra
-                    "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_WhiteShirtU.png"),
-                    "StormX.Over == 'jacket' and StormX.ArmPose != 1", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2U.png"),
-                    "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket1U.png"),
+                    "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_WhiteShirtU.png"),
+                    "StormX.Over == 'jacket' and StormX.ArmPose != 1", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2U.png"),
+                    "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket1U.png"),
                     "True", Null(),
                     ),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_WhiteShirtL.png"),
-            "StormX.Over == 'jacket' and StormX.ArmPose != 1", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2L.png"),
-            "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket1L.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_WhiteShirtL.png"),
+            "StormX.Over == 'jacket' and StormX.ArmPose != 1", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2L.png"),
+            "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket1L.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Chest layer over jacket
             "not StormX.Uptop or StormX.Over != 'jacket'", Null(),
             # if top is up. . .
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_UpJ.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_UpJ.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Sportsbra_UpJ.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bikini_UpJ.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Tube_UpJ.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_UpJ.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bra_UpJ.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Sportsbra_UpJ.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Bikini_UpJ.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSprite/Storm_Sprite_Chest_Tube_UpJ.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -338,67 +338,67 @@ image Storm_Sprite:
             "StormX.Over == 'jacket' and not StormX.Uptop", Null(),
             "StormX.Pierce == 'barbell'", ConditionSwitch(
                     # if top is up. . .
-                    "StormX.Uptop", "images/StormSprite/Storm_Sprite_Barbell_TitsL.png",
-                    "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", "images/StormSprite/Storm_Sprite_Barbell_TitsUC.png",
-                    "True", "images/StormSprite/Storm_Sprite_Barbell_TitsLC.png",
+                    "StormX.Uptop", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsL.png"),
+                    "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra'", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsUC.png"),
+                    "True", get_cached_image("images/StormSprite/Storm_Sprite_Barbell_TitsLC.png"),
                     ),
-            "StormX.Uptop", "images/StormSprite/Storm_Sprite_Ring_TitsL.png",
-            "StormX.Pierce == 'ring' and (StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra')", "images/StormSprite/Storm_Sprite_Ring_TitsUC.png",
-            "StormX.Pierce == 'ring'", "images/StormSprite/Storm_Sprite_Ring_TitsLC.png",
+            "StormX.Uptop", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsL.png"),
+            "StormX.Pierce == 'ring' and (StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra')", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsUC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSprite/Storm_Sprite_Ring_TitsLC.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #belly spunk
-            "'belly' in StormX.Spunk and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Belly.png",
+            "'belly' in StormX.Spunk and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #breast spunk
-            "'tits' in StormX.Spunk and (StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra') and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_TitsU.png",
-            "'tits' in StormX.Spunk and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_TitsL.png",
+            "'tits' in StormX.Spunk and (StormX.Chest == 'black bra' or StormX.Chest == 'lace bra' or StormX.Chest == 'sports bra') and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_TitsU.png"),
+            "'tits' in StormX.Spunk and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_TitsL.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Arms 1 upper layer
-            "StormX.ArmPose == 1", "images/StormSprite/Storm_Sprite_Arms1a.png",        #If she's using arm pose 1, right arm high
+            "StormX.ArmPose == 1", get_cached_image("images/StormSprite/Storm_Sprite_Arms1a.png"),        #If she's using arm pose 1, right arm high
             "True", Null(),  #if StormX.Arms ==2                                        #If she's using arm pose 2, Left arm high
             ),
         (0,0), ConditionSwitch(
             #Jacket Collar, so it passes over Hand 1
-            "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_JacketC.png"),
+            "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_JacketC.png"),
             "True", Null(),
             ),
         (53,-45), "Storm_Sprite_Head", #(53,-38)#(50,-48)
         (0,0), ConditionSwitch(
             #Arms 2 layer
             "StormX.ArmPose != 1 and renpy.showing('Storm_HJ_Animation')", Null(),
-            "StormX.ArmPose != 1", "images/StormSprite/Storm_Sprite_Arms2a.png",                #If she's using arm pose 2, Left arm high
+            "StormX.ArmPose != 1", get_cached_image("images/StormSprite/Storm_Sprite_Arms2a.png"),                #If she's using arm pose 2, Left arm high
             "True", Null(),                                                                     #If she's using arm pose 1, right arm high
             ),
         (0,0), ConditionSwitch(
             #Water effect on arm
-            "StormX.Water and StormX.ArmPose != 1", "images/StormSprite/Storm_Sprite_Water_Arm2.png",
+            "StormX.Water and StormX.ArmPose != 1", get_cached_image("images/StormSprite/Storm_Sprite_Water_Arm2.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Arms clothing layer
-            "StormX.ArmPose != 1 and StormX.Over == 'jacket' and renpy.showing('Storm_HJ_Animation')", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2H.png"),     #If she's using arm pose 2, Left arm high
-            "StormX.ArmPose != 1 and StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2A.png"),     #If she's using arm pose 2, Left arm high
-            "StormX.ArmPose != 1 and StormX.Acc == 'rings'", "images/StormSprite/Storm_Sprite_ArmRings2Top.png",                                #If she's using arm pose 2, Left arm high
+            "StormX.ArmPose != 1 and StormX.Over == 'jacket' and renpy.showing('Storm_HJ_Animation')", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2H.png"),     #If she's using arm pose 2, Left arm high
+            "StormX.ArmPose != 1 and StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSprite/Storm_Sprite_Over_Jacket2A.png"),     #If she's using arm pose 2, Left arm high
+            "StormX.ArmPose != 1 and StormX.Acc == 'rings'", get_cached_image("images/StormSprite/Storm_Sprite_ArmRings2Top.png"),                                #If she's using arm pose 2, Left arm high
             "True", Null(),                                                                                             #If she's using arm pose 1, right arm high
             ),
 
 #        (0,0), ConditionSwitch(
 #            #hand spunk
 #            "StormX.ArmPose == 2 or 'hand' not in StormX.Spunk", Null(),
-#            "True", "images/StormSprite/Storm_Sprite_Spunk_Hand.png",
+#            "True", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Hand.png"),
 #            ),
 #        (0,0), ConditionSwitch(                                                                         #Props
 #            "not StormX.Held or StormX.ArmPose != 2", Null(),
-#            "StormX.ArmPose == 2 and StormX.Held == 'phone'", "images/StormSprite/Storm_held_phone.png",
-#            "StormX.ArmPose == 2 and StormX.Held == 'dildo'", "images/StormSprite/Storm_held_dildo.png",
-#            "StormX.ArmPose == 2 and StormX.Held == 'vibrator'", "images/StormSprite/Storm_held_vibrator.png",
-#            "StormX.ArmPose == 2 and StormX.Held == 'panties'", "images/StormSprite/Storm_held_panties.png",
+#            "StormX.ArmPose == 2 and StormX.Held == 'phone'", get_cached_image("images/StormSprite/Storm_held_phone.png"),
+#            "StormX.ArmPose == 2 and StormX.Held == 'dildo'", get_cached_image("images/StormSprite/Storm_held_dildo.png"),
+#            "StormX.ArmPose == 2 and StormX.Held == 'vibrator'", get_cached_image("images/StormSprite/Storm_held_vibrator.png"),
+#            "StormX.ArmPose == 2 and StormX.Held == 'panties'", get_cached_image("images/StormSprite/Storm_held_panties.png"),
 #            "True", Null(),
 #            ),
 
@@ -515,27 +515,27 @@ image Storm_Sprite_HairBack:
     contains:
         ConditionSwitch(
                 #towel back
-                "StormX.Over == 'towel'", "images/StormSprite/Storm_Sprite_Over_Towel_Under.png",
+                "StormX.Over == 'towel'", get_cached_image("images/StormSprite/Storm_Sprite_Over_Towel_Under.png"),
                 "True", Null(),
                 ),
     contains:
         ConditionSwitch(
                 #hair back
     #            "renpy.showing('Storm_BJ_Animation')", Null(),
-    #            "renpy.showing('Storm_SexSprite')", "images/StormSex/Storm_Sprite_Hair_Long_UnderSex.png",
-    #            "StormX.Hair == 'wet' or StormX.Water", "images/StormSprite/Storm_Sprite_Hair_Wet_Under.png",
+    #            "renpy.showing('Storm_SexSprite')", get_cached_image("images/StormSex/Storm_Sprite_Hair_Long_UnderSex.png"),
+    #            "StormX.Hair == 'wet' or StormX.Water", get_cached_image("images/StormSprite/Storm_Sprite_Hair_Wet_Under.png"),
                 "StormX.Over == 'towel'", Null(),
                 "StormX.Hair == 'short'", Null(),
 
-                "StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back_Wet.png"),
-                "StormX.Hair == 'mohawk' and StormX.Water", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back_Wet.png"),
-                "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back_Wet.png"),
-                "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back.png"),
+                "StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back_Wet.png"),
+                "StormX.Hair == 'mohawk' and StormX.Water", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back_Wet.png"),
+                "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back_Wet.png"),
+                "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back.png"),
 
-                "StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back_Wet.png"),
-                "StormX.Hair and StormX.Water", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back_Wet.png"),
-                "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back_Wet.png"),
-                "StormX.Hair", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back.png"),
+                "StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back_Wet.png"),
+                "StormX.Hair and StormX.Water", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back_Wet.png"),
+                "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back_Wet.png"),
+                "StormX.Hair", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back.png"),
                 "True", Null(),
                 ),
 #    "images/StormSprite/Storm_Sprite_Hair_Long_Under.png"
@@ -547,9 +547,9 @@ image Storm_Sprite_HairBack:
 #            #hair back
 #            "not StormX.Hair", Null(),
 #            "renpy.showing('Storm_BJ_Animation')", Null(),
-##            "renpy.showing('Storm_SexSprite')", "images/StormSex/Storm_Sprite_Hair_Long_UnderSex.png",
+##            "renpy.showing('Storm_SexSprite')", get_cached_image("images/StormSex/Storm_Sprite_Hair_Long_UnderSex.png"),
 #            "StormX.Hair == 'wet' or StormX.Water", Null(),
-#            "StormX.Hair", "images/StormSprite/Storm_Sprite_Hair_Short_Mid.png",
+#            "StormX.Hair", get_cached_image("images/StormSprite/Storm_Sprite_Hair_Short_Mid.png"),
 #            "True", Null(),
 #            ),
 #    anchor (0.6, 0.0)
@@ -559,10 +559,10 @@ image Storm_Sprite_HairBack:
 #    ConditionSwitch(
 #            #hair back
 #            "not StormX.Hair", Null(),
-##            "renpy.showing('Storm_SexSprite')", "images/StormSex/Storm_Sprite_Hair_Short_OverSex.png",
-##            "StormX.Hair == 'wet' or StormX.Water", "images/StormSprite/Storm_Sprite_Hair_Wet_Over.png",
-#            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back.png"),
-#            "StormX.Hair", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back.png"),
+##            "renpy.showing('Storm_SexSprite')", get_cached_image("images/StormSex/Storm_Sprite_Hair_Short_OverSex.png"),
+##            "StormX.Hair == 'wet' or StormX.Water", get_cached_image("images/StormSprite/Storm_Sprite_Hair_Wet_Over.png"),
+#            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Back.png"),
+#            "StormX.Hair", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Back.png"),
 #            "True", Null(),
 #            ),
 ##    "images/StormSprite/Storm_Sprite_Hair_Long_Under.png"
@@ -574,117 +574,117 @@ image Storm_Sprite_Head:
         (900,900),
 #        (0,0), ConditionSwitch(
 #                # hair behind face
-#                "renpy.showing('Storm_SexSprite')", "images/StormSex/Storm_Sprite_Hair_Long_UnderSex.png",
+#                "renpy.showing('Storm_SexSprite')", get_cached_image("images/StormSex/Storm_Sprite_Hair_Long_UnderSex.png"),
 #                "True", Null(),
 #                ),
         (0,0), ConditionSwitch(
             # Face background plate
-            "StormX.Blush >= 2", "images/StormSprite/Storm_Sprite_Head_Blush.png",
-#                "StormX.Blush", "images/StormSprite/Storm_Sprite_Head_Blush.png",
-            "True", "images/StormSprite/Storm_Sprite_Head_Base.png",
+            "StormX.Blush >= 2", get_cached_image("images/StormSprite/Storm_Sprite_Head_Blush.png"),
+#                "StormX.Blush", get_cached_image("images/StormSprite/Storm_Sprite_Head_Blush.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Head_Base.png"),
             ),
         (0,0), ConditionSwitch(
             #chin spunk
-            "'chin' in StormX.Spunk and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Chin.png",
+            "'chin' in StormX.Spunk and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Chin.png"),
 #            "renpy.showing('Storm_BJ_Animation') and Speed >= 2", Null(),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Mouths
             "True", ConditionSwitch(
-                    "StormX.Mouth == 'lipbite'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Lipbite.png"),
-                    "StormX.Mouth == 'sucking' or StormX.Mouth == 'open'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Open.png"),
-                    "StormX.Mouth == 'kiss'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Kiss.png"),
-                    "StormX.Mouth == 'sad'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Sad.png"),
-                    "StormX.Mouth == 'smile'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Smile.png"),
-                    "StormX.Mouth == 'surprised'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Kiss.png"),
-                    "StormX.Mouth == 'tongue'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Tongue.png"),
-                    "StormX.Mouth == 'grimace'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Smile.png"),
-                    "StormX.Mouth == 'smirk'", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Smirk.png"),
-                    "True", Recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Normal.png"),
+                    "StormX.Mouth == 'lipbite'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Lipbite.png"),
+                    "StormX.Mouth == 'sucking' or StormX.Mouth == 'open'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Open.png"),
+                    "StormX.Mouth == 'kiss'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Kiss.png"),
+                    "StormX.Mouth == 'sad'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Sad.png"),
+                    "StormX.Mouth == 'smile'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Smile.png"),
+                    "StormX.Mouth == 'surprised'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Kiss.png"),
+                    "StormX.Mouth == 'tongue'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Tongue.png"),
+                    "StormX.Mouth == 'grimace'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Smile.png"),
+                    "StormX.Mouth == 'smirk'", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Smirk.png"),
+                    "True", get_cached_recolor("Storm", "Lips", "images/StormSprite/Storm_Sprite_Mouth_Normal.png"),
                     ),
             ),
         (0,0), ConditionSwitch(
             #Mouths spunk
             "'mouth' not in StormX.Spunk or not Player.Male", Null(),
-#            "StormX.Mouth == 'normal'", "images/StormSprite/Storm_Sprite_Spunk_Smirk.png",
-#            "StormX.Mouth == 'lipbite'", "images/StormSprite/Storm_Sprite_Spunk_Smirk.png",
-            "StormX.Mouth == 'sucking' or StormX.Mouth == 'open'", "images/StormSprite/Storm_Sprite_Spunk_Tongue.png",
-            "StormX.Mouth == 'kiss'", "images/StormSprite/Storm_Sprite_Spunk_Kiss.png",
-            "StormX.Mouth == 'sad'", "images/StormSprite/Storm_Sprite_Spunk_Sad.png",
-            "StormX.Mouth == 'smile'", "images/StormSprite/Storm_Sprite_Spunk_Smile.png",
-            "StormX.Mouth == 'surprised'", "images/StormSprite/Storm_Sprite_Spunk_Kiss.png",
-            "StormX.Mouth == 'tongue'", "images/StormSprite/Storm_Sprite_Spunk_Tongue.png",
-#            "StormX.Mouth == 'grimace'", "images/StormSprite/Storm_Sprite_Mouth_Smile_Spunk.png",
-#            "StormX.Mouth == 'smirk'", "images/StormSprite/Storm_Sprite_Mouth_Smirk_Spunk.png",
-            "True", "images/StormSprite/Storm_Sprite_Spunk_Smirk.png",
+#            "StormX.Mouth == 'normal'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Smirk.png"),
+#            "StormX.Mouth == 'lipbite'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Smirk.png"),
+            "StormX.Mouth == 'sucking' or StormX.Mouth == 'open'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Tongue.png"),
+            "StormX.Mouth == 'kiss'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Kiss.png"),
+            "StormX.Mouth == 'sad'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Sad.png"),
+            "StormX.Mouth == 'smile'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Smile.png"),
+            "StormX.Mouth == 'surprised'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Kiss.png"),
+            "StormX.Mouth == 'tongue'", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Tongue.png"),
+#            "StormX.Mouth == 'grimace'", get_cached_image("images/StormSprite/Storm_Sprite_Mouth_Smile_Spunk.png"),
+#            "StormX.Mouth == 'smirk'", get_cached_image("images/StormSprite/Storm_Sprite_Mouth_Smirk_Spunk.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Smirk.png"),
             ),
 
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in StormX.Spunk and 'chin' not in StormX.Spunk", Null(),
-            "'chin' not in StormX.Spunk and StormX.Mouth == 'tongue'", "images/StormSprite/Storm_Sprite_Wet_Tongue.png",
-            "StormX.Mouth == 'tongue'", "images/StormSprite/Storm_Sprite_Wet_Tongue2.png",
-            "'chin' in StormX.Spunk", "images/StormSprite/Storm_Sprite_Wet_Mouth.png",
+            "'chin' not in StormX.Spunk and StormX.Mouth == 'tongue'", get_cached_image("images/StormSprite/Storm_Sprite_Wet_Tongue.png"),
+            "StormX.Mouth == 'tongue'", get_cached_image("images/StormSprite/Storm_Sprite_Wet_Tongue2.png"),
+            "'chin' in StormX.Spunk", get_cached_image("images/StormSprite/Storm_Sprite_Wet_Mouth.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #brows
-            "StormX.Brows == 'angry'", "images/StormSprite/Storm_Sprite_Brows_Angry.png",
-            "StormX.Brows == 'sad'", "images/StormSprite/Storm_Sprite_Brows_Sad.png",
-            "StormX.Brows == 'surprised'", "images/StormSprite/Storm_Sprite_Brows_Surprised.png",
-            "StormX.Brows == 'confused'", "images/StormSprite/Storm_Sprite_Brows_Confused.png",
-            "True", "images/StormSprite/Storm_Sprite_Brows_Normal.png",
+            "StormX.Brows == 'angry'", get_cached_image("images/StormSprite/Storm_Sprite_Brows_Angry.png"),
+            "StormX.Brows == 'sad'", get_cached_image("images/StormSprite/Storm_Sprite_Brows_Sad.png"),
+            "StormX.Brows == 'surprised'", get_cached_image("images/StormSprite/Storm_Sprite_Brows_Surprised.png"),
+            "StormX.Brows == 'confused'", get_cached_image("images/StormSprite/Storm_Sprite_Brows_Confused.png"),
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Brows_Normal.png"),
             ),
         (0,0), "Storm Blink",     #Eyes
         (0,0), ConditionSwitch(
             #Face Water
             "not StormX.Water and not (not Player.Male and 'facial' in StormX.Spunk)", Null(),
-            "True", "images/StormSprite/Storm_Sprite_Head_Water.png",
+            "True", get_cached_image("images/StormSprite/Storm_Sprite_Head_Water.png"),
             ),
-        (0,0), "images/StormSprite/Storm_Sprite_Earrings.png",     #Eyes
+        (0,0), get_cached_image("images/StormSprite/Storm_Sprite_Earrings.png"),     #Eyes
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Storm_TJ_Animation')", Null(),
             "StormX.Over == 'towel'", Null(),
-            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Short.png"),
+            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Short.png"),
 
-            "StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Wet.png"),
-            "StormX.Hair == 'mohawk' and StormX.Water", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Wet.png"),
-            "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Wet.png"),
-            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk.png"),
+            "StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Wet.png"),
+            "StormX.Hair == 'mohawk' and StormX.Water", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Wet.png"),
+            "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk_Wet.png"),
+            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Mohawk.png"),
 
-            "StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Wet.png"),
-            "StormX.Hair and StormX.Water", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Wet.png"),
-            "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Wet.png"),
-            "renpy.showing('Storm_SexSprite')", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Sex.png"),
-            "StormX.Hair", Recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long.png"),
+            "StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Wet.png"),
+            "StormX.Hair and StormX.Water", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Wet.png"),
+            "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Wet.png"),
+            "renpy.showing('Storm_SexSprite')", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long_Sex.png"),
+            "StormX.Hair", get_cached_recolor("Storm", "Hair", "images/StormSprite/Storm_Sprite_Hair_Long.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #towel back
-            "StormX.Over == 'towel'", "images/StormSprite/Storm_Sprite_Over_Towel.png",
+            "StormX.Over == 'towel'", get_cached_image("images/StormSprite/Storm_Sprite_Over_Towel.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Hair Water
 #            "not StormX.Water", Null(),
-#            "True", "images/StormSprite/Storm_Sprite_Head_Wet.png",
-##            "True", "images/StormSprite/Storm_Sprite_Hair_Wet.png",
+#            "True", get_cached_image("images/StormSprite/Storm_Sprite_Head_Wet.png"),
+##            "True", get_cached_image("images/StormSprite/Storm_Sprite_Hair_Wet.png"),
 #            ),
         (0,0), ConditionSwitch(
             #facial spunk
-            "'hair' in StormX.Spunk and StormX.Hair == 'short' and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Hair3.png",
-            "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Hair2.png",
-            "'hair' in StormX.Spunk and StormX.Hair == 'long' and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Hair1.png",
-            "'facial' in StormX.Spunk and Player.Male", "images/StormSprite/Storm_Sprite_Spunk_Facial.png",
+            "'hair' in StormX.Spunk and StormX.Hair == 'short' and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Hair3.png"),
+            "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Hair2.png"),
+            "'hair' in StormX.Spunk and StormX.Hair == 'long' and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Hair1.png"),
+            "'facial' in StormX.Spunk and Player.Male", get_cached_image("images/StormSprite/Storm_Sprite_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #earring over short hair
-            "StormX.Hair == 'short'", "images/StormSprite/Storm_Sprite_Earrings.png",
+            "StormX.Hair == 'short'", get_cached_image("images/StormSprite/Storm_Sprite_Earrings.png"),
             "True", Null(),
             ),
         )
@@ -694,18 +694,18 @@ image Storm_Sprite_Head:
 
 image Storm Blink:
     ConditionSwitch(
-    "StormX.Eyes == 'sexy'", "images/StormSprite/Storm_Sprite_Eyes_Sexy.png",
-    "StormX.Eyes == 'side'", "images/StormSprite/Storm_Sprite_Eyes_Side.png",
-    "StormX.Eyes == 'surprised'", "images/StormSprite/Storm_Sprite_Eyes_Surprised.png",
-    "StormX.Eyes == 'normal'", "images/StormSprite/Storm_Sprite_Eyes_Normal.png",
-    "StormX.Eyes == 'stunned'", "images/StormSprite/Storm_Sprite_Eyes_Stunned.png",
-    "StormX.Eyes == 'down'", "images/StormSprite/Storm_Sprite_Eyes_Down.png",
-    "StormX.Eyes == 'closed'", "images/StormSprite/Storm_Sprite_Eyes_Closed.png",
-    "StormX.Eyes == 'leftside'", "images/StormSprite/Storm_Sprite_Eyes_Leftside.png",
-    "StormX.Eyes == 'manic'", "images/StormSprite/Storm_Sprite_Eyes_Normal.png",
-    "StormX.Eyes == 'white'", "images/StormSprite/Storm_Sprite_Eyes_White.png",
+    "StormX.Eyes == 'sexy'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Sexy.png"),
+    "StormX.Eyes == 'side'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Side.png"),
+    "StormX.Eyes == 'surprised'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Surprised.png"),
+    "StormX.Eyes == 'normal'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Normal.png"),
+    "StormX.Eyes == 'stunned'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Stunned.png"),
+    "StormX.Eyes == 'down'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Down.png"),
+    "StormX.Eyes == 'closed'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Closed.png"),
+    "StormX.Eyes == 'leftside'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Leftside.png"),
+    "StormX.Eyes == 'manic'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Normal.png"),
+    "StormX.Eyes == 'white'", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_White.png"),
     "StormX.Eyes == 'squint'", "Storm_Squint",
-    "True", "images/StormSprite/Storm_Sprite_Eyes_Normal.png",
+    "True", get_cached_image("images/StormSprite/Storm_Sprite_Eyes_Normal.png"),
     ),
     choice:
         3.5
@@ -876,63 +876,63 @@ image Storm_Doggy_Body:
 #            #hair back
 #            "StormX.Hair == 'mohawk' or StormX.Hair == 'wethawk'", Null(),
 #            "StormX.Hair == 'short'", Null(),
-#            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Back.png"),
-#            "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Back.png"),
-#            "StormX.Hair == 'long'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Back.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Back.png"),
+#            "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Back.png"),
+#            "StormX.Hair == 'long'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Back.png"),
 #            "True", Null(),
 #            ),
 #        (-40,5), ConditionSwitch(
 #            #Head
-##            "StormX.Blush > 1", "images/StormDoggy/Storm_Doggy_Head_Blush2.png",
-##            "StormX.Blush", "images/StormDoggy/Storm_Doggy_Head_Blush.png",
-#            "True", "images/StormDoggy/Storm_Doggy_Head.png",
+##            "StormX.Blush > 1", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Blush2.png"),
+##            "StormX.Blush", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Blush.png"),
+#            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Head.png"),
 #            ),
 #        (-40,5), ConditionSwitch(
 #            #Mouth
-##            "StormX.Mouth == 'lipbite'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Lipbite.png"),
-#            "StormX.Mouth == 'kiss'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
-#            "StormX.Mouth == 'sad'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
-#            "StormX.Mouth == 'smile'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
-##            "StormX.Mouth == 'grimace'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smile.png"),
-##            "StormX.Mouth == 'smirk'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smirk.png"),
-#            "StormX.Mouth == 'surprised'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
-#            "StormX.Mouth == 'sucking'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
-#            "StormX.Mouth == 'tongue'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Tongue.png"),
-#            "True", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Normal.png"),
+##            "StormX.Mouth == 'lipbite'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Lipbite.png"),
+#            "StormX.Mouth == 'kiss'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
+#            "StormX.Mouth == 'sad'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
+#            "StormX.Mouth == 'smile'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
+##            "StormX.Mouth == 'grimace'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smile.png"),
+##            "StormX.Mouth == 'smirk'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smirk.png"),
+#            "StormX.Mouth == 'surprised'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
+#            "StormX.Mouth == 'sucking'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
+#            "StormX.Mouth == 'tongue'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Tongue.png"),
+#            "True", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Normal.png"),
 #            ),
 #        (-40,5), ConditionSwitch(
 #            #Mouth spunk
 #            "'mouth' not in StormX.Spunk or not Player.Male", Null(),
-#            "StormX.Mouth == 'surprised'", "images/StormDoggy/Storm_Doggy_Spunk_Open.png",
-#            "StormX.Mouth == 'sucking'", "images/StormDoggy/Storm_Doggy_Spunk_Open.png",
-#            "StormX.Mouth == 'tongue'", "images/StormDoggy/Storm_Doggy_Spunk_Open.png",
-#            "True", "images/StormDoggy/Storm_Doggy_Spunk_Mouth.png",
+#            "StormX.Mouth == 'surprised'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Open.png"),
+#            "StormX.Mouth == 'sucking'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Open.png"),
+#            "StormX.Mouth == 'tongue'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Open.png"),
+#            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Mouth.png"),
 #            ),
 ##        (-40,5), ConditionSwitch(
 ##            #chin spunk
-##            "'chin' in StormX.Spunk", "images/JeanDoggy/Jean_Doggy_Spunk_Chin.png",
+##            "'chin' in StormX.Spunk", get_cached_image("images/JeanDoggy/Jean_Doggy_Spunk_Chin.png"),
 ##            "True", Null(),
 ##            ),
 #        (-40,5), ConditionSwitch(
 #            #Brows
-#            "StormX.Brows == 'angry'", "images/StormDoggy/Storm_Doggy_Brows_Angry.png",
-#            "StormX.Brows == 'sad'", "images/StormDoggy/Storm_Doggy_Brows_Sad.png",
-#            "StormX.Brows == 'surprised'", "images/StormDoggy/Storm_Doggy_Brows_Surprised.png",
-#            "True", "images/StormDoggy/Storm_Doggy_Brows_Normal.png",
+#            "StormX.Brows == 'angry'", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Angry.png"),
+#            "StormX.Brows == 'sad'", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Sad.png"),
+#            "StormX.Brows == 'surprised'", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Surprised.png"),
+#            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Normal.png"),
 #            ),
 #        (-40,5), "Storm Doggy Blink",#Eyes
 #        (-40,5), ConditionSwitch(
 #            #Hair
-##            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-#            "StormX.Water and StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
-#            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
-##            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-#            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
-#            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
-##            "True", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
+##            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+#            "StormX.Water and StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
+#            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
+##            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+#            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
+#            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
+##            "True", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
 
-##            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-##            "StormX.Hair == 'long'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
+##            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+##            "StormX.Hair == 'long'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
 #            "True", Null(),
 #            ),
 #        #End head
@@ -943,56 +943,56 @@ image Storm_Doggy_Body:
             "True", "Storm_Doggy_Head",
             ),
 
-#        (0,0), "images/StormDoggy/Storm_Doggy_BoobRef.png", #Body base
+#        (0,0), get_cached_image("images/StormDoggy/Storm_Doggy_BoobRef.png"), #Body base
 #        (-12,0), "Storm_Doggy_Head",               #Head(165,0)
-        (0,0), "images/StormDoggy/Storm_Doggy_Body.png", #Body base
+        (0,0), get_cached_image("images/StormDoggy/Storm_Doggy_Body.png"), #Body base
 
         (0,0), ConditionSwitch(
             #bra
 #            "StormX.Uptop", ConditionSwitch(
 #                    "StormX.Over and StormX.Over != 'towel'", Null(),
-#                    "StormX.Chest == 'cami'", "images/StormDoggy/Storm_Doggy_Bra_Cami_Up.png",
-#                    "StormX.Chest == 'lace bra'", "images/StormDoggy/Storm_Doggy_Bra_Lace.png",
-#                    "StormX.Chest == 'sports bra'", "images/StormDoggy/Storm_Doggy_Bra_Sport_Up.png",
-#                    "StormX.Chest == 'bikini top'", "images/StormDoggy/Storm_Doggy_Bra_Bikini_Up.png",
-#                    "True", "images/StormDoggy/Storm_Doggy_Bra.png",
+#                    "StormX.Chest == 'cami'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Cami_Up.png"),
+#                    "StormX.Chest == 'lace bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Lace.png"),
+#                    "StormX.Chest == 'sports bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Sport_Up.png"),
+#                    "StormX.Chest == 'bikini top'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Bikini_Up.png"),
+#                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Bra.png"),
 #                    ),
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Bra.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Bra.png"),
-            "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Cos.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Tube.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Sport.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Bikini.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Bra.png"),
+            "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Cos.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Tube.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Sport.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Chest_Bikini.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "StormX.Water", "images/StormDoggy/Storm_Doggy_Water_Back.png",
+            "StormX.Water", get_cached_image("images/StormDoggy/Storm_Doggy_Water_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Over_WhiteShirt.png"),
-            "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Over_Jacket.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Over_WhiteShirt.png"),
+            "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Over_Jacket.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #arm rings
             "StormX.Over == 'jacket'", Null(),
-            "StormX.Acc == 'rings'", "images/StormDoggy/Storm_Doggy_ArmRings.png",
+            "StormX.Acc == 'rings'", get_cached_image("images/StormDoggy/Storm_Doggy_ArmRings.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #neck
             "StormX.Over == 'jacket'", Null(),
-            "StormX.Neck == 'rings'", "images/StormDoggy/Storm_Doggy_Necklace3.png",
+            "StormX.Neck == 'rings'", get_cached_image("images/StormDoggy/Storm_Doggy_Necklace3.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in StormX.Spunk and Player.Male", "images/StormDoggy/Storm_Doggy_Spunk_Back.png",
+            "'back' in StormX.Spunk and Player.Male", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1002,49 +1002,49 @@ image Storm_Doggy_Body:
             ),
         (-40,5), ConditionSwitch(
             #Hair over
-#            "StormX.Water or StormX.Hair == 'wet'", "images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png",
-#            "StormX.Water and StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
-#            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
-#            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-#            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
-#            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
-#            "True", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png"),
+#            "StormX.Water and StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
+#            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+#            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
+#            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
+#            "True", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
 
-            "((StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet') and StormX.Facing", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Fore.png",
+            "((StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet') and StormX.Facing", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Fore.png"),
             "StormX.Facing", Null(),
             "True", Null(),
             ),
-#        (-40,5), "images/StormDoggy/Storm_Doggy_Head_ref.png",#Eyes
+#        (-40,5), get_cached_image("images/StormDoggy/Storm_Doggy_Head_ref.png"),#Eyes
         (-40,5), ConditionSwitch(
             #Hair over
-#            "StormX.Water or StormX.Hair == 'wet'", "images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png",
-#            "StormX.Water and StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
-#            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
-#            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-#            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
-#            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
-#            "True", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png"),
+#            "StormX.Water and StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
+#            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+#            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
+#            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
+#            "True", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
 
-            "((StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet') and StormX.Facing", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Fore.png"),
-            "StormX.Hair == 'long' and StormX.Facing", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Fore.png"),
+            "((StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet') and StormX.Facing", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Fore.png"),
+            "StormX.Hair == 'long' and StormX.Facing", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Fore.png"),
             "StormX.Facing", Null(),
-            "(StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-            "StormX.Hair == 'long' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-            "StormX.Hair == 'long'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
+            "(StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+            "StormX.Hair == 'long' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+            "StormX.Hair == 'long'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
             "True", Null(),
             ),
         (-40,5), ConditionSwitch(
             #earring
             "StormX.Facing", Null(),
-            "(StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet'", "images/StormDoggy/Storm_Doggy_Earring_Wet.png",
-            "True", "images/StormDoggy/Storm_Doggy_Earring.png",
+            "(StormX.Water and StormX.Hair == 'long') or StormX.Hair == 'wet'", get_cached_image("images/StormDoggy/Storm_Doggy_Earring_Wet.png"),
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Earring.png"),
             ),
 
         (-40,5), ConditionSwitch(
             #face spunk
-#            "'hair' in StormX.Spunk", "images/StormDoggy/Storm_Doggy_Spunk_Hair.png",
+#            "'hair' in StormX.Spunk", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Hair.png"),
             "StormX.Facing", Null(),
-            "'facial' in StormX.Spunk and Player.Male", "images/StormDoggy/Storm_Doggy_Spunk_Facial.png",
+            "'facial' in StormX.Spunk and Player.Male", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Facial.png"),
             "True", Null(),
             ),
         )
@@ -1061,81 +1061,81 @@ image Storm_Doggy_Head:
         (420,750),
         (0,0), ConditionSwitch(
             #hair back
-            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Back.png"),
+            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Back.png"),
             "StormX.Hair == 'short'", Null(),
             "StormX.Hair == 'mohawk'", Null(),
-            "True", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Back.png"),
+            "True", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Back.png"),
             ),
         (0,0), ConditionSwitch(
             #Head
-#            "StormX.Blush > 1", "images/StormDoggy/Storm_Doggy_Head_Blush2.png",
-#            "StormX.Blush", "images/StormDoggy/Storm_Doggy_Head_Blush.png",
-            "True", "images/StormDoggy/Storm_Doggy_Head.png",
+#            "StormX.Blush > 1", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Blush2.png"),
+#            "StormX.Blush", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Blush.png"),
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Head.png"),
             ),
         (0,0), ConditionSwitch(
             #Mouth
-#            "StormX.Mouth == 'lipbite'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Lipbite.png"),
-            "StormX.Mouth == 'kiss'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
-            "StormX.Mouth == 'sad'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
-            "StormX.Mouth == 'smile'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
-#            "StormX.Mouth == 'grimace'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smile.png"),
-#            "StormX.Mouth == 'smirk'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smirk.png"),
-            "StormX.Mouth == 'surprised'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
-            "StormX.Mouth == 'sucking'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
-            "StormX.Mouth == 'tongue'", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Tongue.png"),
-            "True", Recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Normal.png"),
+#            "StormX.Mouth == 'lipbite'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Lipbite.png"),
+            "StormX.Mouth == 'kiss'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
+            "StormX.Mouth == 'sad'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Kiss.png"),
+            "StormX.Mouth == 'smile'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
+#            "StormX.Mouth == 'grimace'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smile.png"),
+#            "StormX.Mouth == 'smirk'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Smirk.png"),
+            "StormX.Mouth == 'surprised'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
+            "StormX.Mouth == 'sucking'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Open.png"),
+            "StormX.Mouth == 'tongue'", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Tongue.png"),
+            "True", get_cached_recolor("Storm", "Lips", "images/StormDoggy/Storm_Doggy_Mouth_Normal.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
-#            "'chin' in StormX.Spunk", "images/JeanDoggy/Jean_Doggy_Spunk_Chin.png",
+#            "'chin' in StormX.Spunk", get_cached_image("images/JeanDoggy/Jean_Doggy_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Mouth spunk
 #            "'mouth' not in StormX.Spunk", Null(),
-#            #"StormX.Mouth == 'normal'", "images/StormDoggy/Storm_Doggy_Spunk_Normal.png",
-#            #"StormX.Mouth == 'sad'", "images/StormDoggy/Storm_Doggy_Spunk_Normal.png",
-##            "StormX.Mouth == 'lipbite'", "images/StormDoggy/Storm_Doggy_Spunk_Smile.png",
-#            "StormX.Mouth == 'smile'", "images/StormDoggy/Storm_Doggy_Head_Spunk_Smile.png",
-#            "StormX.Mouth == 'grimace'", "images/StormDoggy/Storm_Doggy_Head_Spunk_Smile.png",
-#            "StormX.Mouth == 'sucking'", "images/StormDoggy/Storm_Doggy_Head_Spunk_Tongue.png",
-#            #"StormX.Mouth == 'kiss'", "images/StormDoggy/Storm_Doggy_Spunk_Open.png",
-##            "StormX.Mouth == 'surprised'", "images/StormDoggy/Storm_Doggy_Spunk_Normal.png",
-#            "StormX.Mouth == 'tongue'", "images/StormDoggy/Storm_Doggy_Head_Spunk_Tongue.png",
-#            "True", "images/StormDoggy/Storm_Doggy_Head_Spunk_Normal.png",
+#            #"StormX.Mouth == 'normal'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Normal.png"),
+#            #"StormX.Mouth == 'sad'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Normal.png"),
+##            "StormX.Mouth == 'lipbite'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Smile.png"),
+#            "StormX.Mouth == 'smile'", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Spunk_Smile.png"),
+#            "StormX.Mouth == 'grimace'", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Spunk_Smile.png"),
+#            "StormX.Mouth == 'sucking'", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Spunk_Tongue.png"),
+#            #"StormX.Mouth == 'kiss'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Open.png"),
+##            "StormX.Mouth == 'surprised'", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Normal.png"),
+#            "StormX.Mouth == 'tongue'", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Spunk_Tongue.png"),
+#            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Spunk_Normal.png"),
 #            ),
         (0,0), ConditionSwitch(
             #Brows
-            "StormX.Brows == 'angry'", "images/StormDoggy/Storm_Doggy_Brows_Angry.png",
-            "StormX.Brows == 'sad'", "images/StormDoggy/Storm_Doggy_Brows_Sad.png",
-            "StormX.Brows == 'surprised'", "images/StormDoggy/Storm_Doggy_Brows_Surprised.png",
-            "True", "images/StormDoggy/Storm_Doggy_Brows_Normal.png",
+            "StormX.Brows == 'angry'", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Angry.png"),
+            "StormX.Brows == 'sad'", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Sad.png"),
+            "StormX.Brows == 'surprised'", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Surprised.png"),
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Brows_Normal.png"),
             ),
         (0,0), "Storm Doggy Blink",#Eyes
 #        (0,0), ConditionSwitch(
 #            #wet hair strand
-#            "StormX.Water or StormX.Hair == 'wet'", "images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png",
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_image("images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Hair
-#            "StormX.Water or StormX.Hair == 'wet'", "images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png",
-            "StormX.Water and StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
-            "StormX.Hair == 'short' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
-            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
-            "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
-            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-            "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
-            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
-            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
-            "True", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png"),
+            "StormX.Water and StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
+            "StormX.Hair == 'short' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Wet.png"),
+            "(StormX.Water and StormX.Hair == 'mohawk') or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
+            "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet.png"),
+            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+            "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Wet_Over.png"),
+            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short.png"),
+            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk.png"),
+            "True", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Long_Over.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "StormX.Water", "images/StormDoggy/Storm_Doggy_Head_Wet.png",
+#            "StormX.Water", get_cached_image("images/StormDoggy/Storm_Doggy_Head_Wet.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/StormDoggy/Storm_Doggy_Head_Bodyref.png",
+#        (0,0), get_cached_image("images/StormDoggy/Storm_Doggy_Head_Bodyref.png"),
         )
 #    zoom 0.83 #.83
     #alpha 0.9
@@ -1148,11 +1148,11 @@ image Storm_Doggy_Head_Fore:
         (420,750),
         (0,0), ConditionSwitch(
             #hair back
-            "StormX.Hair == 'mohawk' and StormX.Water", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png",
-            "StormX.Hair == 'wethawk'", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png",
-#            "StormX.Water or StormX.Hair == 'wet'", "images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png",
-            "StormX.Hair == 'short'", "images/StormDoggy/Storm_Doggy_Hair_Short_Fore.png",
-            "StormX.Hair == 'mohawk'", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Fore.png",
+            "StormX.Hair == 'mohawk' and StormX.Water", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png"),
+            "StormX.Hair == 'wethawk'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png"),
+            "StormX.Hair == 'short'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Short_Fore.png"),
+            "StormX.Hair == 'mohawk'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Mohawk_Fore.png"),
             "True", Null(),
             ),
         )
@@ -1161,11 +1161,11 @@ image Storm_Doggy_Head_Fore:
         (420,750),
         (0,0), ConditionSwitch(
             #hair back
-            "StormX.Hair == 'mohawk' and StormX.Water", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png"),
-            "StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png"),
-#            "StormX.Water or StormX.Hair == 'wet'", "images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png",
-            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Fore.png"),
-            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Fore.png"),
+            "StormX.Hair == 'mohawk' and StormX.Water", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png"),
+            "StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Wet_Fore.png"),
+#            "StormX.Water or StormX.Hair == 'wet'", get_cached_image("images/StormDoggy/Storm_Doggy_Hair_Wet_Back.png"),
+            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Short_Fore.png"),
+            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormDoggy/Storm_Doggy_Hair_Mohawk_Fore.png"),
             "True", Null(),
             ),
         )
@@ -1176,16 +1176,16 @@ image Storm_Doggy_Head_Fore:
 image Storm Doggy Blink:
         #Eyes
         ConditionSwitch(
-#        "StormX.Eyes == 'sexy'", "images/StormDoggy/Storm_Doggy_Eyes_Sexy.png",
-        "StormX.Eyes == 'side'", "images/StormDoggy/Storm_Doggy_Eyes_Side.png",
-#        "StormX.Eyes == 'normal'", "images/StormDoggy/Storm_Doggy_Eyes_Normal.png",
-        "StormX.Eyes == 'closed'", "images/StormDoggy/Storm_Doggy_Eyes_Closed.png",
-#        "StormX.Eyes == 'manic'", "images/StormDoggy/Storm_Doggy_Eyes_Normal.png",
-#        "StormX.Eyes == 'down'", "images/StormDoggy/Storm_Doggy_Eyes_Down.png",
-        "StormX.Eyes == 'stunned'", "images/StormDoggy/Storm_Doggy_Eyes_Stunned.png",
-        "StormX.Eyes == 'surprised'", "images/StormDoggy/Storm_Doggy_Eyes_Surprised.png",
-#        "StormX.Eyes == 'squint'", "images/StormDoggy/Storm_Doggy_Eyes_Sexy.png",
-        "True", "images/StormDoggy/Storm_Doggy_Eyes_Normal.png",
+#        "StormX.Eyes == 'sexy'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Sexy.png"),
+        "StormX.Eyes == 'side'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Side.png"),
+#        "StormX.Eyes == 'normal'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Normal.png"),
+        "StormX.Eyes == 'closed'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Closed.png"),
+#        "StormX.Eyes == 'manic'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Normal.png"),
+#        "StormX.Eyes == 'down'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Down.png"),
+        "StormX.Eyes == 'stunned'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Stunned.png"),
+        "StormX.Eyes == 'surprised'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Surprised.png"),
+#        "StormX.Eyes == 'squint'", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Sexy.png"),
+        "True", get_cached_image("images/StormDoggy/Storm_Doggy_Eyes_Normal.png"),
         ),
     #    choice:
     #        3.5
@@ -1207,64 +1207,64 @@ image Storm_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Panties backside if Down
             "not StormX.PantiesDown or (StormX.Legs and StormX.Legs != 'skirt' and not StormX.Upskirt)", Null(),
-            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Cos_Under.png"),
-            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_White_Under.png"),
-            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Under.png"),
-            "StormX.Panties == 'lace panties'",Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Lace_Under.png"),
-            "StormX.Panties",Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Under.png"),
+            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Cos_Under.png"),
+            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_White_Under.png"),
+            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Under.png"),
+            "StormX.Panties == 'lace panties'",get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Lace_Under.png"),
+            "StormX.Panties",get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Under.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #New ass base check
-            "Trigger == 'lick pussy'", "images/StormDoggy/Storm_Doggy_Ass_Open.png",
-            "StormX.Legs and not StormX.Upskirt", "images/StormDoggy/Storm_Doggy_Ass_Closed.png",
-            "StormX.Panties and not StormX.PantiesDown", "images/StormDoggy/Storm_Doggy_Ass_Closed.png",
+            "Trigger == 'lick pussy'", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Open.png"),
+            "StormX.Legs and not StormX.Upskirt", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Closed.png"),
+            "StormX.Panties and not StormX.PantiesDown", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Closed.png"),
             "Player.Sprite and Player.Cock == 'in'", ConditionSwitch(
 #                    "Speed > 2", "Storm_Pussy_Fucking3",#Speed 3
 #                    "Speed > 1", "Storm_Pussy_Fucking2",#Speed 2
-                    "Speed", "images/StormDoggy/Storm_Doggy_Ass_Fucking.png",      #Speed 1
-                    "True", "images/StormDoggy/Storm_Doggy_Ass_Fucking.png",              #Speed 0
+                    "Speed", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Fucking.png"),      #Speed 1
+                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Fucking.png"),              #Speed 0
                     ),
-            "'dildo pussy' in (Trigger,Trigger2,StormX.Offhand)", "images/StormDoggy/Storm_Doggy_Ass_Fucking.png",
-            "'fondle pussy' in (Trigger,Trigger2,StormX.Offhand)", "images/StormDoggy/Storm_Doggy_Ass_Fucking.png",
-            "Trigger == 'insert pussy'", "images/StormDoggy/Storm_Doggy_Ass_Fucking.png",
-            "True", "images/StormDoggy/Storm_Doggy_Ass_Closed.png",
+            "'dildo pussy' in (Trigger,Trigger2,StormX.Offhand)", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Fucking.png"),
+            "'fondle pussy' in (Trigger,Trigger2,StormX.Offhand)", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Fucking.png"),
+            "Trigger == 'insert pussy'", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Fucking.png"),
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Ass_Closed.png"),
             ),
 
         (0,0), ConditionSwitch(
             #ass red
-            "StormX.Red", "images/StormDoggy/Storm_Doggy_Red.png",
+            "StormX.Red", get_cached_image("images/StormDoggy/Storm_Doggy_Red.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "StormX.Water", "images/StormDoggy/Storm_Doggy_Water_Ass.png",
+            "StormX.Water", get_cached_image("images/StormDoggy/Storm_Doggy_Water_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Panties if Down
             "not StormX.PantiesDown or (StormX.Legs and StormX.Legs != 'skirt' and not StormX.Upskirt)", Null(),
-            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Cos_Down.png"),
-            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_White_Down.png"),
-            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Down.png"),
-            "StormX.Panties == 'lace panties'",Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Down.png"),
-            "StormX.Panties",Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Down.png"),
+            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Cos_Down.png"),
+            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_White_Down.png"),
+            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Down.png"),
+            "StormX.Panties == 'lace panties'",get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Down.png"),
+            "StormX.Panties",get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black_Down.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer if down
-            "StormX.Legs == 'pants' and StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants_Down.png"),
-#            "StormX.Legs == 'yoga pants' and StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga_Down.png"),
+            "StormX.Legs == 'pants' and StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants_Down.png"),
+#            "StormX.Legs == 'yoga pants' and StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga_Down.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #spunkpussy Layer
             "'in' in StormX.Spunk and Player.Cock == 'in' and Player.Male",Null(),# "images/JeanDoggy/Jean_Doggy_SpunkPussyOpen.png",  #fix for StormX.Spunk is used later
-            "'in' in StormX.Spunk and Player.Male", "images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png",
-#            "StormX.Wet and Player.Cock == 'in'", "images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png",
-            "StormX.Wet", "images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png"),
+#            "StormX.Wet and Player.Cock == 'in'", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png"),
+            "StormX.Wet", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1275,35 +1275,35 @@ image Storm_Doggy_Ass:
             "'fondle pussy' in (Trigger,Trigger2,StormX.Offhand)",Null(),
             "Trigger == 'insert pussy'", Null(),
             "(StormX.Legs and StormX.Legs != 'skirt') and not StormX.Upskirt", Null(),
-            "StormX.PantiesDown and Trigger == 'lick pussy'", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
-            "StormX.Panties and StormX.PantiesDown", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Closed.png"),
-            "StormX.Panties", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_ClosedC.png"),
-            "StormX.Hose == 'pantyhose' and Trigger == 'lick pussy'", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_OpenC.png"),
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_ClosedC.png"),
-            "Trigger == 'lick pussy'", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
-            "True", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Closed.png"),
+            "StormX.PantiesDown and Trigger == 'lick pussy'", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
+            "StormX.Panties and StormX.PantiesDown", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Closed.png"),
+            "StormX.Panties", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_ClosedC.png"),
+            "StormX.Hose == 'pantyhose' and Trigger == 'lick pussy'", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_OpenC.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_ClosedC.png"),
+            "Trigger == 'lick pussy'", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
+            "True", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Closed.png"),
             ),
 
         (0,0), ConditionSwitch( #remove later if works                                                                                #remove later if works
             #New ass base check
-            "Player.Sprite and Player.Cock == 'anal' and Speed >= 1", "images/StormDoggy/Storm_Doggy_Anal_FullBase.png",
-            "'insert ass' in (Trigger,Trigger2,StormX.Offhand)", "images/StormDoggy/Storm_Doggy_Anal_FullBase.png",
-            "'dildo anal' in (Trigger,Trigger2,StormX.Offhand)", "images/StormDoggy/Storm_Doggy_Anal_FullBase.png",
-            "renpy.showing('Anal_Plug_In_Doggy') or renpy.showing('Anal_Plug_Out_Doggy')", "images/StormDoggy/Storm_Doggy_Anal_FullBase.png",
-            "StormX.Plug", "images/StormDoggy/Storm_Doggy_Anal_PlugPlate.png",
-#            "StormX.Legs and not StormX.Upskirt", "images/StormDoggy/Storm_Doggy_Asshole_Loose.png",
-#            "StormX.Panties and not StormX.PantiesDown", "images/StormDoggy/Storm_Doggy_Asshole_Loose.png",
-#            "StormX.Loose", "images/JeanDoggy/Jean_Doggy_Asshole_Loose.png",
-#            "True", "images/JeanDoggy/Jean_Doggy_Asshole_Tight.png",
+            "Player.Sprite and Player.Cock == 'anal' and Speed >= 1", get_cached_image("images/StormDoggy/Storm_Doggy_Anal_FullBase.png"),
+            "'insert ass' in (Trigger,Trigger2,StormX.Offhand)", get_cached_image("images/StormDoggy/Storm_Doggy_Anal_FullBase.png"),
+            "'dildo anal' in (Trigger,Trigger2,StormX.Offhand)", get_cached_image("images/StormDoggy/Storm_Doggy_Anal_FullBase.png"),
+            "renpy.showing('Anal_Plug_In_Doggy') or renpy.showing('Anal_Plug_Out_Doggy')", get_cached_image("images/StormDoggy/Storm_Doggy_Anal_FullBase.png"),
+            "StormX.Plug", get_cached_image("images/StormDoggy/Storm_Doggy_Anal_PlugPlate.png"),
+#            "StormX.Legs and not StormX.Upskirt", get_cached_image("images/StormDoggy/Storm_Doggy_Asshole_Loose.png"),
+#            "StormX.Panties and not StormX.PantiesDown", get_cached_image("images/StormDoggy/Storm_Doggy_Asshole_Loose.png"),
+#            "StormX.Loose", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Loose.png"),
+#            "True", get_cached_image("images/JeanDoggy/Jean_Doggy_Asshole_Tight.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #spunkanal Layer
             "'anal' not in StormX.Spunk or (Player.Sprite and Speed) or not Player.Male", Null(),
-#            "Player.Cock == 'anal'", "images/RogueDoggy/Rogue_Doggy_SpunkAnalOpen.png",
-#            "StormX.Loose", "images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png",
-            "True", "images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png",
+#            "Player.Cock == 'anal'", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalOpen.png"),
+#            "StormX.Loose", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png"),
+            "True", get_cached_image("images/RogueDoggy/Rogue_Doggy_SpunkAnalLoose.png"),
             ),
 
         (0,0), ConditionSwitch(
@@ -1312,20 +1312,20 @@ image Storm_Doggy_Ass:
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "StormX.Panties == 'cos panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_CosW.png"),
-            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Cos.png"),
-            "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Lace.png"),
-            "StormX.Panties == 'white panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_WhiteW.png"),
-            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_White.png"),
-            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black.png"),
-            "StormX.Wet", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_BlackW.png"),
-            "True", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black.png"),
+            "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_CosW.png"),
+            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Cos.png"),
+            "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Lace.png"),
+            "StormX.Panties == 'white panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_WhiteW.png"),
+            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_White.png"),
+            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black.png"),
+            "StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_BlackW.png"),
+            "True", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Panties_Black.png"),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #Hose
-            "StormX.Hose == 'stockings'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Stockings.png"),
-            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Garter.png"),
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_StockingGarter.png"),
+            "StormX.Hose == 'stockings'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Stockings.png"),
+            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Garter.png"),
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_StockingGarter.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
@@ -1333,33 +1333,33 @@ image Storm_Doggy_Ass:
 #            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-#            "StormX.Panties and StormX.PantiesDown and StormX.Hose == 'stockings and garterbelt'", "images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png",
-#            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Garter.png"),
-#            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_StockingGarter.png"),
+#            "StormX.Panties and StormX.PantiesDown and StormX.Hose == 'stockings and garterbelt'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png"),
+#            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Garter.png"),
+#            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_StockingGarter.png"),
             "StormX.Panties and StormX.PantiesDown", Null(),
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Full.png"),
-            "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Full_Holed.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Full.png"),
+            "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Hose_Full_Holed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
             "StormX.Legs == 'pants'", ConditionSwitch(
 #                    "StormX.Upskirt", Null(),
-                    "StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants_Down.png"),
-                    "StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants_W.png"),
-                    "True", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants.png"),
+                    "StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants_Down.png"),
+                    "StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants_W.png"),
+                    "True", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Pants.png"),
                     ),
             "StormX.Legs == 'yoga pants'", ConditionSwitch(
 #                    "StormX.Upskirt", Null(),
-                    "StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga_Down.png"),
-                    "StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga_W.png"),
-                    "True", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga.png"),
+                    "StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga_Down.png"),
+                    "StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga_W.png"),
+                    "True", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Yoga.png"),
                     ),
 
             "StormX.Legs == 'skirt'", ConditionSwitch(
-                    "Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Skirt_Up.png"),
-                    "StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Skirt_Up.png"),
-                    "True", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Skirt.png"),
+                    "Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Skirt_Up.png"),
+                    "StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Skirt_Up.png"),
+                    "True", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Legs_Skirt.png"),
                     ),
             "True", Null(),
             ),
@@ -1372,32 +1372,32 @@ image Storm_Doggy_Ass:
             "StormX.Legs == 'skirt' and not StormX.Upskirt", Null(),
             "StormX.Pierce == 'barbell'",  ConditionSwitch(
                     #pants if not down
-                    "StormX.Legs == 'pants' and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
-                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
+                    "StormX.Legs == 'pants' and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
+                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
                     #panties if not down
-                    "StormX.PantiesDown", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-                    "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
-                    "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
-                    "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
-                    "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png"),
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
-                    "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png"),
-                    "True", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
+                    "StormX.PantiesDown", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+                    "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
+                    "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
+                    "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
+                    "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
+                    "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png"),
+                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
                     ),
             "StormX.Pierce == 'ring'",  ConditionSwitch(
                     #pants if not down
-                    "StormX.Legs == 'pants' and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
-                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
+                    "StormX.Legs == 'pants' and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
+                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
                     #panties if not down
-                    "StormX.PantiesDown", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
-                    "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
-                    "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
-                    "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
-                    "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png"),
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
+                    "StormX.PantiesDown", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
+                    "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
+                    "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
+                    "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
+                    "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
                     #hose up
-                    "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png"),
-                    "True", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+                    "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png"),
+                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
                     ),
             "True", Null(),
             ),
@@ -1429,7 +1429,7 @@ image Storm_Doggy_Ass:
                     ),
             "'insert ass' in (Trigger,Trigger2,StormX.Offhand)", "Storm_Anal_Fingering",
             "'dildo anal' in (Trigger,Trigger2,StormX.Offhand)", "Storm_Anal_Fucking",
-            "StormX.Plug", "images/PlugIn.png",
+            "StormX.Plug", get_cached_image("images/PlugIn.png"),
             "StormX.Loose > 2", "Storm_Gape_Anal",
             "True", Null(),
             ),
@@ -1442,32 +1442,32 @@ image Storm_Doggy_Ass:
 #            "StormX.Legs == 'skirt' and not StormX.Upskirt", Null(),
 #            "StormX.Pierce == 'barbell'",  ConditionSwitch(
 #                    #pants if not down
-#                    "StormX.Legs == 'pants' and not StormX.Upskirt", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png",
-#                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png",
+#                    "StormX.Legs == 'pants' and not StormX.Upskirt", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
+#                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
 #                    #panties if not down
-#                    "StormX.PantiesDown", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-#                    "StormX.Panties == 'white panties'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png",
-#                    "StormX.Panties == 'cos panties'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png",
-#                    "StormX.Panties == 'bikini bottoms'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png",
-#                    "StormX.Panties == 'lace panties'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png",
-#                    "StormX.Panties", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png",
-#                    "StormX.Hose == 'pantyhose'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png",
-#                    "True", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
+#                    "StormX.PantiesDown", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+#                    "StormX.Panties == 'white panties'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
+#                    "StormX.Panties == 'cos panties'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_White.png"),
+#                    "StormX.Panties == 'bikini bottoms'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
+#                    "StormX.Panties == 'lace panties'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png"),
+#                    "StormX.Panties", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Black.png"),
+#                    "StormX.Hose == 'pantyhose'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy_Lace.png"),
+#                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
 #                    ),
 #            "StormX.Pierce == 'ring'",  ConditionSwitch(
 #                    #pants if not down
-#                    "StormX.Legs == 'pants' and not StormX.Upskirt", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png",
-#                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png",
+#                    "StormX.Legs == 'pants' and not StormX.Upskirt", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
+#                    "StormX.Legs == 'yoga pants' and not StormX.Upskirt", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
 #                    #panties if not down
-#                    "StormX.PantiesDown", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
-#                    "StormX.Panties == 'white panties'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png",
-#                    "StormX.Panties == 'cos panties'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png",
-#                    "StormX.Panties == 'bikini bottoms'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png",
-#                    "StormX.Panties == 'lace panties'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png",
-#                    "StormX.Panties", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png",
+#                    "StormX.PantiesDown", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
+#                    "StormX.Panties == 'white panties'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
+#                    "StormX.Panties == 'cos panties'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_White.png"),
+#                    "StormX.Panties == 'bikini bottoms'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
+#                    "StormX.Panties == 'lace panties'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png"),
+#                    "StormX.Panties", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Black.png"),
 #                    #hose up
-#                    "StormX.Hose == 'pantyhose'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png",
-#                    "True", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+#                    "StormX.Hose == 'pantyhose'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy_Lace.png"),
+#                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
 #                    ),
 #            "True", Null(),
 #            ),
@@ -1480,22 +1480,22 @@ image Storm_Doggy_Ass:
             ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in StormX.Spunk and Player.Male", "images/StormDoggy/Storm_Doggy_Spunk_Ass.png",
+            "'back' in StormX.Spunk and Player.Male", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
         (-1,0), ConditionSwitch(
             #Hotdogging underlayer
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", "images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png",
-            "True", "images/KittyDoggy/Kitty_Doggy_HotdogBack.png",
+#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_image("images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png"),
+            "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_HotdogBack.png"),
             ),
         (0,0), ConditionSwitch(
             #Hotdogging Cock w/ alpha
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            "Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
-            "True", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            "Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            "True", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #UI tool layer
@@ -1509,11 +1509,11 @@ image Storm_Doggy_Ass:
 
 image Storm_Doggy_Feet:
     contains:
-            AlphaMask("Storm_Doggy_Shins", "images/StormDoggy/Storm_Doggy_Feet_Mask.png")
+            get_cached_alphamask("Storm_Doggy_Shins", "images/StormDoggy/Storm_Doggy_Feet_Mask.png")
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in StormX.Spunk", "images/StormDoggy/Storm_Doggy_Spunk_Feet.png",
+            "'feet' in StormX.Spunk", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 
@@ -1522,26 +1522,26 @@ image Storm_Doggy_Shins:
     contains:
             #hose legs
         ConditionSwitch(
-            "True", "images/StormDoggy/Storm_Doggy_Feet.png"
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Feet.png")
             )
     contains:
             #hose legs
         ConditionSwitch(
-            "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Feet_Holed.png"),
-            "StormX.Hose and StormX.Hose != 'garterbelt'", Recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Feet_Stockings.png"),
-            "True", "images/StormDoggy/Storm_Doggy_Feet.png"
+            "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Feet_Holed.png"),
+            "StormX.Hose and StormX.Hose != 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormDoggy/Storm_Doggy_Feet_Stockings.png"),
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Feet.png")
             )
     contains:
         #pants
         ConditionSwitch(
-            "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Feet_Pants.png"),
-            "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Feet_Yoga.png"),
+            "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Feet_Pants.png"),
+            "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormDoggy/Storm_Doggy_Feet_Yoga.png"),
             "True", Null(),
             )
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in StormX.Spunk", "images/StormDoggy/Storm_Doggy_Spunk_Feet.png",
+            "'feet' in StormX.Spunk", get_cached_image("images/StormDoggy/Storm_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 
@@ -1577,55 +1577,55 @@ image Storm_Doggy_Boob:
 #            #bra
 #        ConditionSwitch(
 #            "StormX.Uptop", ConditionSwitch(
-##                    "StormX.Chest == 'corset'", "images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png",
-##                    "StormX.Chest == 'lace bra'", "images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png",
-#                    "StormX.Chest == 'sports bra'", "images/StormDoggy/Storm_Doggy_Bra_Sport_Boob_Down.png",
-##                    "StormX.Chest == 'bikini top'", "images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png",
-#                    "StormX.Chest", "images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png",
+##                    "StormX.Chest == 'corset'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png"),
+##                    "StormX.Chest == 'lace bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png"),
+#                    "StormX.Chest == 'sports bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Sport_Boob_Down.png"),
+##                    "StormX.Chest == 'bikini top'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png"),
+#                    "StormX.Chest", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Corset_Boob_Down.png"),
 #                    "True", Null(),
 #                    ),
 #            "StormX.Over == 'jacket'", Null(),
-#            "StormX.Chest == 'corset'", "images/StormDoggy/Storm_Doggy_Bra_Corset_Boob.png",
-#            "StormX.Chest == 'lace bra'", "images/StormDoggy/Storm_Doggy_Bra_Lace_Boob.png",
-#            "StormX.Chest == 'sports bra'", "images/StormDoggy/Storm_Doggy_Bra_Sport_Boob.png",
-#            "StormX.Chest == 'bikini top'", "images/StormDoggy/Storm_Doggy_Bra_Corset_Boob.png",
+#            "StormX.Chest == 'corset'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Corset_Boob.png"),
+#            "StormX.Chest == 'lace bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Lace_Boob.png"),
+#            "StormX.Chest == 'sports bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Sport_Boob.png"),
+#            "StormX.Chest == 'bikini top'", get_cached_image("images/StormDoggy/Storm_Doggy_Bra_Corset_Boob.png"),
 #            "True", Null(),
 
     contains:
             #when not uptop
         ConditionSwitch(
-            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", "images/StormDoggy/Storm_Doggy_Boob_White_Up.png",
-            "StormX.Over == 'white shirt'", "images/StormDoggy/Storm_Doggy_Boob_White.png",
+            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_White_Up.png"),
+            "StormX.Over == 'white shirt'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_White.png"),
 
-            "StormX.Chest == 'black bra'", "images/StormDoggy/Storm_Doggy_Boob_Bra.png",
-            "StormX.Chest == 'lace bra'", "images/StormDoggy/Storm_Doggy_Boob_LaceBra.png",
-            "StormX.Chest == 'sports bra'", "images/StormDoggy/Storm_Doggy_Boob_Black_Up.png",
-            "StormX.Chest == 'bikini top'", "images/StormDoggy/Storm_Doggy_Boob_Black.png",
-            "StormX.Chest == 'tube top'", "images/StormDoggy/Storm_Doggy_Boob_Tube.png",
-            "StormX.Chest == 'cos bra'", "images/StormDoggy/Storm_Doggy_Boob_Cos.png",
+            "StormX.Chest == 'black bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_LaceBra.png"),
+            "StormX.Chest == 'sports bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Black_Up.png"),
+            "StormX.Chest == 'bikini top'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Black.png"),
+            "StormX.Chest == 'tube top'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Tube.png"),
+            "StormX.Chest == 'cos bra'", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Cos.png"),
 
             "True", Null(),
             )
     contains:
             #when not uptop
         ConditionSwitch(
-            "StormX.Uptop", "images/StormDoggy/Storm_Doggy_Boob.png",
-            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_White_Up.png"),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_White.png"),
+            "StormX.Uptop", get_cached_image("images/StormDoggy/Storm_Doggy_Boob.png"),
+            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_White_Up.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_White.png"),
 
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bra.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_LaceBra.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Black_Up.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Black.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Tube.png"),
-            "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Cos.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_LaceBra.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Black_Up.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Black.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Tube.png"),
+            "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Cos.png"),
 
-            "True", "images/StormDoggy/Storm_Doggy_Boob.png",
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Boob.png"),
             )
 #    contains:
 #            #Wet look
 #        ConditionSwitch(
-#            "StormX.Water", "images/StormDoggy/Storm_Doggy_Wet_Boob.png",
+#            "StormX.Water", get_cached_image("images/StormDoggy/Storm_Doggy_Wet_Boob.png"),
 #            "True", Null(),
 #            )
     contains:
@@ -1635,47 +1635,47 @@ image Storm_Doggy_Boob:
             "StormX.Uptop", ConditionSwitch(
                     "StormX.Pierce == 'ring'", ConditionSwitch(
                             #ring piercings
-                            "True", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring.png",
+                            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring.png"),
                             ),
                     #if barbell piercings
-                    "True", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball.png",
+                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball.png"),
                     ),
             #if not uptop
             "StormX.Pierce == 'ring'", ConditionSwitch(
                     #ring piercings
-                    "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Cream_Up.png"),
-                    "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Cream.png"),
-                    "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Black_Up.png"),
-                    "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Lace_Up.png"),
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Black_Up.png"),
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Black.png"),
-                    "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_White.png"),
-                    "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_White.png"),
-                    "True", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring.png",
+                    "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Cream_Up.png"),
+                    "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Cream.png"),
+                    "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Black_Up.png"),
+                    "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Lace_Up.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Black_Up.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_Black.png"),
+                    "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_White.png"),
+                    "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring_White.png"),
+                    "True", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Pierce_Ring.png"),
                     ),
-            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Cream_Up.png"),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Cream.png"),
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Black_Up.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Lace_Up.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Black_Up.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Black.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_White.png"),
-            "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_White.png"),
-            "True", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball.png",
+            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Cream_Up.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Cream.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Black_Up.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Lace_Up.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Black_Up.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_Black.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_White.png"),
+            "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball_White.png"),
+            "True", get_cached_image("images/StormDoggy/Storm_Doggy_Boob_Pierce_Ball.png"),
             )
 
     contains:
             #when uptop
         ConditionSwitch(
             "not StormX.Uptop", Null(),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_White_Up_Up.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormDoggy/Storm_Doggy_Boob_White_Up_Up.png"),
 
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bra_Up.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bra_Up.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bikini_Up.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bikini_Up.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Tube_Up.png"),
-            "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Tube_Up.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bra_Up.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bra_Up.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bikini_Up.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Bikini_Up.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Tube_Up.png"),
+            "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormDoggy/Storm_Doggy_Boob_Tube_Up.png"),
 
             "True", Null(),
             )
@@ -1874,7 +1874,7 @@ image Storm_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Fucking.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -1913,7 +1913,7 @@ image Storm_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1929,15 +1929,15 @@ image Storm_Pussy_Static:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "StormX.Pierce == 'barbell'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-            "StormX.Pierce == 'ring'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1951,7 +1951,7 @@ image Storm_Pussy_Static:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Storm_Doggy_Static", "Storm_Pussy_Mask_Static")
+        get_cached_alphamask("Zero_Storm_Doggy_Static", "Storm_Pussy_Mask_Static")
 
 image Zero_Storm_Doggy_Static:
     # Sex Speed 0 motions
@@ -2004,7 +2004,7 @@ image Storm_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -2019,8 +2019,8 @@ image Storm_Pussy_Heading:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "StormX.Pierce == 'barbell'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-            "StormX.Pierce == 'ring'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -2028,7 +2028,7 @@ image Storm_Pussy_Heading:
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -2043,11 +2043,11 @@ image Storm_Pussy_Heading:
         offset (2,0)
     contains:
         #Cock
-        AlphaMask("Zero_Storm_Doggy_Heading", "Storm_Pussy_Mask")
+        get_cached_alphamask("Zero_Storm_Doggy_Heading", "Storm_Pussy_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -2123,7 +2123,7 @@ image Storm_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -2138,15 +2138,15 @@ image Storm_Pussy_Fingering:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "StormX.Pierce == 'barbell'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-            "StormX.Pierce == 'ring'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -2161,7 +2161,7 @@ image Storm_Pussy_Fingering:
         offset (2,0)
     contains:
         #Cock
-        AlphaMask("Zero_Pussy_Finger", "Storm_Pussy_Mask_Finger")
+        get_cached_alphamask("Zero_Pussy_Finger", "Storm_Pussy_Mask_Finger")
         xoffset 3
         alpha .6
 
@@ -2191,7 +2191,7 @@ image Storm_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Fucking.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -2202,15 +2202,15 @@ image Storm_Pussy_Fucking2:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "StormX.Pierce == 'barbell'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-            "StormX.Pierce == 'ring'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
             "True", Null(),
             )
         offset (0,0)
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -2218,13 +2218,13 @@ image Storm_Pussy_Fucking2:
         #Cock
         offset (2,0)
         ConditionSwitch(
-            "'dildo pussy' in (Trigger,Trigger2,StormX.Offhand)", AlphaMask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
-            "True",AlphaMask("Zero_Storm_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "'dildo pussy' in (Trigger,Trigger2,StormX.Offhand)", get_cached_alphamask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "True",get_cached_alphamask("Zero_Storm_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
             ),
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -2250,33 +2250,33 @@ image Storm_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "StormX.Pubes", Recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Fucking.png"),
+            "StormX.Pubes", get_cached_recolor("Storm", "Pubes", "images/StormDoggy/Storm_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "StormX.Pierce == 'barbell'", "images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png",
-            "StormX.Pierce == 'ring'", "images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Barbell_Pussy.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormDoggy/Storm_Doggy_Pierce_Ring_Pussy.png"),
             "True", Null(),
             )
         offset (0,0)
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         offset (2,0)
     contains:
         #Cock
         offset (2,0)
-        AlphaMask("Zero_Storm_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("Zero_Storm_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
     contains:
         #spunk
         ConditionSwitch(
-            "'in' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         offset (2,0)
@@ -2319,7 +2319,7 @@ image Storm_Anal_Fingering:
         #spunk under cock
         subpixel True
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2332,12 +2332,12 @@ image Storm_Anal_Fingering:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Storm_Doggy_Anal_Finger", "Storm_Doggy_Anal_Fingering_Mask")
+        get_cached_alphamask("Zero_Storm_Doggy_Anal_Finger", "Storm_Doggy_Anal_Fingering_Mask")
     contains:
         #spunk over cock
         subpixel True
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2391,7 +2391,7 @@ image Storm_Anal_Heading:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2404,11 +2404,11 @@ image Storm_Anal_Heading:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Storm_Doggy_Anal_Heading", "Storm_Doggy_Anal_Heading_Mask")
+        get_cached_alphamask("Zero_Storm_Doggy_Anal_Heading", "Storm_Doggy_Anal_Heading_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2511,20 +2511,20 @@ image Storm_Anal_Fucking:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
             #full hose/tights
-            "'dildo anal' in (Trigger,Trigger2,StormX.Offhand)", AlphaMask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
-            "True", AlphaMask("Zero_Storm_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "'dildo anal' in (Trigger,Trigger2,StormX.Offhand)", get_cached_alphamask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "True", get_cached_alphamask("Zero_Storm_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
             )
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2586,16 +2586,16 @@ image Storm_Anal_Fucking2:
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Storm_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
+        get_cached_alphamask("Zero_Storm_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in StormX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2799,73 +2799,73 @@ image Storm_Sex_Body:
         #the torso/head used in the sex pose, referenced by Storm_SexSprite
         (1120,840),
         (245,-225), "Storm_HairBack_Sex",                                                                 #Hair underlayer
-        (0,0), "images/StormSex/Storm_Sex_Body.png",
+        (0,0), get_cached_image("images/StormSex/Storm_Sex_Body.png"),
         #Eyes
 #        (0,0), ConditionSwitch(                                                                                 #necklace
-#            "StormX.Neck == 'gold necklace'", "images/StormSex/Storm_Sex_Neck_Gold.png",
-#            "StormX.Neck == 'star necklace'", "images/StormSex/Storm_Sex_Neck_Star.png",
+#            "StormX.Neck == 'gold necklace'", get_cached_image("images/StormSex/Storm_Sex_Neck_Gold.png"),
+#            "StormX.Neck == 'star necklace'", get_cached_image("images/StormSex/Storm_Sex_Neck_Star.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #arm rings base
             "not StormX.Acc == 'rings' or StormX.Over == 'jacket'", Null(),
-            "True", "images/StormSex/Storm_Sex_Arms_Ring.png", #StormX.ArmPose == 2
+            "True", get_cached_image("images/StormSex/Storm_Sex_Arms_Ring.png"), #StormX.ArmPose == 2
             ),
         (0,0), ConditionSwitch(
             #bra layer
             "not StormX.Chest", Null(),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Tube.png"),
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bra.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bra.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Tube.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bra.png"),
             "not StormX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Cos.png"),
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_SportsBra.png"),
-                    "StormX.Chest == 'bikini top' and StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bikini_Combo.png"),
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bikini.png"),
-#                    "StormX.Chest == 'lace bra'", "images/StormSex/Storm_Sex_Chest_LaceBra.png",
+                    "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Cos.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_SportsBra.png"),
+                    "StormX.Chest == 'bikini top' and StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bikini_Combo.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bikini.png"),
+#                    "StormX.Chest == 'lace bra'", get_cached_image("images/StormSex/Storm_Sex_Chest_LaceBra.png"),
                     "True", Null(),
                     ),
 #            "StormX.Over", ConditionSwitch(
 #                    # If she's wearing a shirt over the bra
-#                    "StormX.Chest == 'cami'", "images/StormSex/Storm_Sex_Under_Cami_UpS.png",
-#                    "StormX.Chest == 'bikini top'", "images/StormSex/Storm_Sex_Under_Bikini_Up.png",
-#                    "StormX.Chest == 'sports bra' and StormX.Over == 'red shirt'", "images/StormSex/Storm_Sex_Under_SportsBra_UpS.png",
-#                    "StormX.Chest == 'sports bra'", "images/StormSex/Storm_Sex_Under_SportsBra_Up.png",
+#                    "StormX.Chest == 'cami'", get_cached_image("images/StormSex/Storm_Sex_Under_Cami_UpS.png"),
+#                    "StormX.Chest == 'bikini top'", get_cached_image("images/StormSex/Storm_Sex_Under_Bikini_Up.png"),
+#                    "StormX.Chest == 'sports bra' and StormX.Over == 'red shirt'", get_cached_image("images/StormSex/Storm_Sex_Under_SportsBra_UpS.png"),
+#                    "StormX.Chest == 'sports bra'", get_cached_image("images/StormSex/Storm_Sex_Under_SportsBra_Up.png"),
 #                    "True", Null(),
 #                    ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
-                    "StormX.Chest == 'cos bra'", "images/StormSex/Storm_Sex_Chest_Cos_Up.png",
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_SportsBra_Up.png"),
-#                    "StormX.Chest == 'black bra'", "images/StormSex/Storm_Sex_Chest_Bra_Up.png",
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bikini_Up.png"),
-#                    "StormX.Chest == 'lace bra'", "images/StormSex/Storm_Sex_Chest_LaceBra_Up.png",
+                    "StormX.Chest == 'cos bra'", get_cached_image("images/StormSex/Storm_Sex_Chest_Cos_Up.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_SportsBra_Up.png"),
+#                    "StormX.Chest == 'black bra'", get_cached_image("images/StormSex/Storm_Sex_Chest_Bra_Up.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Chest_Bikini_Up.png"),
+#                    "StormX.Chest == 'lace bra'", get_cached_image("images/StormSex/Storm_Sex_Chest_LaceBra_Up.png"),
                     "True", Null(),
                     ),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "StormX.Water", "images/StormSex/Storm_Sex_Wet_Body.png",
+            "StormX.Water", get_cached_image("images/StormSex/Storm_Sex_Wet_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
-            "StormX.Over == 'white shirt' and StormX.Uptop", Recolor("Storm", "Over", "images/StormSex/Storm_Sex_Chest_Shirt_Up.png"),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_Sex_Chest_Shirt.png"),
-            "StormX.Over == 'jacket'", Recolor("Storm", "Over", "images/StormSex/Storm_Sex_Chest_Jacket.png"),
+            "StormX.Over == 'white shirt' and StormX.Uptop", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_Sex_Chest_Shirt_Up.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_Sex_Chest_Shirt.png"),
+            "StormX.Over == 'jacket'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_Sex_Chest_Jacket.png"),
             "True", Null(),
 #            "not StormX.Uptop", ConditionSwitch(
 #                    #if the top's down. . .
-#                    "StormX.Over == 'white shirt'", "images/StormSex/Storm_Sex_Over_RedShirt.png",
-##                    "StormX.Over == 'towel'", "images/StormSex/Storm_Sex_Over_Towel.png",
+#                    "StormX.Over == 'white shirt'", get_cached_image("images/StormSex/Storm_Sex_Over_RedShirt.png"),
+##                    "StormX.Over == 'towel'", get_cached_image("images/StormSex/Storm_Sex_Over_Towel.png"),
 #                    "True", Null(),
 #                    ),
 #            "True", ConditionSwitch(
 #                    # if she's not wearing a shirt
-##                    "StormX.Over == 'pink top' and StormX.Chest == 'sports bra'", "images/StormSex/Storm_Sex_Over_PinkShirt_UpS.png",
-#                    "StormX.Over == 'jacket'", "images/StormSex/Storm_Sex_Over_PinkShirt_Up.png",
-##                    "StormX.Over == 'towel'", "images/StormSex/Storm_Sex_Over_Towel.png",
+##                    "StormX.Over == 'pink top' and StormX.Chest == 'sports bra'", get_cached_image("images/StormSex/Storm_Sex_Over_PinkShirt_UpS.png"),
+#                    "StormX.Over == 'jacket'", get_cached_image("images/StormSex/Storm_Sex_Over_PinkShirt_Up.png"),
+##                    "StormX.Over == 'towel'", get_cached_image("images/StormSex/Storm_Sex_Over_Towel.png"),
 #                    "True", Null(),
 #                    ),
             ),
@@ -2873,26 +2873,26 @@ image Storm_Sex_Body:
 #            #bra layer over the shirt
 #            "not StormX.Chest or not StormX.Over or not StormX.Uptop", Null(),
 #            # if she's not wearing a shirt
-#            "StormX.Chest == 'bra'", "images/StormSex/Storm_Sex_Under_Bra_Up.png",
-#            "StormX.Chest == 'lace bra'", "images/StormSex/Storm_Sex_Under_LaceBra_UpS.png",
+#            "StormX.Chest == 'bra'", get_cached_image("images/StormSex/Storm_Sex_Under_Bra_Up.png"),
+#            "StormX.Chest == 'lace bra'", get_cached_image("images/StormSex/Storm_Sex_Under_LaceBra_UpS.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #neck
-            "StormX.Neck == 'rings'", "images/StormSex/Storm_Sex_Neck_Ring.png",
+            "StormX.Neck == 'rings'", get_cached_image("images/StormSex/Storm_Sex_Neck_Ring.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in StormX.Spunk and Player.Male", "images/StormSex/Storm_Sex_Spunk_Belly.png",
+            "'belly' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in StormX.Spunk and Player.Male", "images/StormSex/Storm_Sex_Spunk_Tits_Back.png",
+            "'tits' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Tits_Back.png"),
             "True", Null(),
             ),
-#        (0,0), "images/StormSex/Storm_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_Sex_HeadRef.png"),
         (220,-162), "Storm_Head_Sex",  #(260,-350) (205,-180)
         )
     zoom 0.9
@@ -2921,19 +2921,19 @@ image Storm_Sex_Tits:
         #the torso/head used in the sex pose, referenced by Storm_SexSprite
         (1120,960),                                                                                     #Hair underlayer
 
-#        (0,0), "images/StormSex/Storm_Sex_Tits.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_Sex_Tits.png"),
 
         (0,0), ConditionSwitch(
             #Tits
-            "StormX.Chest == 'cos bra' and StormX.Uptop", "images/StormSex/Storm_Sex_Tits_Cos.png",
-            "StormX.Chest == 'cos bra'", "images/StormSex/Storm_Sex_Tits_Cos_Under.png",
-            "True", "images/StormSex/Storm_Sex_Tits.png",
+            "StormX.Chest == 'cos bra' and StormX.Uptop", get_cached_image("images/StormSex/Storm_Sex_Tits_Cos.png"),
+            "StormX.Chest == 'cos bra'", get_cached_image("images/StormSex/Storm_Sex_Tits_Cos_Under.png"),
+            "True", get_cached_image("images/StormSex/Storm_Sex_Tits.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Piercings
-            "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Tits_Barbell.png",
-            "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Tits_Ring.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Tits_Barbell.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Tits_Ring.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -2941,42 +2941,42 @@ image Storm_Sex_Tits:
             "not StormX.Chest", Null(),
             "not StormX.Uptop", ConditionSwitch(
                     #if the top's down. . .
-                    "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Cos_Over.png"),
-                    "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Tube.png"),
-                    "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Bra.png"),
-                    "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_LaceBra.png"),
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_SportsBra.png"),
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Bikini.png"),
+                    "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Cos_Over.png"),
+                    "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Tube.png"),
+                    "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Bra.png"),
+                    "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_LaceBra.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_SportsBra.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Bikini.png"),
                     "True", Null(),
                     ),
 #            "StormX.Over", ConditionSwitch(
 #                    # If she's wearing a shirt over the bra
-#                    "StormX.Chest == 'cami'", "images/StormSex/Storm_Sex_Under_Cami_UpS.png",
-#                    "StormX.Chest == 'bikini top'", "images/StormSex/Storm_Sex_Under_Bikini_Up.png",
-#                    "StormX.Chest == 'sports bra' and StormX.Over == 'red shirt'", "images/StormSex/Storm_Sex_Under_SportsBra_UpS.png",
-#                    "StormX.Chest == 'sports bra'", "images/StormSex/Storm_Sex_Under_SportsBra_Up.png",
+#                    "StormX.Chest == 'cami'", get_cached_image("images/StormSex/Storm_Sex_Under_Cami_UpS.png"),
+#                    "StormX.Chest == 'bikini top'", get_cached_image("images/StormSex/Storm_Sex_Under_Bikini_Up.png"),
+#                    "StormX.Chest == 'sports bra' and StormX.Over == 'red shirt'", get_cached_image("images/StormSex/Storm_Sex_Under_SportsBra_UpS.png"),
+#                    "StormX.Chest == 'sports bra'", get_cached_image("images/StormSex/Storm_Sex_Under_SportsBra_Up.png"),
 #                    "True", Null(),
 #                    ),
             "True", ConditionSwitch(
                     # if she's not wearing a shirt
-                    "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Tube_Down.png"),
-#                    "StormX.Chest == 'black bra'", "images/StormSex/Storm_Sex_Tits_Bra_Up.png",
-#                    "StormX.Chest == 'lace bra'", "images/StormSex/Storm_Sex_Tits_LaceBra_Up.png",
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_SportsBra_Up.png"),
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Bikini_Up.png"),
+                    "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Tube_Down.png"),
+#                    "StormX.Chest == 'black bra'", get_cached_image("images/StormSex/Storm_Sex_Tits_Bra_Up.png"),
+#                    "StormX.Chest == 'lace bra'", get_cached_image("images/StormSex/Storm_Sex_Tits_LaceBra_Up.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_SportsBra_Up.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_Sex_Tits_Bikini_Up.png"),
                     "True", Null(),
                     ),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "StormX.Water", "images/StormSex/Storm_Sex_Wet_Tits.png",
+            "StormX.Water", get_cached_image("images/StormSex/Storm_Sex_Wet_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt
             "not StormX.Over", Null(),
-            "StormX.Over == 'white shirt' and StormX.Uptop", Recolor("Storm", "Over", "images/StormSex/Storm_Sex_Tits_Shirt_Up.png"),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_Sex_Tits_Shirt.png"),
+            "StormX.Over == 'white shirt' and StormX.Uptop", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_Sex_Tits_Shirt_Up.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_Sex_Tits_Shirt.png"),
             "True", Null(),
             ),
 
@@ -2985,17 +2985,17 @@ image Storm_Sex_Tits:
 #            "not StormX.Over", Null(),
 #            "not StormX.Uptop", ConditionSwitch(
 #                    #if the top's down. . .
-#                    "StormX.Over == 'pink top'", "images/StormSex/Storm_Sex_Over_PinkShirt.png",
-#                    "StormX.Over == 'red shirt'", "images/StormSex/Storm_Sex_Over_RedShirt.png",
-#                    "StormX.Over == 'towel'", "images/StormSex/Storm_Sex_Over_Towel.png",
+#                    "StormX.Over == 'pink top'", get_cached_image("images/StormSex/Storm_Sex_Over_PinkShirt.png"),
+#                    "StormX.Over == 'red shirt'", get_cached_image("images/StormSex/Storm_Sex_Over_RedShirt.png"),
+#                    "StormX.Over == 'towel'", get_cached_image("images/StormSex/Storm_Sex_Over_Towel.png"),
 #                    "True", Null(),
 #                    ),
 #            "True", ConditionSwitch(
 #                    # if she's not wearing a shirt
-#                    "StormX.Over == 'pink top' and StormX.Chest == 'sports bra'", "images/StormSex/Storm_Sex_Over_PinkShirt_UpS.png",
-#                    "StormX.Over == 'pink top'", "images/StormSex/Storm_Sex_Over_PinkShirt_Up.png",
-#                    "StormX.Over == 'red shirt'", "images/StormSex/Storm_Sex_Over_RedShirt_Up.png",
-##                    "StormX.Over == 'towel'", "images/StormSex/Storm_Sex_Over_Towel.png",
+#                    "StormX.Over == 'pink top' and StormX.Chest == 'sports bra'", get_cached_image("images/StormSex/Storm_Sex_Over_PinkShirt_UpS.png"),
+#                    "StormX.Over == 'pink top'", get_cached_image("images/StormSex/Storm_Sex_Over_PinkShirt_Up.png"),
+#                    "StormX.Over == 'red shirt'", get_cached_image("images/StormSex/Storm_Sex_Over_RedShirt_Up.png"),
+##                    "StormX.Over == 'towel'", get_cached_image("images/StormSex/Storm_Sex_Over_Towel.png"),
 #                    "True", Null(),
 #                    ),
 #            ),
@@ -3003,20 +3003,20 @@ image Storm_Sex_Tits:
 #            #bra layer over the shirt
 #            "not StormX.Chest or not StormX.Over or not StormX.Uptop", Null(),
 #            # if she's not wearing a shirt
-#            "StormX.Chest == 'bra'", "images/StormSex/Storm_Sex_Under_Bra_Up.png",
-#            "StormX.Chest == 'lace bra'", "images/StormSex/Storm_Sex_Under_LaceBra_UpS.png",
+#            "StormX.Chest == 'bra'", get_cached_image("images/StormSex/Storm_Sex_Under_Bra_Up.png"),
+#            "StormX.Chest == 'lace bra'", get_cached_image("images/StormSex/Storm_Sex_Under_LaceBra_UpS.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Piercings
             "(not StormX.Chest and not StormX.Over) or StormX.Uptop", Null(),
-            "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Tits_BarbellC.png",
-            "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Tits_RingC.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Tits_BarbellC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Tits_RingC.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in StormX.Spunk and Player.Male", "images/StormSex/Storm_Sex_Spunk_Tits.png",
+            "'tits' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3053,15 +3053,15 @@ image Storm_Sex_Legs:
         (1120,960),
 #        (0,0), ConditionSwitch(
 #Legs Layer
-#            "StormX.Legs == 'blue skirt'", "images/StormSex/Storm_Sex_Skirt_Back.png",
+#            "StormX.Legs == 'blue skirt'", get_cached_image("images/StormSex/Storm_Sex_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/StormSex/Storm_Sex_Legs.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_Sex_Legs.png"),
 #Legs Base
 
         (0,0), ConditionSwitch(
             #Skirt back
-            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_Back.png"),
+            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3071,21 +3071,21 @@ image Storm_Sex_Legs:
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'anal' in StormX.Spunk and Player.Male", "images/StormSex/Storm_Sex_Spunk_Anal_Closed.png",
+            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Anal_Closed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Base
-            "Player.Sprite and Player.Cock == 'anal' and ShowFeet", "images/StormSex/Storm_Sex_Legs_FJ_Anal.png",
-            "ShowFeet", "images/StormSex/Storm_Sex_Legs_FJ.png",
-            "Player.Sprite and Player.Cock == 'anal'", "images/StormSex/Storm_Sex_Legs_Anal.png",
-            "True", "images/StormSex/Storm_Sex_Legs.png",
+            "Player.Sprite and Player.Cock == 'anal' and ShowFeet", get_cached_image("images/StormSex/Storm_Sex_Legs_FJ_Anal.png"),
+            "ShowFeet", get_cached_image("images/StormSex/Storm_Sex_Legs_FJ.png"),
+            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/StormSex/Storm_Sex_Legs_Anal.png"),
+            "True", get_cached_image("images/StormSex/Storm_Sex_Legs.png"),
             ),
         (0,0), ConditionSwitch(
             #Wet look
             "not StormX.Water", Null(),
-            "ShowFeet", "images/StormSex/Storm_Sex_Wet_Legs_FJ.png",
-            "True", "images/StormSex/Storm_Sex_Wet_Legs.png",
+            "ShowFeet", get_cached_image("images/StormSex/Storm_Sex_Wet_Legs_FJ.png"),
+            "True", get_cached_image("images/StormSex/Storm_Sex_Wet_Legs.png"),
             ),
 
         (0,0), "Storm_Sex_Anus",
@@ -3098,44 +3098,44 @@ image Storm_Sex_Legs:
         (0,0), ConditionSwitch(
             #leg rings
             "not StormX.Acc == 'rings' or StormX.Legs == 'pants' or StormX.Legs == 'yoga pants'", Null(),
-            "ShowFeet", "images/StormSex/Storm_Sex_LegRings_FJ.png",
-            "True", "images/StormSex/Storm_Sex_LegRings.png", #StormX.ArmPose == 2
+            "ShowFeet", get_cached_image("images/StormSex/Storm_Sex_LegRings_FJ.png"),
+            "True", get_cached_image("images/StormSex/Storm_Sex_LegRings.png"), #StormX.ArmPose == 2
             ),
         (0,0), ConditionSwitch(
             #Panties if up
             "StormX.Legs and StormX.Legs != 'skirt' and not StormX.Upskirt", Null(),
             "StormX.PantiesDown",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Panties == 'cos panties' and ShowFeet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Down.png"),
-                    "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_Down.png"),
-                    "StormX.Panties == 'white panties' and ShowFeet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Down.png"),
-                    "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_Down.png"),
-                    "StormX.Panties and ShowFeet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Down.png"),
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_Down.png"),
+                    "StormX.Panties == 'cos panties' and ShowFeet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Down.png"),
+                    "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_Down.png"),
+                    "StormX.Panties == 'white panties' and ShowFeet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Down.png"),
+                    "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_Down.png"),
+                    "StormX.Panties and ShowFeet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Down.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_Down.png"),
                     "True", Null(),
                     ),
             "ShowFeet",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Panties == 'cos panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Wet.png"),
-                    "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ.png"),
-                    "StormX.Panties == 'white panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Wet.png"),
-                    "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ.png"),
-                    "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Lace_FJ.png"),
-                    "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ_Top.png"),
-                    "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ.png"),
-                    "StormX.Panties and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Wet.png"),
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ.png"),
+                    "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Wet.png"),
+                    "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ.png"),
+                    "StormX.Panties == 'white panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Wet.png"),
+                    "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ.png"),
+                    "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Lace_FJ.png"),
+                    "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ_Top.png"),
+                    "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ.png"),
+                    "StormX.Panties and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Wet.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ.png"),
                     "True", Null(),
                     ),
-            "StormX.Panties == 'cos panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_Wet.png"),
-            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos.png"),
-            "StormX.Panties == 'white panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_Wet.png"),
-            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White.png"),
-            "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Lace.png"),
-            "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_Top.png"),
-            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini.png"),
-            "StormX.Panties and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_Wet.png"),
-            "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black.png"),
+            "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_Wet.png"),
+            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos.png"),
+            "StormX.Panties == 'white panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_Wet.png"),
+            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White.png"),
+            "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Lace.png"),
+            "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_Top.png"),
+            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini.png"),
+            "StormX.Panties and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_Wet.png"),
+            "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3146,8 +3146,8 @@ image Storm_Sex_Legs:
             "not StormX.Panties and StormX.Hose != 'pantyhose'", Null(),
             "((StormX.Panties or StormX.Hose == 'pantyhose') and StormX.PantiesDown)", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png",
-            "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png"),
             "True", Null(),
             ),
 
@@ -3155,14 +3155,14 @@ image Storm_Sex_Legs:
             #hose layer
             "ShowFeet",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_StockingsGarter_FJ.png"),
-                    "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Garter_FJ.png"),
-                    "StormX.Hose == 'stockings'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Stockings_FJ.png"),
+                    "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_StockingsGarter_FJ.png"),
+                    "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Garter_FJ.png"),
+                    "StormX.Hose == 'stockings'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Stockings_FJ.png"),
                     "True", Null(),
                     ),
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_StockingsGarter.png"),
-            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Garter.png"),
-            "StormX.Hose == 'stockings'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Stockings.png"),
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_StockingsGarter.png"),
+            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Garter.png"),
+            "StormX.Hose == 'stockings'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3170,40 +3170,40 @@ image Storm_Sex_Legs:
             "StormX.Panties and StormX.PantiesDown", Null(),
             "ShowFeet",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
-                    "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJHoled.png"),
+                    "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
+                    "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJHoled.png"),
                     "True", Null(),
                     ),
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose.png"),
-            "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose.png"),
+            "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Legs Layer
-            "StormX.Legs == 'skirt' and ShowFeet", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_FJ.png"),
+            "StormX.Legs == 'skirt' and ShowFeet", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_FJ.png"),
             "StormX.Upskirt",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_Up.png"),
-                    "StormX.Legs == 'pants' and ShowFeet", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Down.png"),
-                    "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_Down.png"),
-                    "StormX.Legs == 'yoga pants' and ShowFeet", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Down.png"),
-                    "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_Down.png"),
+                    "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_Up.png"),
+                    "StormX.Legs == 'pants' and ShowFeet", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Down.png"),
+                    "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_Down.png"),
+                    "StormX.Legs == 'yoga pants' and ShowFeet", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Down.png"),
+                    "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_Down.png"),
                     "True", Null(),
                     ),
             "ShowFeet",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Legs == 'pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Wet.png"),
-                    "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ.png"),
-                    "StormX.Legs == 'yoga pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Wet.png"),
-                    "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ.png"),
+                    "StormX.Legs == 'pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Wet.png"),
+                    "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ.png"),
+                    "StormX.Legs == 'yoga pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Wet.png"),
+                    "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ.png"),
                     "True", Null(),
                     ),
-            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt.png"),
-            "StormX.Legs == 'pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_Wet.png"),
-            "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants.png"),
-            "StormX.Legs == 'yoga pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_Wet.png"),
-            "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants.png"),
+            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt.png"),
+            "StormX.Legs == 'pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_Wet.png"),
+            "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants.png"),
+            "StormX.Legs == 'yoga pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_Wet.png"),
+            "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -3214,8 +3214,8 @@ image Storm_Sex_Legs:
             "not StormX.Legs", Null(),
             "StormX.Legs and StormX.Legs != 'skirt' and StormX.Upskirt", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png",
-            "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -3241,8 +3241,8 @@ image Storm_Sex_Legs:
             ),
         (0,0), ConditionSwitch(
             #Footjob overlay
-            "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
-#            "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
+            "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
+#            "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(                                                                                 #footjob cock Layer
@@ -3264,7 +3264,7 @@ image Storm_Sex_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Storm_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_FeetMask.png"),
 #            "True", "Storm_Sex_Feet",
 #            ),
         )
@@ -3281,31 +3281,31 @@ image Storm_Sex_Feet:
     LiveComposite(
         #the lower legs used in the sex pose, referenced by Storm_Sex_Legs
         (1120,960),
-        (0,0), "images/StormSex/Storm_Sex_Legs_FJ.png",                                                         #Legs Base
+        (0,0), get_cached_image("images/StormSex/Storm_Sex_Legs_FJ.png"),                                                         #Legs Base
 #        (0,0), ConditionSwitch(                                                                                 #Wet look
-#            "StormX.Water", "images/StormSex/Storm_Sex_Water_Feet.png",
+#            "StormX.Water", get_cached_image("images/StormSex/Storm_Sex_Water_Feet.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "StormX.Hose == 'ripped pantyhose' and (not StormX.Panties or not StormX.PantiesDown)", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJHoled.png"),
-            "StormX.Hose and StormX.Hose != 'garterbelt' and StormX.Hose != 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
+            "StormX.Hose == 'ripped pantyhose' and (not StormX.Panties or not StormX.PantiesDown)", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJHoled.png"),
+            "StormX.Hose and StormX.Hose != 'garterbelt' and StormX.Hose != 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
             "StormX.Panties and StormX.PantiesDown", Null(),
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(                                                                                 #Legs Layer
 #            "StormX.Upskirt", Null(),
-#            "StormX.Legs == 'capris'", "images/StormSex/Storm_Sex_Feet_Blue.png",
-#            "StormX.Legs == 'black jeans'", "images/StormSex/Storm_Sex_Feet_Black.png",
-#            "StormX.Legs == 'yoga pants'", "images/StormSex/Storm_Sex_Feet_Yoga.png",
+#            "StormX.Legs == 'capris'", get_cached_image("images/StormSex/Storm_Sex_Feet_Blue.png"),
+#            "StormX.Legs == 'black jeans'", get_cached_image("images/StormSex/Storm_Sex_Feet_Black.png"),
+#            "StormX.Legs == 'yoga pants'", get_cached_image("images/StormSex/Storm_Sex_Feet_Yoga.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in StormX.Spunk", "images/StormSex/Storm_Sex_Spunk_Feet.png",
+            "'feet' in StormX.Spunk", get_cached_image("images/StormSex/Storm_Sex_Spunk_Feet.png"),
             "True", Null(),
             ),
         )
@@ -3317,72 +3317,72 @@ image Storm_Sex_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/StormSex/Storm_Sex_Pussy_Fucking.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_Pussy_Fucking.png"),
                 "Player.Sprite and Player.Cock == 'in' and Speed", "Storm_Sex_Heading_Pussy",
-                "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'out')", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "True", "images/StormSex/Storm_Sex_Pussy_Closed.png",
+                "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "True", get_cached_image("images/StormSex/Storm_Sex_Pussy_Closed.png"),
                 )
 #    contains:
 #            # The background plate of her pussy
 #            ConditionSwitch(
 #                "not StormX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/StormSex/Storm_Sex_WetPussy_F.png",
-#                "True", "images/StormSex/Storm_Sex_WetPussy_C.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_WetPussy_F.png"),
+#                "True", get_cached_image("images/StormSex/Storm_Sex_WetPussy_C.png"),
 #                )
     contains:
             # pubes
             ConditionSwitch(
                 "not StormX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed and ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking_FJ.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
-                "Player.Sprite and Player.Cock == 'in'", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy' and ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
-                "Trigger == 'lick pussy'", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-                "ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed_FJ.png"),
-                "True", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed and ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking_FJ.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
+                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy' and ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
+                "Trigger == 'lick pussy'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+                "ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed_FJ.png"),
+                "True", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed.png"),
                 )
     contains:
             ConditionSwitch(
                 #Outside Spunk
-                "'in' in StormX.Spunk and Player.Male", "images/StormSex/Storm_Sex_Spunk_Pussy.png",
+                "'in' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in StormX.Spunk", "images/StormSex/Storm_Sex_Spunk_Puss_Under.png",
+#                "'in' in StormX.Spunk", get_cached_image("images/StormSex/Storm_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "StormX.Panties and StormX.PantiesDown", Null(),
-#                "StormX.Hose == 'ripped pantyhose' and ShowFeet", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
-#                "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
+#                "StormX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
+#                "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
     contains:
             # The animation of Zero's moving penis, masked by her pussy shape
             ConditionSwitch(
 #                "not Player.Sprite", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Storm_Sex_Fucking_Zero_Anim3", "Storm_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask"),
-                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Storm_Sex_Fucking_Zero_Anim1", "Storm_Sex_Heading_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim3", "Storm_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask"),
+                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim1", "Storm_Sex_Heading_Mask"),
                 "Player.Sprite and Player.Cock == 'in'", "Storm_Sex_Fucking_Zero_Anim0",
                 "True", Null(),
                 )
     contains:
             #Piercings
             ConditionSwitch(
-                "StormX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellF.png",
-                "StormX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_Pierce_Pussy_RingF.png",
-                "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_Barbell.png",
-                "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_Ring.png",
+                "StormX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellF.png"),
+                "StormX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingF.png"),
+                "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_Barbell.png"),
+                "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_Ring.png"),
                 "True", Null(),
                 )
     contains:
@@ -3395,7 +3395,7 @@ image Storm_Sex_Pussy:
             #Spunk over penis
             ConditionSwitch(
                 "Speed == 1", Null(),
-                "'in' in StormX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/StormSex/Storm_Sex_Spunk_Pussy_Over.png",
+                "'in' in StormX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
 
@@ -3520,7 +3520,7 @@ image Storm_Sex_Static:
             ConditionSwitch(
                 #Footjob overlay
 #                "ShowFeet", "Storm_Sex_Feet",
-                "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
+                "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
                 "True", Null(),
                 )
             pos (0,-140) #X less is left, Y less is up
@@ -3692,7 +3692,7 @@ image Storm_Pussy_Spunk_Heading:
         #This is the image for Storm's heading pussy cum
         contains:
             ConditionSwitch(
-                "'in' in StormX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", "images/StormSex/Storm_Sex_Spunk_Pussy_Over.png",
+                "'in' in StormX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed == 1 and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Pussy_Over.png"),
                 "True", Null(),
                 )
             anchor (0.5,0)
@@ -3754,7 +3754,7 @@ image Storm_Sex_Fucking_Speed2:
                 repeat
 #    contains:
 #            #Zero's cock in the sex pose
-#            AlphaMask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask")
+#            get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask")
 # End main animation for Sex Pose Fucking Speed 2
 
 
@@ -3845,36 +3845,36 @@ image Storm_Sex_Anus:
 #    contains:
 #            #Anus background plate
 #            ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/StormSex/Storm_Sex_Hole_Open.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/StormSex/Storm_Sex_Hole_Open.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/StormSex/Storm_Sex_Hole_Open.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_Hole_Open.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Storm_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Storm_Sex_Anal_Tip",
-#            "StormX.Loose", "images/StormSex/Storm_Sex_Hole_Loose.png",
-#            "True", "images/StormSex/Storm_Sex_Hole_Tight.png",
+#            "StormX.Loose", get_cached_image("images/StormSex/Storm_Sex_Hole_Loose.png"),
+#            "True", get_cached_image("images/StormSex/Storm_Sex_Hole_Tight.png"),
 #            )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
 #                "'anal' not in StormX.Spunk", Null(),
-#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/StormSex/Storm_Sex_Spunk_Anal_Under.png",
+#                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/StormSex/Storm_Sex_Spunk_Anal_Under.png"),
 #                "Player.Sprite and Player.Cock != 'anal' and Speed == 1", "Storm_Sex_Anal_Spunk_Heading_Under",
-#                "True", "images/StormSex/Storm_Sex_Spunk_Anal_Closed.png",
+#                "True", get_cached_image("images/StormSex/Storm_Sex_Spunk_Anal_Closed.png"),
 #                )
     contains:
             # The animation of Zero's moving penis, masked by her anus shape
             ConditionSwitch(
                 "not Player.Sprite or Player.Cock != 'anal'", Null(),
-                "Speed >= 3",  AlphaMask("Storm_Sex_Anal_Zero_Anim3", "Storm_Sex_Anal_Mask"),
-                "Speed >= 2", AlphaMask("Storm_Sex_Anal_Zero_Anim2", "Storm_Sex_Anal_Mask"),
-                "Speed", AlphaMask("Storm_Sex_Anal_Zero_Anim1", "Storm_Sex_Anal_Mask"),
-                "True", AlphaMask("Storm_Sex_Anal_Zero_Anim0", "Storm_Sex_Anal_Mask"),
+                "Speed >= 3",  get_cached_alphamask("Storm_Sex_Anal_Zero_Anim3", "Storm_Sex_Anal_Mask"),
+                "Speed >= 2", get_cached_alphamask("Storm_Sex_Anal_Zero_Anim2", "Storm_Sex_Anal_Mask"),
+                "Speed", get_cached_alphamask("Storm_Sex_Anal_Zero_Anim1", "Storm_Sex_Anal_Mask"),
+                "True", get_cached_alphamask("Storm_Sex_Anal_Zero_Anim0", "Storm_Sex_Anal_Mask"),
                 )
     contains:
             #Spunk over penis
             ConditionSwitch(
                 "'anal' not in StormX.Spunk or not Player.Sprite or Player.Cock != 'anal' or not Speed or not Player.Male", Null(),
                 "Speed == 1", "Storm_Sex_Anal_Spunk_Heading_Over",
-                "True", "images/StormSex/Storm_Sex_Spunk_Anal_Over.png",
+                "True", get_cached_image("images/StormSex/Storm_Sex_Spunk_Anal_Over.png"),
                 )
 
 image Storm_Sex_Anal_Spunk_Heading_Over:
@@ -4102,7 +4102,7 @@ image Storm_Sex_Anal_Speed2:
                 repeat
 #    contains:
 #            #Zero's cock in the sex pose
-#            AlphaMask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask")
+#            get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask")
 # End main animation for Sex Pose Fucking Speed 2
 
 
@@ -4245,7 +4245,7 @@ image Storm_Sex_Hotdog_Speed1:
             subpixel True
             ConditionSwitch(
                 #Footjob overlay
-                "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
+                "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
                 "True", Null(),
                 )
             pos (0,-160) #X less is left, Y less is up
@@ -4316,7 +4316,7 @@ image Storm_Sex_Hotdog_Speed2:
             subpixel True
             ConditionSwitch(
                 #Footjob overlay
-                "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
+                "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
                 "True", Null(),
                 )
             pos (0,-160) #X less is left, Y less is up
@@ -4383,7 +4383,7 @@ image Storm_Sex_FJ_Speed0:
             subpixel True
             ConditionSwitch(
                 #Footjob overlay
-                "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
+                "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
                 "True", Null(),
                 )
             pos (0,-200) #X less is left, Y less is up
@@ -4454,7 +4454,7 @@ image Storm_Sex_FJ_Speed1:
             subpixel True
             ConditionSwitch(
                 #Footjob overlay
-                "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
+                "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
                 "True", Null(),
                 )
             pos (0,-200) #X less is left, Y less is up
@@ -4524,7 +4524,7 @@ image Storm_Sex_FJ_Speed2:
             subpixel True
             ConditionSwitch(
                 #Footjob overlay
-                "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
+                "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
                 "True", Null(),
                 )
             pos (0,-200) #X less is left, Y less is up
@@ -4643,9 +4643,9 @@ image Storm_BJ_HairBack:
         #Hair underlay
         ConditionSwitch(
                 "StormX.Hair == 'mohawk' or StormX.Hair == 'wethawk' or StormX.Hair == 'short'", Null(), #"images/StormBJFace/Storm_BJ_Hair_Mohawk_Under.png",
-                "(StormX.Hair == 'long' and StormX.Water) or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Under.png"),
-                "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Under.png"),
-                "True", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Under.png"),
+                "(StormX.Hair == 'long' and StormX.Water) or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Under.png"),
+                "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Under.png"),
+                "True", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Under.png"),
                 ),
         zoom 1.4
         anchor (0.5, 0.5)
@@ -4653,20 +4653,20 @@ image Storm_BJ_HairBack:
 image Storm_BJ_HairTop:
     contains:
         ConditionSwitch(
-                "StormX.Hair == 'short'", "images/StormBJFace/Storm_BJ_Hair_Short.png",
-                "(StormX.Hair == 'mohawk' and StormX.Water) or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
-                "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
-                "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
-                "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
-                "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Mohawk_Over.png"),
-                "True", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Over.png"),
+                "StormX.Hair == 'short'", get_cached_image("images/StormBJFace/Storm_BJ_Hair_Short.png"),
+                "(StormX.Hair == 'mohawk' and StormX.Water) or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
+                "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
+                "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
+                "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
+                "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Mohawk_Over.png"),
+                "True", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Over.png"),
                 )
     contains:
         ConditionSwitch(
                 #cum on the hair
-                "'hair' in StormX.Spunk and (StormX.Water or StormX.Hair == 'wethawk' or StormX.Hair == 'wet') and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairW.png",
-                "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairM.png",
-                "'hair' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairL.png",
+                "'hair' in StormX.Spunk and (StormX.Water or StormX.Hair == 'wethawk' or StormX.Hair == 'wet') and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairW.png"),
+                "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairM.png"),
+                "'hair' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairL.png"),
                 "True", Null(),
                 )
     zoom 1.4
@@ -4677,7 +4677,7 @@ image Storm_BJ_Backdrop1: #delete if other works better. . .
     contains:
             #blanket
             ConditionSwitch(
-                "'blanket' in StormX.RecentActions", "images/KittyBJFace/Kitty_BJFace_Blanket.png",
+                "'blanket' in StormX.RecentActions", get_cached_image("images/KittyBJFace/Kitty_BJFace_Blanket.png"),
                 "True", Null(),
                 ),
             zoom 2
@@ -4699,50 +4699,50 @@ image Storm_BJ_Head:                                                            
 #            # hair underlayer in normal mode
 ##            "StormX.Water or StormX.Hair == 'wet'", Null(),
 #            "StormX.Hair == 'mohawk'", Null(), #"images/StormBJFace/Storm_BJ_Hair_Mohawk_Under.png",
-#            "True", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Under.png"),
+#            "True", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Under.png"),
 #            ),
         (0,0), ConditionSwitch(
             # Basic Face layer
 #            "Speed <= 2 or Speed == 5 or not renpy.showing('Storm_BJ_Animation')", ConditionSwitch(
 #                    # If the animation isn't sucking, or if not in BJ pose
-#                    "StormX.Blush", "images/StormBJFace/Storm_BJ_FaceClosed_Blush.png",
-#                    "True", "images/StormBJFace/Storm_BJ_FaceClosed.png",
+#                    "StormX.Blush", get_cached_image("images/StormBJFace/Storm_BJ_FaceClosed_Blush.png"),
+#                    "True", get_cached_image("images/StormBJFace/Storm_BJ_FaceClosed.png"),
 #                    ),
-            "StormX.Blush > 1", "images/StormBJFace/Storm_BJ_Head_Blush2.png",
-#            "StormX.Blush", "images/StormBJFace/Storm_BJ_Head_Blush1.png",
-            "True", "images/StormBJFace/Storm_BJ_Head_Blush0.png"
+            "StormX.Blush > 1", get_cached_image("images/StormBJFace/Storm_BJ_Head_Blush2.png"),
+#            "StormX.Blush", get_cached_image("images/StormBJFace/Storm_BJ_Head_Blush1.png"),
+            "True", get_cached_image("images/StormBJFace/Storm_BJ_Head_Blush0.png")
             ),
         (0,0), ConditionSwitch(
             #Mouth
 #            "(Speed == 2 or Speed == 5) and renpy.showing('Storm_BJ_Animation')", ConditionSwitch(
 #                    # If the Heading animation is active
-##                    "StormX.Blush", "images/StormBJFace/Storm_BJ_FaceClosed_Blush.png",
-##                    "True", "images/StormBJFace/Storm_BJ_FaceClosed.png"
+##                    "StormX.Blush", get_cached_image("images/StormBJFace/Storm_BJ_FaceClosed_Blush.png"),
+##                    "True", get_cached_image("images/StormBJFace/Storm_BJ_FaceClosed.png")
 #                    ),
 
 
-#            "True",Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #sucking
+#            "True",get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #sucking
             "Speed and renpy.showing('Storm_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),  #licking
+                    "Speed == 1", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #sucking
-                    "Speed == 4", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #deepthroat
-                    "Speed == 6", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #cumming
+                    "Speed == 3", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #sucking
+                    "Speed == 4", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #deepthroat
+                    "Speed == 6", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png"), #cumming
                     ),
-            "renpy.showing('Storm_CUN_Animation') and Speed", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
-            "Speed == 3 and renpy.showing('Storm_TJ_Animation')", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
-            "StormX.Mouth == 'normal'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
-            "StormX.Mouth == 'lipbite'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Lipbite.png"),
-            "StormX.Mouth == 'sucking'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
-            "StormX.Mouth == 'kiss'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Kiss.png"),
-            "StormX.Mouth == 'sad'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sad.png"),
-            "StormX.Mouth == 'smile'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
-            "StormX.Mouth == 'smirk'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smirk.png"),
-            "StormX.Mouth == 'grimace'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
-            "StormX.Mouth == 'surprised'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Kiss.png"),
-            "StormX.Mouth == 'tongue'", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
-            "True", Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
+            "renpy.showing('Storm_CUN_Animation') and Speed", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
+            "Speed == 3 and renpy.showing('Storm_TJ_Animation')", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
+            "StormX.Mouth == 'normal'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
+            "StormX.Mouth == 'lipbite'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Lipbite.png"),
+            "StormX.Mouth == 'sucking'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
+            "StormX.Mouth == 'kiss'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Kiss.png"),
+            "StormX.Mouth == 'sad'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sad.png"),
+            "StormX.Mouth == 'smile'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
+            "StormX.Mouth == 'smirk'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smirk.png"),
+            "StormX.Mouth == 'grimace'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
+            "StormX.Mouth == 'surprised'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Kiss.png"),
+            "StormX.Mouth == 'tongue'", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Tongue.png"),
+            "True", get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Smile.png"),
             ),
         (428,555), ConditionSwitch(   #(428,605)
             # Heading Mouth
@@ -4758,72 +4758,72 @@ image Storm_BJ_Head:                                                            
             "'mouth' not in StormX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Storm_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/StormBJFace/Storm_BJ_Spunk_Tongue.png",  #licking
+                    "Speed == 1", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png", #sucking
-                    "Speed == 4", "images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png", #deepthroat
-                    "Speed == 6", "images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png", #cumming
+                    "Speed == 3", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png"), #sucking
+                    "Speed == 4", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png"), #deepthroat
+                    "Speed == 6", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png"), #cumming
                     ),
-            "StormX.Mouth == 'normal'", "images/StormBJFace/Storm_BJ_Spunk_Smile.png",
-#            "StormX.Mouth == 'lipbite'", "images/StormBJFace/Storm_BJ_Spunk_Kiss.png",
-#            "StormX.Mouth == 'kiss'", "images/StormBJFace/Storm_BJ_Spunk_Kiss.png",
-#            "StormX.Mouth == 'sad'", "images/StormBJFace/Storm_BJ_Spunk_Kiss.png",
-            "StormX.Mouth == 'smile'", "images/StormBJFace/Storm_BJ_Spunk_Smile.png",
-#            "StormX.Mouth == 'smirk'", "images/StormBJFace/Storm_BJ_Spunk_Kiss.png",
-#            "StormX.Mouth == 'surprised'", "images/StormBJFace/Storm_BJ_Spunk_Kiss.png",
-            "StormX.Mouth == 'tongue'", "images/StormBJFace/Storm_BJ_Spunk_Tongue.png",
-            "StormX.Mouth == 'sucking'", "images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png",
-            "True", "images/StormBJFace/Storm_BJ_Spunk_Kiss.png",
+            "StormX.Mouth == 'normal'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Smile.png"),
+#            "StormX.Mouth == 'lipbite'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Kiss.png"),
+#            "StormX.Mouth == 'kiss'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Kiss.png"),
+#            "StormX.Mouth == 'sad'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Kiss.png"),
+            "StormX.Mouth == 'smile'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Smile.png"),
+#            "StormX.Mouth == 'smirk'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Kiss.png"),
+#            "StormX.Mouth == 'surprised'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Kiss.png"),
+            "StormX.Mouth == 'tongue'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Tongue.png"),
+            "StormX.Mouth == 'sucking'", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png"),
+            "True", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Kiss.png"),
             ),
 
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in StormX.Spunk and 'chin' not in StormX.Spunk", Null(),
-            "'chin' not in StormX.Spunk and (StormX.Mouth == 'tongue' or Speed)", "images/StormBJFace/Storm_BJ_Wet_Tongue.png",
-            "StormX.Mouth == 'tongue' or Speed", "images/StormBJFace/Storm_BJ_Wet_Tongue2.png",
-            "'mouth' in StormX.Spunk or 'chin' in StormX.Spunk", "images/StormBJFace/Storm_BJ_Wet_Mouth.png",
+            "'chin' not in StormX.Spunk and (StormX.Mouth == 'tongue' or Speed)", get_cached_image("images/StormBJFace/Storm_BJ_Wet_Tongue.png"),
+            "StormX.Mouth == 'tongue' or Speed", get_cached_image("images/StormBJFace/Storm_BJ_Wet_Tongue2.png"),
+            "'mouth' in StormX.Spunk or 'chin' in StormX.Spunk", get_cached_image("images/StormBJFace/Storm_BJ_Wet_Mouth.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Brows
-            "StormX.Brows == 'angry'", "images/StormBJFace/Storm_BJ_Brows_Angry.png",
-            "StormX.Brows == 'sad'", "images/StormBJFace/Storm_BJ_Brows_Sad.png",
-            "StormX.Brows == 'surprised'", "images/StormBJFace/Storm_BJ_Brows_Surprised.png",
-            "StormX.Brows == 'confused'", "images/StormBJFace/Storm_BJ_Brows_Confused.png",
-            "True", "images/StormBJFace/Storm_BJ_Brows_Normal.png",
+            "StormX.Brows == 'angry'", get_cached_image("images/StormBJFace/Storm_BJ_Brows_Angry.png"),
+            "StormX.Brows == 'sad'", get_cached_image("images/StormBJFace/Storm_BJ_Brows_Sad.png"),
+            "StormX.Brows == 'surprised'", get_cached_image("images/StormBJFace/Storm_BJ_Brows_Surprised.png"),
+            "StormX.Brows == 'confused'", get_cached_image("images/StormBJFace/Storm_BJ_Brows_Confused.png"),
+            "True", get_cached_image("images/StormBJFace/Storm_BJ_Brows_Normal.png"),
             ),
         (0,0), "Storm BJ Blink",
             #Eyes
-        (0,0), "images/StormBJFace/Storm_BJ_Earring.png",
+        (0,0), get_cached_image("images/StormBJFace/Storm_BJ_Earring.png"),
         (0,0), ConditionSwitch(
             #Hair overlay
-            "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Short_Over.png"),
-            "(StormX.Hair == 'mohawk' and StormX.Water) or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
-            "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
-            "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
-            "not Player.Male and 'facial' in StormX.Spunk", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
-            "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Mohawk_Over.png"),
-            "True", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Over.png"),
+            "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Short_Over.png"),
+            "(StormX.Hair == 'mohawk' and StormX.Water) or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
+            "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
+            "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
+            "not Player.Male and 'facial' in StormX.Spunk", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
+            "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Mohawk_Over.png"),
+            "True", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Over.png"),
             ),
         (0,0), ConditionSwitch(
             # water overlay
             "not StormX.Water and not (not Player.Male and 'facial' in StormX.Spunk)", Null(),
-            "True", "images/StormBJFace/Storm_BJ_Wet.png",
+            "True", get_cached_image("images/StormBJFace/Storm_BJ_Wet.png"),
             ),
 #        (0,0), "Storm_Tester",
         (0,0), ConditionSwitch(
             #cum on the face
-            "'facial' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_Facial.png",
+            "'facial' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #cum on the hair
-            "'hair' in StormX.Spunk and (StormX.Water or StormX.Hair == 'wethawk' or StormX.Hair == 'wet') and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairW.png",
-            "'hair' in StormX.Spunk and StormX.Hair == 'short' and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairS.png",
-            "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairM.png",
-            "'hair' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairL.png",
+            "'hair' in StormX.Spunk and (StormX.Water or StormX.Hair == 'wethawk' or StormX.Hair == 'wet') and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairW.png"),
+            "'hair' in StormX.Spunk and StormX.Hair == 'short' and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairS.png"),
+            "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairM.png"),
+            "'hair' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairL.png"),
             "True", Null(),
             ),
         )
@@ -4836,16 +4836,16 @@ image Storm_Tester:
 image Storm BJ Blink:
         #eyeblinks
         ConditionSwitch(
-            "StormX.Eyes == 'normal'", "images/StormBJFace/Storm_BJ_Eyes_Normal.png",
-            "StormX.Eyes == 'sexy'", "images/StormBJFace/Storm_BJ_Eyes_Sexy.png",
-            "StormX.Eyes == 'closed'", "images/StormBJFace/Storm_BJ_Eyes_Closed.png",
-            "StormX.Eyes == 'surprised'", "images/StormBJFace/Storm_BJ_Eyes_Surprised.png",
-            "StormX.Eyes == 'side'", "images/StormBJFace/Storm_BJ_Eyes_Side.png",
-            "StormX.Eyes == 'stunned'", "images/StormBJFace/Storm_BJ_Eyes_Stunned.png",
-            "StormX.Eyes == 'down'", "images/StormBJFace/Storm_BJ_Eyes_Down.png",
-            "StormX.Eyes == 'manic'", "images/StormBJFace/Storm_BJ_Eyes_Surprised.png",
-            "StormX.Eyes == 'squint'", "images/StormBJFace/Storm_BJ_Eyes_Sexy.png",
-            "True", "images/StormBJFace/Storm_BJ_Eyes_Normal.png",
+            "StormX.Eyes == 'normal'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Normal.png"),
+            "StormX.Eyes == 'sexy'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Sexy.png"),
+            "StormX.Eyes == 'closed'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Closed.png"),
+            "StormX.Eyes == 'surprised'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Surprised.png"),
+            "StormX.Eyes == 'side'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Side.png"),
+            "StormX.Eyes == 'stunned'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Stunned.png"),
+            "StormX.Eyes == 'down'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Down.png"),
+            "StormX.Eyes == 'manic'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Surprised.png"),
+            "StormX.Eyes == 'squint'", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Sexy.png"),
+            "True", get_cached_image("images/StormBJFace/Storm_BJ_Eyes_Normal.png"),
             ),
         choice:
             3.5
@@ -4861,20 +4861,20 @@ image Storm_BJ_MouthHeading:
     #the mouth used for the heading animations
     transform_anchor True
     contains:
-#        Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png")
+#        get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png")
         "images/StormBJFace/Storm_BJ_Mouth_Heading.png"
         zoom 1.4
         anchor (0.50,0.6)  #(0.50,0.65)
     contains:
         ConditionSwitch(
-            "'mouth' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png",#At("Storm_BJ_MaskHeading", Storm_BJ_MouthAnim()),
+            "'mouth' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingUnder.png"),#At("Storm_BJ_MaskHeading", Storm_BJ_MouthAnim()),
             "True", Null(),
             ),
         zoom 1.4
         anchor (0.50,0.6)  #(0.50,0.65)
     contains:
         ConditionSwitch(
-            "'mouth' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_SuckingOver.png",#At("Storm_BJ_MaskHeading", Storm_BJ_MouthAnim()),
+            "'mouth' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingOver.png"),#At("Storm_BJ_MaskHeading", Storm_BJ_MouthAnim()),
             "True", Null(),
             ),
         zoom 1.4
@@ -4899,7 +4899,7 @@ image Storm_BJ_MouthHeading:
 image Storm_BJ_MouthCumHigh:
     #the mouth used for the heading animations
     contains:
-        Recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png")
+        get_cached_recolor("Storm", "Lips", "images/StormBJFace/Storm_BJ_Mouth_Sucking.png")
         zoom 1.4
         anchor (0.50,0.6)  #(0.50,0.65)
     subpixel True
@@ -4924,7 +4924,7 @@ image Storm_BJ_MouthSuckingMask:
 #        ConditionSwitch(
 #            "'mouth' not in StormX.Spunk", Null(),
 #            "Speed != 2 and Speed != 5", Null(),
-#            "True", "images/StormBJFace/Storm_BJ_Spunk_SuckingOver.png",
+#            "True", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_SuckingOver.png"),
 #            )
 #        zoom 1.4
 
@@ -5059,7 +5059,7 @@ image Storm_BJ_Backdrop:
         contains:
             #blanket
             ConditionSwitch(
-                "'blanket' in StormX.RecentActions", "images/KittyBJFace/Kitty_BJFace_Blanket.png",
+                "'blanket' in StormX.RecentActions", get_cached_image("images/KittyBJFace/Kitty_BJFace_Blanket.png"),
                 "True", Null(),
                 )
             zoom 1.2
@@ -5236,7 +5236,7 @@ image Storm_BJ_Anim2:
                 offset (650,370)
         contains:
                 # Masked overlay for heading animaton
-                AlphaMask("Storm_BJ_Head", "Storm_BJ_MaskHeadingComposite") #"Storm_BJ_MouthHeadingComposite")
+                get_cached_alphamask("Storm_BJ_Head", "Storm_BJ_MaskHeadingComposite") #"Storm_BJ_MouthHeadingComposite")
                 subpixel True
 #                alpha .9
                 offset (-250,-460)  #top (0,-40), -20 is crown, 0 is mid
@@ -5248,7 +5248,7 @@ image Storm_BJ_Anim2:
 #                # the over part of spunk
 #                ConditionSwitch(
 #                        # the over part of spunk
-#                        "'mouth' in StormX.Spunk", AlphaMask("Storm_BJ_Head", "StormHeadingSpunk"), #"StormHeadingSpunk",
+#                        "'mouth' in StormX.Spunk", get_cached_alphamask("Storm_BJ_Head", "StormHeadingSpunk"), #"StormHeadingSpunk",
 #                        "True", Null(),
 #                        )
 #                subpixel True
@@ -5301,7 +5301,7 @@ image Storm_BJ_Anim3:
                 offset (650,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Storm_BJ_Head", "Storm_BJ_MouthSuckingMask")
+                get_cached_alphamask("Storm_BJ_Head", "Storm_BJ_MouthSuckingMask")
                 subpixel True
                 offset (-250,-390)#(-250,-500) #is -600x,-650y from normal
                 block:
@@ -5369,7 +5369,7 @@ image Storm_BJ_Anim4:
                 offset (650,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Storm_BJ_Head", "Storm_BJ_MouthSuckingMask")
+                get_cached_alphamask("Storm_BJ_Head", "Storm_BJ_MouthSuckingMask")
                 subpixel True
                 offset (-250,-290)
                 block:
@@ -5443,7 +5443,7 @@ image Storm_BJ_Anim5:
                 offset (650,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Storm_BJ_Head", "Storm_BJ_MaskHeadingComposite")
+                get_cached_alphamask("Storm_BJ_Head", "Storm_BJ_MaskHeadingComposite")
                 subpixel True
                 offset (-250,-450)     #top
                 block:
@@ -5505,7 +5505,7 @@ image Storm_BJ_Anim6:
                 offset (650,370)
         contains:
                 # Masked overlay for sucking animaton
-                AlphaMask("Storm_BJ_Head", "Storm_BJ_MouthSuckingMask")
+                get_cached_alphamask("Storm_BJ_Head", "Storm_BJ_MouthSuckingMask")
                 subpixel True
                 offset (-250,-210)#230)
                 block:
@@ -5656,21 +5656,21 @@ image Storm_TJ_HairTop:
             #Hair overlay
             contains:
                 ConditionSwitch(
-                        "StormX.Hair == 'short'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Short_Over.png"),
-                        "(StormX.Hair == 'mohawk' and StormX.Water) or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
-                        "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
-                        "StormX.Water or StormX.Hair == 'wet'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
-                        "not Player.Male and 'facial' in StormX.Spunk",Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
-                        "StormX.Hair == 'mohawk'", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Mohawk_Over.png"),
-                        "True", Recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Over.png"),
+                        "StormX.Hair == 'short'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Short_Over.png"),
+                        "(StormX.Hair == 'mohawk' and StormX.Water) or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
+                        "StormX.Hair == 'mohawk' and not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetM_Over.png"),
+                        "StormX.Water or StormX.Hair == 'wet'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
+                        "not Player.Male and 'facial' in StormX.Spunk",get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_WetL_Over.png"),
+                        "StormX.Hair == 'mohawk'", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Mohawk_Over.png"),
+                        "True", get_cached_recolor("Storm", "Hair", "images/StormBJFace/Storm_BJ_Hair_Long_Over.png"),
                         )
                 offset (83,-80)
             contains:
                 ConditionSwitch(
                         #cum on the hair
-                        "'hair' in StormX.Spunk and (StormX.Water or StormX.Hair == 'wethawk' or StormX.Hair == 'wet') and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairW.png",
-                        "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairM.png",
-                        "'hair' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_BJ_Spunk_HairL.png",
+                        "'hair' in StormX.Spunk and (StormX.Water or StormX.Hair == 'wethawk' or StormX.Hair == 'wet') and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairW.png"),
+                        "'hair' in StormX.Spunk and StormX.Hair == 'mohawk' and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairM.png"),
+                        "'hair' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_BJ_Spunk_HairL.png"),
                         "True", Null(),
                         )
                 offset (83,-80)
@@ -5698,7 +5698,7 @@ image Storm_TJ_Body:
             contains:
                 ConditionSwitch(
                         "StormX.Over or renpy.showing('Storm_TJ_Animation')", Null(),
-                        "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_Back.png"),
+                        "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_Back.png"),
                         "True", Null(),
                         )
             contains:
@@ -5706,47 +5706,47 @@ image Storm_TJ_Body:
             contains:
                 ConditionSwitch(
                         "not StormX.Water",Null(),
-                        "True",       "images/StormBJFace/Storm_TJ_Body_Wet.png",
+                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Body_Wet.png"),
                         )
             contains:
                 #arm rings base
                 ConditionSwitch(
                         "not StormX.Acc == 'rings' or StormX.Over == 'jacket'", Null(),
-                        "True", "images/StormBJFace/Storm_TJ_Arms_Ring.png",
+                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Arms_Ring.png"),
                         )
             contains:
                 #Chest
                 ConditionSwitch(
-                        #"StormX.Chest == 'bra'","images/StormBJFace/Storm_TJ_Chest_Bra_Base.png",
-                        "StormX.Chest == 'cos bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Cos_TopD.png"),
-                        "StormX.Chest == 'sports bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Sportsbra_Body.png"),
-                        "StormX.Chest == 'bikini top'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_Body.png"),
+                        #"StormX.Chest == 'bra'", get_cached_image("images/StormBJFace/Storm_TJ_Chest_Bra_Base.png"),
+                        "StormX.Chest == 'cos bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Cos_TopD.png"),
+                        "StormX.Chest == 'sports bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Sportsbra_Body.png"),
+                        "StormX.Chest == 'bikini top'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_Body.png"),
                         "True", Null(),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "StormX.Over == 'white shirt'",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_WhiteShirt_Body.png"),
-                        "StormX.Over == 'jacket'",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_Jacket_Body.png"),
+                        "StormX.Over == 'white shirt'",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_WhiteShirt_Body.png"),
+                        "StormX.Over == 'jacket'",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_Jacket_Body.png"),
                         "True", Null(),
                         )
             contains:
                 #tit spunk on chest
                 ConditionSwitch(
-                        "'tits' in StormX.Spunk and Player.Male", "images/StormBJFace/Storm_TJ_Spunk_Body.png",
+                        "'tits' in StormX.Spunk and Player.Male", get_cached_image("images/StormBJFace/Storm_TJ_Spunk_Body.png"),
                         "True", Null(),
                         )
             contains:
                 # ring necklace
                 ConditionSwitch(
-                        "StormX.Neck == 'rings'", "images/StormBJFace/Storm_TJ_Neck_Ring.png",
+                        "StormX.Neck == 'rings'", get_cached_image("images/StormBJFace/Storm_TJ_Neck_Ring.png"),
                         "True", Null(),
                         )
             contains:
                 #hair at the midground, behind the face but in front of body
                 ConditionSwitch(
                         "StormX.Over", Null(),
-                        "StormX.Hair == 'long' and not StormX.Water and not (not Player.Male and 'facial' in StormX.Spunk)", "images/StormBJFace/Storm_TJ_Hair_Long_Mid.png",
+                        "StormX.Hair == 'long' and not StormX.Water and not (not Player.Male and 'facial' in StormX.Spunk)", get_cached_image("images/StormBJFace/Storm_TJ_Hair_Long_Mid.png"),
                         "True",   Null(),
                         )
             transform_anchor True
@@ -5763,13 +5763,13 @@ image Storm_TJ_Tit_Under:
                 ConditionSwitch(
                     # right breast overlay
                     "StormX.Chest == 'cos bra'",Null(),
-                    "renpy.showing('Storm_TJ_Animation')", "images/StormBJFace/Storm_TJ_TitsUnder.png",
+                    "renpy.showing('Storm_TJ_Animation')", get_cached_image("images/StormBJFace/Storm_TJ_TitsUnder.png"),
                     "True",  Null(),
                     )
 #            contains:
 #                ConditionSwitch(
 #                        "'tits' not in StormX.Spunk",Null(),
-#                        "True",       "images/StormBJFace/Storm_TJ_Spunk_TitsUnder.png",
+#                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Spunk_TitsUnder.png"),
 #                        )
             transform_anchor True
             zoom 1
@@ -5781,9 +5781,9 @@ image Storm_TJ_Braback:
             #back fo the bra straps
             contains:
                 ConditionSwitch(
-                        #"StormX.Chest == 'corset' and not StormX.Uptop","images/StormBJFace/Storm_TJ_Chest_Corset.png",
+                        #"StormX.Chest == 'corset' and not StormX.Uptop", get_cached_image("images/StormBJFace/Storm_TJ_Chest_Corset.png"),
                         "StormX.Over",Null(),
-                        "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_Back.png"),
+                        "StormX.Chest == 'black bra' or StormX.Chest == 'lace bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_Back.png"),
                         "True", Null(),
                         )
             transform_anchor True
@@ -5796,9 +5796,9 @@ image Storm_TJ_BraStretch:
             #bra streching effect
             contains:
                 ConditionSwitch(
-                        #"StormX.Chest == 'corset' and not StormX.Uptop","images/StormBJFace/Storm_TJ_Chest_Corset.png",
-                        "StormX.Chest == 'bikini top'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_Tent.png"),
-                        "StormX.Chest == 'sports bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Sportsbra_Tent.png"),
+                        #"StormX.Chest == 'corset' and not StormX.Uptop", get_cached_image("images/StormBJFace/Storm_TJ_Chest_Corset.png"),
+                        "StormX.Chest == 'bikini top'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_Tent.png"),
+                        "StormX.Chest == 'sports bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Sportsbra_Tent.png"),
                         "True", Null(),
                         )
             transform_anchor True
@@ -5815,76 +5815,76 @@ image Storm_TJ_Tits:
             contains:
                 #Piercings
                 ConditionSwitch(
-                        "StormX.Pierce == 'barbell'","images/StormBJFace/Storm_TJ_Pierce_Barbell.png",
+                        "StormX.Pierce == 'barbell'", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Barbell.png"),
                         "StormX.Over == 'white shirt' and not StormX.Uptop",Null(),
                         "StormX.Chest and not StormX.Uptop",Null(),
-                        "StormX.Pierce == 'ring'","images/StormBJFace/Storm_TJ_Pierce_Ring.png",
+                        "StormX.Pierce == 'ring'", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Ring.png"),
                         "True", Null(),
                         )
             contains:
                 ConditionSwitch(
                         "not StormX.Water",Null(),
-                        "True",       "images/StormBJFace/Storm_TJ_Tits_Wet.png",
+                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Tits_Wet.png"),
                         )
             contains:
                 ConditionSwitch(
                         "'tits' not in StormX.Spunk and Player.Male",Null(),
-                        "True",       "images/StormBJFace/Storm_TJ_Spunk_Tits.png",
+                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Spunk_Tits.png"),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "StormX.Over == 'jacket'",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_Jacket_Top.png"),
-#                        "StormX.Over == 'towel' and not renpy.showing('Storm_TJ_Animation')", "images/StormBJFace/Storm_TJ_Over_Towel.png",
+                        "StormX.Over == 'jacket'",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_Jacket_Top.png"),
+#                        "StormX.Over == 'towel' and not renpy.showing('Storm_TJ_Animation')", get_cached_image("images/StormBJFace/Storm_TJ_Over_Towel.png"),
                         "True", Null(),
                         )
             contains:
                 #Chest
                 ConditionSwitch(
-                        "StormX.Chest == 'black bra' and StormX.Uptop and StormX.Over",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopUS.png"),  #fix, add "no straps" version here
-                        "StormX.Chest == 'black bra' and StormX.Uptop",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopU.png"),
-                        "StormX.Chest == 'lace bra' and StormX.Uptop and StormX.Over",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopUS.png"),    #fix, add "no straps" version here
-                        "StormX.Chest == 'lace bra' and StormX.Uptop",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopU.png"),
-                        "StormX.Chest == 'sports bra' and StormX.Uptop","images/StormBJFace/Storm_TJ_Chest_SportsBra_TopU.png",
-                        "StormX.Chest == 'bikini top' and StormX.Uptop",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_TopU.png"),
+                        "StormX.Chest == 'black bra' and StormX.Uptop and StormX.Over",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopUS.png"),  #fix, add "no straps" version here
+                        "StormX.Chest == 'black bra' and StormX.Uptop",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopU.png"),
+                        "StormX.Chest == 'lace bra' and StormX.Uptop and StormX.Over",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopUS.png"),    #fix, add "no straps" version here
+                        "StormX.Chest == 'lace bra' and StormX.Uptop",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopU.png"),
+                        "StormX.Chest == 'sports bra' and StormX.Uptop", get_cached_image("images/StormBJFace/Storm_TJ_Chest_SportsBra_TopU.png"),
+                        "StormX.Chest == 'bikini top' and StormX.Uptop",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_TopU.png"),
 
-                        "StormX.Chest == 'tube top' and not StormX.Uptop",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_TubeD.png"),
-                        "StormX.Chest == 'black bra' and StormX.Over",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopDS.png"),  #fix, add "no straps" version here
-                        "StormX.Chest == 'black bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopD.png"),
-                        "StormX.Chest == 'lace bra' and StormX.Over",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Lacebra_TopDS.png"),  #fix, add "no straps" version here
-                        "StormX.Chest == 'lace bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Lacebra_TopD.png"),
-                        "StormX.Chest == 'sports bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Sportsbra_TopD.png"),
-                        "StormX.Chest == 'bikini top'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_TopD.png"),
+                        "StormX.Chest == 'tube top' and not StormX.Uptop",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_TubeD.png"),
+                        "StormX.Chest == 'black bra' and StormX.Over",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopDS.png"),  #fix, add "no straps" version here
+                        "StormX.Chest == 'black bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bra_TopD.png"),
+                        "StormX.Chest == 'lace bra' and StormX.Over",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Lacebra_TopDS.png"),  #fix, add "no straps" version here
+                        "StormX.Chest == 'lace bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Lacebra_TopD.png"),
+                        "StormX.Chest == 'sports bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Sportsbra_TopD.png"),
+                        "StormX.Chest == 'bikini top'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Chest_Bikini_TopD.png"),
                         "True", Null(),
                         )
             contains:
                 #Over
                 ConditionSwitch(
-                        "StormX.Over == 'white shirt' and StormX.Uptop",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_WhiteShirt_TopU.png"),
-                        "StormX.Over == 'white shirt'",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_WhiteShirt_TopD.png"),
-#                        "StormX.Over == 'towel' and not renpy.showing('Storm_TJ_Animation')", "images/StormBJFace/Storm_TJ_Over_Towel.png",
+                        "StormX.Over == 'white shirt' and StormX.Uptop",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_WhiteShirt_TopU.png"),
+                        "StormX.Over == 'white shirt'",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Over_WhiteShirt_TopD.png"),
+#                        "StormX.Over == 'towel' and not renpy.showing('Storm_TJ_Animation')", get_cached_image("images/StormBJFace/Storm_TJ_Over_Towel.png"),
                         "True", Null(),
                         )
             contains:
                 #arm rings base
                 ConditionSwitch(
                         "not StormX.Acc == 'rings' or StormX.Over == 'jacket'", Null(),
-                        "True", "images/StormBJFace/Storm_TJ_Wrists_Ring.png",
+                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Wrists_Ring.png"),
                         )
             contains:
                 #Piercings clothing
                 ConditionSwitch(
                         "StormX.Uptop", Null(),
                         "(not StormX.Over) and (not StormX.Chest)", Null(),
-                        "StormX.Pierce == 'ring' and StormX.Over == 'white shirt'",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Pierce_Ring_Shirt.png"),
-                        "StormX.Pierce == 'barbell' and StormX.Over == 'white shirt'",Recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Shirt.png"),
+                        "StormX.Pierce == 'ring' and StormX.Over == 'white shirt'",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Pierce_Ring_Shirt.png"),
+                        "StormX.Pierce == 'barbell' and StormX.Over == 'white shirt'",get_cached_recolor("Storm", "Over", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Shirt.png"),
                         "StormX.Chest == 'cos bra'",Null(),
-                        "StormX.Pierce == 'ring' and StormX.Chest == 'lace bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Ring_Lace.png"),
-                        "StormX.Pierce == 'barbell' and StormX.Chest == 'lace bra'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Lace.png"),
-                        "StormX.Pierce == 'ring' and StormX.Chest == 'tube top'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Ring_Tube.png"),
-                        "StormX.Pierce == 'barbell' and StormX.Chest == 'tube top'",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Tube.png"),
-                        "StormX.Pierce == 'ring' and StormX.Chest",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Ring_Bra.png"),
-                        "StormX.Pierce == 'barbell' and StormX.Chest",Recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Bra.png"),
+                        "StormX.Pierce == 'ring' and StormX.Chest == 'lace bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Ring_Lace.png"),
+                        "StormX.Pierce == 'barbell' and StormX.Chest == 'lace bra'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Lace.png"),
+                        "StormX.Pierce == 'ring' and StormX.Chest == 'tube top'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Ring_Tube.png"),
+                        "StormX.Pierce == 'barbell' and StormX.Chest == 'tube top'",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Tube.png"),
+                        "StormX.Pierce == 'ring' and StormX.Chest",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Ring_Bra.png"),
+                        "StormX.Pierce == 'barbell' and StormX.Chest",get_cached_recolor("Storm", "Chest", "images/StormBJFace/Storm_TJ_Pierce_Barbell_Bra.png"),
                         "True", Null(),
                         )
             contains:
@@ -5893,14 +5893,14 @@ image Storm_TJ_Tits:
                         "not StormX.Acc == 'rings' or not StormX.Pierce == 'ring'", Null(),
                         "StormX.Over == 'white shirt' and not StormX.Uptop", Null(),
                         "StormX.Chest and StormX.Chest != 'cos bra' and not StormX.Uptop",Null(),
-                        "True","images/StormBJFace/Storm_TJ_Pierce_Ring.png",
+                        "True", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Ring.png"),
 #                        "StormX.Chest == 'cos bra'",Null(),
-#                        "StormX.Pierce == 'ring' and StormX.Chest == 'lace bra'","images/StormBJFace/Storm_TJ_Pierce_Ring_Lace.png",
-#                        "StormX.Pierce == 'barbell' and StormX.Chest == 'lace bra'","images/StormBJFace/Storm_TJ_Pierce_Barbell_Lace.png",
-#                        "StormX.Pierce == 'ring' and StormX.Chest == 'tube top'","images/StormBJFace/Storm_TJ_Pierce_Ring_Tube.png",
-#                        "StormX.Pierce == 'barbell' and StormX.Chest == 'tube top'","images/StormBJFace/Storm_TJ_Pierce_Barbell_Tube.png",
-#                        "StormX.Pierce == 'ring' and StormX.Chest","images/StormBJFace/Storm_TJ_Pierce_Ring_Bra.png",
-#                        "StormX.Pierce == 'barbell' and StormX.Chest","images/StormBJFace/Storm_TJ_Pierce_Barbell_Bra.png",
+#                        "StormX.Pierce == 'ring' and StormX.Chest == 'lace bra'", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Ring_Lace.png"),
+#                        "StormX.Pierce == 'barbell' and StormX.Chest == 'lace bra'", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Barbell_Lace.png"),
+#                        "StormX.Pierce == 'ring' and StormX.Chest == 'tube top'", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Ring_Tube.png"),
+#                        "StormX.Pierce == 'barbell' and StormX.Chest == 'tube top'", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Barbell_Tube.png"),
+#                        "StormX.Pierce == 'ring' and StormX.Chest", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Ring_Bra.png"),
+#                        "StormX.Pierce == 'barbell' and StormX.Chest", get_cached_image("images/StormBJFace/Storm_TJ_Pierce_Barbell_Bra.png"),
 #                        "True", Null(),
                         )
             transform_anchor True
@@ -7647,45 +7647,45 @@ image Storm_69_Body:
 
         (0,0), ConditionSwitch(
             # base tits
-            "not StormX.Uptop and StormX.Chest in ('black bra','lace bra','sports bra')", "images/StormSex/Storm_69_Tits_Up.png",
+            "not StormX.Uptop and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_image("images/StormSex/Storm_69_Tits_Up.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Base belly
-            "True", "images/StormSex/Storm_69_Body.png",
+            "True", get_cached_image("images/StormSex/Storm_69_Body.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "StormX.Water", "images/StormSex/Storm_69_Water_Body.png",
+#            "StormX.Water", get_cached_image("images/StormSex/Storm_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #bra layer
-            "StormX.Chest == 'tube top' and StormX.Uptop", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Tube_Up.png"),
+            "StormX.Chest == 'tube top' and StormX.Uptop", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Tube_Up.png"),
             "StormX.Uptop", Null(),
             #if the top's down. . .
-#            "StormX.Chest == 'cos bra'", "images/StormSex/Storm_69_Chest_Cos.png",
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Tube_Body.png"),
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bra.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Lace.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Sports.png"),
-            "StormX.Chest == 'bikini top' and StormX.Panties == 'bikini bottoms' and not StormX.PantiesDown", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Body.png"),
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Loose.png"),
+#            "StormX.Chest == 'cos bra'", get_cached_image("images/StormSex/Storm_69_Chest_Cos.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Tube_Body.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Lace.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Sports.png"),
+            "StormX.Chest == 'bikini top' and StormX.Panties == 'bikini bottoms' and not StormX.PantiesDown", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Body.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Loose.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #shirt layer
             "StormX.Uptop", Null(),
-            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Bra.png"),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Body.png"),
+            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Bra.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Body.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #the ring of her bikini over her shirt layer
             "StormX.Uptop", Null(),
-            "StormX.Chest == 'bikini top' and (StormX.Panties != 'bikini bottoms' or StormX.PantiesDown)", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Ring.png"),
+            "StormX.Chest == 'bikini top' and (StormX.Panties != 'bikini bottoms' or StormX.PantiesDown)", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Ring.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -7693,45 +7693,45 @@ image Storm_69_Body:
             "not StormX.Pierce or StormX.Uptop", Null(),
             "StormX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-#                    "StormX.Uptop", "images/StormSex/Storm_69_Pierce_Tits_R.png",
+#                    "StormX.Uptop", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_R.png"),
 
-                    "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_R_TanU.png"),
+                    "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_R_TanU.png"),
                     "StormX.Over == 'white shirt'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_R_TanL.png",
 
-                    "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_LaceU.png"),
-                    "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_BlackU.png"),
-                    "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_BlackU.png"),
-#                    "StormX.Chest == 'bikini top'", "images/StormSex/Storm_69_Pierce_Tits_R_BlackL.png",
-#                    "StormX.Chest == 'cos bra'", "images/StormSex/Storm_69_Pierce_Tits_R_WhiteL.png",
+                    "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_LaceU.png"),
+                    "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_BlackU.png"),
+                    "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_BlackU.png"),
+#                    "StormX.Chest == 'bikini top'", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_R_BlackL.png"),
+#                    "StormX.Chest == 'cos bra'", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_R_WhiteL.png"),
 
                     "True", Null(), #"images/StormSex/Storm_69_Pierce_Tits_R.png",
                     ),
-#            "StormX.Uptop", "images/StormSex/Storm_69_Pierce_Tits_B.png",
+#            "StormX.Uptop", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_B.png"),
 
-            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_B_TanU.png"),
+            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_B_TanU.png"),
             "StormX.Over == 'white shirt'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_B_TanL.png",
 
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_LaceU.png"),
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_BlackU.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_BlackU.png"),
-#            "StormX.Chest == 'bikini top'", "images/StormSex/Storm_69_Pierce_Tits_B_BlackL.png",
-#            "StormX.Chest == 'cos bra'", "images/StormSex/Storm_69_Pierce_Tits_B_WhiteL.png",
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_LaceU.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_BlackU.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_BlackU.png"),
+#            "StormX.Chest == 'bikini top'", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_B_BlackL.png"),
+#            "StormX.Chest == 'cos bra'", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_B_WhiteL.png"),
 
             "True", Null(), #"images/StormSex/Storm_69_Pierce_Tits_B.png",
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in StormX.Spunk and Player.Male", "images/StormSex/Storm_69_Spunk_Belly.png",
+            "'belly' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_69_Spunk_Belly.png"),
             "True", Null(),
             ),
-#        (0,0), "images/StormSex/Storm_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_Sex_HeadRef.png"),
         )
     offset (10,0)#(50,0)#(250,250)#(175,175)
 #    yoffset -163
 # End Storm 69 Pose Body / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 
 image Storm_69_Bikini_Behind:
-    Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Loose.png")
+    get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Loose.png")
     offset (0,-40)
 
 # Start Storm 69 Pose Body / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -7742,18 +7742,18 @@ image Storm_69_Tits:
 
         (0,0), ConditionSwitch(
             #shirt layer, behind tits
-            "StormX.Uptop and StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Tits.png"),
+            "StormX.Uptop and StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #bra layer, behind tits
             "not StormX.Uptop", Null(),
             #if the top's down. . .
-#            "StormX.Chest == 'cos bra'", "images/StormSex/Storm_69_Chest_Cos.png",
-#            "StormX.Chest == 'tube top'", "images/StormSex/Storm_69_Chest_Tube.png",
-            "StormX.Chest == 'black bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bra.png"),
-            "StormX.Chest == 'lace bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bra.png"),
-            "StormX.Chest == 'sports bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Sports.png"),
+#            "StormX.Chest == 'cos bra'", get_cached_image("images/StormSex/Storm_69_Chest_Cos.png"),
+#            "StormX.Chest == 'tube top'", get_cached_image("images/StormSex/Storm_69_Chest_Tube.png"),
+            "StormX.Chest == 'black bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bra.png"),
+            "StormX.Chest == 'lace bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bra.png"),
+            "StormX.Chest == 'sports bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Sports.png"),
             "StormX.Chest == 'bikini top'", "Storm_69_Bikini_Behind",
             "True", Null(),
             ),
@@ -7761,11 +7761,11 @@ image Storm_69_Tits:
         (0,0), ConditionSwitch(
             # base tits
 #            "StormX.Chest in ('black bra','lace bra','sports bra')", Null(),
-            "True", "images/StormSex/Storm_69_Tits.png",
+            "True", get_cached_image("images/StormSex/Storm_69_Tits.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "StormX.Water", "images/StormSex/Storm_69_Water_Body.png",
+#            "StormX.Water", get_cached_image("images/StormSex/Storm_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
 
@@ -7773,19 +7773,19 @@ image Storm_69_Tits:
             #bra layer
             "StormX.Uptop", Null(),
             #if the top's down. . .
-            "StormX.Chest == 'cos bra'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Cos.png"),
-            "StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Tube_Tits.png"),
-#            "StormX.Chest == 'black bra'", "images/StormSex/Storm_69_Chest_Bra.png",
-#            "StormX.Chest == 'lace bra'", "images/StormSex/Storm_69_Chest_Lace.png",
-#            "StormX.Chest == 'sports bra'", "images/StormSex/Storm_69_Chest_Sports.png",
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Tits.png"),
+            "StormX.Chest == 'cos bra'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Cos.png"),
+            "StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Tube_Tits.png"),
+#            "StormX.Chest == 'black bra'", get_cached_image("images/StormSex/Storm_69_Chest_Bra.png"),
+#            "StormX.Chest == 'lace bra'", get_cached_image("images/StormSex/Storm_69_Chest_Lace.png"),
+#            "StormX.Chest == 'sports bra'", get_cached_image("images/StormSex/Storm_69_Chest_Sports.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Chest_Bikini_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
             "StormX.Uptop", Null(),
 #            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Null(),
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Tits.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Over_Shirt_Tits.png"),
             "True", Null(),
             ),
 
@@ -7794,38 +7794,38 @@ image Storm_69_Tits:
             "not StormX.Pierce", Null(),
             "StormX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "StormX.Uptop", "images/StormSex/Storm_69_Pierce_Tits_R.png",
+                    "StormX.Uptop", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_R.png"),
 
 #                    "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Null(), #"images/StormSex/Storm_69_Pierce_Tits_R_TanU.png",
-                    "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_R_TanL.png"),
+                    "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_R_TanL.png"),
 
 #                    "StormX.Chest == 'lace bra'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_R_LaceU.png",
 #                    "StormX.Chest == 'black bra'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_R_BlackU.png",
 #                    "StormX.Chest == 'sports bra'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_R_BlackU.png",
-                    "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_BlackL.png"),
-                    "StormX.Chest == 'cos bra' or StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_WhiteL.png"),
+                    "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_BlackL.png"),
+                    "StormX.Chest == 'cos bra' or StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_R_WhiteL.png"),
 
-                    "True", "images/StormSex/Storm_69_Pierce_Tits_R.png",
+                    "True", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_R.png"),
                     ),
-            "StormX.Uptop", "images/StormSex/Storm_69_Pierce_Tits_B.png",
+            "StormX.Uptop", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_B.png"),
 
 #            "StormX.Over == 'white shirt' and StormX.Chest in ('black bra','lace bra','sports bra')", Null(), #"images/StormSex/Storm_69_Pierce_Tits_B_TanU.png",
-            "StormX.Over == 'white shirt'", Recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_B_TanL.png"),
+            "StormX.Over == 'white shirt'", get_cached_recolor("Storm", "Over", "images/StormSex/Storm_69_Pierce_Tits_B_TanL.png"),
 
 #            "StormX.Chest == 'lace bra'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_B_LaceU.png",
 #            "StormX.Chest == 'black bra'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_B_BlackU.png",
 #            "StormX.Chest == 'sports bra'", Null(), #"images/StormSex/Storm_69_Pierce_Tits_B_BlackU.png",
-            "StormX.Chest == 'bikini top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_BlackL.png"),
-            "StormX.Chest == 'cos bra' or StormX.Chest == 'tube top'", Recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_WhiteL.png"),
+            "StormX.Chest == 'bikini top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_BlackL.png"),
+            "StormX.Chest == 'cos bra' or StormX.Chest == 'tube top'", get_cached_recolor("Storm", "Chest", "images/StormSex/Storm_69_Pierce_Tits_B_WhiteL.png"),
 
-            "True", "images/StormSex/Storm_69_Pierce_Tits_B.png",
+            "True", get_cached_image("images/StormSex/Storm_69_Pierce_Tits_B.png"),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in StormX.Spunk and Player.Male", "images/StormSex/Storm_69_Spunk_Tits.png",
+            "'tits' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_69_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/StormSex/Storm_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_Sex_HeadRef.png"),
         )
     offset (10,0)#(250,250)#(175,175)
 #    yoffset -163
@@ -7839,38 +7839,38 @@ image Storm_69_Head:
         (1120,840),
         (0,0), ConditionSwitch(
             #tongue
-            "renpy.showing('Storm_69_CUN') and Speed != 3", "images/StormSex/Storm_69_Tongue.png",
-            "Speed == 1", "images/StormSex/Storm_69_Tongue.png",
+            "renpy.showing('Storm_69_CUN') and Speed != 3", get_cached_image("images/StormSex/Storm_69_Tongue.png"),
+            "Speed == 1", get_cached_image("images/StormSex/Storm_69_Tongue.png"),
             "True", Null(),
             ),
-        (0,0), "images/StormSex/Storm_69_Head.png",
+        (0,0), get_cached_image("images/StormSex/Storm_69_Head.png"),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'chin' in StormX.Spunk and Player.Male", "images/StormSex/Storm_69_Spunk_Chin.png",
+            "'chin' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_69_Spunk_Chin.png"),
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'mouth' in StormX.Spunk and Player.Male", "images/StormSex/Storm_69_Spunk_Mouth.png",
+            "'mouth' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_69_Spunk_Mouth.png"),
             "True", Null(),
             ),
-        (0,0), "images/StormSex/Storm_69_Neck.png",
+        (0,0), get_cached_image("images/StormSex/Storm_69_Neck.png"),
         (0,0),ConditionSwitch(
             #ring necklace
-            "StormX.Neck == 'rings'", Recolor("Storm", "Neck", "images/StormSex/Storm_69_Necklace.png"),
+            "StormX.Neck == 'rings'", get_cached_recolor("Storm", "Neck", "images/StormSex/Storm_69_Necklace.png"),
             "True", Null(),
             ),
 ##        (0,0), ConditionSwitch(
 ##            #collar
 ##            "Speed == 1 and Player.Male", Null(),
-##            "StormX.Chest == 'swimsuit' or StormX.Panties == 'swimsuit'", "images/StormSex/Storm_69_Collar.png",
+##            "StormX.Chest == 'swimsuit' or StormX.Panties == 'swimsuit'", get_cached_image("images/StormSex/Storm_69_Collar.png"),
 ##            "True", Null(),
 ##            ),
 
 #        (0,0), ConditionSwitch(
 #            #Hair over
 #            "Speed == 1 and Player.Male", Null(),
-#            "True", "images/StormSex/Storm_69_Hair.png",
+#            "True", get_cached_image("images/StormSex/Storm_69_Hair.png"),
 #            ),
         )
     offset (10,0)#(175,175)#(180,100)
@@ -7886,14 +7886,14 @@ image Storm_69_HairOver:
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Storm_TJ_Animation')", Null(),
-#            "StormX.Hair == 'blonde'", "images/StormSex/Storm_69_Hair_Blonde_Lick.png",
-            "StormX.Hair == 'long' or StormX.Hair == 'wetlong'", Recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Long.png"),
+#            "StormX.Hair == 'blonde'", get_cached_image("images/StormSex/Storm_69_Hair_Blonde_Lick.png"),
+            "StormX.Hair == 'long' or StormX.Hair == 'wetlong'", get_cached_recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Long.png"),
             "True", Null(),
             ),
-        (0,0), "images/StormSex/Storm_69_Neck.png",
+        (0,0), get_cached_image("images/StormSex/Storm_69_Neck.png"),
         (0,0),ConditionSwitch(
             #ring necklace
-            "StormX.Neck == 'rings'", Recolor("Storm", "Neck", "images/StormSex/Storm_69_Necklace.png"),
+            "StormX.Neck == 'rings'", get_cached_recolor("Storm", "Neck", "images/StormSex/Storm_69_Necklace.png"),
             "True", Null(),
             ),
         )
@@ -7906,23 +7906,23 @@ image Storm_69_HairBack:
     LiveComposite(
         #the torso/head used in the sex pose, referenced by Storm_SexSprite
         (1120,840),
-#        (0,0), "images/StormSex/Storm_69_Head.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_69_Head.png"),
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Storm_TJ_Animation')", Null(),
-#            "StormX.Hair == 'blonde'", "images/StormSex/Storm_69_Hair_Blonde_Under.png",
-            "StormX.Hair == 'long' or StormX.Hair == 'wet' or StormX.Hair == 'wetlong'", Recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Long_Back.png"),
-            "StormX.Hair == 'mohawk' or StormX.Hair == 'wethawk'", Recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Mohawk.png"),
-#            "not Player.Male and 'facial' in StormX.Spunk","images/StormSex/Storm_Sprite_Hair_Wet.png",
+#            "StormX.Hair == 'blonde'", get_cached_image("images/StormSex/Storm_69_Hair_Blonde_Under.png"),
+            "StormX.Hair == 'long' or StormX.Hair == 'wet' or StormX.Hair == 'wetlong'", get_cached_recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Long_Back.png"),
+            "StormX.Hair == 'mohawk' or StormX.Hair == 'wethawk'", get_cached_recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Mohawk.png"),
+#            "not Player.Male and 'facial' in StormX.Spunk", get_cached_image("images/StormSex/Storm_Sprite_Hair_Wet.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair mid
 #            "renpy.showing('Storm_TJ_Animation')", Null(),
-#            "StormX.Hair == 'blonde'", "images/StormSex/Storm_69_Hair_Blonde_Under.png",
-            "StormX.Hair == 'long' or StormX.Hair == 'wet' or StormX.Hair == 'wetlong'", Recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Long_Mid.png"),
-#            "StormX.Hair == 'mohawk' or StormX.Hair == 'wethawk'", "images/StormSex/Storm_69_Hair_Mohawk.png",
-#            "not Player.Male and 'facial' in StormX.Spunk","images/StormSex/Storm_Sprite_Hair_Wet.png",
+#            "StormX.Hair == 'blonde'", get_cached_image("images/StormSex/Storm_69_Hair_Blonde_Under.png"),
+            "StormX.Hair == 'long' or StormX.Hair == 'wet' or StormX.Hair == 'wetlong'", get_cached_recolor("Storm", "Hair", "images/StormSex/Storm_69_Hair_Long_Mid.png"),
+#            "StormX.Hair == 'mohawk' or StormX.Hair == 'wethawk'", get_cached_image("images/StormSex/Storm_69_Hair_Mohawk.png"),
+#            "not Player.Male and 'facial' in StormX.Spunk", get_cached_image("images/StormSex/Storm_Sprite_Hair_Wet.png"),
             "True", Null(),
             ),
         )
@@ -7939,49 +7939,49 @@ image Storm_69_Legs:
         (1120,880),
 #        (0,0), ConditionSwitch(
 #            #scarf
-#            "StormX.Acc", "images/StormSex/Storm_69_Scarf.png",
+#            "StormX.Acc", get_cached_image("images/StormSex/Storm_69_Scarf.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #behind hose layer
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
-            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
+            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
             "StormX.Panties and StormX.PantiesDown", Null(),
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
-            "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
+            "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_BenhindLegs.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #back of skirt Layer
-            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Skirt_Under.png"),
+            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Skirt_Under.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/StormSex/Storm_Sex_FBase.png",
-#            "Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_FBase.png",
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_FBase.png"),
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Storm_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/StormSex/Storm_Sex_Ass.png",
-#            "Trigger == 'lick pussy'", "images/StormSex/Storm_Sex_Ass.png",
-            "True", "images/StormSex/Storm_69_Legs.png",
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/StormSex/Storm_Sex_Ass.png"),
+#            "Trigger == 'lick pussy'", get_cached_image("images/StormSex/Storm_Sex_Ass.png"),
+            "True", get_cached_image("images/StormSex/Storm_69_Legs.png"),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #ass red
-#            "StormX.Red", "images/StormSex/Storm_Sex_Red.png",
+#            "StormX.Red", get_cached_image("images/StormSex/Storm_Sex_Red.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/StormSex/Storm_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/StormSex/Storm_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Wet look
             "not StormX.Water", Null(),
-            "True", "images/StormSex/Storm_69_Water_Legs.png",
+            "True", get_cached_image("images/StormSex/Storm_69_Water_Legs.png"),
             ),
 
 #        (0,0), "Storm_69_Anus",
@@ -7996,8 +7996,8 @@ image Storm_69_Legs:
 #            "not StormX.Wet", Null(),
 #            "(StormX.Legs == 'yoga pants' or StormX.Legs == 'shorts') and not StormX.Upskirt", Null(),
 #            "StormX.Panties and not StormX.PantiesDown", Null(),
-#            "StormX.Wet == 1", AlphaMask("Wet_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
-#            "True", AlphaMask("Wet_Drip2_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
+#            "StormX.Wet == 1", get_cached_alphamask("Wet_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
+#            "True", get_cached_alphamask("Wet_Drip2_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
 #            ),
 
 #        (-6,12), ConditionSwitch(    #-695,-480
@@ -8005,11 +8005,11 @@ image Storm_69_Legs:
 #            "'anal' not in StormX.Spunk or not Player.Male", Null(),
 #            "(StormX.Legs == 'yoga pants' or StormX.Legs == 'shorts') and not StormX.Upskirt", Null(),
 ##            "True", "Spunk_Drip2_69", #"Spunk_Drip_69",
-#            "True", AlphaMask("Spunk_Drip_69_Anal","images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
+#            "True", get_cached_alphamask("Spunk_Drip_69_Anal", "images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
 #            ),
 #        (-6,12), ConditionSwitch(
 #            #anal Spunk
-#            "'anal' in StormX.Spunk", "images/BetsySex/Betsy_69_Spunk_Ass.png",
+#            "'anal' in StormX.Spunk", get_cached_image("images/BetsySex/Betsy_69_Spunk_Ass.png"),
 #            "True", Null(),
 #            ),
 
@@ -8018,27 +8018,27 @@ image Storm_69_Legs:
             #Panties if up
             "StormX.PantiesDown", ConditionSwitch(
                     #If she has panties down. . .
-        #            "StormX.Panties == 'cos panties' and StormX.Wet", "images/StormSex/Storm_69_Panties_Cos_Wet.png",
-                    "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White_Up.png"),
-#                    "StormX.Panties == 'white panties' and StormX.Wet", "images/StormSex/Storm_69_Panties_White_Wet.png",
-                    "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White_Up.png"),
-#                    "StormX.Panties == 'lace panties'", "images/StormSex/Storm_69_Panties_Lace.png",
-#                    "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", "images/StormSex/Storm_69_Panties_Bikini_Loose.png",
-#                    "StormX.Panties == 'bikini bottoms'", "images/StormSex/Storm_69_Panties_Bikini.png",
-        #            "StormX.Panties and StormX.Wet", "images/StormSex/Storm_69_Panties_Black_Wet.png",
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Black_Up.png"),
+        #            "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_image("images/StormSex/Storm_69_Panties_Cos_Wet.png"),
+                    "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White_Up.png"),
+#                    "StormX.Panties == 'white panties' and StormX.Wet", get_cached_image("images/StormSex/Storm_69_Panties_White_Wet.png"),
+                    "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White_Up.png"),
+#                    "StormX.Panties == 'lace panties'", get_cached_image("images/StormSex/Storm_69_Panties_Lace.png"),
+#                    "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_image("images/StormSex/Storm_69_Panties_Bikini_Loose.png"),
+#                    "StormX.Panties == 'bikini bottoms'", get_cached_image("images/StormSex/Storm_69_Panties_Bikini.png"),
+        #            "StormX.Panties and StormX.Wet", get_cached_image("images/StormSex/Storm_69_Panties_Black_Wet.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Black_Up.png"),
                     "True", Null(),
                     ),
-#            "StormX.Panties == 'cos panties' and StormX.Wet", "images/StormSex/Storm_69_Panties_Cos_Wet.png",
-            "StormX.Panties == 'cos panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Cos_Wet.png"),
-            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Cos.png"),
-            "StormX.Panties == 'white panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White_Wet.png"),
-            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White.png"),
-            "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Lace.png"),
-            "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Bikini_Loose.png"),
-            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Bikini.png"),
-#            "StormX.Panties and StormX.Wet", "images/StormSex/Storm_69_Panties_Black_Wet.png",
-            "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Black.png"),
+#            "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_image("images/StormSex/Storm_69_Panties_Cos_Wet.png"),
+            "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Cos_Wet.png"),
+            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Cos.png"),
+            "StormX.Panties == 'white panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White_Wet.png"),
+            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_White.png"),
+            "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Lace.png"),
+            "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Bikini_Loose.png"),
+            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Bikini.png"),
+#            "StormX.Panties and StormX.Wet", get_cached_image("images/StormSex/Storm_69_Panties_Black_Wet.png"),
+            "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Panties_Black.png"),
             "True", Null(),
             ),
 
@@ -8046,76 +8046,76 @@ image Storm_69_Legs:
         (0,0), ConditionSwitch(
             #leg rings
             "not StormX.Acc == 'rings' or StormX.Legs == 'pants' or StormX.Legs == 'yoga pants'", Null(),
-            "True", Recolor("Storm", "Acc", "images/StormSex/Storm_69_Legs_Rings.png"), #StormX.ArmPose == 2
+            "True", get_cached_recolor("Storm", "Acc", "images/StormSex/Storm_69_Legs_Rings.png"), #StormX.ArmPose == 2
             ),
         (0,0), ConditionSwitch(
             #Piercings over pants and pantyhose
             "not StormX.Pierce", Null(),
             "StormX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Wet > 1 and (StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_R_BlackW.png"),
-                    "(StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_R_Black.png"),
+                    "StormX.Wet > 1 and (StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_R_BlackW.png"),
+                    "(StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_R_Black.png"),
 
-                    "StormX.PantiesDown", "images/StormSex/Storm_69_Pierce_Pussy_R.png",
-                    "StormX.Hose == 'pantyhose'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_Black.png"),
-                    "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_Lace.png"),
-                    "StormX.Wet and (StormX.Panties == 'white panties' or StormX.Panties == 'cos panties')", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_WhiteW.png"),
-                    "StormX.Panties == 'white panties' or StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_White.png"),
-#                "StormX.Wet and StormX.Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_BlackW.png",
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_Black.png"),
-                    "True", "images/StormSex/Storm_69_Pierce_Pussy_R.png",
+                    "StormX.PantiesDown", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_R.png"),
+                    "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_Black.png"),
+                    "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_Lace.png"),
+                    "StormX.Wet and (StormX.Panties == 'white panties' or StormX.Panties == 'cos panties')", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_WhiteW.png"),
+                    "StormX.Panties == 'white panties' or StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_White.png"),
+#                "StormX.Wet and StormX.Panties", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_R_BlackW.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_R_Black.png"),
+                    "True", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_R.png"),
 
                     "True", Null(),
                     ),
             #else, it's barbell
-#            "StormX.Legs == 'shorts' and not StormX.Upskirt", "images/StormSex/Storm_69_Pierce_Pussy_B_Clothed.png",
-#            "StormX.Hose == 'pantyhose' and not (StormX.Panties and StormX.PantiesDown)", "images/StormSex/Storm_69_Pierce_Pussy_Lace_B.png",
+#            "StormX.Legs == 'shorts' and not StormX.Upskirt", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_B_Clothed.png"),
+#            "StormX.Hose == 'pantyhose' and not (StormX.Panties and StormX.PantiesDown)", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_Lace_B.png"),
 
-            "StormX.Wet > 1 and (StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_B_BlackW.png"),
-            "(StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_B_Black.png"),
+            "StormX.Wet > 1 and (StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_B_BlackW.png"),
+            "(StormX.Legs == 'pants' or StormX.Legs == 'yoga pants') and not StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Pierce_Pussy_B_Black.png"),
 
-            "StormX.PantiesDown", "images/StormSex/Storm_69_Pierce_Pussy_B.png",
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_Black.png"),
-            "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_Lace.png"),
-            "StormX.Wet and (StormX.Panties == 'white panties' or StormX.Panties == 'cos panties')", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_WhiteW.png"),
-            "StormX.Panties == 'white panties' or StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_White.png"),
-#            "StormX.Wet and StormX.Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_BlackW.png",
-            "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_Black.png"),
-            "True", "images/StormSex/Storm_69_Pierce_Pussy_B.png",
+            "StormX.PantiesDown", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_B.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_Black.png"),
+            "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_Lace.png"),
+            "StormX.Wet and (StormX.Panties == 'white panties' or StormX.Panties == 'cos panties')", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_WhiteW.png"),
+            "StormX.Panties == 'white panties' or StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_White.png"),
+#            "StormX.Wet and StormX.Panties", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_B_BlackW.png"),
+            "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_69_Pierce_Pussy_B_Black.png"),
+            "True", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_B.png"),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Garter.png"),
-            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Garter.png"),
-#            "StormX.Hose == 'stockings'", "images/StormSex/Storm_69_Hose_Stockings.png",
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Garter.png"),
+            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Garter.png"),
+#            "StormX.Hose == 'stockings'", get_cached_image("images/StormSex/Storm_69_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #hose layer
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Stockings.png"),
-#            "StormX.Hose == 'garterbelt'", "images/StormSex/Storm_69_Hose_Garter.png",
-            "StormX.Hose == 'stockings'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Stockings.png"),
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Stockings.png"),
+#            "StormX.Hose == 'garterbelt'", get_cached_image("images/StormSex/Storm_69_Hose_Garter.png"),
+            "StormX.Hose == 'stockings'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "StormX.Panties and StormX.PantiesDown", Null(),
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Pantyhose.png"),
-            "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Pantyhose_Holed.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Pantyhose.png"),
+            "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_69_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #Legs Layer
-            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Skirt_Over.png"),
-            "StormX.Legs == 'pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Pants_Wet.png"),
-            "StormX.Legs == 'pants' and StormX.Upskirt", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Pants_Up.png"),
-            "StormX.Legs == 'yoga pants' and StormX.Upskirt", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Yoga_Up.png"),
-            "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Pants.png"),
-            "StormX.Legs == 'yoga pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Yoga_Wet.png"),
-            "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Yoga.png"),
+            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Skirt_Over.png"),
+            "StormX.Legs == 'pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Pants_Wet.png"),
+            "StormX.Legs == 'pants' and StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Pants_Up.png"),
+            "StormX.Legs == 'yoga pants' and StormX.Upskirt", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Yoga_Up.png"),
+            "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Pants.png"),
+            "StormX.Legs == 'yoga pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Yoga_Wet.png"),
+            "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_69_Legs_Yoga.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
@@ -8124,20 +8124,20 @@ image Storm_69_Legs:
 #            "StormX.Pierce == 'ring'",ConditionSwitch(
 #                    #If she has panties down. . .
 #                    "Player.Sprite and Player.Cock == 'in'", Null(),
-#                    "StormX.Legs == 'shorts' and not StormX.Upskirt", "images/StormSex/Storm_69_Pierce_Pussy_R_Brown.png",
-#                    "StormX.Hose == 'tights' and not (StormX.Panties and StormX.PantiesDown)", "images/StormSex/Storm_Sex_Pierce_Pussy_R_Tights.png",
+#                    "StormX.Legs == 'shorts' and not StormX.Upskirt", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_R_Brown.png"),
+#                    "StormX.Hose == 'tights' and not (StormX.Panties and StormX.PantiesDown)", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_R_Tights.png"),
 #                    "True", Null(),
 #                    ),
 #            #else, it's barbell
-#            "StormX.Legs == 'shorts' and not StormX.Upskirt", "images/StormSex/Storm_69_Pierce_Pussy_B_Clothed.png",
-#            "StormX.Hose == 'tights' and not (StormX.Panties and StormX.PantiesDown)", "images/StormSex/Storm_Sex_Pierce_Pussy_B_Tights.png",
+#            "StormX.Legs == 'shorts' and not StormX.Upskirt", get_cached_image("images/StormSex/Storm_69_Pierce_Pussy_B_Clothed.png"),
+#            "StormX.Hose == 'tights' and not (StormX.Panties and StormX.PantiesDown)", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_B_Tights.png"),
 #            "True", Null(),
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #pussy fondling animation
 ##            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Storm_Sex_Fondle_Pussy",
-#            "True", "images/StormSex/Storm_Sex_Hand.png",
+#            "True", get_cached_image("images/StormSex/Storm_Sex_Hand.png"),
 #            ),
 
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -8164,13 +8164,13 @@ image Storm_69_Legs:
 #        (0,0), ConditionSwitch(
 #            #Footjob overlay
 #            "Player.Cock == 'foot'", Null(),
-#            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Storm_69_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
-#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Storm_69_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
+#            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Storm_69_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
+#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Storm_69_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
 #            "ShowFeet", "Storm_69_Feet",
-##            "Player.Sprite", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick pussy'", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick ass'", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
-#            "True", AlphaMask("Storm_69_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
+##            "Player.Sprite", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick pussy'", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick ass'", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
+#            "True", get_cached_alphamask("Storm_69_Feet", "images/StormSex/Storm_Sex_Feet_Mask.png"),
 #            ),
 
 #        (0,0), ConditionSwitch(                                                                                 #UI tool layer
@@ -8180,7 +8180,7 @@ image Storm_69_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Storm_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_FeetMask.png"),
 #            "True", "Storm_Sex_Feet",
 #            ),
         )
@@ -8191,27 +8191,27 @@ image Storm_69_Legs:
 #    LiveComposite(
 #        #the lower legs used in the sex pose, referenced by Storm_Sex_Legs
 #        (1120,840),
-##        (0,0), "images/StormSex/Storm_Sex_Feet.png",                                                         #Legs Base
+##        (0,0), get_cached_image("images/StormSex/Storm_Sex_Feet.png"),                                                         #Legs Base
 
 #        (0,0), ConditionSwitch(
 #            #hose layer
-#            "(StormX.Hose == 'pantyhose' or StormX.Hose == 'ripped pantyhose') and StormX.Panties and StormX.PantiesDown", "images/StormSex/Storm_69_Feet.png",
-#            "(StormX.Hose == 'tights' or StormX.Hose == 'ripped tights') and StormX.Panties and StormX.PantiesDown", "images/StormSex/Storm_69_Feet.png",
-#            "StormX.Hose == 'tights'", "images/StormSex/Storm_69_Feet_Tights.png",
-#            "StormX.Hose == 'ripped pantyhose'", "images/StormSex/Storm_69_Feet_Holed.png",
-#            "StormX.Hose == 'ripped tights'", "images/StormSex/Storm_69_Feet_Tights_Holed.png",
-#            "StormX.Hose and StormX.Hose != 'garterbelt'", "images/StormSex/Storm_69_Feet_Hose.png",
-#            "True", "images/StormSex/Storm_69_Feet.png",   #Null(),
+#            "(StormX.Hose == 'pantyhose' or StormX.Hose == 'ripped pantyhose') and StormX.Panties and StormX.PantiesDown", get_cached_image("images/StormSex/Storm_69_Feet.png"),
+#            "(StormX.Hose == 'tights' or StormX.Hose == 'ripped tights') and StormX.Panties and StormX.PantiesDown", get_cached_image("images/StormSex/Storm_69_Feet.png"),
+#            "StormX.Hose == 'tights'", get_cached_image("images/StormSex/Storm_69_Feet_Tights.png"),
+#            "StormX.Hose == 'ripped pantyhose'", get_cached_image("images/StormSex/Storm_69_Feet_Holed.png"),
+#            "StormX.Hose == 'ripped tights'", get_cached_image("images/StormSex/Storm_69_Feet_Tights_Holed.png"),
+#            "StormX.Hose and StormX.Hose != 'garterbelt'", get_cached_image("images/StormSex/Storm_69_Feet_Hose.png"),
+#            "True", get_cached_image("images/StormSex/Storm_69_Feet.png"),   #Null(),
 #            ),
 
 ##        (0,0), ConditionSwitch(
 ##            #Wet look
 ##            "not StormX.Water", Null(),
-##            "True", "images/StormSex/Storm_69_Water_Feet.png",
+##            "True", get_cached_image("images/StormSex/Storm_69_Water_Feet.png"),
 ##            ),
 #        (0,0), ConditionSwitch(
 #            #spunk
-#            "'feet' in StormX.Spunk", "images/StormSex/Storm_Sex_Spunk_Feet.png",
+#            "'feet' in StormX.Spunk", get_cached_image("images/StormSex/Storm_Sex_Spunk_Feet.png"),
 #            "True", Null(),
 #            ),
 #        )
@@ -8223,12 +8223,12 @@ image Storm_69_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/StormSex/Storm_Sex_Pussy_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_Pussy_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Storm_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/StormSex/Storm_69_Pussy_Open.png",
-                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", "images/StormSex/Storm_69_Pussy_Open.png",
-                "True", "images/StormSex/Storm_69_Pussy_Closed.png",
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/StormSex/Storm_69_Pussy_Open.png"),
+                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", get_cached_image("images/StormSex/Storm_69_Pussy_Open.png"),
+                "True", get_cached_image("images/StormSex/Storm_69_Pussy_Closed.png"),
                 )
     contains:
             #wet drip
@@ -8237,28 +8237,28 @@ image Storm_69_Pussy:
                 "(StormX.Legs == 'yoga pants' or StormX.Legs == 'shorts') and not StormX.Upskirt", Null(),
                 "StormX.Panties and not StormX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Wet_Drip_69","images/StormSex/Storm_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Wet_Drip_69", "images/StormSex/Storm_69_Mask_Pussy.png"),
                 )
             offset (0,0)#(-700,-570)
     contains:
             # The background plate of her pussy
             ConditionSwitch(
                 "not StormX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-                "True", "images/StormSex/Storm_69_Wet.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/StormSex/Storm_69_Wet.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not StormX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
-#                "Player.Sprite and Player.Cock == 'in'", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-#                "Player.Sprite and Player.Cock == 'out'", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+#                "Player.Sprite and Player.Cock == 'out'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
                 "StormX.Panties == 'bikini bottoms' and StormX.Chest == 'bikini top' and not StormX.Uptop", Null(),
-                "Trigger == 'lick pussy'", Recolor("Storm", "Pubes", "images/StormSex/Storm_69_Pubes.png"),
-                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", Recolor("Storm", "Pubes", "images/StormSex/Storm_69_Pubes.png"),
-                "True", Recolor("Storm", "Pubes", "images/StormSex/Storm_69_Pubes.png"),
+                "Trigger == 'lick pussy'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_69_Pubes.png"),
+                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_69_Pubes.png"),
+                "True", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_69_Pubes.png"),
                 )
     contains:
             #Spunk
@@ -8267,49 +8267,49 @@ image Storm_69_Pussy:
                 "(StormX.Legs == 'yoga pants' or StormX.Legs == 'shorts') and not StormX.Upskirt", Null(),
                 "StormX.Panties and not StormX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Spunk_Drip_69","images/StormSex/Storm_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Spunk_Drip_69", "images/StormSex/Storm_69_Mask_Pussy.png"),
                 )
             offset (0,0)#(-700,-570)
 
     contains:
             ConditionSwitch(
                 #Outside Spunk
-#                "'in' in StormX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-                "'in' in StormX.Spunk and Player.Male", "images/StormSex/Storm_69_Spunk_Pussy.png",
+#                "'in' in StormX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+                "'in' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_69_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #            offset (0,10)
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
-#                "'in' in StormX.Spunk", "images/StormSex/Storm_Sex_Spunk_Puss_Under.png",
+#                "'in' in StormX.Spunk", get_cached_image("images/StormSex/Storm_Sex_Spunk_Puss_Under.png"),
 #                "True", Null(),
 #                )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "StormX.Panties and StormX.PantiesDown", Null(),
-#                "StormX.Hose == 'ripped pantyhose' and ShowFeet", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
-#                "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
+#                "StormX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
+#                "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
 #    contains:
 #            # The animation of Zero's moving penis, masked by her pussy shape
 #            ConditionSwitch(
 ##                "not Player.Sprite", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Storm_Sex_Fucking_Zero_Anim3", "Storm_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Storm_Sex_Fucking_Zero_Anim1", "Storm_Sex_Heading_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim3", "Storm_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim2", "Storm_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Storm_Sex_Fucking_Zero_Anim1", "Storm_Sex_Heading_Mask"),
 #                "Player.Sprite and Player.Cock == 'in'", "Storm_Sex_Fucking_Zero_Anim0",
 #                "True", Null(),
 #                )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "StormX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellF.png",
-#                "StormX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_Pierce_Pussy_RingF.png",
-#                "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_Barbell.png",
-#                "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_Ring.png",
+#                "StormX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellF.png"),
+#                "StormX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingF.png"),
+#                "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_Barbell.png"),
+#                "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
 #    contains:
@@ -8324,7 +8324,7 @@ image Storm_69_Pussy:
 #                "Speed == 1", Null(),
 #                "'in' not in StormX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 ##                "Speed <= 1", Null(), #"Storm_Pussy_Spunk_Heading",
-#                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
 #                )
 
     #End Storm Pussy composite
@@ -8357,35 +8357,35 @@ image Storm_69_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/StormSex/Storm_Sex_Anus.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/StormSex/Storm_Sex_Anus.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/StormSex/Storm_Sex_Anus.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_Anus.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Storm_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Storm_Sex_Anal_Tip",
-            "StormX.Plug", "images/PlugBase_Sex.png",
+            "StormX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "StormX.Loose > 2", "Storm_Gape_Anal_Sex",
-#            "StormX.Loose", "images/StormSex/Storm_Sex_Anus_Loose.png",
-            "True", "images/StormSex/Storm_Sex_Anus_Loose.png",
+#            "StormX.Loose", get_cached_image("images/StormSex/Storm_Sex_Anus_Loose.png"),
+            "True", get_cached_image("images/StormSex/Storm_Sex_Anus_Loose.png"),
             "True", Null(),
             )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
 #                "'anal' not in StormX.Spunk or not Player.Male", Null(),
-##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/StormSex/Storm_Sex_Spunk_Anal_Under.png",
+##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/StormSex/Storm_Sex_Spunk_Anal_Under.png"),
 ##                "Player.Sprite and Player.Cock == 'anal' and Speed == 1", "Storm_Sex_Anal_Spunk_Heading_Under",
-#                "True", "images/StormSex/Storm_69_Spunk_Ass.png",
+#                "True", get_cached_image("images/StormSex/Storm_69_Spunk_Ass.png"),
 #                )
 #            offset (5,0)
 #    contains:
 #            # The animation of Zero's moving penis, masked by her anus shape
 #            ConditionSwitch(
 #                "not Player.Sprite or Player.Cock != 'anal'", Null(),
-#                "Speed >= 3",  AlphaMask("Storm_Sex_Anal_Zero_Anim3", "Storm_Sex_Anal_MaskF"),
-#                "Speed >= 2", AlphaMask("Storm_Sex_Anal_Zero_Anim2", "Storm_Sex_Anal_MaskF"),
-#                "Speed", AlphaMask("Storm_Sex_Anal_Zero_Anim1", "Storm_Sex_Anal_Mask"),
-#                "True", AlphaMask("Storm_Sex_Anal_Zero_Anim0", "Storm_Sex_Anal_Mask"),
+#                "Speed >= 3",  get_cached_alphamask("Storm_Sex_Anal_Zero_Anim3", "Storm_Sex_Anal_MaskF"),
+#                "Speed >= 2", get_cached_alphamask("Storm_Sex_Anal_Zero_Anim2", "Storm_Sex_Anal_MaskF"),
+#                "Speed", get_cached_alphamask("Storm_Sex_Anal_Zero_Anim1", "Storm_Sex_Anal_Mask"),
+#                "True", get_cached_alphamask("Storm_Sex_Anal_Zero_Anim0", "Storm_Sex_Anal_Mask"),
 #                )
 #    contains:
 #            #Spunk over penis
@@ -9688,15 +9688,15 @@ image Storm_SC_Legs:
         (1120,960),
 #        (0,0), ConditionSwitch(
 #Legs Layer
-#            "StormX.Legs == 'blue skirt'", "images/StormSex/Storm_Sex_Skirt_Back.png",
+#            "StormX.Legs == 'blue skirt'", get_cached_image("images/StormSex/Storm_Sex_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/StormSex/Storm_Sex_Legs.png",
+#        (0,0), get_cached_image("images/StormSex/Storm_Sex_Legs.png"),
 #Legs Base
 
 #        (0,0), ConditionSwitch(
 #            #Skirt back
-#            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_Back.png"),
+#            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_Back.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
@@ -9706,14 +9706,14 @@ image Storm_SC_Legs:
 #            ),
 #        (0,0),ConditionSwitch(
 #            #Outside Spunk
-#            "'anal' in StormX.Spunk and Player.Male", "images/StormSex/Storm_Sex_Spunk_Anal_Closed.png",
+#            "'anal' in StormX.Spunk and Player.Male", get_cached_image("images/StormSex/Storm_Sex_Spunk_Anal_Closed.png"),
 #            "True", Null(),
 #            ),
-        (0,0),"images/StormSex/Storm_Sex_Legs_FJ.png",
+        (0,0), get_cached_image("images/StormSex/Storm_Sex_Legs_FJ.png"),
         (0,0), ConditionSwitch(
             #Wet look
             "not StormX.Water", Null(),
-            "True", "images/StormSex/Storm_Sex_Wet_Legs_FJ.png",
+            "True", get_cached_image("images/StormSex/Storm_Sex_Wet_Legs_FJ.png"),
             ),
 
 #        (0,0), "Storm_Sex_Anus",
@@ -9726,28 +9726,28 @@ image Storm_SC_Legs:
         (0,0), ConditionSwitch(
             #leg rings
             "not StormX.Acc == 'rings' or StormX.Legs == 'pants' or StormX.Legs == 'yoga pants'", Null(),
-            "True", "images/StormSex/Storm_Sex_LegRings_FJ.png", #StormX.ArmPose == 2
+            "True", get_cached_image("images/StormSex/Storm_Sex_LegRings_FJ.png"), #StormX.ArmPose == 2
             ),
         (0,0), ConditionSwitch(
             #Panties if up
             "StormX.Legs and StormX.Legs != 'skirt' and not StormX.Upskirt", Null(),
             "StormX.PantiesDown",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Down.png"),
-                    "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Down.png"),
-                    "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Down.png"),
+                    "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Down.png"),
+                    "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Down.png"),
+                    "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Down.png"),
                     "True", Null(),
                     ),
             #If she has panties down. . .
-            "StormX.Panties == 'cos panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Wet.png"),
-            "StormX.Panties == 'cos panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ.png"),
-            "StormX.Panties == 'white panties' and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Wet.png"),
-            "StormX.Panties == 'white panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ.png"),
-            "StormX.Panties == 'lace panties'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Lace_FJ.png"),
-            "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ_Top.png"),
-            "StormX.Panties == 'bikini bottoms'", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ.png"),
-            "StormX.Panties and StormX.Wet", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Wet.png"),
-            "StormX.Panties", Recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ.png"),
+            "StormX.Panties == 'cos panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ_Wet.png"),
+            "StormX.Panties == 'cos panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Cos_FJ.png"),
+            "StormX.Panties == 'white panties' and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ_Wet.png"),
+            "StormX.Panties == 'white panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_White_FJ.png"),
+            "StormX.Panties == 'lace panties'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Lace_FJ.png"),
+            "StormX.Panties == 'bikini bottoms' and (StormX.Chest != 'bikini top' or StormX.Uptop)", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ_Top.png"),
+            "StormX.Panties == 'bikini bottoms'", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Bikini_FJ.png"),
+            "StormX.Panties and StormX.Wet", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ_Wet.png"),
+            "StormX.Panties", get_cached_recolor("Storm", "Panties", "images/StormSex/Storm_Sex_Panties_Black_FJ.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -9758,42 +9758,42 @@ image Storm_SC_Legs:
             "not StormX.Panties and StormX.Hose != 'pantyhose'", Null(),
             "((StormX.Panties or StormX.Hose == 'pantyhose') and StormX.PantiesDown)", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png",
-            "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
             #If she has panties down. . .
-            "StormX.Hose == 'stockings and garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_StockingsGarter_FJ.png"),
-            "StormX.Hose == 'garterbelt'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Garter_FJ.png"),
-            "StormX.Hose == 'stockings'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Stockings_FJ.png"),
+            "StormX.Hose == 'stockings and garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_StockingsGarter_FJ.png"),
+            "StormX.Hose == 'garterbelt'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Garter_FJ.png"),
+            "StormX.Hose == 'stockings'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Stockings_FJ.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pantyhose layer
             "StormX.Panties and StormX.PantiesDown", Null(),
             #If she has panties down. . .
-            "StormX.Hose == 'pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
-            "StormX.Hose == 'ripped pantyhose'", Recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJHoled.png"),
+            "StormX.Hose == 'pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJ.png"),
+            "StormX.Hose == 'ripped pantyhose'", get_cached_recolor("Storm", "Hose", "images/StormSex/Storm_Sex_Hose_Pantyhose_FJHoled.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Legs Layer
-            "StormX.Legs == 'skirt'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_FJ.png"),
+            "StormX.Legs == 'skirt'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Skirt_FJ.png"),
             "StormX.Upskirt",ConditionSwitch(
                     #If she has panties down. . .
-                    "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Down.png"),
-                    "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Down.png"),
+                    "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Down.png"),
+                    "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Down.png"),
                     "True", Null(),
                     ),
             #If she has panties down. . .
-            "StormX.Legs == 'pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Wet.png"),
-            "StormX.Legs == 'pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ.png"),
-            "StormX.Legs == 'yoga pants' and StormX.Wet > 1", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Wet.png"),
-            "StormX.Legs == 'yoga pants'", Recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ.png"),
+            "StormX.Legs == 'pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ_Wet.png"),
+            "StormX.Legs == 'pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_Pants_FJ.png"),
+            "StormX.Legs == 'yoga pants' and StormX.Wet > 1", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ_Wet.png"),
+            "StormX.Legs == 'yoga pants'", get_cached_recolor("Storm", "Legs", "images/StormSex/Storm_Sex_Legs_YogaPants_FJ.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -9804,8 +9804,8 @@ image Storm_SC_Legs:
             "not StormX.Legs", Null(),
             "StormX.Legs and StormX.Legs != 'skirt' and StormX.Upskirt", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png",
-            "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png",
+            "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellC.png"),
+            "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingC.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -9825,8 +9825,8 @@ image Storm_SC_Legs:
             ),
         (0,0), ConditionSwitch(
             #Footjob overlay
-            "True", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
-#            "ShowFeet", AlphaMask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
+            "True", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png"),
+#            "ShowFeet", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot.png"),
             "True", Null(),
             ),
         )
@@ -9839,35 +9839,35 @@ image Storm_SC_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/StormSex/Storm_Sex_Pussy_Fucking.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/StormSex/Storm_Sex_Pussy_Fucking.png"),
                 "Player.Sprite and Player.Cock == 'in' and Speed", "Storm_Sex_Heading_Pussy",
-                "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'out')", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", "images/StormSex/Storm_Sex_Pussy_Open.png",
-                "True", "images/StormSex/Storm_Sex_Pussy_Closed.png",
+                "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", get_cached_image("images/StormSex/Storm_Sex_Pussy_Open.png"),
+                "True", get_cached_image("images/StormSex/Storm_Sex_Pussy_Closed.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not StormX.Pubes", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed and ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking_FJ.png"),
-                "Player.Sprite and Player.Cock == 'in' and Speed", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
-                "Player.Sprite and Player.Cock == 'in' and ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
-                "Player.Sprite and Player.Cock == 'in'", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-                "Trigger == 'lick pussy' and ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
-                "Trigger == 'lick pussy'", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
-                "ShowFeet", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed_FJ.png"),
-                "True", Recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed.png"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed and ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking_FJ.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
+                "Player.Sprite and Player.Cock == 'in'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy' and ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open_FJ.png"),
+                "Trigger == 'lick pussy'", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+                "StormX.Offhand == 'fondle pussy' and StormX.Lust > 60", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Open.png"),
+                "ShowFeet", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed_FJ.png"),
+                "True", get_cached_recolor("Storm", "Pubes", "images/StormSex/Storm_Sex_Pubes_Closed.png"),
                 )
     contains:
             #Piercings
             ConditionSwitch(
-                "StormX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_Pierce_Pussy_BarbellF.png",
-                "StormX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/StormSex/Storm_Sex_Pierce_Pussy_RingF.png",
-                "StormX.Pierce == 'barbell'", "images/StormSex/Storm_Sex_Pierce_Pussy_Barbell.png",
-                "StormX.Pierce == 'ring'", "images/StormSex/Storm_Sex_Pierce_Pussy_Ring.png",
+                "StormX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_BarbellF.png"),
+                "StormX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_RingF.png"),
+                "StormX.Pierce == 'barbell'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_Barbell.png"),
+                "StormX.Pierce == 'ring'", get_cached_image("images/StormSex/Storm_Sex_Pierce_Pussy_Ring.png"),
                 "True", Null(),
                 )
 
@@ -9948,7 +9948,7 @@ image Storm_SC_Anim_0:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Storm_Sex_Feet",
-#                "True", AlphaMask("Storm_Sex_Feet","images/StormSex/Storm_Sex_Mask_Foot2.png")
+#                "True", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -10052,7 +10052,7 @@ image Storm_SC_Anim_1:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Storm_Sex_Feet",
-#                "True", AlphaMask("Storm_Sex_Feet","images/StormSex/Storm_Sex_Mask_Foot2.png")
+#                "True", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -10155,7 +10155,7 @@ image Storm_SC_Anim_2:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Storm_Sex_Feet",
-#                "True", AlphaMask("Storm_Sex_Feet","images/StormSex/Storm_Sex_Mask_Foot2.png")
+#                "True", get_cached_alphamask("Storm_Sex_Feet", "images/StormSex/Storm_Sex_Mask_Foot2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
