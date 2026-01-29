@@ -2,55 +2,55 @@
 image Emma_Sprite:
     LiveComposite(
         (402,965),
-        (0,0), "images/EmmaSprite/EmmaSprite_Shadow.png",
+        (0,0), get_cached_image("images/EmmaSprite/EmmaSprite_Shadow.png"),
 #        (55,0), ConditionSwitch(                                                                         #hair back temporary
 #            "not EmmaX.Hair", Null(),
-#            "EmmaX.Hair == 'wet' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png"),
+#            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #cape layer
             "EmmaX.Uptop or EmmaX.Over == 'jacket' or EmmaX.Chest != 'corset'", Null(),
-            "EmmaX.ArmPose == 2", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape2.png"),
-            "True", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape1.png"),
+            "EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape2.png"),
+            "True", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape1.png"),
             ),
         (0,0), ConditionSwitch(
             #Dress back layer
-            "EmmaX.Legs == 'dress' and EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Back.png"),
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress.png"),
+            "EmmaX.Legs == 'dress' and EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Back.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt back layer
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Under.png"),
-            "EmmaX.Over and EmmaX.Uptop and EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_Back.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Under.png"),
+            "EmmaX.Over and EmmaX.Uptop and EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_Back.png"),
             "True", Null(),
             ),
         (55,0), "EmmaSprite_HairBack",
 #        ConditionSwitch(
 #            #hair back
-#            "EmmaX.Hair == 'short'", "images/EmmaSprite/EmmaSprite_Head_Hair_Short_Back.png",
-#            "EmmaX.Hair == 'wet' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_HairbackWet.png"), #or EmmaX.Hair == 'hat wet'
-#            "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_HairbackWet.png"),
-#            "EmmaX.Hair", Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Hairback.png"),
+#            "EmmaX.Hair == 'short'", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Hair_Short_Back.png"),
+#            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_HairbackWet.png"), #or EmmaX.Hair == 'hat wet'
+#            "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_HairbackWet.png"),
+#            "EmmaX.Hair", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Hairback.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #nighty underlayer
-#            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Under.png"),
+#            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Under.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #panties down back
             "not EmmaX.Panties or not EmmaX.PantiesDown or (EmmaX.Legs == 'pants' and not EmmaX.Upskirt)", Null(),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_DownBack.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini_DownBack.png"),
-            "True", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_DownBack.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_DownBack.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini_DownBack.png"),
+            "True", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_DownBack.png"),
             ),
         (0,0), ConditionSwitch(
             #legs/torso
-            "EmmaX.ArmPose == 2", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Legs_Arms2.png",
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Legs_Arms1.png", #if EmmaX.Arms == 1
+            "EmmaX.ArmPose == 2", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Legs_Arms2.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Legs_Arms1.png"), #if EmmaX.Arms == 1
             ),
 
         (215,540), ConditionSwitch(
@@ -59,24 +59,24 @@ image Emma_Sprite:
             "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Null(),
             "EmmaX.Panties and not EmmaX.PantiesDown and EmmaX.Wet <= 1", Null(),
             "EmmaX.Wet == 1", ConditionSwitch( #Wet = 1
-                    "EmmaX.Panties and EmmaX.PantiesDown", AlphaMask("Wet_Drip","Emma_Drip_MaskP"),
-                    "EmmaX.Legs == 'pants'", AlphaMask("Wet_Drip","Emma_Drip_MaskP"),
-                    "True", AlphaMask("Wet_Drip","Emma_Drip_Mask"), #only plays if nothing is in the way
+                    "EmmaX.Panties and EmmaX.PantiesDown", get_cached_alphamask("Wet_Drip", "Emma_Drip_MaskP"),
+                    "EmmaX.Legs == 'pants'", get_cached_alphamask("Wet_Drip", "Emma_Drip_MaskP"),
+                    "True", get_cached_alphamask("Wet_Drip", "Emma_Drip_Mask"), #only plays if nothing is in the way
                     ),
             "True", ConditionSwitch( #Wet = 2+
-                    "EmmaX.Panties and EmmaX.PantiesDown", AlphaMask("Wet_Drip2","Emma_Drip_MaskP"), #"Wet_Drip2",#
-                    "EmmaX.Legs == 'pants'", AlphaMask("Wet_Drip2","Emma_Drip_MaskP"),
-                    "EmmaX.Panties", AlphaMask("Wet_Drip","Emma_Drip_Mask"), #"Wet_Drip2",#
-                    "True", AlphaMask("Wet_Drip2","Emma_Drip_Mask"), #only plays if nothing is in the way
+                    "EmmaX.Panties and EmmaX.PantiesDown", get_cached_alphamask("Wet_Drip2", "Emma_Drip_MaskP"), #"Wet_Drip2",#
+                    "EmmaX.Legs == 'pants'", get_cached_alphamask("Wet_Drip2", "Emma_Drip_MaskP"),
+                    "EmmaX.Panties", get_cached_alphamask("Wet_Drip", "Emma_Drip_Mask"), #"Wet_Drip2",#
+                    "True", get_cached_alphamask("Wet_Drip2", "Emma_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
         (0,0), ConditionSwitch(
             #Personal Wetness
             "not EmmaX.Wet", Null(),
             "EmmaX.Legs and EmmaX.Wet <= 1", Null(),
-            "EmmaX.Legs", "images/EmmaSprite/EmmaSprite_Wet.png",
-            "EmmaX.Wet == 1", "images/EmmaSprite/EmmaSprite_Wet.png",
-            "True", "images/EmmaSprite/EmmaSprite_Wet.png",       #EmmaX.Wet >1
+            "EmmaX.Legs", get_cached_image("images/EmmaSprite/EmmaSprite_Wet.png"),
+            "EmmaX.Wet == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Wet.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Wet.png"),       #EmmaX.Wet >1
             ),
 
         (215,540), ConditionSwitch(
@@ -84,14 +84,14 @@ image Emma_Sprite:
             "('in' not in EmmaX.Spunk and 'anal' not in EmmaX.Spunk) or not Player.Male", Null(),
             "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Null(),
             "True", ConditionSwitch( #Wet = 2+
-                    "EmmaX.Panties and EmmaX.PantiesDown", AlphaMask("Spunk_Drip","Emma_Drip_MaskP"), #"Wet_Drip2",#
-                    "EmmaX.Legs == 'pants'", AlphaMask("Spunk_Drip","Emma_Drip_MaskP"),
-                    "True", AlphaMask("Spunk_Drip","Emma_Drip_Mask"), #only plays if nothing is in the way
+                    "EmmaX.Panties and EmmaX.PantiesDown", get_cached_alphamask("Spunk_Drip", "Emma_Drip_MaskP"), #"Wet_Drip2",#
+                    "EmmaX.Legs == 'pants'", get_cached_alphamask("Spunk_Drip", "Emma_Drip_MaskP"),
+                    "True", get_cached_alphamask("Spunk_Drip", "Emma_Drip_Mask"), #only plays if nothing is in the way
                     ),
             ),
         (0,0), ConditionSwitch(
             #pubes
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Pubes.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Pubes.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -99,63 +99,63 @@ image Emma_Sprite:
             "not EmmaX.Pierce", Null(),
             "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
             "EmmaX.Legs != 'skirt' and EmmaX.Legs and not EmmaX.Upskirt", Null(), #skirt if wearing a skirt
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_Barbell.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_Ring.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Pussy_Barbell.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Pussy_Ring.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Water effect
-            "EmmaX.Water", "images/EmmaSprite/EmmaSprite_Water_Legs.png",
+            "EmmaX.Water", get_cached_image("images/EmmaSprite/EmmaSprite_Water_Legs.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #panties up
             "EmmaX.PantiesDown or not EmmaX.Panties", Null(),
-#            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_Wet.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports.png"),
-            "EmmaX.Panties == 'lace panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_Wet.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini.png"),
-#            "EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Wet.png"), #readd when sprite works
-            "True", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties.png"),
+#            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_Wet.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports.png"),
+            "EmmaX.Panties == 'lace panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_Wet.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini.png"),
+#            "EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Wet.png"), #readd when sprite works
+            "True", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties.png"),
             ),
         (0,0), ConditionSwitch(
             # stockings
             "renpy.showing('Emma_FJ_Animation')", Null(),
-            "EmmaX.Hose == 'stockings'", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_Stockings.png"),
-            "EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_StockingsGarter.png"),
-            "EmmaX.Hose == 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_Garter.png"),
+            "EmmaX.Hose == 'stockings'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_Stockings.png"),
+            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_StockingsGarter.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_Garter.png"),
             "True", Null(),
             ),
         (-20,0), ConditionSwitch(
             #boots
             "EmmaX.Boots != 'thigh boots'", Null(),
-            "EmmaX.PantiesDown", Recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots.png"),
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots.png"),
+            "EmmaX.PantiesDown", get_cached_recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #panties down if not wearing pants
             "not EmmaX.Panties or not EmmaX.PantiesDown or (EmmaX.Legs == 'pants' and not EmmaX.Upskirt)", Null(),
-            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_DownWet.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_Down.png"),
-            "EmmaX.Panties == 'lace panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_DownWet.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_Down.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini_Down.png"),
-#            "EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_DownWet.png"),
-            "True", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Down.png"),
+            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_DownWet.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_Down.png"),
+            "EmmaX.Panties == 'lace panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_DownWet.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_Down.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini_Down.png"),
+#            "EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_DownWet.png"),
+            "True", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Down.png"),
             ),
         (0,0), ConditionSwitch(
             # pantyhose
             "renpy.showing('Emma_FJ_Animation')", Null(),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_Hose.png"),
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_HoseHoled.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_Hose.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_HoseHoled.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #pussy spunk
             "EmmaX.Legs and EmmaX.Legs != 'skirt' and not EmmaX.Upskirt", Null(),
-            "('in' in EmmaX.Spunk or 'anal' in EmmaX.Spunk) and Player.Male", "images/EmmaSprite/EmmaSprite_Spunk_Pussy.png",
+            "('in' in EmmaX.Spunk or 'anal' in EmmaX.Spunk) and Player.Male", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_Pussy.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -163,36 +163,36 @@ image Emma_Sprite:
             "not EmmaX.Legs", Null(),
             "EmmaX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Up.png"),
-                        "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_SkirtUp.png"),
+                        "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Up.png"),
+                        "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_SkirtUp.png"),
                         "EmmaX.Boots == 'thigh boots'", Null(),
-                        "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_Down.png"),
-                        "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_Yoga_Down.png"),
+                        "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_Down.png"),
+                        "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_Yoga_Down.png"),
                         # Modification mode
-                        "EmmaX.Legs == 'bottom harem'", "images/EmmaSprite/modification/Emmas_sprite_legs_harem_bottom_down.png",
+                        "EmmaX.Legs == 'bottom harem'", get_cached_image("images/EmmaSprite/modification/Emmas_sprite_legs_harem_bottom_down.png"),
                         # -----------------
                         "True", Null(),
                         ),
             "True", ConditionSwitch(
                     #if it's the ring pericings
-                    "EmmaX.Legs == 'dress' and renpy.showing('Emma_FJ_Animation')",Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Up.png"),
-                    "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress.png"),
-                    "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Skirt.png"),
+                    "EmmaX.Legs == 'dress' and renpy.showing('Emma_FJ_Animation')",get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Up.png"),
+                    "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress.png"),
+                    "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Skirt.png"),
                     "EmmaX.Wet", ConditionSwitch(
                         #if she's not wet
-                        "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants.png"),
-                        "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_YogaWet.png"),
+                        "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants.png"),
+                        "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_YogaWet.png"),
                         # Modification mode
-                        "EmmaX.Legs == 'bottom harem'", "images/EmmaSprite/modification/Emmas_sprite_legs_harem_bottom_wet.png",
+                        "EmmaX.Legs == 'bottom harem'", get_cached_image("images/EmmaSprite/modification/Emmas_sprite_legs_harem_bottom_wet.png"),
                         # -----------------
                         "True", Null(),
                         ),
                     "True", ConditionSwitch(
                         #if she's wet
-                        "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants.png"),
-                        "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_Yoga.png"),
+                        "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants.png"),
+                        "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pants_Yoga.png"),
                         # Modification mode
-                        "EmmaX.Legs == 'bottom harem'", "images/EmmaSprite/modification/Emmas_sprite_legs_harem_bottom.png",
+                        "EmmaX.Legs == 'bottom harem'", get_cached_image("images/EmmaSprite/modification/Emmas_sprite_legs_harem_bottom.png"),
                         # -----------------
                         "True", Null(),
                         ),
@@ -200,9 +200,9 @@ image Emma_Sprite:
             ),
         (-20,0), ConditionSwitch(
             #boots
-            "EmmaX.Boots == 'shoes'", Recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots_Shoes.png"),  #only shows if panties are up and there isn't a dress over them
+            "EmmaX.Boots == 'shoes'", get_cached_recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots_Shoes.png"),  #only shows if panties are up and there isn't a dress over them
             "EmmaX.PantiesDown or (EmmaX.Legs == 'dress' and not EmmaX.Upskirt)", Null(),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots.png"),  #only shows if panties are up and there isn't a dress over them
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_Boots.png"),  #only shows if panties are up and there isn't a dress over them
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -211,71 +211,71 @@ image Emma_Sprite:
             "EmmaX.Legs == 'dress'", Null(),
             "EmmaX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the barbell pericings
-                    "EmmaX.Legs and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_BarOut.png"),
-                    "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_BarOut.png"),
+                    "EmmaX.Legs and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_BarOut.png"),
+                    "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_BarOut.png"),
                     "True", Null(),
                     ),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "EmmaX.Legs and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_RingOut.png"),
-                    "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_RingOut.png"),
+                    "EmmaX.Legs and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_RingOut.png"),
+                    "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Pierce_Pussy_RingOut.png"),
                     "True", Null(),
                     ),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Chest underlayer
-            "EmmaX.Chest == 'sports bra' and not EmmaX.Uptop", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Sports_Under.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Lace_Under.png"),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetUnder.png"),
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Bikini_Under.png"),
+            "EmmaX.Chest == 'sports bra' and not EmmaX.Uptop", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Sports_Under.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Lace_Under.png"),
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetUnder.png"),
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Bikini_Under.png"),
             # Modification mode
-            "EmmaX.Chest == 'top up tits harem'", "images/EmmaSprite/modification/Emma_sprite_chest_tits_up_harem1_top.png",
-            "EmmaX.Chest == 'top down tits harem'", "images/EmmaSprite/modification/Emma_sprite_chest_tits_down_harem2_top.png",
+            "EmmaX.Chest == 'top up tits harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_chest_tits_up_harem1_top.png"),
+            "EmmaX.Chest == 'top down tits harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_chest_tits_down_harem2_top.png"),
             # -----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over underlayer
-            "EmmaX.Over == 'dress' and not EmmaX.Upskirt and not renpy.showing('Emma_FJ_Animation')", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Loincloth.png"), #dangling strip under arms
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Under.png"),
-            "EmmaX.Over == 'towel'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Under.png"),
+            "EmmaX.Over == 'dress' and not EmmaX.Upskirt and not renpy.showing('Emma_FJ_Animation')", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Loincloth.png"), #dangling strip under arms
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Under.png"),
+            "EmmaX.Over == 'towel'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Under.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #belly spunk
-            "'belly' in EmmaX.Spunk and Player.Male", "images/EmmaSprite/EmmaSprite_Spunk_Belly.png",
+            "'belly' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_Belly.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #arms
-            "EmmaX.ArmPose == 2", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Arms2.png",         # one hand up
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Arms1.png", #if EmmaX.Arms == 1   # Crossed
+            "EmmaX.ArmPose == 2", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Arms2.png"),         # one hand up
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Arms1.png"), #if EmmaX.Arms == 1   # Crossed
             ),
         (0,0), ConditionSwitch(
             #Water effect on arms
             "not EmmaX.Water", Null(),
-            "EmmaX.ArmPose == 1", "images/EmmaSprite/EmmaSprite_Water_Arms1.png",
-            "True", "images/EmmaSprite/EmmaSprite_Water_Arms2.png", #if EmmaX.Arms == 1
+            "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Water_Arms1.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Water_Arms2.png"), #if EmmaX.Arms == 1
             ),
         (0,0), ConditionSwitch(
             #gloves
             "not EmmaX.Arms", Null(),
-            "EmmaX.ArmPose == 2", Recolor("Emma", "Arms", "images/EmmaSprite/EmmaSprite_Gloves_Arms2.png"),
-            "True", Recolor("Emma", "Arms", "images/EmmaSprite/EmmaSprite_Gloves_Arms1.png"), #if EmmaX.Arms == 1
+            "EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Arms", "images/EmmaSprite/EmmaSprite_Gloves_Arms2.png"),
+            "True", get_cached_recolor("Emma", "Arms", "images/EmmaSprite/EmmaSprite_Gloves_Arms1.png"), #if EmmaX.Arms == 1
             ),
 
         (0,0), ConditionSwitch(
             # jacket arms in "up" pose
             "not EmmaX.Uptop or EmmaX.Over != 'jacket'", Null(),
-            "EmmaX.ArmPose == 2", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Arm_Up.png"),
-            "True", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_1Arm_Up.png"),
+            "EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Arm_Up.png"),
+            "True", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_1Arm_Up.png"),
             ),
         (0,0), ConditionSwitch(
             #tits
-            "EmmaX.ArmPose == 1", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_TitsUp.png",   # EmmaX.TitsUp = 1
-            "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_TitsUp.png",   # EmmaX.TitsUp = 1
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_TitsDown.png",   # EmmaX.TitsUp = 0
+            "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_TitsUp.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_TitsUp.png"),   # EmmaX.TitsUp = 1
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_TitsDown.png"),   # EmmaX.TitsUp = 0
             ),
         (0,0), ConditionSwitch(
             #nude peircings
@@ -283,67 +283,67 @@ image Emma_Sprite:
             "not EmmaX.Pierce", Null(),
             "EmmaX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the barbell pericings
-                    "EmmaX.ArmPose == 1", "images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png",
-                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", "images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png",
-#                    "EmmaX.Chest == 'lace bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png",
-#                    "EmmaX.Chest == 'sports bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png",
-                    "True", "images/EmmaSprite/EmmaSprite_Pierce_Down_Barbell.png",
+                    "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png"),
+                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Barbell.png"),
+                    "True", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Down_Barbell.png"),
                     ),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "EmmaX.ArmPose == 1", "images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png",
-                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", "images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png",
-#                    "EmmaX.Chest == 'lace bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png",
-#                    "EmmaX.Chest == 'sports bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png",
-                    "True", "images/EmmaSprite/EmmaSprite_Pierce_Down_Ring.png",
+                    "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png"),
+                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_Ring.png"),
+                    "True", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Down_Ring.png"),
                     ),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #neck
-            "EmmaX.Neck == 'choker'", Recolor("Emma", "Neck", "images/EmmaSprite/EmmaSprite_Neck_Choker.png"),
+            "EmmaX.Neck == 'choker'", get_cached_recolor("Emma", "Neck", "images/EmmaSprite/EmmaSprite_Neck_Choker.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Water effect
             "not EmmaX.Water", Null(),
-            "EmmaX.ArmPose == 1 or EmmaX.Chest == 'corset'", "images/EmmaSprite/EmmaSprite_Water_TitsUp.png",
-            "True", "images/EmmaSprite/EmmaSprite_Water_TitsDown.png", #if EmmaX.Arms == 1
+            "EmmaX.ArmPose == 1 or EmmaX.Chest == 'corset'", get_cached_image("images/EmmaSprite/EmmaSprite_Water_TitsUp.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Water_TitsDown.png"), #if EmmaX.Arms == 1
             ),
         (0,0), ConditionSwitch(
             #Chest layer
             "EmmaX.Uptop and EmmaX.Chest", ConditionSwitch(
                             #if her top is up. . .
-                            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Sports_Up.png"),
-                            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Lace_Up.png"),
-                            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Bikini_Up.png"),
-                            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetTits_Up.png"),
+                            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Sports_Up.png"),
+                            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Lace_Up.png"),
+                            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Bikini_Up.png"),
+                            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetTits_Up.png"),
                             # Modification mode
-                            "EmmaX.Chest == 'top up tits harem'", "images/EmmaSprite/modification/Emma_sprite_chest_tits_up_harem1_top.png",
-                            "EmmaX.Chest == 'top down tits harem'", "images/EmmaSprite/modification/Emma_sprite_chest_tits_down_harem2_top_up.png",
+                            "EmmaX.Chest == 'top up tits harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_chest_tits_up_harem1_top.png"),
+                            "EmmaX.Chest == 'top down tits harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_chest_tits_down_harem2_top_up.png"),
                             # -----------------
                             "True", Null(),
                             ),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Sports.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Lace.png"),
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Bikini.png"),
-            "EmmaX.Chest == 'corset' and EmmaX.Over", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetTitsX.png"),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetTits.png"),
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Sports.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Lace.png"),
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Bra_Bikini.png"),
+            "EmmaX.Chest == 'corset' and EmmaX.Over", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetTitsX.png"),
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_CorsetTits.png"),
             # Modification mode
-            "EmmaX.Chest == 'top up tits harem'", "images/EmmaSprite/modification/Emma_sprite_chest_tits_up_harem1_top.png",
-            "EmmaX.Chest == 'top down tits harem'", "images/EmmaSprite/modification/Emma_sprite_chest_tits_down_harem2_top.png",
+            "EmmaX.Chest == 'top up tits harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_chest_tits_up_harem1_top.png"),
+            "EmmaX.Chest == 'top down tits harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_chest_tits_down_harem2_top.png"),
             # -----------------
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(                                                                         #soap
-#            "EmmaX.Water == 3", "images/EmmaSprite/Emma_body_wet3.png",
+#            "EmmaX.Water == 3", get_cached_image("images/EmmaSprite/Emma_body_wet3.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #cape layer
             "EmmaX.Uptop or EmmaX.Over == 'jacket' or EmmaX.Chest != 'corset'", Null(),
-            "EmmaX.ArmPose == 2", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape2.png"),
-            "True", Recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape1.png"),
+            "EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape2.png"),
+            "True", get_cached_recolor("Emma", "Chest", "images/EmmaSprite/EmmaSprite_Cape1.png"),
             ),
         (0,0), ConditionSwitch(
             #Overshirt layer
@@ -353,65 +353,65 @@ image Emma_Sprite:
                     "EmmaX.Uptop", ConditionSwitch(
                                     "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", ConditionSwitch(
                                             #If she's wearing a supporting bra. . .
-                                            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2U_Up.png"),
-                                            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Up_Up.png"),
-                                            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Up2_Up.png"),
+                                            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2U_Up.png"),
+                                            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Up_Up.png"),
+                                            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Up2_Up.png"),
                                             "True", Null(),
                                             ),
                                     #if she's not wearing a supporting bra. . .
-                                    "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2D_Up.png"),
-                                    "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Down_Up.png"),
-                                    "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Up2_Up.png"),
+                                    "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2D_Up.png"),
+                                    "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Down_Up.png"),
+                                    "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Up2_Up.png"),
                                     "True", Null(),
                                     ),
                     #if not Uptop. . .
                     "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", ConditionSwitch(
                             #If she's wearing a supporting bra. . .
-                            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2U.png"),
-                            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Up.png"),
-                            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_2Up.png"),
-                            "EmmaX.Over == 'towel'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Up2.png"),
+                            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2U.png"),
+                            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Up.png"),
+                            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_2Up.png"),
+                            "EmmaX.Over == 'towel'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Up2.png"),
                             "True", Null(),
                             ),
                     #if she's not wearing a supporting bra. . .
-                    "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2D.png"),
-                    "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Down.png"),
-                    "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_2Down.png"),
-                    "EmmaX.Over == 'towel'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Down2.png"),
+                    "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top2D.png"),
+                    "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_2Down.png"),
+                    "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_2Down.png"),
+                    "EmmaX.Over == 'towel'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Down2.png"),
                     "True", Null(),
                     ),
             #if her arms are up, preventng her breasts from sinking
             "EmmaX.Uptop", ConditionSwitch(
                             #if her top is up. . .
-                            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top1_Up.png"),
-                            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_1Up_Up.png"),
-                            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Up1_Up.png"),
+                            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top1_Up.png"),
+                            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_1Up_Up.png"),
+                            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_Up1_Up.png"),
                             "True", Null(),
                             ),
             #if her top is not up. . .
-            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top1.png"),
-            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_1Up.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_1Up.png"),
-            "EmmaX.Over == 'towel'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Up1.png"),
+            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Top1.png"),
+            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Jacket_1Up.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Nighty_1Up.png"),
+            "EmmaX.Over == 'towel'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Towel_Up1.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(                                                                         #clothed peircings
             "not EmmaX.Pierce or EmmaX.Uptop or (not EmmaX.Over and not EmmaX.Chest)", Null(),
             "EmmaX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the barbell pericings
-                    "EmmaX.ArmPose == 1", "images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png",
-                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", "images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png",
-#                    "EmmaX.Chest == 'lace bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png",
-#                    "EmmaX.Chest == 'sports bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png",
-                    "True", "images/EmmaSprite/EmmaSprite_Pierce_Down_BarOut.png",
+                    "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png"),
+                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_BarOut.png"),
+                    "True", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Down_BarOut.png"),
                     ),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "EmmaX.ArmPose == 1", "images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png",
-                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", "images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png",
-#                    "EmmaX.Chest == 'lace bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png",
-#                    "EmmaX.Chest == 'sports bra'", "images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png",
-                    "True", "images/EmmaSprite/EmmaSprite_Pierce_Down_RingOut.png",
+                    "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png"),
+                    "EmmaX.Chest in ('corset','lace bra','sports bra','bikini top')", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Up_RingOut.png"),
+                    "True", get_cached_image("images/EmmaSprite/EmmaSprite_Pierce_Down_RingOut.png"),
                     ),
             "True", Null(),
             ),
@@ -419,33 +419,33 @@ image Emma_Sprite:
             #breast spunk
             "'tits' in EmmaX.Spunk and Player.Male", ConditionSwitch(
                     #if it's the barbell pericings
-                    "EmmaX.ArmPose == 1", "images/EmmaSprite/EmmaSprite_Spunk_TitsU.png",
-                    "EmmaX.Chest == 'corset'", "images/EmmaSprite/EmmaSprite_Spunk_TitsU.png",
-                    "EmmaX.Chest == 'lace bra'", "images/EmmaSprite/EmmaSprite_Spunk_TitsU.png",
-                    "EmmaX.Chest == 'sports bra'", "images/EmmaSprite/EmmaSprite_Spunk_TitsU.png",
-                    "True", "images/EmmaSprite/EmmaSprite_Spunk_TitsD.png",
+                    "EmmaX.ArmPose == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_TitsU.png"),
+                    "EmmaX.Chest == 'corset'", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_TitsU.png"),
+                    "EmmaX.Chest == 'lace bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_TitsU.png"),
+                    "EmmaX.Chest == 'sports bra'", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_TitsU.png"),
+                    "True", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_TitsD.png"),
                     ),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #bundled dress over arms
-            "(EmmaX.Legs == 'dress' or EmmaX.Over == 'dress') and EmmaX.Upskirt and EmmaX.ArmPose == 2", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over2.png"),         # one hand up
-            "(EmmaX.Legs == 'dress' or EmmaX.Over == 'dress') and EmmaX.Upskirt", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over1.png"),         # one hand up
+            "(EmmaX.Legs == 'dress' or EmmaX.Over == 'dress') and EmmaX.Upskirt and EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over2.png"),         # one hand up
+            "(EmmaX.Legs == 'dress' or EmmaX.Over == 'dress') and EmmaX.Upskirt", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over1.png"),         # one hand up
             "True", Null(), #if EmmaX.Arms == 1   # Crossed
             ),
         (55,0), "EmmaSprite_Head", #Head
         (0,0), ConditionSwitch(
             #hand spunk
             "EmmaX.ArmPose != 2 or 'hand' not in EmmaX.Spunk or not Player.Male", Null(),
-            "'mouth' in EmmaX.Spunk", "images/EmmaSprite/EmmaSprite_Spunk_HandM.png",
-            "True", "images/EmmaSprite/EmmaSprite_Spunk_Hand.png",
+            "'mouth' in EmmaX.Spunk", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_HandM.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_Hand.png"),
             ),
 #        (0,0), ConditionSwitch(                                                                         #Props
 #            "not EmmaX.Held or EmmaX.ArmPose != 2", Null(),
-#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'phone'", "images/EmmaSprite/Emma_held_phone.png",
-#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'dildo'", "images/EmmaSprite/Emma_held_dildo.png",
-#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'vibrator'", "images/EmmaSprite/Emma_held_vibrator.png",
-#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'panties'", "images/EmmaSprite/Emma_held_panties.png",
+#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'phone'", get_cached_image("images/EmmaSprite/Emma_held_phone.png"),
+#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'dildo'", get_cached_image("images/EmmaSprite/Emma_held_dildo.png"),
+#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'vibrator'", get_cached_image("images/EmmaSprite/Emma_held_vibrator.png"),
+#            "EmmaX.ArmPose == 2 and EmmaX.Held == 'panties'", get_cached_image("images/EmmaSprite/Emma_held_panties.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
@@ -545,7 +545,7 @@ image Emma_Sprite:
     zoom .80#.75
 
 image TempHairBack:
-    Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png")
+    get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png")
     anchor (0.6, 0.0)
     zoom .5
 
@@ -554,10 +554,10 @@ image EmmaSprite_HairBack:
         (555,673),
         (0,0), ConditionSwitch(
             #hair back
-            "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaSprite/EmmaSprite_Head_Hair_Short_Back.png"),
-            "EmmaX.Hair == 'wet' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png"), #or EmmaX.Hair == 'hat wet'
-            "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png"),
-            "EmmaX.Hair", Recolor("Emma", "Hair", "images/EmmaSprite/EmmaSprite_Head_HairBack.png"),
+            "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/EmmaSprite_Head_Hair_Short_Back.png"),
+            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png"), #or EmmaX.Hair == 'hat wet'
+            "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairBackWet.png"),
+            "EmmaX.Hair", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/EmmaSprite_Head_HairBack.png"),
             "True", Null(),
             ),
         )
@@ -573,137 +573,137 @@ image EmmaSprite_Head:
                     #If no Blush
                     "EmmaX.Hair == 'wet' or EmmaX.Hair == 'short' or EmmaX.Water", ConditionSwitch(
                             #If the hair is wet or EmmaX.Hair == 'hat wet'
-                            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Angry.png",
-                            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Sad.png",
-                            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Surprised.png",
-                            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Confused.png",
-                            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Normal.png", #EmmaX.Brows == 'normal'
+                            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Angry.png"),
+                            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Sad.png"),
+                            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Surprised.png"),
+                            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Confused.png"),
+                            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_Normal.png"), #EmmaX.Brows == 'normal'
                             ),
                     "True", ConditionSwitch(
                             #If the hair is not wet
-                            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Angry.png",
-                            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Sad.png",
-                            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Surprised.png",
-                            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Confused.png",
-                            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Normal.png", #EmmaX.Brows == 'normal'
+                            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Angry.png"),
+                            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Sad.png"),
+                            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Surprised.png"),
+                            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Confused.png"),
+                            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_Normal.png"), #EmmaX.Brows == 'normal'
                             ),
                     ),
                 "EmmaX.Blush == 1", ConditionSwitch(
                     #If the first tier blush
                     "EmmaX.Hair == 'wet' or EmmaX.Hair == 'short' or EmmaX.Water", ConditionSwitch(
                             #If the hair is wet or EmmaX.Hair == 'hat wet'
-                            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_AngryB1.png",
-                            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SadB1.png",
-                            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SurprisedB1.png",
-                            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_ConfusedB1.png",
-                            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_NormalB1.png", #EmmaX.Brows == 'normal'
+                            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_AngryB1.png"),
+                            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SadB1.png"),
+                            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SurprisedB1.png"),
+                            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_ConfusedB1.png"),
+                            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_NormalB1.png"), #EmmaX.Brows == 'normal'
                             ),
                     "True", ConditionSwitch(
                             #If the hair is not wet
-                            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_AngryB1.png",
-                            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SadB1.png",
-                            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SurprisedB1.png",
-                            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_ConfusedB1.png",
-                            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_NormalB1.png", #EmmaX.Brows == 'normal'
+                            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_AngryB1.png"),
+                            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SadB1.png"),
+                            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SurprisedB1.png"),
+                            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_ConfusedB1.png"),
+                            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_NormalB1.png"), #EmmaX.Brows == 'normal'
                             ),
                     ),
                 "True", ConditionSwitch(
                     #else, 2nd tier blush
                     "EmmaX.Hair == 'wet' or EmmaX.Hair == 'short' or EmmaX.Water", ConditionSwitch(
                             #If the hair is wet or EmmaX.Hair == 'hat wet'
-                            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_AngryB2.png",
-                            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SadB2.png",
-                            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SurprisedB2.png",
-                            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_ConfusedB2.png",
-                            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_NormalB2.png", #EmmaX.Brows == 'normal'
+                            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_AngryB2.png"),
+                            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SadB2.png"),
+                            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_SurprisedB2.png"),
+                            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_ConfusedB2.png"),
+                            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wet_NormalB2.png"), #EmmaX.Brows == 'normal'
                             ),
                     "True", ConditionSwitch(
                             #If the hair is not wet
-                            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_AngryB2.png",
-                            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SadB2.png",
-                            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SurprisedB2.png",
-                            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_ConfusedB2.png",
-                            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_NormalB2.png", #EmmaX.Brows == 'normal'
+                            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_AngryB2.png"),
+                            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SadB2.png"),
+                            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_SurprisedB2.png"),
+                            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_ConfusedB2.png"),
+                            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Wave_NormalB2.png"), #EmmaX.Brows == 'normal'
                             ),
                     ),
                 ),
         (0,0), ConditionSwitch(
             #Mouths
-            "EmmaX.Mouth == 'normal'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Normal.png"),
-            "EmmaX.Mouth == 'lipbite'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Lipbite.png"),
-            "EmmaX.Mouth == 'sucking' or EmmaX.Mouth == 'open'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Surprised.png"),
-            "EmmaX.Mouth == 'kiss'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Kiss.png"),
-            "EmmaX.Mouth == 'sad'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Sad.png"),
-            "EmmaX.Mouth == 'smile'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'surprised'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Surprised.png"),
-            "EmmaX.Mouth == 'tongue'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Tongue.png"),
-            "EmmaX.Mouth == 'grimace'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'smirk'", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Smirk.png"),
-            "True", Recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Normal.png"),
+            "EmmaX.Mouth == 'normal'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Normal.png"),
+            "EmmaX.Mouth == 'lipbite'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Lipbite.png"),
+            "EmmaX.Mouth == 'sucking' or EmmaX.Mouth == 'open'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Surprised.png"),
+            "EmmaX.Mouth == 'kiss'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Kiss.png"),
+            "EmmaX.Mouth == 'sad'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Sad.png"),
+            "EmmaX.Mouth == 'smile'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'surprised'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Surprised.png"),
+            "EmmaX.Mouth == 'tongue'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Tongue.png"),
+            "EmmaX.Mouth == 'grimace'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'smirk'", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Smirk.png"),
+            "True", get_cached_recolor("Emma", "Lips", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Mouth_Normal.png"),
             ),
 
         (0,0), ConditionSwitch(
             #Mouth spunk
-            "'chin' in EmmaX.Spunk and not Player.Male", "images/EmmaSprite/EmmaSprite_Head_Wet_Mouth.png",
+            "'chin' in EmmaX.Spunk and not Player.Male", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Wet_Mouth.png"),
             "'mouth' not in EmmaX.Spunk or not Player.Male", Null(),
-            "EmmaX.Mouth == 'surprised' or EmmaX.Mouth == 'open'", "images/EmmaSprite/EmmaSprite_Head_Spunk_MouthOpen.png",
-            "EmmaX.Mouth == 'tongue'", "images/EmmaSprite/EmmaSprite_Head_Spunk_MouthTongue.png",
-            "True", "images/EmmaSprite/EmmaSprite_Head_Spunk_Mouth.png",
+            "EmmaX.Mouth == 'surprised' or EmmaX.Mouth == 'open'", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Spunk_MouthOpen.png"),
+            "EmmaX.Mouth == 'tongue'", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Spunk_MouthTongue.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Spunk_Mouth.png"),
             ),
 
         (0,0), "Emma Blink",
             #Eyes
         (0,0), ConditionSwitch(
             #brows
-            "EmmaX.Brows == 'normal'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Normal.png",
-            "EmmaX.Brows == 'angry'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Angry.png",
-            "EmmaX.Brows == 'sad'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Sad.png",
-            "EmmaX.Brows == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Surprised.png",
-            "EmmaX.Brows == 'confused'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Confused.png",
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Normal.png",
+            "EmmaX.Brows == 'normal'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Normal.png"),
+            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Angry.png"),
+            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Sad.png"),
+            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Surprised.png"),
+            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Confused.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Brows_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #facial spunk
-            "'facial' in EmmaX.Spunk and Player.Male", "images/EmmaSprite/EmmaSprite_Head_Spunk_Face.png",
+            "'facial' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Spunk_Face.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair
-            "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaSprite/EmmaSprite_Head_Hair_Short.png"),
-            "EmmaX.Hair == 'wet' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairWet.png"), #or EmmaX.Hair == 'hat wet'
-            "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairWet.png"),
-            "True", Recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Hair.png"),
+            "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/EmmaSprite_Head_Hair_Short.png"),
+            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairWet.png"), #or EmmaX.Hair == 'hat wet'
+            "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_HairWet.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Hair.png"),
             ),
         (0,0), ConditionSwitch(
             #Hair Water
-            "EmmaX.Water", "images/EmmaSprite/EmmaSprite_Head_Water.png",
-            "not Player.Male and 'facial' in EmmaX.Spunk","images/EmmaSprite/EmmaSprite_Head_Water.png",
+            "EmmaX.Water", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Water.png"),
+            "not Player.Male and 'facial' in EmmaX.Spunk", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Water.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #hair spunk
             "not 'hair' in EmmaX.Spunk or not Player.Male", Null(),
-            "EmmaX.Hair == 'wet' or EmmaX.Hair == 'short' or EmmaX.Water", "images/EmmaSprite/EmmaSprite_Head_Spunk_HairWet.png",  #or EmmaX.Hair == 'hat wet'
-            "True", "images/EmmaSprite/EmmaSprite_Head_Spunk_HairWave.png",
+            "EmmaX.Hair == 'wet' or EmmaX.Hair == 'short' or EmmaX.Water", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Spunk_HairWet.png"),  #or EmmaX.Hair == 'hat wet'
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Spunk_HairWave.png"),
             ),
         (-1,0), ConditionSwitch(
             #Hair shade under hat
             "not EmmaX.Hat or EmmaX.Hair == 'short'", Null(),
-            "EmmaX.Hair == 'wet' or EmmaX.Water", "images/EmmaSprite/EmmaSprite_Shadow_Wet.png",
-            "not Player.Male and 'facial' in EmmaX.Spunk","images/EmmaSprite/EmmaSprite_Shadow_Wet.png",
-            "True", "images/EmmaSprite/EmmaSprite_Shadow_Long.png",
+            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_image("images/EmmaSprite/EmmaSprite_Shadow_Wet.png"),
+            "not Player.Male and 'facial' in EmmaX.Spunk", get_cached_image("images/EmmaSprite/EmmaSprite_Shadow_Wet.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Shadow_Long.png"),
 #            "True", Null(),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "EmmaX.Mask == 'mask harem'", "images/EmmaSprite/modification/Emma_sprite_mask_harem.png",
+            "EmmaX.Mask == 'mask harem'", get_cached_image("images/EmmaSprite/modification/Emma_sprite_mask_harem.png"),
             "True", Null(),
         ),
         # -----------------
         (-125,-95), ConditionSwitch(
             #Hat
-            "EmmaX.Hat", "images/EmmaSprite/EmmaSprite_Hat.png",
-#            "EmmaX.Hair == 'hat wet' or EmmaX.Hair == 'hat'", "images/EmmaSprite/EmmaSprite_Hat.png",
+            "EmmaX.Hat", get_cached_image("images/EmmaSprite/EmmaSprite_Hat.png"),
+#            "EmmaX.Hair == 'hat wet' or EmmaX.Hair == 'hat'", get_cached_image("images/EmmaSprite/EmmaSprite_Hat.png"),
             "True", Null(),
             ),
         )
@@ -712,17 +712,17 @@ image EmmaSprite_Head:
 
 image Emma Blink:
     ConditionSwitch(
-        "EmmaX.Eyes == 'sexy'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Sexy.png",
-        "EmmaX.Eyes == 'side'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Side.png",
-        "EmmaX.Eyes == 'leftside'", "images/EmmaSprite/EmmaSprite_Head_Eyes_Leftside.png",
-        "EmmaX.Eyes == 'surprised'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Surprised.png",
-        "EmmaX.Eyes == 'normal'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Normal.png",
-        "EmmaX.Eyes == 'stunned'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Agao.png",
-        "EmmaX.Eyes == 'down'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Down.png",
-        "EmmaX.Eyes == 'closed'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Closed.png",
-        "EmmaX.Eyes == 'manic'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Surprised.png",
+        "EmmaX.Eyes == 'sexy'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Sexy.png"),
+        "EmmaX.Eyes == 'side'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Side.png"),
+        "EmmaX.Eyes == 'leftside'", get_cached_image("images/EmmaSprite/EmmaSprite_Head_Eyes_Leftside.png"),
+        "EmmaX.Eyes == 'surprised'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Surprised.png"),
+        "EmmaX.Eyes == 'normal'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Normal.png"),
+        "EmmaX.Eyes == 'stunned'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Agao.png"),
+        "EmmaX.Eyes == 'down'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Down.png"),
+        "EmmaX.Eyes == 'closed'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Closed.png"),
+        "EmmaX.Eyes == 'manic'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Surprised.png"),
         "EmmaX.Eyes == 'squint'", "Emma_Squint",
-        "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Normal.png",
+        "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_Head_Eyes_Normal.png"),
     ),
     choice:
         3.5
@@ -840,23 +840,23 @@ image Emma_Doggy_Body:
         #Upper body
         (420,750),
 #        (165,0),"Emma_Doggy_Hair_Under", #back of the hair
-        #(0,0), "images/JeanDoggy/Jean_Doggy_Breast.png", #Body base
+        #(0,0), get_cached_image("images/JeanDoggy/Jean_Doggy_Breast.png"), #Body base
         (-12,0), ConditionSwitch(
             #head
             "EmmaX.Facing", Null(),
             "True", "Emma_Doggy_Head",
             ),
 #        (-12,0), "Emma_Doggy_Head",               #Head(165,0)
-        (0,0), "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Body.png", #Body base
+        (0,0), get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Body.png"), #Body base
         (0,0), ConditionSwitch(
             #neck
-            "EmmaX.Neck == 'choker'", Recolor("Emma", "Neck", "images/EmmaDoggy/Emma_Doggy_Choker.png"),
+            "EmmaX.Neck == 'choker'", get_cached_recolor("Emma", "Neck", "images/EmmaDoggy/Emma_Doggy_Choker.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #gloves
-            "EmmaX.Arms", Recolor("Emma", "Arms", "images/EmmaDoggy/Emma_Doggy_Gloves.png"),
+            "EmmaX.Arms", get_cached_recolor("Emma", "Arms", "images/EmmaDoggy/Emma_Doggy_Gloves.png"),
             "True",  Null(),
             ),
 
@@ -865,39 +865,39 @@ image Emma_Doggy_Body:
             "EmmaX.Over == 'jacket'", Null(),
 #            "EmmaX.Uptop", ConditionSwitch(
 #                    "EmmaX.Over and EmmaX.Over != 'towel'", Null(),
-#                    "EmmaX.Chest == 'cami'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Cami_Up.png"),
-#                    "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Lace.png"),
-#                    "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport_Up.png"),
-#                    "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Bikini_Up.png"),
-#                    "True", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra.png"),
+#                    "EmmaX.Chest == 'cami'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Cami_Up.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Lace.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport_Up.png"),
+#                    "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Bikini_Up.png"),
+#                    "True", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra.png"),
 #                    ),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Sleave.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset.png"),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport.png"),
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Bikini.png"),
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Sleave.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset.png"),
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport.png"),
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Bikini.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "EmmaX.Water", "images/EmmaDoggy/Emma_Doggy_Wet_Body.png",
+            "EmmaX.Water", get_cached_image("images/EmmaDoggy/Emma_Doggy_Wet_Body.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #skirt Under
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Over_Dress_Under.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Over_Dress_Under.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Overshirt
-            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Dress.png"),
-            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Jacket.png"),
-            "EmmaX.Over == 'nighty' and EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Nighty_Down.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Nighty.png"),
+            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Dress.png"),
+            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Jacket.png"),
+            "EmmaX.Over == 'nighty' and EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Nighty_Down.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Nighty.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in EmmaX.Spunk and Player.Male", "images/EmmaDoggy/Emma_Doggy_Spunk_Back.png",
+            "'back' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Back.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -925,93 +925,93 @@ image Emma_Doggy_Head:
     LiveComposite(
         #Head
         (420,750),
-        #(0,0), "images/JeanDoggy/Jean_Doggy_Head.png", #Body base
+        #(0,0), get_cached_image("images/JeanDoggy/Jean_Doggy_Head.png"), #Body base
         (0,0), ConditionSwitch(
             #hair back
                 "EmmaX.Hair == 'short'", Null(),
-                "EmmaX.Water or EmmaX.Hair == 'wet'", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Back.png"),   #or EmmaX.Hair == 'hat wet'
-                "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Back.png"),
-                "True", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Long_Back.png"),
+                "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Back.png"),   #or EmmaX.Hair == 'hat wet'
+                "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Back.png"),
+                "True", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Long_Back.png"),
             ),
         (0,0), ConditionSwitch(
             #Head
-#            "EmmaX.Blush > 1", "images/EmmaDoggy/Emma_Doggy_Head_Blush2.png",
-            "EmmaX.Blush", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Head_Blush.png",
-            "True", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Head.png",
+#            "EmmaX.Blush > 1", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Blush2.png"),
+            "EmmaX.Blush", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Head_Blush.png"),
+            "True", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Head.png"),
             ),
         (0,0), ConditionSwitch(
             #Mouth
-            "EmmaX.Mouth == 'lipbite'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Lipbite.png"),
-            "EmmaX.Mouth == 'sucking'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Tongue.png"),
-            "EmmaX.Mouth == 'kiss'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Kiss.png"),
-            "EmmaX.Mouth == 'sad'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Sad.png"),
-            "EmmaX.Mouth == 'smile'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'grimace'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'smirk'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Smirk.png"),
-            "EmmaX.Mouth == 'surprised'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Kiss.png"),
-            "EmmaX.Mouth == 'sucking'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Tongue.png"),
-            "EmmaX.Mouth == 'tongue'", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Tongue.png"),
-            "True", Recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Normal.png"),
+            "EmmaX.Mouth == 'lipbite'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Lipbite.png"),
+            "EmmaX.Mouth == 'sucking'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Tongue.png"),
+            "EmmaX.Mouth == 'kiss'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Kiss.png"),
+            "EmmaX.Mouth == 'sad'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Sad.png"),
+            "EmmaX.Mouth == 'smile'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'grimace'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'smirk'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Smirk.png"),
+            "EmmaX.Mouth == 'surprised'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Kiss.png"),
+            "EmmaX.Mouth == 'sucking'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Tongue.png"),
+            "EmmaX.Mouth == 'tongue'", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Tongue.png"),
+            "True", get_cached_recolor("Emma", "Lips", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Mouth_Normal.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #chin spunk
-#            "'chin' in EmmaX.Spunk", "images/JeanDoggy/Jean_Doggy_Spunk_Chin.png",
+#            "'chin' in EmmaX.Spunk", get_cached_image("images/JeanDoggy/Jean_Doggy_Spunk_Chin.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Mouth spunk
             "'mouth' not in EmmaX.Spunk or not Player.Male", Null(),
-            #"EmmaX.Mouth == 'normal'", "images/EmmaDoggy/Emma_Doggy_Spunk_Normal.png",
-            #"EmmaX.Mouth == 'sad'", "images/EmmaDoggy/Emma_Doggy_Spunk_Normal.png",
-#            "EmmaX.Mouth == 'lipbite'", "images/EmmaDoggy/Emma_Doggy_Spunk_Smile.png",
-            "EmmaX.Mouth == 'smile'", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Smile.png",
-            "EmmaX.Mouth == 'grimace'", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Smile.png",
-            "EmmaX.Mouth == 'sucking'", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Tongue.png",
-            #"EmmaX.Mouth == 'kiss'", "images/EmmaDoggy/Emma_Doggy_Spunk_Open.png",
-#            "EmmaX.Mouth == 'surprised'", "images/EmmaDoggy/Emma_Doggy_Spunk_Normal.png",
-            "EmmaX.Mouth == 'tongue'", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Tongue.png",
-            "True", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Normal.png",
+            #"EmmaX.Mouth == 'normal'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Normal.png"),
+            #"EmmaX.Mouth == 'sad'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Normal.png"),
+#            "EmmaX.Mouth == 'lipbite'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Smile.png"),
+            "EmmaX.Mouth == 'smile'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Smile.png"),
+            "EmmaX.Mouth == 'grimace'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Smile.png"),
+            "EmmaX.Mouth == 'sucking'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Tongue.png"),
+            #"EmmaX.Mouth == 'kiss'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Open.png"),
+#            "EmmaX.Mouth == 'surprised'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Normal.png"),
+            "EmmaX.Mouth == 'tongue'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Tongue.png"),
+            "True", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Normal.png"),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            #"EmmaX.Brows == 'normal'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Normal.png",
-            "EmmaX.Brows == 'angry'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Angry.png",
-            "EmmaX.Brows == 'sad'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Sad.png",
-            "EmmaX.Brows == 'surprised'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Surprised.png",
-            #"EmmaX.Brows == 'confused'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Normal.png",
-            "True", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Normal.png",
+            #"EmmaX.Brows == 'normal'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Normal.png"),
+            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Angry.png"),
+            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Sad.png"),
+            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Surprised.png"),
+            #"EmmaX.Brows == 'confused'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Normal.png"),
+            "True", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Brows_Normal.png"),
             ),
         (0,0), "Emma Doggy Blink",#Eyes
 #        (0,0), ConditionSwitch(
 #            #wet hair strand
-#            "EmmaX.Water or EmmaX.Hair == 'wet'", "images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png",
+#            "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_image("images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #Hair
             "EmmaX.Hair == 'short'", Null(), #"images/EmmaDoggy/Emma_Doggy_Hair_Short.png",   #or EmmaX.Hair == 'hat wet'
-            "EmmaX.Water or EmmaX.Hair == 'wet'", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),   #or EmmaX.Hair == 'hat wet'
-            "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),
-            "True", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Long.png"),
+            "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),   #or EmmaX.Hair == 'hat wet'
+            "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Long.png"),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "EmmaX.Mask == 'mask harem'", "images/EmmaDoggy/modification/Emma_doggy_mask_harem.png",
+            "EmmaX.Mask == 'mask harem'", get_cached_image("images/EmmaDoggy/modification/Emma_doggy_mask_harem.png"),
             "True", Null(),
         ),
         # ------------------
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "EmmaX.Water", "images/EmmaDoggy/Emma_Doggy_Head_Wet.png",
+#            "EmmaX.Water", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Wet.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #face spunk
-#            "'hair' in EmmaX.Spunk", "images/EmmaDoggy/Emma_Doggy_Spunk_Hair.png",
-#            "'facial' in EmmaX.Spunk", "images/EmmaDoggy/Emma_Doggy_Spunk_Facial.png",
+#            "'hair' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Hair.png"),
+#            "'facial' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Facial.png"),
 #            "True", Null(),
 #            ),
-#        (0,0), "images/EmmaDoggy/Emma_Doggy_Head_Bodyref.png",
+#        (0,0), get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Bodyref.png"),
         )
     zoom 0.83 #.83
     #alpha 0.9
@@ -1022,35 +1022,35 @@ image Emma_Doggy_Head_Fore:
         contains:
             ConditionSwitch(
                 #Hair
-                "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Short_Fore.png"),
-                "EmmaX.Hat and (EmmaX.Water or EmmaX.Hair == 'wet')", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore_S.png"),   #or EmmaX.Hair == 'hat wet'
-                "EmmaX.Hat and not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore_S.png"),
-                "EmmaX.Hat", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wave_Fore_S.png"),
-                "EmmaX.Water or EmmaX.Hair == 'wet'", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore.png"),   #or EmmaX.Hair == 'hat wet'
-                "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore.png"),
-                "True", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wave_Fore.png"),
+                "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Short_Fore.png"),
+                "EmmaX.Hat and (EmmaX.Water or EmmaX.Hair == 'wet')", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore_S.png"),   #or EmmaX.Hair == 'hat wet'
+                "EmmaX.Hat and not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore_S.png"),
+                "EmmaX.Hat", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wave_Fore_S.png"),
+                "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore.png"),   #or EmmaX.Hair == 'hat wet'
+                "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet_Fore.png"),
+                "True", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wave_Fore.png"),
                 )
 #        contains:
 #            ConditionSwitch(
 #                #Wet look
-#                "EmmaX.Water", "images/EmmaDoggy/Emma_Doggy_Head_Wet.png",
-#                "not Player.Male and 'facial' in EmmaX.Spunk","images/EmmaDoggy/Emma_Doggy_Head_Wet.png",
+#                "EmmaX.Water", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Wet.png"),
+#                "not Player.Male and 'facial' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Wet.png"),
 #                "True", Null(),
 #                )
 #        contains:
 #            ConditionSwitch(
 #                #face spunk
-#                "'hair' in EmmaX.Spunk and Player.Male", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Hair.png",
-#                "'facial' in EmmaX.Spunk", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Facial.png",
+#                "'hair' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Hair.png"),
+#                "'facial' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Facial.png"),
 #                "True", Null(),
 #                )
 #        contains:
 #            ConditionSwitch(
 #                #Hair shade under hat
 #                "not EmmaX.Hat", Null(),
-#                "EmmaX.Hair == 'hat' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
-#                "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
-#                "True", Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Long_Shadow.png"),
+#                "EmmaX.Hair == 'hat' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
+#                "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
+#                "True", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Long_Shadow.png"),
 ##                "True", Null(),
 #                )
         contains:
@@ -1067,8 +1067,8 @@ image Emma_Doggy_Head_Fore:
 #image Emma_Doggy_Hair_Under:
 #        #hair under body
 #        ConditionSwitch(
-#                "EmmaX.Water or EmmaX.Hair == 'wet'", "images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png",
-#                "True", "images/JeanDoggy/Jean_Doggy_Hair_Short_Under.png",
+#                "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_image("images/JeanDoggy/Jean_Doggy_Hair_Wet_Under.png"),
+#                "True", get_cached_image("images/JeanDoggy/Jean_Doggy_Hair_Short_Under.png"),
 #                )
 #        zoom 0.83
 
@@ -1077,32 +1077,32 @@ image Emma_Doggy_Hair_Over:
         contains:
             ConditionSwitch(
                 #Hair
-                "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Short.png"),   #or EmmaX.Hair == 'hat wet'
-                "EmmaX.Water or EmmaX.Hair == 'wet'", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),   #or EmmaX.Hair == 'hat wet'
-                "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),
-                "True", Recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Long.png"),
+                "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Short.png"),   #or EmmaX.Hair == 'hat wet'
+                "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),   #or EmmaX.Hair == 'hat wet'
+                "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Wet.png"),
+                "True", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Hair_Long.png"),
                 )
         contains:
             ConditionSwitch(
                 #Wet look
-                "EmmaX.Water", "images/EmmaDoggy/Emma_Doggy_Head_Wet.png",
-                "not Player.Male and 'facial' in EmmaX.Spunk","images/EmmaDoggy/Emma_Doggy_Head_Wet.png",
+                "EmmaX.Water", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Wet.png"),
+                "not Player.Male and 'facial' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Wet.png"),
                 "True", Null(),
                 )
         contains:
             ConditionSwitch(
                 #face spunk
-                "'hair' in EmmaX.Spunk and Player.Male", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Hair.png",
-                "'facial' in EmmaX.Spunk", "images/EmmaDoggy/Emma_Doggy_Head_Spunk_Facial.png",
+                "'hair' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Hair.png"),
+                "'facial' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Head_Spunk_Facial.png"),
                 "True", Null(),
                 )
         contains:
             ConditionSwitch(
                 #Hair shade under hat
                 "not EmmaX.Hat or EmmaX.Hair == 'short'", Null(),
-                "EmmaX.Hair == 'hat' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
-                "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
-                "True", Recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Long_Shadow.png"),
+                "EmmaX.Hair == 'hat' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
+                "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Wet_Shadow.png"),
+                "True", get_cached_recolor("Emma", "Hair", "images/EmmaDoggy/Emma_Doggy_Hair_Long_Shadow.png"),
 #                "True", Null(),
                 )
         contains:
@@ -1131,16 +1131,16 @@ image Emma_Doggy_Hat:
 image Emma Doggy Blink:
         #Eyes
         ConditionSwitch(
-        "EmmaX.Eyes == 'sexy'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Sexy.png",
-        "EmmaX.Eyes == 'side'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Side.png",
-#        "EmmaX.Eyes == 'normal'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Normal.png",
-        "EmmaX.Eyes == 'closed'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Closed.png",
-#        "EmmaX.Eyes == 'manic'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Normal.png",
-        "EmmaX.Eyes == 'down'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Down.png",
-        "EmmaX.Eyes == 'stunned'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Stunned.png",
-        "EmmaX.Eyes == 'surprised'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Surprised.png",
-        "EmmaX.Eyes == 'squint'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Sexy.png",
-        "True", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Normal.png",
+        "EmmaX.Eyes == 'sexy'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Sexy.png"),
+        "EmmaX.Eyes == 'side'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Side.png"),
+#        "EmmaX.Eyes == 'normal'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Normal.png"),
+        "EmmaX.Eyes == 'closed'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Closed.png"),
+#        "EmmaX.Eyes == 'manic'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Normal.png"),
+        "EmmaX.Eyes == 'down'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Down.png"),
+        "EmmaX.Eyes == 'stunned'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Stunned.png"),
+        "EmmaX.Eyes == 'surprised'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Surprised.png"),
+        "EmmaX.Eyes == 'squint'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Sexy.png"),
+        "True", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Eyes_Normal.png"),
         ),
     #    choice:
     #        3.5
@@ -1161,77 +1161,77 @@ image Emma_Doggy_Ass:
 
         (0,0), ConditionSwitch(
             #New ass base check
-            "Trigger == 'lick pussy'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Open.png",
-            "EmmaX.Legs and not EmmaX.Upskirt", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Closed.png",
-            "EmmaX.Panties and not EmmaX.PantiesDown", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Closed.png",
-            "Player.Sprite and Player.Cock == 'in'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png",
-            "'dildo pussy' in (Trigger,Trigger2,EmmaX.Offhand)", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png",
-            "'fondle pussy' in (Trigger,Trigger2,EmmaX.Offhand)", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png",
-            "Trigger == 'insert pussy'", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png",
-            "True", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Closed.png",
+            "Trigger == 'lick pussy'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Open.png"),
+            "EmmaX.Legs and not EmmaX.Upskirt", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Closed.png"),
+            "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Closed.png"),
+            "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png"),
+            "'dildo pussy' in (Trigger,Trigger2,EmmaX.Offhand)", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png"),
+            "'fondle pussy' in (Trigger,Trigger2,EmmaX.Offhand)", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png"),
+            "Trigger == 'insert pussy'", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Fucking.png"),
+            "True", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Ass_Closed.png"),
             ),
         (0,0), ConditionSwitch(
             #Anus backing plate
             "Player.Sprite and Player.Cock == 'anal'", ConditionSwitch(
 #                    "Speed > 2", "'images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png'", #Speed 3
 #                    "Speed > 1", "'images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png'",  #Speed 2
-                    "Speed", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png",      #Speed 1
+                    "Speed", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png"),      #Speed 1
                     "True", Null(),               #Speed 0
                     ),
-            "renpy.showing('Anal_Plug_In_Doggy') or renpy.showing('Anal_Plug_Out_Doggy')", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png",
-            "EmmaX.Plug", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_PlugPlate.png",
-            "'insert ass' in (Trigger,Trigger2,EmmaX.Offhand)", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png",
-            "'dildo anal' in (Trigger,Trigger2,EmmaX.Offhand)", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png",
+            "renpy.showing('Anal_Plug_In_Doggy') or renpy.showing('Anal_Plug_Out_Doggy')", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png"),
+            "EmmaX.Plug", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_PlugPlate.png"),
+            "'insert ass' in (Trigger,Trigger2,EmmaX.Offhand)", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png"),
+            "'dildo anal' in (Trigger,Trigger2,EmmaX.Offhand)", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Anal_FullBase.png"),
             "EmmaX.Loose > 2", "Emma_Gape_Anal",    #intentional
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #ass red
-            "EmmaX.Red", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Red.png",
+            "EmmaX.Red", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Red.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Wet look
-            "EmmaX.Water", "images/EmmaDoggy/Emma_Doggy_Wet_Ass.png",
+            "EmmaX.Water", get_cached_image("images/EmmaDoggy/Emma_Doggy_Wet_Ass.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hose
-            "EmmaX.Hose == 'stockings'", Recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_Stockings.png"),
+            "EmmaX.Hose == 'stockings'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_Stockings.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Panties if Down
             "not EmmaX.PantiesDown or (EmmaX.Legs and EmmaX.Legs != 'skirt' and not EmmaX.Upskirt)", Null(),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Sport_Down.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Bikini_Down.png"),
-            "EmmaX.Panties == 'lace panties'",Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Lace_Down.png"),
-            "EmmaX.Panties",Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_White_Down.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Sport_Down.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Bikini_Down.png"),
+            "EmmaX.Panties == 'lace panties'",get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Lace_Down.png"),
+            "EmmaX.Panties",get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_White_Down.png"),
             "True", Null(),
             ),
 
 
         (0,0), ConditionSwitch(
             #Legs Layer if down
-            "EmmaX.Legs == 'pants' and EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Pants_Down.png"),
-            "EmmaX.Legs == 'yoga pants' and EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Yoga_Down.png"),
+            "EmmaX.Legs == 'pants' and EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Pants_Down.png"),
+            "EmmaX.Legs == 'yoga pants' and EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Yoga_Down.png"),
             # Modification mode
-            "EmmaX.Legs == 'bottom harem' and EmmaX.Upskirt", "images/EmmaDoggy/modification/Emma_doggy_legs_harem_bottom_down.png",
+            "EmmaX.Legs == 'bottom harem' and EmmaX.Upskirt", get_cached_image("images/EmmaDoggy/modification/Emma_doggy_legs_harem_bottom_down.png"),
             # -----------------
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #boots Layer
             "EmmaX.Legs and EmmaX.Legs != 'skirt' and EmmaX.Upskirt",Null(),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaDoggy/Emma_Doggy_Boots.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaDoggy/Emma_Doggy_Boots.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunkpussy Layer
             "'in' in EmmaX.Spunk and Player.Cock == 'in' and Player.Male",Null(),# "images/JeanDoggy/Jean_Doggy_SpunkPussyOpen.png",  #fix for EmmaX.Spunk is used later
-            "'in' in EmmaX.Spunk and Player.Male", "images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png",
-            "EmmaX.Wet and Player.Cock == 'in'", "images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png",
-            "EmmaX.Wet", "images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JeanDoggy/Jean_Doggy_SpunkPussyClosed.png"),
+            "EmmaX.Wet and Player.Cock == 'in'", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyOpen.png"),
+            "EmmaX.Wet", get_cached_image("images/RogueDoggy/Rogue_Doggy_WetPussyClosed.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1241,24 +1241,24 @@ image Emma_Doggy_Ass:
             "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
             "'dildo pussy' in (Trigger,Trigger2,EmmaX.Offhand)", Null(),
             "(EmmaX.Legs and EmmaX.Legs != 'skirt') and not EmmaX.Upskirt", Null(),
-            "EmmaX.PantiesDown and Trigger == 'lick pussy'", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Open.png"),
-            "EmmaX.Panties and EmmaX.PantiesDown", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Closed.png"),
-            "EmmaX.Panties", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_ClosedC.png"),
-            "EmmaX.Hose == 'pantyhose' and Trigger == 'lick pussy'", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_OpenC.png"),
-            "EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_ClosedC.png"),
-            "Trigger == 'lick pussy'", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Open.png"),
-            "True", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Closed.png"),
+            "EmmaX.PantiesDown and Trigger == 'lick pussy'", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Open.png"),
+            "EmmaX.Panties and EmmaX.PantiesDown", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Closed.png"),
+            "EmmaX.Panties", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_ClosedC.png"),
+            "EmmaX.Hose == 'pantyhose' and Trigger == 'lick pussy'", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_OpenC.png"),
+            "EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_ClosedC.png"),
+            "Trigger == 'lick pussy'", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Open.png"),
+            "True", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Closed.png"),
             ),
         (0,0), ConditionSwitch(
             #Pussy Piercings
             "Player.Sprite", Null(),
             "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
             "'dildo pussy' in (Trigger,Trigger2,EmmaX.Offhand)", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_Barbell.png",
-            "EmmaX.Pierce == 'ring' and EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC2.png"),
-            "EmmaX.Pierce == 'ring' and EmmaX.Hose == 'pantyhose' and not (EmmaX.Panties and EmmaX.PantiesDown)", Recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC2.png"),
-            "EmmaX.Pierce == 'ring' and EmmaX.Legs and EmmaX.Legs != 'skirt' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC2.png"),
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_Ring.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_Barbell.png"),
+            "EmmaX.Pierce == 'ring' and EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC2.png"),
+            "EmmaX.Pierce == 'ring' and EmmaX.Hose == 'pantyhose' and not (EmmaX.Panties and EmmaX.PantiesDown)", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC2.png"),
+            "EmmaX.Pierce == 'ring' and EmmaX.Legs and EmmaX.Legs != 'skirt' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC2.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_Ring.png"),
             "True", Null(),
             ),
 
@@ -1268,24 +1268,24 @@ image Emma_Doggy_Ass:
             "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Sport_Wet.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Sport.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Lace.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Bikini.png"),
-            "EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_White_Wet.png"),
-            "True", Recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_White.png"),
+            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Sport_Wet.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Sport.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Lace.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_Bikini.png"),
+            "EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_White_Wet.png"),
+            "True", get_cached_recolor("Emma", "Panties", "images/EmmaDoggy/Emma_Doggy_Panties_White.png"),
             ),
         (0,0), ConditionSwitch(        #fix // // // // // // fix // // // // // // fix // // // // // // fix // // // // // //
             #full hose/tights
 #            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'",Null(),
 #            "Trigger == 'dildo pussy'", Null(),
-#            "EmmaX.Panties and EmmaX.PantiesDown and EmmaX.Hose == 'stockings and garterbelt'", "images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png",
-            "EmmaX.Hose == 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_Garter.png"),
-            "EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_StockingGarter.png"),
+#            "EmmaX.Panties and EmmaX.PantiesDown and EmmaX.Hose == 'stockings and garterbelt'", get_cached_image("images/RogueDoggy/Rogue_Doggy_Stockings_Loose.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_Garter.png"),
+            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_StockingGarter.png"),
             "EmmaX.Panties and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_PantyhoseHoled.png"),
+            "EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/Emma_Doggy_Hose_PantyhoseHoled.png"),
             "True", Null(),
             ),
 
@@ -1297,37 +1297,37 @@ image Emma_Doggy_Ass:
             "not EmmaX.Panties and EmmaX.Hose != 'pantyhose'", Null(),
             "((EmmaX.Panties or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown)", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellC.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellC.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingC.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Legs Layer
             "EmmaX.Legs == 'pants'", ConditionSwitch(
                     "EmmaX.Upskirt", Null(),
-                    "EmmaX.Wet > 1", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Pants_Wet.png"),
-                    "True", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Pants.png"),
+                    "EmmaX.Wet > 1", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Pants_Wet.png"),
+                    "True", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Pants.png"),
                     ),
             "EmmaX.Legs == 'yoga pants'", ConditionSwitch(
                     "EmmaX.Upskirt", Null(),
-                    "EmmaX.Wet > 1", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Yoga_Wet.png"),
-                    "True", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Yoga.png"),
+                    "EmmaX.Wet > 1", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Yoga_Wet.png"),
+                    "True", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Yoga.png"),
                     ),
             "EmmaX.Legs == 'dress'", ConditionSwitch(
-                    "EmmaX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Dress_Up.png"),
-                    "EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Dress_Up.png"),
-                    "True", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Dress.png"),
+                    "EmmaX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Dress_Up.png"),
+                    "EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Dress_Up.png"),
+                    "True", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Dress.png"),
                     ),
             "EmmaX.Legs == 'skirt'", ConditionSwitch(
-                    "EmmaX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Skirt_Up.png"),
-                    "EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Skirt_Up.png"),
-                    "True", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Skirt.png"),
+                    "EmmaX.Upskirt and Player.Sprite and Player.Cock == 'anal' and Speed" , get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Skirt_Up.png"),
+                    "EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Skirt_Up.png"),
+                    "True", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Skirt.png"),
                     ),
             # Modification mode
             "EmmaX.Legs == 'bottom harem'", ConditionSwitch(
                 "EmmaX.Upskirt", Null(),
                 "EmmaX.Wet > 1", Null(),
-                "True", "images/EmmaDoggy/modification/Emma_doggy_legs_harem_bottom.png",
+                "True", get_cached_image("images/EmmaDoggy/modification/Emma_doggy_legs_harem_bottom.png"),
             ),
             # ----------------
             "True", Null(),
@@ -1341,32 +1341,32 @@ image Emma_Doggy_Ass:
             "not EmmaX.Legs", Null(),
             "EmmaX.Legs and EmmaX.Legs != 'skirt' and EmmaX.Legs != 'dress' and EmmaX.Upskirt", Null(),
                 #if she has panties, but they are down, or pantyhose, or Legs that are not a skirt and are not down, skip these. . .
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellC.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingC.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellC.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingC.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #boots Layer
             "EmmaX.Legs and EmmaX.Legs != 'skirt' and EmmaX.Upskirt",Null(),
             "Player.Cock == 'in' or Player.Cock == 'anal'",Null(),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaDoggy/Emma_Doggy_Boots.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaDoggy/Emma_Doggy_Boots.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Over Layer
-            "EmmaX.Over == 'nighty' and EmmaX.Upskirt", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Legs_Nighty_Up.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Legs_Nighty.png"),
+            "EmmaX.Over == 'nighty' and EmmaX.Upskirt", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Legs_Nighty_Up.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Legs_Nighty.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Over Layer
-#            "EmmaX.Over == 'towel' and EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Towel_Up.png"),
-#            "EmmaX.Over == 'towel'", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Towel.png"),
+#            "EmmaX.Over == 'towel' and EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Towel_Up.png"),
+#            "EmmaX.Over == 'towel'", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Legs_Towel.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #spunk back Layer
-            "'back' in EmmaX.Spunk and Player.Male", "images/EmmaDoggy/Emma_Doggy_Spunk_Ass.png",
+            "'back' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Ass.png"),
             "True", Null(),
             ),
          (0,0), ConditionSwitch(
@@ -1396,7 +1396,7 @@ image Emma_Doggy_Ass:
                     ),
             "'insert ass' in (Trigger,Trigger2,EmmaX.Offhand)", "Emma_Anal_Fingering",
             "'dildo anal' in (Trigger,Trigger2,EmmaX.Offhand)", "Emma_Anal_Fucking",
-            "EmmaX.Plug", "images/PlugIn.png",
+            "EmmaX.Plug", get_cached_image("images/PlugIn.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -1409,16 +1409,16 @@ image Emma_Doggy_Ass:
         (0,0), ConditionSwitch(
             #Hotdogging underlayer
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", "images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png",
-            "True", "images/KittyDoggy/Kitty_Doggy_HotdogBack.png",
+#            "KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_image("images/JeanDoggy/Jean_Doggy_Hotdog_Upskirt_Back.png"),
+            "True", get_cached_image("images/KittyDoggy/Kitty_Doggy_HotdogBack.png"),
             ),
         (0,0), ConditionSwitch(
             #Hotdogging Cock w/ alpha
             "not Player.Sprite or Player.Cock != 'out'", Null(),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
-            "Speed", AlphaMask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
-            "True", AlphaMask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt and Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            #"KittyX.Legs == 'skirt' and KittyX.Upskirt", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask_Upskirt.png"),
+            "Speed", get_cached_alphamask("Zero_Hotdog_Moving", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
+            "True", get_cached_alphamask("Zero_Hotdog_Static", "images/RogueDoggy/Rogue_Doggy_HotdogMask.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #UI tool layer
@@ -1432,33 +1432,33 @@ image Emma_Doggy_Ass:
 
 image Emma_Doggy_Feet:
     contains:
-            AlphaMask("Emma_Doggy_Shins", "images/EmmaDoggy/Emma_Doggy_Feet_Mask.png")
+            get_cached_alphamask("Emma_Doggy_Shins", "images/EmmaDoggy/Emma_Doggy_Feet_Mask.png")
 
 image Emma_Doggy_Shins:
     #Emma's footjob shins
     contains:
             #hose legs
         ConditionSwitch(
-            "True", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet.png"
+            "True", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet.png")
             )
     contains:
             #hose legs
         ConditionSwitch(
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet_StockingsHoled.png"),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet_Stockings.png"),
-            "True", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet.png"
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet_StockingsHoled.png"),
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet_Stockings.png"),
+            "True", get_cached_image("images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Feet.png")
             )
     contains:
         #pants
         ConditionSwitch(
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Feet_Pants.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Feet_YogaPants.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Feet_Pants.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaDoggy/Emma_Doggy_Feet_YogaPants.png"),
             "True", Null(),
             )
     contains:
         #spunk
         ConditionSwitch(
-            "'feet' in EmmaX.Spunk", "images/EmmaDoggy/Emma_Doggy_Spunk_Feet.png",
+            "'feet' in EmmaX.Spunk", get_cached_image("images/EmmaDoggy/Emma_Doggy_Spunk_Feet.png"),
             "True", Null(),
             )
 
@@ -1489,36 +1489,36 @@ image Emma_Doggy_Boob:
             #bra
         ConditionSwitch(
             "EmmaX.Uptop", ConditionSwitch(
-#                    "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
-#                    "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
-                    "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport_Boob_Down.png"),
-#                    "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
-                    "EmmaX.Chest", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
+#                    "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
+                    "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport_Boob_Down.png"),
+#                    "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
+                    "EmmaX.Chest", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
                     "True", Null(),
                     ),
             "EmmaX.Over == 'jacket'", Null(),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Lace_Boob.png"),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport_Boob.png"),
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob.png"),
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Lace_Boob.png"),
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Sport_Boob.png"),
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob.png"),
             "True", Null(),
             )
     contains:
             #Wet look
         ConditionSwitch(
-            "EmmaX.Water", "images/EmmaDoggy/Emma_Doggy_Wet_Boob.png",
+            "EmmaX.Water", get_cached_image("images/EmmaDoggy/Emma_Doggy_Wet_Boob.png"),
             "True", Null(),
             )
     contains:
             #Overshirt
         ConditionSwitch(
             "not EmmaX.Over", Null(),
-            "EmmaX.Over == 'dress' and EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Dress_Boob_Down.png"),
-            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Dress_Boob.png"),
+            "EmmaX.Over == 'dress' and EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Dress_Boob_Down.png"),
+            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Dress_Boob.png"),
             "EmmaX.Over == 'jacket' and EmmaX.Uptop", Null(),
-            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Jacket_Boob.png"),
-            "EmmaX.Over == 'nighty' and EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Nighty_Boob.png"),
+            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Jacket_Boob.png"),
+            "EmmaX.Over == 'nighty' and EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Bra_Corset_Boob_Down.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaDoggy/Emma_Doggy_Over_Nighty_Boob.png"),
             "True", Null(),
             )
 # End Boob / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -1646,7 +1646,7 @@ image Emma_Pussy_Static:
     contains:
         #pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Heading.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Heading.png"),
             "True", Null(),
             )
         subpixel True
@@ -1662,15 +1662,15 @@ image Emma_Pussy_Static:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         xoffset 2
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1684,7 +1684,7 @@ image Emma_Pussy_Static:
             repeat
     contains:
         #Cock
-        AlphaMask("Zero_Emma_Doggy_Static", "Emma_Pussy_Mask_Static")
+        get_cached_alphamask("Zero_Emma_Doggy_Static", "Emma_Pussy_Mask_Static")
 
 image Zero_Emma_Doggy_Static:
     # Sex Speed 0 motions
@@ -1732,7 +1732,7 @@ image Emma_Pussy_Heading:
     contains:
         #pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Heading.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Heading.png"),
             "True", Null(),
             )
         subpixel True
@@ -1748,15 +1748,15 @@ image Emma_Pussy_Heading:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         xoffset 2
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1771,11 +1771,11 @@ image Emma_Pussy_Heading:
         offset (2,0)
     contains:
         #Cock
-        AlphaMask("Zero_Emma_Doggy_Heading", "Emma_Pussy_Mask")
+        get_cached_alphamask("Zero_Emma_Doggy_Heading", "Emma_Pussy_Mask")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1847,7 +1847,7 @@ image Emma_Pussy_Fingering:
     contains:
         #pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Heading.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Heading.png"),
             "True", Null(),
             )
         subpixel True
@@ -1862,15 +1862,15 @@ image Emma_Pussy_Fingering:
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         xoffset 2
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
         subpixel True
@@ -1885,12 +1885,12 @@ image Emma_Pussy_Fingering:
         offset (2,0)
     contains:
         #Cock
-        AlphaMask("Zero_Pussy_Finger", "Emma_Pussy_Mask_Finger")
+        get_cached_alphamask("Zero_Pussy_Finger", "Emma_Pussy_Mask_Finger")
         xoffset 3
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
         subpixel True
@@ -1934,34 +1934,34 @@ image Emma_Pussy_Fucking2:
     contains:
         #pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Fucking.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         xoffset 2
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
-            "'dildo pussy' in (Trigger,Trigger2,EmmaX.Offhand)", AlphaMask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
-            "True",AlphaMask("Zero_Emma_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "'dildo pussy' in (Trigger,Trigger2,EmmaX.Offhand)", get_cached_alphamask("Doggy_Fucking_Dildo", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
+            "True",get_cached_alphamask("Zero_Emma_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png"),
             ),
-#        AlphaMask("Zero_Emma_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+#        get_cached_alphamask("Zero_Emma_Doggy_Fucking2", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
 
@@ -1985,30 +1985,30 @@ image Emma_Pussy_Fucking3:
     contains:
         #pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Fucking.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaDoggy/[EmmaX.skin_image.skin_path]Emma_Doggy_Pubes_Fucking.png"),
             "True", Null(),
             )
     contains:
         ConditionSwitch(
             #Pussy Piercings
-            "EmmaX.Pierce == 'barbell'", "images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_BarbellF.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaDoggy/Emma_Doggy_Pierce_RingF.png"),
             "True", Null(),
             )
         xoffset 2
     contains:
         #moving spunk under
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Emma_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
+        get_cached_alphamask("Zero_Emma_Doggy_Fucking3", "images/RogueDoggy/Rogue_Doggy_SexMask.png")
     contains:
         #moving spunk
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Pussy_Open.png"),
             "True", Null(),
             )
 
@@ -2049,7 +2049,7 @@ image Emma_Anal_Fingering:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2062,11 +2062,11 @@ image Emma_Anal_Fingering:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Emma_Doggy_Anal_Finger", "Emma_Doggy_Anal_Fingering_Mask")
+        get_cached_alphamask("Zero_Emma_Doggy_Anal_Finger", "Emma_Doggy_Anal_Fingering_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2120,7 +2120,7 @@ image Emma_Anal_Heading:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2133,11 +2133,11 @@ image Emma_Anal_Heading:
             repeat
     contains:
         #Cock with mask
-        AlphaMask("Zero_Emma_Doggy_Anal_Heading", "Emma_Doggy_Anal_Heading_Mask")
+        get_cached_alphamask("Zero_Emma_Doggy_Anal_Heading", "Emma_Doggy_Anal_Heading_Mask")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
         anchor (0.52,0.71) #(0.52,0.69)
@@ -2240,20 +2240,20 @@ image Emma_Anal_Fucking:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
         ConditionSwitch(
             #full hose/tights
-            "'dildo anal' in (Trigger,Trigger2,EmmaX.Offhand)", AlphaMask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
-            "True", AlphaMask("Zero_Emma_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "'dildo anal' in (Trigger,Trigger2,EmmaX.Offhand)", get_cached_alphamask("Rogue_Doggy_Anal_Dildo", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
+            "True", get_cached_alphamask("Zero_Emma_Doggy_Anal1", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png"),
             ),
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2316,16 +2316,16 @@ image Emma_Anal_Fucking2:
     contains:
         #spunk under cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Fucking.png"),
             "True", Null(),
             )
     contains:
         #Cock
-        AlphaMask("Zero_Emma_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
+        get_cached_alphamask("Zero_Emma_Doggy_Anal2", "images/RogueDoggy/Rogue_Doggy_Anal_CockMask.png")
     contains:
         #spunk over cock
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and Player.Male", "images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png",
+            "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/JubesDoggy/Jubes_Doggy_Spunk_Anal_Over.png"),
             "True", Null(),
             )
 
@@ -2565,18 +2565,18 @@ image Emma_Sex_Torso:
     contains:
             # body
         ConditionSwitch(
-            "EmmaX.Arms and not (EmmaX.Over == 'jacket' or EmmaX.Over == 'dress')", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Body_G.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Body.png",
+            "EmmaX.Arms and not (EmmaX.Over == 'jacket' or EmmaX.Over == 'dress')", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Body_G.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Body.png"),
             )
     contains:
             # tits
         ConditionSwitch(
             "renpy.showing('Emma_TJ_Animation')", Null(),
             # Modification mode
-            "EmmaX.Chest == 'top down tits harem'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_Down.png", # EmmaX.TitsUp = 0
+            "EmmaX.Chest == 'top down tits harem'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_Down.png"), # EmmaX.TitsUp = 0
             # -----------------
-            "EmmaX.Chest and not EmmaX.Uptop", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_Up.png",   # EmmaX.TitsUp = 1
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_Down.png",   # EmmaX.TitsUp = 0
+            "EmmaX.Chest and not EmmaX.Uptop", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_Up.png"),   # EmmaX.TitsUp = 1
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_Down.png"),   # EmmaX.TitsUp = 0
             )
     contains:
             # piercings tits
@@ -2585,12 +2585,12 @@ image Emma_Sex_Torso:
             "(EmmaX.Over or EmmaX.Chest) and not EmmaX.Uptop", Null(),
             "EmmaX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the ring pericings
-                    "not EmmaX.Chest or EmmaX.Uptop", "images/EmmaSex/Emma_Pierce_Barbell_Tits_D.png",   # EmmaX.TitsUp = 1
+                    "not EmmaX.Chest or EmmaX.Uptop", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Tits_D.png"),   # EmmaX.TitsUp = 1
                     "True", Null(),
                     ),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "not EmmaX.Chest or EmmaX.Uptop", "images/EmmaSex/Emma_Pierce_Ring_Tits_D.png",   # EmmaX.TitsUp = 1
+                    "not EmmaX.Chest or EmmaX.Uptop", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Tits_D.png"),   # EmmaX.TitsUp = 1
                     "True", Null(),
                     ),
             "True", Null(),
@@ -2599,18 +2599,18 @@ image Emma_Sex_Torso:
             # Chest clothing layer
         ConditionSwitch(
 #            "not EmmaX.Chest or renpy.showing('Emma_TJ_Animation')", Null(),   # EmmaX.TitsUp = 0
-            "EmmaX.Chest == 'sports bra' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_Uptop.png"),   # Add here. . .
-            "EmmaX.Chest == 'bikini top' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Bikini_Uptop.png"),   # Add here. . .
+            "EmmaX.Chest == 'sports bra' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_Uptop.png"),   # Add here. . .
+            "EmmaX.Chest == 'bikini top' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Bikini_Uptop.png"),   # Add here. . .
             "EmmaX.Uptop or renpy.showing('Emma_TJ_Animation')", Null(),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Corset_Up.png"),   # EmmaX.TitsUp = 1
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_Up.png"),   # EmmaX.TitsUp = 1
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Bikini_Up.png"),   # Add here. . .
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Lace_Up.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Corset_Up.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_Up.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Bikini_Up.png"),   # Add here. . .
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Lace_Up.png"),   # EmmaX.TitsUp = 1
             # Modification mode
-            "EmmaX.Chest == 'top up tits harem' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", "images/EmmaSex/modification/Emma_sex_chest_tits_up_harem_top_up.png",
-            "EmmaX.Chest == 'top up tits harem'", "images/EmmaSex/modification/Emma_sex_chest_tits_up_harem_top.png",
-            "EmmaX.Chest == 'top down tits harem' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", "images/EmmaSex/modification/Emma_sex_chest_tits_down_harem_top_up.png",
-            "EmmaX.Chest == 'top down tits harem'", "images/EmmaSex/modification/Emma_sex_chest_tits_down_harem_top.png",
+            "EmmaX.Chest == 'top up tits harem' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", get_cached_image("images/EmmaSex/modification/Emma_sex_chest_tits_up_harem_top_up.png"),
+            "EmmaX.Chest == 'top up tits harem'", get_cached_image("images/EmmaSex/modification/Emma_sex_chest_tits_up_harem_top.png"),
+            "EmmaX.Chest == 'top down tits harem' and (EmmaX.Uptop or renpy.showing('Emma_TJ_Animation'))", get_cached_image("images/EmmaSex/modification/Emma_sex_chest_tits_down_harem_top_up.png"),
+            "EmmaX.Chest == 'top down tits harem'", get_cached_image("images/EmmaSex/modification/Emma_sex_chest_tits_down_harem_top.png"),
             # -----------------
             "True", Null(),   # EmmaX.TitsUp = 0
             )
@@ -2620,26 +2620,26 @@ image Emma_Sex_Torso:
             "EmmaX.Over == 'jacket'", ConditionSwitch(
                     #if it's the jacket
 #                    "renpy.showing('Emma_TJ_Animation')", Null(),
-                    "renpy.showing('Emma_TJ_Animation')", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_TJ.png"),
-                    "EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_Down_Uptop.png"),   # EmmaX.TitsUp = 0
-                    "EmmaX.Chest and not EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_Up.png"),   # EmmaX.TitsUp = 1
-                    "True", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_Down.png"),   # EmmaX.TitsUp = 0
+                    "renpy.showing('Emma_TJ_Animation')", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_TJ.png"),
+                    "EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_Down_Uptop.png"),   # EmmaX.TitsUp = 0
+                    "EmmaX.Chest and not EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_Up.png"),   # EmmaX.TitsUp = 1
+                    "True", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Jacket_Down.png"),   # EmmaX.TitsUp = 0
                     ),
             "EmmaX.Over == 'nighty'", ConditionSwitch(
                     #if she has the nighty on
 #                    "renpy.showing('Emma_TJ_Animation')", Null(),
-                    "EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Uptop.png"),
-                    "EmmaX.Chest and not renpy.showing('Emma_TJ_Animation')", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Up.png"),   # EmmaX.TitsUp = 1
-#                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Up.png"),
-                    "True", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Down.png"),
+                    "EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Uptop.png"),
+                    "EmmaX.Chest and not renpy.showing('Emma_TJ_Animation')", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Up.png"),   # EmmaX.TitsUp = 1
+#                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Up.png"),
+                    "True", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Down.png"),
                     ),
             "EmmaX.Over == 'dress'", ConditionSwitch(
                     #if it's the ring pericings
 #                    "renpy.showing('Emma_TJ_Animation')", Null(),
-                    "renpy.showing('Emma_TJ_Animation')", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_TJ.png"),
-                    "EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_Uptop.png"),   # EmmaX.TitsUp = 0
-                    "EmmaX.Chest and not EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_Up.png"),   # EmmaX.TitsUp = 1
-                    "True", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_Down.png"),   # EmmaX.TitsUp = 0
+                    "renpy.showing('Emma_TJ_Animation')", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_TJ.png"),
+                    "EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_Uptop.png"),   # EmmaX.TitsUp = 0
+                    "EmmaX.Chest and not EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_Up.png"),   # EmmaX.TitsUp = 1
+                    "True", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Dress_Down.png"),   # EmmaX.TitsUp = 0
                     ),
             "True", Null(),
             )
@@ -2648,17 +2648,17 @@ image Emma_Sex_Torso:
         ConditionSwitch(
             "renpy.showing('Emma_TJ_Animation')", Null(),
             "EmmaX.Uptop or not EmmaX.Pierce", Null(),
-            "EmmaX.Chest and not EmmaX.Uptop and not EmmaX.Over", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Pierce_Barbell_Tits_UC.png"),   # EmmaX.TitsUp = 1
-            "EmmaX.Chest and not EmmaX.Uptop and EmmaX.Over", Recolor("Emma", "Over", "images/EmmaSex/Emma_Pierce_Barbell_Tits_UC.png"),
-            "EmmaX.Over and not EmmaX.Uptop and not EmmaX.Chest", Recolor("Emma", "Over", "images/EmmaSex/Emma_Pierce_Barbell_Tits_DC.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest and not EmmaX.Uptop and not EmmaX.Over", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Pierce_Barbell_Tits_UC.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest and not EmmaX.Uptop and EmmaX.Over", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Pierce_Barbell_Tits_UC.png"),
+            "EmmaX.Over and not EmmaX.Uptop and not EmmaX.Chest", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Pierce_Barbell_Tits_DC.png"),   # EmmaX.TitsUp = 1
             "True", Null(),
             )
     contains:
             # spunk on tits
             ConditionSwitch(
                 "'tits' not in EmmaX.Spunk or not Player.Male", Null(),
-                "renpy.showing('Emma_TJ_Animation')", "images/EmmaSex/Emma_Spunk_Titjob_Under.png",
-                "True", "images/EmmaSex/Emma_Spunk_Tits.png",
+                "renpy.showing('Emma_TJ_Animation')", get_cached_image("images/EmmaSex/Emma_Spunk_Titjob_Under.png"),
+                "True", get_cached_image("images/EmmaSex/Emma_Spunk_Tits.png"),
                 )
     zoom 1
 
@@ -2688,9 +2688,9 @@ image Emma_Sex_Body:
             # Arms
         ConditionSwitch(
             "EmmaX.ArmPose == 3", Null(),   # Neither arms
-            "EmmaX.ArmPose == 4", AlphaMask("Emma_SexArms", "images/EmmaSex/Emma_Sex_ArmsMask_R.png"),   # Right arm only
-            "EmmaX.ArmPose == 5", AlphaMask("Emma_SexArms", "images/EmmaSex/Emma_Sex_ArmsMask_L.png"),   # Left arm only
-            "True", AlphaMask("Emma_SexArms", "images/EmmaSex/Emma_Sex_ArmsMask.png"),  # Both Arms
+            "EmmaX.ArmPose == 4", get_cached_alphamask("Emma_SexArms", "images/EmmaSex/Emma_Sex_ArmsMask_R.png"),   # Right arm only
+            "EmmaX.ArmPose == 5", get_cached_alphamask("Emma_SexArms", "images/EmmaSex/Emma_Sex_ArmsMask_L.png"),   # Left arm only
+            "True", get_cached_alphamask("Emma_SexArms", "images/EmmaSex/Emma_Sex_ArmsMask.png"),  # Both Arms
             )
     contains:
         ConditionSwitch(
@@ -2717,34 +2717,34 @@ image Emma_SexArms:
             # Base Arms
         ConditionSwitch(
             "EmmaX.Over == 'jacket' or EmmaX.Over == 'dress'", Null(),
-#            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_Test.png",   # EmmaX.TitsUp = 1
-            "EmmaX.Chest and not EmmaX.Uptop", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png",   # EmmaX.TitsUp = 1
-#            "EmmaX.Chest == 'corset'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png",   # EmmaX.TitsUp = 1
-#            "EmmaX.Chest == 'sports bra'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png",   # EmmaX.TitsUp = 1
-#            "EmmaX.Chest == 'lace bra'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png",   # EmmaX.TitsUp = 1
-#            "EmmaX.Chest == 'bikini top'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png",   # EmmaX.TitsUp = 1
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_D.png",   # EmmaX.TitsUp = 0
+#            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_Test.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest and not EmmaX.Uptop", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png"),   # EmmaX.TitsUp = 1
+#            "EmmaX.Chest == 'corset'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png"),   # EmmaX.TitsUp = 1
+#            "EmmaX.Chest == 'sports bra'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png"),   # EmmaX.TitsUp = 1
+#            "EmmaX.Chest == 'lace bra'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png"),   # EmmaX.TitsUp = 1
+#            "EmmaX.Chest == 'bikini top'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_U.png"),   # EmmaX.TitsUp = 1
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Arms_D.png"),   # EmmaX.TitsUp = 0
             )
     contains:
             # Arm clothing
         ConditionSwitch(
             "EmmaX.Over == 'jacket' or EmmaX.Over == 'dress'", Null(),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_Arms.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_Arms.png"),   # EmmaX.TitsUp = 1
             "True", Null(),
             )
 #    contains:
 #            # Arm clothing
 #        ConditionSwitch(
-#            "EmmaX.Over == 'nighty' and EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Uptop.png"),
+#            "EmmaX.Over == 'nighty' and EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Uptop.png"),
 #            "True", Null(),
 #            )
     contains:
             # Arm clothing Over
         ConditionSwitch(
-            "EmmaX.Over == 'jacket' and EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Arms_Jacket_Uptop.png"),   # EmmaX.TitsUp = 1
-            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Arms_Jacket.png"),   # EmmaX.TitsUp = 1
-            "EmmaX.Over == 'dress'", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Arms_Dress.png"),   # EmmaX.TitsUp = 1
-            "EmmaX.Arms", Recolor("Emma", "Arms", "images/EmmaSex/Emma_Sex_Gloves.png"),
+            "EmmaX.Over == 'jacket' and EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Arms_Jacket_Uptop.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Arms_Jacket.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Over == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Arms_Dress.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Arms", get_cached_recolor("Emma", "Arms", "images/EmmaSex/Emma_Sex_Gloves.png"),
             "True", Null(),
             )
 
@@ -2756,10 +2756,10 @@ image Emma_Sex_Legs_S:
     contains:
             # feet pants
         ConditionSwitch(
-            "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_Down.png"),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Feet_Boots.png"),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Feet_Pants.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Feet_YogaPants.png"),
+            "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_Down.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Feet_Boots.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Feet_Pants.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Feet_YogaPants.png"),
             "True", Null(),
             )
     contains:
@@ -2767,83 +2767,83 @@ image Emma_Sex_Legs_S:
         ConditionSwitch(
             "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and not EmmaX.Upskirt", Null(),
             "not EmmaX.PantiesDown", Null(),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_Down.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_Down.png"),
-            "EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Down.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_Down.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_Down.png"),
+            "EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Down.png"),
             "True", Null(),
             )
     contains:
             # feet
         ConditionSwitch(
-#            "EmmaX.Acc == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Feet_Boots.png"),
-            "(EmmaX.Panties and EmmaX.PantiesDown) and (EmmaX.Hose == 'pantyhose' or EmmaX.Hose == 'ripped pantyhose')", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png",
-            "EmmaX.Hose == 'pantyhose' and Player.Sprite and Player.Cock == 'in'","images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png",
-            "EmmaX.Hose == 'garterbelt'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png",
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet_Hose_Holed.png"),
-            "EmmaX.Hose", Recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet_Hose.png"),
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png",
+#            "EmmaX.Acc == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Feet_Boots.png"),
+            "(EmmaX.Panties and EmmaX.PantiesDown) and (EmmaX.Hose == 'pantyhose' or EmmaX.Hose == 'ripped pantyhose')", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png"),
+            "EmmaX.Hose == 'pantyhose' and Player.Sprite and Player.Cock == 'in'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet_Hose_Holed.png"),
+            "EmmaX.Hose", get_cached_recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet_Hose.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Feet.png"),
             )
     contains:
             # back of dress
         ConditionSwitch(
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Back.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Back.png"),
             "True", Null(),
             )
     contains:
             # spunk
         ConditionSwitch(
-            "('anal' in EmmaX.Spunk or 'in' in EmmaX.Spunk) and Player.Male", "images/EmmaSex/Emma_Spunk_Sex.png",
+            "('anal' in EmmaX.Spunk or 'in' in EmmaX.Spunk) and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Sex.png"),
             "True", Null(),
             )
     contains:
             # Legs base
         ConditionSwitch(
-            "Trigger == 'hotdog'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Hotdog.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Sex.png",
+            "Trigger == 'hotdog'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Hotdog.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Sex.png"),
             )
     contains:
             # piercings
         ConditionSwitch(
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png"),
             "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and not EmmaX.Upskirt", Null(),
-            "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png",
+            "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png"),
             "True", Null(),
             )
     contains:
             # pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Pubes_Sex.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Pubes_Sex.png"),
             "True", Null(),
             )
     contains:
             # panties
         ConditionSwitch(
             "EmmaX.PantiesDown", Null(),
-            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_SW.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_S.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Lace_S.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_S.png"),
-            "EmmaX.Panties and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_SW.png"),
-            "EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_S.png"),
+            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_SW.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_S.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Lace_S.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_S.png"),
+            "EmmaX.Panties and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_SW.png"),
+            "EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_S.png"),
             "True", Null(),
             )
     contains:
             # stockings
         ConditionSwitch(
-            "EmmaX.Hose == 'stockings'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Stockings_S.png"),
-            "EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_StockingsGarter_S.png"),
-            "EmmaX.Hose == 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Garter_S.png"),
+            "EmmaX.Hose == 'stockings'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Stockings_S.png"),
+            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_StockingsGarter_S.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Garter_S.png"),
             "True", Null(),
             )
     contains:
             # pantyhose
         ConditionSwitch(
             "(EmmaX.Panties and EmmaX.PantiesDown)", Null(),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_PantyhoseHoled_S.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_PantyhoseHoled_S.png"),
             "Player.Sprite and Player.Cock == 'in'", Null(),
-            "EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_S.png"),
+            "EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_S.png"),
             "True", Null(),
             )
     contains:
@@ -2851,24 +2851,24 @@ image Emma_Sex_Legs_S:
         ConditionSwitch(
             "(not EmmaX.Panties and EmmaX.Hose != 'pantyhose') or EmmaX.PantiesDown", Null(),
             "EmmaX.Hose == 'pantyhose' and EmmaX.PantiesDown", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
             "True", Null(),
             )
     contains:
             # legs
         ConditionSwitch(
-            "EmmaX.Legs == 'dress' and (EmmaX.Upskirt or Player.Sprite)", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Up.png"),
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S.png"),
-            "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Skirt_Pussy.png"),
+            "EmmaX.Legs == 'dress' and (EmmaX.Upskirt or Player.Sprite)", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Up.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S.png"),
+            "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Skirt_Pussy.png"),
             "EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants' and EmmaX.Wet >= 2", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_SW.png"),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_S.png"),
-            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet >= 2", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_SW.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_S.png"),
+            "EmmaX.Legs == 'pants' and EmmaX.Wet >= 2", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_SW.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_S.png"),
+            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet >= 2", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_SW.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_S.png"),
             # Modification mode
-            "EmmaX.Legs == 'bottom harem' and EmmaX.Upskirt", "images/EmmaSex/modification/Emma_sex_legs_harem_bottom_down.png",
-            "EmmaX.Legs == 'bottom harem'", "images/EmmaSex/modification/Emma_sex_legs_harem_bottom.png",
+            "EmmaX.Legs == 'bottom harem' and EmmaX.Upskirt", get_cached_image("images/EmmaSex/modification/Emma_sex_legs_harem_bottom_down.png"),
+            "EmmaX.Legs == 'bottom harem'", get_cached_image("images/EmmaSex/modification/Emma_sex_legs_harem_bottom.png"),
             # -----------------
             "True", Null(),
             )
@@ -2876,29 +2876,29 @@ image Emma_Sex_Legs_S:
             # piercings over
         ConditionSwitch(
             "(EmmaX.Legs != 'pants' and EmmaX.Legs != 'yoga pants') or EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png"),
             "EmmaX.Pierce != 'ring'", Null(),
-            "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
-            "True", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png",
+            "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
+            "True", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
             )
     contains:
             # boots
         ConditionSwitch(
             "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and EmmaX.Upskirt", Null(),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Boots_Pussy.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Boots_Pussy.png"),
             "True", Null(),
             )
     contains:
             # Over
         ConditionSwitch(
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Pussy.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Pussy.png"),
             "True", Null(),
             )
     contains:
             # spunk
         ConditionSwitch(
-            "'belly' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Belly.png",
+            "'belly' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Belly.png"),
             "True", Null(),
             )
     zoom 1
@@ -2909,13 +2909,13 @@ image Emma_Sex_Legs_A:
     contains:
             # back of dress
         ConditionSwitch(
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_A_Back.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_A_Back.png"),
             "True", Null(),
             )
     contains:
         ConditionSwitch(
             #plug
-            "EmmaX.Plug", "images/PlugBase_Sex.png",
+            "EmmaX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "True", Null(),
             )
 #        "images/PlugBase_Sex.png"
@@ -2924,15 +2924,15 @@ image Emma_Sex_Legs_A:
     contains:
             # anal spunk
         ConditionSwitch(
-            "'anal' in EmmaX.Spunk and not Speed and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Closed.png",
+            "'anal' in EmmaX.Spunk and not Speed and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Closed.png"),
             "True", Null(),
             )
     contains:
             # Legs Base
 
         ConditionSwitch(
-            "Trigger == 'lick pussy'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Licking.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Anal.png"
+            "Trigger == 'lick pussy'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Licking.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Anal.png")
             )
     contains:
             #Anus
@@ -2947,7 +2947,7 @@ image Emma_Sex_Legs_A:
     contains:
             # pubes
         ConditionSwitch(
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Pubes_Anal.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Pubes_Anal.png"),
             "True", Null(),
             )
     contains:
@@ -2955,43 +2955,43 @@ image Emma_Sex_Legs_A:
         ConditionSwitch(
             "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
             "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and not EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_A.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_A.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_A.png"),
             "True", Null(),
             )
     contains:
             # panties
         ConditionSwitch(
             "EmmaX.PantiesDown", Null(),
-            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_AW.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_A.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Lace_A.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_A.png"),
-            "EmmaX.Panties and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_AW.png"),
-            "EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_A.png"),
+            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_AW.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_A.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Lace_A.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_A.png"),
+            "EmmaX.Panties and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_AW.png"),
+            "EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_A.png"),
             "True", Null(),
             )
     contains:
             # stockings
         ConditionSwitch(
-            "EmmaX.Hose == 'stockings'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Stockings_A.png"),
-            "EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_StockingsGarter_A.png"),
-            "EmmaX.Hose == 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Garter_A.png"),
+            "EmmaX.Hose == 'stockings'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Stockings_A.png"),
+            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_StockingsGarter_A.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Garter_A.png"),
             "True", Null(),
             )
     contains:
             # pussy spunk
         ConditionSwitch(
-            "'in' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Pussy.png",
+            "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Pussy.png"),
             "True", Null(),
             )
     contains:
             # pantyhose
         ConditionSwitch(
             "(EmmaX.Panties and EmmaX.PantiesDown)", Null(),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_PantyhoseHoled_A.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_PantyhoseHoled_A.png"),
             "Player.Sprite and Player.Cock == 'anal'", Null(),
-            "EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_A.png"),
+            "EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_A.png"),
             "True", Null(),
             )
     contains:
@@ -2999,21 +2999,21 @@ image Emma_Sex_Legs_A:
         ConditionSwitch(
             "(not EmmaX.Panties and EmmaX.Hose != 'pantyhose') or EmmaX.PantiesDown", Null(),
             "EmmaX.Hose == 'pantyhose' and EmmaX.PantiesDown", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_A_C.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_A_C.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png"),
             "True", Null(),
             )
     contains:
             # legs
         ConditionSwitch(
-            "EmmaX.Legs == 'dress' and (EmmaX.Upskirt or Player.Sprite)", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_A_Up.png"),
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_A.png"),
-            "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Skirt_Anal.png"),
+            "EmmaX.Legs == 'dress' and (EmmaX.Upskirt or Player.Sprite)", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_A_Up.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_A.png"),
+            "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Skirt_Anal.png"),
             "EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants' and EmmaX.Wet >= 2", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_AW.png"),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_A.png"),
-            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet >= 2", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_AW.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_A.png"),
+            "EmmaX.Legs == 'pants' and EmmaX.Wet >= 2", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_AW.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_A.png"),
+            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet >= 2", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_AW.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_A.png"),
             # Modification mode
             "EmmaX.Legs == 'bottom harem' and EmmaX.Wet >= 2", Null(),
             "EmmaX.Legs == 'bottom harem'", Null(),
@@ -3024,28 +3024,28 @@ image Emma_Sex_Legs_A:
             # piercings over pants
         ConditionSwitch(
             "(EmmaX.Legs != 'pants' and EmmaX.Legs != 'yoga pants') or EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_A_C.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_A_C.png"),
             "EmmaX.Pierce != 'ring'", Null(),
-            "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png"),
-            "True", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png",
+            "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png"),
+            "True", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_A_C.png"),
             )
     contains:
             # boots
         ConditionSwitch(
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Boots_Anal.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Boots_Anal.png"),
             "True", Null(),
             )
     contains:
             # Over
         ConditionSwitch(
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Anal.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Anal.png"),
             "True", Null(),
             )
     contains:
             # spunk
         ConditionSwitch(
-            "'belly' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Belly.png",
+            "'belly' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Belly.png"),
             "True", Null(),
             )
         ypos -40
@@ -3068,8 +3068,8 @@ image Emma_Sex_Pussy_Mask:
         ConditionSwitch(
             "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
             "EmmaX.Legs and not EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png"),
             "True", Null(),
             )
 
@@ -3082,8 +3082,8 @@ image Emma_Sex_Hotdog_Mask:
         ConditionSwitch(
             "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
             "EmmaX.Legs and not EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png"),
             "True", Null(),
             )
     contains:
@@ -3091,8 +3091,8 @@ image Emma_Sex_Hotdog_Mask:
         ConditionSwitch(
             "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
             "EmmaX.Legs and not EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png"),
             "True", Null(),
             )
 
@@ -3333,7 +3333,7 @@ image Emma_Sex_Legs_H0:
             pos (450,590)
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
             subpixel True
             anchor (.515,.5)
             pos (528,340) #top (528,300)
@@ -3380,7 +3380,7 @@ image Emma_Sex_Legs_H1:
             pos (450,590)
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
             subpixel True
             anchor (.515,.5)
             pos (528,300) #top(515,300)
@@ -3427,7 +3427,7 @@ image Emma_Sex_Legs_H2:
             pos (450,590)
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
             subpixel True
             anchor (.515,.5)
             pos (528,340) #top (528,300)
@@ -3474,7 +3474,7 @@ image Emma_Sex_Legs_H4:
 #            pos (450,590)
 #    contains:
 #            #Overlay
-#            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
+#            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Hotdog_Mask")#"images/EmmaSex/Emma_Sex_Legs_HotdogMask.png")
 #            subpixel True
 #            anchor (.515,.5)
 #            pos (528,340) #top (528,300)
@@ -3518,7 +3518,7 @@ image Emma_Sex_Legs_S0:
             pos (680,400)
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")#"images/EmmaSex/Emma_Sex_Pussy_Mask.png")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")#"images/EmmaSex/Emma_Sex_Pussy_Mask.png")
             subpixel True
             pos (0,-140) #top
             parallel:
@@ -3560,7 +3560,7 @@ image Emma_Sex_Legs_S1:
                 repeat
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
             subpixel True
             pos (0,-120) #top
             block:
@@ -3599,7 +3599,7 @@ image Emma_Sex_Legs_S2:
                 repeat
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
             subpixel True
             pos (0,-150) #top
             block:
@@ -3636,7 +3636,7 @@ image Emma_Sex_Legs_S3:
                 repeat
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
             subpixel True
             pos (0,-120) #top
             block:
@@ -3668,7 +3668,7 @@ image Emma_Sex_Legs_S4:
             pos (680,430)
     contains:
             #Overlay
-            AlphaMask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
+            get_cached_alphamask("Emma_Sex_Legs_S", "Emma_Sex_Pussy_Mask")
             subpixel True
             pos (0,0) #top
             block:
@@ -3723,11 +3723,11 @@ image Emma_Sex_Legs_A1:
     contains:
             #Overlay
             contains:
-                AlphaMask("Emma_Sex_Legs_A", "Emma_Sex_Anus_Mask_A1")
+                get_cached_alphamask("Emma_Sex_Legs_A", "Emma_Sex_Anus_Mask_A1")
             contains:
                     # spunk
                 ConditionSwitch(
-                    "'anal' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Heading.png",
+                    "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Heading.png"),
                     "True", Null(),
                     )
                 transform_anchor True
@@ -3823,11 +3823,11 @@ image Emma_Sex_Legs_A2:
     contains:
             #Overlay
             contains:
-                    AlphaMask("Emma_Sex_Legs_A", "images/EmmaSex/Emma_Sex_Anus_Mask.png" )
+                    AlphaMask("Emma_Sex_Legs_A", get_cached_image("images/EmmaSex/Emma_Sex_Anus_Mask.png") )
             contains:
                     # spunk
                 ConditionSwitch(
-                    "'anal' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Open.png",
+                    "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Open.png"),
                     "True", Null(),
                     )
             subpixel True
@@ -3866,11 +3866,11 @@ image Emma_Sex_Legs_A3:
     contains:
             #Overlay
             contains:
-                    AlphaMask("Emma_Sex_Legs_A", "images/EmmaSex/Emma_Sex_Anus_Mask.png" )
+                    AlphaMask("Emma_Sex_Legs_A", get_cached_image("images/EmmaSex/Emma_Sex_Anus_Mask.png") )
             contains:
                     # spunk
                 ConditionSwitch(
-                    "'anal' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Open.png",
+                    "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Open.png"),
                     "True", Null(),
                     )
             subpixel True
@@ -3905,11 +3905,11 @@ image Emma_Sex_Legs_A4:
     contains:
             #Overlay
             contains:
-                    AlphaMask("Emma_Sex_Legs_A", "images/EmmaSex/Emma_Sex_Anus_Mask.png" )
+                    AlphaMask("Emma_Sex_Legs_A", get_cached_image("images/EmmaSex/Emma_Sex_Anus_Mask.png") )
             contains:
                     # spunk
                 ConditionSwitch(
-                    "'anal' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Open.png",
+                    "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Open.png"),
                     "True", Null(),
                     )
             subpixel True
@@ -3932,7 +3932,7 @@ image Emma_Sex_Anus_A1:
         contains:
                 # spunk
             ConditionSwitch(
-                "'anal' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Under.png",
+                "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Under.png"),
                 "True", Null(),
                 )
         subpixel True
@@ -3977,7 +3977,7 @@ image Emma_Sex_Anus_A2:
         contains:
                 # spunk
             ConditionSwitch(
-                "'anal' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Anal_Under.png",
+                "'anal' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Anal_Under.png"),
                 "True", Null(),
                 )
         xpos  0
@@ -4094,15 +4094,15 @@ image Emma_TJ_Tits:
     contains:
             #base layer
         ConditionSwitch(
-            "EmmaX.Arms or EmmaX.Over == 'jacket' or EmmaX.Over == 'dress'", "images/EmmaSex/Emma_Sex_Forearms_W.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Forearms.png",
+            "EmmaX.Arms or EmmaX.Over == 'jacket' or EmmaX.Over == 'dress'", get_cached_image("images/EmmaSex/Emma_Sex_Forearms_W.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Forearms.png"),
             )
         zoom 0.9
     contains:
             #base layer
         ConditionSwitch(
-            "EmmaX.Arms", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_TJ_Gloved.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_TJ.png",
+            "EmmaX.Arms", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_TJ_Gloved.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Tits_TJ.png"),
             )
         zoom 0.9
     contains:
@@ -4112,12 +4112,12 @@ image Emma_TJ_Tits:
             "EmmaX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the ring pericings
 #                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", Null(),
-                    "True", "images/EmmaSex/Emma_Pierce_Barbell_Tits_T.png",
+                    "True", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Tits_T.png"),
                     ),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
 #                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", Null(),
-                    "True", "images/EmmaSex/Emma_Pierce_Ring_Tits_T.png",
+                    "True", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Tits_T.png"),
                     ),
             "True", Null(),
             )
@@ -4126,12 +4126,12 @@ image Emma_TJ_Tits:
             #chest clothing layer
         ConditionSwitch(
             "not EmmaX.Chest", Null(),   # EmmaX.TitsUp = 0
-            "EmmaX.Chest == 'sports bra' and EmmaX.Uptop", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_TJ_Uptop.png"),   # Add here. . .
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_TJ.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest == 'sports bra' and EmmaX.Uptop", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_TJ_Uptop.png"),   # Add here. . .
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Sports_TJ.png"),   # EmmaX.TitsUp = 1
             "EmmaX.Uptop", Null(),   # EmmaX.TitsUp = 0
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Bikini_TJ.png"),   # Add here. . .
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Lace_TJ.png"),   # EmmaX.TitsUp = 1
-#            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Lace_TJ.png"),   # EmmaX.TitsUp = 1
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Bikini_TJ.png"),   # Add here. . .
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Lace_TJ.png"),   # EmmaX.TitsUp = 1
+#            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Sex_Bra_Lace_TJ.png"),   # EmmaX.TitsUp = 1
             "True", Null(),   # EmmaX.TitsUp = 0
             )
         zoom 0.9
@@ -4141,12 +4141,12 @@ image Emma_TJ_Tits:
             "not EmmaX.Pierce or not EmmaX.Chest", Null(),
             "EmmaX.Pierce == 'barbell'", ConditionSwitch(
                     #if it's the ring pericings
-                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Pierce_Barbell_Tits_TC.png"),
+                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Pierce_Barbell_Tits_TC.png"),
                     "True", Null(),
                     ),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     #if it's the ring pericings
-                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", Recolor("Emma", "Chest", "images/EmmaSex/Emma_Pierce_Ring_Tits_TC.png"),
+                    "EmmaX.Chest in ('corset', 'lace bra', 'sports bra')", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_Pierce_Ring_Tits_TC.png"),
                     "True", Null(),
                     ),
             "True", Null(),
@@ -4155,7 +4155,7 @@ image Emma_TJ_Tits:
     contains:
             # spunk on tits
         ConditionSwitch(
-                "'tits' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Titjob_Over.png",
+                "'tits' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Titjob_Over.png"),
                 "True", Null(),
                 )
         zoom 0.9
@@ -4671,11 +4671,11 @@ image Emma_BJ_Animation:#BJ_NewTest:                                            
         (-270,-160), ConditionSwitch(
             # the masked overlay for when her head overlaps the cock
 #            "Speed < 3", Null(),
-            "Speed == 2", At(AlphaMask("Emma_BJ_Head", "Emma_BJ_MaskHeadingComposite"), Emma_BJ_Head_2()), #Heading
-            "Speed == 5", At(AlphaMask("Emma_BJ_Head", "Emma_BJ_MaskHeadingComposite"), Emma_BJ_Head_5()), #Cumming High
-            "Speed == 3", At(AlphaMask("Emma_BJ_Head", "Emma_BJ_MouthSuckingMask"), Emma_BJ_Head_3()), #Sucking
-            "Speed == 4", At(AlphaMask("Emma_BJ_Head", "Emma_BJ_MouthSuckingMask"), Emma_BJ_Head_4()), #Deepthroat
-            "Speed == 6", At(AlphaMask("Emma_BJ_Head", "Emma_BJ_MouthSuckingMask"), Emma_BJ_Head_6()), #Cumming Deep
+            "Speed == 2", At(get_cached_alphamask("Emma_BJ_Head", "Emma_BJ_MaskHeadingComposite"), Emma_BJ_Head_2()), #Heading
+            "Speed == 5", At(get_cached_alphamask("Emma_BJ_Head", "Emma_BJ_MaskHeadingComposite"), Emma_BJ_Head_5()), #Cumming High
+            "Speed == 3", At(get_cached_alphamask("Emma_BJ_Head", "Emma_BJ_MouthSuckingMask"), Emma_BJ_Head_3()), #Sucking
+            "Speed == 4", At(get_cached_alphamask("Emma_BJ_Head", "Emma_BJ_MouthSuckingMask"), Emma_BJ_Head_4()), #Deepthroat
+            "Speed == 6", At(get_cached_alphamask("Emma_BJ_Head", "Emma_BJ_MouthSuckingMask"), Emma_BJ_Head_6()), #Cumming Deep
             "True", Null(),
             ),
         (325,490), ConditionSwitch(
@@ -4695,10 +4695,10 @@ image Emma_BJ_Animation:#BJ_NewTest:                                            
 image Emma_BJ_HairBack:
     #Hair underlay
     ConditionSwitch(
-            "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaBJFace/Emma_BJ_Hair_Short_Back.png"),
+            "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/Emma_BJ_Hair_Short_Back.png"),
             "EmmaX.Water or EmmaX.Hair == 'wet'", Null(), # or EmmaX.Hair == 'hat wet'
             "not Player.Male and 'facial' in EmmaX.Spunk",Null(),
-            "True", Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wave_Back.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wave_Back.png"),
             ),
     zoom 1.4
     anchor (0.5, 0.5)
@@ -4707,7 +4707,7 @@ image Emma_BJ_Backdrop:
     contains:
             #blanket
             ConditionSwitch(
-                "'blanket' in EmmaX.RecentActions", "images/KittyBJFace/Kitty_BJFace_Blanket.png",
+                "'blanket' in EmmaX.RecentActions", get_cached_image("images/KittyBJFace/Kitty_BJFace_Blanket.png"),
                 "True", Null(),
                 ),
             zoom 2
@@ -4728,48 +4728,48 @@ image Emma_BJ_Head:                                                             
          (0,0), ConditionSwitch(
             #Hair behind face above body
             "EmmaX.Hair == 'short'", Null(),
-            "EmmaX.Water or EmmaX.Hair == 'wet'", Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Mid.png"),  # or EmmaX.Hair == 'hat wet'
-            "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Mid.png"),
-            "True", Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wave_Mid.png"),
+            "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Mid.png"),  # or EmmaX.Hair == 'hat wet'
+            "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Mid.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wave_Mid.png"),
             ),
         (0,0), ConditionSwitch(
             # Basic Face layer
             "Speed <= 2 or Speed == 5 or not renpy.showing('Emma_BJ_Animation')", ConditionSwitch(
                     # If the animation isn't sucking, or if not in BJ pose
-                    "EmmaX.Blush", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed_Blush.png",
-                    "True", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed.png",
+                    "EmmaX.Blush", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed_Blush.png"),
+                    "True", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed.png"),
                     ),
-            "EmmaX.Blush", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceOpen_Blush.png",
-            "True", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceOpen.png"
+            "EmmaX.Blush", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceOpen_Blush.png"),
+            "True", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceOpen.png")
             ),
         (0,0), ConditionSwitch(
             #Mouth
 #            "(Speed == 2 or Speed == 5) and renpy.showing('Emma_BJ_Animation')", ConditionSwitch(
 #                    # If the Heading animation is active
-##                    "EmmaX.Blush", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed_Blush.png",
-##                    "True", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed.png"
+##                    "EmmaX.Blush", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed_Blush.png"),
+##                    "True", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_FaceClosed.png")
 #                    ),
             "Speed and renpy.showing('Emma_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),  #licking
+                    "Speed == 1", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"), #sucking
-                    "Speed == 4", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"), #deepthroat
-                    "Speed == 6", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"), #cumming
+                    "Speed == 3", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"), #sucking
+                    "Speed == 4", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"), #deepthroat
+                    "Speed == 6", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"), #cumming
                     ),
-            "renpy.showing('Emma_CUN_Animation') and Speed", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),
-            "Speed == 3 and renpy.showing('Emma_TJ_Animation')", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),
-            "EmmaX.Mouth == 'normal'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'lipbite'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Lipbite.png"),
-            "EmmaX.Mouth == 'sucking'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"),
-            "EmmaX.Mouth == 'kiss'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Kiss.png"),
-            "EmmaX.Mouth == 'sad'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sad.png"),
-            "EmmaX.Mouth == 'smile'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'smirk'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smirk.png"),
-            "EmmaX.Mouth == 'grimace'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
-            "EmmaX.Mouth == 'surprised'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Surprised.png"),
-            "EmmaX.Mouth == 'tongue'", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),
-            "True", Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
+            "renpy.showing('Emma_CUN_Animation') and Speed", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),
+            "Speed == 3 and renpy.showing('Emma_TJ_Animation')", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),
+            "EmmaX.Mouth == 'normal'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'lipbite'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Lipbite.png"),
+            "EmmaX.Mouth == 'sucking'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png"),
+            "EmmaX.Mouth == 'kiss'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Kiss.png"),
+            "EmmaX.Mouth == 'sad'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sad.png"),
+            "EmmaX.Mouth == 'smile'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'smirk'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smirk.png"),
+            "EmmaX.Mouth == 'grimace'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
+            "EmmaX.Mouth == 'surprised'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Surprised.png"),
+            "EmmaX.Mouth == 'tongue'", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Tongue.png"),
+            "True", get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Smile.png"),
             ),
         (428,605), ConditionSwitch(
             # Heading Mouth
@@ -4785,59 +4785,59 @@ image Emma_BJ_Head:                                                             
             "'mouth' not in EmmaX.Spunk or not Player.Male", Null(),
             "Speed and renpy.showing('Emma_BJ_Animation')", ConditionSwitch(
                     # If in sucking position
-                    "Speed == 1", "images/EmmaBJFace/Emma_BJ_Spunk_Tongue.png",  #licking
+                    "Speed == 1", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Tongue.png"),  #licking
                     "(Speed == 2 or Speed == 5)", Null(),                          #heading
-                    "Speed == 3", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png", #sucking
-                    "Speed == 4", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png", #deepthroat
-                    "Speed == 6", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png", #cumming
+                    "Speed == 3", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png"), #sucking
+                    "Speed == 4", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png"), #deepthroat
+                    "Speed == 6", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png"), #cumming
                     ),
-            "EmmaX.Mouth == 'normal'", "images/EmmaBJFace/Emma_BJ_Spunk_Smile.png",
-            "EmmaX.Mouth == 'lipbite'", "images/EmmaBJFace/Emma_BJ_Spunk_Lipbite.png",
-            "EmmaX.Mouth == 'kiss'", "images/EmmaBJFace/Emma_BJ_Spunk_Kiss.png",
-            "EmmaX.Mouth == 'sad'", "images/EmmaBJFace/Emma_BJ_Spunk_Sad.png",
-            "EmmaX.Mouth == 'smile'", "images/EmmaBJFace/Emma_BJ_Spunk_Smile.png",
-            "EmmaX.Mouth == 'smirk'", "images/EmmaBJFace/Emma_BJ_Spunk_Smirk.png",
-            "EmmaX.Mouth == 'surprised'", "images/EmmaBJFace/Emma_BJ_Spunk_Surprised.png",
-            "EmmaX.Mouth == 'tongue'", "images/EmmaBJFace/Emma_BJ_Spunk_Tongue.png",
-            "EmmaX.Mouth == 'sucking'", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png",
-            "True", "images/EmmaBJFace/Emma_BJ_Spunk_Smile.png",
+            "EmmaX.Mouth == 'normal'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Smile.png"),
+            "EmmaX.Mouth == 'lipbite'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Lipbite.png"),
+            "EmmaX.Mouth == 'kiss'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Kiss.png"),
+            "EmmaX.Mouth == 'sad'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Sad.png"),
+            "EmmaX.Mouth == 'smile'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Smile.png"),
+            "EmmaX.Mouth == 'smirk'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Smirk.png"),
+            "EmmaX.Mouth == 'surprised'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Surprised.png"),
+            "EmmaX.Mouth == 'tongue'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Tongue.png"),
+            "EmmaX.Mouth == 'sucking'", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingUnder.png"),
+            "True", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Smile.png"),
             ),
         (0,0), ConditionSwitch(
             #wet face
             "Player.Male", Null(),
             "'mouth' not in EmmaX.Spunk and 'chin' not in EmmaX.Spunk", Null(),
-            "renpy.showing('Emma_SexSprite')", "images/EmmaBJFace/Emma_BJ_Wet_Mouth.png",
-            "'chin' not in EmmaX.Spunk and (EmmaX.Mouth == 'tongue' or Speed)", "images/EmmaBJFace/Emma_BJ_Wet_Tongue.png",
-            "EmmaX.Mouth == 'tongue' or Speed", "images/EmmaBJFace/Emma_BJ_Wet_Tongue2.png",
-            "'mouth' in EmmaX.Spunk or 'chin' in EmmaX.Spunk", "images/EmmaBJFace/Emma_BJ_Wet_Mouth.png",
+            "renpy.showing('Emma_SexSprite')", get_cached_image("images/EmmaBJFace/Emma_BJ_Wet_Mouth.png"),
+            "'chin' not in EmmaX.Spunk and (EmmaX.Mouth == 'tongue' or Speed)", get_cached_image("images/EmmaBJFace/Emma_BJ_Wet_Tongue.png"),
+            "EmmaX.Mouth == 'tongue' or Speed", get_cached_image("images/EmmaBJFace/Emma_BJ_Wet_Tongue2.png"),
+            "'mouth' in EmmaX.Spunk or 'chin' in EmmaX.Spunk", get_cached_image("images/EmmaBJFace/Emma_BJ_Wet_Mouth.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Brows
-            "EmmaX.Brows == 'normal'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Normal.png",
-            "EmmaX.Brows == 'angry'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Angry.png",
-            "EmmaX.Brows == 'sad'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Sad.png",
-            "EmmaX.Brows == 'surprised'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Surprised.png",
-            "EmmaX.Brows == 'confused'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Confused.png",
-            "True", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Normal.png",
+            "EmmaX.Brows == 'normal'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Normal.png"),
+            "EmmaX.Brows == 'angry'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Angry.png"),
+            "EmmaX.Brows == 'sad'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Sad.png"),
+            "EmmaX.Brows == 'surprised'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Surprised.png"),
+            "EmmaX.Brows == 'confused'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Confused.png"),
+            "True", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Brows_Normal.png"),
             ),
         (0,0), "Emma BJ Blink",
             #Eyes
         (0,0), ConditionSwitch(
             #cum on the face
-            "'facial' in EmmaX.Spunk and Player.Male", "images/EmmaBJFace/Emma_BJ_Spunk_Facial.png",
+            "'facial' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_Facial.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #Hair overlay
-            "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaBJFace/Emma_BJ_Hair_Short.png"),
-            "EmmaX.Water or EmmaX.Hair == 'wet'", Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Top.png"), # or EmmaX.Hair == 'hat wet'
-            "not Player.Male and 'facial' in EmmaX.Spunk",Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Top.png"),
-            "True", Recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wave_Top.png"),
+            "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/Emma_BJ_Hair_Short.png"),
+            "EmmaX.Water or EmmaX.Hair == 'wet'", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Top.png"), # or EmmaX.Hair == 'hat wet'
+            "not Player.Male and 'facial' in EmmaX.Spunk",get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wet_Top.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Hair_Wave_Top.png"),
             ),
         # Modification mode
         (0,0), ConditionSwitch(
-            "EmmaX.Mask == 'mask harem'", "images/EmmaBJFace/modification/Emma_bj_mask_harem.png",
+            "EmmaX.Mask == 'mask harem'", get_cached_image("images/EmmaBJFace/modification/Emma_bj_mask_harem.png"),
             "True", Null(),
         ),
         # ----------------
@@ -4853,16 +4853,16 @@ image Emma_BJ_Head:                                                             
 image Emma BJ Blink:
         #eyeblinks
         ConditionSwitch(
-            "EmmaX.Eyes == 'normal'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Sexy.png",
-            "EmmaX.Eyes == 'sexy'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Sexy.png",
-            "EmmaX.Eyes == 'closed'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Closed.png",
-            "EmmaX.Eyes == 'surprised'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Surprised.png",
-            "EmmaX.Eyes == 'side'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Side.png",
-            "EmmaX.Eyes == 'stunned'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Surprised.png",
-            "EmmaX.Eyes == 'down'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Down.png",
-            "EmmaX.Eyes == 'manic'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Surprised.png",
-            "EmmaX.Eyes == 'squint'", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Squint.png",
-            "True", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Sexy.png",
+            "EmmaX.Eyes == 'normal'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Sexy.png"),
+            "EmmaX.Eyes == 'sexy'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Sexy.png"),
+            "EmmaX.Eyes == 'closed'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Closed.png"),
+            "EmmaX.Eyes == 'surprised'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Surprised.png"),
+            "EmmaX.Eyes == 'side'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Side.png"),
+            "EmmaX.Eyes == 'stunned'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Surprised.png"),
+            "EmmaX.Eyes == 'down'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Down.png"),
+            "EmmaX.Eyes == 'manic'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Surprised.png"),
+            "EmmaX.Eyes == 'squint'", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Squint.png"),
+            "True", get_cached_image("images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Eyes_Sexy.png"),
             ),
         choice:
             3.5
@@ -4884,7 +4884,7 @@ image Emma_BJ_Hat:
 image Emma_BJ_MouthHeading:
     #the mouth used for the heading animations
     contains:
-        Recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png")
+        get_cached_recolor("Emma", "Lips", "images/EmmaBJFace/[EmmaX.skin_image.skin_path]Emma_BJ_Mouth_Sucking.png")
         zoom 1.4
         anchor (0.50,0.65)  #(0.50,0.65)
 
@@ -4897,7 +4897,7 @@ image Emma_BJ_MouthSuckingMask:
 #        ConditionSwitch(
 #            "'mouth' not in EmmaX.Spunk", Null(),
 #            "Speed != 2 and Speed != 5", Null(),
-#            "True", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png",
+#            "True", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png"),
 #            )
 #        zoom 1.4
 
@@ -4925,7 +4925,7 @@ image Emma_BJ_MaskHeadingSpunk:
 #            "EmmaSuckingSpunk"
             ConditionSwitch(
                 "'mouth' not in EmmaX.Spunk or not Player.Male", Null(),
-                "True", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png",
+                "True", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png"),
                 )
 #            "images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png"
             subpixel True
@@ -4954,7 +4954,7 @@ image Emma_BJ_MaskHeadingSpunkC:
 #            "EmmaSuckingSpunk"
             ConditionSwitch(
                 "'mouth' not in EmmaX.Spunk or not Player.Male", Null(),
-                "True", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png",
+                "True", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png"),
                 )
 #            "images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png"
             subpixel True
@@ -4976,7 +4976,7 @@ image EmmaSuckingSpunk:
     contains:
         ConditionSwitch(
             "'mouth' not in EmmaX.Spunk or not Player.Male", Null(),
-            "True", "images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png",
+            "True", get_cached_image("images/EmmaBJFace/Emma_BJ_Spunk_SuckingOver.png"),
             )
         zoom 1.4
         anchor (0.5, 0.5)
@@ -5502,7 +5502,7 @@ image Emma_FJ_Chair:
         ConditionSwitch(
             #Foot
             "not renpy.showing('Emma_FJ_Animation')", Null(),
-            "True", "images/EmmaSprite/EmmaSprite_Chair.png"
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Chair.png")
             )
         anchor (0.5, 0.0)#(0.6, 0.05)
         zoom 0.80
@@ -5522,7 +5522,7 @@ image Emma_FJ_Animation:
         #her basic dress back
         ConditionSwitch(
             #pants
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Back_FJ.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_Back_FJ.png"),
             "True", Null(),
             )
         zoom 0.80
@@ -5532,8 +5532,8 @@ image Emma_FJ_Animation:
             "not EmmaX.Wet", Null(),
             "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Null(),
             "EmmaX.Panties and not EmmaX.PantiesDown and EmmaX.Wet <= 1", Null(),
-            "EmmaX.Wet == 1", AlphaMask("Wet_Drip","Emma_Drip_Mask"), #only plays if nothing is in the way
-            "True", AlphaMask("Wet_Drip2","Emma_Drip_Mask"), #only plays if nothing is in the way
+            "EmmaX.Wet == 1", get_cached_alphamask("Wet_Drip", "Emma_Drip_Mask"), #only plays if nothing is in the way
+            "True", get_cached_alphamask("Wet_Drip2", "Emma_Drip_Mask"), #only plays if nothing is in the way
             )
         pos (160,400)
     contains:
@@ -5542,16 +5542,16 @@ image Emma_FJ_Animation:
             "('in' not in EmmaX.Spunk and 'anal' not in EmmaX.Spunk) or not Player.Male", Null(),
             "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Null(),
             "True", ConditionSwitch( #Wet = 2+
-                    "EmmaX.Panties and EmmaX.PantiesDown", AlphaMask("Spunk_Drip","Emma_Drip_MaskP"), #"Wet_Drip2",#
-                    "EmmaX.Legs == 'pants'", AlphaMask("Spunk_Drip","Emma_Drip_MaskP"),
-                    "True", AlphaMask("Spunk_Drip","Emma_Drip_Mask"), #only plays if nothing is in the way
+                    "EmmaX.Panties and EmmaX.PantiesDown", get_cached_alphamask("Spunk_Drip", "Emma_Drip_MaskP"), #"Wet_Drip2",#
+                    "EmmaX.Legs == 'pants'", get_cached_alphamask("Spunk_Drip", "Emma_Drip_MaskP"),
+                    "True", get_cached_alphamask("Spunk_Drip", "Emma_Drip_Mask"), #only plays if nothing is in the way
                     ),
             )
         pos (160,400)
     contains:
         #her basic body, masked to hide the legs
 #        "Emma_Sprite"
-        AlphaMask("Emma_Sprite", "Emma_FJ_Mask")
+        get_cached_alphamask("Emma_Sprite", "Emma_FJ_Mask")
 #        zoom 1.1
     contains:
         #her basic legs rightside
@@ -5562,21 +5562,21 @@ image Emma_FJ_Animation:
         #panties up
         ConditionSwitch(
             "EmmaX.PantiesDown or not EmmaX.Panties", Null(),
-#            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_Wet.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports.png"),
-            "EmmaX.Panties == 'lace panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_Wet.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini.png"),
-#            "EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Wet.png"), #readd when sprite works
-            "True", Recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties.png"),
+#            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports_Wet.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Sports.png"),
+            "EmmaX.Panties == 'lace panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace_Wet.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Lace.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Bikini.png"),
+#            "EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties_Wet.png"), #readd when sprite works
+            "True", get_cached_recolor("Emma", "Panties", "images/EmmaSprite/EmmaSprite_Panties.png"),
             )
         zoom 0.8
     contains:
         #Hose
         ConditionSwitch(
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_PantyhoseHoled.png"),
-            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_Stocking.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_PantyhoseHoled.png"),
+            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_Stocking.png"),
             "True", Null(),#Static
             )
         zoom 0.8
@@ -5585,15 +5585,15 @@ image Emma_FJ_Animation:
             #Personal Wetness
             "not EmmaX.Wet", Null(),
             "EmmaX.Legs and EmmaX.Wet <= 1", Null(),
-            "EmmaX.Legs", "images/EmmaSprite/EmmaSprite_Wet.png",
-            "EmmaX.Wet == 1", "images/EmmaSprite/EmmaSprite_Wet.png",
-            "True", "images/EmmaSprite/EmmaSprite_Wet.png",       #EmmaX.Wet >1
+            "EmmaX.Legs", get_cached_image("images/EmmaSprite/EmmaSprite_Wet.png"),
+            "EmmaX.Wet == 1", get_cached_image("images/EmmaSprite/EmmaSprite_Wet.png"),
+            "True", get_cached_image("images/EmmaSprite/EmmaSprite_Wet.png"),       #EmmaX.Wet >1
             )
         zoom .8
     contains:
         #Garter
         ConditionSwitch(
-            "EmmaX.Hose == 'garterbelt' or EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_Garter.png"),
+            "EmmaX.Hose == 'garterbelt' or EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/EmmaSprite_FJRight_Garter.png"),
             "True", Null(),#Static
             )
         zoom 0.8
@@ -5602,17 +5602,17 @@ image Emma_FJ_Animation:
         ConditionSwitch(
             #pants
             "not EmmaX.Legs", Null(),
-            "EmmaX.Legs == 'dress' and EmmaX.ArmPose == 2", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_FJ2.png"),
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_FJ1.png"),
+            "EmmaX.Legs == 'dress' and EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_FJ2.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_Dress_FJ1.png"),
             "EmmaX.Upskirt", ConditionSwitch(
                         #if the skirt's up or pants down
-                        "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_SkirtUp.png"),
+                        "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_SkirtUp.png"),
                         "True", Null(),
                         ),
             "True", ConditionSwitch(
-                        "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJRight_Pants.png"),
-                        "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJRight_Yoga.png"),
-                        "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJRight_Skirt.png"),
+                        "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJRight_Pants.png"),
+                        "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJRight_Yoga.png"),
+                        "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJRight_Skirt.png"),
                         "True", Null(),
                         ),
             )
@@ -5621,7 +5621,7 @@ image Emma_FJ_Animation:
         #boots
         ConditionSwitch(
             "EmmaX.Upskirt and EmmaX.Legs and EmmaX.Legs != 'skirt'", Null(),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_FJRight_Boot.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSprite/EmmaSprite_FJRight_Boot.png"),
             "True", Null(),#Static
             )
         zoom 0.8
@@ -5629,8 +5629,8 @@ image Emma_FJ_Animation:
     contains:
         #dress overlap
         ConditionSwitch(
-            "EmmaX.Legs == 'dress' and EmmaX.ArmPose == 2", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over2.png"),         # one hand up
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over1.png"),         # one hand up
+            "EmmaX.Legs == 'dress' and EmmaX.ArmPose == 2", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over2.png"),         # one hand up
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSprite/EmmaSprite_Dress_Over1.png"),         # one hand up
             "True", Null(),#Static
             )
         zoom 0.8
@@ -5649,7 +5649,7 @@ image Emma_FJ_Animation:
     contains:
         #dress overlap
         ConditionSwitch(
-            "EmmaX.Hat", "images/EmmaSprite/EmmaSprite_Hat.png",
+            "EmmaX.Hat", get_cached_image("images/EmmaSprite/EmmaSprite_Hat.png"),
             "True", Null(),#Static
             )
         zoom 0.41
@@ -5671,7 +5671,7 @@ image Emma_FJ_Legs_0:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         subpixel True
         transform_anchor True
@@ -5690,12 +5690,12 @@ image Emma_FJ_Legs_0:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
-            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
+            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         subpixel True
         transform_anchor True
@@ -5727,7 +5727,7 @@ image Emma_FJ_Legs_0:
     contains:
         #her basic legs left foot
         ConditionSwitch(
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -5743,10 +5743,10 @@ image Emma_FJ_Legs_0:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
             "(EmmaX.Hose == 'ripped pantyhose' or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -5780,7 +5780,7 @@ image Emma_FJ_Legs_1:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         transform_anchor True
         anchor (.70,.63)
@@ -5802,12 +5802,12 @@ image Emma_FJ_Legs_1:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
-            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
+            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         transform_anchor True
         anchor (.70,.63)
@@ -5845,7 +5845,7 @@ image Emma_FJ_Legs_1:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -5871,10 +5871,10 @@ image Emma_FJ_Legs_1:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
             "(EmmaX.Hose == 'ripped pantyhose' or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -5914,7 +5914,7 @@ image Emma_FJ_Legs_2:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         transform_anchor True
         anchor (.70,.63)
@@ -5932,12 +5932,12 @@ image Emma_FJ_Legs_2:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
-            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
+            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         transform_anchor True
         anchor (.70,.63)
@@ -5968,7 +5968,7 @@ image Emma_FJ_Legs_2:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -5986,10 +5986,10 @@ image Emma_FJ_Legs_2:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
             "(EmmaX.Hose == 'ripped pantyhose' or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -6021,7 +6021,7 @@ image Emma_FJ_Legs_4:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         transform_anchor True
         anchor (.70,.63)
@@ -6036,12 +6036,12 @@ image Emma_FJ_Legs_4:
         #her basic legs left thigh
         ConditionSwitch(
             #pants
-            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
-            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png",
+            "EmmaX.Legs == 'pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Legs == 'yoga pants' and not EmmaX.Upskirt", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftThigh_Yoga.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_PantyhoseHoled.png"),
+            "EmmaX.Hose == 'stockings' or EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftThigh.png"),
             )
         transform_anchor True
         anchor (.70,.63)
@@ -6072,7 +6072,7 @@ image Emma_FJ_Legs_4:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -6092,10 +6092,10 @@ image Emma_FJ_Legs_4:
         #her basic legs left foot
         ConditionSwitch(
             #Foot
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
             "(EmmaX.Hose == 'ripped pantyhose' or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
             )
         transform_anchor True
         anchor (.6,.8)
@@ -6143,23 +6143,23 @@ image Emma_FJ_Calf:
     contains:
         ConditionSwitch(
             #calf
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf.png",
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf.png"),
             )
     contains:
         ConditionSwitch(
             #calf
-            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf_StockingHoled.png"),
+            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf_StockingHoled.png"),
             "(EmmaX.Hose == 'ripped pantyhose' or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf_Stocking.png"),
-            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf.png",
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf_Stocking.png"),
+            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJLeftCalf.png"),
             )
     contains:
         #her basic legs left calf
         ConditionSwitch(
             #pants
             "not EmmaX.Legs or EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftCalf_Pants.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftCalf_Yoga.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftCalf_Pants.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSprite/EmmaSprite_FJLeftCalf_Yoga.png"),
             "True", Null(),
             )
     anchor (.31,.63)#.3.6
@@ -6169,15 +6169,15 @@ image Emma_FJ_Calf:
 #    contains:
 #        ConditionSwitch(
 #            #Foot
-#            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
+#            "EmmaX.Hose == 'ripped pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_StockingHoled.png"),
 #            "(EmmaX.Hose == 'ripped pantyhose' or EmmaX.Hose == 'pantyhose') and EmmaX.PantiesDown", Null(),
-#            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png",
-#            "True", "images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png",
+#            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot_Stocking.png"),
+#            "True", get_cached_image("images/EmmaSprite/[EmmaX.skin_image.skin_path]EmmaSprite_FJFoot.png"),
 #            )
 #    contains:
 #        #spunk
 #        ConditionSwitch(
-#            "'feet' in EmmaX.Spunk", "images/EmmaSprite/EmmaSprite_Spunk_Feet.png",
+#            "'feet' in EmmaX.Spunk", get_cached_image("images/EmmaSprite/EmmaSprite_Spunk_Feet.png"),
 #            "True", Null(),
 #            )
 ##    offset (400,100)
@@ -6796,47 +6796,47 @@ image Emma_69_Body:
 
         (0,0), ConditionSwitch(
             #Base belly
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Body.png",
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Body.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "EmmaX.Water", "images/EmmaSex/Emma_69_Water_Body.png",
+#            "EmmaX.Water", get_cached_image("images/EmmaSex/Emma_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #bra layer
             "EmmaX.Uptop", ConditionSwitch(
                     #if top's up
-#                    "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits_Up.png"),
-                    "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Body_Up.png"),
-#                    "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Tits.png"),
-#                    "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
+#                    "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits_Up.png"),
+                    "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Body_Up.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Tits.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
                     "True", Null(),
                     ),
             #if the top's down. . .
-#            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits.png"),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Body.png"),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Body.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Body.png"),
+#            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits.png"),
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Body.png"),
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Body.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Body.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #shirt layer
-            "(EmmaX.Over == 'dress' or EmmaX.Legs == 'dress') and EmmaX.Uptop", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body_Up.png"),
-            "EmmaX.Over == 'nighty' and EmmaX.Uptop",  Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body_Up.png"),
+            "(EmmaX.Over == 'dress' or EmmaX.Legs == 'dress') and EmmaX.Uptop", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body_Up.png"),
+            "EmmaX.Over == 'nighty' and EmmaX.Uptop",  get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body_Up.png"),
             "EmmaX.Uptop", Null(),
-            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body.png"),
-            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Jacket.png"),
-            "EmmaX.Over == 'nighty'",  Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body.png"),   #fix with nighty
+            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body.png"),
+            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Jacket.png"),
+            "EmmaX.Over == 'nighty'",  get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Body.png"),   #fix with nighty
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'belly' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_69_Spunk_Belly.png",
+            "'belly' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_69_Spunk_Belly.png"),
             "True", Null(),
             ),
-#        (0,0), "images/EmmaSex/Emma_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/EmmaSex/Emma_Sex_HeadRef.png"),
         )
     offset (15,0)#(50,0)#(250,250)#(175,175)
 #    yoffset -163
@@ -6853,21 +6853,21 @@ image Emma_69_Tits:
             #tops under
             "not EmmaX.Uptop", Null(),
             #if the top's down. . .
-#            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits.png"),
-#            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Tits.png"),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
+#            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits.png"),
+#            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Tits.png"),
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
             #shirt layer
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             # base tits
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Tits.png",
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Tits.png"),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
-#            "EmmaX.Water", "images/EmmaSex/Emma_69_Water_Body.png",
+#            "EmmaX.Water", get_cached_image("images/EmmaSex/Emma_69_Water_Body.png"),
 #            "True", Null(),
 #            ),
 
@@ -6875,17 +6875,17 @@ image Emma_69_Tits:
             #bra layer
             "EmmaX.Uptop", ConditionSwitch(
                     #if top's up
-                    "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits_Up.png"),
-#                    "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Tits.png"),
-#                    "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Tits.png"),
-#                    "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
+                    "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits_Up.png"),
+#                    "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Tits.png"),
+#                    "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Tits.png"),
+#                    "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
                     "True", Null(),
                     ),
             #if the top's down. . .
-            "EmmaX.Chest == 'bikini top'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits.png"),
-            "EmmaX.Chest == 'corset'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Tits.png"),
-            "EmmaX.Chest == 'sports bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Tits.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
+            "EmmaX.Chest == 'bikini top'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Bikini_Tits.png"),
+            "EmmaX.Chest == 'corset'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Corset_Tits.png"),
+            "EmmaX.Chest == 'sports bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Sports_Tits.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
@@ -6893,40 +6893,40 @@ image Emma_69_Tits:
             "not EmmaX.Pierce", Null(),
             "EmmaX.Pierce == 'ring'", ConditionSwitch(
                     # ring pierce
-                    "EmmaX.Uptop", "images/EmmaSex/Emma_69_Pierce_Tits_R.png",
+                    "EmmaX.Uptop", get_cached_image("images/EmmaSex/Emma_69_Pierce_Tits_R.png"),
 
-                    "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_R_White.png"),
-                    "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_R_Lace.png"),
-                    "EmmaX.Chest", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_R_White.png"),
-                    "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_R_Lace.png"),
+                    "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_R_White.png"),
+                    "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_R_Lace.png"),
+                    "EmmaX.Chest", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_R_White.png"),
+                    "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_R_Lace.png"),
 
-                    "True", "images/EmmaSex/Emma_69_Pierce_Tits_R.png",
+                    "True", get_cached_image("images/EmmaSex/Emma_69_Pierce_Tits_R.png"),
                     ),
-            "EmmaX.Uptop", "images/EmmaSex/Emma_69_Pierce_Tits_B.png",
+            "EmmaX.Uptop", get_cached_image("images/EmmaSex/Emma_69_Pierce_Tits_B.png"),
 
-            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_B_Dress.png"),
-            "EmmaX.Chest == 'lace bra'", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_B_Lace.png"),
-            "EmmaX.Chest", Recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_B_White.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_B_Lace.png"),
+            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_B_Dress.png"),
+            "EmmaX.Chest == 'lace bra'", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_B_Lace.png"),
+            "EmmaX.Chest", get_cached_recolor("Emma", "Chest", "images/EmmaSex/Emma_69_Pierce_Tits_B_White.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Pierce_Tits_B_Lace.png"),
 
-            "True", "images/EmmaSex/Emma_69_Pierce_Tits_B.png",
+            "True", get_cached_image("images/EmmaSex/Emma_69_Pierce_Tits_B.png"),
             ),
         (0,0), ConditionSwitch(
             #shirt layer
             "(EmmaX.Over == 'dress' or EmmaX.Legs == 'dress') and EmmaX.Uptop", Null(),
             "EmmaX.Over == 'nighty' and EmmaX.Uptop", Null(),
             "EmmaX.Uptop", Null(),
-            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Tits.png"),
-#            "EmmaX.Over == 'jacket'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Jacket.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),   #fix with nighty
+            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Dress_Tits.png"),
+#            "EmmaX.Over == 'jacket'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Over_Jacket.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Chest_Lace_Tits.png"),   #fix with nighty
             "True", Null(),
             ),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'tits' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_69_Spunk_Tits.png",
+            "'tits' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_69_Spunk_Tits.png"),
             "True", Null(),
             ),
-#        (0,0), "images/EmmaSex/Emma_Sex_HeadRef.png",
+#        (0,0), get_cached_image("images/EmmaSex/Emma_Sex_HeadRef.png"),
         )
     offset (15,0)#(250,250)#(175,175)
 #    yoffset -163
@@ -6940,30 +6940,30 @@ image Emma_69_Head:
         (1120,840),
         (0,0), ConditionSwitch(
             #tongue
-            "renpy.showing('Emma_69_CUN') and Speed != 3", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Tongue.png",
-            "Speed == 1", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Tongue.png",
+            "renpy.showing('Emma_69_CUN') and Speed != 3", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Tongue.png"),
+            "Speed == 1", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Tongue.png"),
             "True", Null(),
             ),
-        (0,0), "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Head.png",
+        (0,0), get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Head.png"),
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'mouth' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_69_Spunk_Mouth.png",
+            "'mouth' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_69_Spunk_Mouth.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #collar
 #            "Speed == 1 and Player.Male", Null(),
-#            "EmmaX.Chest == 'swimsuit' or EmmaX.Panties == 'swimsuit'", "images/EmmaSex/Emma_69_Collar.png",
+#            "EmmaX.Chest == 'swimsuit' or EmmaX.Panties == 'swimsuit'", get_cached_image("images/EmmaSex/Emma_69_Collar.png"),
 #            "True", Null(),
 #            ),
 
         (0,0), ConditionSwitch(
             #Hair over
             "Speed == 1 and Player.Male", Null(),
-            "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaSex/Emma_69_Hair_Short.png"),
-            "EmmaX.Hair == 'wet' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png"),
-            "not Player.Male and 'facial' in EmmaX.Spunk","images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png",
-            "True", Recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long.png"),
+            "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaSex/Emma_69_Hair_Short.png"),
+            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png"),
+            "not Player.Male and 'facial' in EmmaX.Spunk", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long.png"),
             ),
         )
     offset (15,0)#(175,175)#(180,100)
@@ -6979,10 +6979,10 @@ image Emma_69_HairOver:
         (0,0), ConditionSwitch(
             #Hair over
 #            "renpy.showing('Emma_TJ_Animation')", Null(),
-            "EmmaX.Hair == 'short'", Recolor("Emma", "Hair", "images/EmmaSex/Emma_69_Hair_Short.png"),
-            "EmmaX.Hair == 'wet' or EmmaX.Water", Recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png"),
-            "not Player.Male and 'facial' in EmmaX.Spunk","images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png",
-            "True", Recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long.png"),
+            "EmmaX.Hair == 'short'", get_cached_recolor("Emma", "Hair", "images/EmmaSex/Emma_69_Hair_Short.png"),
+            "EmmaX.Hair == 'wet' or EmmaX.Water", get_cached_recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png"),
+            "not Player.Male and 'facial' in EmmaX.Spunk", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Wet.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long.png"),
             ),
         )
     offset (15,0)#(180,100)
@@ -6997,9 +6997,9 @@ image Emma_69_HairBack:
         (0,0), ConditionSwitch(
             #Hair over
             "EmmaX.Hair == 'short'", Null(),
-            "True", Recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long_Back.png"),
+            "True", get_cached_recolor("Emma", "Hair", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long_Back.png"),
             ),
-#        (0,0), "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long_Back.png",
+#        (0,0), get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Hair_Long_Back.png"),
         )
     offset (15,0)#(175,175)
 #    yoffset -163
@@ -7014,41 +7014,41 @@ image Emma_69_Legs:
         (1120,880),
 #        (0,0), ConditionSwitch(
 #            #scarf
-#            "EmmaX.Acc", "images/EmmaSex/Emma_69_Scarf.png",
+#            "EmmaX.Acc", get_cached_image("images/EmmaSex/Emma_69_Scarf.png"),
 #            "True", Null(),
 #            ),
         (0,0), ConditionSwitch(
             #back of skirt Layer
-            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Dress_Under.png"),
-            "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Skirt_Under.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Legs_Nighty_Under.png"),
+            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Dress_Under.png"),
+            "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Skirt_Under.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Legs_Nighty_Under.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #Legs
-#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/EmmaSex/Emma_Sex_FBase.png",
-#            "Player.Sprite and Player.Cock == 'in' and Speed", "images/EmmaSex/Emma_Sex_FBase.png",
+#            "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/EmmaSex/Emma_Sex_FBase.png"),
+#            "Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/EmmaSex/Emma_Sex_FBase.png"),
 #            "Player.Sprite and Player.Cock == 'in' and Speed", "Emma_Sex_Heading_Pussy",
-#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/EmmaSex/Emma_Sex_Ass.png",
-#            "Trigger == 'lick pussy'", "images/EmmaSex/Emma_Sex_Ass.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Ass.png",
+#            "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/EmmaSex/Emma_Sex_Ass.png"),
+#            "Trigger == 'lick pussy'", get_cached_image("images/EmmaSex/Emma_Sex_Ass.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Ass.png"),
             ),
 
         (0,0), ConditionSwitch(
             #ass red
-            "EmmaX.Red", "images/EmmaSex/Emma_69_Red.png",
+            "EmmaX.Red", get_cached_image("images/EmmaSex/Emma_69_Red.png"),
             "True", Null(),
             ),
 #        (0,0), ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal'", "images/EmmaSex/Emma_Sex_Anus_Cover.png",
+#            "Player.Sprite and Player.Cock == 'anal'", get_cached_image("images/EmmaSex/Emma_Sex_Anus_Cover.png"),
 #            "True", Null(),
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not EmmaX.Water", Null(),
-#            "True", "images/EmmaSex/Emma_69_Water_Legs.png",
+#            "True", get_cached_image("images/EmmaSex/Emma_69_Water_Legs.png"),
 #            ),
 
         (0,0), "Emma_69_Anus",
@@ -7062,8 +7062,8 @@ image Emma_69_Legs:
             "not EmmaX.Wet", Null(),
             "(EmmaX.Legs == 'yoga pants' or EmmaX.Legs == 'shorts') and not EmmaX.Upskirt", Null(),
             "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
-            "EmmaX.Wet == 1", AlphaMask("Wet_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
-            "True", AlphaMask("Wet_Drip2_69","images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
+            "EmmaX.Wet == 1", get_cached_alphamask("Wet_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip_69",
+            "True", get_cached_alphamask("Wet_Drip2_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"), #"Wet_Drip2_69",
             ),
 
         (-6,12), ConditionSwitch(    #-6,12
@@ -7071,11 +7071,11 @@ image Emma_69_Legs:
             "'anal' not in EmmaX.Spunk or not Player.Male", Null(),
             "(EmmaX.Legs == 'yoga pants' or EmmaX.Legs == 'shorts') and not EmmaX.Upskirt", Null(),
 #            "True", "Spunk_Drip2_69", #"Spunk_Drip_69",
-            "True", AlphaMask("Spunk_Drip_69_Anal","images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
+            "True", get_cached_alphamask("Spunk_Drip_69_Anal", "images/BetsySex/Betsy_69_Mask_Ass.png"), #"Spunk_Drip_69",
             ),
         (0,0), ConditionSwitch(
             #anal Spunk
-            "'anal' in EmmaX.Spunk", "images/EmmaSex/Emma_69_Spunk_Anus.png",
+            "'anal' in EmmaX.Spunk", get_cached_image("images/EmmaSex/Emma_69_Spunk_Anus.png"),
             "True", Null(),
             ),
 
@@ -7083,34 +7083,34 @@ image Emma_69_Legs:
             #Panties if up
             "EmmaX.PantiesDown", ConditionSwitch(
                     #If she has panties down. . .
-#                    "EmmaX.Panties == 'lace panties'", "images/EmmaSex/Emma_69_Panties_Lace_Down.png",
-#                    "EmmaX.Panties == 'bikini bottoms'", "images/EmmaSex/Emma_69_Panties_Bikini_Down.png",
-#                    "EmmaX.Panties and EmmaX.Wet", "images/EmmaSex/Emma_69_Panties_Tan_Down_Wet.png",
-#                    "EmmaX.Panties", "images/EmmaSex/Emma_69_Panties_Tan_Down.png",
+#                    "EmmaX.Panties == 'lace panties'", get_cached_image("images/EmmaSex/Emma_69_Panties_Lace_Down.png"),
+#                    "EmmaX.Panties == 'bikini bottoms'", get_cached_image("images/EmmaSex/Emma_69_Panties_Bikini_Down.png"),
+#                    "EmmaX.Panties and EmmaX.Wet", get_cached_image("images/EmmaSex/Emma_69_Panties_Tan_Down_Wet.png"),
+#                    "EmmaX.Panties", get_cached_image("images/EmmaSex/Emma_69_Panties_Tan_Down.png"),
                     "True", Null(),
                     ),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_Lace.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_White.png"),
-            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_Sport_Wet.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_Sport.png"),
-            "EmmaX.Panties and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_White_Wet.png"),
-            "EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_White.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_Lace.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_White.png"),
+            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_Sport_Wet.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_Sport.png"),
+            "EmmaX.Panties and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_White_Wet.png"),
+            "EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Panties_White.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #hose layer
-            "EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_StockingsGarter.png"),
-            "EmmaX.Hose == 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Garter.png"),
-            "EmmaX.Hose == 'stockings'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Stockings.png"),
+            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_StockingsGarter.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Garter.png"),
+            "EmmaX.Hose == 'stockings'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Stockings.png"),
             "True", Null(),
             ),
 
         (0,0), ConditionSwitch(
             #pantyhose layer
             "EmmaX.Panties and EmmaX.PantiesDown", Null(),
-            "EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Pantyhose.png"),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Pantyhose_Holed.png"),
+            "EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Pantyhose.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Hose_Pantyhose_Holed.png"),
             "True", Null(),
             ),
 
@@ -7118,10 +7118,10 @@ image Emma_69_Legs:
         (0,0), ConditionSwitch(
             #pants Layer
             "EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants' and EmmaX.Wet", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Pants_Wet.png"),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Pants.png"),
-            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Yoga_Wet.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Yoga.png"),
+            "EmmaX.Legs == 'pants' and EmmaX.Wet", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Pants_Wet.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Pants.png"),
+            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Yoga_Wet.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Yoga.png"),
             "True", Null(),
             ),
 
@@ -7131,22 +7131,22 @@ image Emma_69_Legs:
             "EmmaX.Pierce == 'ring'",ConditionSwitch(
                     #If she has panties down. . .
                     "Player.Sprite and Player.Cock == 'in'", Null(),
-                    "not EmmaX.Upskirt and (EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants')", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Pierce_Pussy_R_White.png"),
-                    "not EmmaX.PantiesDown and EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_R_Lace.png"),
-                    "not EmmaX.PantiesDown and EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_R_White.png"),
-                    "not EmmaX.PantiesDown and EmmaX.Panties and EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_R_Lace.png"),
+                    "not EmmaX.Upskirt and (EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants')", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Pierce_Pussy_R_White.png"),
+                    "not EmmaX.PantiesDown and EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_R_Lace.png"),
+                    "not EmmaX.PantiesDown and EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_R_White.png"),
+                    "not EmmaX.PantiesDown and EmmaX.Panties and EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_R_Lace.png"),
 
-                    "EmmaX.Pubes", "images/EmmaSex/Emma_69_Pierce_Pussy_R_Pubes.png",
-                    "True", "images/EmmaSex/Emma_69_Pierce_Pussy_R.png",
+                    "EmmaX.Pubes", get_cached_image("images/EmmaSex/Emma_69_Pierce_Pussy_R_Pubes.png"),
+                    "True", get_cached_image("images/EmmaSex/Emma_69_Pierce_Pussy_R.png"),
                     ),
             #else, it's barbell
-            "not EmmaX.Upskirt and (EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants')", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Pierce_Pussy_B_White.png"),
-            "not EmmaX.PantiesDown and EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_B_Lace.png"),
-            "not EmmaX.PantiesDown and EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_B_White.png"),
-            "not EmmaX.PantiesDown and EmmaX.Panties and EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_B_Lace.png"),
+            "not EmmaX.Upskirt and (EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants')", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Pierce_Pussy_B_White.png"),
+            "not EmmaX.PantiesDown and EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_B_Lace.png"),
+            "not EmmaX.PantiesDown and EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_B_White.png"),
+            "not EmmaX.PantiesDown and EmmaX.Panties and EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_69_Pierce_Pussy_B_Lace.png"),
 
-            "EmmaX.Pubes", "images/EmmaSex/Emma_69_Pierce_Pussy_B_Pubes.png",
-            "True", "images/EmmaSex/Emma_69_Pierce_Pussy_B.png",
+            "EmmaX.Pubes", get_cached_image("images/EmmaSex/Emma_69_Pierce_Pussy_B_Pubes.png"),
+            "True", get_cached_image("images/EmmaSex/Emma_69_Pierce_Pussy_B.png"),
             ),
 
 
@@ -7154,27 +7154,27 @@ image Emma_69_Legs:
             #skirt Layer
             "EmmaX.Upskirt", ConditionSwitch(
                     #If she has pants down. . .
-                    "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Dress_Up.png"),
-                    "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Skirt_Up.png"),
-                    "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Legs_Nighty_Up.png"),
+                    "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Dress_Up.png"),
+                    "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Skirt_Up.png"),
+                    "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Legs_Nighty_Up.png"),
                     "True", Null(),
                     ),
-            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Dress.png"),
-            "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Skirt.png"),
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_69_Legs_Nighty.png"),
+            "EmmaX.Over == 'dress' or EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Dress.png"),
+            "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Legs_Skirt.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_69_Legs_Nighty.png"),
             "True", Null(),
             ),
 
         (0,0),ConditionSwitch(
             #Outside Spunk
-            "'back' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_69_Spunk_Ass.png",
+            "'back' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_69_Spunk_Ass.png"),
             "True", Null(),
             ),
 
 #        (0,0), ConditionSwitch(
 #            #pussy fondling animation
 #            "Trigger == 'fondle pussy' or Trigger2 == 'fondle pussy'", "Emma_Sex_Fondle_Pussy",
-#            "True", "images/EmmaSex/Emma_Sex_Hand.png",
+#            "True", get_cached_image("images/EmmaSex/Emma_Sex_Hand.png"),
 #            ),
 
 #        (0,0), ConditionSwitch(                                                                                 #hotdog cock Layer
@@ -7201,13 +7201,13 @@ image Emma_69_Legs:
 #        (0,0), ConditionSwitch(
 #            #Footjob overlay
 #            "Player.Cock == 'foot'", Null(),
-#            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+#            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
 #            "ShowFeet", "Emma_69_Feet",
-##            "Player.Sprite", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick pussy'", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick ass'", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-#            "True", AlphaMask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+##            "Player.Sprite", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick pussy'", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick ass'", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+#            "True", get_cached_alphamask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
 #            ),
 
         (0,0), "Emma_69_Feet_L",
@@ -7215,13 +7215,13 @@ image Emma_69_Legs:
             #Footjob overlay
             "Player.Cock == 'foot'", Null(),
             "True", "Emma_69_Feet_R",
-#            "Player.Sprite and Player.Cock == 'anal'",AlphaMask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",AlphaMask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+#            "Player.Sprite and Player.Cock == 'anal'",get_cached_alphamask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+#            "renpy.showing('Anal_Plug_In_Sex') or renpy.showing('Anal_Plug_Out_Sex')",get_cached_alphamask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
 #            "ShowFeet", "Emma_69_Feet",
-##            "Player.Sprite", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick pussy'", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-##            "Trigger == 'lick ass'", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
-#            "True", AlphaMask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+##            "Player.Sprite", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick pussy'", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+##            "Trigger == 'lick ass'", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
+#            "True", get_cached_alphamask("Emma_69_Feet", "images/EmmaSex/Emma_Sex_Feet_Mask.png"),
             ),
 #        (0,0), "Emma_69_Tail",
 
@@ -7232,7 +7232,7 @@ image Emma_69_Legs:
 #            ),
 #        (0,0), ConditionSwitch(                                                         #Shows different lower body motion depending on events
 #            "not Speed", "Emma_Sex_Feet",
-#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_FeetMask.png"),
+#            "Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_FeetMask.png"),
 #            "True", "Emma_Sex_Feet",
 #            ),
         )
@@ -7245,30 +7245,30 @@ image Emma_69_Feet_R:
         (1120,840),
         (0,0), ConditionSwitch(
             #feet layer
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_R.png",   #Null(),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_R.png"),   #Null(),
             ),
         (0,0), ConditionSwitch(
             #feet layer
-            "(EmmaX.Hose == 'pantyhose' or EmmaX.Hose == 'ripped pantyhose') and EmmaX.Panties and EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_R.png"),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Holed_R.png"),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Hose_R.png"),
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_R.png",   #Null(),
+            "(EmmaX.Hose == 'pantyhose' or EmmaX.Hose == 'ripped pantyhose') and EmmaX.Panties and EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_R.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Holed_R.png"),
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Hose_R.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_R.png"),   #Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not EmmaX.Water", Null(),
-#            "True", "images/EmmaSex/Emma_69_Water_Feet_R.png",
+#            "True", get_cached_image("images/EmmaSex/Emma_69_Water_Feet_R.png"),
 #            ),
         (0,0), ConditionSwitch(
             #pants Layer
             "EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Pants_R.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Yoga_R.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Pants_R.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Yoga_R.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in EmmaX.Spunk", "images/EmmaSex/Emma_69_Spunk_Feet_R.png",
+            "'feet' in EmmaX.Spunk", get_cached_image("images/EmmaSex/Emma_69_Spunk_Feet_R.png"),
             "True", Null(),
             ),
         )
@@ -7279,30 +7279,30 @@ image Emma_69_Feet_L:
         (1120,840),
         (0,0), ConditionSwitch(
             #feet layer
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_L.png",   #Null(),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_L.png"),   #Null(),
             ),
         (0,0), ConditionSwitch(
             #feet layer
-            "(EmmaX.Hose == 'pantyhose' or EmmaX.Hose == 'ripped pantyhose') and EmmaX.Panties and EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_L.png"),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Holed_L.png"),
-            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Hose_L.png"),
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_L.png",   #Null(),
+            "(EmmaX.Hose == 'pantyhose' or EmmaX.Hose == 'ripped pantyhose') and EmmaX.Panties and EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_L.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Holed_L.png"),
+            "EmmaX.Hose and EmmaX.Hose != 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_69_Feet_Hose_L.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Feet_L.png"),   #Null(),
             ),
 #        (0,0), ConditionSwitch(
 #            #Wet look
 #            "not EmmaX.Water", Null(),
-#            "True", "images/EmmaSex/Emma_69_Water_Feet_L.png",
+#            "True", get_cached_image("images/EmmaSex/Emma_69_Water_Feet_L.png"),
 #            ),
         (0,0), ConditionSwitch(
             #pants Layer
             "EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Pants_L.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Yoga_L.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Pants_L.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_69_Feet_Yoga_L.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             #spunk
-            "'feet' in EmmaX.Spunk", "images/EmmaSex/Emma_69_Spunk_Feet_L.png",
+            "'feet' in EmmaX.Spunk", get_cached_image("images/EmmaSex/Emma_69_Spunk_Feet_L.png"),
             "True", Null(),
             ),
         )
@@ -7329,31 +7329,31 @@ image Emma_69_Pussy:
     contains:
             # The background plate of her pussy
             ConditionSwitch(
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/EmmaSex/Emma_Sex_Pussy_Fucking.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/EmmaSex/Emma_Sex_Pussy_Fucking.png"),
 #                "Player.Sprite and Player.Cock == 'in' and Speed", "Emma_Sex_Heading_Pussy",
-#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", "images/EmmaSex/Emma_Sex_Pussy_Open.png",
-                "Trigger == 'lick pussy'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pussy_Open.png",
-                "EmmaX.Offhand == 'fondle pussy' and EmmaX.Lust > 60", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pussy_Open.png",
-                "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pussy_Closed.png",
+#                "Player.Sprite and Speed and (Player.Cock == 'in' or Player.Cock == 'out')", get_cached_image("images/EmmaSex/Emma_Sex_Pussy_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pussy_Open.png"),
+                "EmmaX.Offhand == 'fondle pussy' and EmmaX.Lust > 60", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pussy_Open.png"),
+                "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pussy_Closed.png"),
                 )
     contains:
             # The background plate of her pussy
             ConditionSwitch(
                 "not EmmaX.Wet", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/JubesSex/Jubes_Sex_WetPussy_F.png",
-                "True", "images/BetsySex/Betsy_69_Water_Pussy.png",
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_WetPussy_F.png"),
+                "True", get_cached_image("images/BetsySex/Betsy_69_Water_Pussy.png"),
                 )
     contains:
             # pubes
             ConditionSwitch(
                 "not EmmaX.Pubes", Null(),
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Fucking.png",
-                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Fucking.png",
-                "Player.Sprite and Player.Cock == 'in'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Fucking.png",
-#                "Player.Sprite and Player.Cock == 'out'", "images/EmmaSex/Emma_Sex_Pubes_Open.png",
-                "Trigger == 'lick pussy'", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Open.png",
-                "EmmaX.Offhand == 'fondle pussy' and EmmaX.Lust > 60", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Open.png",
-                "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Closed.png",
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in' and Speed >= 1", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Fucking.png"),
+                "Player.Sprite and Player.Cock == 'in'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Fucking.png"),
+#                "Player.Sprite and Player.Cock == 'out'", get_cached_image("images/EmmaSex/Emma_Sex_Pubes_Open.png"),
+                "Trigger == 'lick pussy'", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Open.png"),
+                "EmmaX.Offhand == 'fondle pussy' and EmmaX.Lust > 60", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Open.png"),
+                "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Pubes_Closed.png"),
                 )
     contains:
             #Spunk
@@ -7362,49 +7362,49 @@ image Emma_69_Pussy:
                 "(EmmaX.Legs == 'yoga pants' or EmmaX.Legs == 'shorts') and not EmmaX.Upskirt", Null(),
                 "EmmaX.Panties and not EmmaX.PantiesDown", Null(),
 #                "True", "Spunk_Drip_69",
-                "True", AlphaMask("Spunk_Drip_69","images/BetsySex/Betsy_69_Mask_Pussy.png"),
+                "True", get_cached_alphamask("Spunk_Drip_69", "images/BetsySex/Betsy_69_Mask_Pussy.png"),
                 )
             offset (0,-50)
 
 #    contains:
 #            ConditionSwitch(
 #                #Outside Spunk
-##                "'in' in EmmaX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", "images/JubesSex/Jubes_Sex_Spunk_PussyF.png",
-#                "'in' in EmmaX.Spunk and Player.Male", "images/BetsySex/Betsy_69_Spunk_Pussy.png",
+##                "'in' in EmmaX.Spunk and Player.Sprite and Player.Cock == 'in' and Speed and Player.Male", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_PussyF.png"),
+#                "'in' in EmmaX.Spunk and Player.Male", get_cached_image("images/BetsySex/Betsy_69_Spunk_Pussy.png"),
 #                "True", Null(),
 #                )
 ##            offset (0,10)
     contains:
             #Spunk under penis
             ConditionSwitch(
-                "'in' in EmmaX.Spunk", "images/EmmaSex/Emma_69_Spunk_Pussy.png",
+                "'in' in EmmaX.Spunk", get_cached_image("images/EmmaSex/Emma_69_Spunk_Pussy.png"),
                 "True", Null(),
                 )
 #    contains:
 #            #hose layer
 #            ConditionSwitch(
 #                "EmmaX.Panties and EmmaX.PantiesDown", Null(),
-#                "EmmaX.Hose == 'ripped pantyhose' and ShowFeet", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_Holed.png",
-#                "EmmaX.Hose == 'ripped pantyhose'", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_Holed.png",
+#                "EmmaX.Hose == 'ripped pantyhose' and ShowFeet", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Pantyhose_Holed.png"),
+#                "EmmaX.Hose == 'ripped pantyhose'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Pantyhose_Holed.png"),
 #                "True", Null(),
 #                ),
 #    contains:
 #            # The animation of Zero's moving penis, masked by her pussy shape
 #            ConditionSwitch(
 ##                "not Player.Sprite", Null(),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", AlphaMask("Emma_Sex_Fucking_Zero_Anim3", "Emma_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", AlphaMask("Emma_Sex_Fucking_Zero_Anim2", "Emma_Sex_Fucking_Mask"),
-#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", AlphaMask("Emma_Sex_Fucking_Zero_Anim1", "Emma_Sex_Heading_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 3", get_cached_alphamask("Emma_Sex_Fucking_Zero_Anim3", "Emma_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed >= 2", get_cached_alphamask("Emma_Sex_Fucking_Zero_Anim2", "Emma_Sex_Fucking_Mask"),
+#                "Player.Sprite and Player.Cock == 'in' and Speed == 1", get_cached_alphamask("Emma_Sex_Fucking_Zero_Anim1", "Emma_Sex_Heading_Mask"),
 #                "Player.Sprite and Player.Cock == 'in'", "Emma_Sex_Fucking_Zero_Anim0",
 #                "True", Null(),
 #                )
 #    contains:
 #            #Piercings
 #            ConditionSwitch(
-#                "EmmaX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", "images/EmmaSex/Emma_Sex_Pierce_Pussy_BarbellF.png",
-#                "EmmaX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", "images/EmmaSex/Emma_Sex_Pierce_Pussy_RingF.png",
-#                "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Sex_Pierce_Pussy_Barbell.png",
-#                "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Sex_Pierce_Pussy_Ring.png",
+#                "EmmaX.Pierce == 'barbell' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/EmmaSex/Emma_Sex_Pierce_Pussy_BarbellF.png"),
+#                "EmmaX.Pierce == 'ring' and Player.Sprite and Player.Cock == 'in' and Speed", get_cached_image("images/EmmaSex/Emma_Sex_Pierce_Pussy_RingF.png"),
+#                "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Sex_Pierce_Pussy_Barbell.png"),
+#                "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Sex_Pierce_Pussy_Ring.png"),
 #                "True", Null(),
 #                )
 #    contains:
@@ -7419,7 +7419,7 @@ image Emma_69_Pussy:
 #                "Speed == 1", Null(),
 #                "'in' not in EmmaX.Spunk or not Player.Sprite or Player.Cock != 'in' or not Speed or not Player.Male", Null(),
 ##                "Speed <= 1", Null(), #"Emma_Pussy_Spunk_Heading",
-#                "True", "images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png",
+#                "True", get_cached_image("images/JubesSex/Jubes_Sex_Spunk_Pussy_Over.png"),
 #                )
 
     #End Emma Pussy composite
@@ -7465,35 +7465,35 @@ image Emma_69_Anus:
     contains:
             #Anus background plate
             ConditionSwitch(
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/JubesSex/Jubes_Sex_Anal.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", "images/EmmaSex/Emma_Sex_Anus.png",
-#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", "images/EmmaSex/Emma_Sex_Anus.png",
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/JubesSex/Jubes_Sex_Anal.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 3", get_cached_image("images/EmmaSex/Emma_Sex_Anus.png"),
+#            "Player.Sprite and Player.Cock == 'anal' and Speed >= 2", get_cached_image("images/EmmaSex/Emma_Sex_Anus.png"),
 #            "Player.Sprite and Player.Cock == 'anal' and Speed", "Emma_Sex_Anal_Heading",
 #            "Player.Sprite and Player.Cock == 'anal'", "Emma_Sex_Anal_Tip",
-            "EmmaX.Plug", "images/PlugBase_Sex.png",
+            "EmmaX.Plug", get_cached_image("images/PlugBase_Sex.png"),
             "EmmaX.Loose > 2", "Emma_Gape_Anal_Sex",
-#            "EmmaX.Loose", "images/EmmaSex/Emma_Sex_Anus_Loose.png",
-            "True", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Anus.png",
+#            "EmmaX.Loose", get_cached_image("images/EmmaSex/Emma_Sex_Anus_Loose.png"),
+            "True", get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_69_Anus.png"),
             "True", Null(),
             )
 #    contains:
 #            #Spunk under penis
 #            ConditionSwitch(
 #                "'anal' not in EmmaX.Spunk or not Player.Male", Null(),
-##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", "images/EmmaSex/Emma_Sex_Spunk_Anal_Under.png",
+##                "Player.Sprite and Player.Cock != 'anal' and Speed >= 1", get_cached_image("images/EmmaSex/Emma_Sex_Spunk_Anal_Under.png"),
 ##                "Player.Sprite and Player.Cock == 'anal' and Speed == 1", "Emma_Sex_Anal_Spunk_Heading_Under",
-#                "True", "images/EmmaSex/Emma_69_Spunk_Anus.png",
+#                "True", get_cached_image("images/EmmaSex/Emma_69_Spunk_Anus.png"),
 #                )
 #            offset (5,0)
 #    contains:
 #            # The animation of Zero's moving penis, masked by her anus shape
 #            ConditionSwitch(
 #                "not Player.Sprite or Player.Cock != 'anal'", Null(),
-#                "Speed >= 3",  AlphaMask("Emma_Sex_Anal_Zero_Anim3", "Emma_Sex_Anal_MaskF"),
-#                "Speed >= 2", AlphaMask("Emma_Sex_Anal_Zero_Anim2", "Emma_Sex_Anal_MaskF"),
-#                "Speed", AlphaMask("Emma_Sex_Anal_Zero_Anim1", "Emma_Sex_Anal_Mask"),
-#                "True", AlphaMask("Emma_Sex_Anal_Zero_Anim0", "Emma_Sex_Anal_Mask"),
+#                "Speed >= 3",  get_cached_alphamask("Emma_Sex_Anal_Zero_Anim3", "Emma_Sex_Anal_MaskF"),
+#                "Speed >= 2", get_cached_alphamask("Emma_Sex_Anal_Zero_Anim2", "Emma_Sex_Anal_MaskF"),
+#                "Speed", get_cached_alphamask("Emma_Sex_Anal_Zero_Anim1", "Emma_Sex_Anal_Mask"),
+#                "True", get_cached_alphamask("Emma_Sex_Anal_Zero_Anim0", "Emma_Sex_Anal_Mask"),
 #                )
 #    contains:
 #            #Spunk over penis
@@ -8750,14 +8750,14 @@ image Emma_SC_Legs:
         (1120,840),
         (0,0), ConditionSwitch(
             # back of dress
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Back.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Back.png"),
             "True", Null(),
             ),
-        (0,0), "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Sex.png",
+        (0,0), get_cached_image("images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Sex_Legs_Sex.png"),
         #Legs Base
 #        (0,0),ConditionSwitch(
 #            #wet look
-#            "EmmaX.Water", "images/EmmaSex/Emma_Sex_Wet_Legs.png",
+#            "EmmaX.Water", get_cached_image("images/EmmaSex/Emma_Sex_Wet_Legs.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), "Emma_Sex_Anus",
@@ -8768,87 +8768,87 @@ image Emma_SC_Legs:
 
         (0,0), ConditionSwitch(
             # piercings
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S.png"),
             "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and not EmmaX.Upskirt", Null(),
-            "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png",
+            "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C2.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # pubes
-            "EmmaX.Pubes", Recolor("Emma", "Pubes", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Pubes_Sex.png"),
+            "EmmaX.Pubes", get_cached_recolor("Emma", "Pubes", "images/EmmaSex/[EmmaX.skin_image.skin_path]Emma_Pubes_Sex.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # panties
             "EmmaX.PantiesDown", Null(),
-            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_SW.png"),
-            "EmmaX.Panties == 'sports panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_S.png"),
-            "EmmaX.Panties == 'lace panties'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Lace_S.png"),
-            "EmmaX.Panties == 'bikini bottoms'", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_S.png"),
-            "EmmaX.Panties and EmmaX.Wet", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_SW.png"),
-            "EmmaX.Panties", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_S.png"),
+            "EmmaX.Panties == 'sports panties' and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_SW.png"),
+            "EmmaX.Panties == 'sports panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Sport_S.png"),
+            "EmmaX.Panties == 'lace panties'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Lace_S.png"),
+            "EmmaX.Panties == 'bikini bottoms'", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_Bikini_S.png"),
+            "EmmaX.Panties and EmmaX.Wet", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_SW.png"),
+            "EmmaX.Panties", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Sex_Panties_S.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # stockings
-            "EmmaX.Hose == 'stockings'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Stockings_S.png"),
-            "EmmaX.Hose == 'stockings and garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_StockingsGarter_S.png"),
-            "EmmaX.Hose == 'garterbelt'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Garter_S.png"),
+            "EmmaX.Hose == 'stockings'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Stockings_S.png"),
+            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_StockingsGarter_S.png"),
+            "EmmaX.Hose == 'garterbelt'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Garter_S.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # pantyhose
             "(EmmaX.Panties and EmmaX.PantiesDown)", Null(),
-            "EmmaX.Hose == 'ripped pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_PantyhoseHoled_S.png"),
+            "EmmaX.Hose == 'ripped pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_PantyhoseHoled_S.png"),
             "Player.Sprite and Player.Cock == 'in'", Null(),
-            "EmmaX.Hose == 'pantyhose'", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_S.png"),
+            "EmmaX.Hose == 'pantyhose'", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Sex_Hose_Pantyhose_S.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # piercings
             "(not EmmaX.Panties and EmmaX.Hose != 'pantyhose') or EmmaX.PantiesDown", Null(),
             "EmmaX.Hose == 'pantyhose' and EmmaX.PantiesDown", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png",
-            "EmmaX.Pierce == 'ring'", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png"),
+            "EmmaX.Pierce == 'ring'", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # legs
-            "EmmaX.Legs == 'dress' and (EmmaX.Upskirt or Player.Sprite)", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Up.png"),
-            "EmmaX.Legs == 'dress'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S.png"),
-            "EmmaX.Legs == 'skirt'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Skirt_Pussy.png"),
+            "EmmaX.Legs == 'dress' and (EmmaX.Upskirt or Player.Sprite)", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S_Up.png"),
+            "EmmaX.Legs == 'dress'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Dress_S.png"),
+            "EmmaX.Legs == 'skirt'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Skirt_Pussy.png"),
             "EmmaX.Upskirt", Null(),
-            "EmmaX.Legs == 'pants' and EmmaX.Wet >= 2", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_SW.png"),
-            "EmmaX.Legs == 'pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_S.png"),
-            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet >= 2", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_SW.png"),
-            "EmmaX.Legs == 'yoga pants'", Recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_S.png"),
+            "EmmaX.Legs == 'pants' and EmmaX.Wet >= 2", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_SW.png"),
+            "EmmaX.Legs == 'pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_Pants_S.png"),
+            "EmmaX.Legs == 'yoga pants' and EmmaX.Wet >= 2", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_SW.png"),
+            "EmmaX.Legs == 'yoga pants'", get_cached_recolor("Emma", "Legs", "images/EmmaSex/Emma_Sex_YogaPants_S.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # piercings over
             "(EmmaX.Legs != 'pants' and EmmaX.Legs != 'yoga pants') or EmmaX.Upskirt", Null(),
-            "EmmaX.Pierce == 'barbell'", "images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png",
+            "EmmaX.Pierce == 'barbell'", get_cached_image("images/EmmaSex/Emma_Pierce_Barbell_Pussy_S_C.png"),
             "EmmaX.Pierce != 'ring'", Null(),
-            "EmmaX.Panties and not EmmaX.PantiesDown", Recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
-            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", Recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
-            "True", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png",
+            "EmmaX.Panties and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Panties", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
+            "EmmaX.Hose == 'pantyhose' and not EmmaX.PantiesDown", get_cached_recolor("Emma", "Hose", "images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
+            "True", get_cached_image("images/EmmaSex/Emma_Pierce_Ring_Pussy_S_C.png"),
             ),
         (0,0), ConditionSwitch(
             # boots
             "(EmmaX.Legs == 'pants' or EmmaX.Legs == 'yoga pants') and EmmaX.Upskirt", Null(),
-            "EmmaX.Boots == 'thigh boots'", Recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Boots_Pussy.png"),
+            "EmmaX.Boots == 'thigh boots'", get_cached_recolor("Emma", "Boots", "images/EmmaSex/Emma_Sex_Boots_Pussy.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # Over
-            "EmmaX.Over == 'nighty'", Recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Pussy.png"),
+            "EmmaX.Over == 'nighty'", get_cached_recolor("Emma", "Over", "images/EmmaSex/Emma_Sex_Nighty_Pussy.png"),
             "True", Null(),
             ),
         (0,0), ConditionSwitch(
             # spunk
-            "'belly' in EmmaX.Spunk and Player.Male", "images/EmmaSex/Emma_Spunk_Belly.png",
+            "'belly' in EmmaX.Spunk and Player.Male", get_cached_image("images/EmmaSex/Emma_Spunk_Belly.png"),
             "True", Null(),
             ),
 
@@ -8856,51 +8856,51 @@ image Emma_SC_Legs:
 #            #Panties if up
 #            "not EmmaX.Panties or EmmaX.PantiesDown", Null(),
 #            "Player.Sprite and (Player.Cock == 'sex' or Player.Cock == 'anal')", Null(),  #hide if sexing
-#            "EmmaX.Panties == 'lace panties'", "images/EmmaSex/Emma_Sex_Panties_Lace.png",
-#            "EmmaX.Panties == 'green panties' and EmmaX.Wet", "images/EmmaSex/Emma_Sex_Panties_Green_Wet.png",
-#            "EmmaX.Panties == 'green panties' or EmmaX.Panties == 'bikini bottoms'", "images/EmmaSex/Emma_Sex_Panties_Green.png",
-#            "EmmaX.Panties == 'shorts' and EmmaX.Wet", "images/EmmaSex/Emma_Sex_Panties_Shorts_Wet.png",
-#            "EmmaX.Panties == 'shorts'", "images/EmmaSex/Emma_Sex_Panties_Shorts.png",
-#            "EmmaX.Wet", "images/EmmaSex/Emma_Sex_Panties_Black_Wet.png",
-#            "True", "images/EmmaSex/Emma_Sex_Panties_Black.png",
+#            "EmmaX.Panties == 'lace panties'", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Lace.png"),
+#            "EmmaX.Panties == 'green panties' and EmmaX.Wet", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Green_Wet.png"),
+#            "EmmaX.Panties == 'green panties' or EmmaX.Panties == 'bikini bottoms'", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Green.png"),
+#            "EmmaX.Panties == 'shorts' and EmmaX.Wet", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Shorts_Wet.png"),
+#            "EmmaX.Panties == 'shorts'", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Shorts.png"),
+#            "EmmaX.Wet", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Black_Wet.png"),
+#            "True", get_cached_image("images/EmmaSex/Emma_Sex_Panties_Black.png"),
 #            ),
 
 #        (0,0), ConditionSwitch(
 #            #Hose layer (add panties up dependencies)
 #            #"EmmaX.PantiesDown", Null(),
-#            "EmmaX.Hose == 'ripped pantyhose'", "images/EmmaSex/Emma_Sex_Hose_Legs_Full_Hole.png",
-#            "EmmaX.Hose == 'ripped tights'", "images/EmmaSex/Emma_Sex_Hose_Legs_Tights_Hole.png",
-#            "EmmaX.Hose == 'stockings'", "images/EmmaSex/Emma_Sex_Hose_Legs_Stockings.png",
-#            "EmmaX.Hose == 'stockings and garterbelt'", "images/EmmaSex/Emma_Sex_Hose_Legs_StockingGarter.png",
-#            "EmmaX.Hose == 'garterbelt'", "images/EmmaSex/Emma_Sex_Hose_Legs_Garter.png",
+#            "EmmaX.Hose == 'ripped pantyhose'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Full_Hole.png"),
+#            "EmmaX.Hose == 'ripped tights'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Tights_Hole.png"),
+#            "EmmaX.Hose == 'stockings'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Stockings.png"),
+#            "EmmaX.Hose == 'stockings and garterbelt'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_StockingGarter.png"),
+#            "EmmaX.Hose == 'garterbelt'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Garter.png"),
 #            "EmmaX.PantiesDown", Null(),
 #            "Player.Sprite and (Player.Cock == 'in' or Player.Cock == 'anal')", Null(),  #hide if sexing
-#            "EmmaX.Hose == 'pantyhose'", "images/EmmaSex/Emma_Sex_Hose_Legs_Full.png",
-#            "EmmaX.Hose == 'tights' and EmmaX.Wet", "images/EmmaSex/Emma_Sex_Hose_Legs_Tights_Wet.png",
-#            "EmmaX.Hose == 'tights'", "images/EmmaSex/Emma_Sex_Hose_Legs_Tights.png",
+#            "EmmaX.Hose == 'pantyhose'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Full.png"),
+#            "EmmaX.Hose == 'tights' and EmmaX.Wet", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Tights_Wet.png"),
+#            "EmmaX.Hose == 'tights'", get_cached_image("images/EmmaSex/Emma_Sex_Hose_Legs_Tights.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Legs Layer
-#            "EmmaX.Legs == 'skirt'", "images/EmmaSex/Emma_Sex_Legs_Skirt.png",
+#            "EmmaX.Legs == 'skirt'", get_cached_image("images/EmmaSex/Emma_Sex_Legs_Skirt.png"),
 #            "EmmaX.Upskirt", Null(),
-#            "EmmaX.Legs == 'pants' and EmmaX.Wet > 1", "images/EmmaSex/Emma_Sex_Legs_Pants_Wet.png",
-#            "EmmaX.Legs == 'pants'","images/EmmaSex/Emma_Sex_Legs_Pants.png",
+#            "EmmaX.Legs == 'pants' and EmmaX.Wet > 1", get_cached_image("images/EmmaSex/Emma_Sex_Legs_Pants_Wet.png"),
+#            "EmmaX.Legs == 'pants'", get_cached_image("images/EmmaSex/Emma_Sex_Legs_Pants.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
 #            #Sweater
-#            "EmmaX.Acc == 'sweater'", "images/EmmaSex/Emma_Sex_Sweater.png",
+#            "EmmaX.Acc == 'sweater'", get_cached_image("images/EmmaSex/Emma_Sex_Sweater.png"),
 #            "True", Null(),
 #            ),
 ##        (0,0), ConditionSwitch(
 ##            #Over Layer
-##            "EmmaX.Over == 'towel'", "images/KittySex/Kitty_Sex_Towel_Legs.png",
+##            "EmmaX.Over == 'towel'", get_cached_image("images/KittySex/Kitty_Sex_Towel_Legs.png"),
 ##            "True", Null(),
 ##            ),
 #        (0,0),ConditionSwitch(
 #            #Outside Spunk
-#            "'belly' in EmmaX.Spunk and Player.Male", "images/KittySex/Kitty_Sex_Spunk_Pelvis.png",
+#            "'belly' in EmmaX.Spunk and Player.Male", get_cached_image("images/KittySex/Kitty_Sex_Spunk_Pelvis.png"),
 #            "True", Null(),
 #            ),
 #        (0,0), ConditionSwitch(
@@ -8915,8 +8915,8 @@ image Emma_SC_Legs:
 #        (0,0), ConditionSwitch(
 #            #Shows different lower body motion depending on events
 #            "not Speed or Player.Cock == 'foot' or ShowFeet", "Emma_Sex_Feet",
-#            #"Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", AlphaMask("Emma_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
-#            "True", AlphaMask("Emma_Sex_Feet","images/EmmaSex/Emma_Sex_FeetMask2.png")
+#            #"Player.Cock == 'anal' or Player.Cock == 'in' or Player.Cock == 'out'", get_cached_alphamask("Emma_Sex_Feet", "images/KittySex/Kitty_Sex_FeetMask.png"),
+#            "True", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_FeetMask2.png")
 #            ),
         )
 # End Emma Scissor Pose Legs / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -8980,7 +8980,7 @@ image Emma_SC_Anim_0:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Emma_Sex_Feet",
-#                "True", AlphaMask("Emma_Sex_Feet","images/EmmaSex/Emma_Sex_FeetMask2.png")
+#                "True", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_FeetMask2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -9062,7 +9062,7 @@ image Emma_SC_Anim_1:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Emma_Sex_Feet",
-#                "True", AlphaMask("Emma_Sex_Feet","images/EmmaSex/Emma_Sex_FeetMask2.png")
+#                "True", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_FeetMask2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -9145,7 +9145,7 @@ image Emma_SC_Anim_2:
 #            ConditionSwitch(
 #                #Shows different lower body motion depending on events
 #                "ShowFeet", "Emma_Sex_Feet",
-#                "True", AlphaMask("Emma_Sex_Feet","images/EmmaSex/Emma_Sex_FeetMask2.png")
+#                "True", get_cached_alphamask("Emma_Sex_Feet", "images/EmmaSex/Emma_Sex_FeetMask2.png")
 #                )
 #            anchor (560,580)#(560,420)
 #            offset (560,580) #(845,340)    #(840,390)
@@ -9215,12 +9215,12 @@ label Emma_SC_Reset:
 #        zoom 0.29
 #        pos (450,190) #(500,200)
 #    contains:
-##        AlphaMask("Test_Object", "images/ClassroomFront.png")
-#        AlphaMask("images/Classroom.jpg", "images/ClassroomFront.png")
+##        get_cached_alphamask("Test_Object", "images/ClassroomFront.png")
+#        get_cached_alphamask("images/Classroom.jpg", "images/ClassroomFront.png")
 #    contains:
 #        ConditionSwitch(
 #                "bg_current != 'bg classroom' or Current_Time == 'Evening' or Current_Time == 'Night' or Weekday >= 5", Null(),
-#                "True", "images/ClassroomPupils.png",
+#                "True", get_cached_image("images/ClassroomPupils.png"),
 #                )
 
 #image Emma_At_PodiumB:
@@ -9230,12 +9230,12 @@ label Emma_SC_Reset:
 #        zoom 0.29
 #        pos (670,180) #(500,200)
 #    contains:
-##        AlphaMask("Test_Object", "images/ClassroomFront.png")
-#        AlphaMask("images/Classroom.jpg", "images/ClassroomFront.png")
+##        get_cached_alphamask("Test_Object", "images/ClassroomFront.png")
+#        get_cached_alphamask("images/Classroom.jpg", "images/ClassroomFront.png")
 #    contains:
 #        ConditionSwitch(
 #                "bg_current != 'bg classroom' or Current_Time == 'Evening' or Current_Time == 'Night' or Weekday >= 5", Null(),
-#                "True", "images/ClassroomPupils.png",
+#                "True", get_cached_image("images/ClassroomPupils.png"),
 #                )
 
 image Emma_At_Desk:
