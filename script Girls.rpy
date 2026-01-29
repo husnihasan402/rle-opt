@@ -4077,7 +4077,7 @@ label LastNamer(Wordcount = 0, Splitname = 0, Lastname = 0):
         # Lastname picks the last word in that set
         $ Lastname = Terms["mister"] + " " + Splitname[Wordcount]
 
-        if Splitname[Wordcount] in EmmaX.Petname:
+        if Splitname[Wordcount] in EmmaX.Petnames:
                 $ EmmaX.Petname = Lastname
         return Lastname
 
